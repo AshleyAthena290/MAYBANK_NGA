@@ -1,0 +1,494 @@
+[
+  {
+    "testCaseId": "FUNCTION_10_MANAGE_FAVOURITE_LIST_DASHBOARD_TC_002",
+    "featureName": "FUNCTION 10: MANAGE FAVOURITE LIST - DASHBOARD",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Invalid input violating rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Boundary value around rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_10_MANAGE_FAVOURITE_LIST_DASHBOARD_TC_003",
+    "featureName": "FUNCTION 10: MANAGE FAVOURITE LIST - DASHBOARD",
+    "requirement": "1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+    "objective": "Verify 1 | manage lists title | n/a | alphanumeric | display | integration | display \"manage lists\" | cms: - retrieve \"manage lists\" title",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Invalid input violating rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Boundary value around rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_10_MANAGE_FAVOURITE_LIST_DASHBOARD_TC_004",
+    "featureName": "FUNCTION 10: MANAGE FAVOURITE LIST - DASHBOARD",
+    "requirement": "2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+    "objective": "Verify 2 | description | n/a | alphanumeric | display | integration | display manage favourite list description | cms: 1. to retrieve manage lists description",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Invalid input violating rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Boundary value around rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_10_MANAGE_FAVOURITE_LIST_DASHBOARD_TC_005",
+    "featureName": "FUNCTION 10: MANAGE FAVOURITE LIST - DASHBOARD",
+    "requirement": "3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+    "objective": "Verify 3 | local/overseas tab | n/a | alphanumeric | tab | integration | default: local. option to switch between local or overseas transfer",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Invalid input violating rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Boundary value around rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_10_MANAGE_FAVOURITE_LIST_DASHBOARD_TC_006",
+    "featureName": "FUNCTION 10: MANAGE FAVOURITE LIST - DASHBOARD",
+    "requirement": "4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local",
+    "objective": "Verify 4 | favourite group list | n/a | alphanumeric | button | integration | display in below order: 1. favourites 2. custom list, sort by older to newer creation date | eclipse 1. to retrieve available fav & custom lists for local 2. to retrieve recipient count per fav list for local",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Invalid input violating rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Boundary value around rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_10_MANAGE_FAVOURITE_LIST_DASHBOARD_TC_007",
+    "featureName": "FUNCTION 10: MANAGE FAVOURITE LIST - DASHBOARD",
+    "requirement": "5 | Recipient Count per Group | N/A | Numeric | Display | Integration | Populated based on number of recipients in each favourite list. | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local",
+    "objective": "Verify 5 | recipient count per group | n/a | numeric | display | integration | populated based on number of recipients in each favourite list. | eclipse 1. to retrieve available fav & custom lists for local 2. to retrieve recipient count per fav list for local",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 5 | Recipient Count per Group | N/A | Numeric | Display | Integration | Populated based on number of recipients in each favourite list. | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 5 | Recipient Count per Group | N/A | Numeric | Display | Integration | Populated based on number of recipients in each favourite list. | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Invalid input violating rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Boundary value around rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_10_MANAGE_FAVOURITE_LIST_DASHBOARD_TC_009",
+    "featureName": "FUNCTION 10: MANAGE FAVOURITE LIST - DASHBOARD",
+    "requirement": "No. | Action | Description | Integration | Remarks",
+    "objective": "Verify no. | action | description | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Action | Description | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Action | Description | Integration | Remarks",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Invalid input violating rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Boundary value around rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_10_MANAGE_FAVOURITE_LIST_DASHBOARD_TC_010",
+    "featureName": "FUNCTION 10: MANAGE FAVOURITE LIST - DASHBOARD",
+    "requirement": "1 | [<] icon | Navigate back to Transfer Landing Page.",
+    "objective": "Verify 1 | [<] icon | navigate back to transfer landing page.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | [<] icon | Navigate back to Transfer Landing Page.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | [<] icon | Navigate back to Transfer Landing Page.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Invalid input violating rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Boundary value around rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_10_MANAGE_FAVOURITE_LIST_DASHBOARD_TC_012",
+    "featureName": "FUNCTION 10: MANAGE FAVOURITE LIST - DASHBOARD",
+    "requirement": "3 | Favourite List | Navigate to Favourite List Detail screen.",
+    "objective": "Verify 3 | favourite list | navigate to favourite list detail screen.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 3 | Favourite List | Navigate to Favourite List Detail screen.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 3 | Favourite List | Navigate to Favourite List Detail screen.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Invalid input violating rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Boundary value around rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_10_MANAGE_FAVOURITE_LIST_DASHBOARD_TC_013",
+    "featureName": "FUNCTION 10: MANAGE FAVOURITE LIST - DASHBOARD",
+    "requirement": "4 | (+) Create New List | Navigate to Create New List screen.",
+    "objective": "Verify 4 | (+) create new list | navigate to create new list screen.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 4 | (+) Create New List | Navigate to Create New List screen.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 4 | (+) Create New List | Navigate to Create New List screen.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Invalid input violating rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Boundary value around rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_10_MANAGE_FAVOURITE_LIST_DASHBOARD_TC_014",
+    "featureName": "FUNCTION 10: MANAGE FAVOURITE LIST - DASHBOARD",
+    "requirement": "No. | Description | Integration | Remarks",
+    "objective": "Verify no. | description | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remarks",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Invalid input violating rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Boundary value around rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_10_MANAGE_FAVOURITE_LIST_DASHBOARD_TC_015",
+    "featureName": "FUNCTION 10: MANAGE FAVOURITE LIST - DASHBOARD",
+    "requirement": "1 | IF the number of tab List is less than 8, (+) Create New List button will be available. Otherwise, button is disabled.",
+    "objective": "Verify 1 | if the number of tab list is less than 8, (+) create new list button will be available. otherwise, button is disabled.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | IF the number of tab List is less than 8, (+) Create New List button will be available. Otherwise, button is disabled.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | IF the number of tab List is less than 8, (+) Create New List button will be available. Otherwise, button is disabled.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Invalid input violating rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Manage lists Title | N/A | Alphanumeric | Display | Integration | Display \"Manage lists\" | CMS: - retrieve \"Manage lists\" title",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | DIsplay manage favourite list description | CMS: 1. To retrieve Manage lists description",
+      "Boundary value around rule: 3 | Local/Overseas Tab | N/A | Alphanumeric | Tab | Integration | Default: Local. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Favourite Group List | N/A | Alphanumeric | Button | Integration | Display in below order: 1. Favourites 2. Custom list, sort by older to newer creation date | ECLIPSE 1. To retrieve available Fav & Custom lists for local 2. To retrieve recipient count per Fav list for local"
+    ]
+  }
+]

@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:18.267Z",
+  "bundle": {
+    "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+    "testCases": [
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_001",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "JIRA ID | ND-177",
+        "objective": "Verify jira id | nd-177",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: JIRA ID | ND-177",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: JIRA ID | ND-177",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_002",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+        "objective": "Verify ust no. | consolidated backlog | tab transfer |row 43",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_003",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "EPIC | Manage favourites List",
+        "objective": "Verify epic | manage favourites list",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: EPIC | Manage favourites List",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: EPIC | Manage favourites List",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_004",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "Title | Manage favourites List - Final screen",
+        "objective": "Verify title | manage favourites list - final screen",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Title | Manage favourites List - Final screen",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Title | Manage favourites List - Final screen",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_005",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "Add New favourites Final Screen (successful) - via acc number & via past transfer | Edit favourites nickname Final Screen (successful) - via past transfer | Add New favourites Final Screen (Failed) | Edit favourites nickname Final Screen (Failed)",
+        "objective": "Verify add new favourites final screen (successful) - via acc number & via past transfer | edit favourites nickname final screen (successful) - via past transfer | add new favourites final screen (failed) | edit favourites nickname final screen (failed)",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Add New favourites Final Screen (successful) - via acc number & via past transfer | Edit favourites nickname Final Screen (successful) - via past transfer | Add New favourites Final Screen (Failed) | Edit favourites nickname Final Screen (Failed)",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Add New favourites Final Screen (successful) - via acc number & via past transfer | Edit favourites nickname Final Screen (successful) - via past transfer | Add New favourites Final Screen (Failed) | Edit favourites nickname Final Screen (Failed)",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_006",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "1 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as favourites 2. Update successful 3. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+        "objective": "Verify 1 | status image & status | n/a | image | display | integration | available status: 1. added as favourites 2. update successful 3. update unsuccessful | cms: 1. retrieve image & stautus message for: - successful - unsuccessful",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as favourites 2. Update successful 3. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as favourites 2. Update successful 3. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+        "priority": "P2",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_007",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "2 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time.",
+        "objective": "Verify 2 | date & timestamp | n/a | alphanumeric | display | local server | display date and time.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_008",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "3 | Ref ID | N/A | Alphanumeric | Display | Local Server | Display generated Reference ID.",
+        "objective": "Verify 3 | ref id | n/a | alphanumeric | display | local server | display generated reference id.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 3 | Ref ID | N/A | Alphanumeric | Display | Local Server | Display generated Reference ID.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 3 | Ref ID | N/A | Alphanumeric | Display | Local Server | Display generated Reference ID.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_009",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "4 | Info Banner | N/A | Alphanumeric | Display | Integration | Blue box information is only applicable for: 1. Successful Add to Favourite via Account Number. It is not applicable for: 1. Successful “Add to Favourite” via Past Transfer. 2. Unsuccessful “Add to Favourite” attempts. | CMS 1. Retrieve blue box information notes.",
+        "objective": "Verify 4 | info banner | n/a | alphanumeric | display | integration | blue box information is only applicable for: 1. successful add to favourite via account number. it is not applicable for: 1. successful “add to favourite” via past transfer. 2. unsuccessful “add to favourite” attempts. | cms 1. retrieve blue box information notes.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 4 | Info Banner | N/A | Alphanumeric | Display | Integration | Blue box information is only applicable for: 1. Successful Add to Favourite via Account Number. It is not applicable for: 1. Successful “Add to Favourite” via Past Transfer. 2. Unsuccessful “Add to Favourite” attempts. | CMS 1. Retrieve blue box information notes.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 4 | Info Banner | N/A | Alphanumeric | Display | Integration | Blue box information is only applicable for: 1. Successful Add to Favourite via Account Number. It is not applicable for: 1. Successful “Add to Favourite” via Past Transfer. 2. Unsuccessful “Add to Favourite” attempts. | CMS 1. Retrieve blue box information notes.",
+        "priority": "P2",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_010",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "Successful",
+        "objective": "Verify successful",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Successful",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Successful",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_011",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "5 | Account Holder Name | N/A | Alphanumeric | Display | Local Server | Populate from Select Recipient page.",
+        "objective": "Verify 5 | account holder name | n/a | alphanumeric | display | local server | populate from select recipient page.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 5 | Account Holder Name | N/A | Alphanumeric | Display | Local Server | Populate from Select Recipient page.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 5 | Account Holder Name | N/A | Alphanumeric | Display | Local Server | Populate from Select Recipient page.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_012",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "6 | Account Number | N/A | Alphanumeric | Display | Local Server | Populate from Select Recipient page.",
+        "objective": "Verify 6 | account number | n/a | alphanumeric | display | local server | populate from select recipient page.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 6 | Account Number | N/A | Alphanumeric | Display | Local Server | Populate from Select Recipient page.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 6 | Account Number | N/A | Alphanumeric | Display | Local Server | Populate from Select Recipient page.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_013",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "7 | Recipient Bank | N/A | Alphanumeric | Display | Local Server | Populate from Select Recipient page.",
+        "objective": "Verify 7 | recipient bank | n/a | alphanumeric | display | local server | populate from select recipient page.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 7 | Recipient Bank | N/A | Alphanumeric | Display | Local Server | Populate from Select Recipient page.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 7 | Recipient Bank | N/A | Alphanumeric | Display | Local Server | Populate from Select Recipient page.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_014",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "8 | Nickname | N/A | Alphanumeric | Display | Local Server | Populate from Select Recipient page.",
+        "objective": "Verify 8 | nickname | n/a | alphanumeric | display | local server | populate from select recipient page.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 8 | Nickname | N/A | Alphanumeric | Display | Local Server | Populate from Select Recipient page.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 8 | Nickname | N/A | Alphanumeric | Display | Local Server | Populate from Select Recipient page.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_015",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "Unsuccessful",
+        "objective": "Verify unsuccessful",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Unsuccessful",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Unsuccessful",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_016",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "9 | Transaction Type | N/A | Alphanumeric | Display | Local Server | Display Transaction Type \"Add favourites\"",
+        "objective": "Verify 9 | transaction type | n/a | alphanumeric | display | local server | display transaction type \"add favourites\"",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 9 | Transaction Type | N/A | Alphanumeric | Display | Local Server | Display Transaction Type \"Add favourites\"",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 9 | Transaction Type | N/A | Alphanumeric | Display | Local Server | Display Transaction Type \"Add favourites\"",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_017",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "Actions",
+        "objective": "Verify actions",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Actions",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Actions",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_018",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "No. | Action | Description | Integration | Remarks",
+        "objective": "Verify no. | action | description | integration | remarks",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Action | Description | Integration | Remarks",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Action | Description | Integration | Remarks",
+        "priority": "P2",
+        "layer": "Integration",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_019",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "1 | [Done] button | Upon tapping [Done] button, system to navigate back to Transfer Landing Page or Setting's Pay & Transfer favourites page (based on entry points). Refer to Manage Fav - Dashboard.",
+        "objective": "Verify 1 | [done] button | upon tapping [done] button, system to navigate back to transfer landing page or setting's pay & transfer favourites page (based on entry points). refer to manage fav - dashboard.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | [Done] button | Upon tapping [Done] button, system to navigate back to Transfer Landing Page or Setting's Pay & Transfer favourites page (based on entry points). Refer to Manage Fav - Dashboard.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | [Done] button | Upon tapping [Done] button, system to navigate back to Transfer Landing Page or Setting's Pay & Transfer favourites page (based on entry points). Refer to Manage Fav - Dashboard.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_020",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+        "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remarks",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_021",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "No. | Description | Integration | Remarks",
+        "objective": "Verify no. | description | integration | remarks",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Description | Integration | Remarks",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Description | Integration | Remarks",
+        "priority": "P2",
+        "layer": "Integration",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_43_MANAGE_FAVOURITES_LIST_FINAL_SCREEN_TC_022",
+        "featureName": "FUNCTION 43: MANAGE favourites LIST - FINAL SCREEN",
+        "requirement": "1 | Upon Confirm, below are the possible status: a. Added as favourites - successfully adding to favourites via account number OR past transfer. b. Update successful - successfully edit favourites nickname. c. Update unsuccessful - failed in adding a favourites or editing a favourites's nickname. For successful adding to favourites, beneficiary will be populated under Favourites list. | IAM: 1. S2U Auth status ECLIPSE: 1. Add favourites bene",
+        "objective": "Verify 1 | upon confirm, below are the possible status: a. added as favourites - successfully adding to favourites via account number or past transfer. b. update successful - successfully edit favourites nickname. c. update unsuccessful - failed in adding a favourites or editing a favourites's nickname. for successful adding to favourites, beneficiary will be populated under favourites list. | iam: 1. s2u auth status eclipse: 1. add favourites bene",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "JIRA ID | ND-177",
+          "UST No. | Consolidated Backlog | Tab TRANSFER |Row 43",
+          "EPIC | Manage favourites List",
+          "Title | Manage favourites List - Final screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | Upon Confirm, below are the possible status: a. Added as favourites - successfully adding to favourites via account number OR past transfer. b. Update successful - successfully edit favourites nickname. c. Update unsuccessful - failed in adding a favourites or editing a favourites's nickname. For successful adding to favourites, beneficiary will be populated under Favourites list. | IAM: 1. S2U Auth status ECLIPSE: 1. Add favourites bene",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | Upon Confirm, below are the possible status: a. Added as favourites - successfully adding to favourites via account number OR past transfer. b. Update successful - successfully edit favourites nickname. c. Update unsuccessful - failed in adding a favourites or editing a favourites's nickname. For successful adding to favourites, beneficiary will be populated under Favourites list. | IAM: 1. S2U Auth status ECLIPSE: 1. Add favourites bene",
+        "priority": "P1",
+        "layer": "Security",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      }
+    ]
+  }
+}

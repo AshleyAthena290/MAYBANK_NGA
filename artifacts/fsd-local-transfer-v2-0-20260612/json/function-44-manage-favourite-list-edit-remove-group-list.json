@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.558Z",
+  "featureId": "function-44-manage-favourite-list-edit-remove-group-list",
+  "featureName": "FUNCTION 44: MANAGE FAVOURITE LIST - EDIT / REMOVE GROUP LIST",
+  "sourceType": "FSD",
+  "content": {
+    "featureName": "FUNCTION 44: MANAGE FAVOURITE LIST - EDIT / REMOVE GROUP LIST",
+    "description": "",
+    "flow": [],
+    "uiElements": [
+      "Manage Favourites - From Settings (Remove from Favourites list)",
+      "Manage Custom List - From Settings (Edit List name)",
+      "Manage Custom List - From Settings (Remove recipient from List) | Manage Custom List - From Settings (Remove List)",
+      "Error handling"
+    ],
+    "validationRules": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "5 | Recipient Nickname | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "6 | Recipient Account Number | N/A | Numeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "7 | Recipient Bank Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "businessRules": [
+      "No. | Description | Integration | Remarks",
+      "1 | For deletion of recipient, upon S2U authorisation, navigate to Status end screen: a. Recipient removed successfully - navigate to Recipient Removed screen. b. Update unsuccessful - navigate to Update Unsuccessful screen, no change. | IAM: 1. S2U Auth & status ECLIPSE: - Delete selected recipient from Fav list"
+    ],
+    "apis": [],
+    "dependencies": [],
+    "errorMessages": [
+      "Error handling"
+    ],
+    "navigation": [],
+    "remarks": []
+  },
+  "chunks": [
+    {
+      "section": "uiElements",
+      "content": "Manage Favourites - From Settings (Remove from Favourites list)\nManage Custom List - From Settings (Edit List name)\nManage Custom List - From Settings (Remove recipient from List) | Manage Custom List - From Settings (Remove List)\nError handling",
+      "tokensHint": 47
+    },
+    {
+      "section": "validationRules",
+      "content": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks\n1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.\n2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group\n3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group\n4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group\n5 | Recipient Nickname | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group\n6 | Recipient Account Number | N/A | Numeric | Display | Integration | Refer to Tab Manage Fav - Detail group\n7 | Recipient Bank Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "tokensHint": 208
+    },
+    {
+      "section": "businessRules",
+      "content": "No. | Description | Integration | Remarks\n1 | For deletion of recipient, upon S2U authorisation, navigate to Status end screen: a. Recipient removed successfully - navigate to Recipient Removed screen. b. Update unsuccessful - navigate to Update Unsuccessful screen, no change. | IAM: 1. S2U Auth & status ECLIPSE: - Delete selected recipient from Fav list",
+      "tokensHint": 69
+    },
+    {
+      "section": "errorMessages",
+      "content": "Error handling",
+      "tokensHint": 3
+    }
+  ],
+  "retrievalHints": {
+    "keywords": [
+      "function",
+      "manage",
+      "favourite",
+      "list",
+      "edit",
+      "remove",
+      "group",
+      "favourites",
+      "from",
+      "settings",
+      "custom",
+      "name",
+      "recipient",
+      "error",
+      "handling",
+      "field",
+      "mandatory",
+      "data",
+      "type",
+      "format",
+      "source",
+      "validation",
+      "integration",
+      "remarks",
+      "title",
+      "header",
+      "alphanumeric",
+      "display",
+      "for",
+      "user",
+      "defined",
+      "description",
+      "refer",
+      "tab",
+      "fav",
+      "detail",
+      "nickname",
+      "account",
+      "number",
+      "numeric",
+      "bank",
+      "deletion",
+      "upon",
+      "s2u",
+      "authorisation",
+      "navigate",
+      "status",
+      "end",
+      "screen",
+      "removed",
+      "successfully",
+      "update",
+      "unsuccessful",
+      "change",
+      "iam",
+      "auth",
+      "eclipse",
+      "delete",
+      "selected"
+    ],
+    "hasApis": false,
+    "hasValidations": true,
+    "hasBusinessRules": true
+  }
+}

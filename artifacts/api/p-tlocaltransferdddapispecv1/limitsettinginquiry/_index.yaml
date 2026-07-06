@@ -1,0 +1,64 @@
+# Test Case Index
+# p-tlocaltransferdddapispecv1 - LimitSettingInquiry
+# Generated: 2026-07-02T13:25:01.933Z
+---
+feature: p-tlocaltransferdddapispecv1
+apiName: LimitSettingInquiry
+description: Test cases for LimitSettingInquiry endpoint
+totalScenarios: 7
+scenarios:
+  - id: LimitSettingInquiry-001-positive
+    title: GET /settings?productCodes=productCodes - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - limitsettinginquiry
+    priority: P1
+  - id: LimitSettingInquiry-002-missing-auth
+    title: GET /settings?productCodes=productCodes - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: LimitSettingInquiry-003-invalid-auth
+    title: GET /settings?productCodes=productCodes - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: LimitSettingInquiry-004-invalid-content-type
+    title: GET /settings?productCodes=productCodes - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: LimitSettingInquiry-005-duplicate-correlation-id
+    title: GET /settings?productCodes=productCodes - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: LimitSettingInquiry-006-request-timeout
+    title: GET /settings?productCodes=productCodes - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: LimitSettingInquiry-007-empty-request-body
+    title: GET /settings?productCodes=productCodes - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-02T13:25:01.928Z'

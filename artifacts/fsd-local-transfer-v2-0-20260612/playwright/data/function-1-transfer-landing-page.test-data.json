@@ -1,0 +1,863 @@
+[
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_002",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "Transfer Landing Page | Transfer Landing Page - Empty State",
+    "objective": "Verify transfer landing page | transfer landing page - empty state",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Transfer Landing Page | Transfer Landing Page - Empty State",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Transfer Landing Page | Transfer Landing Page - Empty State",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_003",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "Transfer Landing Page Permutation - Special Case | Transfer Landing Page - Directional Sticky Header & Scrolling Behaviour | Transfer Landing Page - Search Beneficiary",
+    "objective": "Verify transfer landing page permutation - special case | transfer landing page - directional sticky header & scrolling behaviour | transfer landing page - search beneficiary",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Transfer Landing Page Permutation - Special Case | Transfer Landing Page - Directional Sticky Header & Scrolling Behaviour | Transfer Landing Page - Search Beneficiary",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Transfer Landing Page Permutation - Special Case | Transfer Landing Page - Directional Sticky Header & Scrolling Behaviour | Transfer Landing Page - Search Beneficiary",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_004",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "Long/Hold Press Beneficiary | Tap Bene […] icon | Tap [+ Transfer] button for Interbank & Intrabank (Refer to Trf - Input Acct No.)",
+    "objective": "Verify long/hold press beneficiary | tap bene […] icon | tap [+ transfer] button for interbank & intrabank (refer to trf - input acct no.)",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Long/Hold Press Beneficiary | Tap Bene […] icon | Tap [+ Transfer] button for Interbank & Intrabank (Refer to Trf - Input Acct No.)",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Long/Hold Press Beneficiary | Tap Bene […] icon | Tap [+ Transfer] button for Interbank & Intrabank (Refer to Trf - Input Acct No.)",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_005",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "Tap Beneficiary from list (Refer to Trf - Input Amt) | Own Trf - IF selected Source Account is the Transfer To account | Own Trf - IF selected Transfer To account is the same as primary account/source account | Tap Beneficiary from list - If Bene only has Nickname, also populate Bene Name with Nickname",
+    "objective": "Verify tap beneficiary from list (refer to trf - input amt) | own trf - if selected source account is the transfer to account | own trf - if selected transfer to account is the same as primary account/source account | tap beneficiary from list - if bene only has nickname, also populate bene name with nickname",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Tap Beneficiary from list (Refer to Trf - Input Amt) | Own Trf - IF selected Source Account is the Transfer To account | Own Trf - IF selected Transfer To account is the same as primary account/source account | Tap Beneficiary from list - If Bene only has Nickname, also populate Bene Name with Nickname",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Tap Beneficiary from list (Refer to Trf - Input Amt) | Own Trf - IF selected Source Account is the Transfer To account | Own Trf - IF selected Transfer To account is the same as primary account/source account | Tap Beneficiary from list - If Bene only has Nickname, also populate Bene Name with Nickname",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_006",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_007",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+    "objective": "Verify 1 | title header | n/a | alphanumeric | display | integration | 1. display \"transfer\". | cms: 1. retrieve label \"transfer\".",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_008",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+    "objective": "Verify 2 | three-dots menu icon | n/a | alphanumeric | icon | integration | 1. display 3 dots menu - more actions drawer. a. manage scheduled transfers b. manage limits c. manage favourite list | cms: 1. retrieve 3 dots menu icon 2. retrieve more actions menu items: - icon - title - info",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_010",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules",
+    "objective": "Verify 4 | search bar | n | alphanumeric | textbox x(100) | input | 1. support predictive wildcard search with minimum 2 characters. system to perform search in any of the field below: a. beneficiary account name b. beneficairy nickname c. beneficiary account number d. beneficiary bank name 2. search results will be cleared upon user changes from local to oversea tab, vice versa. | refer to business rules",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_011",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "5 | Beneficiary Category Tabs | N/A | Alphanumeric | Button | Integration | 1. Values: a. All b. Frequent (Default), default regardless if has record. c. Favourites d. Own e. Custom List (Max 4 Custom Lists), only display if defined. Display based on creation sequence. 2. All, Frequent, Favourties & Own tabs are fixed and cannot be edited or removed. 3. Only Custom tabs can be added, edited or removed. Note: Requirement is total up to 8 Tabs are allowed. Hence for Local Transfer, since existing there are 4 tabs, hence custom list allowed is max 4. Whereas for Transfer Overseas, existing Tab are 3 (All, Freq & Fav), so up to 5 custom list are allowed. | Refer to Business Rules",
+    "objective": "Verify 5 | beneficiary category tabs | n/a | alphanumeric | button | integration | 1. values: a. all b. frequent (default), default regardless if has record. c. favourites d. own e. custom list (max 4 custom lists), only display if defined. display based on creation sequence. 2. all, frequent, favourties & own tabs are fixed and cannot be edited or removed. 3. only custom tabs can be added, edited or removed. note: requirement is total up to 8 tabs are allowed. hence for local transfer, since existing there are 4 tabs, hence custom list allowed is max 4. whereas for transfer overseas, existing tab are 3 (all, freq & fav), so up to 5 custom list are allowed. | refer to business rules",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 5 | Beneficiary Category Tabs | N/A | Alphanumeric | Button | Integration | 1. Values: a. All b. Frequent (Default), default regardless if has record. c. Favourites d. Own e. Custom List (Max 4 Custom Lists), only display if defined. Display based on creation sequence. 2. All, Frequent, Favourties & Own tabs are fixed and cannot be edited or removed. 3. Only Custom tabs can be added, edited or removed. Note: Requirement is total up to 8 Tabs are allowed. Hence for Local Transfer, since existing there are 4 tabs, hence custom list allowed is max 4. Whereas for Transfer Overseas, existing Tab are 3 (All, Freq & Fav), so up to 5 custom list are allowed. | Refer to Business Rules",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 5 | Beneficiary Category Tabs | N/A | Alphanumeric | Button | Integration | 1. Values: a. All b. Frequent (Default), default regardless if has record. c. Favourites d. Own e. Custom List (Max 4 Custom Lists), only display if defined. Display based on creation sequence. 2. All, Frequent, Favourties & Own tabs are fixed and cannot be edited or removed. 3. Only Custom tabs can be added, edited or removed. Note: Requirement is total up to 8 Tabs are allowed. Hence for Local Transfer, since existing there are 4 tabs, hence custom list allowed is max 4. Whereas for Transfer Overseas, existing Tab are 3 (All, Freq & Fav), so up to 5 custom list are allowed. | Refer to Business Rules",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_012",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "6 | Beneficiary Category Tabs [+] button | N/A | Alphanumeric | Button | Local Server | 1. Displays the [+] IF numbers of total List < 8 2. Hide the [+] IF numbers of total List = 8",
+    "objective": "Verify 6 | beneficiary category tabs [+] button | n/a | alphanumeric | button | local server | 1. displays the [+] if numbers of total list < 8 2. hide the [+] if numbers of total list = 8",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 6 | Beneficiary Category Tabs [+] button | N/A | Alphanumeric | Button | Local Server | 1. Displays the [+] IF numbers of total List < 8 2. Hide the [+] IF numbers of total List = 8",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 6 | Beneficiary Category Tabs [+] button | N/A | Alphanumeric | Button | Local Server | 1. Displays the [+] IF numbers of total List < 8 2. Hide the [+] IF numbers of total List = 8",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_013",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "7 | Info Banner | N/A | Alphanumeric | Display | Integration | 1. If the Beneficiary Category has record listing, display information of each category tab. Otherwise, not required to display. 2. Not applicable for Custom tabs. | CMS: 1. Retrieve Info Banner a. All b. Frequent c. Own d. Favourite",
+    "objective": "Verify 7 | info banner | n/a | alphanumeric | display | integration | 1. if the beneficiary category has record listing, display information of each category tab. otherwise, not required to display. 2. not applicable for custom tabs. | cms: 1. retrieve info banner a. all b. frequent c. own d. favourite",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 7 | Info Banner | N/A | Alphanumeric | Display | Integration | 1. If the Beneficiary Category has record listing, display information of each category tab. Otherwise, not required to display. 2. Not applicable for Custom tabs. | CMS: 1. Retrieve Info Banner a. All b. Frequent c. Own d. Favourite",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 7 | Info Banner | N/A | Alphanumeric | Display | Integration | 1. If the Beneficiary Category has record listing, display information of each category tab. Otherwise, not required to display. 2. Not applicable for Custom tabs. | CMS: 1. Retrieve Info Banner a. All b. Frequent c. Own d. Favourite",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_014",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "No. | Description | Integration | Remarks",
+    "objective": "Verify no. | description | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remarks",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_016",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "2 | Overseas Transfer 1. Upon selecting the OVERSEAS transfer, system to display and perform all overseas transfer: a. Fast Remittance b. SWIFT This will be covered in Oversea Transfer FSD.",
+    "objective": "Verify 2 | overseas transfer 1. upon selecting the overseas transfer, system to display and perform all overseas transfer: a. fast remittance b. swift this will be covered in oversea transfer fsd.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | Overseas Transfer 1. Upon selecting the OVERSEAS transfer, system to display and perform all overseas transfer: a. Fast Remittance b. SWIFT This will be covered in Oversea Transfer FSD.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | Overseas Transfer 1. Upon selecting the OVERSEAS transfer, system to display and perform all overseas transfer: a. Fast Remittance b. SWIFT This will be covered in Oversea Transfer FSD.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_017",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "3 | Display criteria for Frequent list are: Upon page load, default beneficiary lists will be set at Frequent tab. a. Beneficiaries of which the transactions are successful for at least 2 times (parameterized in system config per country) in the past 90 days (in Digital Transaction - performed via NGA & RMBP & M2U Web), for all transfer mode EXCEPT \"Transfer to Own\". b. Beneficiaries will be sorted in below order: - most to least transaction frequency, - if same frequency, it will be display in no particular order. c. Maximum number of beneficiaries to display is 10. d. User is able to remove a beneficiary from the list. Details of beneficiary removal will be explained in respective section. e. IF list is empty, system to display \"No frequent transfers yet\" with information (refer to screen). NGBO: 1 parameter by Country & Transfer (Local & Overseas) = Frequent successful transaction count (2 times). | ECLIPSE: 1. Retrieve Frequent Beneficiary list with criteria & sorting order specified. CMS: - EMPTY image, message & info. NGBO (P&T): - Retrieve \"display duration\" for Frequent (90 days) - parameter by Country & Transfer (Local & Overseas) = Frequent successful transaction count (2 times).",
+    "objective": "Verify 3 | display criteria for frequent list are: upon page load, default beneficiary lists will be set at frequent tab. a. beneficiaries of which the transactions are successful for at least 2 times (parameterized in system config per country) in the past 90 days (in digital transaction - performed via nga & rmbp & m2u web), for all transfer mode except \"transfer to own\". b. beneficiaries will be sorted in below order: - most to least transaction frequency, - if same frequency, it will be display in no particular order. c. maximum number of beneficiaries to display is 10. d. user is able to remove a beneficiary from the list. details of beneficiary removal will be explained in respective section. e. if list is empty, system to display \"no frequent transfers yet\" with information (refer to screen). ngbo: 1 parameter by country & transfer (local & overseas) = frequent successful transaction count (2 times). | eclipse: 1. retrieve frequent beneficiary list with criteria & sorting order specified. cms: - empty image, message & info. ngbo (p&t): - retrieve \"display duration\" for frequent (90 days) - parameter by country & transfer (local & overseas) = frequent successful transaction count (2 times).",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 3 | Display criteria for Frequent list are: Upon page load, default beneficiary lists will be set at Frequent tab. a. Beneficiaries of which the transactions are successful for at least 2 times (parameterized in system config per country) in the past 90 days (in Digital Transaction - performed via NGA & RMBP & M2U Web), for all transfer mode EXCEPT \"Transfer to Own\". b. Beneficiaries will be sorted in below order: - most to least transaction frequency, - if same frequency, it will be display in no particular order. c. Maximum number of beneficiaries to display is 10. d. User is able to remove a beneficiary from the list. Details of beneficiary removal will be explained in respective section. e. IF list is empty, system to display \"No frequent transfers yet\" with information (refer to screen). NGBO: 1 parameter by Country & Transfer (Local & Overseas) = Frequent successful transaction count (2 times). | ECLIPSE: 1. Retrieve Frequent Beneficiary list with criteria & sorting order specified. CMS: - EMPTY image, message & info. NGBO (P&T): - Retrieve \"display duration\" for Frequent (90 days) - parameter by Country & Transfer (Local & Overseas) = Frequent successful transaction count (2 times).",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 3 | Display criteria for Frequent list are: Upon page load, default beneficiary lists will be set at Frequent tab. a. Beneficiaries of which the transactions are successful for at least 2 times (parameterized in system config per country) in the past 90 days (in Digital Transaction - performed via NGA & RMBP & M2U Web), for all transfer mode EXCEPT \"Transfer to Own\". b. Beneficiaries will be sorted in below order: - most to least transaction frequency, - if same frequency, it will be display in no particular order. c. Maximum number of beneficiaries to display is 10. d. User is able to remove a beneficiary from the list. Details of beneficiary removal will be explained in respective section. e. IF list is empty, system to display \"No frequent transfers yet\" with information (refer to screen). NGBO: 1 parameter by Country & Transfer (Local & Overseas) = Frequent successful transaction count (2 times). | ECLIPSE: 1. Retrieve Frequent Beneficiary list with criteria & sorting order specified. CMS: - EMPTY image, message & info. NGBO (P&T): - Retrieve \"display duration\" for Frequent (90 days) - parameter by Country & Transfer (Local & Overseas) = Frequent successful transaction count (2 times).",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_018",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "4 | Display criteria for ALL list are: a. Beneficiaries consist combination of: - Successful transactions within the past 90 days via RMBP & M2U Web (applicable for user migrated to NGA). Past 90 days is from the day user onboard to NGA. - All successful transaction in NGA to date. - Virtual Accounts (display for recurring VA only, check isClosedPayment flag to identify if is one off VA or recurring). - EXCLUDE \"Transfer to Own\". - Duplication of beneficiary (unique key as per Biz Rule #8) will be displayed as single entry. (e.g. In the event beneficiary A is already in the bene list, and user initiates a new open transfer to beneficiary A (key in bank name + account number and retrieve same exact name as beneficiary A post-inquiry). Upon successful transaction, the new record will not be added to the bene list as there is already an existing record). b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order: (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in ascending order) (ii) Entity name (iii) Account number c. There is no maximum limit in ALL list. d. Lazy load is applicable. e. User will be able to remove a beneficiary from ALL list. Details of beneficiary removal will be explained in respective section. f. IF list is empty, system to display \"No transfers yet\" with information (refer to screen Dashboard - Empty State). | ECLIPSE: 1. Retrieve ALL Beneficiary list with criteria & sorting order specified, and pagination. 2. For Maybank Bene, if VA, retrieve isClosedpayment flag to check if is single use. CMS: - EMPTY image, message & info.",
+    "objective": "Verify 4 | display criteria for all list are: a. beneficiaries consist combination of: - successful transactions within the past 90 days via rmbp & m2u web (applicable for user migrated to nga). past 90 days is from the day user onboard to nga. - all successful transaction in nga to date. - virtual accounts (display for recurring va only, check isclosedpayment flag to identify if is one off va or recurring). - exclude \"transfer to own\". - duplication of beneficiary (unique key as per biz rule #8) will be displayed as single entry. (e.g. in the event beneficiary a is already in the bene list, and user initiates a new open transfer to beneficiary a (key in bank name + account number and retrieve same exact name as beneficiary a post-inquiry). upon successful transaction, the new record will not be added to the bene list as there is already an existing record). b. beneficiaries will be sorted in ascending order (a-z, 0-9) in the below order: (i) beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in ascending order) (ii) entity name (iii) account number c. there is no maximum limit in all list. d. lazy load is applicable. e. user will be able to remove a beneficiary from all list. details of beneficiary removal will be explained in respective section. f. if list is empty, system to display \"no transfers yet\" with information (refer to screen dashboard - empty state). | eclipse: 1. retrieve all beneficiary list with criteria & sorting order specified, and pagination. 2. for maybank bene, if va, retrieve isclosedpayment flag to check if is single use. cms: - empty image, message & info.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 4 | Display criteria for ALL list are: a. Beneficiaries consist combination of: - Successful transactions within the past 90 days via RMBP & M2U Web (applicable for user migrated to NGA). Past 90 days is from the day user onboard to NGA. - All successful transaction in NGA to date. - Virtual Accounts (display for recurring VA only, check isClosedPayment flag to identify if is one off VA or recurring). - EXCLUDE \"Transfer to Own\". - Duplication of beneficiary (unique key as per Biz Rule #8) will be displayed as single entry. (e.g. In the event beneficiary A is already in the bene list, and user initiates a new open transfer to beneficiary A (key in bank name + account number and retrieve same exact name as beneficiary A post-inquiry). Upon successful transaction, the new record will not be added to the bene list as there is already an existing record). b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order: (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in ascending order) (ii) Entity name (iii) Account number c. There is no maximum limit in ALL list. d. Lazy load is applicable. e. User will be able to remove a beneficiary from ALL list. Details of beneficiary removal will be explained in respective section. f. IF list is empty, system to display \"No transfers yet\" with information (refer to screen Dashboard - Empty State). | ECLIPSE: 1. Retrieve ALL Beneficiary list with criteria & sorting order specified, and pagination. 2. For Maybank Bene, if VA, retrieve isClosedpayment flag to check if is single use. CMS: - EMPTY image, message & info.",
+      "Validate expected behavior using api assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 4 | Display criteria for ALL list are: a. Beneficiaries consist combination of: - Successful transactions within the past 90 days via RMBP & M2U Web (applicable for user migrated to NGA). Past 90 days is from the day user onboard to NGA. - All successful transaction in NGA to date. - Virtual Accounts (display for recurring VA only, check isClosedPayment flag to identify if is one off VA or recurring). - EXCLUDE \"Transfer to Own\". - Duplication of beneficiary (unique key as per Biz Rule #8) will be displayed as single entry. (e.g. In the event beneficiary A is already in the bene list, and user initiates a new open transfer to beneficiary A (key in bank name + account number and retrieve same exact name as beneficiary A post-inquiry). Upon successful transaction, the new record will not be added to the bene list as there is already an existing record). b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order: (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in ascending order) (ii) Entity name (iii) Account number c. There is no maximum limit in ALL list. d. Lazy load is applicable. e. User will be able to remove a beneficiary from ALL list. Details of beneficiary removal will be explained in respective section. f. IF list is empty, system to display \"No transfers yet\" with information (refer to screen Dashboard - Empty State). | ECLIPSE: 1. Retrieve ALL Beneficiary list with criteria & sorting order specified, and pagination. 2. For Maybank Bene, if VA, retrieve isClosedpayment flag to check if is single use. CMS: - EMPTY image, message & info.",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "api",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_019",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "5 | Display criteria for Favourites are: a. Beneficiaries of which are saved by user including the migrated favourites from RMBP & M2U. - Due to RMBP favourites are maintained per transaction rail, during migration, Unique Key for migration would be Bene Bank, Bene Account No & Bene Name hence migrated list should hv 1 entry based on the Unique Key. the migrated list is allowed to contain multiple entries with the identical account number and bank name. In the event the migrated entries has SAME Nickname with SAME account number & bank name but use DIFFERENT transfer modes, the system is to append the transfer mode to the existing Nickname. Example: - RMBP: -- Nickname: Alfredo; Transfer Mode: BI-FAST. -- Nickname: Alfredo; Transfer Mode: SKN. Upon migration, NGA to display above as 2 separate line items in every bene list: -- Nickname: Alfredo BI-FAST -- Nickname: Alfredo SKN b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order: (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in ascending order) (ii) Entity name (iii) Account number c. There is no maximum limit in favourite beneficiaries. d. Lazy load is available. e. User will be able to remove a beneficiary from Favourite list. Details of beneficiary removal will be explained in respective section. f. IF list is empty, system to display \"No recipients yet\" with information (refer to screen Dashboard - Empty State). Info: Current M2U/RMBP has no max limit for favourites. | ECLIPSE: 1. Retrieve Fav Beneficiary list with criteria & sorting order specified, & pagination. CMS: - EMPTY image, message & info.",
+    "objective": "Verify 5 | display criteria for favourites are: a. beneficiaries of which are saved by user including the migrated favourites from rmbp & m2u. - due to rmbp favourites are maintained per transaction rail, during migration, unique key for migration would be bene bank, bene account no & bene name hence migrated list should hv 1 entry based on the unique key. the migrated list is allowed to contain multiple entries with the identical account number and bank name. in the event the migrated entries has same nickname with same account number & bank name but use different transfer modes, the system is to append the transfer mode to the existing nickname. example: - rmbp: -- nickname: alfredo; transfer mode: bi-fast. -- nickname: alfredo; transfer mode: skn. upon migration, nga to display above as 2 separate line items in every bene list: -- nickname: alfredo bi-fast -- nickname: alfredo skn b. beneficiaries will be sorted in ascending order (a-z, 0-9) in the below order: (i) beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in ascending order) (ii) entity name (iii) account number c. there is no maximum limit in favourite beneficiaries. d. lazy load is available. e. user will be able to remove a beneficiary from favourite list. details of beneficiary removal will be explained in respective section. f. if list is empty, system to display \"no recipients yet\" with information (refer to screen dashboard - empty state). info: current m2u/rmbp has no max limit for favourites. | eclipse: 1. retrieve fav beneficiary list with criteria & sorting order specified, & pagination. cms: - empty image, message & info.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 5 | Display criteria for Favourites are: a. Beneficiaries of which are saved by user including the migrated favourites from RMBP & M2U. - Due to RMBP favourites are maintained per transaction rail, during migration, Unique Key for migration would be Bene Bank, Bene Account No & Bene Name hence migrated list should hv 1 entry based on the Unique Key. the migrated list is allowed to contain multiple entries with the identical account number and bank name. In the event the migrated entries has SAME Nickname with SAME account number & bank name but use DIFFERENT transfer modes, the system is to append the transfer mode to the existing Nickname. Example: - RMBP: -- Nickname: Alfredo; Transfer Mode: BI-FAST. -- Nickname: Alfredo; Transfer Mode: SKN. Upon migration, NGA to display above as 2 separate line items in every bene list: -- Nickname: Alfredo BI-FAST -- Nickname: Alfredo SKN b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order: (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in ascending order) (ii) Entity name (iii) Account number c. There is no maximum limit in favourite beneficiaries. d. Lazy load is available. e. User will be able to remove a beneficiary from Favourite list. Details of beneficiary removal will be explained in respective section. f. IF list is empty, system to display \"No recipients yet\" with information (refer to screen Dashboard - Empty State). Info: Current M2U/RMBP has no max limit for favourites. | ECLIPSE: 1. Retrieve Fav Beneficiary list with criteria & sorting order specified, & pagination. CMS: - EMPTY image, message & info.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 5 | Display criteria for Favourites are: a. Beneficiaries of which are saved by user including the migrated favourites from RMBP & M2U. - Due to RMBP favourites are maintained per transaction rail, during migration, Unique Key for migration would be Bene Bank, Bene Account No & Bene Name hence migrated list should hv 1 entry based on the Unique Key. the migrated list is allowed to contain multiple entries with the identical account number and bank name. In the event the migrated entries has SAME Nickname with SAME account number & bank name but use DIFFERENT transfer modes, the system is to append the transfer mode to the existing Nickname. Example: - RMBP: -- Nickname: Alfredo; Transfer Mode: BI-FAST. -- Nickname: Alfredo; Transfer Mode: SKN. Upon migration, NGA to display above as 2 separate line items in every bene list: -- Nickname: Alfredo BI-FAST -- Nickname: Alfredo SKN b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order: (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in ascending order) (ii) Entity name (iii) Account number c. There is no maximum limit in favourite beneficiaries. d. Lazy load is available. e. User will be able to remove a beneficiary from Favourite list. Details of beneficiary removal will be explained in respective section. f. IF list is empty, system to display \"No recipients yet\" with information (refer to screen Dashboard - Empty State). Info: Current M2U/RMBP has no max limit for favourites. | ECLIPSE: 1. Retrieve Fav Beneficiary list with criteria & sorting order specified, & pagination. CMS: - EMPTY image, message & info.",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_020",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "6 | Display criteria for OWN are: a. Account list includes: - user's own list of Active accounts. - all currencies - accounts list covers Deposit Accounts (CASA, RDN, and Term Savings only). Product Category to be displayed will be based on NGBO config by country. b.Sorting of product categories: Accounts > Cards > TD > Financing > Wealth > Insurance (In ID will be Deposit only) Sorting of individual product within each product category: Product Name in ascending order (A-Z, 0-9) c. IF user has only one active account and since the primary/SoF will be the same account, user will not be able to perform transfer to own account. When user taps on the only listed account, display an toastbar message \"You cannot send money to the same account your're transferring from\" (Refer to screen). Note: - Long press is not available for Transfer to Own | ECLIPSE : 1. Retrieve Own Account list with criteria, ability to request by specifying Product Category (Deposit - CASA, RDN, Term Savings, VA; Cards; Financing; Wealth; Insurance). For ID, only Deposit is required. NGBO (P&T): 1. Transfer to Own - retrieve Product Category to be displayed (by country).",
+    "objective": "Verify 6 | display criteria for own are: a. account list includes: - user's own list of active accounts. - all currencies - accounts list covers deposit accounts (casa, rdn, and term savings only). product category to be displayed will be based on ngbo config by country. b.sorting of product categories: accounts > cards > td > financing > wealth > insurance (in id will be deposit only) sorting of individual product within each product category: product name in ascending order (a-z, 0-9) c. if user has only one active account and since the primary/sof will be the same account, user will not be able to perform transfer to own account. when user taps on the only listed account, display an toastbar message \"you cannot send money to the same account your're transferring from\" (refer to screen). note: - long press is not available for transfer to own | eclipse : 1. retrieve own account list with criteria, ability to request by specifying product category (deposit - casa, rdn, term savings, va; cards; financing; wealth; insurance). for id, only deposit is required. ngbo (p&t): 1. transfer to own - retrieve product category to be displayed (by country).",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 6 | Display criteria for OWN are: a. Account list includes: - user's own list of Active accounts. - all currencies - accounts list covers Deposit Accounts (CASA, RDN, and Term Savings only). Product Category to be displayed will be based on NGBO config by country. b.Sorting of product categories: Accounts > Cards > TD > Financing > Wealth > Insurance (In ID will be Deposit only) Sorting of individual product within each product category: Product Name in ascending order (A-Z, 0-9) c. IF user has only one active account and since the primary/SoF will be the same account, user will not be able to perform transfer to own account. When user taps on the only listed account, display an toastbar message \"You cannot send money to the same account your're transferring from\" (Refer to screen). Note: - Long press is not available for Transfer to Own | ECLIPSE : 1. Retrieve Own Account list with criteria, ability to request by specifying Product Category (Deposit - CASA, RDN, Term Savings, VA; Cards; Financing; Wealth; Insurance). For ID, only Deposit is required. NGBO (P&T): 1. Transfer to Own - retrieve Product Category to be displayed (by country).",
+      "Validate expected behavior using api assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 6 | Display criteria for OWN are: a. Account list includes: - user's own list of Active accounts. - all currencies - accounts list covers Deposit Accounts (CASA, RDN, and Term Savings only). Product Category to be displayed will be based on NGBO config by country. b.Sorting of product categories: Accounts > Cards > TD > Financing > Wealth > Insurance (In ID will be Deposit only) Sorting of individual product within each product category: Product Name in ascending order (A-Z, 0-9) c. IF user has only one active account and since the primary/SoF will be the same account, user will not be able to perform transfer to own account. When user taps on the only listed account, display an toastbar message \"You cannot send money to the same account your're transferring from\" (Refer to screen). Note: - Long press is not available for Transfer to Own | ECLIPSE : 1. Retrieve Own Account list with criteria, ability to request by specifying Product Category (Deposit - CASA, RDN, Term Savings, VA; Cards; Financing; Wealth; Insurance). For ID, only Deposit is required. NGBO (P&T): 1. Transfer to Own - retrieve Product Category to be displayed (by country).",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "api",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_021",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "7 | Display criteria for CUSTOM LIST are: a. Beneficiaries will be listed based on the added Favourite - Custom List. b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order: (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in ascending order) (ii) Entity name (iii) Account number c. There is no maximum limit in custom list. d. Lazy load is available. e. User will be able to remove a beneficiary from Custom list. Details of beneficiary removal will be explained in respective section. f. IF list is empty, system to display \"No recipients yet\" with information (refer to screen). | ECLIPSE: 1. Retrieve Fav Custom Beneficiary list with criteria & sorting order specified, with pagination. CMS: - EMPTY image, message & info.",
+    "objective": "Verify 7 | display criteria for custom list are: a. beneficiaries will be listed based on the added favourite - custom list. b. beneficiaries will be sorted in ascending order (a-z, 0-9) in the below order: (i) beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in ascending order) (ii) entity name (iii) account number c. there is no maximum limit in custom list. d. lazy load is available. e. user will be able to remove a beneficiary from custom list. details of beneficiary removal will be explained in respective section. f. if list is empty, system to display \"no recipients yet\" with information (refer to screen). | eclipse: 1. retrieve fav custom beneficiary list with criteria & sorting order specified, with pagination. cms: - empty image, message & info.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 7 | Display criteria for CUSTOM LIST are: a. Beneficiaries will be listed based on the added Favourite - Custom List. b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order: (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in ascending order) (ii) Entity name (iii) Account number c. There is no maximum limit in custom list. d. Lazy load is available. e. User will be able to remove a beneficiary from Custom list. Details of beneficiary removal will be explained in respective section. f. IF list is empty, system to display \"No recipients yet\" with information (refer to screen). | ECLIPSE: 1. Retrieve Fav Custom Beneficiary list with criteria & sorting order specified, with pagination. CMS: - EMPTY image, message & info.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 7 | Display criteria for CUSTOM LIST are: a. Beneficiaries will be listed based on the added Favourite - Custom List. b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order: (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in ascending order) (ii) Entity name (iii) Account number c. There is no maximum limit in custom list. d. Lazy load is available. e. User will be able to remove a beneficiary from Custom list. Details of beneficiary removal will be explained in respective section. f. IF list is empty, system to display \"No recipients yet\" with information (refer to screen). | ECLIPSE: 1. Retrieve Fav Custom Beneficiary list with criteria & sorting order specified, with pagination. CMS: - EMPTY image, message & info.",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_022",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "8 | Search Bar: 1. Upon tapping the Search bar textbox, system to display phone's keyboard for user to type in. 2. Wildcard search will be performed once the user has entered 2 characters. Searching of beneficiaries include fields below: a. Beneficiaries Account Name b. Beneficiaries Nickname c. Beneficiaries Account Number d. Beneficiaries Bank Name - Search to include alias/tags (to be maintained in NGBO - Bank List). E.g. user types \"\"Bank Central\"\" or \"\"BCA\"\", system will match and list Bank Central Asia. 2. Search will be performed on selected Local or Overseas tab. Searching includes all beneficiary categories (ALL, Frequent, Favourite, Own, Custom) regardless which beneficiary category tab the user is at. (search whole DB - not just what is displayed on screen). 3. For search result that matched, display list of Beneficiaries in ascending order (A-Z, 0-9) in the below order, without max records. Lazy load is available. - Beneficiary Name - Beneficiary Bank Name - Account Number 4. For search result that returns EMPTY: a. System to display \"We couldn't find a match for <input data>\" with information (refer to screen). b. IF contacts are synced with NGA, system to perform search on Contact's First Name & Last Name. Display Section \"Contacts\" and the list of contact name & phone number, with Avatar (Contact Name's Initial). c. IF contacts are not synced with NGA, or no contact is matched, system to NOT display \"Contacts\" section. 5. At the bottom of screen, display \"Make a new transfer instead?\" section, and display icon & Account Number. Tapping on Account Number will navigate to Input Account Number. Note: 1. Unique key for Beneficiary: Bank Name + Account Number + Beneficiary Registered Name. | ECLIPSE: 1. Retrieve list of Bene based on search criteria & sorting order specified, with pagination. Search for all beneficiary categories (ALL, Frequent, Favourite, Own, Custom). 2. Bene Bank name search to include bank alias/tag. Phone Contacts: 1. Contact's First Name & Last Name CMS: - EMPTY image, message & info. - Icon for Account Number",
+    "objective": "Verify 8 | search bar: 1. upon tapping the search bar textbox, system to display phone's keyboard for user to type in. 2. wildcard search will be performed once the user has entered 2 characters. searching of beneficiaries include fields below: a. beneficiaries account name b. beneficiaries nickname c. beneficiaries account number d. beneficiaries bank name - search to include alias/tags (to be maintained in ngbo - bank list). e.g. user types \"\"bank central\"\" or \"\"bca\"\", system will match and list bank central asia. 2. search will be performed on selected local or overseas tab. searching includes all beneficiary categories (all, frequent, favourite, own, custom) regardless which beneficiary category tab the user is at. (search whole db - not just what is displayed on screen). 3. for search result that matched, display list of beneficiaries in ascending order (a-z, 0-9) in the below order, without max records. lazy load is available. - beneficiary name - beneficiary bank name - account number 4. for search result that returns empty: a. system to display \"we couldn't find a match for <input data>\" with information (refer to screen). b. if contacts are synced with nga, system to perform search on contact's first name & last name. display section \"contacts\" and the list of contact name & phone number, with avatar (contact name's initial). c. if contacts are not synced with nga, or no contact is matched, system to not display \"contacts\" section. 5. at the bottom of screen, display \"make a new transfer instead?\" section, and display icon & account number. tapping on account number will navigate to input account number. note: 1. unique key for beneficiary: bank name + account number + beneficiary registered name. | eclipse: 1. retrieve list of bene based on search criteria & sorting order specified, with pagination. search for all beneficiary categories (all, frequent, favourite, own, custom). 2. bene bank name search to include bank alias/tag. phone contacts: 1. contact's first name & last name cms: - empty image, message & info. - icon for account number",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 8 | Search Bar: 1. Upon tapping the Search bar textbox, system to display phone's keyboard for user to type in. 2. Wildcard search will be performed once the user has entered 2 characters. Searching of beneficiaries include fields below: a. Beneficiaries Account Name b. Beneficiaries Nickname c. Beneficiaries Account Number d. Beneficiaries Bank Name - Search to include alias/tags (to be maintained in NGBO - Bank List). E.g. user types \"\"Bank Central\"\" or \"\"BCA\"\", system will match and list Bank Central Asia. 2. Search will be performed on selected Local or Overseas tab. Searching includes all beneficiary categories (ALL, Frequent, Favourite, Own, Custom) regardless which beneficiary category tab the user is at. (search whole DB - not just what is displayed on screen). 3. For search result that matched, display list of Beneficiaries in ascending order (A-Z, 0-9) in the below order, without max records. Lazy load is available. - Beneficiary Name - Beneficiary Bank Name - Account Number 4. For search result that returns EMPTY: a. System to display \"We couldn't find a match for <input data>\" with information (refer to screen). b. IF contacts are synced with NGA, system to perform search on Contact's First Name & Last Name. Display Section \"Contacts\" and the list of contact name & phone number, with Avatar (Contact Name's Initial). c. IF contacts are not synced with NGA, or no contact is matched, system to NOT display \"Contacts\" section. 5. At the bottom of screen, display \"Make a new transfer instead?\" section, and display icon & Account Number. Tapping on Account Number will navigate to Input Account Number. Note: 1. Unique key for Beneficiary: Bank Name + Account Number + Beneficiary Registered Name. | ECLIPSE: 1. Retrieve list of Bene based on search criteria & sorting order specified, with pagination. Search for all beneficiary categories (ALL, Frequent, Favourite, Own, Custom). 2. Bene Bank name search to include bank alias/tag. Phone Contacts: 1. Contact's First Name & Last Name CMS: - EMPTY image, message & info. - Icon for Account Number",
+      "Validate expected behavior using accessibility assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 8 | Search Bar: 1. Upon tapping the Search bar textbox, system to display phone's keyboard for user to type in. 2. Wildcard search will be performed once the user has entered 2 characters. Searching of beneficiaries include fields below: a. Beneficiaries Account Name b. Beneficiaries Nickname c. Beneficiaries Account Number d. Beneficiaries Bank Name - Search to include alias/tags (to be maintained in NGBO - Bank List). E.g. user types \"\"Bank Central\"\" or \"\"BCA\"\", system will match and list Bank Central Asia. 2. Search will be performed on selected Local or Overseas tab. Searching includes all beneficiary categories (ALL, Frequent, Favourite, Own, Custom) regardless which beneficiary category tab the user is at. (search whole DB - not just what is displayed on screen). 3. For search result that matched, display list of Beneficiaries in ascending order (A-Z, 0-9) in the below order, without max records. Lazy load is available. - Beneficiary Name - Beneficiary Bank Name - Account Number 4. For search result that returns EMPTY: a. System to display \"We couldn't find a match for <input data>\" with information (refer to screen). b. IF contacts are synced with NGA, system to perform search on Contact's First Name & Last Name. Display Section \"Contacts\" and the list of contact name & phone number, with Avatar (Contact Name's Initial). c. IF contacts are not synced with NGA, or no contact is matched, system to NOT display \"Contacts\" section. 5. At the bottom of screen, display \"Make a new transfer instead?\" section, and display icon & Account Number. Tapping on Account Number will navigate to Input Account Number. Note: 1. Unique key for Beneficiary: Bank Name + Account Number + Beneficiary Registered Name. | ECLIPSE: 1. Retrieve list of Bene based on search criteria & sorting order specified, with pagination. Search for all beneficiary categories (ALL, Frequent, Favourite, Own, Custom). 2. Bene Bank name search to include bank alias/tag. Phone Contacts: 1. Contact's First Name & Last Name CMS: - EMPTY image, message & info. - Icon for Account Number",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "accessibility",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_023",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "9 | Navigation after Beneficiary selection: 1. Upon tapping on one of the beneficiary lists in All, Frequent, Favourites, and Custom tab, to navigate to input amount screen 2. Upon tapping on one of the beneficiary lists in Own tab: a. IF beneficiary account selected is not the user's primary account, system to navigate to Input Amount screen. b. IF beneficiary account selected is primary account, and user only has 1 CASA account, system to display toastbar error message \"You cannot send money to the same account you're transferring from.\" c. IF beneficiary account selected is primary account, and user has > 1 CASA account: - system to display the Transfer From drawer consists of user's own account list, highligt primary account and display toastbar error message \"You cannot send money to the same source you’re transferring from.\" - User won't be able to select SoF account which is same as the receiving account number. Selection will be disabled. | ECLIPSE: 1. Retrieve Account & Info (Nickname, Account Ccy, Current Balance), with Primary Account Flag.",
+    "objective": "Verify 9 | navigation after beneficiary selection: 1. upon tapping on one of the beneficiary lists in all, frequent, favourites, and custom tab, to navigate to input amount screen 2. upon tapping on one of the beneficiary lists in own tab: a. if beneficiary account selected is not the user's primary account, system to navigate to input amount screen. b. if beneficiary account selected is primary account, and user only has 1 casa account, system to display toastbar error message \"you cannot send money to the same account you're transferring from.\" c. if beneficiary account selected is primary account, and user has > 1 casa account: - system to display the transfer from drawer consists of user's own account list, highligt primary account and display toastbar error message \"you cannot send money to the same source you’re transferring from.\" - user won't be able to select sof account which is same as the receiving account number. selection will be disabled. | eclipse: 1. retrieve account & info (nickname, account ccy, current balance), with primary account flag.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 9 | Navigation after Beneficiary selection: 1. Upon tapping on one of the beneficiary lists in All, Frequent, Favourites, and Custom tab, to navigate to input amount screen 2. Upon tapping on one of the beneficiary lists in Own tab: a. IF beneficiary account selected is not the user's primary account, system to navigate to Input Amount screen. b. IF beneficiary account selected is primary account, and user only has 1 CASA account, system to display toastbar error message \"You cannot send money to the same account you're transferring from.\" c. IF beneficiary account selected is primary account, and user has > 1 CASA account: - system to display the Transfer From drawer consists of user's own account list, highligt primary account and display toastbar error message \"You cannot send money to the same source you’re transferring from.\" - User won't be able to select SoF account which is same as the receiving account number. Selection will be disabled. | ECLIPSE: 1. Retrieve Account & Info (Nickname, Account Ccy, Current Balance), with Primary Account Flag.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 9 | Navigation after Beneficiary selection: 1. Upon tapping on one of the beneficiary lists in All, Frequent, Favourites, and Custom tab, to navigate to input amount screen 2. Upon tapping on one of the beneficiary lists in Own tab: a. IF beneficiary account selected is not the user's primary account, system to navigate to Input Amount screen. b. IF beneficiary account selected is primary account, and user only has 1 CASA account, system to display toastbar error message \"You cannot send money to the same account you're transferring from.\" c. IF beneficiary account selected is primary account, and user has > 1 CASA account: - system to display the Transfer From drawer consists of user's own account list, highligt primary account and display toastbar error message \"You cannot send money to the same source you’re transferring from.\" - User won't be able to select SoF account which is same as the receiving account number. Selection will be disabled. | ECLIPSE: 1. Retrieve Account & Info (Nickname, Account Ccy, Current Balance), with Primary Account Flag.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_LANDING_PAGE_TC_024",
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "requirement": "10 | Upon long press one of the Beneficiary or tap on 'Beneficiary 3 dots button, system displays: 1. Selected Bene info. 2. Menu options: - Add nickname, if beneficary Nickname is not defined. - Edit nickname, if beneficiary Nickname is defined. - Add to favourite, if beneficiary does not belong to any favourite/custom category. - Edit favourite list, if beneficiary belongs to at least 1 favourite/custom category. - Remove, from Bene Category list (Refer to Tab: Recipient - Remove from tab). 3. UI Display is different for Long Press (overlay) & 3 dots (refer to screens). 4. Long press and 3 dots button are not available for Own Tab due to: - Own account Add/Edit nickname to be done via Account Dashboard. - Add to favourites is not applicable. - Remove is not applicable. | CMS: 1. Menu name & icon for each",
+    "objective": "Verify 10 | upon long press one of the beneficiary or tap on 'beneficiary 3 dots button, system displays: 1. selected bene info. 2. menu options: - add nickname, if beneficary nickname is not defined. - edit nickname, if beneficiary nickname is defined. - add to favourite, if beneficiary does not belong to any favourite/custom category. - edit favourite list, if beneficiary belongs to at least 1 favourite/custom category. - remove, from bene category list (refer to tab: recipient - remove from tab). 3. ui display is different for long press (overlay) & 3 dots (refer to screens). 4. long press and 3 dots button are not available for own tab due to: - own account add/edit nickname to be done via account dashboard. - add to favourites is not applicable. - remove is not applicable. | cms: 1. menu name & icon for each",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 10 | Upon long press one of the Beneficiary or tap on 'Beneficiary 3 dots button, system displays: 1. Selected Bene info. 2. Menu options: - Add nickname, if beneficary Nickname is not defined. - Edit nickname, if beneficiary Nickname is defined. - Add to favourite, if beneficiary does not belong to any favourite/custom category. - Edit favourite list, if beneficiary belongs to at least 1 favourite/custom category. - Remove, from Bene Category list (Refer to Tab: Recipient - Remove from tab). 3. UI Display is different for Long Press (overlay) & 3 dots (refer to screens). 4. Long press and 3 dots button are not available for Own Tab due to: - Own account Add/Edit nickname to be done via Account Dashboard. - Add to favourites is not applicable. - Remove is not applicable. | CMS: 1. Menu name & icon for each",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 10 | Upon long press one of the Beneficiary or tap on 'Beneficiary 3 dots button, system displays: 1. Selected Bene info. 2. Menu options: - Add nickname, if beneficary Nickname is not defined. - Edit nickname, if beneficiary Nickname is defined. - Add to favourite, if beneficiary does not belong to any favourite/custom category. - Edit favourite list, if beneficiary belongs to at least 1 favourite/custom category. - Remove, from Bene Category list (Refer to Tab: Recipient - Remove from tab). 3. UI Display is different for Long Press (overlay) & 3 dots (refer to screens). 4. Long press and 3 dots button are not available for Own Tab due to: - Own account Add/Edit nickname to be done via Account Dashboard. - Add to favourites is not applicable. - Remove is not applicable. | CMS: 1. Menu name & icon for each",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Invalid input violating rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Invalid input violating rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Invalid input violating rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Transfer\". | CMS: 1. Retrieve label \"Transfer\".",
+      "Boundary value around rule: 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info",
+      "Boundary value around rule: 3 | Local/Overseas Tabs | N | Alphanumeric | Tab | Local Server | 1. Default: Local. 2. Option to switch between local or overseas transfer",
+      "Boundary value around rule: 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules"
+    ]
+  }
+]

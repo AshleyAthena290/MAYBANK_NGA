@@ -1,0 +1,177 @@
+[
+  {
+    "testCaseId": "FUNCTION_34_RECIPIENT_LIST_REMOVE_FROM_ALL_TAB_TC_001",
+    "featureName": "FUNCTION 34: RECIPIENT LIST - REMOVE FROM ALL TAB",
+    "requirement": "Beneficiary removal from ALL tab (will also remove from all other tabs) | Beneficiary removal from Frequent tab (only remove from Freq) | Failed Removal error screen (applicable for s2u)",
+    "objective": "Verify beneficiary removal from all tab (will also remove from all other tabs) | beneficiary removal from frequent tab (only remove from freq) | failed removal error screen (applicable for s2u)",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Beneficiary removal from ALL tab (will also remove from all other tabs) | Beneficiary removal from Frequent tab (only remove from Freq) | Failed Removal error screen (applicable for s2u)",
+      "Beneficiary removal from Favourite tab | Beneficiary removal from Custom tab",
+      "4 | Refer to Add to Favourite Tab",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Beneficiary removal from ALL tab (will also remove from all other tabs) | Beneficiary removal from Frequent tab (only remove from Freq) | Failed Removal error screen (applicable for s2u)",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Beneficiary removal from ALL tab (will also remove from all other tabs) | Beneficiary removal from Frequent tab (only remove from Freq) | Failed Removal error screen (applicable for s2u)",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_34_RECIPIENT_LIST_REMOVE_FROM_ALL_TAB_TC_005",
+    "featureName": "FUNCTION 34: RECIPIENT LIST - REMOVE FROM ALL TAB",
+    "requirement": "No. | Action | Description | Integration | Remark",
+    "objective": "Verify no. | action | description | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Beneficiary removal from ALL tab (will also remove from all other tabs) | Beneficiary removal from Frequent tab (only remove from Freq) | Failed Removal error screen (applicable for s2u)",
+      "Beneficiary removal from Favourite tab | Beneficiary removal from Custom tab",
+      "4 | Refer to Add to Favourite Tab",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Action | Description | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Action | Description | Integration | Remark",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_34_RECIPIENT_LIST_REMOVE_FROM_ALL_TAB_TC_006",
+    "featureName": "FUNCTION 34: RECIPIENT LIST - REMOVE FROM ALL TAB",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Beneficiary removal from ALL tab (will also remove from all other tabs) | Beneficiary removal from Frequent tab (only remove from Freq) | Failed Removal error screen (applicable for s2u)",
+      "Beneficiary removal from Favourite tab | Beneficiary removal from Custom tab",
+      "4 | Refer to Add to Favourite Tab",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_34_RECIPIENT_LIST_REMOVE_FROM_ALL_TAB_TC_007",
+    "featureName": "FUNCTION 34: RECIPIENT LIST - REMOVE FROM ALL TAB",
+    "requirement": "No. | Description | Integration | Remark",
+    "objective": "Verify no. | description | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Beneficiary removal from ALL tab (will also remove from all other tabs) | Beneficiary removal from Frequent tab (only remove from Freq) | Failed Removal error screen (applicable for s2u)",
+      "Beneficiary removal from Favourite tab | Beneficiary removal from Custom tab",
+      "4 | Refer to Add to Favourite Tab",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remark",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_34_RECIPIENT_LIST_REMOVE_FROM_ALL_TAB_TC_008",
+    "featureName": "FUNCTION 34: RECIPIENT LIST - REMOVE FROM ALL TAB",
+    "requirement": "1 | 1. Removing Beneficiary from ALL tab: a. Remove the selected beneficiary from All, Frequent, Favourite, and Custom lists where selected Bene exist. 2. Removing Beneficiary from FREQUENT tab: a. Remove the beneficiary from Frequent list only. b. The beneficiary will be removed and the transaction count reset to zero. The beneficiary will be re-added into Frequent list once the user transfers to the same beneficiary again and meets the required min transaction count threshold (2 times). c. Only transactions made after removal are counted for re-qualification to be displayed in Frequent. 3. Removing Beneficiary from FAVOURITES tab: a. Remove the beneficiary from Favourites list only. 4. Removing Beneficiary from a CUSTOM tab: a. Remove the beneficiary from the selected custom list only. 5. Upon removal, system displays S2U authorisation screen. a. For successful removal, display \"recipient removed\" screen. b. For unsuccessful removal, display \"update unsucceessfu\" screen. | IAM: 1. S2U Auth status ECLIPSE: 1. Update favourite list(s) with the recipient removed. 2. Update Frequent list with the recipient removed 3. Update favourite list with the recipient removed. 4. Update Custom list with the recipient removed.",
+    "objective": "Verify 1 | 1. removing beneficiary from all tab: a. remove the selected beneficiary from all, frequent, favourite, and custom lists where selected bene exist. 2. removing beneficiary from frequent tab: a. remove the beneficiary from frequent list only. b. the beneficiary will be removed and the transaction count reset to zero. the beneficiary will be re-added into frequent list once the user transfers to the same beneficiary again and meets the required min transaction count threshold (2 times). c. only transactions made after removal are counted for re-qualification to be displayed in frequent. 3. removing beneficiary from favourites tab: a. remove the beneficiary from favourites list only. 4. removing beneficiary from a custom tab: a. remove the beneficiary from the selected custom list only. 5. upon removal, system displays s2u authorisation screen. a. for successful removal, display \"recipient removed\" screen. b. for unsuccessful removal, display \"update unsucceessfu\" screen. | iam: 1. s2u auth status eclipse: 1. update favourite list(s) with the recipient removed. 2. update frequent list with the recipient removed 3. update favourite list with the recipient removed. 4. update custom list with the recipient removed.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Beneficiary removal from ALL tab (will also remove from all other tabs) | Beneficiary removal from Frequent tab (only remove from Freq) | Failed Removal error screen (applicable for s2u)",
+      "Beneficiary removal from Favourite tab | Beneficiary removal from Custom tab",
+      "4 | Refer to Add to Favourite Tab",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | 1. Removing Beneficiary from ALL tab: a. Remove the selected beneficiary from All, Frequent, Favourite, and Custom lists where selected Bene exist. 2. Removing Beneficiary from FREQUENT tab: a. Remove the beneficiary from Frequent list only. b. The beneficiary will be removed and the transaction count reset to zero. The beneficiary will be re-added into Frequent list once the user transfers to the same beneficiary again and meets the required min transaction count threshold (2 times). c. Only transactions made after removal are counted for re-qualification to be displayed in Frequent. 3. Removing Beneficiary from FAVOURITES tab: a. Remove the beneficiary from Favourites list only. 4. Removing Beneficiary from a CUSTOM tab: a. Remove the beneficiary from the selected custom list only. 5. Upon removal, system displays S2U authorisation screen. a. For successful removal, display \"recipient removed\" screen. b. For unsuccessful removal, display \"update unsucceessfu\" screen. | IAM: 1. S2U Auth status ECLIPSE: 1. Update favourite list(s) with the recipient removed. 2. Update Frequent list with the recipient removed 3. Update favourite list with the recipient removed. 4. Update Custom list with the recipient removed.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | 1. Removing Beneficiary from ALL tab: a. Remove the selected beneficiary from All, Frequent, Favourite, and Custom lists where selected Bene exist. 2. Removing Beneficiary from FREQUENT tab: a. Remove the beneficiary from Frequent list only. b. The beneficiary will be removed and the transaction count reset to zero. The beneficiary will be re-added into Frequent list once the user transfers to the same beneficiary again and meets the required min transaction count threshold (2 times). c. Only transactions made after removal are counted for re-qualification to be displayed in Frequent. 3. Removing Beneficiary from FAVOURITES tab: a. Remove the beneficiary from Favourites list only. 4. Removing Beneficiary from a CUSTOM tab: a. Remove the beneficiary from the selected custom list only. 5. Upon removal, system displays S2U authorisation screen. a. For successful removal, display \"recipient removed\" screen. b. For unsuccessful removal, display \"update unsucceessfu\" screen. | IAM: 1. S2U Auth status ECLIPSE: 1. Update favourite list(s) with the recipient removed. 2. Update Frequent list with the recipient removed 3. Update favourite list with the recipient removed. 4. Update Custom list with the recipient removed.",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  }
+]

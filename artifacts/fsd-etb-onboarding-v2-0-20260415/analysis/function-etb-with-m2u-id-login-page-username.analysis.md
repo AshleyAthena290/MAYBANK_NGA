@@ -1,0 +1,60 @@
+# Requirement Analysis - Function: ETB with M2U ID - Login Page - UserName
+
+- Generated At: 2026-07-05T13:38:24.819Z
+- Schema Version: 1.0.0
+
+## Missing Requirements
+
+- Feature description is missing.
+- User/system flow is missing.
+- Dependencies and prerequisites are missing.
+- Navigation path details are missing.
+
+## Ambiguities
+
+- None
+
+## Risks
+
+- Error handling behavior is not documented.
+- Input validation behavior is not documented.
+
+## Missing Validations
+
+- No explicit validation rules were found for user input or business constraints.
+- Boundary and negative validation cases are likely under-specified.
+
+## Security Concerns
+
+- Sensitive data is present without explicit masking/encryption requirements.
+
+## API Dependencies
+
+- None
+
+## UI Dependencies
+
+- Login Page - Username
+- Fields
+- No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark
+- 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image
+- 2 | Title | N/A | Alphanumeric | Display | Integration | Display "Let's get you logged in" | CMS 1. Retrieve Title
+- 3 | Username | Yes | Alphanumeric | Textbox X(20) | Input | Enter NGA username
+- 4 | "No online banking access yet?" | N/A | Alphanumeric | Display | Integration | Display "No online banking access yet?" description. | CMS: 1. Retrieve "No online banking access yet?" description
+- Actions
+- No. | Action | Description | Integration | Remark
+- 1 | [Forgot login details?] hyperlink | Upon tapping, navigate to [A&A] Forgot Login flow
+- 2 | [Next] Button | Upon tapping, navigate to [A&A] Security Image Verification screen
+- 3 | [Register with credit card] Button | Upon tapping, navigate to [CC - w/o M2U ID] Enter Account Details screen
+- 4 | [Register with debit card] Button | Upon tapping, navigate to [CASA - w/o M2U ID] Enter Account Details screen
+- 5 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen and followed by Consent screen
+
+## Backend Dependencies
+
+- None
+
+## Testability Notes
+
+- Flow details are missing, reducing scenario traceability.
+- Validation rules are missing, increasing manual interpretation during test design.
+- Specification gaps and ambiguities should be resolved before automation implementation.

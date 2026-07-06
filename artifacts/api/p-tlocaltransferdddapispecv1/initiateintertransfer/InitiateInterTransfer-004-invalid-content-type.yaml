@@ -1,0 +1,87 @@
+# BDD Test Case - p-tlocaltransferdddapispecv1
+# Generated for: POST /initiate - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: InitiateInterTransfer-004-invalid-content-type
+title: POST /initiate - Invalid Content-Type
+feature: p-tlocaltransferdddapispecv1
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/ext/initiate
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/ext/initiate
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1782998618092
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    preCheckId: <value>
+    transferModeCode: <value>
+    debitAccountNo: <value>
+    debitAccountType: <value>
+    debitAccountCurrency: <value>
+    creditAccountBankCode: <value>
+    creditAccountNo: <value>
+    creditAccountType: <value>
+    creditAccountCurrency: <value>
+    debitAmount: <value>
+    creditAmount: <value>
+    feeAmount: <value>
+    feeCurrency: <value>
+    purposeCode: <value>
+    sourceOfFundCode: <value>
+    recipientName: <value>
+    recipientTypeCode: <value>
+    recipientCitizenshipCode: <value>
+    remark: <value>
+    recipientEmail: <value>
+    recipientStatusCode: <value>
+    recipientNationalityCode: <value>
+    recipientCategoryCode: <value>
+    relationshipCode: <value>
+    transactionCategoryCode: <value>
+    transactionDetailCode: <value>
+    additionalDetailRemark: <value>
+    schedule: <value>
+    frequencyCode: <value>
+    startDate: <value>
+    endDate: <value>
+    ? "{\n  \"preCheckId\": \"PC_202605150001\",\n  \"transferModeCode\": \"BISKN\",\n  \"debitAccountNo\": \"1234567890\",\n  \"debitAccountType\": \"SA\",\n  \"debitAccountCurrency\": \"IDR\",\n  \"creditAccountBankCode\": \"BCA\",\n  \"creditAccountNo\": \"9876543210\",\n  \"creditAccountType\": \"SA\",\n  \"creditAccountCurrency\": \"IDR\",\n  \"debitAmount\": 150000.00,\n  \"creditAmount\": 150000.00,\n  \"feeAmount\": 2900.00,\n  \"feeCurrency\": \"IDR\",\n  \"purposeCode\": \"PAYMENT\",\n  \"sourceOfFundCode\": \"SALARY\",\n  \"recipientName\": \"Irfan Zulkifli\",\n  \"recipientTypeCode\": \"INDIVIDUAL\",\n  \"recipientCitizenshipCode\": \"NON_CITIZEN\",\n  \"remark\": \"Monthly support\",\n  \"recipientEmail\": \"recipient@gmail.com\",\n  \"recipientStatusCode\": \"SENDER_NOT_RECIPIENT\",\n  \"recipientNationalityCode\": \"MY\",\n  \"recipientCategoryCode\": \"INDIVIDUAL\",\n  \"relationshipCode\": \"NON_AFFILIATED\",\n  \"transactionCategoryCode\": \"PENGHASILAN_PENGELUARAN\",\n  \"transactionDetailCode\": \"TD001\",\n  \"additionalDetailRemark\": \"Untuk kebutuhan keluarga\",\n  \"schedule\": {\n    \"frequencyCode\": \"WEEKLY\", \n    \"startDate\": \"2026-05-01\",\n    \"endDate\": \"2026-08-01\"\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InitiateInterTransfer
+  sourceRows: ''
+  apiSpecFile: InitiateInterTransfer

@@ -1,0 +1,542 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-05T13:38:25.108Z",
+  "bundle": {
+    "featureName": "Function : ETB with M2U ID - Change App Notice",
+    "testCases": [
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_CHANGE_APP_NOTICE_TC_001",
+        "featureName": "Function : ETB with M2U ID - Change App Notice",
+        "requirement": "Change App Notice | Change Device Notice",
+        "objective": "Verify change app notice | change device notice",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Change App Notice | Change Device Notice",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Change App Notice | Change Device Notice",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Invalid input violating rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Invalid input violating rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Invalid input violating rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Boundary value around rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Boundary value around rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Boundary value around rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_CHANGE_APP_NOTICE_TC_002",
+        "featureName": "Function : ETB with M2U ID - Change App Notice",
+        "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+        "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Invalid input violating rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Invalid input violating rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Invalid input violating rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Boundary value around rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Boundary value around rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Boundary value around rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_CHANGE_APP_NOTICE_TC_003",
+        "featureName": "Function : ETB with M2U ID - Change App Notice",
+        "requirement": "1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+        "objective": "Verify 1 | notice icon | n/a | alphanumeric | display | integration | 1. display icon showing: a. change app b. change device | cms 1. retrieve icon",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+        "priority": "P2",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Invalid input violating rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Invalid input violating rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Invalid input violating rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Boundary value around rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Boundary value around rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Boundary value around rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_CHANGE_APP_NOTICE_TC_004",
+        "featureName": "Function : ETB with M2U ID - Change App Notice",
+        "requirement": "2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+        "objective": "Verify 2 | title | n/a | alphanumeric | display | integration | display title for notice : 1. change app - \"you are loggin into [nextgen]\" 2. change device - \"you are moving to a new device\" | cms 1. retrieve title - chg app - chg device.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+        "priority": "P2",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Invalid input violating rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Invalid input violating rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Invalid input violating rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Boundary value around rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Boundary value around rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Boundary value around rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_CHANGE_APP_NOTICE_TC_005",
+        "featureName": "Function : ETB with M2U ID - Change App Notice",
+        "requirement": "3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+        "objective": "Verify 3 | information | n/a | alphanumeric | display | integration | display information for notice : 1. change app - \"you will still be logged into [maybank2u id app].\" 2. change device - \"your [nextgen] credentials will be bound to this device.\" | cms 1. retrieve information for: - chg app - chg device.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+        "priority": "P2",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Invalid input violating rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Invalid input violating rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Invalid input violating rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Boundary value around rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Boundary value around rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Boundary value around rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_CHANGE_APP_NOTICE_TC_006",
+        "featureName": "Function : ETB with M2U ID - Change App Notice",
+        "requirement": "4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type",
+        "objective": "Verify 4 | registered device | n/a | alphanumeric | display | integration | 1. display only for change device notice 2. display \"your previous device will be logged out\" 3. display previous registered device name and type | cms 1. retrieve device icon iam 1. retrieve previous registered device name and type",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type",
+        "priority": "P2",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Invalid input violating rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Invalid input violating rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Invalid input violating rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Boundary value around rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Boundary value around rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Boundary value around rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_CHANGE_APP_NOTICE_TC_007",
+        "featureName": "Function : ETB with M2U ID - Change App Notice",
+        "requirement": "5 | Description | N/A | Alphanumeric | Display | Integration | Display description of switching app or device | CMS 1. Retrieve Description - Chg App - Chg Device.",
+        "objective": "Verify 5 | description | n/a | alphanumeric | display | integration | display description of switching app or device | cms 1. retrieve description - chg app - chg device.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 5 | Description | N/A | Alphanumeric | Display | Integration | Display description of switching app or device | CMS 1. Retrieve Description - Chg App - Chg Device.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 5 | Description | N/A | Alphanumeric | Display | Integration | Display description of switching app or device | CMS 1. Retrieve Description - Chg App - Chg Device.",
+        "priority": "P2",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Invalid input violating rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Invalid input violating rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Invalid input violating rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Boundary value around rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Boundary value around rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Boundary value around rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_CHANGE_APP_NOTICE_TC_008",
+        "featureName": "Function : ETB with M2U ID - Change App Notice",
+        "requirement": "Actions",
+        "objective": "Verify actions",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Actions",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Actions",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Invalid input violating rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Invalid input violating rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Invalid input violating rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Boundary value around rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Boundary value around rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Boundary value around rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_CHANGE_APP_NOTICE_TC_009",
+        "featureName": "Function : ETB with M2U ID - Change App Notice",
+        "requirement": "No. | Action | Description | Integration | Remark",
+        "objective": "Verify no. | action | description | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Action | Description | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Action | Description | Integration | Remark",
+        "priority": "P2",
+        "layer": "Integration",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Invalid input violating rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Invalid input violating rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Invalid input violating rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Boundary value around rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Boundary value around rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Boundary value around rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_CHANGE_APP_NOTICE_TC_010",
+        "featureName": "Function : ETB with M2U ID - Change App Notice",
+        "requirement": "1 | [Proceed] Button | Upon tapping, navigate to Nickname Screen",
+        "objective": "Verify 1 | [proceed] button | upon tapping, navigate to nickname screen",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | [Proceed] Button | Upon tapping, navigate to Nickname Screen",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | [Proceed] Button | Upon tapping, navigate to Nickname Screen",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Invalid input violating rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Invalid input violating rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Invalid input violating rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Boundary value around rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Boundary value around rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Boundary value around rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_CHANGE_APP_NOTICE_TC_011",
+        "featureName": "Function : ETB with M2U ID - Change App Notice",
+        "requirement": "2 | [X] Button | Upon tapping, exit & return to Onboarding Landing screen.",
+        "objective": "Verify 2 | [x] button | upon tapping, exit & return to onboarding landing screen.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | [X] Button | Upon tapping, exit & return to Onboarding Landing screen.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | [X] Button | Upon tapping, exit & return to Onboarding Landing screen.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Invalid input violating rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Invalid input violating rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Invalid input violating rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Boundary value around rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Boundary value around rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Boundary value around rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_CHANGE_APP_NOTICE_TC_012",
+        "featureName": "Function : ETB with M2U ID - Change App Notice",
+        "requirement": "No. | Description | Integration | Remark",
+        "objective": "Verify no. | description | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Description | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Description | Integration | Remark",
+        "priority": "P2",
+        "layer": "Integration",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Invalid input violating rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Invalid input violating rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Invalid input violating rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Boundary value around rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Boundary value around rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Boundary value around rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_CHANGE_APP_NOTICE_TC_013",
+        "featureName": "Function : ETB with M2U ID - Change App Notice",
+        "requirement": "1 | Rules Checking & Notification content: Checking will be performed in following sequence: 1. If user is NGA user and onboard with new device, display Change Device Notice 2. If user is NGA user and onboard with old device, bypass Change Device & Change App Notice 3. If user is RMBP & have not onboarded to NGA before, display Change App Notice | IAM: - User is existing M2U App user, option to proceed or cancel. - Check registered device",
+        "objective": "Verify 1 | rules checking & notification content: checking will be performed in following sequence: 1. if user is nga user and onboard with new device, display change device notice 2. if user is nga user and onboard with old device, bypass change device & change app notice 3. if user is rmbp & have not onboarded to nga before, display change app notice | iam: - user is existing m2u app user, option to proceed or cancel. - check registered device",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | Rules Checking & Notification content: Checking will be performed in following sequence: 1. If user is NGA user and onboard with new device, display Change Device Notice 2. If user is NGA user and onboard with old device, bypass Change Device & Change App Notice 3. If user is RMBP & have not onboarded to NGA before, display Change App Notice | IAM: - User is existing M2U App user, option to proceed or cancel. - Check registered device",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | Rules Checking & Notification content: Checking will be performed in following sequence: 1. If user is NGA user and onboard with new device, display Change Device Notice 2. If user is NGA user and onboard with old device, bypass Change Device & Change App Notice 3. If user is RMBP & have not onboarded to NGA before, display Change App Notice | IAM: - User is existing M2U App user, option to proceed or cancel. - Check registered device",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Invalid input violating rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Invalid input violating rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Invalid input violating rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Notice Icon | N/A | Alphanumeric | Display | Integration | 1. Display icon showing: a. Change App b. Change Device | CMS 1. Retrieve Icon",
+          "Boundary value around rule: 2 | Title | N/A | Alphanumeric | Display | Integration | Display Title for notice : 1. Change App - \"You are loggin into [NextGen]\" 2. Change device - \"You are moving to a new device\" | CMS 1. Retrieve Title - Chg App - Chg Device.",
+          "Boundary value around rule: 3 | Information | N/A | Alphanumeric | Display | Integration | Display Information for notice : 1. Change App - \"You will still be logged into [Maybank2u ID App].\" 2. Change device - \"Your [NextGen] credentials will be bound to this device.\" | CMS 1. Retrieve Information for: - Chg App - Chg Device.",
+          "Boundary value around rule: 4 | Registered Device | N/A | Alphanumeric | Display | Integration | 1. Display only for change device notice 2. Display \"Your previous device will be logged out\" 3. Display previous registered device name and type | CMS 1. Retrieve device icon IAM 1. Retrieve previous registered device name and type"
+        ]
+      }
+    ]
+  }
+}

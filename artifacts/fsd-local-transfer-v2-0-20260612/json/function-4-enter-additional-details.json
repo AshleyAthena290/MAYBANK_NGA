@@ -1,0 +1,126 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.473Z",
+  "featureId": "function-4-enter-additional-details",
+  "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+  "sourceType": "FSD",
+  "content": {
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "description": "",
+    "flow": [],
+    "uiElements": [
+      "Enter Recipient Details | [INTERBANK] Additional Details Screen | [INTRABANK] Additional Details Screen",
+      "Each additional details values",
+      "Error Handling"
+    ],
+    "validationRules": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | Display \"Transfer\" | CMS 1. Retrieve: - label for header - label for sub-header",
+      "2 | Sub-header | N/A | Alphanumeric | Display | Integration | Display \"Enter additional details\" | CMS 1. Retrieve: - label for header - label for sub-header"
+    ],
+    "businessRules": [
+      "No. | Description | Integration | Remarks",
+      "1 | Additional Details is applicable based on the \"LLD & FOREX Matrix - Additional Details required for conditions below\". This screen will be displayed if the conditions are met. 1. Validation limit is on USD, use Counter Rate to perform IDR to FCY conversion. (FOREX calculation rules to be discussed in Overseas Trf & FCY Trf) | ESB - Trapi: 1. Retrieve Foreign Exchange - Counter Rate"
+    ],
+    "apis": [],
+    "dependencies": [],
+    "errorMessages": [
+      "Error Handling"
+    ],
+    "navigation": [],
+    "remarks": []
+  },
+  "chunks": [
+    {
+      "section": "uiElements",
+      "content": "Enter Recipient Details | [INTERBANK] Additional Details Screen | [INTRABANK] Additional Details Screen\nEach additional details values\nError Handling",
+      "tokensHint": 23
+    },
+    {
+      "section": "validationRules",
+      "content": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks\n1 | Title Header | N/A | Alphanumeric | Display | Integration | Display \"Transfer\" | CMS 1. Retrieve: - label for header - label for sub-header\n2 | Sub-header | N/A | Alphanumeric | Display | Integration | Display \"Enter additional details\" | CMS 1. Retrieve: - label for header - label for sub-header",
+      "tokensHint": 89
+    },
+    {
+      "section": "businessRules",
+      "content": "No. | Description | Integration | Remarks\n1 | Additional Details is applicable based on the \"LLD & FOREX Matrix - Additional Details required for conditions below\". This screen will be displayed if the conditions are met. 1. Validation limit is on USD, use Counter Rate to perform IDR to FCY conversion. (FOREX calculation rules to be discussed in Overseas Trf & FCY Trf) | ESB - Trapi: 1. Retrieve Foreign Exchange - Counter Rate",
+      "tokensHint": 90
+    },
+    {
+      "section": "errorMessages",
+      "content": "Error Handling",
+      "tokensHint": 3
+    }
+  ],
+  "retrievalHints": {
+    "keywords": [
+      "function",
+      "enter",
+      "additional",
+      "details",
+      "recipient",
+      "interbank",
+      "screen",
+      "intrabank",
+      "each",
+      "values",
+      "error",
+      "handling",
+      "field",
+      "mandatory",
+      "data",
+      "type",
+      "format",
+      "source",
+      "validation",
+      "integration",
+      "remarks",
+      "title",
+      "header",
+      "alphanumeric",
+      "display",
+      "transfer",
+      "cms",
+      "retrieve",
+      "label",
+      "for",
+      "sub",
+      "description",
+      "applicable",
+      "based",
+      "the",
+      "lld",
+      "forex",
+      "matrix",
+      "required",
+      "conditions",
+      "below",
+      "this",
+      "will",
+      "displayed",
+      "are",
+      "met",
+      "limit",
+      "usd",
+      "use",
+      "counter",
+      "rate",
+      "perform",
+      "idr",
+      "fcy",
+      "conversion",
+      "calculation",
+      "rules",
+      "discussed",
+      "overseas",
+      "trf",
+      "esb",
+      "trapi",
+      "foreign",
+      "exchange"
+    ],
+    "hasApis": false,
+    "hasValidations": true,
+    "hasBusinessRules": true
+  }
+}

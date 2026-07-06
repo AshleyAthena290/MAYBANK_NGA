@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.562Z",
+  "featureId": "function-48-transfer-settings-manage-schedule-transfer-dashboard",
+  "featureName": "FUNCTION 48: TRANSFER SETTINGS - MANAGE SCHEDULE TRANSFER DASHBOARD",
+  "sourceType": "FSD",
+  "content": {
+    "featureName": "FUNCTION 48: TRANSFER SETTINGS - MANAGE SCHEDULE TRANSFER DASHBOARD",
+    "description": "",
+    "flow": [],
+    "uiElements": [
+      "Navigate to Manage Scheduled Transfer Dashboard (PRE-REQUISITE) | Manage Scheduled Transfer Dashboard"
+    ],
+    "validationRules": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "businessRules": [
+      "No. | Description | Integration | Remarks"
+    ],
+    "apis": [],
+    "dependencies": [],
+    "errorMessages": [],
+    "navigation": [],
+    "remarks": []
+  },
+  "chunks": [
+    {
+      "section": "uiElements",
+      "content": "Navigate to Manage Scheduled Transfer Dashboard (PRE-REQUISITE) | Manage Scheduled Transfer Dashboard",
+      "tokensHint": 15
+    },
+    {
+      "section": "validationRules",
+      "content": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "tokensHint": 23
+    },
+    {
+      "section": "businessRules",
+      "content": "No. | Description | Integration | Remarks",
+      "tokensHint": 9
+    }
+  ],
+  "retrievalHints": {
+    "keywords": [
+      "function",
+      "transfer",
+      "settings",
+      "manage",
+      "schedule",
+      "dashboard",
+      "navigate",
+      "scheduled",
+      "pre",
+      "requisite",
+      "field",
+      "mandatory",
+      "data",
+      "type",
+      "format",
+      "source",
+      "validation",
+      "integration",
+      "remarks",
+      "description"
+    ],
+    "hasApis": false,
+    "hasValidations": true,
+    "hasBusinessRules": true
+  }
+}

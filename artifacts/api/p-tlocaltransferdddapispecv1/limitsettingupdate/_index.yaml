@@ -1,0 +1,64 @@
+# Test Case Index
+# p-tlocaltransferdddapispecv1 - LimitSettingUpdate
+# Generated: 2026-07-02T13:25:15.702Z
+---
+feature: p-tlocaltransferdddapispecv1
+apiName: LimitSettingUpdate
+description: Test cases for LimitSettingUpdate endpoint
+totalScenarios: 7
+scenarios:
+  - id: LimitSettingUpdate-001-positive
+    title: POST /settings - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - limitsettingupdate
+    priority: P1
+  - id: LimitSettingUpdate-002-missing-auth
+    title: POST /settings - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: LimitSettingUpdate-003-invalid-auth
+    title: POST /settings - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: LimitSettingUpdate-004-invalid-content-type
+    title: POST /settings - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: LimitSettingUpdate-005-duplicate-correlation-id
+    title: POST /settings - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: LimitSettingUpdate-006-request-timeout
+    title: POST /settings - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: LimitSettingUpdate-007-empty-request-body
+    title: POST /settings - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-02T13:25:15.700Z'

@@ -1,0 +1,36 @@
+[
+  {
+    "testCaseId": "TABLE_OF_CONTENTS_TC_001",
+    "featureName": "Table of Contents",
+    "requirement": "1.1.7.1 Receipt w Theme",
+    "objective": "Verify 1.1.7.1 receipt w theme",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "1.1.7.1 Receipt w Theme",
+      "1.1.8 Transfer Notification",
+      "1.2 Recipient - Create New",
+      "1.3.5 Manage Favourite Edit & Remove Group",
+      "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Capture baseline screenshot and compare for requirement: 1.1.7.1 Receipt w Theme",
+      "Validate expected behavior using visual assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1.1.7.1 Receipt w Theme",
+    "priority": "P3",
+    "layer": "VisualRegression",
+    "automationCandidate": true,
+    "automationType": "visual",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: 1.1.7.1 Receipt w Theme"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  }
+]

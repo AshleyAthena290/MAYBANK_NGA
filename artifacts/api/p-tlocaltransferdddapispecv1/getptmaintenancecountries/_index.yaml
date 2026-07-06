@@ -1,0 +1,64 @@
+# Test Case Index
+# p-tlocaltransferdddapispecv1 - GetPTMaintenanceCountries
+# Generated: 2026-07-02T13:21:49.781Z
+---
+feature: p-tlocaltransferdddapispecv1
+apiName: GetPTMaintenanceCountries
+description: Test cases for GetPTMaintenanceCountries endpoint
+totalScenarios: 7
+scenarios:
+  - id: GetPTMaintenanceCountries-001-positive
+    title: GET /countries - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getptmaintenancecountries
+    priority: P1
+  - id: GetPTMaintenanceCountries-002-missing-auth
+    title: GET /countries - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetPTMaintenanceCountries-003-invalid-auth
+    title: GET /countries - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetPTMaintenanceCountries-004-invalid-content-type
+    title: GET /countries - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: GetPTMaintenanceCountries-005-duplicate-correlation-id
+    title: GET /countries - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: GetPTMaintenanceCountries-006-request-timeout
+    title: GET /countries - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: GetPTMaintenanceCountries-007-empty-request-body
+    title: GET /countries - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-02T13:21:49.779Z'

@@ -1,0 +1,62 @@
+# BDD Test Case - p-tlocaltransferdddapispecv1
+# Generated for: POST /settings - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: LimitSettingUpdate-006-request-timeout
+title: POST /settings - Request Timeout
+feature: p-tlocaltransferdddapispecv1
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Payment-IP}:{Payment-PORT}/pt/limits/v1/external/settings'
+  endpoint: 'https: //{Payment-IP}:{Payment-PORT}/pt/limits/v1/external/settings'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1782998715662
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    productCode: <value>
+    limitType: <value>
+    intervalType: <value>
+    requestedLimitAmount: <value>
+    amount: <value>
+    currency: <value>
+    ? "{\n  \"productCode\": \"P3\",\n  \"limitType\": [\n    {\n      \"intervalType\": \"DAILY\",\n      \"requestedLimitAmount\": {\n        \"amount\": 1200,\n        \"currency\": \"IDR\"\n      }\n    },\n    {\n      \"intervalType\": \"PERTXN\",\n      \"requestedLimitAmount\": {\n        \"amount\": 500,\n        \"currency\": \"IDR\"\n      }\n    },\n    {\n      \"intervalType\": \"QUICK\",\n      \"requestedLimitAmount\": {\n        \"amount\": 200,\n        \"currency\": \"IDR\"\n      }\n    }\n  ]\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: LimitSettingUpdate
+  sourceRows: ''
+  apiSpecFile: LimitSettingUpdate

@@ -1,0 +1,215 @@
+# BDD Test Case - p-tlocaltransferdddapispecv1
+# Generated for: POST /initiate - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: InitiateIntraTransfer-001-positive
+title: POST /initiate - Happy Path
+feature: p-tlocaltransferdddapispecv1
+description: |-
+  Registers an intrabank transfer instruction before authorization and execution.
+  This API supports both Own Account and Third Party transfer types, and returns the transaction reference and idempotency key required for the subsequent authorized transfer execution flow.
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - initiateintratransfer
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/intrabank/v1/ext/initiate
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/intrabank/v1/ext/initiate
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1782998036067
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    preCheckId: <value>
+    transferType: <value>
+    debitAccountNo: <value>
+    debitAccountType: <value>
+    debitAccountCurrency: <value>
+    creditAccountNo: <value>
+    creditAccountType: <value>
+    creditAccountBankCode: <value>
+    creditAccountCurrency: <value>
+    debitAmount: <value>
+    creditAmount: <value>
+    remark: <value>
+    recipientEmail: <value>
+    relationshipCode: <value>
+    transactionCategoryCode: <value>
+    transactionDetailCode: <value>
+    additionalDetailRemark: <value>
+    schedule: <value>
+    frequencyCode: <value>
+    startDate: <value>
+    endDate: <value>
+    ? "{\n  \"preCheckId\": \"PC_202605150001\",\n  \"transferType\": \"THIRD_PARTY_TRANSFER\",\n  \"debitAccountNo\": \"1234567890\",\n  \"debitAccountType\": \"SA\",\n  \"debitAccountCurrency\": \"IDR\",\n  \"creditAccountNo\": \"0987654321\",\n  \"creditAccountType\": \"SA\",\n  \"creditAccountBankCode\": \"MBB\",\n  \"creditAccountCurrency\": \"IDR\",\n  \"debitAmount\": 150000.00,\n  \"creditAmount\": 150000.00,\n  \"remark\": \"Monthly support\",\n  \"recipientEmail\": \"recipient@gmail.com\",\n  \"relationshipCode\": \"FRIEND\",\n  \"transactionCategoryCode\": \"PERSONAL\",\n  \"transactionDetailCode\": \"TD001\",\n  \"additionalDetailRemark\" \"Salary\",\n  \"schedule\": {\n    \"frequencyCode\": \"WEEKLY\", \n    \"startDate\": \"2026-05-01\",\n    \"endDate\": \"2026-08-01\"\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: 'Null'
+    data: Object
+    transactionRefId: String
+    paymentOrderId: String
+    transactionStatus: String
+    createdAt: String
+    error: 'Null'
+  expectedFields:
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: correlationId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: correlationId'
+    - fieldPath: meta
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: meta'
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.transactionRefId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: transactionRefId'
+      parentField: data
+    - fieldPath: data.paymentOrderId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: paymentOrderId'
+      parentField: data
+    - fieldPath: data.transactionStatus
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: transactionStatus'
+      parentField: data
+    - fieldPath: data.createdAt
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: createdAt'
+      parentField: data
+    - fieldPath: error
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: error'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'String'
+    type: field-type
+    target: message
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'correlationId' exists in response
+    type: field-exists
+    target: correlationId
+  - description: Field 'correlationId' is of type 'String'
+    type: field-type
+    target: correlationId
+    expectedValue: String
+  - description: Field 'meta' exists in response
+    type: field-exists
+    target: meta
+  - description: Field 'meta' is of type 'Null'
+    type: field-type
+    target: meta
+    expectedValue: 'Null'
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+  - description: Field 'error' exists in response
+    type: field-exists
+    target: error
+  - description: Field 'error' is of type 'Null'
+    type: field-type
+    target: error
+    expectedValue: 'Null'
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InitiateIntraTransfer
+  sourceRows: ''
+  apiSpecFile: InitiateIntraTransfer

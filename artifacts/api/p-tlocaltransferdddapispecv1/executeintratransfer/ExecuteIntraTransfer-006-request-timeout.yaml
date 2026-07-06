@@ -1,0 +1,58 @@
+# BDD Test Case - p-tlocaltransferdddapispecv1
+# Generated for: POST /transfers - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: ExecuteIntraTransfer-006-request-timeout
+title: POST /transfers - Request Timeout
+feature: p-tlocaltransferdddapispecv1
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/intrabank/v1/ext/transfers
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/intrabank/v1/ext/transfers
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1782998576816
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    transactionRefId: <value>
+    paymentOrderId: <value>
+    ? "{\n  \"transactionRefId\": \"TXN202604220001\",\n  \"paymentOrderId\": \"9f4c9d2f-5e6d-4e9a-8c0b-a3723a9b91d2\"\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: ExecuteIntraTransfer
+  sourceRows: ''
+  apiSpecFile: ExecuteIntraTransfer

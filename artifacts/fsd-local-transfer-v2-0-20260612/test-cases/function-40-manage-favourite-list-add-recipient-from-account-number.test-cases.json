@@ -1,0 +1,289 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:18.231Z",
+  "bundle": {
+    "featureName": "FUNCTION 40: MANAGE FAVOURITE LIST - ADD RECIPIENT FROM ACCOUNT NUMBER",
+    "testCases": [
+      {
+        "testCaseId": "FUNCTION_40_MANAGE_FAVOURITE_LIST_ADD_RECIPIENT_FROM_ACCOUNT_NUMBER_TC_001",
+        "featureName": "FUNCTION 40: MANAGE FAVOURITE LIST - ADD RECIPIENT FROM ACCOUNT NUMBER",
+        "requirement": "Add New Favourites via entering account number | Add Favourite - enter details | Tooltip tapped",
+        "objective": "Verify add new favourites via entering account number | add favourite - enter details | tooltip tapped",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Add New Favourites via entering account number | Add Favourite - enter details | Tooltip tapped",
+          "1 | [X] icon | Close drawer and return to Manage Fav - Detail Group List",
+          "2 | [<] icon | Upon tapping [<] icon, system to navigate back to Transfer Landing Page",
+          "3 | Nickname tooltip | Upon tapping nickname tooltip, system to display the Nickname information drawer."
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Add New Favourites via entering account number | Add Favourite - enter details | Tooltip tapped",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Add New Favourites via entering account number | Add Favourite - enter details | Tooltip tapped",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_40_MANAGE_FAVOURITE_LIST_ADD_RECIPIENT_FROM_ACCOUNT_NUMBER_TC_002",
+        "featureName": "FUNCTION 40: MANAGE FAVOURITE LIST - ADD RECIPIENT FROM ACCOUNT NUMBER",
+        "requirement": "1 | [X] icon | Close drawer and return to Manage Fav - Detail Group List",
+        "objective": "Verify 1 | [x] icon | close drawer and return to manage fav - detail group list",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Add New Favourites via entering account number | Add Favourite - enter details | Tooltip tapped",
+          "1 | [X] icon | Close drawer and return to Manage Fav - Detail Group List",
+          "2 | [<] icon | Upon tapping [<] icon, system to navigate back to Transfer Landing Page",
+          "3 | Nickname tooltip | Upon tapping nickname tooltip, system to display the Nickname information drawer."
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | [X] icon | Close drawer and return to Manage Fav - Detail Group List",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | [X] icon | Close drawer and return to Manage Fav - Detail Group List",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_40_MANAGE_FAVOURITE_LIST_ADD_RECIPIENT_FROM_ACCOUNT_NUMBER_TC_003",
+        "featureName": "FUNCTION 40: MANAGE FAVOURITE LIST - ADD RECIPIENT FROM ACCOUNT NUMBER",
+        "requirement": "2 | [<] icon | Upon tapping [<] icon, system to navigate back to Transfer Landing Page",
+        "objective": "Verify 2 | [<] icon | upon tapping [<] icon, system to navigate back to transfer landing page",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Add New Favourites via entering account number | Add Favourite - enter details | Tooltip tapped",
+          "1 | [X] icon | Close drawer and return to Manage Fav - Detail Group List",
+          "2 | [<] icon | Upon tapping [<] icon, system to navigate back to Transfer Landing Page",
+          "3 | Nickname tooltip | Upon tapping nickname tooltip, system to display the Nickname information drawer."
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | [<] icon | Upon tapping [<] icon, system to navigate back to Transfer Landing Page",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | [<] icon | Upon tapping [<] icon, system to navigate back to Transfer Landing Page",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_40_MANAGE_FAVOURITE_LIST_ADD_RECIPIENT_FROM_ACCOUNT_NUMBER_TC_004",
+        "featureName": "FUNCTION 40: MANAGE FAVOURITE LIST - ADD RECIPIENT FROM ACCOUNT NUMBER",
+        "requirement": "3 | Nickname tooltip | Upon tapping nickname tooltip, system to display the Nickname information drawer.",
+        "objective": "Verify 3 | nickname tooltip | upon tapping nickname tooltip, system to display the nickname information drawer.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Add New Favourites via entering account number | Add Favourite - enter details | Tooltip tapped",
+          "1 | [X] icon | Close drawer and return to Manage Fav - Detail Group List",
+          "2 | [<] icon | Upon tapping [<] icon, system to navigate back to Transfer Landing Page",
+          "3 | Nickname tooltip | Upon tapping nickname tooltip, system to display the Nickname information drawer."
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 3 | Nickname tooltip | Upon tapping nickname tooltip, system to display the Nickname information drawer.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 3 | Nickname tooltip | Upon tapping nickname tooltip, system to display the Nickname information drawer.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_40_MANAGE_FAVOURITE_LIST_ADD_RECIPIENT_FROM_ACCOUNT_NUMBER_TC_005",
+        "featureName": "FUNCTION 40: MANAGE FAVOURITE LIST - ADD RECIPIENT FROM ACCOUNT NUMBER",
+        "requirement": "4 | [Next] button | Upon tapping [Next] button, [A&A] Secure2U will be triggered for authorisation.",
+        "objective": "Verify 4 | [next] button | upon tapping [next] button, [a&a] secure2u will be triggered for authorisation.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Add New Favourites via entering account number | Add Favourite - enter details | Tooltip tapped",
+          "1 | [X] icon | Close drawer and return to Manage Fav - Detail Group List",
+          "2 | [<] icon | Upon tapping [<] icon, system to navigate back to Transfer Landing Page",
+          "3 | Nickname tooltip | Upon tapping nickname tooltip, system to display the Nickname information drawer."
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 4 | [Next] button | Upon tapping [Next] button, [A&A] Secure2U will be triggered for authorisation.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 4 | [Next] button | Upon tapping [Next] button, [A&A] Secure2U will be triggered for authorisation.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_40_MANAGE_FAVOURITE_LIST_ADD_RECIPIENT_FROM_ACCOUNT_NUMBER_TC_006",
+        "featureName": "FUNCTION 40: MANAGE FAVOURITE LIST - ADD RECIPIENT FROM ACCOUNT NUMBER",
+        "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+        "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remarks",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Add New Favourites via entering account number | Add Favourite - enter details | Tooltip tapped",
+          "1 | [X] icon | Close drawer and return to Manage Fav - Detail Group List",
+          "2 | [<] icon | Upon tapping [<] icon, system to navigate back to Transfer Landing Page",
+          "3 | Nickname tooltip | Upon tapping nickname tooltip, system to display the Nickname information drawer."
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_40_MANAGE_FAVOURITE_LIST_ADD_RECIPIENT_FROM_ACCOUNT_NUMBER_TC_007",
+        "featureName": "FUNCTION 40: MANAGE FAVOURITE LIST - ADD RECIPIENT FROM ACCOUNT NUMBER",
+        "requirement": "No. | Description | Integration | Remarks",
+        "objective": "Verify no. | description | integration | remarks",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Add New Favourites via entering account number | Add Favourite - enter details | Tooltip tapped",
+          "1 | [X] icon | Close drawer and return to Manage Fav - Detail Group List",
+          "2 | [<] icon | Upon tapping [<] icon, system to navigate back to Transfer Landing Page",
+          "3 | Nickname tooltip | Upon tapping nickname tooltip, system to display the Nickname information drawer."
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Description | Integration | Remarks",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Description | Integration | Remarks",
+        "priority": "P2",
+        "layer": "Integration",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_40_MANAGE_FAVOURITE_LIST_ADD_RECIPIENT_FROM_ACCOUNT_NUMBER_TC_008",
+        "featureName": "FUNCTION 40: MANAGE FAVOURITE LIST - ADD RECIPIENT FROM ACCOUNT NUMBER",
+        "requirement": "1 | Upon tapping [Next] button, system to perform: 1. Mandatory checking. If field is empty, system displays inline error message \"Required field.\" 2. If validation passed, trigger S2U authorisation. Refer to Manage Fav - Final for Status end screen. 3. For successful creation, a beneficiary will be created and populated into the Landing Page with below format: [Nickname] - will be displayed in Beneficiary Name field (but this is not stored as Beneficiary name in Database) [Nickname] [Account Number] . [Bank Name] Note: Once user had a successful transaction to a beneficiary (added by account number) and registered name either retrieved from BI-FAST/RTOL inquiry OR manually added during SKN/RTGS transfer, the first line Beneficiary Name will be replaced by Beneficiary Registered Name,and this will be saved in Favourite. (Refer to Input Amount - Beneficiary Name, and Confirmation Business Rules) | ECLIPSE: 1. Store newly created Favourites with below: - Nickname - Account No - Bene Bank",
+        "objective": "Verify 1 | upon tapping [next] button, system to perform: 1. mandatory checking. if field is empty, system displays inline error message \"required field.\" 2. if validation passed, trigger s2u authorisation. refer to manage fav - final for status end screen. 3. for successful creation, a beneficiary will be created and populated into the landing page with below format: [nickname] - will be displayed in beneficiary name field (but this is not stored as beneficiary name in database) [nickname] [account number] . [bank name] note: once user had a successful transaction to a beneficiary (added by account number) and registered name either retrieved from bi-fast/rtol inquiry or manually added during skn/rtgs transfer, the first line beneficiary name will be replaced by beneficiary registered name,and this will be saved in favourite. (refer to input amount - beneficiary name, and confirmation business rules) | eclipse: 1. store newly created favourites with below: - nickname - account no - bene bank",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Add New Favourites via entering account number | Add Favourite - enter details | Tooltip tapped",
+          "1 | [X] icon | Close drawer and return to Manage Fav - Detail Group List",
+          "2 | [<] icon | Upon tapping [<] icon, system to navigate back to Transfer Landing Page",
+          "3 | Nickname tooltip | Upon tapping nickname tooltip, system to display the Nickname information drawer."
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | Upon tapping [Next] button, system to perform: 1. Mandatory checking. If field is empty, system displays inline error message \"Required field.\" 2. If validation passed, trigger S2U authorisation. Refer to Manage Fav - Final for Status end screen. 3. For successful creation, a beneficiary will be created and populated into the Landing Page with below format: [Nickname] - will be displayed in Beneficiary Name field (but this is not stored as Beneficiary name in Database) [Nickname] [Account Number] . [Bank Name] Note: Once user had a successful transaction to a beneficiary (added by account number) and registered name either retrieved from BI-FAST/RTOL inquiry OR manually added during SKN/RTGS transfer, the first line Beneficiary Name will be replaced by Beneficiary Registered Name,and this will be saved in Favourite. (Refer to Input Amount - Beneficiary Name, and Confirmation Business Rules) | ECLIPSE: 1. Store newly created Favourites with below: - Nickname - Account No - Bene Bank",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | Upon tapping [Next] button, system to perform: 1. Mandatory checking. If field is empty, system displays inline error message \"Required field.\" 2. If validation passed, trigger S2U authorisation. Refer to Manage Fav - Final for Status end screen. 3. For successful creation, a beneficiary will be created and populated into the Landing Page with below format: [Nickname] - will be displayed in Beneficiary Name field (but this is not stored as Beneficiary name in Database) [Nickname] [Account Number] . [Bank Name] Note: Once user had a successful transaction to a beneficiary (added by account number) and registered name either retrieved from BI-FAST/RTOL inquiry OR manually added during SKN/RTGS transfer, the first line Beneficiary Name will be replaced by Beneficiary Registered Name,and this will be saved in Favourite. (Refer to Input Amount - Beneficiary Name, and Confirmation Business Rules) | ECLIPSE: 1. Store newly created Favourites with below: - Nickname - Account No - Bene Bank",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      }
+    ]
+  }
+}

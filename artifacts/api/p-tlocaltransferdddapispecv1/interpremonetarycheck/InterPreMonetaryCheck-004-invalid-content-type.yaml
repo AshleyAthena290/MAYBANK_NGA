@@ -1,0 +1,58 @@
+# BDD Test Case - p-tlocaltransferdddapispecv1
+# Generated for: POST /pre-check - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: InterPreMonetaryCheck-004-invalid-content-type
+title: POST /pre-check - Invalid Content-Type
+feature: p-tlocaltransferdddapispecv1
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/ext/pre-check
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/ext/pre-check
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1782998599764
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    creditAccountBankCode: <value>
+    creditAccountNo: <value>
+    ? "{\n  \"creditAccountBankCode\": \"MBB\",\n  \"creditAccountNo\": \"1234567890\"\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InterPreMonetaryCheck
+  sourceRows: ''
+  apiSpecFile: InterPreMonetaryCheck

@@ -1,0 +1,86 @@
+# BDD Test Case - p-tlocaltransferdddapispecv1
+# Generated for: POST /initiate - Missing Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: InitiateIntraTransfer-002-missing-auth
+title: POST /initiate - Missing Authentication
+feature: p-tlocaltransferdddapispecv1
+description: Request without authentication credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/intrabank/v1/ext/initiate
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/intrabank/v1/ext/initiate
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers: {}
+  pathParams: {}
+  queryParams: {}
+  body:
+    preCheckId: <value>
+    transferType: <value>
+    debitAccountNo: <value>
+    debitAccountType: <value>
+    debitAccountCurrency: <value>
+    creditAccountNo: <value>
+    creditAccountType: <value>
+    creditAccountBankCode: <value>
+    creditAccountCurrency: <value>
+    debitAmount: <value>
+    creditAmount: <value>
+    remark: <value>
+    recipientEmail: <value>
+    relationshipCode: <value>
+    transactionCategoryCode: <value>
+    transactionDetailCode: <value>
+    additionalDetailRemark: <value>
+    schedule: <value>
+    frequencyCode: <value>
+    startDate: <value>
+    endDate: <value>
+    ? "{\n  \"preCheckId\": \"PC_202605150001\",\n  \"transferType\": \"THIRD_PARTY_TRANSFER\",\n  \"debitAccountNo\": \"1234567890\",\n  \"debitAccountType\": \"SA\",\n  \"debitAccountCurrency\": \"IDR\",\n  \"creditAccountNo\": \"0987654321\",\n  \"creditAccountType\": \"SA\",\n  \"creditAccountBankCode\": \"MBB\",\n  \"creditAccountCurrency\": \"IDR\",\n  \"debitAmount\": 150000.00,\n  \"creditAmount\": 150000.00,\n  \"remark\": \"Monthly support\",\n  \"recipientEmail\": \"recipient@gmail.com\",\n  \"relationshipCode\": \"FRIEND\",\n  \"transactionCategoryCode\": \"PERSONAL\",\n  \"transactionDetailCode\": \"TD001\",\n  \"additionalDetailRemark\" \"Salary\",\n  \"schedule\": {\n    \"frequencyCode\": \"WEEKLY\", \n    \"startDate\": \"2026-05-01\",\n    \"endDate\": \"2026-08-01\"\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized - Authentication required
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+      description: Error code
+    - fieldPath: message
+      type: String
+      mandatory: true
+      description: Error message
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Field 'error' exists and is of type String
+    type: field-type
+    target: error
+    expectedValue: String
+  - description: Error message indicates missing authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InitiateIntraTransfer
+  sourceRows: ''
+  apiSpecFile: InitiateIntraTransfer

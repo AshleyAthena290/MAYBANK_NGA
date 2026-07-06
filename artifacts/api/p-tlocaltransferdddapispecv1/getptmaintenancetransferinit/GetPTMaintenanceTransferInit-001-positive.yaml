@@ -1,0 +1,372 @@
+# BDD Test Case - p-tlocaltransferdddapispecv1
+# Generated for: GET /init - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: GetPTMaintenanceTransferInit-001-positive
+title: GET /init - Happy Path
+feature: p-tlocaltransferdddapispecv1
+description: Retrieves the transfer journey initialization data required by the channel before the user starts an intrabank or interbank transfer flow.
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - getptmaintenancetransferinit
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{Payment-IP}:{Payment-PORT}/pt/maintenance/v1/ext/transfers/init
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/maintenance/v1/ext/transfers/init
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1782997995403
+    Authorization: Bearer <token>
+    X-MB-Authorization: NGAID260703094512_1002
+  pathParams: {}
+  queryParams: {}
+  body: {}
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: 'Null'
+    data: Object
+    transferModes: Array<Object>
+    code: String
+    name: String
+    fee: Integer
+    perTransactionMinAmount: Integer
+    perTransactionMaxAmount: Integer
+    operatingHoursLabel: String
+    availabilityType: String
+    isActive: Boolean
+    recurringOptions: Object
+    frequencies: Array<Object>
+    minStartDate: String
+    maxStartDate: String
+    allowEndDate: Boolean
+    allowNumberOfTimes: Boolean
+    purposes: Array<Object>
+    transferDetailOptions: Object
+    sourceOfFunds: Array<Object>
+    recipientTypes: Array<Object>
+    recipientCitizenships: Array<Object>
+    remarkShortcuts: Array<String>
+    additionalDetails: Object
+    recipientStatuses: Array<Object>
+    recipientCategories: Array<Object>
+    relationships: Array<Object>
+    transactionCategories: Array<Object>
+    error: 'Null'
+  expectedFields:
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: correlationId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: correlationId'
+    - fieldPath: meta
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: meta'
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.transferModes
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: transferModes'
+      parentField: data
+    - fieldPath: data.transferModes[].code
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: code'
+      parentField: data.transferModes[]
+    - fieldPath: data.transferModes[].name
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: name'
+      parentField: data.transferModes[]
+    - fieldPath: data.transferModes[].fee
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: fee'
+      parentField: data.transferModes[]
+    - fieldPath: data.transferModes[].perTransactionMinAmount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: perTransactionMinAmount'
+      parentField: data.transferModes[]
+    - fieldPath: data.transferModes[].perTransactionMaxAmount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: perTransactionMaxAmount'
+      parentField: data.transferModes[]
+    - fieldPath: data.transferModes[].operatingHoursLabel
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: operatingHoursLabel'
+      parentField: data.transferModes[]
+    - fieldPath: data.transferModes[].availabilityType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: availabilityType'
+      parentField: data.transferModes[]
+    - fieldPath: data.transferModes[].isActive
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: isActive'
+      parentField: data.transferModes[]
+    - fieldPath: data.recurringOptions
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: recurringOptions'
+      parentField: data
+    - fieldPath: data.recurringOptions.frequencies
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: frequencies'
+      parentField: data.recurringOptions
+    - fieldPath: data.recurringOptions.minStartDate
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: minStartDate'
+      parentField: data.recurringOptions
+    - fieldPath: data.recurringOptions.maxStartDate
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: maxStartDate'
+      parentField: data.recurringOptions
+    - fieldPath: data.recurringOptions.allowEndDate
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: allowEndDate'
+      parentField: data.recurringOptions
+    - fieldPath: data.recurringOptions.allowNumberOfTimes
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: allowNumberOfTimes'
+      parentField: data.recurringOptions
+    - fieldPath: data.purposes
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: purposes'
+      parentField: data
+    - fieldPath: data.purposes[].code
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: code'
+      parentField: data.purposes[]
+    - fieldPath: data.purposes[].name
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: name'
+      parentField: data.purposes[]
+    - fieldPath: data.transferDetailOptions
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: transferDetailOptions'
+      parentField: data
+    - fieldPath: data.transferDetailOptions.sourceOfFunds
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: sourceOfFunds'
+      parentField: data.transferDetailOptions
+    - fieldPath: data.transferDetailOptions.recipientTypes
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: recipientTypes'
+      parentField: data.transferDetailOptions
+    - fieldPath: data.transferDetailOptions.recipientCitizenships
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: recipientCitizenships'
+      parentField: data.transferDetailOptions
+    - fieldPath: data.transferDetailOptions.remarkShortcuts
+      type: Array<String>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: remarkShortcuts'
+      parentField: data.transferDetailOptions
+    - fieldPath: data.additionalDetails
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: additionalDetails'
+      parentField: data
+    - fieldPath: data.additionalDetails.recipientStatuses
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: recipientStatuses'
+      parentField: data.additionalDetails
+    - fieldPath: data.additionalDetails.recipientCategories
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: recipientCategories'
+      parentField: data.additionalDetails
+    - fieldPath: data.additionalDetails.relationships
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: relationships'
+      parentField: data.additionalDetails
+    - fieldPath: data.additionalDetails.transactionCategories
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: transactionCategories'
+      parentField: data.additionalDetails
+    - fieldPath: error
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: error'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'String'
+    type: field-type
+    target: message
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'correlationId' exists in response
+    type: field-exists
+    target: correlationId
+  - description: Field 'correlationId' is of type 'String'
+    type: field-type
+    target: correlationId
+    expectedValue: String
+  - description: Field 'meta' exists in response
+    type: field-exists
+    target: meta
+  - description: Field 'meta' is of type 'Null'
+    type: field-type
+    target: meta
+    expectedValue: 'Null'
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+  - description: Field 'error' exists in response
+    type: field-exists
+    target: error
+  - description: Field 'error' is of type 'Null'
+    type: field-type
+    target: error
+    expectedValue: 'Null'
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: GetPTMaintenanceTransferInit
+  sourceRows: ''
+  apiSpecFile: GetPTMaintenanceTransferInit

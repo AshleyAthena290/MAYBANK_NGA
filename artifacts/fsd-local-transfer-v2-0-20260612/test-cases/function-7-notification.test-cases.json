@@ -1,0 +1,201 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:18.143Z",
+  "bundle": {
+    "featureName": "FUNCTION 7: NOTIFICATION",
+    "testCases": [
+      {
+        "testCaseId": "FUNCTION_7_NOTIFICATION_TC_001",
+        "featureName": "FUNCTION 7: NOTIFICATION",
+        "requirement": "Notification Centre - ID (Transaction) | Notification - Apple | Notification - Android",
+        "objective": "Verify notification centre - id (transaction) | notification - apple | notification - android",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Notification Centre - ID (Transaction) | Notification - Apple | Notification - Android"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Notification Centre - ID (Transaction) | Notification - Apple | Notification - Android",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Notification Centre - ID (Transaction) | Notification - Apple | Notification - Android",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_7_NOTIFICATION_TC_002",
+        "featureName": "FUNCTION 7: NOTIFICATION",
+        "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+        "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remarks",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Notification Centre - ID (Transaction) | Notification - Apple | Notification - Android"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_7_NOTIFICATION_TC_003",
+        "featureName": "FUNCTION 7: NOTIFICATION",
+        "requirement": "No. | Description | Integration | Remarks",
+        "objective": "Verify no. | description | integration | remarks",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Notification Centre - ID (Transaction) | Notification - Apple | Notification - Android"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Description | Integration | Remarks",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Description | Integration | Remarks",
+        "priority": "P2",
+        "layer": "Integration",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_7_NOTIFICATION_TC_004",
+        "featureName": "FUNCTION 7: NOTIFICATION",
+        "requirement": "1 | For successful transaction, notification is available for below: a. Interbank: (i) Push & Email notification to sender, if defined in Settings > Notification > Transactions. (ii) Email notification to beneficiary, if recipient email is entered b. Intrabank (i) Push & Email notification to sender, if defined in Settings > Notification > Transactions. (ii) Push notification to beneficiary. (iii) Email notification to beneficiary, if recipient email is entered . c. Transfer to Own: (i) Push & Email notification to sender, if defined in Settings > Notification > Transactions. | MBPNS: 1. To trigger notification via: - email - push.",
+        "objective": "Verify 1 | for successful transaction, notification is available for below: a. interbank: (i) push & email notification to sender, if defined in settings > notification > transactions. (ii) email notification to beneficiary, if recipient email is entered b. intrabank (i) push & email notification to sender, if defined in settings > notification > transactions. (ii) push notification to beneficiary. (iii) email notification to beneficiary, if recipient email is entered . c. transfer to own: (i) push & email notification to sender, if defined in settings > notification > transactions. | mbpns: 1. to trigger notification via: - email - push.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Notification Centre - ID (Transaction) | Notification - Apple | Notification - Android"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | For successful transaction, notification is available for below: a. Interbank: (i) Push & Email notification to sender, if defined in Settings > Notification > Transactions. (ii) Email notification to beneficiary, if recipient email is entered b. Intrabank (i) Push & Email notification to sender, if defined in Settings > Notification > Transactions. (ii) Push notification to beneficiary. (iii) Email notification to beneficiary, if recipient email is entered . c. Transfer to Own: (i) Push & Email notification to sender, if defined in Settings > Notification > Transactions. | MBPNS: 1. To trigger notification via: - email - push.",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | For successful transaction, notification is available for below: a. Interbank: (i) Push & Email notification to sender, if defined in Settings > Notification > Transactions. (ii) Email notification to beneficiary, if recipient email is entered b. Intrabank (i) Push & Email notification to sender, if defined in Settings > Notification > Transactions. (ii) Push notification to beneficiary. (iii) Email notification to beneficiary, if recipient email is entered . c. Transfer to Own: (i) Push & Email notification to sender, if defined in Settings > Notification > Transactions. | MBPNS: 1. To trigger notification via: - email - push.",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_7_NOTIFICATION_TC_005",
+        "featureName": "FUNCTION 7: NOTIFICATION",
+        "requirement": "2 | Push & Email notificaton content to Sender (Immediate, Scheduled, Recurring) to be provided & documented separately: a. Intrabank b. Interbank (i) BI-FAST (ii) RTOL (iii) BI-SKN (iv) RTGS c. Own",
+        "objective": "Verify 2 | push & email notificaton content to sender (immediate, scheduled, recurring) to be provided & documented separately: a. intrabank b. interbank (i) bi-fast (ii) rtol (iii) bi-skn (iv) rtgs c. own",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Notification Centre - ID (Transaction) | Notification - Apple | Notification - Android"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | Push & Email notificaton content to Sender (Immediate, Scheduled, Recurring) to be provided & documented separately: a. Intrabank b. Interbank (i) BI-FAST (ii) RTOL (iii) BI-SKN (iv) RTGS c. Own",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | Push & Email notificaton content to Sender (Immediate, Scheduled, Recurring) to be provided & documented separately: a. Intrabank b. Interbank (i) BI-FAST (ii) RTOL (iii) BI-SKN (iv) RTGS c. Own",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_7_NOTIFICATION_TC_006",
+        "featureName": "FUNCTION 7: NOTIFICATION",
+        "requirement": "3 | Email notification content to Beneficiary to be provided & documented separately: a. Intrabank a. Intrabank b. Interbank (i) BI-FAST (ii) RTOL (iii) BI-SKN (iv) RTGS",
+        "objective": "Verify 3 | email notification content to beneficiary to be provided & documented separately: a. intrabank a. intrabank b. interbank (i) bi-fast (ii) rtol (iii) bi-skn (iv) rtgs",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Notification Centre - ID (Transaction) | Notification - Apple | Notification - Android"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 3 | Email notification content to Beneficiary to be provided & documented separately: a. Intrabank a. Intrabank b. Interbank (i) BI-FAST (ii) RTOL (iii) BI-SKN (iv) RTGS",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 3 | Email notification content to Beneficiary to be provided & documented separately: a. Intrabank a. Intrabank b. Interbank (i) BI-FAST (ii) RTOL (iii) BI-SKN (iv) RTGS",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      }
+    ]
+  }
+}

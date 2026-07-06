@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.756Z",
+  "report": {
+    "featureName": "FUNCTION 50: TRANSFER SETTINGS - RECURRING DETAIL (REMOVE RECURRING)",
+    "missingRequirements": [
+      "Feature description is missing.",
+      "User/system flow is missing.",
+      "Dependencies and prerequisites are missing.",
+      "Navigation path details are missing."
+    ],
+    "ambiguities": [],
+    "risks": [
+      "Error handling behavior is not documented."
+    ],
+    "missingValidations": [],
+    "securityConcerns": [
+      "Sensitive data is present without explicit masking/encryption requirements."
+    ],
+    "apiDependencies": [],
+    "uiDependencies": [
+      "Cancel Scheduled Transaction | Scheduled Transaction close to scheduled date. (Unable to cancel) | Failed /Error scheduled transaction cancellation",
+      "Cancel Recurring Transaction | Cancel Recurring Transaction close to scheduled date. | Failed /Error for recurring transaction cancellation",
+      "14 | Status Image & Status | N/A | Image | Display | Integration | 1. Display Image based on status: a. Successful b. Unsuccessful 2. Display transaction status | CMS 1. Retrieve Image & status: - successful - unsuccessful",
+      "15 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display transaction date and time.",
+      "16 | Ref ID | N/A | Alphanumeric | Display | Local Server | Display generated Reference ID.",
+      "Recipient Info (Applicable ONLY for successful)",
+      "17 | Account Holder Name | N/A | Alphanumeric | Display | Local Server | Populate from previous screen",
+      "18 | Account Number | N/A | Numeric | Display | Local Server | Populate from previous screen",
+      "19 | Recipient Bank | N/A | Alphanumeric | Display | Local Server | Populate from previous screen",
+      "Transaction Type (Applicable ONLY for unsuccessful)",
+      "20 | Transaction Type | N/A | Alphanumeric | Display | Local Server | Display either: 1. Manage Scheduled Transfer. 2. Manage Recurring Transfer.",
+      "Actions",
+      "No. | Action | Description | Integration | Remarks",
+      "6 | [Done] button | Upon tapping [Done] button, navigate to Scheduled/Recurring Transfer Dashboard."
+    ],
+    "backendDependencies": [],
+    "testability": [
+      "Flow details are missing, reducing scenario traceability.",
+      "Validation rules can drive positive, negative, and boundary test design.",
+      "Specification gaps and ambiguities should be resolved before automation implementation."
+    ]
+  }
+}

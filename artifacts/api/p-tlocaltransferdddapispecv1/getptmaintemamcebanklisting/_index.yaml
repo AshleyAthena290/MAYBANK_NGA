@@ -1,0 +1,64 @@
+# Test Case Index
+# p-tlocaltransferdddapispecv1 - GetPTMaintemamceBankListing
+# Generated: 2026-07-02T13:22:09.597Z
+---
+feature: p-tlocaltransferdddapispecv1
+apiName: GetPTMaintemamceBankListing
+description: Test cases for GetPTMaintemamceBankListing endpoint
+totalScenarios: 7
+scenarios:
+  - id: GetPTMaintemamceBankListing-001-positive
+    title: GET /banks - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getptmaintemamcebanklisting
+    priority: P1
+  - id: GetPTMaintemamceBankListing-002-missing-auth
+    title: GET /banks - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetPTMaintemamceBankListing-003-invalid-auth
+    title: GET /banks - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetPTMaintemamceBankListing-004-invalid-content-type
+    title: GET /banks - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: GetPTMaintemamceBankListing-005-duplicate-correlation-id
+    title: GET /banks - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: GetPTMaintemamceBankListing-006-request-timeout
+    title: GET /banks - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: GetPTMaintemamceBankListing-007-empty-request-body
+    title: GET /banks - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-02T13:22:09.596Z'

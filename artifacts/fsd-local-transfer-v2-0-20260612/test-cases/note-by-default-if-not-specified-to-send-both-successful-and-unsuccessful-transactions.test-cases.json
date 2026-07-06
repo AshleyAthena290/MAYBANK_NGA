@@ -1,0 +1,339 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:18.356Z",
+  "bundle": {
+    "featureName": "Note: By default, if not specified, to send both Successful and Unsuccessful transactions .",
+    "testCases": [
+      {
+        "testCaseId": "NOTE_BY_DEFAULT_IF_NOT_SPECIFIED_TO_SEND_BOTH_SUCCESSFUL_AND_UNSUCCESSFUL_TRANSACTIONS_TC_001",
+        "featureName": "Note: By default, if not specified, to send both Successful and Unsuccessful transactions .",
+        "requirement": "Data Extraction | Supporting Functions",
+        "objective": "Verify data extraction | supporting functions",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Representative data for: Data Extraction | Supporting Functions"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Data Extraction | Supporting Functions",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Data Extraction | Supporting Functions",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: Data Extraction | Supporting Functions"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "NOTE_BY_DEFAULT_IF_NOT_SPECIFIED_TO_SEND_BOTH_SUCCESSFUL_AND_UNSUCCESSFUL_TRANSACTIONS_TC_002",
+        "featureName": "Note: By default, if not specified, to send both Successful and Unsuccessful transactions .",
+        "requirement": "No. | Module | Transaction Type | FMS | EDW | Rec7 | BI-FAST to Rec7 | SKN & RTGS to Rec 7 | SFTP | Activity Log (MSS/CCPP) | Transction Tracker (for Analytics) | PFM (Money in/ out) | NGBO | CMS",
+        "objective": "Verify no. | module | transaction type | fms | edw | rec7 | bi-fast to rec7 | skn & rtgs to rec 7 | sftp | activity log (mss/ccpp) | transction tracker (for analytics) | pfm (money in/ out) | ngbo | cms",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Representative data for: No. | Module | Transaction Type | FMS | EDW | Rec7 | BI-FAST to Rec7 | SKN & RTGS to Rec 7 | SFTP | Activity Log (MSS/CCPP) | Transction Tracker (for Analytics) | PFM (Money in/ out) | NGBO | CMS"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Module | Transaction Type | FMS | EDW | Rec7 | BI-FAST to Rec7 | SKN & RTGS to Rec 7 | SFTP | Activity Log (MSS/CCPP) | Transction Tracker (for Analytics) | PFM (Money in/ out) | NGBO | CMS",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Module | Transaction Type | FMS | EDW | Rec7 | BI-FAST to Rec7 | SKN & RTGS to Rec 7 | SFTP | Activity Log (MSS/CCPP) | Transction Tracker (for Analytics) | PFM (Money in/ out) | NGBO | CMS",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: No. | Module | Transaction Type | FMS | EDW | Rec7 | BI-FAST to Rec7 | SKN & RTGS to Rec 7 | SFTP | Activity Log (MSS/CCPP) | Transction Tracker (for Analytics) | PFM (Money in/ out) | NGBO | CMS"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "NOTE_BY_DEFAULT_IF_NOT_SPECIFIED_TO_SEND_BOTH_SUCCESSFUL_AND_UNSUCCESSFUL_TRANSACTIONS_TC_003",
+        "featureName": "Note: By default, if not specified, to send both Successful and Unsuccessful transactions .",
+        "requirement": "Next Day Extraction (for previous day transactions) | Same Day Extraction (12 Batches) | Same day (1 batch - evening)",
+        "objective": "Verify next day extraction (for previous day transactions) | same day extraction (12 batches) | same day (1 batch - evening)",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Representative data for: Next Day Extraction (for previous day transactions) | Same Day Extraction (12 Batches) | Same day (1 batch - evening)"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Next Day Extraction (for previous day transactions) | Same Day Extraction (12 Batches) | Same day (1 batch - evening)",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Next Day Extraction (for previous day transactions) | Same Day Extraction (12 Batches) | Same day (1 batch - evening)",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: Next Day Extraction (for previous day transactions) | Same Day Extraction (12 Batches) | Same day (1 batch - evening)"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "NOTE_BY_DEFAULT_IF_NOT_SPECIFIED_TO_SEND_BOTH_SUCCESSFUL_AND_UNSUCCESSFUL_TRANSACTIONS_TC_004",
+        "featureName": "Note: By default, if not specified, to send both Successful and Unsuccessful transactions .",
+        "requirement": "1 | Local Transfer | Local Transfer (Immediate) - Interbank (BI-FAST, RTOL, BI-SKN, RTGS) | √ | √ BI-FAST only | √ SKN & RTGS",
+        "objective": "Verify 1 | local transfer | local transfer (immediate) - interbank (bi-fast, rtol, bi-skn, rtgs) | √ | √ bi-fast only | √ skn & rtgs",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Representative data for: 1 | Local Transfer | Local Transfer (Immediate) - Interbank (BI-FAST, RTOL, BI-SKN, RTGS) | √ | √ BI-FAST only | √ SKN & RTGS"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | Local Transfer | Local Transfer (Immediate) - Interbank (BI-FAST, RTOL, BI-SKN, RTGS) | √ | √ BI-FAST only | √ SKN & RTGS",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | Local Transfer | Local Transfer (Immediate) - Interbank (BI-FAST, RTOL, BI-SKN, RTGS) | √ | √ BI-FAST only | √ SKN & RTGS",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1 | Local Transfer | Local Transfer (Immediate) - Interbank (BI-FAST, RTOL, BI-SKN, RTGS) | √ | √ BI-FAST only | √ SKN & RTGS"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "NOTE_BY_DEFAULT_IF_NOT_SPECIFIED_TO_SEND_BOTH_SUCCESSFUL_AND_UNSUCCESSFUL_TRANSACTIONS_TC_005",
+        "featureName": "Note: By default, if not specified, to send both Successful and Unsuccessful transactions .",
+        "requirement": "2 | Local Transfer | Local Transfer (Immediate) - Own - Intrabank (IBaaS, VA, within Maybank) | √",
+        "objective": "Verify 2 | local transfer | local transfer (immediate) - own - intrabank (ibaas, va, within maybank) | √",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Representative data for: 2 | Local Transfer | Local Transfer (Immediate) - Own - Intrabank (IBaaS, VA, within Maybank) | √"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | Local Transfer | Local Transfer (Immediate) - Own - Intrabank (IBaaS, VA, within Maybank) | √",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | Local Transfer | Local Transfer (Immediate) - Own - Intrabank (IBaaS, VA, within Maybank) | √",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 2 | Local Transfer | Local Transfer (Immediate) - Own - Intrabank (IBaaS, VA, within Maybank) | √"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "NOTE_BY_DEFAULT_IF_NOT_SPECIFIED_TO_SEND_BOTH_SUCCESSFUL_AND_UNSUCCESSFUL_TRANSACTIONS_TC_006",
+        "featureName": "Note: By default, if not specified, to send both Successful and Unsuccessful transactions .",
+        "requirement": "3 | Local Transfer | Manage Scheduled/Recurring: - Add - Cancel | √",
+        "objective": "Verify 3 | local transfer | manage scheduled/recurring: - add - cancel | √",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Representative data for: 3 | Local Transfer | Manage Scheduled/Recurring: - Add - Cancel | √"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 3 | Local Transfer | Manage Scheduled/Recurring: - Add - Cancel | √",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 3 | Local Transfer | Manage Scheduled/Recurring: - Add - Cancel | √",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 3 | Local Transfer | Manage Scheduled/Recurring: - Add - Cancel | √"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "NOTE_BY_DEFAULT_IF_NOT_SPECIFIED_TO_SEND_BOTH_SUCCESSFUL_AND_UNSUCCESSFUL_TRANSACTIONS_TC_007",
+        "featureName": "Note: By default, if not specified, to send both Successful and Unsuccessful transactions .",
+        "requirement": "4 | Local Transfer | Favourite Maintenance - Add, Edit & Remove - Add & Remove from List | √",
+        "objective": "Verify 4 | local transfer | favourite maintenance - add, edit & remove - add & remove from list | √",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Representative data for: 4 | Local Transfer | Favourite Maintenance - Add, Edit & Remove - Add & Remove from List | √"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 4 | Local Transfer | Favourite Maintenance - Add, Edit & Remove - Add & Remove from List | √",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 4 | Local Transfer | Favourite Maintenance - Add, Edit & Remove - Add & Remove from List | √",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 4 | Local Transfer | Favourite Maintenance - Add, Edit & Remove - Add & Remove from List | √"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "NOTE_BY_DEFAULT_IF_NOT_SPECIFIED_TO_SEND_BOTH_SUCCESSFUL_AND_UNSUCCESSFUL_TRANSACTIONS_TC_008",
+        "featureName": "Note: By default, if not specified, to send both Successful and Unsuccessful transactions .",
+        "requirement": "5 | Local Transfer | Update Transaction Category | √",
+        "objective": "Verify 5 | local transfer | update transaction category | √",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Representative data for: 5 | Local Transfer | Update Transaction Category | √"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 5 | Local Transfer | Update Transaction Category | √",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 5 | Local Transfer | Update Transaction Category | √",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 5 | Local Transfer | Update Transaction Category | √"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "NOTE_BY_DEFAULT_IF_NOT_SPECIFIED_TO_SEND_BOTH_SUCCESSFUL_AND_UNSUCCESSFUL_TRANSACTIONS_TC_009",
+        "featureName": "Note: By default, if not specified, to send both Successful and Unsuccessful transactions .",
+        "requirement": "6 | Local Transfer | Update Daily Limit | √",
+        "objective": "Verify 6 | local transfer | update daily limit | √",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Representative data for: 6 | Local Transfer | Update Daily Limit | √"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 6 | Local Transfer | Update Daily Limit | √",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 6 | Local Transfer | Update Daily Limit | √",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 6 | Local Transfer | Update Daily Limit | √"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "NOTE_BY_DEFAULT_IF_NOT_SPECIFIED_TO_SEND_BOTH_SUCCESSFUL_AND_UNSUCCESSFUL_TRANSACTIONS_TC_010",
+        "featureName": "Note: By default, if not specified, to send both Successful and Unsuccessful transactions .",
+        "requirement": "For scheduled/recurring SKN/RTGS transaction. Current SI requires enhancement to include SKN/RTGS transactions originated from NGA into the existing file. (to Rec7)",
+        "objective": "Verify for scheduled/recurring skn/rtgs transaction. current si requires enhancement to include skn/rtgs transactions originated from nga into the existing file. (to rec7)",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Representative data for: For scheduled/recurring SKN/RTGS transaction. Current SI requires enhancement to include SKN/RTGS transactions originated from NGA into the existing file. (to Rec7)"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: For scheduled/recurring SKN/RTGS transaction. Current SI requires enhancement to include SKN/RTGS transactions originated from NGA into the existing file. (to Rec7)",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: For scheduled/recurring SKN/RTGS transaction. Current SI requires enhancement to include SKN/RTGS transactions originated from NGA into the existing file. (to Rec7)",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: For scheduled/recurring SKN/RTGS transaction. Current SI requires enhancement to include SKN/RTGS transactions originated from NGA into the existing file. (to Rec7)"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "NOTE_BY_DEFAULT_IF_NOT_SPECIFIED_TO_SEND_BOTH_SUCCESSFUL_AND_UNSUCCESSFUL_TRANSACTIONS_TC_011",
+        "featureName": "Note: By default, if not specified, to send both Successful and Unsuccessful transactions .",
+        "requirement": "Recurring transactions originating from NGA and executed by the Standing Instruction system need to be reported to FMS by the executing system.",
+        "objective": "Verify recurring transactions originating from nga and executed by the standing instruction system need to be reported to fms by the executing system.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Representative data for: Recurring transactions originating from NGA and executed by the Standing Instruction system need to be reported to FMS by the executing system."
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Recurring transactions originating from NGA and executed by the Standing Instruction system need to be reported to FMS by the executing system.",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Recurring transactions originating from NGA and executed by the Standing Instruction system need to be reported to FMS by the executing system.",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: Recurring transactions originating from NGA and executed by the Standing Instruction system need to be reported to FMS by the executing system."
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      }
+    ]
+  }
+}

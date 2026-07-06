@@ -1,0 +1,166 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-05T13:38:24.954Z",
+  "report": {
+    "featureName": "Function: Language Setting",
+    "classifications": [
+      {
+        "requirement": "Language Setting",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "Fields",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "1 | Select Language title | N/A | Alphanumeric | Display | Integration | 1. Display \"Select Language\" | CMS 1. Retrieve title content",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "2 | Language Option | No | Alphanumeric | Selection | Integration | 1. Retrieve language options: (i) Bahasa Indonesia (ii) English 2. Pre-select based on the selected language option from Onboarding Landing Page. | CMS : 1. Retrieve available language options",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "Actions",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Action | Description | Integration | Remark",
+        "layers": [
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "1 | Language Option | Tap anywhere in language option to save language preference, close language selection pop up, navigate back to Onboarding screen and reflect all NGA screen with selected language",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "2 | [x] Button | Upon tapping, close popup without saving changes and navigate back to Onboarding Screen",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Description | Integration | Remark",
+        "layers": [
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "1 | 1. Upon selecting Language Option, store the selected language in device cache. 2. IF customer uninstalls application THEN all device cache storage will be removed. 3. IF onboarding process is not completed, and customer opens app again, language will follows latest language preference (retrieve from device cache)",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "2 | Applicable to anyone who has installed the app but has not onboarded/binded.",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "3 | If user changes devices, the system should still retain the selected language preference. Selected language will be applied consistently across all NGA screens.",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      }
+    ]
+  }
+}

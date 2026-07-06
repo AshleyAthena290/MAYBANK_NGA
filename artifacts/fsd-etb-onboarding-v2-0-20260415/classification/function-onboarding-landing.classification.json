@@ -1,0 +1,213 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-05T13:38:24.948Z",
+  "report": {
+    "featureName": "Function: Onboarding Landing",
+    "classifications": [
+      {
+        "requirement": "Onboarding Screen",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "Fields",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve Maybank Logo & Name Image",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "2 | Language Code | N/A | Alphanumeric | Display | Integration | 1. Display \"selected\" language code based on previous selection (stored in device cache). 2. For first time onboarding/no language is selected, NGA to default to \"ID\". Available options: (i) ID - Bahasa Indonesia (ii) EN - English | NGBO: 1. Language code based on selected language",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "3 | Banner Carousel | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Carousel Title & Description based on the number of banner configured in CMS: - Carousel dot title - Banner title - Banner description 2. User can slide to move to the next banner and will be displayed in rotation 3. Display dot title for banner shown. 4. Currently defined in Figma screen is as below, title & description refer to screen: - Lifestyle - Go Further - Grow 5. App to default to first dot banner and display dot title. | CMS: 1. Multiple Carousel banner info: - Dot title - Banner title - Banner description",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "Actions",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Action Button | Description | Integration | Remark",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "1 | Language Dropdown | Upon tapping, open language drawer.",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "2 | Banner Carousel | Upon swiping, move to next/previous banner in rotation.",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "3 | [I'm a Maybank Customer] Button | Upon tapping, navigate to Permission/Consent screen",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "Security",
+            "reason": "Requirement includes security or sensitive-data considerations."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "4 | [I'm new to Maybank] Button | Upon tapping, navigate to NTB onboarding flow",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "5 | [Continue as guest] hyperlink | Upon tapping, navigate to App Dashboard",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Description | Integration | Remark",
+        "layers": [
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "1 | CX Rules: 1. Maximum 3 banners displayed in rotation. Banners will be configured & controlled in CMS. App will render number of dots & banners based on configuration in CMS. 2. Banners do not contain tappable CTAs. (To avoid confusion with login/register).",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "2 | Applicable to anyone who has installed the app but has not onboarded/binded.",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      }
+    ]
+  }
+}

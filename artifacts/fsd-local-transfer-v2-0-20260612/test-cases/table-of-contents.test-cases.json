@@ -1,0 +1,621 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:18.029Z",
+  "bundle": {
+    "featureName": "Table of Contents",
+    "testCases": [
+      {
+        "testCaseId": "TABLE_OF_CONTENTS_TC_001",
+        "featureName": "Table of Contents",
+        "requirement": "1.1.7.1 Receipt w Theme",
+        "objective": "Verify 1.1.7.1 receipt w theme",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "1.1.7.1 Receipt w Theme",
+          "1.1.8 Transfer Notification",
+          "1.2 Recipient - Create New",
+          "1.3.5 Manage Favourite Edit & Remove Group",
+          "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Capture baseline screenshot and compare for requirement: 1.1.7.1 Receipt w Theme",
+          "Validate expected behavior using visual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1.1.7.1 Receipt w Theme",
+        "priority": "P3",
+        "layer": "VisualRegression",
+        "automationCandidate": true,
+        "automationType": "visual",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1.1.7.1 Receipt w Theme"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "TABLE_OF_CONTENTS_TC_002",
+        "featureName": "Table of Contents",
+        "requirement": "1.1.8 Transfer Notification",
+        "objective": "Verify 1.1.8 transfer notification",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "1.1.7.1 Receipt w Theme",
+          "1.1.8 Transfer Notification",
+          "1.2 Recipient - Create New",
+          "1.3.5 Manage Favourite Edit & Remove Group",
+          "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1.1.8 Transfer Notification",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1.1.8 Transfer Notification",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1.1.8 Transfer Notification"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "TABLE_OF_CONTENTS_TC_003",
+        "featureName": "Table of Contents",
+        "requirement": "1.2 Recipient - Create New",
+        "objective": "Verify 1.2 recipient - create new",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "1.1.7.1 Receipt w Theme",
+          "1.1.8 Transfer Notification",
+          "1.2 Recipient - Create New",
+          "1.3.5 Manage Favourite Edit & Remove Group",
+          "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1.2 Recipient - Create New",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1.2 Recipient - Create New",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1.2 Recipient - Create New"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "TABLE_OF_CONTENTS_TC_004",
+        "featureName": "Table of Contents",
+        "requirement": "1.3.5 Manage Favourite Edit & Remove Group",
+        "objective": "Verify 1.3.5 manage favourite edit & remove group",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "1.1.7.1 Receipt w Theme",
+          "1.1.8 Transfer Notification",
+          "1.2 Recipient - Create New",
+          "1.3.5 Manage Favourite Edit & Remove Group",
+          "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1.3.5 Manage Favourite Edit & Remove Group",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1.3.5 Manage Favourite Edit & Remove Group",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1.3.5 Manage Favourite Edit & Remove Group"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "TABLE_OF_CONTENTS_TC_005",
+        "featureName": "Table of Contents",
+        "requirement": "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard",
+        "objective": "Verify 1.4 transfer setting - manage scheduled transfer dashboard",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "1.1.7.1 Receipt w Theme",
+          "1.1.8 Transfer Notification",
+          "1.2 Recipient - Create New",
+          "1.3.5 Manage Favourite Edit & Remove Group",
+          "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1.4 Transfer Setting - Manage Scheduled Transfer Dashboard",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1.4 Transfer Setting - Manage Scheduled Transfer Dashboard",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "TABLE_OF_CONTENTS_TC_006",
+        "featureName": "Table of Contents",
+        "requirement": "1.4.1 Transfer Setting - Manage Scheduled Transfer List",
+        "objective": "Verify 1.4.1 transfer setting - manage scheduled transfer list",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "1.1.7.1 Receipt w Theme",
+          "1.1.8 Transfer Notification",
+          "1.2 Recipient - Create New",
+          "1.3.5 Manage Favourite Edit & Remove Group",
+          "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1.4.1 Transfer Setting - Manage Scheduled Transfer List",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1.4.1 Transfer Setting - Manage Scheduled Transfer List",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1.4.1 Transfer Setting - Manage Scheduled Transfer List"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "TABLE_OF_CONTENTS_TC_007",
+        "featureName": "Table of Contents",
+        "requirement": "1.4.2 Transfer Setting - Remove Recurring Details",
+        "objective": "Verify 1.4.2 transfer setting - remove recurring details",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "1.1.7.1 Receipt w Theme",
+          "1.1.8 Transfer Notification",
+          "1.2 Recipient - Create New",
+          "1.3.5 Manage Favourite Edit & Remove Group",
+          "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1.4.2 Transfer Setting - Remove Recurring Details",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1.4.2 Transfer Setting - Remove Recurring Details",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1.4.2 Transfer Setting - Remove Recurring Details"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "TABLE_OF_CONTENTS_TC_008",
+        "featureName": "Table of Contents",
+        "requirement": "1.4.3 Transfer Setting - Manage Limit Dashboard",
+        "objective": "Verify 1.4.3 transfer setting - manage limit dashboard",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "1.1.7.1 Receipt w Theme",
+          "1.1.8 Transfer Notification",
+          "1.2 Recipient - Create New",
+          "1.3.5 Manage Favourite Edit & Remove Group",
+          "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1.4.3 Transfer Setting - Manage Limit Dashboard",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1.4.3 Transfer Setting - Manage Limit Dashboard",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1.4.3 Transfer Setting - Manage Limit Dashboard"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "TABLE_OF_CONTENTS_TC_009",
+        "featureName": "Table of Contents",
+        "requirement": "1.4.4 Transfer Setting - Manage Limit List",
+        "objective": "Verify 1.4.4 transfer setting - manage limit list",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "1.1.7.1 Receipt w Theme",
+          "1.1.8 Transfer Notification",
+          "1.2 Recipient - Create New",
+          "1.3.5 Manage Favourite Edit & Remove Group",
+          "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1.4.4 Transfer Setting - Manage Limit List",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1.4.4 Transfer Setting - Manage Limit List",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1.4.4 Transfer Setting - Manage Limit List"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "TABLE_OF_CONTENTS_TC_010",
+        "featureName": "Table of Contents",
+        "requirement": "1.4.5 Transfer Setting - Manage Limit Details",
+        "objective": "Verify 1.4.5 transfer setting - manage limit details",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "1.1.7.1 Receipt w Theme",
+          "1.1.8 Transfer Notification",
+          "1.2 Recipient - Create New",
+          "1.3.5 Manage Favourite Edit & Remove Group",
+          "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1.4.5 Transfer Setting - Manage Limit Details",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1.4.5 Transfer Setting - Manage Limit Details",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1.4.5 Transfer Setting - Manage Limit Details"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "TABLE_OF_CONTENTS_TC_011",
+        "featureName": "Table of Contents",
+        "requirement": "1.5 Data Extraction",
+        "objective": "Verify 1.5 data extraction",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "1.1.7.1 Receipt w Theme",
+          "1.1.8 Transfer Notification",
+          "1.2 Recipient - Create New",
+          "1.3.5 Manage Favourite Edit & Remove Group",
+          "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1.5 Data Extraction",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1.5 Data Extraction",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1.5 Data Extraction"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "TABLE_OF_CONTENTS_TC_012",
+        "featureName": "Table of Contents",
+        "requirement": "1.2.2 Recipient - Add to Favourite",
+        "objective": "Verify 1.2.2 recipient - add to favourite",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "1.1.7.1 Receipt w Theme",
+          "1.1.8 Transfer Notification",
+          "1.2 Recipient - Create New",
+          "1.3.5 Manage Favourite Edit & Remove Group",
+          "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1.2.2 Recipient - Add to Favourite",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1.2.2 Recipient - Add to Favourite",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1.2.2 Recipient - Add to Favourite"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "TABLE_OF_CONTENTS_TC_013",
+        "featureName": "Table of Contents",
+        "requirement": "1.2.3 Recipient - Edit Favourite",
+        "objective": "Verify 1.2.3 recipient - edit favourite",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "1.1.7.1 Receipt w Theme",
+          "1.1.8 Transfer Notification",
+          "1.2 Recipient - Create New",
+          "1.3.5 Manage Favourite Edit & Remove Group",
+          "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1.2.3 Recipient - Edit Favourite",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1.2.3 Recipient - Edit Favourite",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1.2.3 Recipient - Edit Favourite"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "TABLE_OF_CONTENTS_TC_014",
+        "featureName": "Table of Contents",
+        "requirement": "1.2.4 Recipient - Remove From Tab",
+        "objective": "Verify 1.2.4 recipient - remove from tab",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "1.1.7.1 Receipt w Theme",
+          "1.1.8 Transfer Notification",
+          "1.2 Recipient - Create New",
+          "1.3.5 Manage Favourite Edit & Remove Group",
+          "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1.2.4 Recipient - Remove From Tab",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1.2.4 Recipient - Remove From Tab",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1.2.4 Recipient - Remove From Tab"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "TABLE_OF_CONTENTS_TC_015",
+        "featureName": "Table of Contents",
+        "requirement": "1.3 Manage Favourite - Dashboard",
+        "objective": "Verify 1.3 manage favourite - dashboard",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "1.1.7.1 Receipt w Theme",
+          "1.1.8 Transfer Notification",
+          "1.2 Recipient - Create New",
+          "1.3.5 Manage Favourite Edit & Remove Group",
+          "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1.3 Manage Favourite - Dashboard",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1.3 Manage Favourite - Dashboard",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1.3 Manage Favourite - Dashboard"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "TABLE_OF_CONTENTS_TC_016",
+        "featureName": "Table of Contents",
+        "requirement": "1.3.1 Manage Favourite - Detail Group",
+        "objective": "Verify 1.3.1 manage favourite - detail group",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "1.1.7.1 Receipt w Theme",
+          "1.1.8 Transfer Notification",
+          "1.2 Recipient - Create New",
+          "1.3.5 Manage Favourite Edit & Remove Group",
+          "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1.3.1 Manage Favourite - Detail Group",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1.3.1 Manage Favourite - Detail Group",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1.3.1 Manage Favourite - Detail Group"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "TABLE_OF_CONTENTS_TC_017",
+        "featureName": "Table of Contents",
+        "requirement": "1.3.2 Manage Favourite Add from Account Number",
+        "objective": "Verify 1.3.2 manage favourite add from account number",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "1.1.7.1 Receipt w Theme",
+          "1.1.8 Transfer Notification",
+          "1.2 Recipient - Create New",
+          "1.3.5 Manage Favourite Edit & Remove Group",
+          "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1.3.2 Manage Favourite Add from Account Number",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1.3.2 Manage Favourite Add from Account Number",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1.3.2 Manage Favourite Add from Account Number"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "TABLE_OF_CONTENTS_TC_018",
+        "featureName": "Table of Contents",
+        "requirement": "1.3.3 Manage Favourite Add from Recent Transfer",
+        "objective": "Verify 1.3.3 manage favourite add from recent transfer",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "1.1.7.1 Receipt w Theme",
+          "1.1.8 Transfer Notification",
+          "1.2 Recipient - Create New",
+          "1.3.5 Manage Favourite Edit & Remove Group",
+          "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1.3.3 Manage Favourite Add from Recent Transfer",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1.3.3 Manage Favourite Add from Recent Transfer",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1.3.3 Manage Favourite Add from Recent Transfer"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      }
+    ]
+  }
+}

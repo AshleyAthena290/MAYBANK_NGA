@@ -1,0 +1,59 @@
+# Requirement Analysis - Function: ETB with M2U ID - Login Page - Password
+
+- Generated At: 2026-07-05T13:38:24.825Z
+- Schema Version: 1.0.0
+
+## Missing Requirements
+
+- Feature description is missing.
+- User/system flow is missing.
+- Dependencies and prerequisites are missing.
+- Navigation path details are missing.
+
+## Ambiguities
+
+- None
+
+## Risks
+
+- Input validation behavior is not documented.
+
+## Missing Validations
+
+- No explicit validation rules were found for user input or business constraints.
+- Boundary and negative validation cases are likely under-specified.
+
+## Security Concerns
+
+- Sensitive data is present without explicit masking/encryption requirements.
+
+## API Dependencies
+
+- None
+
+## UI Dependencies
+
+- Login Page - Password
+- Fields
+- No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark
+- 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image
+- 2 | Security Image | N/A | Image | Display | Integration | Retrieve and display security image - IF user input invalid username in Login Username screen, Random image will be displayed | IAM: 1. Retrieve selected security image by username
+- 3 | Username Display | N/A | Alphanumeric | Display | Local Server | Display masked username - display first 2 and last 2 characters in plain text, and mask characters in between. E.g. Username is Dodo5050, then it will display Do****50
+- 4 | Password | Yes | Alphanumeric | Textbox X(20) | Input | 1. Field is auto-focused & keyboard is shown on drawer opening 2. Input masked by default
+- Actions
+- No. | Action | Description | Integration | Remark
+- 1 | [Forgot password?] hyperlink | Upon tapping hyperlink, navigate to [A&A] Forgot Password
+- 2 | Eye Icon (Show/Hide Password) | Press to hold to display input. Input is masked if user does not continue to tap and hold.
+- 3 | [Log in] Button | Upon password authentication successful: 1. If user switch using same device, navigate to Change App Notice Screen 2. If user switch to new device, navigate to Change Device Notice Screen
+- 4 | [<] Button | Upon tapping, navigate back to [A&A] Security Image Verification screen
+- 5 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen.
+
+## Backend Dependencies
+
+- None
+
+## Testability Notes
+
+- Flow details are missing, reducing scenario traceability.
+- Validation rules are missing, increasing manual interpretation during test design.
+- Specification gaps and ambiguities should be resolved before automation implementation.

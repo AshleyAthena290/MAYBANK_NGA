@@ -1,0 +1,248 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.967Z",
+  "report": {
+    "featureName": "FUNCTION 53: TRANSFER SETTINGS - MANAGE LIMITS DETAIL",
+    "classifications": [
+      {
+        "requirement": "Manage Limits - INTRABANK | Failed update limit",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "5 | Status Image & Status | N/A | Image | Display | Integration | 1. Display Image based on status: a. Successful b. Unsuccessful 2. Display transaction status | CMS 1. Retrieve Image & status: - successful - unsuccessful",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "6 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display transaction date and time.",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "7 | Ref ID | N/A | Alphanumeric | Display | Local Server | Display generated Reference ID.",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "Limit Info (Applicable ONLY for successful)",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "8 | New Limit | N/A | Alphanumeric | Display | Local Server | Populate new user defined limit.",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "9 | Limit Type | N/A | Alphanumeric | Display | Local Server | Populate transfer mode from previous screen.",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "Transaction Type (Applicable ONLY for unsuccessful)",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "10 | Transaction Type | N/A | Alphanumeric | Display | Local Server | Populate transaction type - Manage Limit",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "Actions",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Action | Description | Integration | Remarks",
+        "layers": [
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "1 | [<] icon | Upon tapping [<] icon, system to navigate to manage limit list screen",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "2 | Select new limit selection | Upon tapping, system to populate value to New Limit field.",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "3 | [Save] Button | Upon tapping, trigger [A&A] Secure2u authorisation screeen",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "4 | [Done] | Upon tapping, navigates to Transfer Limit Dashboard screen.",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Description | Integration | Remarks",
+        "layers": [
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "1 | 1. Upon selecting the new limit & tap on [Save] button. a. System navigates to S2U authorisation screen. Once passed, navigate to Status End Screen. - updated successfully - navigate to Limit Updated screen. - Update unsuccessful - navigate to Update Unsuccessful screen, no change. | IAM: 1. S2U Auth P&T: - Update user daily limit by transfer mode",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "Security",
+            "reason": "Requirement includes security or sensitive-data considerations."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "2 | 1. For ID, successful update: a. New limit value will be effective immediately without any cooling off period per transaction rail. (Cooling off period = 0) b. Changes of limits is allowed for multiple times (no restriction) per transaction rail, per day. (Frequency = 0) NBGO: By Country - Cooling off period (defined in HH:MM) - for increase, decrease, OR increase and decrease. If set to 0 indicates no cooling off period required. - Daily limit Change Frequencies per Day. If set to 0 indicates no limit to change frequecies per day. | NGBO: 1. By Country - Cooling off period for Daily Limit Change, in HH:MM for increase and/or decrease of limit",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      }
+    ]
+  }
+}

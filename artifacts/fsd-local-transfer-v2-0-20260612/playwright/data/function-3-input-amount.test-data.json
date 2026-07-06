@@ -1,0 +1,587 @@
+[
+  {
+    "testCaseId": "FUNCTION_3_INPUT_AMOUNT_TC_006",
+    "featureName": "FUNCTION 3: INPUT AMOUNT",
+    "requirement": "Error Handling - Inline Error & Toastbar | Error Handling - Amount Limit Messages | [INTRABANK & INTERBANK] User has only 1 eligible account, hide Change button",
+    "objective": "Verify error handling - inline error & toastbar | error handling - amount limit messages | [intrabank & interbank] user has only 1 eligible account, hide change button",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "[INTERBANK] Enter Amount IDR to IDR",
+      "[INTRABANK] Enter Amount - IDR to IDR",
+      "[OWN] Enter Amount - IDR to IDR | Error Handling - Selecting same Transfer to and from CASA",
+      "Scheduled/Recurring Transfer | ;"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Error Handling - Inline Error & Toastbar | Error Handling - Amount Limit Messages | [INTRABANK & INTERBANK] User has only 1 eligible account, hide Change button",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Error Handling - Inline Error & Toastbar | Error Handling - Amount Limit Messages | [INTRABANK & INTERBANK] User has only 1 eligible account, hide Change button",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling - [INTERBANK & INTRABANK] Amount Limit",
+      "Trigger error path: Exclude Product Code in Table 1.1 | SA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Exclude Product Code in Table 1.1 | CA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Table 1.1 Product Code Exclusion (not eligible for transactions)",
+      "Trigger error path: No | Code | Name"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_3_INPUT_AMOUNT_TC_007",
+    "featureName": "FUNCTION 3: INPUT AMOUNT",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "[INTERBANK] Enter Amount IDR to IDR",
+      "[INTRABANK] Enter Amount - IDR to IDR",
+      "[OWN] Enter Amount - IDR to IDR | Error Handling - Selecting same Transfer to and from CASA",
+      "Scheduled/Recurring Transfer | ;"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling - [INTERBANK & INTRABANK] Amount Limit",
+      "Trigger error path: Exclude Product Code in Table 1.1 | SA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Exclude Product Code in Table 1.1 | CA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Table 1.1 Product Code Exclusion (not eligible for transactions)",
+      "Trigger error path: No | Code | Name"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_3_INPUT_AMOUNT_TC_008",
+    "featureName": "FUNCTION 3: INPUT AMOUNT",
+    "requirement": "No. | Description | Integration | Remark",
+    "objective": "Verify no. | description | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "[INTERBANK] Enter Amount IDR to IDR",
+      "[INTRABANK] Enter Amount - IDR to IDR",
+      "[OWN] Enter Amount - IDR to IDR | Error Handling - Selecting same Transfer to and from CASA",
+      "Scheduled/Recurring Transfer | ;"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remark",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling - [INTERBANK & INTRABANK] Amount Limit",
+      "Trigger error path: Exclude Product Code in Table 1.1 | SA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Exclude Product Code in Table 1.1 | CA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Table 1.1 Product Code Exclusion (not eligible for transactions)",
+      "Trigger error path: No | Code | Name"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_3_INPUT_AMOUNT_TC_009",
+    "featureName": "FUNCTION 3: INPUT AMOUNT",
+    "requirement": "1 | Transfer To - Beneficiary informations will be populated from 2 entry points: 1. User selects beneficiary from beneficiary list in Transfer Landing Page. * Note that Bene nickname is not required to be displayed here, including Trf to Own. 2. User manually select bank and enter account number.",
+    "objective": "Verify 1 | transfer to - beneficiary informations will be populated from 2 entry points: 1. user selects beneficiary from beneficiary list in transfer landing page. * note that bene nickname is not required to be displayed here, including trf to own. 2. user manually select bank and enter account number.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "[INTERBANK] Enter Amount IDR to IDR",
+      "[INTRABANK] Enter Amount - IDR to IDR",
+      "[OWN] Enter Amount - IDR to IDR | Error Handling - Selecting same Transfer to and from CASA",
+      "Scheduled/Recurring Transfer | ;"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | Transfer To - Beneficiary informations will be populated from 2 entry points: 1. User selects beneficiary from beneficiary list in Transfer Landing Page. * Note that Bene nickname is not required to be displayed here, including Trf to Own. 2. User manually select bank and enter account number.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | Transfer To - Beneficiary informations will be populated from 2 entry points: 1. User selects beneficiary from beneficiary list in Transfer Landing Page. * Note that Bene nickname is not required to be displayed here, including Trf to Own. 2. User manually select bank and enter account number.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling - [INTERBANK & INTRABANK] Amount Limit",
+      "Trigger error path: Exclude Product Code in Table 1.1 | SA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Exclude Product Code in Table 1.1 | CA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Table 1.1 Product Code Exclusion (not eligible for transactions)",
+      "Trigger error path: No | Code | Name"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_3_INPUT_AMOUNT_TC_010",
+    "featureName": "FUNCTION 3: INPUT AMOUNT",
+    "requirement": "2 | Transfer From (Source of Funds): 1. Retrieve & default to primary account (from Settings > Primary App Account). 2. User can tap on [Change] to change SoF. IF user changes the SoF account, it will not change/update the default SoF for the subsequent transfers. 3. Transfer From Drawer: a. Retrieve list of user's account based on \"Table 1 - SoF Eligibility Check\". This is further filtered by Personal or IBO. b. Indicate Primary Account 3. IF user has only 1 SoF account, [Change] button will be hidden. Transfer to OWN account: a. User is not allowed to select SoF as the same as receiving account number. If selected SoF is the same as receiving account number, system displays toastbar error message \"You cannot send money to the same account you're transferring from.\". Note: For SoF criteria and behaviour, to refer to Common FSD. | ECLIPSE: 1. Retrieve Account & Info (Nickname, Account Ccy, Current Balance) based on the criteria, with Primary Account Flag. CMS: 1. Retrieve maybank logo",
+    "objective": "Verify 2 | transfer from (source of funds): 1. retrieve & default to primary account (from settings > primary app account). 2. user can tap on [change] to change sof. if user changes the sof account, it will not change/update the default sof for the subsequent transfers. 3. transfer from drawer: a. retrieve list of user's account based on \"table 1 - sof eligibility check\". this is further filtered by personal or ibo. b. indicate primary account 3. if user has only 1 sof account, [change] button will be hidden. transfer to own account: a. user is not allowed to select sof as the same as receiving account number. if selected sof is the same as receiving account number, system displays toastbar error message \"you cannot send money to the same account you're transferring from.\". note: for sof criteria and behaviour, to refer to common fsd. | eclipse: 1. retrieve account & info (nickname, account ccy, current balance) based on the criteria, with primary account flag. cms: 1. retrieve maybank logo",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "[INTERBANK] Enter Amount IDR to IDR",
+      "[INTRABANK] Enter Amount - IDR to IDR",
+      "[OWN] Enter Amount - IDR to IDR | Error Handling - Selecting same Transfer to and from CASA",
+      "Scheduled/Recurring Transfer | ;"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | Transfer From (Source of Funds): 1. Retrieve & default to primary account (from Settings > Primary App Account). 2. User can tap on [Change] to change SoF. IF user changes the SoF account, it will not change/update the default SoF for the subsequent transfers. 3. Transfer From Drawer: a. Retrieve list of user's account based on \"Table 1 - SoF Eligibility Check\". This is further filtered by Personal or IBO. b. Indicate Primary Account 3. IF user has only 1 SoF account, [Change] button will be hidden. Transfer to OWN account: a. User is not allowed to select SoF as the same as receiving account number. If selected SoF is the same as receiving account number, system displays toastbar error message \"You cannot send money to the same account you're transferring from.\". Note: For SoF criteria and behaviour, to refer to Common FSD. | ECLIPSE: 1. Retrieve Account & Info (Nickname, Account Ccy, Current Balance) based on the criteria, with Primary Account Flag. CMS: 1. Retrieve maybank logo",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | Transfer From (Source of Funds): 1. Retrieve & default to primary account (from Settings > Primary App Account). 2. User can tap on [Change] to change SoF. IF user changes the SoF account, it will not change/update the default SoF for the subsequent transfers. 3. Transfer From Drawer: a. Retrieve list of user's account based on \"Table 1 - SoF Eligibility Check\". This is further filtered by Personal or IBO. b. Indicate Primary Account 3. IF user has only 1 SoF account, [Change] button will be hidden. Transfer to OWN account: a. User is not allowed to select SoF as the same as receiving account number. If selected SoF is the same as receiving account number, system displays toastbar error message \"You cannot send money to the same account you're transferring from.\". Note: For SoF criteria and behaviour, to refer to Common FSD. | ECLIPSE: 1. Retrieve Account & Info (Nickname, Account Ccy, Current Balance) based on the criteria, with Primary Account Flag. CMS: 1. Retrieve maybank logo",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling - [INTERBANK & INTRABANK] Amount Limit",
+      "Trigger error path: Exclude Product Code in Table 1.1 | SA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Exclude Product Code in Table 1.1 | CA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Table 1.1 Product Code Exclusion (not eligible for transactions)",
+      "Trigger error path: No | Code | Name"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_3_INPUT_AMOUNT_TC_011",
+    "featureName": "FUNCTION 3: INPUT AMOUNT",
+    "requirement": "3 | Transfer Amount - Transfer Currency: 1. INTRABANK & OWN a. To default the Transfer Ccy field to Beneficiary Account's currency. Refer to \"Table 2 - Default Transfer Currency\". b. For GAA: (i) If SoF is GAA, user can tap on [You Send] Ccy dropdown to select the supported currency as per SoF's GAA's available ccy (with Current Bal > 0). (ii) if Bene Account is GAA, user can tap on [They Get] Ccy dropdown to select the supported currency as per GAA's supported ccy. (iii) If both [You Send] and [They Get] are same currency, to disable [They Get] Amount field. 2. INTERBANK a. To default Transfer Ccy = IDR. Refer to \"Table 2 - Default Transfer Currency\". Note: Refer to \"1.1.2.1 LLD & FOREX Matrix\" for currencies allowed for each transfer mode. | ECLIPSE: - Retrieve GAA supported currencies. - Retrieve GAA currencies with current balance > 0.",
+    "objective": "Verify 3 | transfer amount - transfer currency: 1. intrabank & own a. to default the transfer ccy field to beneficiary account's currency. refer to \"table 2 - default transfer currency\". b. for gaa: (i) if sof is gaa, user can tap on [you send] ccy dropdown to select the supported currency as per sof's gaa's available ccy (with current bal > 0). (ii) if bene account is gaa, user can tap on [they get] ccy dropdown to select the supported currency as per gaa's supported ccy. (iii) if both [you send] and [they get] are same currency, to disable [they get] amount field. 2. interbank a. to default transfer ccy = idr. refer to \"table 2 - default transfer currency\". note: refer to \"1.1.2.1 lld & forex matrix\" for currencies allowed for each transfer mode. | eclipse: - retrieve gaa supported currencies. - retrieve gaa currencies with current balance > 0.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "[INTERBANK] Enter Amount IDR to IDR",
+      "[INTRABANK] Enter Amount - IDR to IDR",
+      "[OWN] Enter Amount - IDR to IDR | Error Handling - Selecting same Transfer to and from CASA",
+      "Scheduled/Recurring Transfer | ;"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 3 | Transfer Amount - Transfer Currency: 1. INTRABANK & OWN a. To default the Transfer Ccy field to Beneficiary Account's currency. Refer to \"Table 2 - Default Transfer Currency\". b. For GAA: (i) If SoF is GAA, user can tap on [You Send] Ccy dropdown to select the supported currency as per SoF's GAA's available ccy (with Current Bal > 0). (ii) if Bene Account is GAA, user can tap on [They Get] Ccy dropdown to select the supported currency as per GAA's supported ccy. (iii) If both [You Send] and [They Get] are same currency, to disable [They Get] Amount field. 2. INTERBANK a. To default Transfer Ccy = IDR. Refer to \"Table 2 - Default Transfer Currency\". Note: Refer to \"1.1.2.1 LLD & FOREX Matrix\" for currencies allowed for each transfer mode. | ECLIPSE: - Retrieve GAA supported currencies. - Retrieve GAA currencies with current balance > 0.",
+      "Validate expected behavior using api assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 3 | Transfer Amount - Transfer Currency: 1. INTRABANK & OWN a. To default the Transfer Ccy field to Beneficiary Account's currency. Refer to \"Table 2 - Default Transfer Currency\". b. For GAA: (i) If SoF is GAA, user can tap on [You Send] Ccy dropdown to select the supported currency as per SoF's GAA's available ccy (with Current Bal > 0). (ii) if Bene Account is GAA, user can tap on [They Get] Ccy dropdown to select the supported currency as per GAA's supported ccy. (iii) If both [You Send] and [They Get] are same currency, to disable [They Get] Amount field. 2. INTERBANK a. To default Transfer Ccy = IDR. Refer to \"Table 2 - Default Transfer Currency\". Note: Refer to \"1.1.2.1 LLD & FOREX Matrix\" for currencies allowed for each transfer mode. | ECLIPSE: - Retrieve GAA supported currencies. - Retrieve GAA currencies with current balance > 0.",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "api",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling - [INTERBANK & INTRABANK] Amount Limit",
+      "Trigger error path: Exclude Product Code in Table 1.1 | SA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Exclude Product Code in Table 1.1 | CA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Table 1.1 Product Code Exclusion (not eligible for transactions)",
+      "Trigger error path: No | Code | Name"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_3_INPUT_AMOUNT_TC_012",
+    "featureName": "FUNCTION 3: INPUT AMOUNT",
+    "requirement": "4 | Transfer Amount - Remaining Limit: 1. OWN a. Not applicable, NO NEED to display. 2. INTRABANK a. New Transfer & Bene Listing When entering amount, to check if remaining user daily limit (include the entered amount) hits > 70% (System Config) of the defined limit (Settings > Intrabank Transfer): (i) \"IDR - IDR\" - display \"Remaining limit IDR 999,999\" with Manage limit hyperlink (refer to screen). (ii) \"IDR - FCY\" & \"FCY - IDR\" - to calculate remaining limit using latest FOREX and display in IDR. (ii) \"FCY - FCY\", \"FCY - xFCY\" - xxx 3. INTERBANK a. New Transfer (Open & Bene Listing) Since transfer mode has not been selected, remaining limit checking will not be performed nor displayed. b. Existing Transfer (Open & Bene Listing) When entering amount (since system derives the default Tranfser Mode based on last successful interbank transfer), to check if remaining user daily limit (include the entered amount) hits > 70% (System Config) of the defined limit (Settings > BI-FAST/ Transfer Online/ BI-SKN/ RTGS): (i) \"IDR - IDR\" - display \"Remaining limit IDR 999,999\" with Manage limit hyperlink (refer to screen). Note that \"IDR 999,999\" is a placeholder format. Real values depends on remaining limit of the specific transfer rail. (ii) \"FCY - IDR\" - to calculate remaining limit using latest FOREX and display in IDR. 4. Transfer Amount - Account Limit Checking: System to display pop up message for below, with option to \"Proceed anyway\" & \"Change amount\": a. If transaction amount exceeds user's daily remaining limit, display pop up title as \"Remaining limit exceeded\", message \"You may still proceed, but to complete this transaction you must change the amount or manage your limit.\". b. If transaction amount exceeds SoF Available Balance, display pop up title \"Insufficient funds\", message \"You may still proceed, but to complete this transaction you must change the amount.\". c. If transaction amount exceeds user's daily remaining limit & SoF Available Balance, display pop up title as \"Insufficient funds and remaining limit exceeded\", message \"You may still proceed, but to complete this transaction you must change the amount or manage your limit.\" 5. Manage Limit hyperlink a. Display Manage Limit Link if the flag is turned on (System Config) . b. Upon tapping [manage limit] hyperlink, redirect user to Manage transaction daily limit screen for respective Transfer mode (Refer to Tab: Transfer - Manage Limit Details). Once completed, to redirect back to Input Amount screen. c. New limit will be effective immediately upon changing. System Config: 1. % threshold (70%) for limit checking shared by all transfer mode (Intrabank & Interbank), by Country. 2. Manage Limit Link display flag | ESB - Trapi: 1. Retrieve Foreign Exchange Rate P&T: - User defined daily transfer limit NGBO: 1. % threshold (70%) for limit checking shared by all transfer mode (Intrabank & Interbank), by Country. 2. Manage Limit Link display flag | [FCY] To confirm: 1. Limit checking if FCY to FCY, system to convert and display in IDR? 2. For interbank FCY, does system check USD 100K monthly limit?",
+    "objective": "Verify 4 | transfer amount - remaining limit: 1. own a. not applicable, no need to display. 2. intrabank a. new transfer & bene listing when entering amount, to check if remaining user daily limit (include the entered amount) hits > 70% (system config) of the defined limit (settings > intrabank transfer): (i) \"idr - idr\" - display \"remaining limit idr 999,999\" with manage limit hyperlink (refer to screen). (ii) \"idr - fcy\" & \"fcy - idr\" - to calculate remaining limit using latest forex and display in idr. (ii) \"fcy - fcy\", \"fcy - xfcy\" - xxx 3. interbank a. new transfer (open & bene listing) since transfer mode has not been selected, remaining limit checking will not be performed nor displayed. b. existing transfer (open & bene listing) when entering amount (since system derives the default tranfser mode based on last successful interbank transfer), to check if remaining user daily limit (include the entered amount) hits > 70% (system config) of the defined limit (settings > bi-fast/ transfer online/ bi-skn/ rtgs): (i) \"idr - idr\" - display \"remaining limit idr 999,999\" with manage limit hyperlink (refer to screen). note that \"idr 999,999\" is a placeholder format. real values depends on remaining limit of the specific transfer rail. (ii) \"fcy - idr\" - to calculate remaining limit using latest forex and display in idr. 4. transfer amount - account limit checking: system to display pop up message for below, with option to \"proceed anyway\" & \"change amount\": a. if transaction amount exceeds user's daily remaining limit, display pop up title as \"remaining limit exceeded\", message \"you may still proceed, but to complete this transaction you must change the amount or manage your limit.\". b. if transaction amount exceeds sof available balance, display pop up title \"insufficient funds\", message \"you may still proceed, but to complete this transaction you must change the amount.\". c. if transaction amount exceeds user's daily remaining limit & sof available balance, display pop up title as \"insufficient funds and remaining limit exceeded\", message \"you may still proceed, but to complete this transaction you must change the amount or manage your limit.\" 5. manage limit hyperlink a. display manage limit link if the flag is turned on (system config) . b. upon tapping [manage limit] hyperlink, redirect user to manage transaction daily limit screen for respective transfer mode (refer to tab: transfer - manage limit details). once completed, to redirect back to input amount screen. c. new limit will be effective immediately upon changing. system config: 1. % threshold (70%) for limit checking shared by all transfer mode (intrabank & interbank), by country. 2. manage limit link display flag | esb - trapi: 1. retrieve foreign exchange rate p&t: - user defined daily transfer limit ngbo: 1. % threshold (70%) for limit checking shared by all transfer mode (intrabank & interbank), by country. 2. manage limit link display flag | [fcy] to confirm: 1. limit checking if fcy to fcy, system to convert and display in idr? 2. for interbank fcy, does system check usd 100k monthly limit?",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "[INTERBANK] Enter Amount IDR to IDR",
+      "[INTRABANK] Enter Amount - IDR to IDR",
+      "[OWN] Enter Amount - IDR to IDR | Error Handling - Selecting same Transfer to and from CASA",
+      "Scheduled/Recurring Transfer | ;"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 4 | Transfer Amount - Remaining Limit: 1. OWN a. Not applicable, NO NEED to display. 2. INTRABANK a. New Transfer & Bene Listing When entering amount, to check if remaining user daily limit (include the entered amount) hits > 70% (System Config) of the defined limit (Settings > Intrabank Transfer): (i) \"IDR - IDR\" - display \"Remaining limit IDR 999,999\" with Manage limit hyperlink (refer to screen). (ii) \"IDR - FCY\" & \"FCY - IDR\" - to calculate remaining limit using latest FOREX and display in IDR. (ii) \"FCY - FCY\", \"FCY - xFCY\" - xxx 3. INTERBANK a. New Transfer (Open & Bene Listing) Since transfer mode has not been selected, remaining limit checking will not be performed nor displayed. b. Existing Transfer (Open & Bene Listing) When entering amount (since system derives the default Tranfser Mode based on last successful interbank transfer), to check if remaining user daily limit (include the entered amount) hits > 70% (System Config) of the defined limit (Settings > BI-FAST/ Transfer Online/ BI-SKN/ RTGS): (i) \"IDR - IDR\" - display \"Remaining limit IDR 999,999\" with Manage limit hyperlink (refer to screen). Note that \"IDR 999,999\" is a placeholder format. Real values depends on remaining limit of the specific transfer rail. (ii) \"FCY - IDR\" - to calculate remaining limit using latest FOREX and display in IDR. 4. Transfer Amount - Account Limit Checking: System to display pop up message for below, with option to \"Proceed anyway\" & \"Change amount\": a. If transaction amount exceeds user's daily remaining limit, display pop up title as \"Remaining limit exceeded\", message \"You may still proceed, but to complete this transaction you must change the amount or manage your limit.\". b. If transaction amount exceeds SoF Available Balance, display pop up title \"Insufficient funds\", message \"You may still proceed, but to complete this transaction you must change the amount.\". c. If transaction amount exceeds user's daily remaining limit & SoF Available Balance, display pop up title as \"Insufficient funds and remaining limit exceeded\", message \"You may still proceed, but to complete this transaction you must change the amount or manage your limit.\" 5. Manage Limit hyperlink a. Display Manage Limit Link if the flag is turned on (System Config) . b. Upon tapping [manage limit] hyperlink, redirect user to Manage transaction daily limit screen for respective Transfer mode (Refer to Tab: Transfer - Manage Limit Details). Once completed, to redirect back to Input Amount screen. c. New limit will be effective immediately upon changing. System Config: 1. % threshold (70%) for limit checking shared by all transfer mode (Intrabank & Interbank), by Country. 2. Manage Limit Link display flag | ESB - Trapi: 1. Retrieve Foreign Exchange Rate P&T: - User defined daily transfer limit NGBO: 1. % threshold (70%) for limit checking shared by all transfer mode (Intrabank & Interbank), by Country. 2. Manage Limit Link display flag | [FCY] To confirm: 1. Limit checking if FCY to FCY, system to convert and display in IDR? 2. For interbank FCY, does system check USD 100K monthly limit?",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 4 | Transfer Amount - Remaining Limit: 1. OWN a. Not applicable, NO NEED to display. 2. INTRABANK a. New Transfer & Bene Listing When entering amount, to check if remaining user daily limit (include the entered amount) hits > 70% (System Config) of the defined limit (Settings > Intrabank Transfer): (i) \"IDR - IDR\" - display \"Remaining limit IDR 999,999\" with Manage limit hyperlink (refer to screen). (ii) \"IDR - FCY\" & \"FCY - IDR\" - to calculate remaining limit using latest FOREX and display in IDR. (ii) \"FCY - FCY\", \"FCY - xFCY\" - xxx 3. INTERBANK a. New Transfer (Open & Bene Listing) Since transfer mode has not been selected, remaining limit checking will not be performed nor displayed. b. Existing Transfer (Open & Bene Listing) When entering amount (since system derives the default Tranfser Mode based on last successful interbank transfer), to check if remaining user daily limit (include the entered amount) hits > 70% (System Config) of the defined limit (Settings > BI-FAST/ Transfer Online/ BI-SKN/ RTGS): (i) \"IDR - IDR\" - display \"Remaining limit IDR 999,999\" with Manage limit hyperlink (refer to screen). Note that \"IDR 999,999\" is a placeholder format. Real values depends on remaining limit of the specific transfer rail. (ii) \"FCY - IDR\" - to calculate remaining limit using latest FOREX and display in IDR. 4. Transfer Amount - Account Limit Checking: System to display pop up message for below, with option to \"Proceed anyway\" & \"Change amount\": a. If transaction amount exceeds user's daily remaining limit, display pop up title as \"Remaining limit exceeded\", message \"You may still proceed, but to complete this transaction you must change the amount or manage your limit.\". b. If transaction amount exceeds SoF Available Balance, display pop up title \"Insufficient funds\", message \"You may still proceed, but to complete this transaction you must change the amount.\". c. If transaction amount exceeds user's daily remaining limit & SoF Available Balance, display pop up title as \"Insufficient funds and remaining limit exceeded\", message \"You may still proceed, but to complete this transaction you must change the amount or manage your limit.\" 5. Manage Limit hyperlink a. Display Manage Limit Link if the flag is turned on (System Config) . b. Upon tapping [manage limit] hyperlink, redirect user to Manage transaction daily limit screen for respective Transfer mode (Refer to Tab: Transfer - Manage Limit Details). Once completed, to redirect back to Input Amount screen. c. New limit will be effective immediately upon changing. System Config: 1. % threshold (70%) for limit checking shared by all transfer mode (Intrabank & Interbank), by Country. 2. Manage Limit Link display flag | ESB - Trapi: 1. Retrieve Foreign Exchange Rate P&T: - User defined daily transfer limit NGBO: 1. % threshold (70%) for limit checking shared by all transfer mode (Intrabank & Interbank), by Country. 2. Manage Limit Link display flag | [FCY] To confirm: 1. Limit checking if FCY to FCY, system to convert and display in IDR? 2. For interbank FCY, does system check USD 100K monthly limit?",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling - [INTERBANK & INTRABANK] Amount Limit",
+      "Trigger error path: Exclude Product Code in Table 1.1 | SA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Exclude Product Code in Table 1.1 | CA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Table 1.1 Product Code Exclusion (not eligible for transactions)",
+      "Trigger error path: No | Code | Name"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_3_INPUT_AMOUNT_TC_013",
+    "featureName": "FUNCTION 3: INPUT AMOUNT",
+    "requirement": "5 | Transfer Amount (FCY related) - Other Business Rules: 1. For any FOREX transaction (IDR to FCY, FCY to xFCY, FCY to IDR?), if per transfer amount > USD 100,000, to display inline error message \"Maximum amount is USD 100,000.\" 2. For IDR to FCY Transfer : a. Retrieve FOREX (IDR/FCY pair) & display. b. User has the option to enter Amount in IDR or Amount in FCY. c. Entering amount in IDR, system will calculate Amount in FCY. (Amount in IDR/Exchange Rate) d. Entering amount in FCY, system will calculate Amount in IDR. (Amount in FCY x Exchange Rate) 3. Indicative exchange rate: a. Displays indicative exchange rate for cross currency pair (IDR to FCY or FCY to xFCY) based on SoF holding currency. | ESB: 1. Retrieve Foreign Exchange Rate NGBO: 1. FOREX trxn - USD threshold per trxn (100k). | [FCY] To confirm: 1. Intrabank FCY to xFCY is allowed - Screen required.",
+    "objective": "Verify 5 | transfer amount (fcy related) - other business rules: 1. for any forex transaction (idr to fcy, fcy to xfcy, fcy to idr?), if per transfer amount > usd 100,000, to display inline error message \"maximum amount is usd 100,000.\" 2. for idr to fcy transfer : a. retrieve forex (idr/fcy pair) & display. b. user has the option to enter amount in idr or amount in fcy. c. entering amount in idr, system will calculate amount in fcy. (amount in idr/exchange rate) d. entering amount in fcy, system will calculate amount in idr. (amount in fcy x exchange rate) 3. indicative exchange rate: a. displays indicative exchange rate for cross currency pair (idr to fcy or fcy to xfcy) based on sof holding currency. | esb: 1. retrieve foreign exchange rate ngbo: 1. forex trxn - usd threshold per trxn (100k). | [fcy] to confirm: 1. intrabank fcy to xfcy is allowed - screen required.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "[INTERBANK] Enter Amount IDR to IDR",
+      "[INTRABANK] Enter Amount - IDR to IDR",
+      "[OWN] Enter Amount - IDR to IDR | Error Handling - Selecting same Transfer to and from CASA",
+      "Scheduled/Recurring Transfer | ;"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 5 | Transfer Amount (FCY related) - Other Business Rules: 1. For any FOREX transaction (IDR to FCY, FCY to xFCY, FCY to IDR?), if per transfer amount > USD 100,000, to display inline error message \"Maximum amount is USD 100,000.\" 2. For IDR to FCY Transfer : a. Retrieve FOREX (IDR/FCY pair) & display. b. User has the option to enter Amount in IDR or Amount in FCY. c. Entering amount in IDR, system will calculate Amount in FCY. (Amount in IDR/Exchange Rate) d. Entering amount in FCY, system will calculate Amount in IDR. (Amount in FCY x Exchange Rate) 3. Indicative exchange rate: a. Displays indicative exchange rate for cross currency pair (IDR to FCY or FCY to xFCY) based on SoF holding currency. | ESB: 1. Retrieve Foreign Exchange Rate NGBO: 1. FOREX trxn - USD threshold per trxn (100k). | [FCY] To confirm: 1. Intrabank FCY to xFCY is allowed - Screen required.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 5 | Transfer Amount (FCY related) - Other Business Rules: 1. For any FOREX transaction (IDR to FCY, FCY to xFCY, FCY to IDR?), if per transfer amount > USD 100,000, to display inline error message \"Maximum amount is USD 100,000.\" 2. For IDR to FCY Transfer : a. Retrieve FOREX (IDR/FCY pair) & display. b. User has the option to enter Amount in IDR or Amount in FCY. c. Entering amount in IDR, system will calculate Amount in FCY. (Amount in IDR/Exchange Rate) d. Entering amount in FCY, system will calculate Amount in IDR. (Amount in FCY x Exchange Rate) 3. Indicative exchange rate: a. Displays indicative exchange rate for cross currency pair (IDR to FCY or FCY to xFCY) based on SoF holding currency. | ESB: 1. Retrieve Foreign Exchange Rate NGBO: 1. FOREX trxn - USD threshold per trxn (100k). | [FCY] To confirm: 1. Intrabank FCY to xFCY is allowed - Screen required.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling - [INTERBANK & INTRABANK] Amount Limit",
+      "Trigger error path: Exclude Product Code in Table 1.1 | SA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Exclude Product Code in Table 1.1 | CA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Table 1.1 Product Code Exclusion (not eligible for transactions)",
+      "Trigger error path: No | Code | Name"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_3_INPUT_AMOUNT_TC_014",
+    "featureName": "FUNCTION 3: INPUT AMOUNT",
+    "requirement": "6 | Schedule/ Recurring option: 1. End Date & No. of Transaction behaviour (i) IF user changes the Number of Transaction, system will re-calculate the corresponding end date based on the Number of Transactions selected. (ii) IF user returns to End Date tab, system to default & display the newly derived date. (iii) IF user changes the End Date after Number of Transaction is selected, system will re-calculate the corresponding Number of Transaction based on the End Date selected. (iv) IF user returns to Number of Transaction tab, system to default & display the newly derived value. 2. Scheduled/ recurring transaction is NOT applicable for (hide \"Schedule or set recurring\" Toggle field): a. Interbank transfer FCY to IDR b. Intrabank transfer with FCY, i.e. IDR to FCY, FCY to IDR, FCY to same FCY & FCY to xFCY. c. Own & Intrabank - beneficiary account is Virtual Account d. Own & Intrabank - beneficiary account is IBAAS Account (Islamic Banking as a Service) 3. Upon tapping \"Set\" on scheduled/recurring details drawer, system displays Info blue box banner \"Please check the transaction status on the scheduled date. In the event of a disrupted transfer, you will need to manually retry.\" (refer to screen) | NGBO (P&T Ownership): 1. To retrieve the recurring options: a. Just Once b. Weekly c. Monthly",
+    "objective": "Verify 6 | schedule/ recurring option: 1. end date & no. of transaction behaviour (i) if user changes the number of transaction, system will re-calculate the corresponding end date based on the number of transactions selected. (ii) if user returns to end date tab, system to default & display the newly derived date. (iii) if user changes the end date after number of transaction is selected, system will re-calculate the corresponding number of transaction based on the end date selected. (iv) if user returns to number of transaction tab, system to default & display the newly derived value. 2. scheduled/ recurring transaction is not applicable for (hide \"schedule or set recurring\" toggle field): a. interbank transfer fcy to idr b. intrabank transfer with fcy, i.e. idr to fcy, fcy to idr, fcy to same fcy & fcy to xfcy. c. own & intrabank - beneficiary account is virtual account d. own & intrabank - beneficiary account is ibaas account (islamic banking as a service) 3. upon tapping \"set\" on scheduled/recurring details drawer, system displays info blue box banner \"please check the transaction status on the scheduled date. in the event of a disrupted transfer, you will need to manually retry.\" (refer to screen) | ngbo (p&t ownership): 1. to retrieve the recurring options: a. just once b. weekly c. monthly",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "[INTERBANK] Enter Amount IDR to IDR",
+      "[INTRABANK] Enter Amount - IDR to IDR",
+      "[OWN] Enter Amount - IDR to IDR | Error Handling - Selecting same Transfer to and from CASA",
+      "Scheduled/Recurring Transfer | ;"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 6 | Schedule/ Recurring option: 1. End Date & No. of Transaction behaviour (i) IF user changes the Number of Transaction, system will re-calculate the corresponding end date based on the Number of Transactions selected. (ii) IF user returns to End Date tab, system to default & display the newly derived date. (iii) IF user changes the End Date after Number of Transaction is selected, system will re-calculate the corresponding Number of Transaction based on the End Date selected. (iv) IF user returns to Number of Transaction tab, system to default & display the newly derived value. 2. Scheduled/ recurring transaction is NOT applicable for (hide \"Schedule or set recurring\" Toggle field): a. Interbank transfer FCY to IDR b. Intrabank transfer with FCY, i.e. IDR to FCY, FCY to IDR, FCY to same FCY & FCY to xFCY. c. Own & Intrabank - beneficiary account is Virtual Account d. Own & Intrabank - beneficiary account is IBAAS Account (Islamic Banking as a Service) 3. Upon tapping \"Set\" on scheduled/recurring details drawer, system displays Info blue box banner \"Please check the transaction status on the scheduled date. In the event of a disrupted transfer, you will need to manually retry.\" (refer to screen) | NGBO (P&T Ownership): 1. To retrieve the recurring options: a. Just Once b. Weekly c. Monthly",
+      "Validate expected behavior using api assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 6 | Schedule/ Recurring option: 1. End Date & No. of Transaction behaviour (i) IF user changes the Number of Transaction, system will re-calculate the corresponding end date based on the Number of Transactions selected. (ii) IF user returns to End Date tab, system to default & display the newly derived date. (iii) IF user changes the End Date after Number of Transaction is selected, system will re-calculate the corresponding Number of Transaction based on the End Date selected. (iv) IF user returns to Number of Transaction tab, system to default & display the newly derived value. 2. Scheduled/ recurring transaction is NOT applicable for (hide \"Schedule or set recurring\" Toggle field): a. Interbank transfer FCY to IDR b. Intrabank transfer with FCY, i.e. IDR to FCY, FCY to IDR, FCY to same FCY & FCY to xFCY. c. Own & Intrabank - beneficiary account is Virtual Account d. Own & Intrabank - beneficiary account is IBAAS Account (Islamic Banking as a Service) 3. Upon tapping \"Set\" on scheduled/recurring details drawer, system displays Info blue box banner \"Please check the transaction status on the scheduled date. In the event of a disrupted transfer, you will need to manually retry.\" (refer to screen) | NGBO (P&T Ownership): 1. To retrieve the recurring options: a. Just Once b. Weekly c. Monthly",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "api",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling - [INTERBANK & INTRABANK] Amount Limit",
+      "Trigger error path: Exclude Product Code in Table 1.1 | SA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Exclude Product Code in Table 1.1 | CA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Table 1.1 Product Code Exclusion (not eligible for transactions)",
+      "Trigger error path: No | Code | Name"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_3_INPUT_AMOUNT_TC_015",
+    "featureName": "FUNCTION 3: INPUT AMOUNT",
+    "requirement": "7 | Special rate: 1. Only applicable to below: a. Customer segment = \"Privilege\" or \"Premier\" d. Intrabank with FOREX transaction (IDR to FCY, FCY to IDR, FCY to xFCY). 2. Tap [apply] at \"Apply special rate\" drawer, system to perform validation checking: a. If special rate is < 9 digits, display inline message \"Please enter a valid special rate code.\" b. Validate special rate ID (to Trapi), - if invalid, display toastbar message \"Please enter a valid special rate code\" - If expired, display toastbar message \"Special rate code expired.\" c. If special rate is valid, system to close the drawer, display special rate applied screen and populate [You send] and [They get] amount. Both amount fields are disabled. d. If special rate is valid, system to change \"Indicative Exchange Rate <CCY amount> ≈ <CCY amount>\" to \"Special exchange rate <CCY 1> = <CCY rate>\". e. To edit applied special rate, user requires to tap the special rate ID [hyperlink]. User to continue either to alter or delete the current value. 3. Special rate can only be used during the validation period which is between 08.00AM and 02.30PM (from NGBO). 4. IF user change the Source of Funds accounts: a. System resets all fields. | ESB - Trapi 1. Special rate ID/Code validation 2. Retrieve special rate NGBO: 2. Retrieve special rate operational days & hours. ECLIPSE: 1. Customer Segment | [FCY] To confirm: 1. Toastbar error for BE validation",
+    "objective": "Verify 7 | special rate: 1. only applicable to below: a. customer segment = \"privilege\" or \"premier\" d. intrabank with forex transaction (idr to fcy, fcy to idr, fcy to xfcy). 2. tap [apply] at \"apply special rate\" drawer, system to perform validation checking: a. if special rate is < 9 digits, display inline message \"please enter a valid special rate code.\" b. validate special rate id (to trapi), - if invalid, display toastbar message \"please enter a valid special rate code\" - if expired, display toastbar message \"special rate code expired.\" c. if special rate is valid, system to close the drawer, display special rate applied screen and populate [you send] and [they get] amount. both amount fields are disabled. d. if special rate is valid, system to change \"indicative exchange rate <ccy amount> ≈ <ccy amount>\" to \"special exchange rate <ccy 1> = <ccy rate>\". e. to edit applied special rate, user requires to tap the special rate id [hyperlink]. user to continue either to alter or delete the current value. 3. special rate can only be used during the validation period which is between 08.00am and 02.30pm (from ngbo). 4. if user change the source of funds accounts: a. system resets all fields. | esb - trapi 1. special rate id/code validation 2. retrieve special rate ngbo: 2. retrieve special rate operational days & hours. eclipse: 1. customer segment | [fcy] to confirm: 1. toastbar error for be validation",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "[INTERBANK] Enter Amount IDR to IDR",
+      "[INTRABANK] Enter Amount - IDR to IDR",
+      "[OWN] Enter Amount - IDR to IDR | Error Handling - Selecting same Transfer to and from CASA",
+      "Scheduled/Recurring Transfer | ;"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 7 | Special rate: 1. Only applicable to below: a. Customer segment = \"Privilege\" or \"Premier\" d. Intrabank with FOREX transaction (IDR to FCY, FCY to IDR, FCY to xFCY). 2. Tap [apply] at \"Apply special rate\" drawer, system to perform validation checking: a. If special rate is < 9 digits, display inline message \"Please enter a valid special rate code.\" b. Validate special rate ID (to Trapi), - if invalid, display toastbar message \"Please enter a valid special rate code\" - If expired, display toastbar message \"Special rate code expired.\" c. If special rate is valid, system to close the drawer, display special rate applied screen and populate [You send] and [They get] amount. Both amount fields are disabled. d. If special rate is valid, system to change \"Indicative Exchange Rate <CCY amount> ≈ <CCY amount>\" to \"Special exchange rate <CCY 1> = <CCY rate>\". e. To edit applied special rate, user requires to tap the special rate ID [hyperlink]. User to continue either to alter or delete the current value. 3. Special rate can only be used during the validation period which is between 08.00AM and 02.30PM (from NGBO). 4. IF user change the Source of Funds accounts: a. System resets all fields. | ESB - Trapi 1. Special rate ID/Code validation 2. Retrieve special rate NGBO: 2. Retrieve special rate operational days & hours. ECLIPSE: 1. Customer Segment | [FCY] To confirm: 1. Toastbar error for BE validation",
+      "Validate expected behavior using api assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 7 | Special rate: 1. Only applicable to below: a. Customer segment = \"Privilege\" or \"Premier\" d. Intrabank with FOREX transaction (IDR to FCY, FCY to IDR, FCY to xFCY). 2. Tap [apply] at \"Apply special rate\" drawer, system to perform validation checking: a. If special rate is < 9 digits, display inline message \"Please enter a valid special rate code.\" b. Validate special rate ID (to Trapi), - if invalid, display toastbar message \"Please enter a valid special rate code\" - If expired, display toastbar message \"Special rate code expired.\" c. If special rate is valid, system to close the drawer, display special rate applied screen and populate [You send] and [They get] amount. Both amount fields are disabled. d. If special rate is valid, system to change \"Indicative Exchange Rate <CCY amount> ≈ <CCY amount>\" to \"Special exchange rate <CCY 1> = <CCY rate>\". e. To edit applied special rate, user requires to tap the special rate ID [hyperlink]. User to continue either to alter or delete the current value. 3. Special rate can only be used during the validation period which is between 08.00AM and 02.30PM (from NGBO). 4. IF user change the Source of Funds accounts: a. System resets all fields. | ESB - Trapi 1. Special rate ID/Code validation 2. Retrieve special rate NGBO: 2. Retrieve special rate operational days & hours. ECLIPSE: 1. Customer Segment | [FCY] To confirm: 1. Toastbar error for BE validation",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "api",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling - [INTERBANK & INTRABANK] Amount Limit",
+      "Trigger error path: Exclude Product Code in Table 1.1 | SA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Exclude Product Code in Table 1.1 | CA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Table 1.1 Product Code Exclusion (not eligible for transactions)",
+      "Trigger error path: No | Code | Name"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_3_INPUT_AMOUNT_TC_016",
+    "featureName": "FUNCTION 3: INPUT AMOUNT",
+    "requirement": "8 | When tap [Next] to proceed, perform validation: 1. Fields validation & all validation mentioned above 2. SoF Account eligibility (refer to Table 1 - SoF Eligibility Check). If SoF account is NOT eligible to perform transfer, system displays toastbar message \"Your selected account does not support this transfer type. Please select another account.\" 3.Minimum per Transaction Limit: a. Interbank - Minimum transaction amount (from NGBO, is IDR 10,000) for all interbank transfer mode. If does not meet, display inline error message \"Minimum amount is IDR <min limit based on transfer mode>\" b. Intrabank & Own - Minimum transaction amount (from NGBO, is IDR 1). If does not meet, display inline error message \"Minimum amount is IDR <min limit based on transfer mode>\" 4. Maximum per Transaction Limit: a. Interbank, Intrabank & Own - Maximum transaction amount (from NGBO) for selected transfer mode. If does not meet, display inline error message \"Maximum amount is IDR <min limit based on transfer mode>\" b. Intrabank - it is not allowed to transfer more than USD 50k. System displays \"Maximum amount is USD 50,000.\" (To confirm if this is required for Interbank since it would have exceeded Payment Rail's max limit) - use Counter Rate (from Trapi) for conversion to USD. 5. Daily Limit by Transfer Mode (from Settings) a. If exceeds, display warning message \"Amount cannot exceed your remaining limit\" (but user still can proceed as final validation happens at confirmation screen). b. Applies to Intrabank & Interbank (BI-FAST, RTOL, BI-SKN, RTGS) only. 5. SoF Balance Checking a. Refer to Figure 1 (Balance and Account Checking Diagram Flow) If amount > SoF account balance, display warning message \"Amount should not exceed your account balance.\" (but user still can proceed as final validation happens at confirmation screen) b. For scheduled/recurring transaction, system skips SoF balance checking. 5. Special rate validation checking (if applied). IF outside validation period, system to display \"Special rate not available\" pop up. 6. If user tap [Next] button while not resolving the error, displays toastbar error message \"Please resolve all errors to proceed\". Once successful, system to redirect to Transfer Details screen. Note: 1. For Interbank a. Transfer initiated from Beneficiary Listing, Transfer Mode used is default to last succesful transfer mode performed. b. Transfer initiated from New Transfer, Transfer Mode will be based on the default derived from Input Account No page. 2. Maximum transaction amount by transfer mode will only be validated at Confirmation Page | NGBO (P&T Ownership): 1. Retrieve Min Transaction Amount by Transfer Mode (configurable per Country): a. Own b. Intrabank c. Interbank (applies to all BI-FAST, RTOL, BI-SKN, RTGS) Trapi: 1. Counter Rate ECLIPSE: 1. Last successful interbank transfer - transfer mode, by Bene Bank + Bene Account No",
+    "objective": "Verify 8 | when tap [next] to proceed, perform validation: 1. fields validation & all validation mentioned above 2. sof account eligibility (refer to table 1 - sof eligibility check). if sof account is not eligible to perform transfer, system displays toastbar message \"your selected account does not support this transfer type. please select another account.\" 3.minimum per transaction limit: a. interbank - minimum transaction amount (from ngbo, is idr 10,000) for all interbank transfer mode. if does not meet, display inline error message \"minimum amount is idr <min limit based on transfer mode>\" b. intrabank & own - minimum transaction amount (from ngbo, is idr 1). if does not meet, display inline error message \"minimum amount is idr <min limit based on transfer mode>\" 4. maximum per transaction limit: a. interbank, intrabank & own - maximum transaction amount (from ngbo) for selected transfer mode. if does not meet, display inline error message \"maximum amount is idr <min limit based on transfer mode>\" b. intrabank - it is not allowed to transfer more than usd 50k. system displays \"maximum amount is usd 50,000.\" (to confirm if this is required for interbank since it would have exceeded payment rail's max limit) - use counter rate (from trapi) for conversion to usd. 5. daily limit by transfer mode (from settings) a. if exceeds, display warning message \"amount cannot exceed your remaining limit\" (but user still can proceed as final validation happens at confirmation screen). b. applies to intrabank & interbank (bi-fast, rtol, bi-skn, rtgs) only. 5. sof balance checking a. refer to figure 1 (balance and account checking diagram flow) if amount > sof account balance, display warning message \"amount should not exceed your account balance.\" (but user still can proceed as final validation happens at confirmation screen) b. for scheduled/recurring transaction, system skips sof balance checking. 5. special rate validation checking (if applied). if outside validation period, system to display \"special rate not available\" pop up. 6. if user tap [next] button while not resolving the error, displays toastbar error message \"please resolve all errors to proceed\". once successful, system to redirect to transfer details screen. note: 1. for interbank a. transfer initiated from beneficiary listing, transfer mode used is default to last succesful transfer mode performed. b. transfer initiated from new transfer, transfer mode will be based on the default derived from input account no page. 2. maximum transaction amount by transfer mode will only be validated at confirmation page | ngbo (p&t ownership): 1. retrieve min transaction amount by transfer mode (configurable per country): a. own b. intrabank c. interbank (applies to all bi-fast, rtol, bi-skn, rtgs) trapi: 1. counter rate eclipse: 1. last successful interbank transfer - transfer mode, by bene bank + bene account no",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "[INTERBANK] Enter Amount IDR to IDR",
+      "[INTRABANK] Enter Amount - IDR to IDR",
+      "[OWN] Enter Amount - IDR to IDR | Error Handling - Selecting same Transfer to and from CASA",
+      "Scheduled/Recurring Transfer | ;"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 8 | When tap [Next] to proceed, perform validation: 1. Fields validation & all validation mentioned above 2. SoF Account eligibility (refer to Table 1 - SoF Eligibility Check). If SoF account is NOT eligible to perform transfer, system displays toastbar message \"Your selected account does not support this transfer type. Please select another account.\" 3.Minimum per Transaction Limit: a. Interbank - Minimum transaction amount (from NGBO, is IDR 10,000) for all interbank transfer mode. If does not meet, display inline error message \"Minimum amount is IDR <min limit based on transfer mode>\" b. Intrabank & Own - Minimum transaction amount (from NGBO, is IDR 1). If does not meet, display inline error message \"Minimum amount is IDR <min limit based on transfer mode>\" 4. Maximum per Transaction Limit: a. Interbank, Intrabank & Own - Maximum transaction amount (from NGBO) for selected transfer mode. If does not meet, display inline error message \"Maximum amount is IDR <min limit based on transfer mode>\" b. Intrabank - it is not allowed to transfer more than USD 50k. System displays \"Maximum amount is USD 50,000.\" (To confirm if this is required for Interbank since it would have exceeded Payment Rail's max limit) - use Counter Rate (from Trapi) for conversion to USD. 5. Daily Limit by Transfer Mode (from Settings) a. If exceeds, display warning message \"Amount cannot exceed your remaining limit\" (but user still can proceed as final validation happens at confirmation screen). b. Applies to Intrabank & Interbank (BI-FAST, RTOL, BI-SKN, RTGS) only. 5. SoF Balance Checking a. Refer to Figure 1 (Balance and Account Checking Diagram Flow) If amount > SoF account balance, display warning message \"Amount should not exceed your account balance.\" (but user still can proceed as final validation happens at confirmation screen) b. For scheduled/recurring transaction, system skips SoF balance checking. 5. Special rate validation checking (if applied). IF outside validation period, system to display \"Special rate not available\" pop up. 6. If user tap [Next] button while not resolving the error, displays toastbar error message \"Please resolve all errors to proceed\". Once successful, system to redirect to Transfer Details screen. Note: 1. For Interbank a. Transfer initiated from Beneficiary Listing, Transfer Mode used is default to last succesful transfer mode performed. b. Transfer initiated from New Transfer, Transfer Mode will be based on the default derived from Input Account No page. 2. Maximum transaction amount by transfer mode will only be validated at Confirmation Page | NGBO (P&T Ownership): 1. Retrieve Min Transaction Amount by Transfer Mode (configurable per Country): a. Own b. Intrabank c. Interbank (applies to all BI-FAST, RTOL, BI-SKN, RTGS) Trapi: 1. Counter Rate ECLIPSE: 1. Last successful interbank transfer - transfer mode, by Bene Bank + Bene Account No",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 8 | When tap [Next] to proceed, perform validation: 1. Fields validation & all validation mentioned above 2. SoF Account eligibility (refer to Table 1 - SoF Eligibility Check). If SoF account is NOT eligible to perform transfer, system displays toastbar message \"Your selected account does not support this transfer type. Please select another account.\" 3.Minimum per Transaction Limit: a. Interbank - Minimum transaction amount (from NGBO, is IDR 10,000) for all interbank transfer mode. If does not meet, display inline error message \"Minimum amount is IDR <min limit based on transfer mode>\" b. Intrabank & Own - Minimum transaction amount (from NGBO, is IDR 1). If does not meet, display inline error message \"Minimum amount is IDR <min limit based on transfer mode>\" 4. Maximum per Transaction Limit: a. Interbank, Intrabank & Own - Maximum transaction amount (from NGBO) for selected transfer mode. If does not meet, display inline error message \"Maximum amount is IDR <min limit based on transfer mode>\" b. Intrabank - it is not allowed to transfer more than USD 50k. System displays \"Maximum amount is USD 50,000.\" (To confirm if this is required for Interbank since it would have exceeded Payment Rail's max limit) - use Counter Rate (from Trapi) for conversion to USD. 5. Daily Limit by Transfer Mode (from Settings) a. If exceeds, display warning message \"Amount cannot exceed your remaining limit\" (but user still can proceed as final validation happens at confirmation screen). b. Applies to Intrabank & Interbank (BI-FAST, RTOL, BI-SKN, RTGS) only. 5. SoF Balance Checking a. Refer to Figure 1 (Balance and Account Checking Diagram Flow) If amount > SoF account balance, display warning message \"Amount should not exceed your account balance.\" (but user still can proceed as final validation happens at confirmation screen) b. For scheduled/recurring transaction, system skips SoF balance checking. 5. Special rate validation checking (if applied). IF outside validation period, system to display \"Special rate not available\" pop up. 6. If user tap [Next] button while not resolving the error, displays toastbar error message \"Please resolve all errors to proceed\". Once successful, system to redirect to Transfer Details screen. Note: 1. For Interbank a. Transfer initiated from Beneficiary Listing, Transfer Mode used is default to last succesful transfer mode performed. b. Transfer initiated from New Transfer, Transfer Mode will be based on the default derived from Input Account No page. 2. Maximum transaction amount by transfer mode will only be validated at Confirmation Page | NGBO (P&T Ownership): 1. Retrieve Min Transaction Amount by Transfer Mode (configurable per Country): a. Own b. Intrabank c. Interbank (applies to all BI-FAST, RTOL, BI-SKN, RTGS) Trapi: 1. Counter Rate ECLIPSE: 1. Last successful interbank transfer - transfer mode, by Bene Bank + Bene Account No",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling - [INTERBANK & INTRABANK] Amount Limit",
+      "Trigger error path: Exclude Product Code in Table 1.1 | SA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Exclude Product Code in Table 1.1 | CA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Table 1.1 Product Code Exclusion (not eligible for transactions)",
+      "Trigger error path: No | Code | Name"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_3_INPUT_AMOUNT_TC_019",
+    "featureName": "FUNCTION 3: INPUT AMOUNT",
+    "requirement": "Transfer Local - display in SoF, allow to perform transfer | Exclude Product Code in Table 1.1 | SA | 00 - Active | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+    "objective": "Verify transfer local - display in sof, allow to perform transfer | exclude product code in table 1.1 | sa | 00 - active | 01 - single individual 02 - joint or primary | a - active",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "[INTERBANK] Enter Amount IDR to IDR",
+      "[INTRABANK] Enter Amount - IDR to IDR",
+      "[OWN] Enter Amount - IDR to IDR | Error Handling - Selecting same Transfer to and from CASA",
+      "Scheduled/Recurring Transfer | ;"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Transfer Local - display in SoF, allow to perform transfer | Exclude Product Code in Table 1.1 | SA | 00 - Active | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Transfer Local - display in SoF, allow to perform transfer | Exclude Product Code in Table 1.1 | SA | 00 - Active | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling - [INTERBANK & INTRABANK] Amount Limit",
+      "Trigger error path: Exclude Product Code in Table 1.1 | SA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Exclude Product Code in Table 1.1 | CA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Table 1.1 Product Code Exclusion (not eligible for transactions)",
+      "Trigger error path: No | Code | Name"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_3_INPUT_AMOUNT_TC_020",
+    "featureName": "FUNCTION 3: INPUT AMOUNT",
+    "requirement": "Transfer Local - display in SoF, allow to perform transfer | Exclude Product Code in Table 1.1 | CA | 00 - Active | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+    "objective": "Verify transfer local - display in sof, allow to perform transfer | exclude product code in table 1.1 | ca | 00 - active | 01 - single individual 02 - joint or primary | a - active",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "[INTERBANK] Enter Amount IDR to IDR",
+      "[INTRABANK] Enter Amount - IDR to IDR",
+      "[OWN] Enter Amount - IDR to IDR | Error Handling - Selecting same Transfer to and from CASA",
+      "Scheduled/Recurring Transfer | ;"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Transfer Local - display in SoF, allow to perform transfer | Exclude Product Code in Table 1.1 | CA | 00 - Active | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Transfer Local - display in SoF, allow to perform transfer | Exclude Product Code in Table 1.1 | CA | 00 - Active | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling - [INTERBANK & INTRABANK] Amount Limit",
+      "Trigger error path: Exclude Product Code in Table 1.1 | SA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Exclude Product Code in Table 1.1 | CA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Table 1.1 Product Code Exclusion (not eligible for transactions)",
+      "Trigger error path: No | Code | Name"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_3_INPUT_AMOUNT_TC_097",
+    "featureName": "FUNCTION 3: INPUT AMOUNT",
+    "requirement": "2 | D | Delete",
+    "objective": "Verify 2 | d | delete",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "[INTERBANK] Enter Amount IDR to IDR",
+      "[INTRABANK] Enter Amount - IDR to IDR",
+      "[OWN] Enter Amount - IDR to IDR | Error Handling - Selecting same Transfer to and from CASA",
+      "Scheduled/Recurring Transfer | ;"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Send API request for requirement: 2 | D | Delete",
+      "Validate expected behavior using api assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | D | Delete",
+    "priority": "P1",
+    "layer": "API",
+    "automationCandidate": true,
+    "automationType": "api",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling - [INTERBANK & INTRABANK] Amount Limit",
+      "Trigger error path: Exclude Product Code in Table 1.1 | SA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Exclude Product Code in Table 1.1 | CA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Table 1.1 Product Code Exclusion (not eligible for transactions)",
+      "Trigger error path: No | Code | Name"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_3_INPUT_AMOUNT_TC_102",
+    "featureName": "FUNCTION 3: INPUT AMOUNT",
+    "requirement": "SoF | Bene Account | Transfer | You Send | They Get",
+    "objective": "Verify sof | bene account | transfer | you send | they get",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "[INTERBANK] Enter Amount IDR to IDR",
+      "[INTRABANK] Enter Amount - IDR to IDR",
+      "[OWN] Enter Amount - IDR to IDR | Error Handling - Selecting same Transfer to and from CASA",
+      "Scheduled/Recurring Transfer | ;"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Send API request for requirement: SoF | Bene Account | Transfer | You Send | They Get",
+      "Validate expected behavior using api assertions"
+    ],
+    "expectedResult": "System satisfies requirement: SoF | Bene Account | Transfer | You Send | They Get",
+    "priority": "P1",
+    "layer": "API",
+    "automationCandidate": true,
+    "automationType": "api",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling - [INTERBANK & INTRABANK] Amount Limit",
+      "Trigger error path: Exclude Product Code in Table 1.1 | SA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Exclude Product Code in Table 1.1 | CA | 01 - InActive | 01 - Single Individual 02 - Joint OR Primary | A - Active",
+      "Trigger error path: Table 1.1 Product Code Exclusion (not eligible for transactions)",
+      "Trigger error path: No | Code | Name"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  }
+]

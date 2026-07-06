@@ -1,0 +1,64 @@
+# Test Case Index
+# p-tlocaltransferdddapispecv1 - InquireTransferFee
+# Generated: 2026-07-02T13:14:11.389Z
+---
+feature: p-tlocaltransferdddapispecv1
+apiName: InquireTransferFee
+description: Test cases for InquireTransferFee endpoint
+totalScenarios: 7
+scenarios:
+  - id: InquireTransferFee-001-positive
+    title: POST /fee-inquiry - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - inquiretransferfee
+    priority: P1
+  - id: InquireTransferFee-002-missing-auth
+    title: POST /fee-inquiry - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: InquireTransferFee-003-invalid-auth
+    title: POST /fee-inquiry - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: InquireTransferFee-004-invalid-content-type
+    title: POST /fee-inquiry - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: InquireTransferFee-005-duplicate-correlation-id
+    title: POST /fee-inquiry - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: InquireTransferFee-006-request-timeout
+    title: POST /fee-inquiry - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: InquireTransferFee-007-empty-request-body
+    title: POST /fee-inquiry - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-02T13:14:11.389Z'

@@ -1,0 +1,87 @@
+# BDD Test Case - p-tlocaltransferdddapispecv1
+# Generated for: POST /settings - Duplicate Correlation ID
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: LimitSettingUpdate-005-duplicate-correlation-id
+title: POST /settings - Duplicate Correlation ID
+feature: p-tlocaltransferdddapispecv1
+description: Same request with duplicate correlation ID should be idempotent
+tags:
+  - edge-case
+  - idempotency
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+  - First request with correlation ID has been processed
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Payment-IP}:{Payment-PORT}/pt/limits/v1/external/settings'
+  endpoint: 'https: //{Payment-IP}:{Payment-PORT}/pt/limits/v1/external/settings'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: duplicate-correlation-123
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    productCode: <value>
+    limitType: <value>
+    intervalType: <value>
+    requestedLimitAmount: <value>
+    amount: <value>
+    currency: <value>
+    ? "{\n  \"productCode\": \"P3\",\n  \"limitType\": [\n    {\n      \"intervalType\": \"DAILY\",\n      \"requestedLimitAmount\": {\n        \"amount\": 1200,\n        \"currency\": \"IDR\"\n      }\n    },\n    {\n      \"intervalType\": \"PERTXN\",\n      \"requestedLimitAmount\": {\n        \"amount\": 500,\n        \"currency\": \"IDR\"\n      }\n    },\n    {\n      \"intervalType\": \"QUICK\",\n      \"requestedLimitAmount\": {\n        \"amount\": 200,\n        \"currency\": \"IDR\"\n      }\n    }\n  ]\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: 'Null'
+    data: Object
+    productId: String
+    productCode: String
+    updates: Array<Object>
+    recordId: String
+    intervalType: String
+    currentLimit: Object
+    requestedLimit: Object
+    coolingEndTime: String
+    error: 'Null'
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 (or 202 for idempotent)
+    type: custom
+  - description: Same response as first request
+    type: custom
+  - description: No duplicate processing occurred
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: LimitSettingUpdate
+  sourceRows: ''
+  apiSpecFile: LimitSettingUpdate

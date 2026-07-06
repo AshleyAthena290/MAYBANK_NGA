@@ -1,0 +1,130 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.816Z",
+  "report": {
+    "featureName": "FUNCTION 1: TRANSFER INTRODUCTION/ENTRY POINT",
+    "classifications": [
+      {
+        "requirement": "Pre-Login State - Initiate Transfer (Quick Action) | Pre-Login State - Initiate Transfer (Menu)",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "Post-Login State - Initiate Transfer (Quick Action) FIRST TIMER | Post-Login State - Initiate Transfer (Menu) FIRST TIMER | Post-Login State - Initiate Transfer (Quick Action) NON-FIRST TIMER | Post-Login State - Initiate Transfer (Menu) NON-FIRST TIMER",
+        "layers": [
+          {
+            "layer": "API",
+            "reason": "Requirement references API contract or transport behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "CASA Account Details - Transfer Landing Page",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "RDN Account Details - OWN Transfer > Input Amount Page",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Description | Integration | Remarks",
+        "layers": [
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "1 | For user at pre-login state and tap [Transfer] icon from home dashboard screen OR menu screen: 1. Redirects user to the login screen.",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "2 | For user at post-login state and tap [+Transfer] icon from home dashboard screen OR menu screen: 1. For first timer (user who has never accessed transfer page via NGA): a. Display Transfer Introduction Page. b. Mark the user as a \"non-first timer for transfer\", regardless whether tap on [Get Started]. 2. For non-first timer, to display Transfer Introduction Page based on NGBO configuration (display option by App Version, Start & End Date and Frequency to display within the defined period e.g. Once a day, once a week, once 1 month, X times within the period), a \"flag/counter\" will be used to track the display. 3. When user tap on Transfer or Intro Page [Get Started], system validates if user has any CASA account. a. IF user has no CASA account (to follow Transfer Local SoF eligibility check for Product Code & Segment ID, excluding Account Sttaus), display randomised \"Apply CASA now bottom drawer\". Randomiser will be displayed as follow: - Randomiser to select one available option from a dynamic pool of drawer variants (e.g. Option 1 to 5) Available options are maintainable via NGBO/CMS). - Each option will be displayed randomly in no particular order. - When tap on [Apply Now], navigate to \"Apply New - CA & SA products\". b. IF user has CASA account, proceed to display Transfer Landing Page. | NGA Channel Layer: 1. Transfer first timer flag 2. Intro Page Display Flag (non first timer) NGBO (P&T): 1. Retrieve Transfer Intro Page Config: - App Version - Start & End Date - Frequency to display within the defined period (e.g. Once a day, once a week, once 1 month, X times within the period) NGBO/CMS: 2. Retrieve \"Apply CASA now\" Randomised Options/Image: - Available options & Image content",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "API",
+            "reason": "Requirement references API contract or transport behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      }
+    ]
+  }
+}

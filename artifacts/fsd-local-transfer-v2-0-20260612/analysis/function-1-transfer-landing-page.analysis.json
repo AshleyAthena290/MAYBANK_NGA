@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.617Z",
+  "report": {
+    "featureName": "FUNCTION 1: TRANSFER LANDING PAGE",
+    "missingRequirements": [
+      "Feature description is missing.",
+      "User/system flow is missing.",
+      "Dependencies and prerequisites are missing.",
+      "Navigation path details are missing."
+    ],
+    "ambiguities": [],
+    "risks": [
+      "Error handling behavior is not documented."
+    ],
+    "missingValidations": [],
+    "securityConcerns": [
+      "Sensitive data is present without explicit masking/encryption requirements."
+    ],
+    "apiDependencies": [],
+    "uiDependencies": [
+      "NOTE: The following updates (+ New Transfer) reflect the latest Figma changes and to be applied across the entire Local Transfer module. | NOTE: The following updates (…) reflect the latest Figma changes and to be applied across the entire Local Transfer module.",
+      "Transfer Landing Page | Transfer Landing Page - Empty State",
+      "Transfer Landing Page Permutation - Special Case | Transfer Landing Page - Directional Sticky Header & Scrolling Behaviour | Transfer Landing Page - Search Beneficiary",
+      "Long/Hold Press Beneficiary | Tap Bene […] icon | Tap [+ Transfer] button for Interbank & Intrabank (Refer to Trf - Input Acct No.)",
+      "Tap Beneficiary from list (Refer to Trf - Input Amt) | Own Trf - IF selected Source Account is the Transfer To account | Own Trf - IF selected Transfer To account is the same as primary account/source account | Tap Beneficiary from list - If Bene only has Nickname, also populate Bene Name with Nickname"
+    ],
+    "backendDependencies": [],
+    "testability": [
+      "Flow details are missing, reducing scenario traceability.",
+      "Validation rules can drive positive, negative, and boundary test design.",
+      "Specification gaps and ambiguities should be resolved before automation implementation."
+    ]
+  }
+}

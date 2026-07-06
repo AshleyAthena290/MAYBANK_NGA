@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.609Z",
+  "report": {
+    "featureName": "Table of Contents",
+    "missingRequirements": [
+      "Feature description is missing.",
+      "User/system flow is missing.",
+      "Business rules are missing.",
+      "Dependencies and prerequisites are missing.",
+      "Navigation path details are missing."
+    ],
+    "ambiguities": [],
+    "risks": [
+      "Error handling behavior is not documented.",
+      "Input validation behavior is not documented."
+    ],
+    "missingValidations": [
+      "No explicit validation rules were found for user input or business constraints.",
+      "Boundary and negative validation cases are likely under-specified."
+    ],
+    "securityConcerns": [
+      "No direct API security concerns detected from current specification scope."
+    ],
+    "apiDependencies": [],
+    "uiDependencies": [
+      "1.1.7.1 Receipt w Theme",
+      "1.1.8 Transfer Notification",
+      "1.2 Recipient - Create New",
+      "1.3.5 Manage Favourite Edit & Remove Group",
+      "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard",
+      "1.4.1 Transfer Setting - Manage Scheduled Transfer List",
+      "1.4.2 Transfer Setting - Remove Recurring Details",
+      "1.4.3 Transfer Setting - Manage Limit Dashboard",
+      "1.4.4 Transfer Setting - Manage Limit List",
+      "1.4.5 Transfer Setting - Manage Limit Details",
+      "1.5 Data Extraction"
+    ],
+    "backendDependencies": [],
+    "testability": [
+      "Flow details are missing, reducing scenario traceability.",
+      "Validation rules are missing, increasing manual interpretation during test design.",
+      "Specification gaps and ambiguities should be resolved before automation implementation."
+    ]
+  }
+}

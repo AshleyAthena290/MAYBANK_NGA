@@ -1,0 +1,765 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:18.111Z",
+  "bundle": {
+    "featureName": "FUNCTION 5: CONFIRMATION",
+    "testCases": [
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_001",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+        "objective": "Verify note: the following updates reflect the latest figma changes and to be applied across the entire local transfer module",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_002",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+        "objective": "Verify confirmation screen | [interbank] and [intrabank] - s2u authorisation after tapping [confirm] button.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_003",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "[INTERBANK] BI-FAST Confirmation Screen",
+        "objective": "Verify [interbank] bi-fast confirmation screen",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: [INTERBANK] BI-FAST Confirmation Screen",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: [INTERBANK] BI-FAST Confirmation Screen",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_004",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "[INTERBANK] RTOL Confirmation Screen",
+        "objective": "Verify [interbank] rtol confirmation screen",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: [INTERBANK] RTOL Confirmation Screen",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: [INTERBANK] RTOL Confirmation Screen",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_005",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "[INTERBANK] BI-SKN (IDR to IDR) Confirmation Screen",
+        "objective": "Verify [interbank] bi-skn (idr to idr) confirmation screen",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: [INTERBANK] BI-SKN (IDR to IDR) Confirmation Screen",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: [INTERBANK] BI-SKN (IDR to IDR) Confirmation Screen",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_006",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "[INTERBANK] RTGS (IDR to IDR) Confirmation Screen",
+        "objective": "Verify [interbank] rtgs (idr to idr) confirmation screen",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: [INTERBANK] RTGS (IDR to IDR) Confirmation Screen",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: [INTERBANK] RTGS (IDR to IDR) Confirmation Screen",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_007",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "[INTRABANK] IDR to IDR Confirmation Screen",
+        "objective": "Verify [intrabank] idr to idr confirmation screen",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: [INTRABANK] IDR to IDR Confirmation Screen",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: [INTRABANK] IDR to IDR Confirmation Screen",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_008",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "[OWN] IDR - IDR Confirmation Screen",
+        "objective": "Verify [own] idr - idr confirmation screen",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: [OWN] IDR - IDR Confirmation Screen",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: [OWN] IDR - IDR Confirmation Screen",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_009",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "Scheduled/Recurring Confirmation Screen",
+        "objective": "Verify scheduled/recurring confirmation screen",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Scheduled/Recurring Confirmation Screen",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Scheduled/Recurring Confirmation Screen",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_010",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "SCENARIO 1: Initiate transaction via Transfer Landing Screen, if Beneficiary only has nickname (added manually via Account No), populate & replace with Registered Name.",
+        "objective": "Verify scenario 1: initiate transaction via transfer landing screen, if beneficiary only has nickname (added manually via account no), populate & replace with registered name.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: SCENARIO 1: Initiate transaction via Transfer Landing Screen, if Beneficiary only has nickname (added manually via Account No), populate & replace with Registered Name.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: SCENARIO 1: Initiate transaction via Transfer Landing Screen, if Beneficiary only has nickname (added manually via Account No), populate & replace with Registered Name.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_011",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "SCENARIO 2: Initiate transaction via Transfer Landing Screen on a newly created favourite added by account number. Select BI-SKN. User input Account Holder Name.",
+        "objective": "Verify scenario 2: initiate transaction via transfer landing screen on a newly created favourite added by account number. select bi-skn. user input account holder name.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: SCENARIO 2: Initiate transaction via Transfer Landing Screen on a newly created favourite added by account number. Select BI-SKN. User input Account Holder Name.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: SCENARIO 2: Initiate transaction via Transfer Landing Screen on a newly created favourite added by account number. Select BI-SKN. User input Account Holder Name.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_012",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+        "objective": "Verify error handling - sof eligibility & limit checking (to revisit term use for account bal once confirmed) | confirmation with terms & condition for all transfer modes",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_013",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "[INTRABANK] Confirmation Screen w/ Additional Details",
+        "objective": "Verify [intrabank] confirmation screen w/ additional details",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: [INTRABANK] Confirmation Screen w/ Additional Details",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: [INTRABANK] Confirmation Screen w/ Additional Details",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_014",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "[INTRABANK] IDR to FCY Confirmation Screen | [INTRABANK] IDR to FCY Confirmation Screen (with GAA) Confirmation Screen | [INTRABANK] IDR to FCY with Special Rate Confirmation Screen | [INTRABANK] FCY to IDR Confirmation Screen (Pending Screen)",
+        "objective": "Verify [intrabank] idr to fcy confirmation screen | [intrabank] idr to fcy confirmation screen (with gaa) confirmation screen | [intrabank] idr to fcy with special rate confirmation screen | [intrabank] fcy to idr confirmation screen (pending screen)",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: [INTRABANK] IDR to FCY Confirmation Screen | [INTRABANK] IDR to FCY Confirmation Screen (with GAA) Confirmation Screen | [INTRABANK] IDR to FCY with Special Rate Confirmation Screen | [INTRABANK] FCY to IDR Confirmation Screen (Pending Screen)",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: [INTRABANK] IDR to FCY Confirmation Screen | [INTRABANK] IDR to FCY Confirmation Screen (with GAA) Confirmation Screen | [INTRABANK] IDR to FCY with Special Rate Confirmation Screen | [INTRABANK] FCY to IDR Confirmation Screen (Pending Screen)",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_015",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "[INTRABANK] Confirmation Screen w/ Additional Details & Underlying Doc",
+        "objective": "Verify [intrabank] confirmation screen w/ additional details & underlying doc",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: [INTRABANK] Confirmation Screen w/ Additional Details & Underlying Doc",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: [INTRABANK] Confirmation Screen w/ Additional Details & Underlying Doc",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_016",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+        "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_017",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "No. | Description | Integration | Remark",
+        "objective": "Verify no. | description | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Description | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Description | Integration | Remark",
+        "priority": "P2",
+        "layer": "Integration",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_018",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "1 | For transfer performed via Favourite, and Beneficiary only has Nickname: 1. Once Bene Account Inquiry is performed (BI-FAST & RTOL) or Account Holder Name is manually entered (BI-SKN & RTGS), system to populate the Beneficiary Registered Name or Account Holder Name in the Bene Name field. 2. When transfer is completed successfully, save this Beneficiary Registered Name or Account Holder Name in the Favourite Beneficiary Name field. 3. System hides any optional fields left blank on previous screens.",
+        "objective": "Verify 1 | for transfer performed via favourite, and beneficiary only has nickname: 1. once bene account inquiry is performed (bi-fast & rtol) or account holder name is manually entered (bi-skn & rtgs), system to populate the beneficiary registered name or account holder name in the bene name field. 2. when transfer is completed successfully, save this beneficiary registered name or account holder name in the favourite beneficiary name field. 3. system hides any optional fields left blank on previous screens.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | For transfer performed via Favourite, and Beneficiary only has Nickname: 1. Once Bene Account Inquiry is performed (BI-FAST & RTOL) or Account Holder Name is manually entered (BI-SKN & RTGS), system to populate the Beneficiary Registered Name or Account Holder Name in the Bene Name field. 2. When transfer is completed successfully, save this Beneficiary Registered Name or Account Holder Name in the Favourite Beneficiary Name field. 3. System hides any optional fields left blank on previous screens.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | For transfer performed via Favourite, and Beneficiary only has Nickname: 1. Once Bene Account Inquiry is performed (BI-FAST & RTOL) or Account Holder Name is manually entered (BI-SKN & RTGS), system to populate the Beneficiary Registered Name or Account Holder Name in the Bene Name field. 2. When transfer is completed successfully, save this Beneficiary Registered Name or Account Holder Name in the Favourite Beneficiary Name field. 3. System hides any optional fields left blank on previous screens.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_019",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "2 | Upon tapping [Confirm] button, system performs: 1. SoF Account eligibility (refer to \"Input Amt\" > Table 1 - SoF Eligibility Check). If SoF account is NOT eligible to perform transfer, system displays toastbar message \"This account is unable to make this transfer. Select another account.\" 2. Minimum amount per Transaction Limit: a. Minimum transaction amount (from NGBO, basically is IDR10,000) for selected transfer mode. If does not meet, display toastbar error message \"Minimum amount is IDR <min limit based on transfer mode>\" (i) Own (ii) Intrabank (iii) Interbank 3. Maximum per Transaction Limit: a. Interbank, Intrabank & Own - Maximum transaction amount (from NGBO) for selected transfer mode. If does not meet, display inline error message \"Maximum amount is IDR <max limit based on transfer mode>\" b. Intrabank (If sender/recipient = non-citizen) - it is not allowed to transfer amount more than USD 50k or equivalent. System displays \"Maximum amount is USD 50,000.\" c. Interbank - applicable for RTGS (If sender/recipient = non-citizen) - it is not allowed to transfer amount more than USD 50k or equivalent. System displays toastbar error \"Maximum amount is USD 50,000.\" and cannot proceed. 4. Daily Limit by Transfer Mode (from Settings) - for INTERBANK & INTRABANK only for Immediate transfer a. If exceeds, display toastbar error message \"Amount cannot exceed your remaining limit\" 5. SoF Balance Checking a. If amount > SoF available balance, display toastbar error message \"Transaction amount cannot exceed you available balance.\" b. For scheduled/recurring transaction, system skips SoF balance checking. 6. If all above validation passed, navigate to Status End Screen. For INTRABANK & OWN with Cross Currency (IDR - FCY | FCY to IDR): (i) Exchange Rate expires in XX seconds. Upon sliding the confirmation button, if exchange rate expired, system to display Exchange Rate Information Drawer with latest rate. (ii) Exchange rate information drawer expires in XX seconds. - Once timer expired, system will display [Refresh] button. - Tap on [Refresh] will get new rate and transaction amount. - Tap on [Confirm], system to redirect back to Confirmation screen. User to tap [Confirm] button to confirm the transaction. | P&T: 1. Retrieve Daily Limit (NGA) by transfer mode: a. Intrabank b. Interbank - BI-FAST - RTOL - BI-SKN - RTGS NGBO (P&T Ownership): 1. Retrieve Transaction Limit (Min & Max) by Transfer Mode: a. Own b. Intrabank c. Interbank (applies to all BI-FAST, RTOL, BI-SKN, RTGS) ECLIPSE: 1. Retrieve SoF Available Balance ESB: 1. Retrieve Foreign Exchange Rate 2. Post Transfer request for: a. OWN b. Intrabank c. Interbank - BI-FAST - RTOL - BI-SKN - RTGS Note: ESB to perform transaction reversal if transfer fails. Standing Instruction: 1. Post Scheduled or Recurring transaction for each Transfer Mode",
+        "objective": "Verify 2 | upon tapping [confirm] button, system performs: 1. sof account eligibility (refer to \"input amt\" > table 1 - sof eligibility check). if sof account is not eligible to perform transfer, system displays toastbar message \"this account is unable to make this transfer. select another account.\" 2. minimum amount per transaction limit: a. minimum transaction amount (from ngbo, basically is idr10,000) for selected transfer mode. if does not meet, display toastbar error message \"minimum amount is idr <min limit based on transfer mode>\" (i) own (ii) intrabank (iii) interbank 3. maximum per transaction limit: a. interbank, intrabank & own - maximum transaction amount (from ngbo) for selected transfer mode. if does not meet, display inline error message \"maximum amount is idr <max limit based on transfer mode>\" b. intrabank (if sender/recipient = non-citizen) - it is not allowed to transfer amount more than usd 50k or equivalent. system displays \"maximum amount is usd 50,000.\" c. interbank - applicable for rtgs (if sender/recipient = non-citizen) - it is not allowed to transfer amount more than usd 50k or equivalent. system displays toastbar error \"maximum amount is usd 50,000.\" and cannot proceed. 4. daily limit by transfer mode (from settings) - for interbank & intrabank only for immediate transfer a. if exceeds, display toastbar error message \"amount cannot exceed your remaining limit\" 5. sof balance checking a. if amount > sof available balance, display toastbar error message \"transaction amount cannot exceed you available balance.\" b. for scheduled/recurring transaction, system skips sof balance checking. 6. if all above validation passed, navigate to status end screen. for intrabank & own with cross currency (idr - fcy | fcy to idr): (i) exchange rate expires in xx seconds. upon sliding the confirmation button, if exchange rate expired, system to display exchange rate information drawer with latest rate. (ii) exchange rate information drawer expires in xx seconds. - once timer expired, system will display [refresh] button. - tap on [refresh] will get new rate and transaction amount. - tap on [confirm], system to redirect back to confirmation screen. user to tap [confirm] button to confirm the transaction. | p&t: 1. retrieve daily limit (nga) by transfer mode: a. intrabank b. interbank - bi-fast - rtol - bi-skn - rtgs ngbo (p&t ownership): 1. retrieve transaction limit (min & max) by transfer mode: a. own b. intrabank c. interbank (applies to all bi-fast, rtol, bi-skn, rtgs) eclipse: 1. retrieve sof available balance esb: 1. retrieve foreign exchange rate 2. post transfer request for: a. own b. intrabank c. interbank - bi-fast - rtol - bi-skn - rtgs note: esb to perform transaction reversal if transfer fails. standing instruction: 1. post scheduled or recurring transaction for each transfer mode",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | Upon tapping [Confirm] button, system performs: 1. SoF Account eligibility (refer to \"Input Amt\" > Table 1 - SoF Eligibility Check). If SoF account is NOT eligible to perform transfer, system displays toastbar message \"This account is unable to make this transfer. Select another account.\" 2. Minimum amount per Transaction Limit: a. Minimum transaction amount (from NGBO, basically is IDR10,000) for selected transfer mode. If does not meet, display toastbar error message \"Minimum amount is IDR <min limit based on transfer mode>\" (i) Own (ii) Intrabank (iii) Interbank 3. Maximum per Transaction Limit: a. Interbank, Intrabank & Own - Maximum transaction amount (from NGBO) for selected transfer mode. If does not meet, display inline error message \"Maximum amount is IDR <max limit based on transfer mode>\" b. Intrabank (If sender/recipient = non-citizen) - it is not allowed to transfer amount more than USD 50k or equivalent. System displays \"Maximum amount is USD 50,000.\" c. Interbank - applicable for RTGS (If sender/recipient = non-citizen) - it is not allowed to transfer amount more than USD 50k or equivalent. System displays toastbar error \"Maximum amount is USD 50,000.\" and cannot proceed. 4. Daily Limit by Transfer Mode (from Settings) - for INTERBANK & INTRABANK only for Immediate transfer a. If exceeds, display toastbar error message \"Amount cannot exceed your remaining limit\" 5. SoF Balance Checking a. If amount > SoF available balance, display toastbar error message \"Transaction amount cannot exceed you available balance.\" b. For scheduled/recurring transaction, system skips SoF balance checking. 6. If all above validation passed, navigate to Status End Screen. For INTRABANK & OWN with Cross Currency (IDR - FCY | FCY to IDR): (i) Exchange Rate expires in XX seconds. Upon sliding the confirmation button, if exchange rate expired, system to display Exchange Rate Information Drawer with latest rate. (ii) Exchange rate information drawer expires in XX seconds. - Once timer expired, system will display [Refresh] button. - Tap on [Refresh] will get new rate and transaction amount. - Tap on [Confirm], system to redirect back to Confirmation screen. User to tap [Confirm] button to confirm the transaction. | P&T: 1. Retrieve Daily Limit (NGA) by transfer mode: a. Intrabank b. Interbank - BI-FAST - RTOL - BI-SKN - RTGS NGBO (P&T Ownership): 1. Retrieve Transaction Limit (Min & Max) by Transfer Mode: a. Own b. Intrabank c. Interbank (applies to all BI-FAST, RTOL, BI-SKN, RTGS) ECLIPSE: 1. Retrieve SoF Available Balance ESB: 1. Retrieve Foreign Exchange Rate 2. Post Transfer request for: a. OWN b. Intrabank c. Interbank - BI-FAST - RTOL - BI-SKN - RTGS Note: ESB to perform transaction reversal if transfer fails. Standing Instruction: 1. Post Scheduled or Recurring transaction for each Transfer Mode",
+          "Validate expected behavior using api assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | Upon tapping [Confirm] button, system performs: 1. SoF Account eligibility (refer to \"Input Amt\" > Table 1 - SoF Eligibility Check). If SoF account is NOT eligible to perform transfer, system displays toastbar message \"This account is unable to make this transfer. Select another account.\" 2. Minimum amount per Transaction Limit: a. Minimum transaction amount (from NGBO, basically is IDR10,000) for selected transfer mode. If does not meet, display toastbar error message \"Minimum amount is IDR <min limit based on transfer mode>\" (i) Own (ii) Intrabank (iii) Interbank 3. Maximum per Transaction Limit: a. Interbank, Intrabank & Own - Maximum transaction amount (from NGBO) for selected transfer mode. If does not meet, display inline error message \"Maximum amount is IDR <max limit based on transfer mode>\" b. Intrabank (If sender/recipient = non-citizen) - it is not allowed to transfer amount more than USD 50k or equivalent. System displays \"Maximum amount is USD 50,000.\" c. Interbank - applicable for RTGS (If sender/recipient = non-citizen) - it is not allowed to transfer amount more than USD 50k or equivalent. System displays toastbar error \"Maximum amount is USD 50,000.\" and cannot proceed. 4. Daily Limit by Transfer Mode (from Settings) - for INTERBANK & INTRABANK only for Immediate transfer a. If exceeds, display toastbar error message \"Amount cannot exceed your remaining limit\" 5. SoF Balance Checking a. If amount > SoF available balance, display toastbar error message \"Transaction amount cannot exceed you available balance.\" b. For scheduled/recurring transaction, system skips SoF balance checking. 6. If all above validation passed, navigate to Status End Screen. For INTRABANK & OWN with Cross Currency (IDR - FCY | FCY to IDR): (i) Exchange Rate expires in XX seconds. Upon sliding the confirmation button, if exchange rate expired, system to display Exchange Rate Information Drawer with latest rate. (ii) Exchange rate information drawer expires in XX seconds. - Once timer expired, system will display [Refresh] button. - Tap on [Refresh] will get new rate and transaction amount. - Tap on [Confirm], system to redirect back to Confirmation screen. User to tap [Confirm] button to confirm the transaction. | P&T: 1. Retrieve Daily Limit (NGA) by transfer mode: a. Intrabank b. Interbank - BI-FAST - RTOL - BI-SKN - RTGS NGBO (P&T Ownership): 1. Retrieve Transaction Limit (Min & Max) by Transfer Mode: a. Own b. Intrabank c. Interbank (applies to all BI-FAST, RTOL, BI-SKN, RTGS) ECLIPSE: 1. Retrieve SoF Available Balance ESB: 1. Retrieve Foreign Exchange Rate 2. Post Transfer request for: a. OWN b. Intrabank c. Interbank - BI-FAST - RTOL - BI-SKN - RTGS Note: ESB to perform transaction reversal if transfer fails. Standing Instruction: 1. Post Scheduled or Recurring transaction for each Transfer Mode",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "api",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_020",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "3 | For Terms & Condition hyperlink: 1. Option to display \"Terms & Conditions hyperlink\" are configurable via NGBO by country. If ON, then to display, else hide. (This does not apply to T&C message display, but hyperlink only) 2. Terms & Conditions content will be rendered and viewed in Webview based on Transfer Mode. 3. T&C can be viewed in PDF format (content uploaded as PDF) or WebPage (defined as URL). | NGBO 1. Retrieve T&C hyperlink display - On/Off flag by country CMS: 1. Retrieve T&C message 2. Retrieve T&C contents by Transfer Mode a. OWN b. Intrabank c. Interbank - BI-FAST - RTOL - BI-SKN - RTGS 3. Retrieve T&C contents by language (alphabet/non-alphabet)",
+        "objective": "Verify 3 | for terms & condition hyperlink: 1. option to display \"terms & conditions hyperlink\" are configurable via ngbo by country. if on, then to display, else hide. (this does not apply to t&c message display, but hyperlink only) 2. terms & conditions content will be rendered and viewed in webview based on transfer mode. 3. t&c can be viewed in pdf format (content uploaded as pdf) or webpage (defined as url). | ngbo 1. retrieve t&c hyperlink display - on/off flag by country cms: 1. retrieve t&c message 2. retrieve t&c contents by transfer mode a. own b. intrabank c. interbank - bi-fast - rtol - bi-skn - rtgs 3. retrieve t&c contents by language (alphabet/non-alphabet)",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 3 | For Terms & Condition hyperlink: 1. Option to display \"Terms & Conditions hyperlink\" are configurable via NGBO by country. If ON, then to display, else hide. (This does not apply to T&C message display, but hyperlink only) 2. Terms & Conditions content will be rendered and viewed in Webview based on Transfer Mode. 3. T&C can be viewed in PDF format (content uploaded as PDF) or WebPage (defined as URL). | NGBO 1. Retrieve T&C hyperlink display - On/Off flag by country CMS: 1. Retrieve T&C message 2. Retrieve T&C contents by Transfer Mode a. OWN b. Intrabank c. Interbank - BI-FAST - RTOL - BI-SKN - RTGS 3. Retrieve T&C contents by language (alphabet/non-alphabet)",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 3 | For Terms & Condition hyperlink: 1. Option to display \"Terms & Conditions hyperlink\" are configurable via NGBO by country. If ON, then to display, else hide. (This does not apply to T&C message display, but hyperlink only) 2. Terms & Conditions content will be rendered and viewed in Webview based on Transfer Mode. 3. T&C can be viewed in PDF format (content uploaded as PDF) or WebPage (defined as URL). | NGBO 1. Retrieve T&C hyperlink display - On/Off flag by country CMS: 1. Retrieve T&C message 2. Retrieve T&C contents by Transfer Mode a. OWN b. Intrabank c. Interbank - BI-FAST - RTOL - BI-SKN - RTGS 3. Retrieve T&C contents by language (alphabet/non-alphabet)",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_5_CONFIRMATION_TC_021",
+        "featureName": "FUNCTION 5: CONFIRMATION",
+        "requirement": "4 | S2U Authorisation is NOT required for Transfer to Own",
+        "objective": "Verify 4 | s2u authorisation is not required for transfer to own",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+          "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+          "[INTERBANK] BI-FAST Confirmation Screen",
+          "[INTERBANK] RTOL Confirmation Screen"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 4 | S2U Authorisation is NOT required for Transfer to Own",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 4 | S2U Authorisation is NOT required for Transfer to Own",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,235 @@
+# BDD Test Case - p-tlocaltransferdddapispecv1
+# Generated for: POST /settings - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: LimitSettingUpdate-001-positive
+title: POST /settings - Happy Path
+feature: p-tlocaltransferdddapispecv1
+description: Update Limit by product.
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - limitsettingupdate
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Payment-IP}:{Payment-PORT}/pt/limits/v1/external/settings'
+  endpoint: 'https: //{Payment-IP}:{Payment-PORT}/pt/limits/v1/external/settings'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1782998715661
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    productCode: <value>
+    limitType: <value>
+    intervalType: <value>
+    requestedLimitAmount: <value>
+    amount: <value>
+    currency: <value>
+    ? "{\n  \"productCode\": \"P3\",\n  \"limitType\": [\n    {\n      \"intervalType\": \"DAILY\",\n      \"requestedLimitAmount\": {\n        \"amount\": 1200,\n        \"currency\": \"IDR\"\n      }\n    },\n    {\n      \"intervalType\": \"PERTXN\",\n      \"requestedLimitAmount\": {\n        \"amount\": 500,\n        \"currency\": \"IDR\"\n      }\n    },\n    {\n      \"intervalType\": \"QUICK\",\n      \"requestedLimitAmount\": {\n        \"amount\": 200,\n        \"currency\": \"IDR\"\n      }\n    }\n  ]\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: 'Null'
+    data: Object
+    productId: String
+    productCode: String
+    updates: Array<Object>
+    recordId: String
+    intervalType: String
+    currentLimit: Object
+    requestedLimit: Object
+    coolingEndTime: String
+    error: 'Null'
+  expectedFields:
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: correlationId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: correlationId'
+    - fieldPath: meta
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: meta'
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.productId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: productId'
+      parentField: data
+    - fieldPath: data.productCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: productCode'
+      parentField: data
+    - fieldPath: data.updates
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: updates'
+      parentField: data
+    - fieldPath: data.updates[].recordId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: recordId'
+      parentField: data.updates[]
+    - fieldPath: data.updates[].status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+      parentField: data.updates[]
+    - fieldPath: data.updates[].intervalType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: intervalType'
+      parentField: data.updates[]
+    - fieldPath: data.updates[].currentLimit
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: currentLimit'
+      parentField: data.updates[]
+    - fieldPath: data.updates[].requestedLimit
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: requestedLimit'
+      parentField: data.updates[]
+    - fieldPath: data.updates[].coolingEndTime
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: coolingEndTime'
+      parentField: data.updates[]
+    - fieldPath: error
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: error'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'String'
+    type: field-type
+    target: message
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'correlationId' exists in response
+    type: field-exists
+    target: correlationId
+  - description: Field 'correlationId' is of type 'String'
+    type: field-type
+    target: correlationId
+    expectedValue: String
+  - description: Field 'meta' exists in response
+    type: field-exists
+    target: meta
+  - description: Field 'meta' is of type 'Null'
+    type: field-type
+    target: meta
+    expectedValue: 'Null'
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+  - description: Field 'error' exists in response
+    type: field-exists
+    target: error
+  - description: Field 'error' is of type 'Null'
+    type: field-type
+    target: error
+    expectedValue: 'Null'
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: LimitSettingUpdate
+  sourceRows: ''
+  apiSpecFile: LimitSettingUpdate

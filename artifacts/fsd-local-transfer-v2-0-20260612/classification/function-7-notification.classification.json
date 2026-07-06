@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.862Z",
+  "report": {
+    "featureName": "FUNCTION 7: NOTIFICATION",
+    "classifications": [
+      {
+        "requirement": "Notification Centre - ID (Transaction) | Notification - Apple | Notification - Android",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Description | Integration | Remarks",
+        "layers": [
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "1 | For successful transaction, notification is available for below: a. Interbank: (i) Push & Email notification to sender, if defined in Settings > Notification > Transactions. (ii) Email notification to beneficiary, if recipient email is entered b. Intrabank (i) Push & Email notification to sender, if defined in Settings > Notification > Transactions. (ii) Push notification to beneficiary. (iii) Email notification to beneficiary, if recipient email is entered . c. Transfer to Own: (i) Push & Email notification to sender, if defined in Settings > Notification > Transactions. | MBPNS: 1. To trigger notification via: - email - push.",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "2 | Push & Email notificaton content to Sender (Immediate, Scheduled, Recurring) to be provided & documented separately: a. Intrabank b. Interbank (i) BI-FAST (ii) RTOL (iii) BI-SKN (iv) RTGS c. Own",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "3 | Email notification content to Beneficiary to be provided & documented separately: a. Intrabank a. Intrabank b. Interbank (i) BI-FAST (ii) RTOL (iii) BI-SKN (iv) RTGS",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,197 @@
+# BDD Test Case - p-tlocaltransferdddapispecv1
+# Generated for: GET /countries - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: GetPTMaintenanceCountries-001-positive
+title: GET /countries - Happy Path
+feature: p-tlocaltransferdddapispecv1
+description: Retrieving the list of countries for transfer journey.
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - getptmaintenancecountries
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{Payment-IP}:{Payment-PORT}/pt/maintenance/v1/ext/transfers/countries
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/maintenance/v1/ext/transfers/countries
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1782998509728
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body: {}
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: 'Null'
+    data: Object
+    countries: Array<Object>
+    countryCode: String
+    countryName: String
+    countryLogoUrl: String
+    displaySequence: Integer
+    error: 'Null'
+  expectedFields:
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: correlationId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: correlationId'
+    - fieldPath: meta
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: meta'
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.countries
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: countries'
+      parentField: data
+    - fieldPath: data.countries[].countryCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: countryCode'
+      parentField: data.countries[]
+    - fieldPath: data.countries[].countryName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: countryName'
+      parentField: data.countries[]
+    - fieldPath: data.countries[].countryLogoUrl
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: countryLogoUrl'
+      parentField: data.countries[]
+    - fieldPath: data.countries[].displaySequence
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: displaySequence'
+      parentField: data.countries[]
+    - fieldPath: error
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: error'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'String'
+    type: field-type
+    target: message
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'correlationId' exists in response
+    type: field-exists
+    target: correlationId
+  - description: Field 'correlationId' is of type 'String'
+    type: field-type
+    target: correlationId
+    expectedValue: String
+  - description: Field 'meta' exists in response
+    type: field-exists
+    target: meta
+  - description: Field 'meta' is of type 'Null'
+    type: field-type
+    target: meta
+    expectedValue: 'Null'
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+  - description: Field 'error' exists in response
+    type: field-exists
+    target: error
+  - description: Field 'error' is of type 'Null'
+    type: field-type
+    target: error
+    expectedValue: 'Null'
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: GetPTMaintenanceCountries
+  sourceRows: ''
+  apiSpecFile: GetPTMaintenanceCountries

@@ -1,0 +1,535 @@
+[
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_FINAL_SCREEN_TC_003",
+    "featureName": "Function: ETB without M2U ID - Final Screen",
+    "requirement": "EPIC | ETB Onboarding - CASA User without M2U ID - Same Device |ETB Onboarding - Credit Card User without M2U ID - Same Device",
+    "objective": "Verify epic | etb onboarding - casa user without m2u id - same device |etb onboarding - credit card user without m2u id - same device",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: EPIC | ETB Onboarding - CASA User without M2U ID - Same Device |ETB Onboarding - Credit Card User without M2U ID - Same Device",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: EPIC | ETB Onboarding - CASA User without M2U ID - Same Device |ETB Onboarding - Credit Card User without M2U ID - Same Device",
+    "priority": "P1",
+    "layer": "Security",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Invalid input violating rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Invalid input violating rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Boundary value around rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Boundary value around rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_FINAL_SCREEN_TC_004",
+    "featureName": "Function: ETB without M2U ID - Final Screen",
+    "requirement": "Title | Final Screen",
+    "objective": "Verify title | final screen",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Title | Final Screen",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Title | Final Screen",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Invalid input violating rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Invalid input violating rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Boundary value around rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Boundary value around rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_FINAL_SCREEN_TC_005",
+    "featureName": "Function: ETB without M2U ID - Final Screen",
+    "requirement": "Without M2U ID - Final Screen | With M2U ID - Final Screen: Setup Primary Account or Biometric fails",
+    "objective": "Verify without m2u id - final screen | with m2u id - final screen: setup primary account or biometric fails",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Without M2U ID - Final Screen | With M2U ID - Final Screen: Setup Primary Account or Biometric fails",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Without M2U ID - Final Screen | With M2U ID - Final Screen: Setup Primary Account or Biometric fails",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Invalid input violating rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Invalid input violating rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Boundary value around rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Boundary value around rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_FINAL_SCREEN_TC_006",
+    "featureName": "Function: ETB without M2U ID - Final Screen",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Invalid input violating rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Invalid input violating rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Boundary value around rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Boundary value around rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_FINAL_SCREEN_TC_007",
+    "featureName": "Function: ETB without M2U ID - Final Screen",
+    "requirement": "1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+    "objective": "Verify 1 | status message | n/a | alphanumeric | display | integration | display status message: 1. successful application: \"secure2u activation in progress\" 2. biometric or primary account fails: \"you're logged in!\" | cms 1. retrieve successful msg",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Invalid input violating rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Invalid input violating rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Boundary value around rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Boundary value around rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_FINAL_SCREEN_TC_008",
+    "featureName": "Function: ETB without M2U ID - Final Screen",
+    "requirement": "2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+    "objective": "Verify 2 | status icon/gif | n/a | alphanumeric | display | integration | display status icon/gif | cms 1. retrieve status icon",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Invalid input violating rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Invalid input violating rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Boundary value around rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Boundary value around rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_FINAL_SCREEN_TC_009",
+    "featureName": "Function: ETB without M2U ID - Final Screen",
+    "requirement": "3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+    "objective": "Verify 3 | description | n/a | alphanumeric | display | integration | display description: 1. successful application: \"full account access will only be available in [remaining cool-off countdown]\" 2. biometric or primary account fails: \"however, your primary account and/or biometrics were not set up. you may update at settings anytime.\" | cms 1. retrieve description iam 1. retrieve cooling off completion time",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Invalid input violating rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Invalid input violating rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Boundary value around rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Boundary value around rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_FINAL_SCREEN_TC_011",
+    "featureName": "Function: ETB without M2U ID - Final Screen",
+    "requirement": "No. | Action | Description | Integration | Remark",
+    "objective": "Verify no. | action | description | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Action | Description | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Action | Description | Integration | Remark",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Invalid input violating rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Invalid input violating rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Boundary value around rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Boundary value around rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_FINAL_SCREEN_TC_012",
+    "featureName": "Function: ETB without M2U ID - Final Screen",
+    "requirement": "1 | [Explore the app] Button | Upon tapping, navigate to App Dashboard",
+    "objective": "Verify 1 | [explore the app] button | upon tapping, navigate to app dashboard",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | [Explore the app] Button | Upon tapping, navigate to App Dashboard",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | [Explore the app] Button | Upon tapping, navigate to App Dashboard",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Invalid input violating rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Invalid input violating rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Boundary value around rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Boundary value around rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_FINAL_SCREEN_TC_013",
+    "featureName": "Function: ETB without M2U ID - Final Screen",
+    "requirement": "2 | [Go to Dashboard] Button | Upon tapping, navigate to App dashboard",
+    "objective": "Verify 2 | [go to dashboard] button | upon tapping, navigate to app dashboard",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | [Go to Dashboard] Button | Upon tapping, navigate to App dashboard",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | [Go to Dashboard] Button | Upon tapping, navigate to App dashboard",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Invalid input violating rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Invalid input violating rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Boundary value around rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Boundary value around rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_FINAL_SCREEN_TC_014",
+    "featureName": "Function: ETB without M2U ID - Final Screen",
+    "requirement": "No. | Description | Integration | Remark",
+    "objective": "Verify no. | description | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remark",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Invalid input violating rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Invalid input violating rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Boundary value around rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Boundary value around rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_FINAL_SCREEN_TC_015",
+    "featureName": "Function: ETB without M2U ID - Final Screen",
+    "requirement": "1 | Upon successful biometric setup or when the “Setup Later” button is selected: 1. Store selected primary account 2. Store biometric information (only if user setup biometric) 3. Set flag on/off for S2U in MDIP-Security Engine 4. Send notification to all platform: Push notification, email, and SMS - Cooling off notification will be triggered when cooling off end 5. Send data to EDW (by batch) | IAM: 1. Store biometric information (A&A) ECLIPSE: 1. Store primary account (Main) MDIP/Security Engine: 1. On/Off Flag for S2U MBPNS: 1. Push, Email & SMS Notification for: - Cooling off ends EDW 1. Send data to EDW by batch",
+    "objective": "Verify 1 | upon successful biometric setup or when the “setup later” button is selected: 1. store selected primary account 2. store biometric information (only if user setup biometric) 3. set flag on/off for s2u in mdip-security engine 4. send notification to all platform: push notification, email, and sms - cooling off notification will be triggered when cooling off end 5. send data to edw (by batch) | iam: 1. store biometric information (a&a) eclipse: 1. store primary account (main) mdip/security engine: 1. on/off flag for s2u mbpns: 1. push, email & sms notification for: - cooling off ends edw 1. send data to edw by batch",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | Upon successful biometric setup or when the “Setup Later” button is selected: 1. Store selected primary account 2. Store biometric information (only if user setup biometric) 3. Set flag on/off for S2U in MDIP-Security Engine 4. Send notification to all platform: Push notification, email, and SMS - Cooling off notification will be triggered when cooling off end 5. Send data to EDW (by batch) | IAM: 1. Store biometric information (A&A) ECLIPSE: 1. Store primary account (Main) MDIP/Security Engine: 1. On/Off Flag for S2U MBPNS: 1. Push, Email & SMS Notification for: - Cooling off ends EDW 1. Send data to EDW by batch",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | Upon successful biometric setup or when the “Setup Later” button is selected: 1. Store selected primary account 2. Store biometric information (only if user setup biometric) 3. Set flag on/off for S2U in MDIP-Security Engine 4. Send notification to all platform: Push notification, email, and SMS - Cooling off notification will be triggered when cooling off end 5. Send data to EDW (by batch) | IAM: 1. Store biometric information (A&A) ECLIPSE: 1. Store primary account (Main) MDIP/Security Engine: 1. On/Off Flag for S2U MBPNS: 1. Push, Email & SMS Notification for: - Cooling off ends EDW 1. Send data to EDW by batch",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Invalid input violating rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Invalid input violating rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Boundary value around rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Boundary value around rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_FINAL_SCREEN_TC_017",
+    "featureName": "Function: ETB without M2U ID - Final Screen",
+    "requirement": "3 | If Primary Account or Biometric storing fails: 1. Treat as successful onboarding 2. Upon tapping [Go to Dashboard] button, Navigate to [App Dashboard] - Primary Account default storing will be triggered in App Dashboard (Refer to [App Dashboard] - Main Display Amt) - Biometric setup can be performed later in [Setting] - Security Dashboard",
+    "objective": "Verify 3 | if primary account or biometric storing fails: 1. treat as successful onboarding 2. upon tapping [go to dashboard] button, navigate to [app dashboard] - primary account default storing will be triggered in app dashboard (refer to [app dashboard] - main display amt) - biometric setup can be performed later in [setting] - security dashboard",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 3 | If Primary Account or Biometric storing fails: 1. Treat as successful onboarding 2. Upon tapping [Go to Dashboard] button, Navigate to [App Dashboard] - Primary Account default storing will be triggered in App Dashboard (Refer to [App Dashboard] - Main Display Amt) - Biometric setup can be performed later in [Setting] - Security Dashboard",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 3 | If Primary Account or Biometric storing fails: 1. Treat as successful onboarding 2. Upon tapping [Go to Dashboard] button, Navigate to [App Dashboard] - Primary Account default storing will be triggered in App Dashboard (Refer to [App Dashboard] - Main Display Amt) - Biometric setup can be performed later in [Setting] - Security Dashboard",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Invalid input violating rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Invalid input violating rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Status Message | N/A | Alphanumeric | Display | Integration | Display status message: 1. Successful application: \"Secure2u activation in progress\" 2. Biometric or Primary account fails: \"You're logged in!\" | CMS 1. Retrieve Successful Msg",
+      "Boundary value around rule: 2 | Status Icon/GIF | N/A | Alphanumeric | Display | Integration | Display status icon/gif | CMS 1. Retrieve status icon",
+      "Boundary value around rule: 3 | Description | N/A | Alphanumeric | Display | Integration | Display description: 1. Successful application: \"Full account access will only be available in [Remaining cool-off countdown]\" 2. Biometric or Primary account fails: \"However, your primary account and/or biometrics were not set up. You may update at Settings anytime.\" | CMS 1. Retrieve description IAM 1. Retrieve cooling off completion time",
+      "Boundary value around rule: Actions"
+    ]
+  }
+]

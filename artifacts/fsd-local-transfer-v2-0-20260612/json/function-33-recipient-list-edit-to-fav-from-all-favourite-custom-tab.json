@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.515Z",
+  "featureId": "function-33-recipient-list-edit-to-fav-from-all-favourite-custom-tab",
+  "featureName": "FUNCTION 33: RECIPIENT LIST - EDIT TO FAV (FROM ALL, FAVOURITE, CUSTOM TAB)",
+  "sourceType": "FSD",
+  "content": {
+    "featureName": "FUNCTION 33: RECIPIENT LIST - EDIT TO FAV (FROM ALL, FAVOURITE, CUSTOM TAB)",
+    "description": "",
+    "flow": [],
+    "uiElements": [
+      "Edit Favourite List",
+      "Permutation of favourite list selections"
+    ],
+    "validationRules": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "businessRules": [
+      "No. | Description | Integration | Remark",
+      "1 | 1. Upon tapping [Save] button, system to check: a. If the beneficiary is either added to or removed from \"favourite\" list, S2U is required. b. If action does not require S2U and for successful attempt, system displays a toastbar message \"List updated.\" c. If none of the Fav or Custom list is selected, render the [Save] button to [Remove] button, it will trigger Remove function. Refer to Recipient - Add to Fav Business Rules for status screen behaviour. | IAM: 1. S2U Auth status ECLIPSE: Update favourite list(s) with the recipient selected"
+    ],
+    "apis": [],
+    "dependencies": [],
+    "errorMessages": [],
+    "navigation": [],
+    "remarks": []
+  },
+  "chunks": [
+    {
+      "section": "uiElements",
+      "content": "Edit Favourite List\nPermutation of favourite list selections",
+      "tokensHint": 10
+    },
+    {
+      "section": "validationRules",
+      "content": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "tokensHint": 23
+    },
+    {
+      "section": "businessRules",
+      "content": "No. | Description | Integration | Remark\n1 | 1. Upon tapping [Save] button, system to check: a. If the beneficiary is either added to or removed from \"favourite\" list, S2U is required. b. If action does not require S2U and for successful attempt, system displays a toastbar message \"List updated.\" c. If none of the Fav or Custom list is selected, render the [Save] button to [Remove] button, it will trigger Remove function. Refer to Recipient - Add to Fav Business Rules for status screen behaviour. | IAM: 1. S2U Auth status ECLIPSE: Update favourite list(s) with the recipient selected",
+      "tokensHint": 122
+    }
+  ],
+  "retrievalHints": {
+    "keywords": [
+      "function",
+      "recipient",
+      "list",
+      "edit",
+      "fav",
+      "from",
+      "all",
+      "favourite",
+      "custom",
+      "tab",
+      "permutation",
+      "selections",
+      "field",
+      "mandatory",
+      "data",
+      "type",
+      "format",
+      "source",
+      "validation",
+      "integration",
+      "remark",
+      "description",
+      "upon",
+      "tapping",
+      "save",
+      "button",
+      "system",
+      "check",
+      "the",
+      "beneficiary",
+      "either",
+      "added",
+      "removed",
+      "s2u",
+      "required",
+      "action",
+      "does",
+      "not",
+      "require",
+      "and",
+      "for",
+      "successful",
+      "attempt",
+      "displays",
+      "toastbar",
+      "message",
+      "updated",
+      "none",
+      "selected",
+      "render",
+      "remove",
+      "will",
+      "trigger",
+      "refer",
+      "add",
+      "business",
+      "rules",
+      "status",
+      "screen",
+      "behaviour",
+      "iam",
+      "auth",
+      "eclipse",
+      "update",
+      "with"
+    ],
+    "hasApis": false,
+    "hasValidations": true,
+    "hasBusinessRules": true
+  }
+}

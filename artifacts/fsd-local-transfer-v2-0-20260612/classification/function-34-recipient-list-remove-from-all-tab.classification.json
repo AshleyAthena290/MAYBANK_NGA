@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.899Z",
+  "report": {
+    "featureName": "FUNCTION 34: RECIPIENT LIST - REMOVE FROM ALL TAB",
+    "classifications": [
+      {
+        "requirement": "Beneficiary removal from ALL tab (will also remove from all other tabs) | Beneficiary removal from Frequent tab (only remove from Freq) | Failed Removal error screen (applicable for s2u)",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "Beneficiary removal from Favourite tab | Beneficiary removal from Custom tab",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "4 | Refer to Add to Favourite Tab",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "Actions",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Action | Description | Integration | Remark",
+        "layers": [
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Description | Integration | Remark",
+        "layers": [
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "1 | 1. Removing Beneficiary from ALL tab: a. Remove the selected beneficiary from All, Frequent, Favourite, and Custom lists where selected Bene exist. 2. Removing Beneficiary from FREQUENT tab: a. Remove the beneficiary from Frequent list only. b. The beneficiary will be removed and the transaction count reset to zero. The beneficiary will be re-added into Frequent list once the user transfers to the same beneficiary again and meets the required min transaction count threshold (2 times). c. Only transactions made after removal are counted for re-qualification to be displayed in Frequent. 3. Removing Beneficiary from FAVOURITES tab: a. Remove the beneficiary from Favourites list only. 4. Removing Beneficiary from a CUSTOM tab: a. Remove the beneficiary from the selected custom list only. 5. Upon removal, system displays S2U authorisation screen. a. For successful removal, display \"recipient removed\" screen. b. For unsuccessful removal, display \"update unsucceessfu\" screen. | IAM: 1. S2U Auth status ECLIPSE: 1. Update favourite list(s) with the recipient removed. 2. Update Frequent list with the recipient removed 3. Update favourite list with the recipient removed. 4. Update Custom list with the recipient removed.",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "Security",
+            "reason": "Requirement includes security or sensitive-data considerations."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "2 | Removal of recipient from these list i.e. All, Frequent, Favourite and Custom lists does not affect any scheduled or recurring transactions to the recipient.",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      }
+    ]
+  }
+}

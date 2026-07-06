@@ -1,0 +1,130 @@
+[
+  {
+    "testCaseId": "FUNCTION_39_MANAGE_FAVOURITE_LIST_DETAIL_GROUP_LIST_TC_002",
+    "featureName": "FUNCTION 39: MANAGE FAVOURITE LIST - DETAIL GROUP LIST",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Manage Favourites List - Detail Group list | Manage Favourites List - Detail Group list (Empty) | Manage Custom List - Detail Group List"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_39_MANAGE_FAVOURITE_LIST_DETAIL_GROUP_LIST_TC_003",
+    "featureName": "FUNCTION 39: MANAGE FAVOURITE LIST - DETAIL GROUP LIST",
+    "requirement": "No. | Description | Integration | Remarks",
+    "objective": "Verify no. | description | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Manage Favourites List - Detail Group list | Manage Favourites List - Detail Group list (Empty) | Manage Custom List - Detail Group List"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remarks",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_39_MANAGE_FAVOURITE_LIST_DETAIL_GROUP_LIST_TC_004",
+    "featureName": "FUNCTION 39: MANAGE FAVOURITE LIST - DETAIL GROUP LIST",
+    "requirement": "1 | Favourites Listing: 1. Display beneficiaries in Favouritess, sorted in ascending order (A-Z, 0-9) in the below order: - Beneficiary Name - Beneficiary Bank Name - Account Number 2. If the recipient list is not empty, [Edit] option will be displayed. Otherwise hide. 3. Lazy load is available | ECLIPSE: 1. Retrieve Fav beneficiary list with sorting order specified, & pagination.",
+    "objective": "Verify 1 | favourites listing: 1. display beneficiaries in favouritess, sorted in ascending order (a-z, 0-9) in the below order: - beneficiary name - beneficiary bank name - account number 2. if the recipient list is not empty, [edit] option will be displayed. otherwise hide. 3. lazy load is available | eclipse: 1. retrieve fav beneficiary list with sorting order specified, & pagination.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Manage Favourites List - Detail Group list | Manage Favourites List - Detail Group list (Empty) | Manage Custom List - Detail Group List"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | Favourites Listing: 1. Display beneficiaries in Favouritess, sorted in ascending order (A-Z, 0-9) in the below order: - Beneficiary Name - Beneficiary Bank Name - Account Number 2. If the recipient list is not empty, [Edit] option will be displayed. Otherwise hide. 3. Lazy load is available | ECLIPSE: 1. Retrieve Fav beneficiary list with sorting order specified, & pagination.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | Favourites Listing: 1. Display beneficiaries in Favouritess, sorted in ascending order (A-Z, 0-9) in the below order: - Beneficiary Name - Beneficiary Bank Name - Account Number 2. If the recipient list is not empty, [Edit] option will be displayed. Otherwise hide. 3. Lazy load is available | ECLIPSE: 1. Retrieve Fav beneficiary list with sorting order specified, & pagination.",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_39_MANAGE_FAVOURITE_LIST_DETAIL_GROUP_LIST_TC_005",
+    "featureName": "FUNCTION 39: MANAGE FAVOURITE LIST - DETAIL GROUP LIST",
+    "requirement": "2 | Custom Listing: 1. Display beneficiaries in selected Custom list, sorted in ascending order (A-Z, 0-9) in the below order: - Beneficiary Name - Beneficiary Bank Name - Account Number 2. If the recipient list is not empty, [Edit] option will be displayed. Otherwise hide. 3. Lazy load is available | ECLIPSE: 1. Retrieve Custom list with sorting order specified, & pagination.",
+    "objective": "Verify 2 | custom listing: 1. display beneficiaries in selected custom list, sorted in ascending order (a-z, 0-9) in the below order: - beneficiary name - beneficiary bank name - account number 2. if the recipient list is not empty, [edit] option will be displayed. otherwise hide. 3. lazy load is available | eclipse: 1. retrieve custom list with sorting order specified, & pagination.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Manage Favourites List - Detail Group list | Manage Favourites List - Detail Group list (Empty) | Manage Custom List - Detail Group List"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | Custom Listing: 1. Display beneficiaries in selected Custom list, sorted in ascending order (A-Z, 0-9) in the below order: - Beneficiary Name - Beneficiary Bank Name - Account Number 2. If the recipient list is not empty, [Edit] option will be displayed. Otherwise hide. 3. Lazy load is available | ECLIPSE: 1. Retrieve Custom list with sorting order specified, & pagination.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | Custom Listing: 1. Display beneficiaries in selected Custom list, sorted in ascending order (A-Z, 0-9) in the below order: - Beneficiary Name - Beneficiary Bank Name - Account Number 2. If the recipient list is not empty, [Edit] option will be displayed. Otherwise hide. 3. Lazy load is available | ECLIPSE: 1. Retrieve Custom list with sorting order specified, & pagination.",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  }
+]

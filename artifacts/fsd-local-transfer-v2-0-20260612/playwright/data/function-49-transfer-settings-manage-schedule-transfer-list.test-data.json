@@ -1,0 +1,352 @@
+[
+  {
+    "testCaseId": "FUNCTION_49_TRANSFER_SETTINGS_MANAGE_SCHEDULE_TRANSFER_LIST_TC_001",
+    "featureName": "FUNCTION 49: TRANSFER SETTINGS - MANAGE SCHEDULE TRANSFER LIST",
+    "requirement": "Entry Point 1 via Transfer Landing Page | Manage Scheduled Transfer List",
+    "objective": "Verify entry point 1 via transfer landing page | manage scheduled transfer list",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Entry Point 1 via Transfer Landing Page | Manage Scheduled Transfer List",
+      "Entry Point 2 to via Setting Page (PRE-REQUISITE) | Manage Scheduled Transfer List",
+      "3 | [x] icon | Upon tapping [x], close filter screen, return to Scheduled & Recurring Transfers list.",
+      "4 | [Clear] button | Upon tapping [Clear], clear all filtering selection."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Entry Point 1 via Transfer Landing Page | Manage Scheduled Transfer List",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Entry Point 1 via Transfer Landing Page | Manage Scheduled Transfer List",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_49_TRANSFER_SETTINGS_MANAGE_SCHEDULE_TRANSFER_LIST_TC_002",
+    "featureName": "FUNCTION 49: TRANSFER SETTINGS - MANAGE SCHEDULE TRANSFER LIST",
+    "requirement": "Entry Point 2 to via Setting Page (PRE-REQUISITE) | Manage Scheduled Transfer List",
+    "objective": "Verify entry point 2 to via setting page (pre-requisite) | manage scheduled transfer list",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Entry Point 1 via Transfer Landing Page | Manage Scheduled Transfer List",
+      "Entry Point 2 to via Setting Page (PRE-REQUISITE) | Manage Scheduled Transfer List",
+      "3 | [x] icon | Upon tapping [x], close filter screen, return to Scheduled & Recurring Transfers list.",
+      "4 | [Clear] button | Upon tapping [Clear], clear all filtering selection."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Entry Point 2 to via Setting Page (PRE-REQUISITE) | Manage Scheduled Transfer List",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Entry Point 2 to via Setting Page (PRE-REQUISITE) | Manage Scheduled Transfer List",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_49_TRANSFER_SETTINGS_MANAGE_SCHEDULE_TRANSFER_LIST_TC_003",
+    "featureName": "FUNCTION 49: TRANSFER SETTINGS - MANAGE SCHEDULE TRANSFER LIST",
+    "requirement": "3 | [x] icon | Upon tapping [x], close filter screen, return to Scheduled & Recurring Transfers list.",
+    "objective": "Verify 3 | [x] icon | upon tapping [x], close filter screen, return to scheduled & recurring transfers list.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Entry Point 1 via Transfer Landing Page | Manage Scheduled Transfer List",
+      "Entry Point 2 to via Setting Page (PRE-REQUISITE) | Manage Scheduled Transfer List",
+      "3 | [x] icon | Upon tapping [x], close filter screen, return to Scheduled & Recurring Transfers list.",
+      "4 | [Clear] button | Upon tapping [Clear], clear all filtering selection."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 3 | [x] icon | Upon tapping [x], close filter screen, return to Scheduled & Recurring Transfers list.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 3 | [x] icon | Upon tapping [x], close filter screen, return to Scheduled & Recurring Transfers list.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_49_TRANSFER_SETTINGS_MANAGE_SCHEDULE_TRANSFER_LIST_TC_004",
+    "featureName": "FUNCTION 49: TRANSFER SETTINGS - MANAGE SCHEDULE TRANSFER LIST",
+    "requirement": "4 | [Clear] button | Upon tapping [Clear], clear all filtering selection.",
+    "objective": "Verify 4 | [clear] button | upon tapping [clear], clear all filtering selection.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Entry Point 1 via Transfer Landing Page | Manage Scheduled Transfer List",
+      "Entry Point 2 to via Setting Page (PRE-REQUISITE) | Manage Scheduled Transfer List",
+      "3 | [x] icon | Upon tapping [x], close filter screen, return to Scheduled & Recurring Transfers list.",
+      "4 | [Clear] button | Upon tapping [Clear], clear all filtering selection."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 4 | [Clear] button | Upon tapping [Clear], clear all filtering selection.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 4 | [Clear] button | Upon tapping [Clear], clear all filtering selection.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_49_TRANSFER_SETTINGS_MANAGE_SCHEDULE_TRANSFER_LIST_TC_005",
+    "featureName": "FUNCTION 49: TRANSFER SETTINGS - MANAGE SCHEDULE TRANSFER LIST",
+    "requirement": "5 | [Apply] button | Upon tapping [Apply], apply selected criterias and perform search.",
+    "objective": "Verify 5 | [apply] button | upon tapping [apply], apply selected criterias and perform search.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Entry Point 1 via Transfer Landing Page | Manage Scheduled Transfer List",
+      "Entry Point 2 to via Setting Page (PRE-REQUISITE) | Manage Scheduled Transfer List",
+      "3 | [x] icon | Upon tapping [x], close filter screen, return to Scheduled & Recurring Transfers list.",
+      "4 | [Clear] button | Upon tapping [Clear], clear all filtering selection."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 5 | [Apply] button | Upon tapping [Apply], apply selected criterias and perform search.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 5 | [Apply] button | Upon tapping [Apply], apply selected criterias and perform search.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_49_TRANSFER_SETTINGS_MANAGE_SCHEDULE_TRANSFER_LIST_TC_006",
+    "featureName": "FUNCTION 49: TRANSFER SETTINGS - MANAGE SCHEDULE TRANSFER LIST",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Entry Point 1 via Transfer Landing Page | Manage Scheduled Transfer List",
+      "Entry Point 2 to via Setting Page (PRE-REQUISITE) | Manage Scheduled Transfer List",
+      "3 | [x] icon | Upon tapping [x], close filter screen, return to Scheduled & Recurring Transfers list.",
+      "4 | [Clear] button | Upon tapping [Clear], clear all filtering selection."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_49_TRANSFER_SETTINGS_MANAGE_SCHEDULE_TRANSFER_LIST_TC_007",
+    "featureName": "FUNCTION 49: TRANSFER SETTINGS - MANAGE SCHEDULE TRANSFER LIST",
+    "requirement": "No. | Description | Integration | Remarks",
+    "objective": "Verify no. | description | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Entry Point 1 via Transfer Landing Page | Manage Scheduled Transfer List",
+      "Entry Point 2 to via Setting Page (PRE-REQUISITE) | Manage Scheduled Transfer List",
+      "3 | [x] icon | Upon tapping [x], close filter screen, return to Scheduled & Recurring Transfers list.",
+      "4 | [Clear] button | Upon tapping [Clear], clear all filtering selection."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remarks",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_49_TRANSFER_SETTINGS_MANAGE_SCHEDULE_TRANSFER_LIST_TC_008",
+    "featureName": "FUNCTION 49: TRANSFER SETTINGS - MANAGE SCHEDULE TRANSFER LIST",
+    "requirement": "1 | Upon screen load: 1. Default to Individual tab and display a list of active scheduled & recurring individual transfers. Refer to next business rules on display criteria. 2. Upon tapping one of the list, system to navigate to scheduled/recurring details screen. | ESB - Standing Instruction: 1. To retrieve a list of ACTIVE scheduled and recurring single individual transactions, with option for search criteria, and based on sorting order. CMS: - No Match image, message & info.",
+    "objective": "Verify 1 | upon screen load: 1. default to individual tab and display a list of active scheduled & recurring individual transfers. refer to next business rules on display criteria. 2. upon tapping one of the list, system to navigate to scheduled/recurring details screen. | esb - standing instruction: 1. to retrieve a list of active scheduled and recurring single individual transactions, with option for search criteria, and based on sorting order. cms: - no match image, message & info.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Entry Point 1 via Transfer Landing Page | Manage Scheduled Transfer List",
+      "Entry Point 2 to via Setting Page (PRE-REQUISITE) | Manage Scheduled Transfer List",
+      "3 | [x] icon | Upon tapping [x], close filter screen, return to Scheduled & Recurring Transfers list.",
+      "4 | [Clear] button | Upon tapping [Clear], clear all filtering selection."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | Upon screen load: 1. Default to Individual tab and display a list of active scheduled & recurring individual transfers. Refer to next business rules on display criteria. 2. Upon tapping one of the list, system to navigate to scheduled/recurring details screen. | ESB - Standing Instruction: 1. To retrieve a list of ACTIVE scheduled and recurring single individual transactions, with option for search criteria, and based on sorting order. CMS: - No Match image, message & info.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | Upon screen load: 1. Default to Individual tab and display a list of active scheduled & recurring individual transfers. Refer to next business rules on display criteria. 2. Upon tapping one of the list, system to navigate to scheduled/recurring details screen. | ESB - Standing Instruction: 1. To retrieve a list of ACTIVE scheduled and recurring single individual transactions, with option for search criteria, and based on sorting order. CMS: - No Match image, message & info.",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_49_TRANSFER_SETTINGS_MANAGE_SCHEDULE_TRANSFER_LIST_TC_009",
+    "featureName": "FUNCTION 49: TRANSFER SETTINGS - MANAGE SCHEDULE TRANSFER LIST",
+    "requirement": "2 | 1. For searching scheduled/recurring transactions: a. Searching will be based on the selected Tab (Individual or Batch). b. Support wildcard search by entering minimum 2 characters. c. Searching criteria: (i) Individual Tab: - Beneficiary Name - Amount (ii) Batch Tab: - Batch Name - Amount c. Display listing: (i) Sort & display nearest scheduled transaction date (Transfer Date or Start Date) first. (ii) In the event transaction date is same, sorting is based on date created (earliest to latest). d. If searching returns empty, display \"We could not find a match\" screen. | ESB - Standing Instruction: 1. To retrieve a list of ACTIVE scheduled and recurring single individual transactions, with option for search criteria, and based on sorting order. CMS: - No Match image, message & info.",
+    "objective": "Verify 2 | 1. for searching scheduled/recurring transactions: a. searching will be based on the selected tab (individual or batch). b. support wildcard search by entering minimum 2 characters. c. searching criteria: (i) individual tab: - beneficiary name - amount (ii) batch tab: - batch name - amount c. display listing: (i) sort & display nearest scheduled transaction date (transfer date or start date) first. (ii) in the event transaction date is same, sorting is based on date created (earliest to latest). d. if searching returns empty, display \"we could not find a match\" screen. | esb - standing instruction: 1. to retrieve a list of active scheduled and recurring single individual transactions, with option for search criteria, and based on sorting order. cms: - no match image, message & info.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Entry Point 1 via Transfer Landing Page | Manage Scheduled Transfer List",
+      "Entry Point 2 to via Setting Page (PRE-REQUISITE) | Manage Scheduled Transfer List",
+      "3 | [x] icon | Upon tapping [x], close filter screen, return to Scheduled & Recurring Transfers list.",
+      "4 | [Clear] button | Upon tapping [Clear], clear all filtering selection."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | 1. For searching scheduled/recurring transactions: a. Searching will be based on the selected Tab (Individual or Batch). b. Support wildcard search by entering minimum 2 characters. c. Searching criteria: (i) Individual Tab: - Beneficiary Name - Amount (ii) Batch Tab: - Batch Name - Amount c. Display listing: (i) Sort & display nearest scheduled transaction date (Transfer Date or Start Date) first. (ii) In the event transaction date is same, sorting is based on date created (earliest to latest). d. If searching returns empty, display \"We could not find a match\" screen. | ESB - Standing Instruction: 1. To retrieve a list of ACTIVE scheduled and recurring single individual transactions, with option for search criteria, and based on sorting order. CMS: - No Match image, message & info.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | 1. For searching scheduled/recurring transactions: a. Searching will be based on the selected Tab (Individual or Batch). b. Support wildcard search by entering minimum 2 characters. c. Searching criteria: (i) Individual Tab: - Beneficiary Name - Amount (ii) Batch Tab: - Batch Name - Amount c. Display listing: (i) Sort & display nearest scheduled transaction date (Transfer Date or Start Date) first. (ii) In the event transaction date is same, sorting is based on date created (earliest to latest). d. If searching returns empty, display \"We could not find a match\" screen. | ESB - Standing Instruction: 1. To retrieve a list of ACTIVE scheduled and recurring single individual transactions, with option for search criteria, and based on sorting order. CMS: - No Match image, message & info.",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_49_TRANSFER_SETTINGS_MANAGE_SCHEDULE_TRANSFER_LIST_TC_010",
+    "featureName": "FUNCTION 49: TRANSFER SETTINGS - MANAGE SCHEDULE TRANSFER LIST",
+    "requirement": "4 | Select accounts: 1. Display list of accounts that has at least one active scheduled/recurring instruction. [Interops: To assess or discuss any impact if the list includes M2U/RMBP, assuming no other sources] | ESB - Standing Instruction: 1. Retrieve list of account number that has active scheduled/recurring instruction.",
+    "objective": "Verify 4 | select accounts: 1. display list of accounts that has at least one active scheduled/recurring instruction. [interops: to assess or discuss any impact if the list includes m2u/rmbp, assuming no other sources] | esb - standing instruction: 1. retrieve list of account number that has active scheduled/recurring instruction.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Entry Point 1 via Transfer Landing Page | Manage Scheduled Transfer List",
+      "Entry Point 2 to via Setting Page (PRE-REQUISITE) | Manage Scheduled Transfer List",
+      "3 | [x] icon | Upon tapping [x], close filter screen, return to Scheduled & Recurring Transfers list.",
+      "4 | [Clear] button | Upon tapping [Clear], clear all filtering selection."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 4 | Select accounts: 1. Display list of accounts that has at least one active scheduled/recurring instruction. [Interops: To assess or discuss any impact if the list includes M2U/RMBP, assuming no other sources] | ESB - Standing Instruction: 1. Retrieve list of account number that has active scheduled/recurring instruction.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 4 | Select accounts: 1. Display list of accounts that has at least one active scheduled/recurring instruction. [Interops: To assess or discuss any impact if the list includes M2U/RMBP, assuming no other sources] | ESB - Standing Instruction: 1. Retrieve list of account number that has active scheduled/recurring instruction.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  }
+]

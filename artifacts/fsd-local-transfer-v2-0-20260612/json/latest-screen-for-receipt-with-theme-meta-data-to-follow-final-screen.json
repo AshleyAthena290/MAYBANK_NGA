@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.493Z",
+  "featureId": "latest-screen-for-receipt-with-theme-meta-data-to-follow-final-screen",
+  "featureName": "Latest Screen for Receipt with Theme. Meta Data to follow Final Screen.",
+  "sourceType": "FSD",
+  "content": {
+    "featureName": "Latest Screen for Receipt with Theme. Meta Data to follow Final Screen.",
+    "description": "",
+    "flow": [],
+    "uiElements": [],
+    "validationRules": [],
+    "businessRules": [],
+    "apis": [],
+    "dependencies": [],
+    "errorMessages": [],
+    "navigation": [],
+    "remarks": []
+  },
+  "chunks": [],
+  "retrievalHints": {
+    "keywords": [
+      "latest",
+      "screen",
+      "for",
+      "receipt",
+      "with",
+      "theme",
+      "meta",
+      "data",
+      "follow",
+      "final"
+    ],
+    "hasApis": false,
+    "hasValidations": false,
+    "hasBusinessRules": false
+  }
+}

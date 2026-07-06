@@ -1,0 +1,614 @@
+[
+  {
+    "testCaseId": "FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_001",
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "requirement": "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+    "objective": "Verify enter recipient details | additional documents required (screen for per trxn is incorrect) - to be put after input amount (validation at input amount) - bank to update the screen | to confirm: 1. according to the ust, these reminders are displayed after entering additional details? (for overseas trf, it indicate is displayed after input amount) is it intended? and if tap change amount, it redirects back to enter amount screen?",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Upload Underlying Documents screen (IDR to LCS (MYR))"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Validate expected behavior using api assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "api",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_002",
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "requirement": "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+    "objective": "Verify upload underlying documents screen (non lcs) | to confirm: 1. screen and ust are not aligned. >> fcy - fcy requires underlying docs? >> idr - fcy just docs or pot too?",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Upload Underlying Documents screen (IDR to LCS (MYR))"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_003",
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "requirement": "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+    "objective": "Verify upload underlying documents screen (idr to lcs (non myr)) | to confirm: 1. screen and ust are not aligned 2. is pot and type of docs same for each scenario? 3. pot & rot?",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Upload Underlying Documents screen (IDR to LCS (MYR))"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_004",
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "requirement": "Upload Underlying Documents screen (IDR to LCS (MYR))",
+    "objective": "Verify upload underlying documents screen (idr to lcs (myr))",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Upload Underlying Documents screen (IDR to LCS (MYR))"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Upload Underlying Documents screen (IDR to LCS (MYR))",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Upload Underlying Documents screen (IDR to LCS (MYR))",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_006",
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "requirement": "5 | Title Header | N/A | Alphanumeric | Display | Integration | Display \"Transfer\" | CMS 1. Retrieve label \"Transfer\" 2. Retrieve label \"Share the purpose of transfer\" and description",
+    "objective": "Verify 5 | title header | n/a | alphanumeric | display | integration | display \"transfer\" | cms 1. retrieve label \"transfer\" 2. retrieve label \"share the purpose of transfer\" and description",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Upload Underlying Documents screen (IDR to LCS (MYR))"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 5 | Title Header | N/A | Alphanumeric | Display | Integration | Display \"Transfer\" | CMS 1. Retrieve label \"Transfer\" 2. Retrieve label \"Share the purpose of transfer\" and description",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 5 | Title Header | N/A | Alphanumeric | Display | Integration | Display \"Transfer\" | CMS 1. Retrieve label \"Transfer\" 2. Retrieve label \"Share the purpose of transfer\" and description",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_007",
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "requirement": "6 | Sub-header + Description | N/A | Alphanumeric | Display | Integration | Display \"Share the purpose of this transfer\" and description | CMS 1. Retrieve label \"Transfer\" 2. Retrieve label \"Share the purpose of transfer\" and description",
+    "objective": "Verify 6 | sub-header + description | n/a | alphanumeric | display | integration | display \"share the purpose of this transfer\" and description | cms 1. retrieve label \"transfer\" 2. retrieve label \"share the purpose of transfer\" and description",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Upload Underlying Documents screen (IDR to LCS (MYR))"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 6 | Sub-header + Description | N/A | Alphanumeric | Display | Integration | Display \"Share the purpose of this transfer\" and description | CMS 1. Retrieve label \"Transfer\" 2. Retrieve label \"Share the purpose of transfer\" and description",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 6 | Sub-header + Description | N/A | Alphanumeric | Display | Integration | Display \"Share the purpose of this transfer\" and description | CMS 1. Retrieve label \"Transfer\" 2. Retrieve label \"Share the purpose of transfer\" and description",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_008",
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "requirement": "4 | [X] icon | Upon tapping [X] icon, system discards inputs and redirects to Transfer Landing screen.",
+    "objective": "Verify 4 | [x] icon | upon tapping [x] icon, system discards inputs and redirects to transfer landing screen.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Upload Underlying Documents screen (IDR to LCS (MYR))"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 4 | [X] icon | Upon tapping [X] icon, system discards inputs and redirects to Transfer Landing screen.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 4 | [X] icon | Upon tapping [X] icon, system discards inputs and redirects to Transfer Landing screen.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_009",
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "requirement": "5 | [<] icon | Upon tapping the [<] icon, system redirects to Enter Additional Details screen.",
+    "objective": "Verify 5 | [<] icon | upon tapping the [<] icon, system redirects to enter additional details screen.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Upload Underlying Documents screen (IDR to LCS (MYR))"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 5 | [<] icon | Upon tapping the [<] icon, system redirects to Enter Additional Details screen.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 5 | [<] icon | Upon tapping the [<] icon, system redirects to Enter Additional Details screen.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_010",
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "requirement": "6 | [Trash] icon | Upon tapping, delete uploaded underlying document.",
+    "objective": "Verify 6 | [trash] icon | upon tapping, delete uploaded underlying document.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Upload Underlying Documents screen (IDR to LCS (MYR))"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Send API request for requirement: 6 | [Trash] icon | Upon tapping, delete uploaded underlying document.",
+      "Validate expected behavior using api assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 6 | [Trash] icon | Upon tapping, delete uploaded underlying document.",
+    "priority": "P1",
+    "layer": "API",
+    "automationCandidate": true,
+    "automationType": "api",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_012",
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "requirement": "8 | [Next] button | Upon tapping [Next] button, refer to business rules.",
+    "objective": "Verify 8 | [next] button | upon tapping [next] button, refer to business rules.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Upload Underlying Documents screen (IDR to LCS (MYR))"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 8 | [Next] button | Upon tapping [Next] button, refer to business rules.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 8 | [Next] button | Upon tapping [Next] button, refer to business rules.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_013",
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "requirement": "9 | [Trash] icon | Upon tapping, delete uploaded underlying document.",
+    "objective": "Verify 9 | [trash] icon | upon tapping, delete uploaded underlying document.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Upload Underlying Documents screen (IDR to LCS (MYR))"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Send API request for requirement: 9 | [Trash] icon | Upon tapping, delete uploaded underlying document.",
+      "Validate expected behavior using api assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 9 | [Trash] icon | Upon tapping, delete uploaded underlying document.",
+    "priority": "P1",
+    "layer": "API",
+    "automationCandidate": true,
+    "automationType": "api",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_015",
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Upload Underlying Documents screen (IDR to LCS (MYR))"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_016",
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "requirement": "No. | Description | Integration | Remarks",
+    "objective": "Verify no. | description | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Upload Underlying Documents screen (IDR to LCS (MYR))"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remarks",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_017",
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "requirement": "1 | Upload underlying documents screen is applicable for Intrabank Transaction that matches: 1. FCY transaction amount > USD 100K or equivalent by other currencies (Non-LCS) per month. 2. FCY transaction amount > USD 100K or equivalent by other currencies (Non-LCS) per transaction. 3. FCY transaction amount > USD 500K or equivalent by other currencies (LCS) per transaction. 4. FCY transaction <amount <= below USD 500K or equivalent by other currencies (LCS) per transaction. LCS: CNY, THB. *MYR is not applicable for Intrabank. | ESB - Trapi/Kondor+ ? 1. Retrieve FOREX 2. Retrieve and check user's current forex limit.",
+    "objective": "Verify 1 | upload underlying documents screen is applicable for intrabank transaction that matches: 1. fcy transaction amount > usd 100k or equivalent by other currencies (non-lcs) per month. 2. fcy transaction amount > usd 100k or equivalent by other currencies (non-lcs) per transaction. 3. fcy transaction amount > usd 500k or equivalent by other currencies (lcs) per transaction. 4. fcy transaction <amount <= below usd 500k or equivalent by other currencies (lcs) per transaction. lcs: cny, thb. *myr is not applicable for intrabank. | esb - trapi/kondor+ ? 1. retrieve forex 2. retrieve and check user's current forex limit.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Upload Underlying Documents screen (IDR to LCS (MYR))"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | Upload underlying documents screen is applicable for Intrabank Transaction that matches: 1. FCY transaction amount > USD 100K or equivalent by other currencies (Non-LCS) per month. 2. FCY transaction amount > USD 100K or equivalent by other currencies (Non-LCS) per transaction. 3. FCY transaction amount > USD 500K or equivalent by other currencies (LCS) per transaction. 4. FCY transaction <amount <= below USD 500K or equivalent by other currencies (LCS) per transaction. LCS: CNY, THB. *MYR is not applicable for Intrabank. | ESB - Trapi/Kondor+ ? 1. Retrieve FOREX 2. Retrieve and check user's current forex limit.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | Upload underlying documents screen is applicable for Intrabank Transaction that matches: 1. FCY transaction amount > USD 100K or equivalent by other currencies (Non-LCS) per month. 2. FCY transaction amount > USD 100K or equivalent by other currencies (Non-LCS) per transaction. 3. FCY transaction amount > USD 500K or equivalent by other currencies (LCS) per transaction. 4. FCY transaction <amount <= below USD 500K or equivalent by other currencies (LCS) per transaction. LCS: CNY, THB. *MYR is not applicable for Intrabank. | ESB - Trapi/Kondor+ ? 1. Retrieve FOREX 2. Retrieve and check user's current forex limit.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_018",
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "requirement": "2 | Upon tapping [Upload a file] 1. System opens mobile phone's native file uploader based on phone's operating system. 2. File Validation: a. Allowed file format: JPEG, PNG, HEIC, PDF, DOC. Else, display inline error message \"Only PDF, JPEG, HEIC, or PNG formats are supported.\" with error icon. b. Maximum per file size: 5 MB. Else, display inline error message \"Maximum file size is 5MB.\" with error icon. 3. Number of files: a. Maximum 5 files. b. If user has uploaded 5 files and taps [Upload a file], system displays a toastbar message \"Maximum number of documents uploaded.\" 4. Exception Error: a. If system encounters exception errors that during upload (e.g. system or network errors), display toastbar message \"There is an issue with your uploaded document. Please try again.\"",
+    "objective": "Verify 2 | upon tapping [upload a file] 1. system opens mobile phone's native file uploader based on phone's operating system. 2. file validation: a. allowed file format: jpeg, png, heic, pdf, doc. else, display inline error message \"only pdf, jpeg, heic, or png formats are supported.\" with error icon. b. maximum per file size: 5 mb. else, display inline error message \"maximum file size is 5mb.\" with error icon. 3. number of files: a. maximum 5 files. b. if user has uploaded 5 files and taps [upload a file], system displays a toastbar message \"maximum number of documents uploaded.\" 4. exception error: a. if system encounters exception errors that during upload (e.g. system or network errors), display toastbar message \"there is an issue with your uploaded document. please try again.\"",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Upload Underlying Documents screen (IDR to LCS (MYR))"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | Upon tapping [Upload a file] 1. System opens mobile phone's native file uploader based on phone's operating system. 2. File Validation: a. Allowed file format: JPEG, PNG, HEIC, PDF, DOC. Else, display inline error message \"Only PDF, JPEG, HEIC, or PNG formats are supported.\" with error icon. b. Maximum per file size: 5 MB. Else, display inline error message \"Maximum file size is 5MB.\" with error icon. 3. Number of files: a. Maximum 5 files. b. If user has uploaded 5 files and taps [Upload a file], system displays a toastbar message \"Maximum number of documents uploaded.\" 4. Exception Error: a. If system encounters exception errors that during upload (e.g. system or network errors), display toastbar message \"There is an issue with your uploaded document. Please try again.\"",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | Upon tapping [Upload a file] 1. System opens mobile phone's native file uploader based on phone's operating system. 2. File Validation: a. Allowed file format: JPEG, PNG, HEIC, PDF, DOC. Else, display inline error message \"Only PDF, JPEG, HEIC, or PNG formats are supported.\" with error icon. b. Maximum per file size: 5 MB. Else, display inline error message \"Maximum file size is 5MB.\" with error icon. 3. Number of files: a. Maximum 5 files. b. If user has uploaded 5 files and taps [Upload a file], system displays a toastbar message \"Maximum number of documents uploaded.\" 4. Exception Error: a. If system encounters exception errors that during upload (e.g. system or network errors), display toastbar message \"There is an issue with your uploaded document. Please try again.\"",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_019",
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "requirement": "6 | For Transfer (IDR - LCS) or (LCS - IDR) (CNY, THB) 1. For transaction amount <= USD 500,000 or equivalent, upload underlying documents field is disabled. 2. For transaction amount > USD 500,000 or equivalent, upload underlying documents field is enabled.",
+    "objective": "Verify 6 | for transfer (idr - lcs) or (lcs - idr) (cny, thb) 1. for transaction amount <= usd 500,000 or equivalent, upload underlying documents field is disabled. 2. for transaction amount > usd 500,000 or equivalent, upload underlying documents field is enabled.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Upload Underlying Documents screen (IDR to LCS (MYR))"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 6 | For Transfer (IDR - LCS) or (LCS - IDR) (CNY, THB) 1. For transaction amount <= USD 500,000 or equivalent, upload underlying documents field is disabled. 2. For transaction amount > USD 500,000 or equivalent, upload underlying documents field is enabled.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 6 | For Transfer (IDR - LCS) or (LCS - IDR) (CNY, THB) 1. For transaction amount <= USD 500,000 or equivalent, upload underlying documents field is disabled. 2. For transaction amount > USD 500,000 or equivalent, upload underlying documents field is enabled.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_020",
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "requirement": "7 | Upon tapping [Next] button: 1. Mandatory fields checking. a. IF purpose of transfer OR type of underlying document is empty/unselected, system displays error message\" \"Required field.\" b. IF no document is uploaded, system displays a toastbar message \"Underlying document is a required field.\" 2. If all mandatory fields checking passed, system redirects to confirmation screen.",
+    "objective": "Verify 7 | upon tapping [next] button: 1. mandatory fields checking. a. if purpose of transfer or type of underlying document is empty/unselected, system displays error message\" \"required field.\" b. if no document is uploaded, system displays a toastbar message \"underlying document is a required field.\" 2. if all mandatory fields checking passed, system redirects to confirmation screen.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Upload Underlying Documents screen (IDR to LCS (MYR))"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 7 | Upon tapping [Next] button: 1. Mandatory fields checking. a. IF purpose of transfer OR type of underlying document is empty/unselected, system displays error message\" \"Required field.\" b. IF no document is uploaded, system displays a toastbar message \"Underlying document is a required field.\" 2. If all mandatory fields checking passed, system redirects to confirmation screen.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 7 | Upon tapping [Next] button: 1. Mandatory fields checking. a. IF purpose of transfer OR type of underlying document is empty/unselected, system displays error message\" \"Required field.\" b. IF no document is uploaded, system displays a toastbar message \"Underlying document is a required field.\" 2. If all mandatory fields checking passed, system redirects to confirmation screen.",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  }
+]

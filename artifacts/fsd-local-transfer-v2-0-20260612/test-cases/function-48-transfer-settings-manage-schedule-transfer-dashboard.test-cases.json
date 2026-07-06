@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:18.309Z",
+  "bundle": {
+    "featureName": "FUNCTION 48: TRANSFER SETTINGS - MANAGE SCHEDULE TRANSFER DASHBOARD",
+    "testCases": [
+      {
+        "testCaseId": "FUNCTION_48_TRANSFER_SETTINGS_MANAGE_SCHEDULE_TRANSFER_DASHBOARD_TC_001",
+        "featureName": "FUNCTION 48: TRANSFER SETTINGS - MANAGE SCHEDULE TRANSFER DASHBOARD",
+        "requirement": "Navigate to Manage Scheduled Transfer Dashboard (PRE-REQUISITE) | Manage Scheduled Transfer Dashboard",
+        "objective": "Verify navigate to manage scheduled transfer dashboard (pre-requisite) | manage scheduled transfer dashboard",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Navigate to Manage Scheduled Transfer Dashboard (PRE-REQUISITE) | Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Navigate to Manage Scheduled Transfer Dashboard (PRE-REQUISITE) | Manage Scheduled Transfer Dashboard",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Navigate to Manage Scheduled Transfer Dashboard (PRE-REQUISITE) | Manage Scheduled Transfer Dashboard",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_48_TRANSFER_SETTINGS_MANAGE_SCHEDULE_TRANSFER_DASHBOARD_TC_002",
+        "featureName": "FUNCTION 48: TRANSFER SETTINGS - MANAGE SCHEDULE TRANSFER DASHBOARD",
+        "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+        "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remarks",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Navigate to Manage Scheduled Transfer Dashboard (PRE-REQUISITE) | Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_48_TRANSFER_SETTINGS_MANAGE_SCHEDULE_TRANSFER_DASHBOARD_TC_003",
+        "featureName": "FUNCTION 48: TRANSFER SETTINGS - MANAGE SCHEDULE TRANSFER DASHBOARD",
+        "requirement": "No. | Description | Integration | Remarks",
+        "objective": "Verify no. | description | integration | remarks",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Navigate to Manage Scheduled Transfer Dashboard (PRE-REQUISITE) | Manage Scheduled Transfer Dashboard"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Description | Integration | Remarks",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Description | Integration | Remarks",
+        "priority": "P2",
+        "layer": "Integration",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      }
+    ]
+  }
+}

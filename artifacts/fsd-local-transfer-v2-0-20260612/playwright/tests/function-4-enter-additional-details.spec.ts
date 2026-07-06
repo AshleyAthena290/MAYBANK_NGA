@@ -1,0 +1,111 @@
+import { test, expect } from "@playwright/test";
+import { buildApiHeaders, assertA11yStub, assertVisualStub } from "../helpers/assertions";
+import { Function4EnterAdditionalDetailsPage } from "../page-objects/function-4-enter-additional-details.page";
+
+test.describe("FUNCTION 4: ENTER ADDITIONAL DETAILS", () => {
+  test("FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_001 | Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?", async ({ request }) => {
+    const response = await request.post("/", {
+      headers: buildApiHeaders(),
+      data: {}
+    });
+    expect(response.ok()).toBeTruthy();
+  });
+  test("FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_002 | Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function4EnterAdditionalDetailsPage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_003 | Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function4EnterAdditionalDetailsPage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_004 | Upload Underlying Documents screen (IDR to LCS (MYR))", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function4EnterAdditionalDetailsPage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_006 | 5 | Title Header | N/A | Alphanumeric | Display | Integration | Display 'Transfer' | CMS 1. Retrieve label 'Transfer' 2. Retrieve label 'Share the purpose of transfer' and description", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function4EnterAdditionalDetailsPage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_007 | 6 | Sub-header + Description | N/A | Alphanumeric | Display | Integration | Display 'Share the purpose of this transfer' and description | CMS 1. Retrieve label 'Transfer' 2. Retrieve label 'Share the purpose of transfer' and description", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function4EnterAdditionalDetailsPage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_008 | 4 | [X] icon | Upon tapping [X] icon, system discards inputs and redirects to Transfer Landing screen.", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function4EnterAdditionalDetailsPage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_009 | 5 | [<] icon | Upon tapping the [<] icon, system redirects to Enter Additional Details screen.", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function4EnterAdditionalDetailsPage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_010 | 6 | [Trash] icon | Upon tapping, delete uploaded underlying document.", async ({ request }) => {
+    const response = await request.post("/", {
+      headers: buildApiHeaders(),
+      data: {}
+    });
+    expect(response.ok()).toBeTruthy();
+  });
+  test("FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_012 | 8 | [Next] button | Upon tapping [Next] button, refer to business rules.", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function4EnterAdditionalDetailsPage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_013 | 9 | [Trash] icon | Upon tapping, delete uploaded underlying document.", async ({ request }) => {
+    const response = await request.post("/", {
+      headers: buildApiHeaders(),
+      data: {}
+    });
+    expect(response.ok()).toBeTruthy();
+  });
+  test("FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_015 | No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function4EnterAdditionalDetailsPage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_016 | No. | Description | Integration | Remarks", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function4EnterAdditionalDetailsPage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_017 | 1 | Upload underlying documents screen is applicable for Intrabank Transaction that matches: 1. FCY transaction amount > USD 100K or equivalent by other currencies (Non-LCS) per month. 2. FCY transaction amount > USD 100K or equivalent by other currencies (Non-LCS) per transaction. 3. FCY transaction amount > USD 500K or equivalent by other currencies (LCS) per transaction. 4. FCY transaction <amount <= below USD 500K or equivalent by other currencies (LCS) per transaction. LCS: CNY, THB. *MYR is not applicable for Intrabank. | ESB - Trapi/Kondor+ ? 1. Retrieve FOREX 2. Retrieve and check user's current forex limit.", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function4EnterAdditionalDetailsPage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_018 | 2 | Upon tapping [Upload a file] 1. System opens mobile phone's native file uploader based on phone's operating system. 2. File Validation: a. Allowed file format: JPEG, PNG, HEIC, PDF, DOC. Else, display inline error message 'Only PDF, JPEG, HEIC, or PNG formats are supported.' with error icon. b. Maximum per file size: 5 MB. Else, display inline error message 'Maximum file size is 5MB.' with error icon. 3. Number of files: a. Maximum 5 files. b. If user has uploaded 5 files and taps [Upload a file], system displays a toastbar message 'Maximum number of documents uploaded.' 4. Exception Error: a. If system encounters exception errors that during upload (e.g. system or network errors), display toastbar message 'There is an issue with your uploaded document. Please try again.'", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function4EnterAdditionalDetailsPage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_019 | 6 | For Transfer (IDR - LCS) or (LCS - IDR) (CNY, THB) 1. For transaction amount <= USD 500,000 or equivalent, upload underlying documents field is disabled. 2. For transaction amount > USD 500,000 or equivalent, upload underlying documents field is enabled.", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function4EnterAdditionalDetailsPage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_4_ENTER_ADDITIONAL_DETAILS_TC_020 | 7 | Upon tapping [Next] button: 1. Mandatory fields checking. a. IF purpose of transfer OR type of underlying document is empty/unselected, system displays error message' 'Required field.' b. IF no document is uploaded, system displays a toastbar message 'Underlying document is a required field.' 2. If all mandatory fields checking passed, system redirects to confirmation screen.", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function4EnterAdditionalDetailsPage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+});

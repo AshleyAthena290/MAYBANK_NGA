@@ -1,0 +1,624 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-05T13:38:25.118Z",
+  "bundle": {
+    "featureName": "Function: Set Primary Account",
+    "testCases": [
+      {
+        "testCaseId": "FUNCTION_SET_PRIMARY_ACCOUNT_TC_001",
+        "featureName": "Function: Set Primary Account",
+        "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+        "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Invalid input violating rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Invalid input violating rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Boundary value around rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Boundary value around rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_SET_PRIMARY_ACCOUNT_TC_002",
+        "featureName": "Function: Set Primary Account",
+        "requirement": "1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+        "objective": "Verify 1 | title | n/a | alphanumeric | integration | display \"set a primary account\" | cms 1. retrieve title",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+        "priority": "P2",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Invalid input violating rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Invalid input violating rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Boundary value around rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Boundary value around rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_SET_PRIMARY_ACCOUNT_TC_003",
+        "featureName": "Function: Set Primary Account",
+        "requirement": "2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+        "objective": "Verify 2 | description | n/a | alphanumeric | integration | display description for primary account | cms 1. retrieve description",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+        "priority": "P2",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Invalid input violating rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Invalid input violating rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Boundary value around rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Boundary value around rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_SET_PRIMARY_ACCOUNT_TC_004",
+        "featureName": "Function: Set Primary Account",
+        "requirement": "3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+        "objective": "Verify 3 | account list | yes | alphanumeric | selection | input | retrieve & display casa or cc list with product name, account number & account balance (as per screen) refer to business rules.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Invalid input violating rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Invalid input violating rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Boundary value around rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Boundary value around rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_SET_PRIMARY_ACCOUNT_TC_005",
+        "featureName": "Function: Set Primary Account",
+        "requirement": "4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes",
+        "objective": "Verify 4 | notes | n/a | alphanumeric | display | integration | display notes for primary account | cms 1. retrieve notes",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes",
+        "priority": "P2",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Invalid input violating rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Invalid input violating rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Boundary value around rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Boundary value around rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_SET_PRIMARY_ACCOUNT_TC_006",
+        "featureName": "Function: Set Primary Account",
+        "requirement": "Actions",
+        "objective": "Verify actions",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Actions",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Actions",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Invalid input violating rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Invalid input violating rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Boundary value around rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Boundary value around rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_SET_PRIMARY_ACCOUNT_TC_007",
+        "featureName": "Function: Set Primary Account",
+        "requirement": "No. | Action | Description | Integration | Remark",
+        "objective": "Verify no. | action | description | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Action | Description | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Action | Description | Integration | Remark",
+        "priority": "P2",
+        "layer": "Integration",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Invalid input violating rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Invalid input violating rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Boundary value around rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Boundary value around rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_SET_PRIMARY_ACCOUNT_TC_008",
+        "featureName": "Function: Set Primary Account",
+        "requirement": "1 | Confirm button | Once account is selected, navigate to [A&A] Biometric setup screen",
+        "objective": "Verify 1 | confirm button | once account is selected, navigate to [a&a] biometric setup screen",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | Confirm button | Once account is selected, navigate to [A&A] Biometric setup screen",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | Confirm button | Once account is selected, navigate to [A&A] Biometric setup screen",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Invalid input violating rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Invalid input violating rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Boundary value around rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Boundary value around rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_SET_PRIMARY_ACCOUNT_TC_009",
+        "featureName": "Function: Set Primary Account",
+        "requirement": "2 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen.",
+        "objective": "Verify 2 | [x] button | upon tapping, exit & return to onboarding landing screen.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Invalid input violating rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Invalid input violating rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Boundary value around rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Boundary value around rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_SET_PRIMARY_ACCOUNT_TC_010",
+        "featureName": "Function: Set Primary Account",
+        "requirement": "No. | Description | Integration | Remark",
+        "objective": "Verify no. | description | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Description | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Description | Integration | Remark",
+        "priority": "P2",
+        "layer": "Integration",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Invalid input violating rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Invalid input violating rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Boundary value around rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Boundary value around rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_SET_PRIMARY_ACCOUNT_TC_011",
+        "featureName": "Function: Set Primary Account",
+        "requirement": "1 | On the page load, retrieve and display account listing as below, regardless whether is registered via CASA or CC: 1. If user has > 1 CASA and with/(out) CC, display list of CASA for primary account selection 2. If user has > 1 CC (no CASA), display list of CC for primary account selection 3. Display allowed account with status: a. CASA status allowed: Active or Inactive (IM07, ST01) b. Term Savings is not allowed for primary account 4. Display allowed CC, with following sequence check: a. CC Status allowed = Active (1) dan Inactive (2, i.e. no trxn in last 180 days) b. CC Block code allowed = Normal (Null or ” “) or Late Payment (B, C, H, I, J, K, M, N, O, P) c. CC Card Type = Primary (PP) 5. Primary label: a. Once tap and select, highlight the selected account and display \"Primary\" tag b. For CASA, pre-select account with highest recent digital transaction count in past 90 days and position it as the first selection in account list - IF two accounts have equal digital transaction, default to most recently used account - IF all accounts have 0 recent activity, default to oldest account (by age) c. For CC, pre‑select the account that comes first in alphabetical order 6. Pagination is available (20 accounts per page, lazy load). Sorting order 1. CC will be sorted by alphabetical order 2. Account (CASA) will be sorted from highest to lowest digital transaction count in the last 90 days 3. Primary default will be selected to the first one | ECLIPSE/Cardlink/Systematic: 1. Retrieve user's permitted CASA and CC, based on applicable rules 2. Retrieve CASA with highest recent digital transaction in past 90 days. CMS: 1. Retrieve primary tag text",
+        "objective": "Verify 1 | on the page load, retrieve and display account listing as below, regardless whether is registered via casa or cc: 1. if user has > 1 casa and with/(out) cc, display list of casa for primary account selection 2. if user has > 1 cc (no casa), display list of cc for primary account selection 3. display allowed account with status: a. casa status allowed: active or inactive (im07, st01) b. term savings is not allowed for primary account 4. display allowed cc, with following sequence check: a. cc status allowed = active (1) dan inactive (2, i.e. no trxn in last 180 days) b. cc block code allowed = normal (null or ” “) or late payment (b, c, h, i, j, k, m, n, o, p) c. cc card type = primary (pp) 5. primary label: a. once tap and select, highlight the selected account and display \"primary\" tag b. for casa, pre-select account with highest recent digital transaction count in past 90 days and position it as the first selection in account list - if two accounts have equal digital transaction, default to most recently used account - if all accounts have 0 recent activity, default to oldest account (by age) c. for cc, pre‑select the account that comes first in alphabetical order 6. pagination is available (20 accounts per page, lazy load). sorting order 1. cc will be sorted by alphabetical order 2. account (casa) will be sorted from highest to lowest digital transaction count in the last 90 days 3. primary default will be selected to the first one | eclipse/cardlink/systematic: 1. retrieve user's permitted casa and cc, based on applicable rules 2. retrieve casa with highest recent digital transaction in past 90 days. cms: 1. retrieve primary tag text",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | On the page load, retrieve and display account listing as below, regardless whether is registered via CASA or CC: 1. If user has > 1 CASA and with/(out) CC, display list of CASA for primary account selection 2. If user has > 1 CC (no CASA), display list of CC for primary account selection 3. Display allowed account with status: a. CASA status allowed: Active or Inactive (IM07, ST01) b. Term Savings is not allowed for primary account 4. Display allowed CC, with following sequence check: a. CC Status allowed = Active (1) dan Inactive (2, i.e. no trxn in last 180 days) b. CC Block code allowed = Normal (Null or ” “) or Late Payment (B, C, H, I, J, K, M, N, O, P) c. CC Card Type = Primary (PP) 5. Primary label: a. Once tap and select, highlight the selected account and display \"Primary\" tag b. For CASA, pre-select account with highest recent digital transaction count in past 90 days and position it as the first selection in account list - IF two accounts have equal digital transaction, default to most recently used account - IF all accounts have 0 recent activity, default to oldest account (by age) c. For CC, pre‑select the account that comes first in alphabetical order 6. Pagination is available (20 accounts per page, lazy load). Sorting order 1. CC will be sorted by alphabetical order 2. Account (CASA) will be sorted from highest to lowest digital transaction count in the last 90 days 3. Primary default will be selected to the first one | ECLIPSE/Cardlink/Systematic: 1. Retrieve user's permitted CASA and CC, based on applicable rules 2. Retrieve CASA with highest recent digital transaction in past 90 days. CMS: 1. Retrieve primary tag text",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | On the page load, retrieve and display account listing as below, regardless whether is registered via CASA or CC: 1. If user has > 1 CASA and with/(out) CC, display list of CASA for primary account selection 2. If user has > 1 CC (no CASA), display list of CC for primary account selection 3. Display allowed account with status: a. CASA status allowed: Active or Inactive (IM07, ST01) b. Term Savings is not allowed for primary account 4. Display allowed CC, with following sequence check: a. CC Status allowed = Active (1) dan Inactive (2, i.e. no trxn in last 180 days) b. CC Block code allowed = Normal (Null or ” “) or Late Payment (B, C, H, I, J, K, M, N, O, P) c. CC Card Type = Primary (PP) 5. Primary label: a. Once tap and select, highlight the selected account and display \"Primary\" tag b. For CASA, pre-select account with highest recent digital transaction count in past 90 days and position it as the first selection in account list - IF two accounts have equal digital transaction, default to most recently used account - IF all accounts have 0 recent activity, default to oldest account (by age) c. For CC, pre‑select the account that comes first in alphabetical order 6. Pagination is available (20 accounts per page, lazy load). Sorting order 1. CC will be sorted by alphabetical order 2. Account (CASA) will be sorted from highest to lowest digital transaction count in the last 90 days 3. Primary default will be selected to the first one | ECLIPSE/Cardlink/Systematic: 1. Retrieve user's permitted CASA and CC, based on applicable rules 2. Retrieve CASA with highest recent digital transaction in past 90 days. CMS: 1. Retrieve primary tag text",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Invalid input violating rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Invalid input violating rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Boundary value around rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Boundary value around rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_SET_PRIMARY_ACCOUNT_TC_012",
+        "featureName": "Function: Set Primary Account",
+        "requirement": "2 | Bypass Primary Account screen and navigate to Biometric setup, regardless whether is registered via CASA or CC: 1. If user has 1 CASA and with/(out) CC, auto-select single CASA as primary account and this screen will not be displayed. 2. If user has 1 CC only (no CASA), auto-select single CC as primary account and this screen will not be displayed. 3. The account will be updated in Settings > Primary app account. | ECLIPSE/Cardlink/Systematic: 1. Retrieve user's permitted CASA and CC, based on applicable rules 2. Retrieve CASA with highest recent digital transaction in past 90 days. CMS: 1. Retrieve primary tag text",
+        "objective": "Verify 2 | bypass primary account screen and navigate to biometric setup, regardless whether is registered via casa or cc: 1. if user has 1 casa and with/(out) cc, auto-select single casa as primary account and this screen will not be displayed. 2. if user has 1 cc only (no casa), auto-select single cc as primary account and this screen will not be displayed. 3. the account will be updated in settings > primary app account. | eclipse/cardlink/systematic: 1. retrieve user's permitted casa and cc, based on applicable rules 2. retrieve casa with highest recent digital transaction in past 90 days. cms: 1. retrieve primary tag text",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | Bypass Primary Account screen and navigate to Biometric setup, regardless whether is registered via CASA or CC: 1. If user has 1 CASA and with/(out) CC, auto-select single CASA as primary account and this screen will not be displayed. 2. If user has 1 CC only (no CASA), auto-select single CC as primary account and this screen will not be displayed. 3. The account will be updated in Settings > Primary app account. | ECLIPSE/Cardlink/Systematic: 1. Retrieve user's permitted CASA and CC, based on applicable rules 2. Retrieve CASA with highest recent digital transaction in past 90 days. CMS: 1. Retrieve primary tag text",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | Bypass Primary Account screen and navigate to Biometric setup, regardless whether is registered via CASA or CC: 1. If user has 1 CASA and with/(out) CC, auto-select single CASA as primary account and this screen will not be displayed. 2. If user has 1 CC only (no CASA), auto-select single CC as primary account and this screen will not be displayed. 3. The account will be updated in Settings > Primary app account. | ECLIPSE/Cardlink/Systematic: 1. Retrieve user's permitted CASA and CC, based on applicable rules 2. Retrieve CASA with highest recent digital transaction in past 90 days. CMS: 1. Retrieve primary tag text",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Invalid input violating rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Invalid input violating rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Boundary value around rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Boundary value around rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_SET_PRIMARY_ACCOUNT_TC_013",
+        "featureName": "Function: Set Primary Account",
+        "requirement": "3 | Account & CC display to include: 1. Full account/CC name 2. Full account/CC number - CASA: breaks every 4 digits - Credit card: Visa/Master/JCB breaks every 4 digits; AMEX breaks of 4-6-5 digits - Masked excluding last four digits 3. Available balance - If CASA account type is GAA, display the IDR balance - If CASA account currency is non-IDR, display corresponding currency",
+        "objective": "Verify 3 | account & cc display to include: 1. full account/cc name 2. full account/cc number - casa: breaks every 4 digits - credit card: visa/master/jcb breaks every 4 digits; amex breaks of 4-6-5 digits - masked excluding last four digits 3. available balance - if casa account type is gaa, display the idr balance - if casa account currency is non-idr, display corresponding currency",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 3 | Account & CC display to include: 1. Full account/CC name 2. Full account/CC number - CASA: breaks every 4 digits - Credit card: Visa/Master/JCB breaks every 4 digits; AMEX breaks of 4-6-5 digits - Masked excluding last four digits 3. Available balance - If CASA account type is GAA, display the IDR balance - If CASA account currency is non-IDR, display corresponding currency",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 3 | Account & CC display to include: 1. Full account/CC name 2. Full account/CC number - CASA: breaks every 4 digits - Credit card: Visa/Master/JCB breaks every 4 digits; AMEX breaks of 4-6-5 digits - Masked excluding last four digits 3. Available balance - If CASA account type is GAA, display the IDR balance - If CASA account currency is non-IDR, display corresponding currency",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Invalid input violating rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Invalid input violating rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Boundary value around rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Boundary value around rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_SET_PRIMARY_ACCOUNT_TC_014",
+        "featureName": "Function: Set Primary Account",
+        "requirement": "4 | Upon tapping confirm button, perform below: 1. Proceed to Biometric setup. - If Biometric setup successful, refer to [9.0 ETB - w M2U Final] - If Biometric setup unsuccessful, treat as successful onboarding and refer to [9.0 ETB - w M2U Final]. User can set biometric later in [Setting] - Security Dashboard screen 2. Account selected will be updated in Settings > Primary app account.",
+        "objective": "Verify 4 | upon tapping confirm button, perform below: 1. proceed to biometric setup. - if biometric setup successful, refer to [9.0 etb - w m2u final] - if biometric setup unsuccessful, treat as successful onboarding and refer to [9.0 etb - w m2u final]. user can set biometric later in [setting] - security dashboard screen 2. account selected will be updated in settings > primary app account.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 4 | Upon tapping confirm button, perform below: 1. Proceed to Biometric setup. - If Biometric setup successful, refer to [9.0 ETB - w M2U Final] - If Biometric setup unsuccessful, treat as successful onboarding and refer to [9.0 ETB - w M2U Final]. User can set biometric later in [Setting] - Security Dashboard screen 2. Account selected will be updated in Settings > Primary app account.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 4 | Upon tapping confirm button, perform below: 1. Proceed to Biometric setup. - If Biometric setup successful, refer to [9.0 ETB - w M2U Final] - If Biometric setup unsuccessful, treat as successful onboarding and refer to [9.0 ETB - w M2U Final]. User can set biometric later in [Setting] - Security Dashboard screen 2. Account selected will be updated in Settings > Primary app account.",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Invalid input violating rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Invalid input violating rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Boundary value around rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Boundary value around rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_SET_PRIMARY_ACCOUNT_TC_015",
+        "featureName": "Function: Set Primary Account",
+        "requirement": "5 | If user quits at Primary Account or Biometric screen: User will continue from Login screen and upon successful login, Navigate to [App Dashboard] - Pre-login - Primary Account default storing will be triggered in App Dashboard (Refer to [App Dashboard] - Main Display Amt) - Biometric setup can be performed later in [Setting] - Security Dashboard",
+        "objective": "Verify 5 | if user quits at primary account or biometric screen: user will continue from login screen and upon successful login, navigate to [app dashboard] - pre-login - primary account default storing will be triggered in app dashboard (refer to [app dashboard] - main display amt) - biometric setup can be performed later in [setting] - security dashboard",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 5 | If user quits at Primary Account or Biometric screen: User will continue from Login screen and upon successful login, Navigate to [App Dashboard] - Pre-login - Primary Account default storing will be triggered in App Dashboard (Refer to [App Dashboard] - Main Display Amt) - Biometric setup can be performed later in [Setting] - Security Dashboard",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 5 | If user quits at Primary Account or Biometric screen: User will continue from Login screen and upon successful login, Navigate to [App Dashboard] - Pre-login - Primary Account default storing will be triggered in App Dashboard (Refer to [App Dashboard] - Main Display Amt) - Biometric setup can be performed later in [Setting] - Security Dashboard",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Invalid input violating rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Invalid input violating rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Integration | Display \"Set a primary account\" | CMS 1. Retrieve Title",
+          "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Integration | Display description for primary account | CMS 1. Retrieve Description",
+          "Boundary value around rule: 3 | Account List | Yes | Alphanumeric | Selection | Input | Retrieve & display CASA or CC list with Product Name, Account Number & Account Balance (as per screen) Refer to business rules.",
+          "Boundary value around rule: 4 | Notes | N/A | Alphanumeric | Display | Integration | Display notes for primary account | CMS 1. Retrieve Notes"
+        ]
+      }
+    ]
+  }
+}

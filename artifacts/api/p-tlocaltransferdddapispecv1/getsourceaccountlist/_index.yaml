@@ -1,0 +1,64 @@
+# Test Case Index
+# p-tlocaltransferdddapispecv1 - GetSourceAccountList
+# Generated: 2026-07-02T13:13:42.713Z
+---
+feature: p-tlocaltransferdddapispecv1
+apiName: GetSourceAccountList
+description: Test cases for GetSourceAccountList endpoint
+totalScenarios: 7
+scenarios:
+  - id: GetSourceAccountList-001-positive
+    title: GET /source-accounts - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getsourceaccountlist
+    priority: P1
+  - id: GetSourceAccountList-002-missing-auth
+    title: GET /source-accounts - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetSourceAccountList-003-invalid-auth
+    title: GET /source-accounts - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetSourceAccountList-004-invalid-content-type
+    title: GET /source-accounts - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: GetSourceAccountList-005-duplicate-correlation-id
+    title: GET /source-accounts - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: GetSourceAccountList-006-request-timeout
+    title: GET /source-accounts - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: GetSourceAccountList-007-empty-request-body
+    title: GET /source-accounts - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-02T13:13:42.712Z'

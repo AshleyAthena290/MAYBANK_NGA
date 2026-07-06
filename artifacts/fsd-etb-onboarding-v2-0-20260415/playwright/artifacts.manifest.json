@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-05T13:38:25.359Z",
+  "artifacts": [
+    {
+      "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\title.spec.ts",
+      "fixturePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\data\\title.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\page-objects\\title.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\function-onboarding-landing.spec.ts",
+      "fixturePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\data\\function-onboarding-landing.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\page-objects\\function-onboarding-landing.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\function-language-setting.spec.ts",
+      "fixturePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\data\\function-language-setting.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\page-objects\\function-language-setting.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\function-permission-consent.spec.ts",
+      "fixturePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\data\\function-permission-consent.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\page-objects\\function-permission-consent.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\function-download-permission-consent.spec.ts",
+      "fixturePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\data\\function-download-permission-consent.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\page-objects\\function-download-permission-consent.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\function-etb-with-m2u-id-login-page-username.spec.ts",
+      "fixturePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\data\\function-etb-with-m2u-id-login-page-username.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\page-objects\\function-etb-with-m2u-id-login-page-username.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\function-etb-with-m2u-id-login-page-password.spec.ts",
+      "fixturePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\data\\function-etb-with-m2u-id-login-page-password.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\page-objects\\function-etb-with-m2u-id-login-page-password.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\function-etb-with-m2u-id-change-app-notice.spec.ts",
+      "fixturePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\data\\function-etb-with-m2u-id-change-app-notice.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\page-objects\\function-etb-with-m2u-id-change-app-notice.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\function-nick-name.spec.ts",
+      "fixturePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\data\\function-nick-name.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\page-objects\\function-nick-name.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\function-app-permission.spec.ts",
+      "fixturePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\data\\function-app-permission.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\page-objects\\function-app-permission.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\function-set-primary-account.spec.ts",
+      "fixturePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\data\\function-set-primary-account.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\page-objects\\function-set-primary-account.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\function-etb-with-m2u-id-final-screen.spec.ts",
+      "fixturePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\data\\function-etb-with-m2u-id-final-screen.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\page-objects\\function-etb-with-m2u-id-final-screen.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\function-etb-without-m2u-id-enter-your-card-details.spec.ts",
+      "fixturePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\data\\function-etb-without-m2u-id-enter-your-card-details.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\page-objects\\function-etb-without-m2u-id-enter-your-card-details.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\function-etb-without-m2u-id-create-user-name.spec.ts",
+      "fixturePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\data\\function-etb-without-m2u-id-create-user-name.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\page-objects\\function-etb-without-m2u-id-create-user-name.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\function-etb-without-m2u-id-create-password.spec.ts",
+      "fixturePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\data\\function-etb-without-m2u-id-create-password.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\page-objects\\function-etb-without-m2u-id-create-password.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\function-etb-without-m2u-id-security-image.spec.ts",
+      "fixturePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\data\\function-etb-without-m2u-id-security-image.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\page-objects\\function-etb-without-m2u-id-security-image.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\function-etb-without-m2u-id-m2u-access-created.spec.ts",
+      "fixturePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\data\\function-etb-without-m2u-id-m2u-access-created.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\page-objects\\function-etb-without-m2u-id-m2u-access-created.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\function-etb-without-m2u-id-final-screen.spec.ts",
+      "fixturePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\data\\function-etb-without-m2u-id-final-screen.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\page-objects\\function-etb-without-m2u-id-final-screen.page.ts"
+    }
+  ]
+}

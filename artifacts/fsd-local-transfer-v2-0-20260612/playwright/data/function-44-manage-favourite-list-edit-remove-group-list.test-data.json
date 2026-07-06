@@ -1,0 +1,412 @@
+[
+  {
+    "testCaseId": "FUNCTION_44_MANAGE_FAVOURITE_LIST_EDIT_REMOVE_GROUP_LIST_TC_005",
+    "featureName": "FUNCTION 44: MANAGE FAVOURITE LIST - EDIT / REMOVE GROUP LIST",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Invalid input violating rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_44_MANAGE_FAVOURITE_LIST_EDIT_REMOVE_GROUP_LIST_TC_006",
+    "featureName": "FUNCTION 44: MANAGE FAVOURITE LIST - EDIT / REMOVE GROUP LIST",
+    "requirement": "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+    "objective": "Verify 1 | title header | n/a | alphanumeric | display | integration | 1. display \"favourites\" for favourite list. 2. display \"<user defined list> for custom list.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Invalid input violating rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_44_MANAGE_FAVOURITE_LIST_EDIT_REMOVE_GROUP_LIST_TC_007",
+    "featureName": "FUNCTION 44: MANAGE FAVOURITE LIST - EDIT / REMOVE GROUP LIST",
+    "requirement": "2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+    "objective": "Verify 2 | description | n/a | alphanumeric | display | integration | refer to tab manage fav - detail group",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Invalid input violating rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_44_MANAGE_FAVOURITE_LIST_EDIT_REMOVE_GROUP_LIST_TC_008",
+    "featureName": "FUNCTION 44: MANAGE FAVOURITE LIST - EDIT / REMOVE GROUP LIST",
+    "requirement": "3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+    "objective": "Verify 3 | recipient list | n/a | alphanumeric | display | integration | refer to tab manage fav - detail group",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Invalid input violating rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_44_MANAGE_FAVOURITE_LIST_EDIT_REMOVE_GROUP_LIST_TC_009",
+    "featureName": "FUNCTION 44: MANAGE FAVOURITE LIST - EDIT / REMOVE GROUP LIST",
+    "requirement": "4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+    "objective": "Verify 4 | recipient name | n/a | alphanumeric | display | integration | refer to tab manage fav - detail group",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Invalid input violating rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_44_MANAGE_FAVOURITE_LIST_EDIT_REMOVE_GROUP_LIST_TC_010",
+    "featureName": "FUNCTION 44: MANAGE FAVOURITE LIST - EDIT / REMOVE GROUP LIST",
+    "requirement": "5 | Recipient Nickname | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+    "objective": "Verify 5 | recipient nickname | n/a | alphanumeric | display | integration | refer to tab manage fav - detail group",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 5 | Recipient Nickname | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 5 | Recipient Nickname | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Invalid input violating rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_44_MANAGE_FAVOURITE_LIST_EDIT_REMOVE_GROUP_LIST_TC_011",
+    "featureName": "FUNCTION 44: MANAGE FAVOURITE LIST - EDIT / REMOVE GROUP LIST",
+    "requirement": "6 | Recipient Account Number | N/A | Numeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+    "objective": "Verify 6 | recipient account number | n/a | numeric | display | integration | refer to tab manage fav - detail group",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 6 | Recipient Account Number | N/A | Numeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 6 | Recipient Account Number | N/A | Numeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Invalid input violating rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_44_MANAGE_FAVOURITE_LIST_EDIT_REMOVE_GROUP_LIST_TC_012",
+    "featureName": "FUNCTION 44: MANAGE FAVOURITE LIST - EDIT / REMOVE GROUP LIST",
+    "requirement": "7 | Recipient Bank Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+    "objective": "Verify 7 | recipient bank name | n/a | alphanumeric | display | integration | refer to tab manage fav - detail group",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 7 | Recipient Bank Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 7 | Recipient Bank Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Invalid input violating rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_44_MANAGE_FAVOURITE_LIST_EDIT_REMOVE_GROUP_LIST_TC_013",
+    "featureName": "FUNCTION 44: MANAGE FAVOURITE LIST - EDIT / REMOVE GROUP LIST",
+    "requirement": "No. | Description | Integration | Remarks",
+    "objective": "Verify no. | description | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remarks",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Invalid input violating rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_44_MANAGE_FAVOURITE_LIST_EDIT_REMOVE_GROUP_LIST_TC_014",
+    "featureName": "FUNCTION 44: MANAGE FAVOURITE LIST - EDIT / REMOVE GROUP LIST",
+    "requirement": "1 | For deletion of recipient, upon S2U authorisation, navigate to Status end screen: a. Recipient removed successfully - navigate to Recipient Removed screen. b. Update unsuccessful - navigate to Update Unsuccessful screen, no change. | IAM: 1. S2U Auth & status ECLIPSE: - Delete selected recipient from Fav list",
+    "objective": "Verify 1 | for deletion of recipient, upon s2u authorisation, navigate to status end screen: a. recipient removed successfully - navigate to recipient removed screen. b. update unsuccessful - navigate to update unsuccessful screen, no change. | iam: 1. s2u auth & status eclipse: - delete selected recipient from fav list",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | For deletion of recipient, upon S2U authorisation, navigate to Status end screen: a. Recipient removed successfully - navigate to Recipient Removed screen. b. Update unsuccessful - navigate to Update Unsuccessful screen, no change. | IAM: 1. S2U Auth & status ECLIPSE: - Delete selected recipient from Fav list",
+      "Validate expected behavior using api assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | For deletion of recipient, upon S2U authorisation, navigate to Status end screen: a. Recipient removed successfully - navigate to Recipient Removed screen. b. Update unsuccessful - navigate to Update Unsuccessful screen, no change. | IAM: 1. S2U Auth & status ECLIPSE: - Delete selected recipient from Fav list",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "api",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error handling",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Invalid input violating rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Invalid input violating rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display \"Favourites\" for Favourite list. 2. Display \"<User defined list> for custom list.",
+      "Boundary value around rule: 2 | Description | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 3 | Recipient List | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group",
+      "Boundary value around rule: 4 | Recipient Name | N/A | Alphanumeric | Display | Integration | Refer to Tab Manage Fav - Detail group"
+    ]
+  }
+]

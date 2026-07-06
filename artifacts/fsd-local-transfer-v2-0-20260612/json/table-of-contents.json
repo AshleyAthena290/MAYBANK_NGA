@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.436Z",
+  "featureId": "table-of-contents",
+  "featureName": "Table of Contents",
+  "sourceType": "FSD",
+  "content": {
+    "featureName": "Table of Contents",
+    "description": "",
+    "flow": [],
+    "uiElements": [
+      "1.1.7.1 Receipt w Theme",
+      "1.1.8 Transfer Notification",
+      "1.2 Recipient - Create New",
+      "1.3.5 Manage Favourite Edit & Remove Group",
+      "1.4 Transfer Setting - Manage Scheduled Transfer Dashboard",
+      "1.4.1 Transfer Setting - Manage Scheduled Transfer List",
+      "1.4.2 Transfer Setting - Remove Recurring Details",
+      "1.4.3 Transfer Setting - Manage Limit Dashboard",
+      "1.4.4 Transfer Setting - Manage Limit List",
+      "1.4.5 Transfer Setting - Manage Limit Details",
+      "1.5 Data Extraction"
+    ],
+    "validationRules": [],
+    "businessRules": [],
+    "apis": [],
+    "dependencies": [],
+    "errorMessages": [],
+    "navigation": [],
+    "remarks": [
+      "1.2.2 Recipient - Add to Favourite",
+      "1.2.3 Recipient - Edit Favourite",
+      "1.2.4 Recipient - Remove From Tab",
+      "1.3 Manage Favourite - Dashboard",
+      "1.3.1 Manage Favourite - Detail Group",
+      "1.3.2 Manage Favourite Add from Account Number",
+      "1.3.3 Manage Favourite Add from Recent Transfer"
+    ]
+  },
+  "chunks": [
+    {
+      "section": "uiElements",
+      "content": "1.1.7.1 Receipt w Theme\n1.1.8 Transfer Notification\n1.2 Recipient - Create New\n1.3.5 Manage Favourite Edit & Remove Group\n1.4 Transfer Setting - Manage Scheduled Transfer Dashboard\n1.4.1 Transfer Setting - Manage Scheduled Transfer List\n1.4.2 Transfer Setting - Remove Recurring Details\n1.4.3 Transfer Setting - Manage Limit Dashboard\n1.4.4 Transfer Setting - Manage Limit List\n1.4.5 Transfer Setting - Manage Limit Details\n1.5 Data Extraction",
+      "tokensHint": 80
+    },
+    {
+      "section": "remarks",
+      "content": "1.2.2 Recipient - Add to Favourite\n1.2.3 Recipient - Edit Favourite\n1.2.4 Recipient - Remove From Tab\n1.3 Manage Favourite - Dashboard\n1.3.1 Manage Favourite - Detail Group\n1.3.2 Manage Favourite Add from Account Number\n1.3.3 Manage Favourite Add from Recent Transfer",
+      "tokensHint": 51
+    }
+  ],
+  "retrievalHints": {
+    "keywords": [
+      "table",
+      "contents",
+      "receipt",
+      "theme",
+      "transfer",
+      "notification",
+      "recipient",
+      "create",
+      "new",
+      "manage",
+      "favourite",
+      "edit",
+      "remove",
+      "group",
+      "setting",
+      "scheduled",
+      "dashboard",
+      "list",
+      "recurring",
+      "details",
+      "limit",
+      "data",
+      "extraction"
+    ],
+    "hasApis": false,
+    "hasValidations": false,
+    "hasBusinessRules": false
+  }
+}

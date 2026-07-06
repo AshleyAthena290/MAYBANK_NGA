@@ -1,0 +1,308 @@
+[
+  {
+    "testCaseId": "FUNCTION_ONBOARDING_LANDING_TC_001",
+    "featureName": "Function: Onboarding Landing",
+    "requirement": "Onboarding Screen",
+    "objective": "Verify onboarding screen",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Onboarding Screen",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve Maybank Logo & Name Image",
+      "2 | Language Code | N/A | Alphanumeric | Display | Integration | 1. Display \"selected\" language code based on previous selection (stored in device cache). 2. For first time onboarding/no language is selected, NGA to default to \"ID\". Available options: (i) ID - Bahasa Indonesia (ii) EN - English | NGBO: 1. Language code based on selected language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Onboarding Screen",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Onboarding Screen",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: Onboarding Screen"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ONBOARDING_LANDING_TC_003",
+    "featureName": "Function: Onboarding Landing",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Onboarding Screen",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve Maybank Logo & Name Image",
+      "2 | Language Code | N/A | Alphanumeric | Display | Integration | 1. Display \"selected\" language code based on previous selection (stored in device cache). 2. For first time onboarding/no language is selected, NGA to default to \"ID\". Available options: (i) ID - Bahasa Indonesia (ii) EN - English | NGBO: 1. Language code based on selected language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ONBOARDING_LANDING_TC_004",
+    "featureName": "Function: Onboarding Landing",
+    "requirement": "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve Maybank Logo & Name Image",
+    "objective": "Verify 1 | maybank logo & name | n/a | alphanumeric | display | integration | display maybank logo & name image | cms: 1. retrieve maybank logo & name image",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Onboarding Screen",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve Maybank Logo & Name Image",
+      "2 | Language Code | N/A | Alphanumeric | Display | Integration | 1. Display \"selected\" language code based on previous selection (stored in device cache). 2. For first time onboarding/no language is selected, NGA to default to \"ID\". Available options: (i) ID - Bahasa Indonesia (ii) EN - English | NGBO: 1. Language code based on selected language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve Maybank Logo & Name Image",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve Maybank Logo & Name Image",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve Maybank Logo & Name Image"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ONBOARDING_LANDING_TC_005",
+    "featureName": "Function: Onboarding Landing",
+    "requirement": "2 | Language Code | N/A | Alphanumeric | Display | Integration | 1. Display \"selected\" language code based on previous selection (stored in device cache). 2. For first time onboarding/no language is selected, NGA to default to \"ID\". Available options: (i) ID - Bahasa Indonesia (ii) EN - English | NGBO: 1. Language code based on selected language",
+    "objective": "Verify 2 | language code | n/a | alphanumeric | display | integration | 1. display \"selected\" language code based on previous selection (stored in device cache). 2. for first time onboarding/no language is selected, nga to default to \"id\". available options: (i) id - bahasa indonesia (ii) en - english | ngbo: 1. language code based on selected language",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Onboarding Screen",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve Maybank Logo & Name Image",
+      "2 | Language Code | N/A | Alphanumeric | Display | Integration | 1. Display \"selected\" language code based on previous selection (stored in device cache). 2. For first time onboarding/no language is selected, NGA to default to \"ID\". Available options: (i) ID - Bahasa Indonesia (ii) EN - English | NGBO: 1. Language code based on selected language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | Language Code | N/A | Alphanumeric | Display | Integration | 1. Display \"selected\" language code based on previous selection (stored in device cache). 2. For first time onboarding/no language is selected, NGA to default to \"ID\". Available options: (i) ID - Bahasa Indonesia (ii) EN - English | NGBO: 1. Language code based on selected language",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | Language Code | N/A | Alphanumeric | Display | Integration | 1. Display \"selected\" language code based on previous selection (stored in device cache). 2. For first time onboarding/no language is selected, NGA to default to \"ID\". Available options: (i) ID - Bahasa Indonesia (ii) EN - English | NGBO: 1. Language code based on selected language",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: 2 | Language Code | N/A | Alphanumeric | Display | Integration | 1. Display \"selected\" language code based on previous selection (stored in device cache). 2. For first time onboarding/no language is selected, NGA to default to \"ID\". Available options: (i) ID - Bahasa Indonesia (ii) EN - English | NGBO: 1. Language code based on selected language"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ONBOARDING_LANDING_TC_006",
+    "featureName": "Function: Onboarding Landing",
+    "requirement": "3 | Banner Carousel | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Carousel Title & Description based on the number of banner configured in CMS: - Carousel dot title - Banner title - Banner description 2. User can slide to move to the next banner and will be displayed in rotation 3. Display dot title for banner shown. 4. Currently defined in Figma screen is as below, title & description refer to screen: - Lifestyle - Go Further - Grow 5. App to default to first dot banner and display dot title. | CMS: 1. Multiple Carousel banner info: - Dot title - Banner title - Banner description",
+    "objective": "Verify 3 | banner carousel | n/a | alphanumeric | display | integration | 1. retrieve & display carousel title & description based on the number of banner configured in cms: - carousel dot title - banner title - banner description 2. user can slide to move to the next banner and will be displayed in rotation 3. display dot title for banner shown. 4. currently defined in figma screen is as below, title & description refer to screen: - lifestyle - go further - grow 5. app to default to first dot banner and display dot title. | cms: 1. multiple carousel banner info: - dot title - banner title - banner description",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Onboarding Screen",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve Maybank Logo & Name Image",
+      "2 | Language Code | N/A | Alphanumeric | Display | Integration | 1. Display \"selected\" language code based on previous selection (stored in device cache). 2. For first time onboarding/no language is selected, NGA to default to \"ID\". Available options: (i) ID - Bahasa Indonesia (ii) EN - English | NGBO: 1. Language code based on selected language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 3 | Banner Carousel | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Carousel Title & Description based on the number of banner configured in CMS: - Carousel dot title - Banner title - Banner description 2. User can slide to move to the next banner and will be displayed in rotation 3. Display dot title for banner shown. 4. Currently defined in Figma screen is as below, title & description refer to screen: - Lifestyle - Go Further - Grow 5. App to default to first dot banner and display dot title. | CMS: 1. Multiple Carousel banner info: - Dot title - Banner title - Banner description",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 3 | Banner Carousel | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Carousel Title & Description based on the number of banner configured in CMS: - Carousel dot title - Banner title - Banner description 2. User can slide to move to the next banner and will be displayed in rotation 3. Display dot title for banner shown. 4. Currently defined in Figma screen is as below, title & description refer to screen: - Lifestyle - Go Further - Grow 5. App to default to first dot banner and display dot title. | CMS: 1. Multiple Carousel banner info: - Dot title - Banner title - Banner description",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: 3 | Banner Carousel | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Carousel Title & Description based on the number of banner configured in CMS: - Carousel dot title - Banner title - Banner description 2. User can slide to move to the next banner and will be displayed in rotation 3. Display dot title for banner shown. 4. Currently defined in Figma screen is as below, title & description refer to screen: - Lifestyle - Go Further - Grow 5. App to default to first dot banner and display dot title. | CMS: 1. Multiple Carousel banner info: - Dot title - Banner title - Banner description"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ONBOARDING_LANDING_TC_008",
+    "featureName": "Function: Onboarding Landing",
+    "requirement": "No. | Action Button | Description | Integration | Remark",
+    "objective": "Verify no. | action button | description | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Onboarding Screen",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve Maybank Logo & Name Image",
+      "2 | Language Code | N/A | Alphanumeric | Display | Integration | 1. Display \"selected\" language code based on previous selection (stored in device cache). 2. For first time onboarding/no language is selected, NGA to default to \"ID\". Available options: (i) ID - Bahasa Indonesia (ii) EN - English | NGBO: 1. Language code based on selected language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Action Button | Description | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Action Button | Description | Integration | Remark",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: No. | Action Button | Description | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ONBOARDING_LANDING_TC_011",
+    "featureName": "Function: Onboarding Landing",
+    "requirement": "3 | [I'm a Maybank Customer] Button | Upon tapping, navigate to Permission/Consent screen",
+    "objective": "Verify 3 | [i'm a maybank customer] button | upon tapping, navigate to permission/consent screen",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Onboarding Screen",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve Maybank Logo & Name Image",
+      "2 | Language Code | N/A | Alphanumeric | Display | Integration | 1. Display \"selected\" language code based on previous selection (stored in device cache). 2. For first time onboarding/no language is selected, NGA to default to \"ID\". Available options: (i) ID - Bahasa Indonesia (ii) EN - English | NGBO: 1. Language code based on selected language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 3 | [I'm a Maybank Customer] Button | Upon tapping, navigate to Permission/Consent screen",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 3 | [I'm a Maybank Customer] Button | Upon tapping, navigate to Permission/Consent screen",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: 3 | [I'm a Maybank Customer] Button | Upon tapping, navigate to Permission/Consent screen"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ONBOARDING_LANDING_TC_012",
+    "featureName": "Function: Onboarding Landing",
+    "requirement": "4 | [I'm new to Maybank] Button | Upon tapping, navigate to NTB onboarding flow",
+    "objective": "Verify 4 | [i'm new to maybank] button | upon tapping, navigate to ntb onboarding flow",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Onboarding Screen",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve Maybank Logo & Name Image",
+      "2 | Language Code | N/A | Alphanumeric | Display | Integration | 1. Display \"selected\" language code based on previous selection (stored in device cache). 2. For first time onboarding/no language is selected, NGA to default to \"ID\". Available options: (i) ID - Bahasa Indonesia (ii) EN - English | NGBO: 1. Language code based on selected language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 4 | [I'm new to Maybank] Button | Upon tapping, navigate to NTB onboarding flow",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 4 | [I'm new to Maybank] Button | Upon tapping, navigate to NTB onboarding flow",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: 4 | [I'm new to Maybank] Button | Upon tapping, navigate to NTB onboarding flow"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ONBOARDING_LANDING_TC_014",
+    "featureName": "Function: Onboarding Landing",
+    "requirement": "No. | Description | Integration | Remark",
+    "objective": "Verify no. | description | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Onboarding Screen",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve Maybank Logo & Name Image",
+      "2 | Language Code | N/A | Alphanumeric | Display | Integration | 1. Display \"selected\" language code based on previous selection (stored in device cache). 2. For first time onboarding/no language is selected, NGA to default to \"ID\". Available options: (i) ID - Bahasa Indonesia (ii) EN - English | NGBO: 1. Language code based on selected language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remark",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: No. | Description | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  }
+]

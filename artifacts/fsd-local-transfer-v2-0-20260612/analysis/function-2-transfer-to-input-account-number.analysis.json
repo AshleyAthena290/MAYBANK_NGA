@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.623Z",
+  "report": {
+    "featureName": "FUNCTION 2: TRANSFER TO - INPUT ACCOUNT NUMBER",
+    "missingRequirements": [
+      "Feature description is missing.",
+      "User/system flow is missing.",
+      "Dependencies and prerequisites are missing.",
+      "Navigation path details are missing."
+    ],
+    "ambiguities": [],
+    "risks": [],
+    "missingValidations": [],
+    "securityConcerns": [
+      "Sensitive data is present without explicit masking/encryption requirements."
+    ],
+    "apiDependencies": [],
+    "uiDependencies": [
+      "[INTERBANK] Transfer To - Input Account No (Tap on \"+Transfer\")",
+      "[INTRABANK] Input Account Number",
+      "Transfer to Drawer Display - if Bene Banks are Offline",
+      "Error handling - Account validation | Error handling - Bank Search > No matching result",
+      "Local Transfer with FCY/LCS",
+      "[INTRABANK] [NEW TRANSFER] Transfer to Beneficiary with GAA Account | [INTRABANK] [FAVOURITE] Transfer to Beneficiary with GAA Account",
+      "2 | Title Header | N/A | Alphanumeric | Display | Integration | Display \"Transfer\" | CMS: 1. Retrieve label \"Transfer\"",
+      "3 | Transfer to (Bene Bank Name) | Yes | Alphanumeric | Dropdown List | Integration | 1. Pre-populated with selected Bank from Transfer to drawer. 2. If a new bank is selected, system clears the account number field. Refer to Business Rules for details.",
+      "4 | Account number | Yes | Numeric | Text box 9(20) | Input | 1. Upon tapping, system draws up phone's numeric keypad. 2. Upon tapping on Done on keypad, account number will be formatted & displayed. 4. Paste is supported for numeric only. Pasted alphabets and special characters will be removed from the field and show only the numeric values. 5. For Maybank, accepts both CASA, VA, and iBaaS."
+    ],
+    "backendDependencies": [],
+    "testability": [
+      "Flow details are missing, reducing scenario traceability.",
+      "Validation rules can drive positive, negative, and boundary test design.",
+      "Specification gaps and ambiguities should be resolved before automation implementation."
+    ]
+  }
+}

@@ -1,0 +1,453 @@
+[
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_CREATE_USER_NAME_TC_002",
+    "featureName": "Function: ETB without M2U ID - Create User Name",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Invalid input violating rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Invalid input violating rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Invalid input violating rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Boundary value around rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Boundary value around rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Boundary value around rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_CREATE_USER_NAME_TC_003",
+    "featureName": "Function: ETB without M2U ID - Create User Name",
+    "requirement": "1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+    "objective": "Verify 1 | title | n/a | alphanumeric | display | integration | display \"create your username\" | cms: 1. retrieve title",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Invalid input violating rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Invalid input violating rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Invalid input violating rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Boundary value around rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Boundary value around rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Boundary value around rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_CREATE_USER_NAME_TC_004",
+    "featureName": "Function: ETB without M2U ID - Create User Name",
+    "requirement": "2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+    "objective": "Verify 2 | username | yes | alphanumeric | textbox x(20) | input | 1. allows alphanumeric only 2. not allowed for space and special character 3. must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. must contain: 8-20 characters b. must contain at least 1 letter and 1 number",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Invalid input violating rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Invalid input violating rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Invalid input violating rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Boundary value around rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Boundary value around rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Boundary value around rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_CREATE_USER_NAME_TC_005",
+    "featureName": "Function: ETB without M2U ID - Create User Name",
+    "requirement": "3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+    "objective": "Verify 3 | checklist icon | n/a | image | display | integration | display default icon color as grey, if criteria met change respective icon to green | cms: 1. retrieve validation icon - grey & green",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Validate expected behavior using visual assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "visual",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Invalid input violating rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Invalid input violating rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Invalid input violating rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Boundary value around rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Boundary value around rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Boundary value around rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_CREATE_USER_NAME_TC_006",
+    "featureName": "Function: ETB without M2U ID - Create User Name",
+    "requirement": "4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text",
+    "objective": "Verify 4 | validation text | n/a | alphanumeric | display | integration | display below: 1. must contain 8-20 characters 2. must contain at least 1 letter and 1 number | cms 1. retrieve validation text",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Invalid input violating rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Invalid input violating rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Invalid input violating rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Boundary value around rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Boundary value around rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Boundary value around rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_CREATE_USER_NAME_TC_008",
+    "featureName": "Function: ETB without M2U ID - Create User Name",
+    "requirement": "No. | Action | Description | Integration | Remark",
+    "objective": "Verify no. | action | description | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Action | Description | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Action | Description | Integration | Remark",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Invalid input violating rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Invalid input violating rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Invalid input violating rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Boundary value around rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Boundary value around rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Boundary value around rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_CREATE_USER_NAME_TC_009",
+    "featureName": "Function: ETB without M2U ID - Create User Name",
+    "requirement": "1 | [Confirm] Button | Upon tapping and validation passed, navigate to [CASA/CC - w/o M2U ID] create password screen",
+    "objective": "Verify 1 | [confirm] button | upon tapping and validation passed, navigate to [casa/cc - w/o m2u id] create password screen",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | [Confirm] Button | Upon tapping and validation passed, navigate to [CASA/CC - w/o M2U ID] create password screen",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | [Confirm] Button | Upon tapping and validation passed, navigate to [CASA/CC - w/o M2U ID] create password screen",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Invalid input violating rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Invalid input violating rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Invalid input violating rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Boundary value around rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Boundary value around rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Boundary value around rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_CREATE_USER_NAME_TC_010",
+    "featureName": "Function: ETB without M2U ID - Create User Name",
+    "requirement": "2 | [<] Button | Upon tapping, navigate back to [CASA/CC - w/o M2U ID] Account details screen",
+    "objective": "Verify 2 | [<] button | upon tapping, navigate back to [casa/cc - w/o m2u id] account details screen",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | [<] Button | Upon tapping, navigate back to [CASA/CC - w/o M2U ID] Account details screen",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | [<] Button | Upon tapping, navigate back to [CASA/CC - w/o M2U ID] Account details screen",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Invalid input violating rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Invalid input violating rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Invalid input violating rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Boundary value around rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Boundary value around rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Boundary value around rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_CREATE_USER_NAME_TC_011",
+    "featureName": "Function: ETB without M2U ID - Create User Name",
+    "requirement": "3 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen",
+    "objective": "Verify 3 | [x] button | upon tapping, exit & return to onboarding landing screen",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 3 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 3 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Invalid input violating rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Invalid input violating rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Invalid input violating rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Boundary value around rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Boundary value around rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Boundary value around rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_CREATE_USER_NAME_TC_012",
+    "featureName": "Function: ETB without M2U ID - Create User Name",
+    "requirement": "No. | Description | Integration | Remark",
+    "objective": "Verify no. | description | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remark",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Invalid input violating rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Invalid input violating rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Invalid input violating rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Boundary value around rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Boundary value around rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Boundary value around rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_CREATE_USER_NAME_TC_013",
+    "featureName": "Function: ETB without M2U ID - Create User Name",
+    "requirement": "1 | When tap on Confirm button, perform validation below: 1. Mandatory validation 2. Username values validation as per checklist (validation rules is not maintainable) 3. Username duplication, if failed display snackbar error message - If username already exists, display error \"This username isn't available. Please choose another.\" - Deleted user ID in the last 30 days (<=30) can't be used, display error \"This username isn't available. Please choose another.\" | IAM: 1. Validation on: - Username is existing - Username use deleted user ID <=30 days",
+    "objective": "Verify 1 | when tap on confirm button, perform validation below: 1. mandatory validation 2. username values validation as per checklist (validation rules is not maintainable) 3. username duplication, if failed display snackbar error message - if username already exists, display error \"this username isn't available. please choose another.\" - deleted user id in the last 30 days (<=30) can't be used, display error \"this username isn't available. please choose another.\" | iam: 1. validation on: - username is existing - username use deleted user id <=30 days",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | When tap on Confirm button, perform validation below: 1. Mandatory validation 2. Username values validation as per checklist (validation rules is not maintainable) 3. Username duplication, if failed display snackbar error message - If username already exists, display error \"This username isn't available. Please choose another.\" - Deleted user ID in the last 30 days (<=30) can't be used, display error \"This username isn't available. Please choose another.\" | IAM: 1. Validation on: - Username is existing - Username use deleted user ID <=30 days",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | When tap on Confirm button, perform validation below: 1. Mandatory validation 2. Username values validation as per checklist (validation rules is not maintainable) 3. Username duplication, if failed display snackbar error message - If username already exists, display error \"This username isn't available. Please choose another.\" - Deleted user ID in the last 30 days (<=30) can't be used, display error \"This username isn't available. Please choose another.\" | IAM: 1. Validation on: - Username is existing - Username use deleted user ID <=30 days",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Invalid input violating rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Invalid input violating rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Invalid input violating rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Invalid input violating rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: 1 | Title | N/A | Alphanumeric | Display | Integration | Display \"Create your username\" | CMS: 1. Retrieve Title",
+      "Boundary value around rule: 2 | Username | Yes | Alphanumeric | Textbox X(20) | Input | 1. Allows alphanumeric only 2. Not allowed for space and special character 3. Must fulfill all validation below, and turn to green icon for condition that met, else remain as grey icon. a. Must contain: 8-20 characters b. Must contain at least 1 letter and 1 number",
+      "Boundary value around rule: 3 | Checklist Icon | N/A | Image | Display | Integration | Display default icon color as grey, if criteria met change respective icon to green | CMS: 1. Retrieve validation icon - grey & green",
+      "Boundary value around rule: 4 | Validation Text | N/A | Alphanumeric | Display | Integration | Display below: 1. Must contain 8-20 characters 2. Must contain at least 1 letter and 1 number | CMS 1. Retrieve validation text"
+    ]
+  }
+]

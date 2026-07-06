@@ -1,0 +1,138 @@
+[
+  {
+    "testCaseId": "FUNCTION_41_MANAGE_FAVOURITES_LIST_ADD_RECIPIENT_FROM_RECENT_TRANSFER_TC_004",
+    "featureName": "FUNCTION 41: MANAGE favourites LIST - ADD RECIPIENT FROM RECENT TRANSFER",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Add New favourites via recent/past transfer (from ALL tab) - Bene has no nickname.",
+      "Add New favourites via recent/past transfer (from ALL tab) - Bene already has nickname.",
+      "Adding an existing favourites beneficiary to favourites list"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_41_MANAGE_FAVOURITES_LIST_ADD_RECIPIENT_FROM_RECENT_TRANSFER_TC_005",
+    "featureName": "FUNCTION 41: MANAGE favourites LIST - ADD RECIPIENT FROM RECENT TRANSFER",
+    "requirement": "No. | Description | Integration | Remarks",
+    "objective": "Verify no. | description | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Add New favourites via recent/past transfer (from ALL tab) - Bene has no nickname.",
+      "Add New favourites via recent/past transfer (from ALL tab) - Bene already has nickname.",
+      "Adding an existing favourites beneficiary to favourites list"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remarks",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_41_MANAGE_FAVOURITES_LIST_ADD_RECIPIENT_FROM_RECENT_TRANSFER_TC_006",
+    "featureName": "FUNCTION 41: MANAGE favourites LIST - ADD RECIPIENT FROM RECENT TRANSFER",
+    "requirement": "1 | Select Recipient: 1. Listing of beneficiary will be the same as Transfer Landing Page ALL tab. Refer to Trf - Landing Page - Business rules for \"Display criteria for ALL list are:\" item a to c. 2. Wildcard search will be performed once the user has entered 2 characters. Searching of beneficiaries include fields below: a. Beneficiaries Account Name b. Beneficiaries Nickname c. Beneficiaries Account Number d. Beneficiaries Bank Name. 3. For search result that returns EMPTY: a. System to display \"We couldn't find a match for <input data>\" | ECLIPSE: 1. Retrieve list of Bene based on search criteria & sorting order specified, with pagination. Search for ALL tab. CMS: - EMPTY image, message & info. - Icon for Account Number Refer to Trf Landing Page.",
+    "objective": "Verify 1 | select recipient: 1. listing of beneficiary will be the same as transfer landing page all tab. refer to trf - landing page - business rules for \"display criteria for all list are:\" item a to c. 2. wildcard search will be performed once the user has entered 2 characters. searching of beneficiaries include fields below: a. beneficiaries account name b. beneficiaries nickname c. beneficiaries account number d. beneficiaries bank name. 3. for search result that returns empty: a. system to display \"we couldn't find a match for <input data>\" | eclipse: 1. retrieve list of bene based on search criteria & sorting order specified, with pagination. search for all tab. cms: - empty image, message & info. - icon for account number refer to trf landing page.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Add New favourites via recent/past transfer (from ALL tab) - Bene has no nickname.",
+      "Add New favourites via recent/past transfer (from ALL tab) - Bene already has nickname.",
+      "Adding an existing favourites beneficiary to favourites list"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | Select Recipient: 1. Listing of beneficiary will be the same as Transfer Landing Page ALL tab. Refer to Trf - Landing Page - Business rules for \"Display criteria for ALL list are:\" item a to c. 2. Wildcard search will be performed once the user has entered 2 characters. Searching of beneficiaries include fields below: a. Beneficiaries Account Name b. Beneficiaries Nickname c. Beneficiaries Account Number d. Beneficiaries Bank Name. 3. For search result that returns EMPTY: a. System to display \"We couldn't find a match for <input data>\" | ECLIPSE: 1. Retrieve list of Bene based on search criteria & sorting order specified, with pagination. Search for ALL tab. CMS: - EMPTY image, message & info. - Icon for Account Number Refer to Trf Landing Page.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | Select Recipient: 1. Listing of beneficiary will be the same as Transfer Landing Page ALL tab. Refer to Trf - Landing Page - Business rules for \"Display criteria for ALL list are:\" item a to c. 2. Wildcard search will be performed once the user has entered 2 characters. Searching of beneficiaries include fields below: a. Beneficiaries Account Name b. Beneficiaries Nickname c. Beneficiaries Account Number d. Beneficiaries Bank Name. 3. For search result that returns EMPTY: a. System to display \"We couldn't find a match for <input data>\" | ECLIPSE: 1. Retrieve list of Bene based on search criteria & sorting order specified, with pagination. Search for ALL tab. CMS: - EMPTY image, message & info. - Icon for Account Number Refer to Trf Landing Page.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_41_MANAGE_FAVOURITES_LIST_ADD_RECIPIENT_FROM_RECENT_TRANSFER_TC_007",
+    "featureName": "FUNCTION 41: MANAGE favourites LIST - ADD RECIPIENT FROM RECENT TRANSFER",
+    "requirement": "2 | Upon tapping a beneficiary: 1. If selected beneficiary is not in favourites list and has no nickname, navigate to \"Add Recipient\". User can enter nickname. 2. If selected beneficiary is not in favourites list but has nickname, navigate to \"Edit Nickname\". User can edit nickname. 3. If selected beneficiary is already a favourites, display toastbar error message \"This recipient is already in this list.\". For #1 & #2, upon tapping [Next] button, system navigates to S2U. Refer to Manage Fav - Final for Status end screen.",
+    "objective": "Verify 2 | upon tapping a beneficiary: 1. if selected beneficiary is not in favourites list and has no nickname, navigate to \"add recipient\". user can enter nickname. 2. if selected beneficiary is not in favourites list but has nickname, navigate to \"edit nickname\". user can edit nickname. 3. if selected beneficiary is already a favourites, display toastbar error message \"this recipient is already in this list.\". for #1 & #2, upon tapping [next] button, system navigates to s2u. refer to manage fav - final for status end screen.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Add New favourites via recent/past transfer (from ALL tab) - Bene has no nickname.",
+      "Add New favourites via recent/past transfer (from ALL tab) - Bene already has nickname.",
+      "Adding an existing favourites beneficiary to favourites list"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | Upon tapping a beneficiary: 1. If selected beneficiary is not in favourites list and has no nickname, navigate to \"Add Recipient\". User can enter nickname. 2. If selected beneficiary is not in favourites list but has nickname, navigate to \"Edit Nickname\". User can edit nickname. 3. If selected beneficiary is already a favourites, display toastbar error message \"This recipient is already in this list.\". For #1 & #2, upon tapping [Next] button, system navigates to S2U. Refer to Manage Fav - Final for Status end screen.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | Upon tapping a beneficiary: 1. If selected beneficiary is not in favourites list and has no nickname, navigate to \"Add Recipient\". User can enter nickname. 2. If selected beneficiary is not in favourites list but has nickname, navigate to \"Edit Nickname\". User can edit nickname. 3. If selected beneficiary is already a favourites, display toastbar error message \"This recipient is already in this list.\". For #1 & #2, upon tapping [Next] button, system navigates to S2U. Refer to Manage Fav - Final for Status end screen.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  }
+]

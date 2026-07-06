@@ -1,0 +1,422 @@
+[
+  {
+    "testCaseId": "FUNCTION_50_TRANSFER_SETTINGS_RECURRING_DETAIL_REMOVE_RECURRING_TC_003",
+    "featureName": "FUNCTION 50: TRANSFER SETTINGS - RECURRING DETAIL (REMOVE RECURRING)",
+    "requirement": "14 | Status Image & Status | N/A | Image | Display | Integration | 1. Display Image based on status: a. Successful b. Unsuccessful 2. Display transaction status | CMS 1. Retrieve Image & status: - successful - unsuccessful",
+    "objective": "Verify 14 | status image & status | n/a | image | display | integration | 1. display image based on status: a. successful b. unsuccessful 2. display transaction status | cms 1. retrieve image & status: - successful - unsuccessful",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Cancel Scheduled Transaction | Scheduled Transaction close to scheduled date. (Unable to cancel) | Failed /Error scheduled transaction cancellation",
+      "Cancel Recurring Transaction | Cancel Recurring Transaction close to scheduled date. | Failed /Error for recurring transaction cancellation",
+      "14 | Status Image & Status | N/A | Image | Display | Integration | 1. Display Image based on status: a. Successful b. Unsuccessful 2. Display transaction status | CMS 1. Retrieve Image & status: - successful - unsuccessful",
+      "15 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display transaction date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 14 | Status Image & Status | N/A | Image | Display | Integration | 1. Display Image based on status: a. Successful b. Unsuccessful 2. Display transaction status | CMS 1. Retrieve Image & status: - successful - unsuccessful",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 14 | Status Image & Status | N/A | Image | Display | Integration | 1. Display Image based on status: a. Successful b. Unsuccessful 2. Display transaction status | CMS 1. Retrieve Image & status: - successful - unsuccessful",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_50_TRANSFER_SETTINGS_RECURRING_DETAIL_REMOVE_RECURRING_TC_004",
+    "featureName": "FUNCTION 50: TRANSFER SETTINGS - RECURRING DETAIL (REMOVE RECURRING)",
+    "requirement": "15 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display transaction date and time.",
+    "objective": "Verify 15 | transaction date & timestamp | n/a | alphanumeric | display | local server | display transaction date and time.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Cancel Scheduled Transaction | Scheduled Transaction close to scheduled date. (Unable to cancel) | Failed /Error scheduled transaction cancellation",
+      "Cancel Recurring Transaction | Cancel Recurring Transaction close to scheduled date. | Failed /Error for recurring transaction cancellation",
+      "14 | Status Image & Status | N/A | Image | Display | Integration | 1. Display Image based on status: a. Successful b. Unsuccessful 2. Display transaction status | CMS 1. Retrieve Image & status: - successful - unsuccessful",
+      "15 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display transaction date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 15 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display transaction date and time.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 15 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display transaction date and time.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_50_TRANSFER_SETTINGS_RECURRING_DETAIL_REMOVE_RECURRING_TC_005",
+    "featureName": "FUNCTION 50: TRANSFER SETTINGS - RECURRING DETAIL (REMOVE RECURRING)",
+    "requirement": "16 | Ref ID | N/A | Alphanumeric | Display | Local Server | Display generated Reference ID.",
+    "objective": "Verify 16 | ref id | n/a | alphanumeric | display | local server | display generated reference id.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Cancel Scheduled Transaction | Scheduled Transaction close to scheduled date. (Unable to cancel) | Failed /Error scheduled transaction cancellation",
+      "Cancel Recurring Transaction | Cancel Recurring Transaction close to scheduled date. | Failed /Error for recurring transaction cancellation",
+      "14 | Status Image & Status | N/A | Image | Display | Integration | 1. Display Image based on status: a. Successful b. Unsuccessful 2. Display transaction status | CMS 1. Retrieve Image & status: - successful - unsuccessful",
+      "15 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display transaction date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 16 | Ref ID | N/A | Alphanumeric | Display | Local Server | Display generated Reference ID.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 16 | Ref ID | N/A | Alphanumeric | Display | Local Server | Display generated Reference ID.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_50_TRANSFER_SETTINGS_RECURRING_DETAIL_REMOVE_RECURRING_TC_007",
+    "featureName": "FUNCTION 50: TRANSFER SETTINGS - RECURRING DETAIL (REMOVE RECURRING)",
+    "requirement": "17 | Account Holder Name | N/A | Alphanumeric | Display | Local Server | Populate from previous screen",
+    "objective": "Verify 17 | account holder name | n/a | alphanumeric | display | local server | populate from previous screen",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Cancel Scheduled Transaction | Scheduled Transaction close to scheduled date. (Unable to cancel) | Failed /Error scheduled transaction cancellation",
+      "Cancel Recurring Transaction | Cancel Recurring Transaction close to scheduled date. | Failed /Error for recurring transaction cancellation",
+      "14 | Status Image & Status | N/A | Image | Display | Integration | 1. Display Image based on status: a. Successful b. Unsuccessful 2. Display transaction status | CMS 1. Retrieve Image & status: - successful - unsuccessful",
+      "15 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display transaction date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 17 | Account Holder Name | N/A | Alphanumeric | Display | Local Server | Populate from previous screen",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 17 | Account Holder Name | N/A | Alphanumeric | Display | Local Server | Populate from previous screen",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_50_TRANSFER_SETTINGS_RECURRING_DETAIL_REMOVE_RECURRING_TC_008",
+    "featureName": "FUNCTION 50: TRANSFER SETTINGS - RECURRING DETAIL (REMOVE RECURRING)",
+    "requirement": "18 | Account Number | N/A | Numeric | Display | Local Server | Populate from previous screen",
+    "objective": "Verify 18 | account number | n/a | numeric | display | local server | populate from previous screen",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Cancel Scheduled Transaction | Scheduled Transaction close to scheduled date. (Unable to cancel) | Failed /Error scheduled transaction cancellation",
+      "Cancel Recurring Transaction | Cancel Recurring Transaction close to scheduled date. | Failed /Error for recurring transaction cancellation",
+      "14 | Status Image & Status | N/A | Image | Display | Integration | 1. Display Image based on status: a. Successful b. Unsuccessful 2. Display transaction status | CMS 1. Retrieve Image & status: - successful - unsuccessful",
+      "15 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display transaction date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 18 | Account Number | N/A | Numeric | Display | Local Server | Populate from previous screen",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 18 | Account Number | N/A | Numeric | Display | Local Server | Populate from previous screen",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_50_TRANSFER_SETTINGS_RECURRING_DETAIL_REMOVE_RECURRING_TC_009",
+    "featureName": "FUNCTION 50: TRANSFER SETTINGS - RECURRING DETAIL (REMOVE RECURRING)",
+    "requirement": "19 | Recipient Bank | N/A | Alphanumeric | Display | Local Server | Populate from previous screen",
+    "objective": "Verify 19 | recipient bank | n/a | alphanumeric | display | local server | populate from previous screen",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Cancel Scheduled Transaction | Scheduled Transaction close to scheduled date. (Unable to cancel) | Failed /Error scheduled transaction cancellation",
+      "Cancel Recurring Transaction | Cancel Recurring Transaction close to scheduled date. | Failed /Error for recurring transaction cancellation",
+      "14 | Status Image & Status | N/A | Image | Display | Integration | 1. Display Image based on status: a. Successful b. Unsuccessful 2. Display transaction status | CMS 1. Retrieve Image & status: - successful - unsuccessful",
+      "15 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display transaction date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 19 | Recipient Bank | N/A | Alphanumeric | Display | Local Server | Populate from previous screen",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 19 | Recipient Bank | N/A | Alphanumeric | Display | Local Server | Populate from previous screen",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_50_TRANSFER_SETTINGS_RECURRING_DETAIL_REMOVE_RECURRING_TC_011",
+    "featureName": "FUNCTION 50: TRANSFER SETTINGS - RECURRING DETAIL (REMOVE RECURRING)",
+    "requirement": "20 | Transaction Type | N/A | Alphanumeric | Display | Local Server | Display either: 1. Manage Scheduled Transfer. 2. Manage Recurring Transfer.",
+    "objective": "Verify 20 | transaction type | n/a | alphanumeric | display | local server | display either: 1. manage scheduled transfer. 2. manage recurring transfer.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Cancel Scheduled Transaction | Scheduled Transaction close to scheduled date. (Unable to cancel) | Failed /Error scheduled transaction cancellation",
+      "Cancel Recurring Transaction | Cancel Recurring Transaction close to scheduled date. | Failed /Error for recurring transaction cancellation",
+      "14 | Status Image & Status | N/A | Image | Display | Integration | 1. Display Image based on status: a. Successful b. Unsuccessful 2. Display transaction status | CMS 1. Retrieve Image & status: - successful - unsuccessful",
+      "15 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display transaction date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 20 | Transaction Type | N/A | Alphanumeric | Display | Local Server | Display either: 1. Manage Scheduled Transfer. 2. Manage Recurring Transfer.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 20 | Transaction Type | N/A | Alphanumeric | Display | Local Server | Display either: 1. Manage Scheduled Transfer. 2. Manage Recurring Transfer.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_50_TRANSFER_SETTINGS_RECURRING_DETAIL_REMOVE_RECURRING_TC_013",
+    "featureName": "FUNCTION 50: TRANSFER SETTINGS - RECURRING DETAIL (REMOVE RECURRING)",
+    "requirement": "No. | Action | Description | Integration | Remarks",
+    "objective": "Verify no. | action | description | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Cancel Scheduled Transaction | Scheduled Transaction close to scheduled date. (Unable to cancel) | Failed /Error scheduled transaction cancellation",
+      "Cancel Recurring Transaction | Cancel Recurring Transaction close to scheduled date. | Failed /Error for recurring transaction cancellation",
+      "14 | Status Image & Status | N/A | Image | Display | Integration | 1. Display Image based on status: a. Successful b. Unsuccessful 2. Display transaction status | CMS 1. Retrieve Image & status: - successful - unsuccessful",
+      "15 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display transaction date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Action | Description | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Action | Description | Integration | Remarks",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_50_TRANSFER_SETTINGS_RECURRING_DETAIL_REMOVE_RECURRING_TC_014",
+    "featureName": "FUNCTION 50: TRANSFER SETTINGS - RECURRING DETAIL (REMOVE RECURRING)",
+    "requirement": "6 | [Done] button | Upon tapping [Done] button, navigate to Scheduled/Recurring Transfer Dashboard.",
+    "objective": "Verify 6 | [done] button | upon tapping [done] button, navigate to scheduled/recurring transfer dashboard.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Cancel Scheduled Transaction | Scheduled Transaction close to scheduled date. (Unable to cancel) | Failed /Error scheduled transaction cancellation",
+      "Cancel Recurring Transaction | Cancel Recurring Transaction close to scheduled date. | Failed /Error for recurring transaction cancellation",
+      "14 | Status Image & Status | N/A | Image | Display | Integration | 1. Display Image based on status: a. Successful b. Unsuccessful 2. Display transaction status | CMS 1. Retrieve Image & status: - successful - unsuccessful",
+      "15 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display transaction date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 6 | [Done] button | Upon tapping [Done] button, navigate to Scheduled/Recurring Transfer Dashboard.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 6 | [Done] button | Upon tapping [Done] button, navigate to Scheduled/Recurring Transfer Dashboard.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_50_TRANSFER_SETTINGS_RECURRING_DETAIL_REMOVE_RECURRING_TC_015",
+    "featureName": "FUNCTION 50: TRANSFER SETTINGS - RECURRING DETAIL (REMOVE RECURRING)",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Cancel Scheduled Transaction | Scheduled Transaction close to scheduled date. (Unable to cancel) | Failed /Error scheduled transaction cancellation",
+      "Cancel Recurring Transaction | Cancel Recurring Transaction close to scheduled date. | Failed /Error for recurring transaction cancellation",
+      "14 | Status Image & Status | N/A | Image | Display | Integration | 1. Display Image based on status: a. Successful b. Unsuccessful 2. Display transaction status | CMS 1. Retrieve Image & status: - successful - unsuccessful",
+      "15 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display transaction date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_50_TRANSFER_SETTINGS_RECURRING_DETAIL_REMOVE_RECURRING_TC_016",
+    "featureName": "FUNCTION 50: TRANSFER SETTINGS - RECURRING DETAIL (REMOVE RECURRING)",
+    "requirement": "No. | Description | Integration | Remarks",
+    "objective": "Verify no. | description | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Cancel Scheduled Transaction | Scheduled Transaction close to scheduled date. (Unable to cancel) | Failed /Error scheduled transaction cancellation",
+      "Cancel Recurring Transaction | Cancel Recurring Transaction close to scheduled date. | Failed /Error for recurring transaction cancellation",
+      "14 | Status Image & Status | N/A | Image | Display | Integration | 1. Display Image based on status: a. Successful b. Unsuccessful 2. Display transaction status | CMS 1. Retrieve Image & status: - successful - unsuccessful",
+      "15 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display transaction date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remarks",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_50_TRANSFER_SETTINGS_RECURRING_DETAIL_REMOVE_RECURRING_TC_017",
+    "featureName": "FUNCTION 50: TRANSFER SETTINGS - RECURRING DETAIL (REMOVE RECURRING)",
+    "requirement": "1 | Cancellation of Scheduled/Recurring Transaction: 1. Upon tapping [Cancel] at Scheduled/Recurring transaction details, a. IF Transaction Frequency = Just Once. - System to prompt confirmation message \"Cancel Scheduled Transfer?\" with message\"The scheduled transfer to this recipient will be stopped and no longer processed. You need to start a new transfer to set it up again.\" b. IF Recurring, i.e. Transaction Frequency = Weekly or Monthly. - System to prompt confirmation message \"Cancel recurring transfer?\" with message \"Any recurring transfer to this recipient will be stopped and no longer processed. You need to start a new transfer to set it up again.\" 2. Upon tapping [Cancel] at Scheduled/Recurring transaction details, and is closer to scheduled date, a. IF Transaction Frequency = Just Once. - [Cancel] buttton is hidden. System displays blue box notes \"This transfer is already being processed.\" b. IF Recurring, i.e. Transaction Frequency = Weekly - System to prompt confirmation message \"Cancel recurring transfer?\" with message \"Your transfer for this week is already being processed. Cancelling will only stop future recurring transfers. You may start a new pament to set it up again.\" c. IF Recurring, i.e. Transaction Frequency = Monthly - System to prompt confirmation message \"Cancel recurring transfer?\" with message \"Your transfer for this month is already being processed. Cancelling will only stop future recurring transfers. You may start a new pament to set it up again.\" 3. Upon tapping [Cancel] button at Confirmation message, system to navigate to S2U authorisation screen. 4. Upon successful S2U authorisation, system will canel & remove upcoming scheduled transaction or recurring transactions instruction (remove the series), navigate to Status End Screen. a. If successful, display \"Scheduled transfer cancelled\" or \"Recurring transfer cancelled\". b. If failed, display \"Update unsuccessful\" | ESB - Standing Instruction: 1. To send cancellation request for selected instruction. IAM: 1. S2U Auth & status CMS 1. Retrieve blue box notes for scheduled transaction close to scheduled date.",
+    "objective": "Verify 1 | cancellation of scheduled/recurring transaction: 1. upon tapping [cancel] at scheduled/recurring transaction details, a. if transaction frequency = just once. - system to prompt confirmation message \"cancel scheduled transfer?\" with message\"the scheduled transfer to this recipient will be stopped and no longer processed. you need to start a new transfer to set it up again.\" b. if recurring, i.e. transaction frequency = weekly or monthly. - system to prompt confirmation message \"cancel recurring transfer?\" with message \"any recurring transfer to this recipient will be stopped and no longer processed. you need to start a new transfer to set it up again.\" 2. upon tapping [cancel] at scheduled/recurring transaction details, and is closer to scheduled date, a. if transaction frequency = just once. - [cancel] buttton is hidden. system displays blue box notes \"this transfer is already being processed.\" b. if recurring, i.e. transaction frequency = weekly - system to prompt confirmation message \"cancel recurring transfer?\" with message \"your transfer for this week is already being processed. cancelling will only stop future recurring transfers. you may start a new pament to set it up again.\" c. if recurring, i.e. transaction frequency = monthly - system to prompt confirmation message \"cancel recurring transfer?\" with message \"your transfer for this month is already being processed. cancelling will only stop future recurring transfers. you may start a new pament to set it up again.\" 3. upon tapping [cancel] button at confirmation message, system to navigate to s2u authorisation screen. 4. upon successful s2u authorisation, system will canel & remove upcoming scheduled transaction or recurring transactions instruction (remove the series), navigate to status end screen. a. if successful, display \"scheduled transfer cancelled\" or \"recurring transfer cancelled\". b. if failed, display \"update unsuccessful\" | esb - standing instruction: 1. to send cancellation request for selected instruction. iam: 1. s2u auth & status cms 1. retrieve blue box notes for scheduled transaction close to scheduled date.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Cancel Scheduled Transaction | Scheduled Transaction close to scheduled date. (Unable to cancel) | Failed /Error scheduled transaction cancellation",
+      "Cancel Recurring Transaction | Cancel Recurring Transaction close to scheduled date. | Failed /Error for recurring transaction cancellation",
+      "14 | Status Image & Status | N/A | Image | Display | Integration | 1. Display Image based on status: a. Successful b. Unsuccessful 2. Display transaction status | CMS 1. Retrieve Image & status: - successful - unsuccessful",
+      "15 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display transaction date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | Cancellation of Scheduled/Recurring Transaction: 1. Upon tapping [Cancel] at Scheduled/Recurring transaction details, a. IF Transaction Frequency = Just Once. - System to prompt confirmation message \"Cancel Scheduled Transfer?\" with message\"The scheduled transfer to this recipient will be stopped and no longer processed. You need to start a new transfer to set it up again.\" b. IF Recurring, i.e. Transaction Frequency = Weekly or Monthly. - System to prompt confirmation message \"Cancel recurring transfer?\" with message \"Any recurring transfer to this recipient will be stopped and no longer processed. You need to start a new transfer to set it up again.\" 2. Upon tapping [Cancel] at Scheduled/Recurring transaction details, and is closer to scheduled date, a. IF Transaction Frequency = Just Once. - [Cancel] buttton is hidden. System displays blue box notes \"This transfer is already being processed.\" b. IF Recurring, i.e. Transaction Frequency = Weekly - System to prompt confirmation message \"Cancel recurring transfer?\" with message \"Your transfer for this week is already being processed. Cancelling will only stop future recurring transfers. You may start a new pament to set it up again.\" c. IF Recurring, i.e. Transaction Frequency = Monthly - System to prompt confirmation message \"Cancel recurring transfer?\" with message \"Your transfer for this month is already being processed. Cancelling will only stop future recurring transfers. You may start a new pament to set it up again.\" 3. Upon tapping [Cancel] button at Confirmation message, system to navigate to S2U authorisation screen. 4. Upon successful S2U authorisation, system will canel & remove upcoming scheduled transaction or recurring transactions instruction (remove the series), navigate to Status End Screen. a. If successful, display \"Scheduled transfer cancelled\" or \"Recurring transfer cancelled\". b. If failed, display \"Update unsuccessful\" | ESB - Standing Instruction: 1. To send cancellation request for selected instruction. IAM: 1. S2U Auth & status CMS 1. Retrieve blue box notes for scheduled transaction close to scheduled date.",
+      "Validate expected behavior using api assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | Cancellation of Scheduled/Recurring Transaction: 1. Upon tapping [Cancel] at Scheduled/Recurring transaction details, a. IF Transaction Frequency = Just Once. - System to prompt confirmation message \"Cancel Scheduled Transfer?\" with message\"The scheduled transfer to this recipient will be stopped and no longer processed. You need to start a new transfer to set it up again.\" b. IF Recurring, i.e. Transaction Frequency = Weekly or Monthly. - System to prompt confirmation message \"Cancel recurring transfer?\" with message \"Any recurring transfer to this recipient will be stopped and no longer processed. You need to start a new transfer to set it up again.\" 2. Upon tapping [Cancel] at Scheduled/Recurring transaction details, and is closer to scheduled date, a. IF Transaction Frequency = Just Once. - [Cancel] buttton is hidden. System displays blue box notes \"This transfer is already being processed.\" b. IF Recurring, i.e. Transaction Frequency = Weekly - System to prompt confirmation message \"Cancel recurring transfer?\" with message \"Your transfer for this week is already being processed. Cancelling will only stop future recurring transfers. You may start a new pament to set it up again.\" c. IF Recurring, i.e. Transaction Frequency = Monthly - System to prompt confirmation message \"Cancel recurring transfer?\" with message \"Your transfer for this month is already being processed. Cancelling will only stop future recurring transfers. You may start a new pament to set it up again.\" 3. Upon tapping [Cancel] button at Confirmation message, system to navigate to S2U authorisation screen. 4. Upon successful S2U authorisation, system will canel & remove upcoming scheduled transaction or recurring transactions instruction (remove the series), navigate to Status End Screen. a. If successful, display \"Scheduled transfer cancelled\" or \"Recurring transfer cancelled\". b. If failed, display \"Update unsuccessful\" | ESB - Standing Instruction: 1. To send cancellation request for selected instruction. IAM: 1. S2U Auth & status CMS 1. Retrieve blue box notes for scheduled transaction close to scheduled date.",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "api",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  }
+]

@@ -1,0 +1,553 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-05T13:38:25.112Z",
+  "bundle": {
+    "featureName": "Function: Nick Name",
+    "testCases": [
+      {
+        "testCaseId": "FUNCTION_NICK_NAME_TC_001",
+        "featureName": "Function: Nick Name",
+        "requirement": "Nickname",
+        "objective": "Verify nickname",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Nickname",
+          "Back Button Permutation: Previous screen is Verification",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Nickname",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Nickname",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: Nickname"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_NICK_NAME_TC_002",
+        "featureName": "Function: Nick Name",
+        "requirement": "Back Button Permutation: Previous screen is Verification",
+        "objective": "Verify back button permutation: previous screen is verification",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Nickname",
+          "Back Button Permutation: Previous screen is Verification",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Back Button Permutation: Previous screen is Verification",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Back Button Permutation: Previous screen is Verification",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: Back Button Permutation: Previous screen is Verification"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_NICK_NAME_TC_003",
+        "featureName": "Function: Nick Name",
+        "requirement": "Fields",
+        "objective": "Verify fields",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Nickname",
+          "Back Button Permutation: Previous screen is Verification",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Fields",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Fields",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: Fields"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_NICK_NAME_TC_004",
+        "featureName": "Function: Nick Name",
+        "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+        "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Nickname",
+          "Back Button Permutation: Previous screen is Verification",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_NICK_NAME_TC_005",
+        "featureName": "Function: Nick Name",
+        "requirement": "1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description",
+        "objective": "Verify 1 | greeting title & first name display | n/a | alphanumeric | display | integration | 1. display “welcome back, {first name}” - first name will be retrieved from dcif - full name, system to take the \"first name\" (before first space) - if \"first name\" > 17 char, trim and display first 17 chars. | cms 1. retrieve title 2. retrieve description",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Nickname",
+          "Back Button Permutation: Previous screen is Verification",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description",
+        "priority": "P2",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_NICK_NAME_TC_006",
+        "featureName": "Function: Nick Name",
+        "requirement": "2 | Display name | Yes | Alphanumeric | Textbox X(17) | Input | 1. Minimum 3 characters, else display inline error \"Minimum 3 characters required.\" 2. Alphabetical and spaces only (no special characters or numbers allowed), else display inline error \"Only alphabets are allowed\" 3. Display real-time counter \"x/17\", max 17 characters. 4. Trim leading and trailing space, >1 space to single space in between characters 5. Format and store display name in title case format.",
+        "objective": "Verify 2 | display name | yes | alphanumeric | textbox x(17) | input | 1. minimum 3 characters, else display inline error \"minimum 3 characters required.\" 2. alphabetical and spaces only (no special characters or numbers allowed), else display inline error \"only alphabets are allowed\" 3. display real-time counter \"x/17\", max 17 characters. 4. trim leading and trailing space, >1 space to single space in between characters 5. format and store display name in title case format.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Nickname",
+          "Back Button Permutation: Previous screen is Verification",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | Display name | Yes | Alphanumeric | Textbox X(17) | Input | 1. Minimum 3 characters, else display inline error \"Minimum 3 characters required.\" 2. Alphabetical and spaces only (no special characters or numbers allowed), else display inline error \"Only alphabets are allowed\" 3. Display real-time counter \"x/17\", max 17 characters. 4. Trim leading and trailing space, >1 space to single space in between characters 5. Format and store display name in title case format.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | Display name | Yes | Alphanumeric | Textbox X(17) | Input | 1. Minimum 3 characters, else display inline error \"Minimum 3 characters required.\" 2. Alphabetical and spaces only (no special characters or numbers allowed), else display inline error \"Only alphabets are allowed\" 3. Display real-time counter \"x/17\", max 17 characters. 4. Trim leading and trailing space, >1 space to single space in between characters 5. Format and store display name in title case format.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 2 | Display name | Yes | Alphanumeric | Textbox X(17) | Input | 1. Minimum 3 characters, else display inline error \"Minimum 3 characters required.\" 2. Alphabetical and spaces only (no special characters or numbers allowed), else display inline error \"Only alphabets are allowed\" 3. Display real-time counter \"x/17\", max 17 characters. 4. Trim leading and trailing space, >1 space to single space in between characters 5. Format and store display name in title case format."
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_NICK_NAME_TC_007",
+        "featureName": "Function: Nick Name",
+        "requirement": "Actions",
+        "objective": "Verify actions",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Nickname",
+          "Back Button Permutation: Previous screen is Verification",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Actions",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Actions",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: Actions"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_NICK_NAME_TC_008",
+        "featureName": "Function: Nick Name",
+        "requirement": "No. | Action | Description | Integration | Remark",
+        "objective": "Verify no. | action | description | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Nickname",
+          "Back Button Permutation: Previous screen is Verification",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Action | Description | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Action | Description | Integration | Remark",
+        "priority": "P2",
+        "layer": "Integration",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: No. | Action | Description | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_NICK_NAME_TC_009",
+        "featureName": "Function: Nick Name",
+        "requirement": "1 | [Save & next] Button | If nickname is valid, navigate to App Permission",
+        "objective": "Verify 1 | [save & next] button | if nickname is valid, navigate to app permission",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Nickname",
+          "Back Button Permutation: Previous screen is Verification",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | [Save & next] Button | If nickname is valid, navigate to App Permission",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | [Save & next] Button | If nickname is valid, navigate to App Permission",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1 | [Save & next] Button | If nickname is valid, navigate to App Permission"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_NICK_NAME_TC_010",
+        "featureName": "Function: Nick Name",
+        "requirement": "2 | [<] Button | Upon tapping, navigate to Notice Screen.",
+        "objective": "Verify 2 | [<] button | upon tapping, navigate to notice screen.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Nickname",
+          "Back Button Permutation: Previous screen is Verification",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | [<] Button | Upon tapping, navigate to Notice Screen.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | [<] Button | Upon tapping, navigate to Notice Screen.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 2 | [<] Button | Upon tapping, navigate to Notice Screen."
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_NICK_NAME_TC_011",
+        "featureName": "Function: Nick Name",
+        "requirement": "3 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen.",
+        "objective": "Verify 3 | [x] button | upon tapping, exit & return to onboarding landing screen.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Nickname",
+          "Back Button Permutation: Previous screen is Verification",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 3 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 3 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 3 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen."
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_NICK_NAME_TC_012",
+        "featureName": "Function: Nick Name",
+        "requirement": "No. | Description | Integration | Remark",
+        "objective": "Verify no. | description | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Nickname",
+          "Back Button Permutation: Previous screen is Verification",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Description | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Description | Integration | Remark",
+        "priority": "P2",
+        "layer": "Integration",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: No. | Description | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_NICK_NAME_TC_013",
+        "featureName": "Function: Nick Name",
+        "requirement": "1 | Preview Nickname entered: 1. Immediately update display greeting as nickname is typed 2. If user types then removes all inputs to default back to previous state with first name",
+        "objective": "Verify 1 | preview nickname entered: 1. immediately update display greeting as nickname is typed 2. if user types then removes all inputs to default back to previous state with first name",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Nickname",
+          "Back Button Permutation: Previous screen is Verification",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | Preview Nickname entered: 1. Immediately update display greeting as nickname is typed 2. If user types then removes all inputs to default back to previous state with first name",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | Preview Nickname entered: 1. Immediately update display greeting as nickname is typed 2. If user types then removes all inputs to default back to previous state with first name",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1 | Preview Nickname entered: 1. Immediately update display greeting as nickname is typed 2. If user types then removes all inputs to default back to previous state with first name"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_NICK_NAME_TC_014",
+        "featureName": "Function: Nick Name",
+        "requirement": "2 | Back button permutation will follow rules below: 1. If the previous screen is a verification process (e.g., SMS OTP), the Back [<] icon will not be displayed. 2. If the previous screen is the Notice screen, the Back [<] icon will be displayed.",
+        "objective": "Verify 2 | back button permutation will follow rules below: 1. if the previous screen is a verification process (e.g., sms otp), the back [<] icon will not be displayed. 2. if the previous screen is the notice screen, the back [<] icon will be displayed.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Nickname",
+          "Back Button Permutation: Previous screen is Verification",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | Back button permutation will follow rules below: 1. If the previous screen is a verification process (e.g., SMS OTP), the Back [<] icon will not be displayed. 2. If the previous screen is the Notice screen, the Back [<] icon will be displayed.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | Back button permutation will follow rules below: 1. If the previous screen is a verification process (e.g., SMS OTP), the Back [<] icon will not be displayed. 2. If the previous screen is the Notice screen, the Back [<] icon will be displayed.",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 2 | Back button permutation will follow rules below: 1. If the previous screen is a verification process (e.g., SMS OTP), the Back [<] icon will not be displayed. 2. If the previous screen is the Notice screen, the Back [<] icon will be displayed."
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_NICK_NAME_TC_015",
+        "featureName": "Function: Nick Name",
+        "requirement": "3 | Save & Next button will perform: 1. Mandatory check 2. Field validation 3. If validation passed, proceed to App Permission screen",
+        "objective": "Verify 3 | save & next button will perform: 1. mandatory check 2. field validation 3. if validation passed, proceed to app permission screen",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Nickname",
+          "Back Button Permutation: Previous screen is Verification",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 3 | Save & Next button will perform: 1. Mandatory check 2. Field validation 3. If validation passed, proceed to App Permission screen",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 3 | Save & Next button will perform: 1. Mandatory check 2. Field validation 3. If validation passed, proceed to App Permission screen",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 3 | Save & Next button will perform: 1. Mandatory check 2. Field validation 3. If validation passed, proceed to App Permission screen"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_NICK_NAME_TC_016",
+        "featureName": "Function: Nick Name",
+        "requirement": "4 | If user quits: 1. User with M2U ID, will have to go thru the onboarding process from start. 2. User without M2U ID (registered in NGA & completed 1st verification), will continue from Login screen, i.e. will not be prompted the Consent Screen again.",
+        "objective": "Verify 4 | if user quits: 1. user with m2u id, will have to go thru the onboarding process from start. 2. user without m2u id (registered in nga & completed 1st verification), will continue from login screen, i.e. will not be prompted the consent screen again.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Nickname",
+          "Back Button Permutation: Previous screen is Verification",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the \"first name\" (before first space) - IF \"first name\" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 4 | If user quits: 1. User with M2U ID, will have to go thru the onboarding process from start. 2. User without M2U ID (registered in NGA & completed 1st verification), will continue from Login screen, i.e. will not be prompted the Consent Screen again.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 4 | If user quits: 1. User with M2U ID, will have to go thru the onboarding process from start. 2. User without M2U ID (registered in NGA & completed 1st verification), will continue from Login screen, i.e. will not be prompted the Consent Screen again.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 4 | If user quits: 1. User with M2U ID, will have to go thru the onboarding process from start. 2. User without M2U ID (registered in NGA & completed 1st verification), will continue from Login screen, i.e. will not be prompted the Consent Screen again."
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      }
+    ]
+  }
+}

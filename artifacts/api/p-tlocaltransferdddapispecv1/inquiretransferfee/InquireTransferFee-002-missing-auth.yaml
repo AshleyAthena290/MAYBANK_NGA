@@ -1,0 +1,68 @@
+# BDD Test Case - p-tlocaltransferdddapispecv1
+# Generated for: POST /fee-inquiry - Missing Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: InquireTransferFee-002-missing-auth
+title: POST /fee-inquiry - Missing Authentication
+feature: p-tlocaltransferdddapispecv1
+description: Request without authentication credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/ext/fee-inquiry
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/ext/fee-inquiry
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers: {}
+  pathParams: {}
+  queryParams: {}
+  body:
+    creditAccountNo: <value>
+    creditAccountCurrency: <value>
+    transferModeCode: <value>
+    ? "{\n\t    \"creditAccountNo\":\"1234567890\",\n\t    \"creditAccountCurrency\":\"IDR\",\n\t    \"transferModeCode\":\"BIFAST\"\n}"
+    : <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized - Authentication required
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+      description: Error code
+    - fieldPath: message
+      type: String
+      mandatory: true
+      description: Error message
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Field 'error' exists and is of type String
+    type: field-type
+    target: error
+    expectedValue: String
+  - description: Error message indicates missing authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InquireTransferFee
+  sourceRows: ''
+  apiSpecFile: InquireTransferFee

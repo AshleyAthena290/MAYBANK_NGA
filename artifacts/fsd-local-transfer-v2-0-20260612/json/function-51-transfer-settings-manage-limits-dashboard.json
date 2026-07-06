@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.576Z",
+  "featureId": "function-51-transfer-settings-manage-limits-dashboard",
+  "featureName": "FUNCTION 51: TRANSFER SETTINGS - MANAGE LIMITS DASHBOARD",
+  "sourceType": "FSD",
+  "content": {
+    "featureName": "FUNCTION 51: TRANSFER SETTINGS - MANAGE LIMITS DASHBOARD",
+    "description": "",
+    "flow": [],
+    "uiElements": [
+      "Navigate to Setting Screen (Pre-requisite) | Manage Limit Dashboard Page"
+    ],
+    "validationRules": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "businessRules": [
+      "No. | Description | Integration | Remarks"
+    ],
+    "apis": [],
+    "dependencies": [],
+    "errorMessages": [],
+    "navigation": [],
+    "remarks": []
+  },
+  "chunks": [
+    {
+      "section": "uiElements",
+      "content": "Navigate to Setting Screen (Pre-requisite) | Manage Limit Dashboard Page",
+      "tokensHint": 12
+    },
+    {
+      "section": "validationRules",
+      "content": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "tokensHint": 23
+    },
+    {
+      "section": "businessRules",
+      "content": "No. | Description | Integration | Remarks",
+      "tokensHint": 9
+    }
+  ],
+  "retrievalHints": {
+    "keywords": [
+      "function",
+      "transfer",
+      "settings",
+      "manage",
+      "limits",
+      "dashboard",
+      "navigate",
+      "setting",
+      "screen",
+      "pre",
+      "requisite",
+      "limit",
+      "page",
+      "field",
+      "mandatory",
+      "data",
+      "type",
+      "format",
+      "source",
+      "validation",
+      "integration",
+      "remarks",
+      "description"
+    ],
+    "hasApis": false,
+    "hasValidations": true,
+    "hasBusinessRules": true
+  }
+}

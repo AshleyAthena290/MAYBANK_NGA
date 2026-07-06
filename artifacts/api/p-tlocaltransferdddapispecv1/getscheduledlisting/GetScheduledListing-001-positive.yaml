@@ -1,0 +1,257 @@
+# BDD Test Case - p-tlocaltransferdddapispecv1
+# Generated for: GET /listing - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: GetScheduledListing-001-positive
+title: GET /listing - Happy Path
+feature: p-tlocaltransferdddapispecv1
+description: Retrieves the list of scheduled recurring transfer records for the authenticated user.
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - getscheduledlisting
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{Payment-IP}:{Payment-PORT}/pt/recurring/v1/external/transfer/listing
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/recurring/v1/external/transfer/listing
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1782998646817
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body: {}
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    page: Integer
+    size: Integer
+    total: Integer
+    data: Object
+    transfers: Array<Object>
+    transactionRefId: String
+    destinationAccountName: String
+    sourceAccountNoMasked: String
+    amount: Integer
+    currency: String
+    frequencyCode: String
+    startDate: String
+    endDate: String
+    numberOfTimes: Integer
+    error: 'Null'
+  expectedFields:
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: correlationId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: correlationId'
+    - fieldPath: meta
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: meta'
+    - fieldPath: meta.page
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: page'
+      parentField: meta
+    - fieldPath: meta.size
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: size'
+      parentField: meta
+    - fieldPath: meta.total
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: total'
+      parentField: meta
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.transfers
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: transfers'
+      parentField: data
+    - fieldPath: data.transfers[].transactionRefId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: transactionRefId'
+      parentField: data.transfers[]
+    - fieldPath: data.transfers[].destinationAccountName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: destinationAccountName'
+      parentField: data.transfers[]
+    - fieldPath: data.transfers[].sourceAccountNoMasked
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: sourceAccountNoMasked'
+      parentField: data.transfers[]
+    - fieldPath: data.transfers[].amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: data.transfers[]
+    - fieldPath: data.transfers[].currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: data.transfers[]
+    - fieldPath: data.transfers[].frequencyCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: frequencyCode'
+      parentField: data.transfers[]
+    - fieldPath: data.transfers[].startDate
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: startDate'
+      parentField: data.transfers[]
+    - fieldPath: data.transfers[].endDate
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: endDate'
+      parentField: data.transfers[]
+    - fieldPath: data.transfers[].numberOfTimes
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: numberOfTimes'
+      parentField: data.transfers[]
+    - fieldPath: error
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: error'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'String'
+    type: field-type
+    target: message
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'correlationId' exists in response
+    type: field-exists
+    target: correlationId
+  - description: Field 'correlationId' is of type 'String'
+    type: field-type
+    target: correlationId
+    expectedValue: String
+  - description: Field 'meta' exists in response
+    type: field-exists
+    target: meta
+  - description: Field 'meta' is of type 'Object'
+    type: field-type
+    target: meta
+    expectedValue: Object
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+  - description: Field 'error' exists in response
+    type: field-exists
+    target: error
+  - description: Field 'error' is of type 'Null'
+    type: field-type
+    target: error
+    expectedValue: 'Null'
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: GetScheduledListing
+  sourceRows: ''
+  apiSpecFile: GetScheduledListing

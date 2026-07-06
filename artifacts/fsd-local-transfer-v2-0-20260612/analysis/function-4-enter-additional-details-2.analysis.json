@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.648Z",
+  "report": {
+    "featureName": "FUNCTION 4: ENTER ADDITIONAL DETAILS",
+    "missingRequirements": [
+      "Feature description is missing.",
+      "User/system flow is missing.",
+      "Dependencies and prerequisites are missing.",
+      "Navigation path details are missing."
+    ],
+    "ambiguities": [],
+    "risks": [],
+    "missingValidations": [],
+    "securityConcerns": [
+      "Sensitive data is present without explicit masking/encryption requirements."
+    ],
+    "apiDependencies": [],
+    "uiDependencies": [
+      "Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?",
+      "Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?",
+      "Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?",
+      "Upload Underlying Documents screen (IDR to LCS (MYR))",
+      "Error Handling",
+      "5 | Title Header | N/A | Alphanumeric | Display | Integration | Display \"Transfer\" | CMS 1. Retrieve label \"Transfer\" 2. Retrieve label \"Share the purpose of transfer\" and description",
+      "6 | Sub-header + Description | N/A | Alphanumeric | Display | Integration | Display \"Share the purpose of this transfer\" and description | CMS 1. Retrieve label \"Transfer\" 2. Retrieve label \"Share the purpose of transfer\" and description",
+      "4 | [X] icon | Upon tapping [X] icon, system discards inputs and redirects to Transfer Landing screen.",
+      "5 | [<] icon | Upon tapping the [<] icon, system redirects to Enter Additional Details screen.",
+      "6 | [Trash] icon | Upon tapping, delete uploaded underlying document.",
+      "7 | [Retry] icon | Upon tapping, retry uploading underlying document.",
+      "8 | [Next] button | Upon tapping [Next] button, refer to business rules.",
+      "9 | [Trash] icon | Upon tapping, delete uploaded underlying document.",
+      "10 | [Retry] icon | Upon tapping, retry uploading underlying document."
+    ],
+    "backendDependencies": [],
+    "testability": [
+      "Flow details are missing, reducing scenario traceability.",
+      "Validation rules can drive positive, negative, and boundary test design.",
+      "Specification gaps and ambiguities should be resolved before automation implementation."
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+[
+  {
+    "testCaseId": "FUNCTION_33_RECIPIENT_LIST_EDIT_TO_FAV_FROM_ALL_FAVOURITE_CUSTOM_TAB_TC_003",
+    "featureName": "FUNCTION 33: RECIPIENT LIST - EDIT TO FAV (FROM ALL, FAVOURITE, CUSTOM TAB)",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Edit Favourite List",
+      "Permutation of favourite list selections"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_33_RECIPIENT_LIST_EDIT_TO_FAV_FROM_ALL_FAVOURITE_CUSTOM_TAB_TC_004",
+    "featureName": "FUNCTION 33: RECIPIENT LIST - EDIT TO FAV (FROM ALL, FAVOURITE, CUSTOM TAB)",
+    "requirement": "No. | Description | Integration | Remark",
+    "objective": "Verify no. | description | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Edit Favourite List",
+      "Permutation of favourite list selections"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remark",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_33_RECIPIENT_LIST_EDIT_TO_FAV_FROM_ALL_FAVOURITE_CUSTOM_TAB_TC_005",
+    "featureName": "FUNCTION 33: RECIPIENT LIST - EDIT TO FAV (FROM ALL, FAVOURITE, CUSTOM TAB)",
+    "requirement": "1 | 1. Upon tapping [Save] button, system to check: a. If the beneficiary is either added to or removed from \"favourite\" list, S2U is required. b. If action does not require S2U and for successful attempt, system displays a toastbar message \"List updated.\" c. If none of the Fav or Custom list is selected, render the [Save] button to [Remove] button, it will trigger Remove function. Refer to Recipient - Add to Fav Business Rules for status screen behaviour. | IAM: 1. S2U Auth status ECLIPSE: Update favourite list(s) with the recipient selected",
+    "objective": "Verify 1 | 1. upon tapping [save] button, system to check: a. if the beneficiary is either added to or removed from \"favourite\" list, s2u is required. b. if action does not require s2u and for successful attempt, system displays a toastbar message \"list updated.\" c. if none of the fav or custom list is selected, render the [save] button to [remove] button, it will trigger remove function. refer to recipient - add to fav business rules for status screen behaviour. | iam: 1. s2u auth status eclipse: update favourite list(s) with the recipient selected",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Edit Favourite List",
+      "Permutation of favourite list selections"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | 1. Upon tapping [Save] button, system to check: a. If the beneficiary is either added to or removed from \"favourite\" list, S2U is required. b. If action does not require S2U and for successful attempt, system displays a toastbar message \"List updated.\" c. If none of the Fav or Custom list is selected, render the [Save] button to [Remove] button, it will trigger Remove function. Refer to Recipient - Add to Fav Business Rules for status screen behaviour. | IAM: 1. S2U Auth status ECLIPSE: Update favourite list(s) with the recipient selected",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | 1. Upon tapping [Save] button, system to check: a. If the beneficiary is either added to or removed from \"favourite\" list, S2U is required. b. If action does not require S2U and for successful attempt, system displays a toastbar message \"List updated.\" c. If none of the Fav or Custom list is selected, render the [Save] button to [Remove] button, it will trigger Remove function. Refer to Recipient - Add to Fav Business Rules for status screen behaviour. | IAM: 1. S2U Auth status ECLIPSE: Update favourite list(s) with the recipient selected",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  }
+]

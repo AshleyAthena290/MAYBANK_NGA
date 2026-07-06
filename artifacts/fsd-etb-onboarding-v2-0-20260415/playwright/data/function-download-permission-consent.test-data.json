@@ -1,0 +1,342 @@
+[
+  {
+    "testCaseId": "FUNCTION_DOWNLOAD_PERMISSION_CONSENT_TC_001",
+    "featureName": "Function: Download Permission/Consent",
+    "requirement": "Download Permission/Consent",
+    "objective": "Verify download permission/consent",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Download Permission/Consent",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Retrieve & display \"Acknowledgment and consent\" | CMS: 1. Retrieve download title based on languauge",
+      "2 | Document List | N/A | Alphanumeric | Display | Integration | Retrieve & display list of documents available for download individually. a. Pernyataaan Penggunaan Data Maybank2u ID b.Syarat dan Ketentuan Maybank2u ID c. Pemberitahuan Privasi Maybank2u ID | CMS: 1. Retrieve list of documents available for download based on language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Download Permission/Consent",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Download Permission/Consent",
+    "priority": "P1",
+    "layer": "Security",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: Download Permission/Consent"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_DOWNLOAD_PERMISSION_CONSENT_TC_003",
+    "featureName": "Function: Download Permission/Consent",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Download Permission/Consent",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Retrieve & display \"Acknowledgment and consent\" | CMS: 1. Retrieve download title based on languauge",
+      "2 | Document List | N/A | Alphanumeric | Display | Integration | Retrieve & display list of documents available for download individually. a. Pernyataaan Penggunaan Data Maybank2u ID b.Syarat dan Ketentuan Maybank2u ID c. Pemberitahuan Privasi Maybank2u ID | CMS: 1. Retrieve list of documents available for download based on language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_DOWNLOAD_PERMISSION_CONSENT_TC_004",
+    "featureName": "Function: Download Permission/Consent",
+    "requirement": "1 | Title | N/A | Alphanumeric | Display | Integration | Retrieve & display \"Acknowledgment and consent\" | CMS: 1. Retrieve download title based on languauge",
+    "objective": "Verify 1 | title | n/a | alphanumeric | display | integration | retrieve & display \"acknowledgment and consent\" | cms: 1. retrieve download title based on languauge",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Download Permission/Consent",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Retrieve & display \"Acknowledgment and consent\" | CMS: 1. Retrieve download title based on languauge",
+      "2 | Document List | N/A | Alphanumeric | Display | Integration | Retrieve & display list of documents available for download individually. a. Pernyataaan Penggunaan Data Maybank2u ID b.Syarat dan Ketentuan Maybank2u ID c. Pemberitahuan Privasi Maybank2u ID | CMS: 1. Retrieve list of documents available for download based on language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | Title | N/A | Alphanumeric | Display | Integration | Retrieve & display \"Acknowledgment and consent\" | CMS: 1. Retrieve download title based on languauge",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | Title | N/A | Alphanumeric | Display | Integration | Retrieve & display \"Acknowledgment and consent\" | CMS: 1. Retrieve download title based on languauge",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: 1 | Title | N/A | Alphanumeric | Display | Integration | Retrieve & display \"Acknowledgment and consent\" | CMS: 1. Retrieve download title based on languauge"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_DOWNLOAD_PERMISSION_CONSENT_TC_005",
+    "featureName": "Function: Download Permission/Consent",
+    "requirement": "2 | Document List | N/A | Alphanumeric | Display | Integration | Retrieve & display list of documents available for download individually. a. Pernyataaan Penggunaan Data Maybank2u ID b.Syarat dan Ketentuan Maybank2u ID c. Pemberitahuan Privasi Maybank2u ID | CMS: 1. Retrieve list of documents available for download based on language",
+    "objective": "Verify 2 | document list | n/a | alphanumeric | display | integration | retrieve & display list of documents available for download individually. a. pernyataaan penggunaan data maybank2u id b.syarat dan ketentuan maybank2u id c. pemberitahuan privasi maybank2u id | cms: 1. retrieve list of documents available for download based on language",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Download Permission/Consent",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Retrieve & display \"Acknowledgment and consent\" | CMS: 1. Retrieve download title based on languauge",
+      "2 | Document List | N/A | Alphanumeric | Display | Integration | Retrieve & display list of documents available for download individually. a. Pernyataaan Penggunaan Data Maybank2u ID b.Syarat dan Ketentuan Maybank2u ID c. Pemberitahuan Privasi Maybank2u ID | CMS: 1. Retrieve list of documents available for download based on language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | Document List | N/A | Alphanumeric | Display | Integration | Retrieve & display list of documents available for download individually. a. Pernyataaan Penggunaan Data Maybank2u ID b.Syarat dan Ketentuan Maybank2u ID c. Pemberitahuan Privasi Maybank2u ID | CMS: 1. Retrieve list of documents available for download based on language",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | Document List | N/A | Alphanumeric | Display | Integration | Retrieve & display list of documents available for download individually. a. Pernyataaan Penggunaan Data Maybank2u ID b.Syarat dan Ketentuan Maybank2u ID c. Pemberitahuan Privasi Maybank2u ID | CMS: 1. Retrieve list of documents available for download based on language",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: 2 | Document List | N/A | Alphanumeric | Display | Integration | Retrieve & display list of documents available for download individually. a. Pernyataaan Penggunaan Data Maybank2u ID b.Syarat dan Ketentuan Maybank2u ID c. Pemberitahuan Privasi Maybank2u ID | CMS: 1. Retrieve list of documents available for download based on language"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_DOWNLOAD_PERMISSION_CONSENT_TC_007",
+    "featureName": "Function: Download Permission/Consent",
+    "requirement": "No. | Action | Description | Integration | Remark",
+    "objective": "Verify no. | action | description | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Download Permission/Consent",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Retrieve & display \"Acknowledgment and consent\" | CMS: 1. Retrieve download title based on languauge",
+      "2 | Document List | N/A | Alphanumeric | Display | Integration | Retrieve & display list of documents available for download individually. a. Pernyataaan Penggunaan Data Maybank2u ID b.Syarat dan Ketentuan Maybank2u ID c. Pemberitahuan Privasi Maybank2u ID | CMS: 1. Retrieve list of documents available for download based on language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Action | Description | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Action | Description | Integration | Remark",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: No. | Action | Description | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_DOWNLOAD_PERMISSION_CONSENT_TC_008",
+    "featureName": "Function: Download Permission/Consent",
+    "requirement": "1 | [>] Button | Upon tapping, open the selected Acknowledgment & Consent PDF using in-app PDF viewer. User can choose to save the PDF in the in-app PDF viewer",
+    "objective": "Verify 1 | [>] button | upon tapping, open the selected acknowledgment & consent pdf using in-app pdf viewer. user can choose to save the pdf in the in-app pdf viewer",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Download Permission/Consent",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Retrieve & display \"Acknowledgment and consent\" | CMS: 1. Retrieve download title based on languauge",
+      "2 | Document List | N/A | Alphanumeric | Display | Integration | Retrieve & display list of documents available for download individually. a. Pernyataaan Penggunaan Data Maybank2u ID b.Syarat dan Ketentuan Maybank2u ID c. Pemberitahuan Privasi Maybank2u ID | CMS: 1. Retrieve list of documents available for download based on language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | [>] Button | Upon tapping, open the selected Acknowledgment & Consent PDF using in-app PDF viewer. User can choose to save the PDF in the in-app PDF viewer",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | [>] Button | Upon tapping, open the selected Acknowledgment & Consent PDF using in-app PDF viewer. User can choose to save the PDF in the in-app PDF viewer",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: 1 | [>] Button | Upon tapping, open the selected Acknowledgment & Consent PDF using in-app PDF viewer. User can choose to save the PDF in the in-app PDF viewer"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_DOWNLOAD_PERMISSION_CONSENT_TC_009",
+    "featureName": "Function: Download Permission/Consent",
+    "requirement": "2 | [Done] Button | Upon tapping, close popup and return to consent screen",
+    "objective": "Verify 2 | [done] button | upon tapping, close popup and return to consent screen",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Download Permission/Consent",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Retrieve & display \"Acknowledgment and consent\" | CMS: 1. Retrieve download title based on languauge",
+      "2 | Document List | N/A | Alphanumeric | Display | Integration | Retrieve & display list of documents available for download individually. a. Pernyataaan Penggunaan Data Maybank2u ID b.Syarat dan Ketentuan Maybank2u ID c. Pemberitahuan Privasi Maybank2u ID | CMS: 1. Retrieve list of documents available for download based on language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | [Done] Button | Upon tapping, close popup and return to consent screen",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | [Done] Button | Upon tapping, close popup and return to consent screen",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: 2 | [Done] Button | Upon tapping, close popup and return to consent screen"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_DOWNLOAD_PERMISSION_CONSENT_TC_010",
+    "featureName": "Function: Download Permission/Consent",
+    "requirement": "3 | [x] Button | Upon tapping, close popup and return to consent screen",
+    "objective": "Verify 3 | [x] button | upon tapping, close popup and return to consent screen",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Download Permission/Consent",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Retrieve & display \"Acknowledgment and consent\" | CMS: 1. Retrieve download title based on languauge",
+      "2 | Document List | N/A | Alphanumeric | Display | Integration | Retrieve & display list of documents available for download individually. a. Pernyataaan Penggunaan Data Maybank2u ID b.Syarat dan Ketentuan Maybank2u ID c. Pemberitahuan Privasi Maybank2u ID | CMS: 1. Retrieve list of documents available for download based on language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 3 | [x] Button | Upon tapping, close popup and return to consent screen",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 3 | [x] Button | Upon tapping, close popup and return to consent screen",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: 3 | [x] Button | Upon tapping, close popup and return to consent screen"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_DOWNLOAD_PERMISSION_CONSENT_TC_011",
+    "featureName": "Function: Download Permission/Consent",
+    "requirement": "No. | Description | Integration | Remark",
+    "objective": "Verify no. | description | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Download Permission/Consent",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Retrieve & display \"Acknowledgment and consent\" | CMS: 1. Retrieve download title based on languauge",
+      "2 | Document List | N/A | Alphanumeric | Display | Integration | Retrieve & display list of documents available for download individually. a. Pernyataaan Penggunaan Data Maybank2u ID b.Syarat dan Ketentuan Maybank2u ID c. Pemberitahuan Privasi Maybank2u ID | CMS: 1. Retrieve list of documents available for download based on language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remark",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: No. | Description | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_DOWNLOAD_PERMISSION_CONSENT_TC_012",
+    "featureName": "Function: Download Permission/Consent",
+    "requirement": "1 | Download PDF rules : a. Document will be maintained in PDF, with 2 languages available (Bahasa Indonesia and English). b. Download PDF based on language selected. Info: Download can be performed without requiring access permission (applicable to both iOS and Android). | CMS 1. Retrieve PDF based on language",
+    "objective": "Verify 1 | download pdf rules : a. document will be maintained in pdf, with 2 languages available (bahasa indonesia and english). b. download pdf based on language selected. info: download can be performed without requiring access permission (applicable to both ios and android). | cms 1. retrieve pdf based on language",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "Download Permission/Consent",
+      "Fields",
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "1 | Title | N/A | Alphanumeric | Display | Integration | Retrieve & display \"Acknowledgment and consent\" | CMS: 1. Retrieve download title based on languauge",
+      "2 | Document List | N/A | Alphanumeric | Display | Integration | Retrieve & display list of documents available for download individually. a. Pernyataaan Penggunaan Data Maybank2u ID b.Syarat dan Ketentuan Maybank2u ID c. Pemberitahuan Privasi Maybank2u ID | CMS: 1. Retrieve list of documents available for download based on language"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | Download PDF rules : a. Document will be maintained in PDF, with 2 languages available (Bahasa Indonesia and English). b. Download PDF based on language selected. Info: Download can be performed without requiring access permission (applicable to both iOS and Android). | CMS 1. Retrieve PDF based on language",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | Download PDF rules : a. Document will be maintained in PDF, with 2 languages available (Bahasa Indonesia and English). b. Download PDF based on language selected. Info: Download can be performed without requiring access permission (applicable to both iOS and Android). | CMS 1. Retrieve PDF based on language",
+    "priority": "P1",
+    "layer": "Security",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid flow for requirement: 1 | Download PDF rules : a. Document will be maintained in PDF, with 2 languages available (Bahasa Indonesia and English). b. Download PDF based on language selected. Info: Download can be performed without requiring access permission (applicable to both iOS and Android). | CMS 1. Retrieve PDF based on language"
+    ],
+    "edgeCases": [
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  }
+]

@@ -1,0 +1,843 @@
+[
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_003",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+    "objective": "Verify [interbank] bi-fast end screen | [interbank] rtol end screen | [interbank] bi-skn end screen | [interbank] rtgs end screen",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: [INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: [INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_004",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "[INTRABANK] End Screen",
+    "objective": "Verify [intrabank] end screen",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: [INTRABANK] End Screen",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: [INTRABANK] End Screen",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_005",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "[OWN] End Screen | S",
+    "objective": "Verify [own] end screen | s",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: [OWN] End Screen | S",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: [OWN] End Screen | S",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_006",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "[INTERBANK] End Screen w/ Additional Details | [INTRABANK] End Screen w/ Additional Details",
+    "objective": "Verify [interbank] end screen w/ additional details | [intrabank] end screen w/ additional details",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: [INTERBANK] End Screen w/ Additional Details | [INTRABANK] End Screen w/ Additional Details",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: [INTERBANK] End Screen w/ Additional Details | [INTRABANK] End Screen w/ Additional Details",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_007",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "Scheduled/Recurring End Screen | [INTERBANK] Scheduled/Recurring Receipt | [INTRABANK] Scheduled/Recurring Receipt | [OWN] Scheduled/Recurring Receipt",
+    "objective": "Verify scheduled/recurring end screen | [interbank] scheduled/recurring receipt | [intrabank] scheduled/recurring receipt | [own] scheduled/recurring receipt",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Scheduled/Recurring End Screen | [INTERBANK] Scheduled/Recurring Receipt | [INTRABANK] Scheduled/Recurring Receipt | [OWN] Scheduled/Recurring Receipt",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Scheduled/Recurring End Screen | [INTERBANK] Scheduled/Recurring Receipt | [INTRABANK] Scheduled/Recurring Receipt | [OWN] Scheduled/Recurring Receipt",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_008",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "Select Transaction Category | [BI-SKN & RTGS] Transfer Prcocessing (Account Debited but Pending Credit) | Add Beneficiary to Favourite | Error Handling - tap/retap heart icon",
+    "objective": "Verify select transaction category | [bi-skn & rtgs] transfer prcocessing (account debited but pending credit) | add beneficiary to favourite | error handling - tap/retap heart icon",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Select Transaction Category | [BI-SKN & RTGS] Transfer Prcocessing (Account Debited but Pending Credit) | Add Beneficiary to Favourite | Error Handling - tap/retap heart icon",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Select Transaction Category | [BI-SKN & RTGS] Transfer Prcocessing (Account Debited but Pending Credit) | Add Beneficiary to Favourite | Error Handling - tap/retap heart icon",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_011",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "[INTERBANK] End Screen",
+    "objective": "Verify [interbank] end screen",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: [INTERBANK] End Screen",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: [INTERBANK] End Screen",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_012",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "[INTERBANK] BI-SKN (FCY - IDR) End Screen | [INTERBANK] IDR to IDR - Receipt | [INTERBANK] BI-SKN (FCY - IDR) Receipt | [INTERBANK] Unsuccesful End Flow",
+    "objective": "Verify [interbank] bi-skn (fcy - idr) end screen | [interbank] idr to idr - receipt | [interbank] bi-skn (fcy - idr) receipt | [interbank] unsuccesful end flow",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: [INTERBANK] BI-SKN (FCY - IDR) End Screen | [INTERBANK] IDR to IDR - Receipt | [INTERBANK] BI-SKN (FCY - IDR) Receipt | [INTERBANK] Unsuccesful End Flow",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: [INTERBANK] BI-SKN (FCY - IDR) End Screen | [INTERBANK] IDR to IDR - Receipt | [INTERBANK] BI-SKN (FCY - IDR) Receipt | [INTERBANK] Unsuccesful End Flow",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_013",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "[INTRABANK] IDR to IDR end screen | [INTRABANK] FCY to FCY end screen | [INTRABANK] IDR to FCY end screen (GAA) | [INTRABANK] with Special Rate ID End Screen | [INTRABANK] IDR to IDR Receipt | [INTRABANK] FCY to FCY Receipt (For IDR to IDR, display IDR as Ccy) | [INTRABANK] IDR to FCY Receipt | [INTRABANK] IDR to FCY Special Rate",
+    "objective": "Verify [intrabank] idr to idr end screen | [intrabank] fcy to fcy end screen | [intrabank] idr to fcy end screen (gaa) | [intrabank] with special rate id end screen | [intrabank] idr to idr receipt | [intrabank] fcy to fcy receipt (for idr to idr, display idr as ccy) | [intrabank] idr to fcy receipt | [intrabank] idr to fcy special rate",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: [INTRABANK] IDR to IDR end screen | [INTRABANK] FCY to FCY end screen | [INTRABANK] IDR to FCY end screen (GAA) | [INTRABANK] with Special Rate ID End Screen | [INTRABANK] IDR to IDR Receipt | [INTRABANK] FCY to FCY Receipt (For IDR to IDR, display IDR as Ccy) | [INTRABANK] IDR to FCY Receipt | [INTRABANK] IDR to FCY Special Rate",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: [INTRABANK] IDR to IDR end screen | [INTRABANK] FCY to FCY end screen | [INTRABANK] IDR to FCY end screen (GAA) | [INTRABANK] with Special Rate ID End Screen | [INTRABANK] IDR to IDR Receipt | [INTRABANK] FCY to FCY Receipt (For IDR to IDR, display IDR as Ccy) | [INTRABANK] IDR to FCY Receipt | [INTRABANK] IDR to FCY Special Rate",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_014",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "[INTERBANK] w/ Additional Details Receipt and Underlying Doc END SCREEN | [INTERBANK] w/ Additional Details & Underlying Doc RECEIPT | [INTRABANK] w/ Additional Details & Underlying Doc END SCREEN | [INTRABANK] w/ Additional Details & Underlying Doc RECEIPT",
+    "objective": "Verify [interbank] w/ additional details receipt and underlying doc end screen | [interbank] w/ additional details & underlying doc receipt | [intrabank] w/ additional details & underlying doc end screen | [intrabank] w/ additional details & underlying doc receipt",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: [INTERBANK] w/ Additional Details Receipt and Underlying Doc END SCREEN | [INTERBANK] w/ Additional Details & Underlying Doc RECEIPT | [INTRABANK] w/ Additional Details & Underlying Doc END SCREEN | [INTRABANK] w/ Additional Details & Underlying Doc RECEIPT",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: [INTERBANK] w/ Additional Details Receipt and Underlying Doc END SCREEN | [INTERBANK] w/ Additional Details & Underlying Doc RECEIPT | [INTRABANK] w/ Additional Details & Underlying Doc END SCREEN | [INTRABANK] w/ Additional Details & Underlying Doc RECEIPT",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_015",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "68 | Title Header | N/A | Alphanumeric | Display | Integration | Display \"Receipt\" | CMS: 1. Retrieve title header 2. Retrieve Maybank logo",
+    "objective": "Verify 68 | title header | n/a | alphanumeric | display | integration | display \"receipt\" | cms: 1. retrieve title header 2. retrieve maybank logo",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 68 | Title Header | N/A | Alphanumeric | Display | Integration | Display \"Receipt\" | CMS: 1. Retrieve title header 2. Retrieve Maybank logo",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 68 | Title Header | N/A | Alphanumeric | Display | Integration | Display \"Receipt\" | CMS: 1. Retrieve title header 2. Retrieve Maybank logo",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_016",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "69 | Maybank Logo | N/A | Image | Display | Integration | Display Maybank logo | CMS: 1. Retrieve title header 2. Retrieve Maybank logo",
+    "objective": "Verify 69 | maybank logo | n/a | image | display | integration | display maybank logo | cms: 1. retrieve title header 2. retrieve maybank logo",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 69 | Maybank Logo | N/A | Image | Display | Integration | Display Maybank logo | CMS: 1. Retrieve title header 2. Retrieve Maybank logo",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 69 | Maybank Logo | N/A | Image | Display | Integration | Display Maybank logo | CMS: 1. Retrieve title header 2. Retrieve Maybank logo",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_017",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "70 | Transaction Type | N/A | Alphanumeric | Display | Local Server | Display \"Transfer\"",
+    "objective": "Verify 70 | transaction type | n/a | alphanumeric | display | local server | display \"transfer\"",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 70 | Transaction Type | N/A | Alphanumeric | Display | Local Server | Display \"Transfer\"",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 70 | Transaction Type | N/A | Alphanumeric | Display | Local Server | Display \"Transfer\"",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_018",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "71 | Transaction Status (Label) | N/A | Alphanumeric | Display | Local Server | Display either: 1. Successful (Green Label) 2. Scheduled - For recurring transaction (Orange label)",
+    "objective": "Verify 71 | transaction status (label) | n/a | alphanumeric | display | local server | display either: 1. successful (green label) 2. scheduled - for recurring transaction (orange label)",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 71 | Transaction Status (Label) | N/A | Alphanumeric | Display | Local Server | Display either: 1. Successful (Green Label) 2. Scheduled - For recurring transaction (Orange label)",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 71 | Transaction Status (Label) | N/A | Alphanumeric | Display | Local Server | Display either: 1. Successful (Green Label) 2. Scheduled - For recurring transaction (Orange label)",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_019",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "72 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Populate from Status screen",
+    "objective": "Verify 72 | transaction date & timestamp | n/a | alphanumeric | display | local server | populate from status screen",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 72 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Populate from Status screen",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 72 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Populate from Status screen",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_020",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "73 | Ref ID | N/A | Alphanumeric | Display | Local Server | Populate from Status screen",
+    "objective": "Verify 73 | ref id | n/a | alphanumeric | display | local server | populate from status screen",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 73 | Ref ID | N/A | Alphanumeric | Display | Local Server | Populate from Status screen",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 73 | Ref ID | N/A | Alphanumeric | Display | Local Server | Populate from Status screen",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_021",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "74 | Total Amount | N/A | Alphanumeric | Display | Local Server | Populate from Status screen",
+    "objective": "Verify 74 | total amount | n/a | alphanumeric | display | local server | populate from status screen",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 74 | Total Amount | N/A | Alphanumeric | Display | Local Server | Populate from Status screen",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 74 | Total Amount | N/A | Alphanumeric | Display | Local Server | Populate from Status screen",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_022",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_023",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "No. | Description | Integration | Remarks",
+    "objective": "Verify no. | description | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remarks",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_024",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "1 | Upon transfer confirmation, below are the possible status: a. Transfer Successful - For a successful transaction posting. b. Transfer Scheduled - For a successful scheduled or recurring transaction. c. Transfer Processing - For a successful debit but pending credit/status returned from BI-SKN or RTGS d. Transfer Unsuccessful: - For Unsuccessful transaction posting. - For Unsuccessful scheduled or recurring transaction. e. Transfer Pending - For timeout transaction. (Pending screen) e. Authorisation failed (refer to [A&A] S2U for: - S2U authorisation expired, rejected or failed. For display fields: a. System carries over values from confirmation screen (hide blank fields). | IAM: 1. S2U Auth & status ESB: 1. Transaction posting status ECLIPSE: 1. Update Transaction Category.",
+    "objective": "Verify 1 | upon transfer confirmation, below are the possible status: a. transfer successful - for a successful transaction posting. b. transfer scheduled - for a successful scheduled or recurring transaction. c. transfer processing - for a successful debit but pending credit/status returned from bi-skn or rtgs d. transfer unsuccessful: - for unsuccessful transaction posting. - for unsuccessful scheduled or recurring transaction. e. transfer pending - for timeout transaction. (pending screen) e. authorisation failed (refer to [a&a] s2u for: - s2u authorisation expired, rejected or failed. for display fields: a. system carries over values from confirmation screen (hide blank fields). | iam: 1. s2u auth & status esb: 1. transaction posting status eclipse: 1. update transaction category.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | Upon transfer confirmation, below are the possible status: a. Transfer Successful - For a successful transaction posting. b. Transfer Scheduled - For a successful scheduled or recurring transaction. c. Transfer Processing - For a successful debit but pending credit/status returned from BI-SKN or RTGS d. Transfer Unsuccessful: - For Unsuccessful transaction posting. - For Unsuccessful scheduled or recurring transaction. e. Transfer Pending - For timeout transaction. (Pending screen) e. Authorisation failed (refer to [A&A] S2U for: - S2U authorisation expired, rejected or failed. For display fields: a. System carries over values from confirmation screen (hide blank fields). | IAM: 1. S2U Auth & status ESB: 1. Transaction posting status ECLIPSE: 1. Update Transaction Category.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | Upon transfer confirmation, below are the possible status: a. Transfer Successful - For a successful transaction posting. b. Transfer Scheduled - For a successful scheduled or recurring transaction. c. Transfer Processing - For a successful debit but pending credit/status returned from BI-SKN or RTGS d. Transfer Unsuccessful: - For Unsuccessful transaction posting. - For Unsuccessful scheduled or recurring transaction. e. Transfer Pending - For timeout transaction. (Pending screen) e. Authorisation failed (refer to [A&A] S2U for: - S2U authorisation expired, rejected or failed. For display fields: a. System carries over values from confirmation screen (hide blank fields). | IAM: 1. S2U Auth & status ESB: 1. Transaction posting status ECLIPSE: 1. Update Transaction Category.",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length",
+      "High-latency and retry behavior"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_025",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "2 | Receipt: 1. Receipt option is only available if Transaction status is successful or processing (for BI-SKN & RTGS). 2. Upon tapping [Share], system opens device's native sharing options. Receipt will be shared in Image format. 3. If tap on View Receipt then [Share], system opens device's native sharing options. Receipt will be shared in PDF format.",
+    "objective": "Verify 2 | receipt: 1. receipt option is only available if transaction status is successful or processing (for bi-skn & rtgs). 2. upon tapping [share], system opens device's native sharing options. receipt will be shared in image format. 3. if tap on view receipt then [share], system opens device's native sharing options. receipt will be shared in pdf format.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | Receipt: 1. Receipt option is only available if Transaction status is successful or processing (for BI-SKN & RTGS). 2. Upon tapping [Share], system opens device's native sharing options. Receipt will be shared in Image format. 3. If tap on View Receipt then [Share], system opens device's native sharing options. Receipt will be shared in PDF format.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | Receipt: 1. Receipt option is only available if Transaction status is successful or processing (for BI-SKN & RTGS). 2. Upon tapping [Share], system opens device's native sharing options. Receipt will be shared in Image format. 3. If tap on View Receipt then [Share], system opens device's native sharing options. Receipt will be shared in PDF format.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_027",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "4 | Adding to favourite: 1. Tapping love icon will add beneficiary to favourite. As a result, heart shape will be filled with a full black color. Retapping on black heart will remove the added beneficiary from favourite. S2U is not required. a. In the event user is tapping and retapping, during the 5th tap system displays a toastbar error message \"Unable to process request\". Beneficiary will not be added to favourite list. (Example: Add - Remove - Add - Remove - tapping the 3rd Add will display the error message) 2. For Transfer to Beneficiary that is already a favourite, heart icon is hidden. 3. For Transfer to Maybank's one-off VA account (closedPayment flag), heart icon is hidden. 4. For Transfer to Own account, heart icon is hidden.",
+    "objective": "Verify 4 | adding to favourite: 1. tapping love icon will add beneficiary to favourite. as a result, heart shape will be filled with a full black color. retapping on black heart will remove the added beneficiary from favourite. s2u is not required. a. in the event user is tapping and retapping, during the 5th tap system displays a toastbar error message \"unable to process request\". beneficiary will not be added to favourite list. (example: add - remove - add - remove - tapping the 3rd add will display the error message) 2. for transfer to beneficiary that is already a favourite, heart icon is hidden. 3. for transfer to maybank's one-off va account (closedpayment flag), heart icon is hidden. 4. for transfer to own account, heart icon is hidden.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 4 | Adding to favourite: 1. Tapping love icon will add beneficiary to favourite. As a result, heart shape will be filled with a full black color. Retapping on black heart will remove the added beneficiary from favourite. S2U is not required. a. In the event user is tapping and retapping, during the 5th tap system displays a toastbar error message \"Unable to process request\". Beneficiary will not be added to favourite list. (Example: Add - Remove - Add - Remove - tapping the 3rd Add will display the error message) 2. For Transfer to Beneficiary that is already a favourite, heart icon is hidden. 3. For Transfer to Maybank's one-off VA account (closedPayment flag), heart icon is hidden. 4. For Transfer to Own account, heart icon is hidden.",
+      "Validate expected behavior using api assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 4 | Adding to favourite: 1. Tapping love icon will add beneficiary to favourite. As a result, heart shape will be filled with a full black color. Retapping on black heart will remove the added beneficiary from favourite. S2U is not required. a. In the event user is tapping and retapping, during the 5th tap system displays a toastbar error message \"Unable to process request\". Beneficiary will not be added to favourite list. (Example: Add - Remove - Add - Remove - tapping the 3rd Add will display the error message) 2. For Transfer to Beneficiary that is already a favourite, heart icon is hidden. 3. For Transfer to Maybank's one-off VA account (closedPayment flag), heart icon is hidden. 4. For Transfer to Own account, heart icon is hidden.",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "api",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_028",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "5 | 1. Upon tapping [Done], navigate to Transfer Landing Page: a. Populate beneficiary to ALL category with immediate effect. b. Populate beneficiary to FREQUENT if the criteria is met (Refer to Transfer - Landing Page tab), refresh sorting criteria. c. Only perform above if beneficiary is not duplicate in above listing . Refer to Transfer - Landing Page Biz Rule #8 for unique key. 2. Below transaction will not be populated to Transfer Landing Screen: a. Transaction to VA account that is one off/single usage (ClosedPayment flag). 3. For successful transaction and processing, receipt can be obtained from Source of Funds transaction history. (Refer to Account Dashboard FSD.) Note: 1. In the event a transfer fails (and SOF has been debited for both transfer amount & Admin fee) , Core Banking will reverses both the transfer amount and the admin fee. 2. In the event SoF balance is insufficient during scheduled/recurring transfer, admin fee will still be charged to the user based on defined rail. | ECLIPSE: 1. For Maybank Bene, if VA, retrieve isClosedpayment flag to check if is single use. Note: ESB to perform transaction reversal if transfer fails.",
+    "objective": "Verify 5 | 1. upon tapping [done], navigate to transfer landing page: a. populate beneficiary to all category with immediate effect. b. populate beneficiary to frequent if the criteria is met (refer to transfer - landing page tab), refresh sorting criteria. c. only perform above if beneficiary is not duplicate in above listing . refer to transfer - landing page biz rule #8 for unique key. 2. below transaction will not be populated to transfer landing screen: a. transaction to va account that is one off/single usage (closedpayment flag). 3. for successful transaction and processing, receipt can be obtained from source of funds transaction history. (refer to account dashboard fsd.) note: 1. in the event a transfer fails (and sof has been debited for both transfer amount & admin fee) , core banking will reverses both the transfer amount and the admin fee. 2. in the event sof balance is insufficient during scheduled/recurring transfer, admin fee will still be charged to the user based on defined rail. | eclipse: 1. for maybank bene, if va, retrieve isclosedpayment flag to check if is single use. note: esb to perform transaction reversal if transfer fails.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 5 | 1. Upon tapping [Done], navigate to Transfer Landing Page: a. Populate beneficiary to ALL category with immediate effect. b. Populate beneficiary to FREQUENT if the criteria is met (Refer to Transfer - Landing Page tab), refresh sorting criteria. c. Only perform above if beneficiary is not duplicate in above listing . Refer to Transfer - Landing Page Biz Rule #8 for unique key. 2. Below transaction will not be populated to Transfer Landing Screen: a. Transaction to VA account that is one off/single usage (ClosedPayment flag). 3. For successful transaction and processing, receipt can be obtained from Source of Funds transaction history. (Refer to Account Dashboard FSD.) Note: 1. In the event a transfer fails (and SOF has been debited for both transfer amount & Admin fee) , Core Banking will reverses both the transfer amount and the admin fee. 2. In the event SoF balance is insufficient during scheduled/recurring transfer, admin fee will still be charged to the user based on defined rail. | ECLIPSE: 1. For Maybank Bene, if VA, retrieve isClosedpayment flag to check if is single use. Note: ESB to perform transaction reversal if transfer fails.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 5 | 1. Upon tapping [Done], navigate to Transfer Landing Page: a. Populate beneficiary to ALL category with immediate effect. b. Populate beneficiary to FREQUENT if the criteria is met (Refer to Transfer - Landing Page tab), refresh sorting criteria. c. Only perform above if beneficiary is not duplicate in above listing . Refer to Transfer - Landing Page Biz Rule #8 for unique key. 2. Below transaction will not be populated to Transfer Landing Screen: a. Transaction to VA account that is one off/single usage (ClosedPayment flag). 3. For successful transaction and processing, receipt can be obtained from Source of Funds transaction history. (Refer to Account Dashboard FSD.) Note: 1. In the event a transfer fails (and SOF has been debited for both transfer amount & Admin fee) , Core Banking will reverses both the transfer amount and the admin fee. 2. In the event SoF balance is insufficient during scheduled/recurring transfer, admin fee will still be charged to the user based on defined rail. | ECLIPSE: 1. For Maybank Bene, if VA, retrieve isClosedpayment flag to check if is single use. Note: ESB to perform transaction reversal if transfer fails.",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_6_FINAL_TC_029",
+    "featureName": "FUNCTION 6: FINAL",
+    "requirement": "6 | For latest Receipt with Theme: 1. Refer to 1.1.7.1 Receipt w Theme 2. Meta Data no change",
+    "objective": "Verify 6 | for latest receipt with theme: 1. refer to 1.1.7.1 receipt w theme 2. meta data no change",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Capture baseline screenshot and compare for requirement: 6 | For latest Receipt with Theme: 1. Refer to 1.1.7.1 Receipt w Theme 2. Meta Data no change",
+      "Validate expected behavior using visual assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 6 | For latest Receipt with Theme: 1. Refer to 1.1.7.1 Receipt w Theme 2. Meta Data no change",
+    "priority": "P3",
+    "layer": "VisualRegression",
+    "automationCandidate": true,
+    "automationType": "visual",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  }
+]

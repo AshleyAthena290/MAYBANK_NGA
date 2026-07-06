@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.461Z",
+  "featureId": "currencies-allowed-by-transfer-mode",
+  "featureName": "Currencies allowed by Transfer Mode",
+  "sourceType": "FSD",
+  "content": {
+    "featureName": "Currencies allowed by Transfer Mode",
+    "description": "",
+    "flow": [],
+    "uiElements": [],
+    "validationRules": [],
+    "businessRules": [],
+    "apis": [],
+    "dependencies": [],
+    "errorMessages": [],
+    "navigation": [],
+    "remarks": []
+  },
+  "chunks": [],
+  "retrievalHints": {
+    "keywords": [
+      "currencies",
+      "allowed",
+      "transfer",
+      "mode"
+    ],
+    "hasApis": false,
+    "hasValidations": false,
+    "hasBusinessRules": false
+  }
+}

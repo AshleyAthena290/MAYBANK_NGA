@@ -1,0 +1,506 @@
+[
+  {
+    "testCaseId": "ESB_1_INTERBANK_ACCOUNT_INQUIRY_BASED_ON_THE_BENE_ACCOUNT_NUMBER_INQUIRY_VIA_BIFAST_RTOL_NGBO_P_T_1_FOREX_TRXN_USD_THRESHOLD_10K_WHICH_CALLS_FOR_ADDITONAL_DETAILS_ECLIPSE_ESB_1_RETRIEVE_TOTAL_FOREX_TRANSACTION_AMOUNT_IN_USD_PER_MONTH_TC_002",
+    "featureName": "ESB:\n1. Interbank Account Inquiry based on the bene account number, inquiry via:\n- BIFAST\n- RTOL\n\nNGBO (P&T):\n1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details.\n\nECLIPSE/ESB??\n1. Retrieve total FOREX transaction amount in USD per month.",
+    "requirement": "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+    "objective": "Verify table 1 - transfer entry point and interbank transfer mode that derive recipient name display",
+    "preconditions": [
+      "Application is deployed and accessible",
+      "User can access navigation path: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month."
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [
+      "ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "2 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTOL | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "3 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | SKN | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "4 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | SKN | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "5 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTGS | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "6 | Favourite List (Without Bene Name) | Added via Acct Number | N | Y | BI-FAST/RTOL | Populate from Favourite - Nickname | Retrieve Bene Name via Bene Inquiry when tap [Next]. To populate Bene Name retrieved from account inquiry in the Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "7 | Favourite List (Without Bene Name) | Added via Acct Number | N | N/A | SKN/RTGS | Populate from Favourite - Nickname | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "8 | New Open Transfer | - | Y | BI-FAST/RTOL | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry",
+      "9 | New Open Transfer | - | Y | SKN/RTGS | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry To populate Bene Name in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "10 | New Open Transfer | - | N | SKN/RTGS | Display empty name. | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section."
+    ],
+    "negativeScenarios": [
+      "Trigger error path: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Trigger error path: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Trigger error path: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Trigger error path: 1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "Trigger error path: 2 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTOL | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Boundary value around rule: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Boundary value around rule: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Boundary value around rule: 1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ]
+  },
+  {
+    "testCaseId": "ESB_1_INTERBANK_ACCOUNT_INQUIRY_BASED_ON_THE_BENE_ACCOUNT_NUMBER_INQUIRY_VIA_BIFAST_RTOL_NGBO_P_T_1_FOREX_TRXN_USD_THRESHOLD_10K_WHICH_CALLS_FOR_ADDITONAL_DETAILS_ECLIPSE_ESB_1_RETRIEVE_TOTAL_FOREX_TRANSACTION_AMOUNT_IN_USD_PER_MONTH_TC_003",
+    "featureName": "ESB:\n1. Interbank Account Inquiry based on the bene account number, inquiry via:\n- BIFAST\n- RTOL\n\nNGBO (P&T):\n1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details.\n\nECLIPSE/ESB??\n1. Retrieve total FOREX transaction amount in USD per month.",
+    "requirement": "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+    "objective": "Verify no | transfer initiation | source | perform bene inq (input account screen) | bi-fast/rtol online? | transfer mode | details screen - transfer to - recipient name | display account holder/recipient name in details screen | reason",
+    "preconditions": [
+      "Application is deployed and accessible",
+      "User can access navigation path: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month."
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [
+      "ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "2 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTOL | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "3 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | SKN | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "4 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | SKN | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "5 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTGS | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "6 | Favourite List (Without Bene Name) | Added via Acct Number | N | Y | BI-FAST/RTOL | Populate from Favourite - Nickname | Retrieve Bene Name via Bene Inquiry when tap [Next]. To populate Bene Name retrieved from account inquiry in the Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "7 | Favourite List (Without Bene Name) | Added via Acct Number | N | N/A | SKN/RTGS | Populate from Favourite - Nickname | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "8 | New Open Transfer | - | Y | BI-FAST/RTOL | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry",
+      "9 | New Open Transfer | - | Y | SKN/RTGS | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry To populate Bene Name in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "10 | New Open Transfer | - | N | SKN/RTGS | Display empty name. | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section."
+    ],
+    "negativeScenarios": [
+      "Trigger error path: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Trigger error path: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Trigger error path: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Trigger error path: 1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "Trigger error path: 2 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTOL | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Boundary value around rule: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Boundary value around rule: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Boundary value around rule: 1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ]
+  },
+  {
+    "testCaseId": "ESB_1_INTERBANK_ACCOUNT_INQUIRY_BASED_ON_THE_BENE_ACCOUNT_NUMBER_INQUIRY_VIA_BIFAST_RTOL_NGBO_P_T_1_FOREX_TRXN_USD_THRESHOLD_10K_WHICH_CALLS_FOR_ADDITONAL_DETAILS_ECLIPSE_ESB_1_RETRIEVE_TOTAL_FOREX_TRANSACTION_AMOUNT_IN_USD_PER_MONTH_TC_009",
+    "featureName": "ESB:\n1. Interbank Account Inquiry based on the bene account number, inquiry via:\n- BIFAST\n- RTOL\n\nNGBO (P&T):\n1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details.\n\nECLIPSE/ESB??\n1. Retrieve total FOREX transaction amount in USD per month.",
+    "requirement": "6 | Favourite List (Without Bene Name) | Added via Acct Number | N | Y | BI-FAST/RTOL | Populate from Favourite - Nickname | Retrieve Bene Name via Bene Inquiry when tap [Next]. To populate Bene Name retrieved from account inquiry in the Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+    "objective": "Verify 6 | favourite list (without bene name) | added via acct number | n | y | bi-fast/rtol | populate from favourite - nickname | retrieve bene name via bene inquiry when tap [next]. to populate bene name retrieved from account inquiry in the confirmation page > transfer to section. update the bene name to fav - bene name upon transfer successful.",
+    "preconditions": [
+      "Application is deployed and accessible",
+      "User can access navigation path: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month."
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 6 | Favourite List (Without Bene Name) | Added via Acct Number | N | Y | BI-FAST/RTOL | Populate from Favourite - Nickname | Retrieve Bene Name via Bene Inquiry when tap [Next]. To populate Bene Name retrieved from account inquiry in the Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 6 | Favourite List (Without Bene Name) | Added via Acct Number | N | Y | BI-FAST/RTOL | Populate from Favourite - Nickname | Retrieve Bene Name via Bene Inquiry when tap [Next]. To populate Bene Name retrieved from account inquiry in the Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [
+      "ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "2 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTOL | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "3 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | SKN | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "4 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | SKN | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "5 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTGS | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "6 | Favourite List (Without Bene Name) | Added via Acct Number | N | Y | BI-FAST/RTOL | Populate from Favourite - Nickname | Retrieve Bene Name via Bene Inquiry when tap [Next]. To populate Bene Name retrieved from account inquiry in the Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "7 | Favourite List (Without Bene Name) | Added via Acct Number | N | N/A | SKN/RTGS | Populate from Favourite - Nickname | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "8 | New Open Transfer | - | Y | BI-FAST/RTOL | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry",
+      "9 | New Open Transfer | - | Y | SKN/RTGS | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry To populate Bene Name in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "10 | New Open Transfer | - | N | SKN/RTGS | Display empty name. | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section."
+    ],
+    "negativeScenarios": [
+      "Trigger error path: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Trigger error path: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Trigger error path: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Trigger error path: 1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "Trigger error path: 2 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTOL | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Boundary value around rule: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Boundary value around rule: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Boundary value around rule: 1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ]
+  },
+  {
+    "testCaseId": "ESB_1_INTERBANK_ACCOUNT_INQUIRY_BASED_ON_THE_BENE_ACCOUNT_NUMBER_INQUIRY_VIA_BIFAST_RTOL_NGBO_P_T_1_FOREX_TRXN_USD_THRESHOLD_10K_WHICH_CALLS_FOR_ADDITONAL_DETAILS_ECLIPSE_ESB_1_RETRIEVE_TOTAL_FOREX_TRANSACTION_AMOUNT_IN_USD_PER_MONTH_TC_010",
+    "featureName": "ESB:\n1. Interbank Account Inquiry based on the bene account number, inquiry via:\n- BIFAST\n- RTOL\n\nNGBO (P&T):\n1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details.\n\nECLIPSE/ESB??\n1. Retrieve total FOREX transaction amount in USD per month.",
+    "requirement": "7 | Favourite List (Without Bene Name) | Added via Acct Number | N | N/A | SKN/RTGS | Populate from Favourite - Nickname | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+    "objective": "Verify 7 | favourite list (without bene name) | added via acct number | n | n/a | skn/rtgs | populate from favourite - nickname | y (user input) | to populate bene name (manually entered) in confirmation page > transfer to section. update the bene name to fav - bene name upon transfer successful.",
+    "preconditions": [
+      "Application is deployed and accessible",
+      "User can access navigation path: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month."
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 7 | Favourite List (Without Bene Name) | Added via Acct Number | N | N/A | SKN/RTGS | Populate from Favourite - Nickname | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 7 | Favourite List (Without Bene Name) | Added via Acct Number | N | N/A | SKN/RTGS | Populate from Favourite - Nickname | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [
+      "ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "2 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTOL | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "3 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | SKN | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "4 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | SKN | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "5 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTGS | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "6 | Favourite List (Without Bene Name) | Added via Acct Number | N | Y | BI-FAST/RTOL | Populate from Favourite - Nickname | Retrieve Bene Name via Bene Inquiry when tap [Next]. To populate Bene Name retrieved from account inquiry in the Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "7 | Favourite List (Without Bene Name) | Added via Acct Number | N | N/A | SKN/RTGS | Populate from Favourite - Nickname | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "8 | New Open Transfer | - | Y | BI-FAST/RTOL | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry",
+      "9 | New Open Transfer | - | Y | SKN/RTGS | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry To populate Bene Name in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "10 | New Open Transfer | - | N | SKN/RTGS | Display empty name. | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section."
+    ],
+    "negativeScenarios": [
+      "Trigger error path: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Trigger error path: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Trigger error path: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Trigger error path: 1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "Trigger error path: 2 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTOL | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Boundary value around rule: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Boundary value around rule: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Boundary value around rule: 1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ]
+  },
+  {
+    "testCaseId": "ESB_1_INTERBANK_ACCOUNT_INQUIRY_BASED_ON_THE_BENE_ACCOUNT_NUMBER_INQUIRY_VIA_BIFAST_RTOL_NGBO_P_T_1_FOREX_TRXN_USD_THRESHOLD_10K_WHICH_CALLS_FOR_ADDITONAL_DETAILS_ECLIPSE_ESB_1_RETRIEVE_TOTAL_FOREX_TRANSACTION_AMOUNT_IN_USD_PER_MONTH_TC_012",
+    "featureName": "ESB:\n1. Interbank Account Inquiry based on the bene account number, inquiry via:\n- BIFAST\n- RTOL\n\nNGBO (P&T):\n1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details.\n\nECLIPSE/ESB??\n1. Retrieve total FOREX transaction amount in USD per month.",
+    "requirement": "9 | New Open Transfer | - | Y | SKN/RTGS | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry To populate Bene Name in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+    "objective": "Verify 9 | new open transfer | - | y | skn/rtgs | populate bene name retrieved from account inquiry | n | retrieve bene name via bene inquiry to populate bene name in confirmation page > transfer to section. update the bene name to fav - bene name upon transfer successful.",
+    "preconditions": [
+      "Application is deployed and accessible",
+      "User can access navigation path: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month."
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 9 | New Open Transfer | - | Y | SKN/RTGS | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry To populate Bene Name in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 9 | New Open Transfer | - | Y | SKN/RTGS | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry To populate Bene Name in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [
+      "ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "2 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTOL | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "3 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | SKN | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "4 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | SKN | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "5 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTGS | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "6 | Favourite List (Without Bene Name) | Added via Acct Number | N | Y | BI-FAST/RTOL | Populate from Favourite - Nickname | Retrieve Bene Name via Bene Inquiry when tap [Next]. To populate Bene Name retrieved from account inquiry in the Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "7 | Favourite List (Without Bene Name) | Added via Acct Number | N | N/A | SKN/RTGS | Populate from Favourite - Nickname | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "8 | New Open Transfer | - | Y | BI-FAST/RTOL | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry",
+      "9 | New Open Transfer | - | Y | SKN/RTGS | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry To populate Bene Name in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "10 | New Open Transfer | - | N | SKN/RTGS | Display empty name. | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section."
+    ],
+    "negativeScenarios": [
+      "Trigger error path: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Trigger error path: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Trigger error path: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Trigger error path: 1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "Trigger error path: 2 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTOL | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Boundary value around rule: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Boundary value around rule: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Boundary value around rule: 1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ]
+  },
+  {
+    "testCaseId": "ESB_1_INTERBANK_ACCOUNT_INQUIRY_BASED_ON_THE_BENE_ACCOUNT_NUMBER_INQUIRY_VIA_BIFAST_RTOL_NGBO_P_T_1_FOREX_TRXN_USD_THRESHOLD_10K_WHICH_CALLS_FOR_ADDITONAL_DETAILS_ECLIPSE_ESB_1_RETRIEVE_TOTAL_FOREX_TRANSACTION_AMOUNT_IN_USD_PER_MONTH_TC_013",
+    "featureName": "ESB:\n1. Interbank Account Inquiry based on the bene account number, inquiry via:\n- BIFAST\n- RTOL\n\nNGBO (P&T):\n1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details.\n\nECLIPSE/ESB??\n1. Retrieve total FOREX transaction amount in USD per month.",
+    "requirement": "10 | New Open Transfer | - | N | SKN/RTGS | Display empty name. | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section.",
+    "objective": "Verify 10 | new open transfer | - | n | skn/rtgs | display empty name. | y (user input) | to populate bene name (manually entered) in confirmation page > transfer to section.",
+    "preconditions": [
+      "Application is deployed and accessible",
+      "User can access navigation path: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month."
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 10 | New Open Transfer | - | N | SKN/RTGS | Display empty name. | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 10 | New Open Transfer | - | N | SKN/RTGS | Display empty name. | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [
+      "ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "2 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTOL | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "3 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | SKN | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "4 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | SKN | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "5 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTGS | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "6 | Favourite List (Without Bene Name) | Added via Acct Number | N | Y | BI-FAST/RTOL | Populate from Favourite - Nickname | Retrieve Bene Name via Bene Inquiry when tap [Next]. To populate Bene Name retrieved from account inquiry in the Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "7 | Favourite List (Without Bene Name) | Added via Acct Number | N | N/A | SKN/RTGS | Populate from Favourite - Nickname | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "8 | New Open Transfer | - | Y | BI-FAST/RTOL | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry",
+      "9 | New Open Transfer | - | Y | SKN/RTGS | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry To populate Bene Name in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "10 | New Open Transfer | - | N | SKN/RTGS | Display empty name. | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section."
+    ],
+    "negativeScenarios": [
+      "Trigger error path: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Trigger error path: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Trigger error path: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Trigger error path: 1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "Trigger error path: 2 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTOL | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Boundary value around rule: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Boundary value around rule: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Boundary value around rule: 1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ]
+  },
+  {
+    "testCaseId": "ESB_1_INTERBANK_ACCOUNT_INQUIRY_BASED_ON_THE_BENE_ACCOUNT_NUMBER_INQUIRY_VIA_BIFAST_RTOL_NGBO_P_T_1_FOREX_TRXN_USD_THRESHOLD_10K_WHICH_CALLS_FOR_ADDITONAL_DETAILS_ECLIPSE_ESB_1_RETRIEVE_TOTAL_FOREX_TRANSACTION_AMOUNT_IN_USD_PER_MONTH_TC_020",
+    "featureName": "ESB:\n1. Interbank Account Inquiry based on the bene account number, inquiry via:\n- BIFAST\n- RTOL\n\nNGBO (P&T):\n1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details.\n\nECLIPSE/ESB??\n1. Retrieve total FOREX transaction amount in USD per month.",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible",
+      "User can access navigation path: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month."
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [
+      "ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "2 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTOL | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "3 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | SKN | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "4 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | SKN | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "5 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTGS | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "6 | Favourite List (Without Bene Name) | Added via Acct Number | N | Y | BI-FAST/RTOL | Populate from Favourite - Nickname | Retrieve Bene Name via Bene Inquiry when tap [Next]. To populate Bene Name retrieved from account inquiry in the Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "7 | Favourite List (Without Bene Name) | Added via Acct Number | N | N/A | SKN/RTGS | Populate from Favourite - Nickname | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "8 | New Open Transfer | - | Y | BI-FAST/RTOL | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry",
+      "9 | New Open Transfer | - | Y | SKN/RTGS | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry To populate Bene Name in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "10 | New Open Transfer | - | N | SKN/RTGS | Display empty name. | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section."
+    ],
+    "negativeScenarios": [
+      "Trigger error path: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Trigger error path: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Trigger error path: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Trigger error path: 1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "Trigger error path: 2 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTOL | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Boundary value around rule: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Boundary value around rule: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Boundary value around rule: 1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ]
+  },
+  {
+    "testCaseId": "ESB_1_INTERBANK_ACCOUNT_INQUIRY_BASED_ON_THE_BENE_ACCOUNT_NUMBER_INQUIRY_VIA_BIFAST_RTOL_NGBO_P_T_1_FOREX_TRXN_USD_THRESHOLD_10K_WHICH_CALLS_FOR_ADDITONAL_DETAILS_ECLIPSE_ESB_1_RETRIEVE_TOTAL_FOREX_TRANSACTION_AMOUNT_IN_USD_PER_MONTH_TC_021",
+    "featureName": "ESB:\n1. Interbank Account Inquiry based on the bene account number, inquiry via:\n- BIFAST\n- RTOL\n\nNGBO (P&T):\n1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details.\n\nECLIPSE/ESB??\n1. Retrieve total FOREX transaction amount in USD per month.",
+    "requirement": "No. | Description | Integration | Remarks",
+    "objective": "Verify no. | description | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible",
+      "User can access navigation path: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month."
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remarks",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [
+      "ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "2 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTOL | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "3 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | SKN | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "4 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | SKN | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "5 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTGS | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "6 | Favourite List (Without Bene Name) | Added via Acct Number | N | Y | BI-FAST/RTOL | Populate from Favourite - Nickname | Retrieve Bene Name via Bene Inquiry when tap [Next]. To populate Bene Name retrieved from account inquiry in the Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "7 | Favourite List (Without Bene Name) | Added via Acct Number | N | N/A | SKN/RTGS | Populate from Favourite - Nickname | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "8 | New Open Transfer | - | Y | BI-FAST/RTOL | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry",
+      "9 | New Open Transfer | - | Y | SKN/RTGS | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry To populate Bene Name in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "10 | New Open Transfer | - | N | SKN/RTGS | Display empty name. | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section."
+    ],
+    "negativeScenarios": [
+      "Trigger error path: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Trigger error path: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Trigger error path: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Trigger error path: 1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "Trigger error path: 2 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTOL | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Boundary value around rule: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Boundary value around rule: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Boundary value around rule: 1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ]
+  },
+  {
+    "testCaseId": "ESB_1_INTERBANK_ACCOUNT_INQUIRY_BASED_ON_THE_BENE_ACCOUNT_NUMBER_INQUIRY_VIA_BIFAST_RTOL_NGBO_P_T_1_FOREX_TRXN_USD_THRESHOLD_10K_WHICH_CALLS_FOR_ADDITONAL_DETAILS_ECLIPSE_ESB_1_RETRIEVE_TOTAL_FOREX_TRANSACTION_AMOUNT_IN_USD_PER_MONTH_TC_022",
+    "featureName": "ESB:\n1. Interbank Account Inquiry based on the bene account number, inquiry via:\n- BIFAST\n- RTOL\n\nNGBO (P&T):\n1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details.\n\nECLIPSE/ESB??\n1. Retrieve total FOREX transaction amount in USD per month.",
+    "requirement": "1 | Upon page load: 1. Transfer Mode: a. For New Transfer (i) Transfer Mode will be populated from previous screen ( Input Account No). (ii) If the Transfer Mode is offline, then default to first available Transfer Mode based on the Transfer Mode sequence, and display warning message \"<Default Transfer Mode> is temporarily offline. Please review the transfer mode before continuing.\" b. For Bene Listing (i) Transfer Mode will be populated from previous screen ( Input Amount) (ii)If the Transfer Mode is offline, then default to first available Transfer Mode based on the Transfer Mode sequence, and display Info Message \"The transfer mode previously selected for this recipient is temporarily offline. Please review before continuing.\" c. Change Transfer Mode (i) Switching the transfer mode resets the form & previously entered values, and render fields based on the newly selected transfer mode. For FCY to IDR: 1. Default to BI-SKN as it is the only transfer mode allowed. Other options will be disabled. | NGBO (P&T Ownership): 1. Retrieve transfer modes with availlability & sequence/priority order based on selected Bene Bank.",
+    "objective": "Verify 1 | upon page load: 1. transfer mode: a. for new transfer (i) transfer mode will be populated from previous screen ( input account no). (ii) if the transfer mode is offline, then default to first available transfer mode based on the transfer mode sequence, and display warning message \"<default transfer mode> is temporarily offline. please review the transfer mode before continuing.\" b. for bene listing (i) transfer mode will be populated from previous screen ( input amount) (ii)if the transfer mode is offline, then default to first available transfer mode based on the transfer mode sequence, and display info message \"the transfer mode previously selected for this recipient is temporarily offline. please review before continuing.\" c. change transfer mode (i) switching the transfer mode resets the form & previously entered values, and render fields based on the newly selected transfer mode. for fcy to idr: 1. default to bi-skn as it is the only transfer mode allowed. other options will be disabled. | ngbo (p&t ownership): 1. retrieve transfer modes with availlability & sequence/priority order based on selected bene bank.",
+    "preconditions": [
+      "Application is deployed and accessible",
+      "User can access navigation path: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month."
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | Upon page load: 1. Transfer Mode: a. For New Transfer (i) Transfer Mode will be populated from previous screen ( Input Account No). (ii) If the Transfer Mode is offline, then default to first available Transfer Mode based on the Transfer Mode sequence, and display warning message \"<Default Transfer Mode> is temporarily offline. Please review the transfer mode before continuing.\" b. For Bene Listing (i) Transfer Mode will be populated from previous screen ( Input Amount) (ii)If the Transfer Mode is offline, then default to first available Transfer Mode based on the Transfer Mode sequence, and display Info Message \"The transfer mode previously selected for this recipient is temporarily offline. Please review before continuing.\" c. Change Transfer Mode (i) Switching the transfer mode resets the form & previously entered values, and render fields based on the newly selected transfer mode. For FCY to IDR: 1. Default to BI-SKN as it is the only transfer mode allowed. Other options will be disabled. | NGBO (P&T Ownership): 1. Retrieve transfer modes with availlability & sequence/priority order based on selected Bene Bank.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | Upon page load: 1. Transfer Mode: a. For New Transfer (i) Transfer Mode will be populated from previous screen ( Input Account No). (ii) If the Transfer Mode is offline, then default to first available Transfer Mode based on the Transfer Mode sequence, and display warning message \"<Default Transfer Mode> is temporarily offline. Please review the transfer mode before continuing.\" b. For Bene Listing (i) Transfer Mode will be populated from previous screen ( Input Amount) (ii)If the Transfer Mode is offline, then default to first available Transfer Mode based on the Transfer Mode sequence, and display Info Message \"The transfer mode previously selected for this recipient is temporarily offline. Please review before continuing.\" c. Change Transfer Mode (i) Switching the transfer mode resets the form & previously entered values, and render fields based on the newly selected transfer mode. For FCY to IDR: 1. Default to BI-SKN as it is the only transfer mode allowed. Other options will be disabled. | NGBO (P&T Ownership): 1. Retrieve transfer modes with availlability & sequence/priority order based on selected Bene Bank.",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [
+      "ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "2 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTOL | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "3 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | SKN | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "4 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | SKN | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "5 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTGS | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "6 | Favourite List (Without Bene Name) | Added via Acct Number | N | Y | BI-FAST/RTOL | Populate from Favourite - Nickname | Retrieve Bene Name via Bene Inquiry when tap [Next]. To populate Bene Name retrieved from account inquiry in the Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "7 | Favourite List (Without Bene Name) | Added via Acct Number | N | N/A | SKN/RTGS | Populate from Favourite - Nickname | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "8 | New Open Transfer | - | Y | BI-FAST/RTOL | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry",
+      "9 | New Open Transfer | - | Y | SKN/RTGS | Populate Bene Name retrieved from account inquiry | N | Retrieve Bene Name via Bene Inquiry To populate Bene Name in Confirmation Page > Transfer To section. Update the Bene Name to Fav - Bene Name upon Transfer Successful.",
+      "10 | New Open Transfer | - | N | SKN/RTGS | Display empty name. | Y (user input) | To populate Bene Name (manually entered) in Confirmation Page > Transfer To section."
+    ],
+    "negativeScenarios": [
+      "Trigger error path: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Trigger error path: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Trigger error path: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Trigger error path: 1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer",
+      "Trigger error path: 2 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | RTOL | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Boundary value around rule: ESB: 1. Interbank Account Inquiry based on the bene account number, inquiry via: - BIFAST - RTOL NGBO (P&T): 1. FOREX Trxn - USD threshold (10K) which calls for Additonal Details. ECLIPSE/ESB?? 1. Retrieve total FOREX transaction amount in USD per month.",
+      "Boundary value around rule: Table 1 - Transfer entry point and Interbank transfer mode that derive Recipient Name Display",
+      "Boundary value around rule: No | Transfer initiation | Source | Perform Bene Inq (Input Account Screen) | BI-FAST/RTOL Online? | Transfer Mode | DETAILS screen - Transfer To - Recipient Name | Display Account Holder/Recipient Name In Details Screen | Reason",
+      "Boundary value around rule: 1 | Favourite List (with Bene Name) | Added via Recent Transfer | N | N/A | BI-FAST | Populate from Favourite - Bene name | Bene name has been verified in previous transfer"
+    ]
+  }
+]

@@ -1,0 +1,553 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-05T13:38:25.093Z",
+  "bundle": {
+    "featureName": "Function: ETB with M2U ID - Login Page - UserName",
+    "testCases": [
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_LOGIN_PAGE_USERNAME_TC_001",
+        "featureName": "Function: ETB with M2U ID - Login Page - UserName",
+        "requirement": "Login Page - Username",
+        "objective": "Verify login page - username",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Login Page - Username",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Login Page - Username",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Login Page - Username",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: Login Page - Username"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_LOGIN_PAGE_USERNAME_TC_002",
+        "featureName": "Function: ETB with M2U ID - Login Page - UserName",
+        "requirement": "Fields",
+        "objective": "Verify fields",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Login Page - Username",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Fields",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Fields",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: Fields"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_LOGIN_PAGE_USERNAME_TC_003",
+        "featureName": "Function: ETB with M2U ID - Login Page - UserName",
+        "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+        "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Login Page - Username",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_LOGIN_PAGE_USERNAME_TC_004",
+        "featureName": "Function: ETB with M2U ID - Login Page - UserName",
+        "requirement": "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+        "objective": "Verify 1 | maybank logo & name | n/a | alphanumeric | display | integration | display maybank logo & name image | cms: 1. retrieve maybank logo & name image",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Login Page - Username",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+        "priority": "P2",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_LOGIN_PAGE_USERNAME_TC_005",
+        "featureName": "Function: ETB with M2U ID - Login Page - UserName",
+        "requirement": "2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title",
+        "objective": "Verify 2 | title | n/a | alphanumeric | display | integration | display \"let's get you logged in\" | cms 1. retrieve title",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Login Page - Username",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title",
+          "Validate expected behavior using api assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "api",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_LOGIN_PAGE_USERNAME_TC_006",
+        "featureName": "Function: ETB with M2U ID - Login Page - UserName",
+        "requirement": "3 | Username | Yes | Alphanumeric | Textbox X(20) | Input | Enter NGA username",
+        "objective": "Verify 3 | username | yes | alphanumeric | textbox x(20) | input | enter nga username",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Login Page - Username",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 3 | Username | Yes | Alphanumeric | Textbox X(20) | Input | Enter NGA username",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 3 | Username | Yes | Alphanumeric | Textbox X(20) | Input | Enter NGA username",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 3 | Username | Yes | Alphanumeric | Textbox X(20) | Input | Enter NGA username"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_LOGIN_PAGE_USERNAME_TC_007",
+        "featureName": "Function: ETB with M2U ID - Login Page - UserName",
+        "requirement": "4 | \"No online banking access yet?\" | N/A | Alphanumeric | Display | Integration | Display \"No online banking access yet?\" description. | CMS: 1. Retrieve \"No online banking access yet?\" description",
+        "objective": "Verify 4 | \"no online banking access yet?\" | n/a | alphanumeric | display | integration | display \"no online banking access yet?\" description. | cms: 1. retrieve \"no online banking access yet?\" description",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Login Page - Username",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 4 | \"No online banking access yet?\" | N/A | Alphanumeric | Display | Integration | Display \"No online banking access yet?\" description. | CMS: 1. Retrieve \"No online banking access yet?\" description",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 4 | \"No online banking access yet?\" | N/A | Alphanumeric | Display | Integration | Display \"No online banking access yet?\" description. | CMS: 1. Retrieve \"No online banking access yet?\" description",
+        "priority": "P2",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 4 | \"No online banking access yet?\" | N/A | Alphanumeric | Display | Integration | Display \"No online banking access yet?\" description. | CMS: 1. Retrieve \"No online banking access yet?\" description"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_LOGIN_PAGE_USERNAME_TC_008",
+        "featureName": "Function: ETB with M2U ID - Login Page - UserName",
+        "requirement": "Actions",
+        "objective": "Verify actions",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Login Page - Username",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Actions",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Actions",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: Actions"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_LOGIN_PAGE_USERNAME_TC_009",
+        "featureName": "Function: ETB with M2U ID - Login Page - UserName",
+        "requirement": "No. | Action | Description | Integration | Remark",
+        "objective": "Verify no. | action | description | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Login Page - Username",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Action | Description | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Action | Description | Integration | Remark",
+        "priority": "P2",
+        "layer": "Integration",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: No. | Action | Description | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_LOGIN_PAGE_USERNAME_TC_010",
+        "featureName": "Function: ETB with M2U ID - Login Page - UserName",
+        "requirement": "1 | [Forgot login details?] hyperlink | Upon tapping, navigate to [A&A] Forgot Login flow",
+        "objective": "Verify 1 | [forgot login details?] hyperlink | upon tapping, navigate to [a&a] forgot login flow",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Login Page - Username",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | [Forgot login details?] hyperlink | Upon tapping, navigate to [A&A] Forgot Login flow",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | [Forgot login details?] hyperlink | Upon tapping, navigate to [A&A] Forgot Login flow",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1 | [Forgot login details?] hyperlink | Upon tapping, navigate to [A&A] Forgot Login flow"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_LOGIN_PAGE_USERNAME_TC_011",
+        "featureName": "Function: ETB with M2U ID - Login Page - UserName",
+        "requirement": "2 | [Next] Button | Upon tapping, navigate to [A&A] Security Image Verification screen",
+        "objective": "Verify 2 | [next] button | upon tapping, navigate to [a&a] security image verification screen",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Login Page - Username",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | [Next] Button | Upon tapping, navigate to [A&A] Security Image Verification screen",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | [Next] Button | Upon tapping, navigate to [A&A] Security Image Verification screen",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 2 | [Next] Button | Upon tapping, navigate to [A&A] Security Image Verification screen"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_LOGIN_PAGE_USERNAME_TC_012",
+        "featureName": "Function: ETB with M2U ID - Login Page - UserName",
+        "requirement": "3 | [Register with credit card] Button | Upon tapping, navigate to [CC - w/o M2U ID] Enter Account Details screen",
+        "objective": "Verify 3 | [register with credit card] button | upon tapping, navigate to [cc - w/o m2u id] enter account details screen",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Login Page - Username",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 3 | [Register with credit card] Button | Upon tapping, navigate to [CC - w/o M2U ID] Enter Account Details screen",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 3 | [Register with credit card] Button | Upon tapping, navigate to [CC - w/o M2U ID] Enter Account Details screen",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 3 | [Register with credit card] Button | Upon tapping, navigate to [CC - w/o M2U ID] Enter Account Details screen"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_LOGIN_PAGE_USERNAME_TC_013",
+        "featureName": "Function: ETB with M2U ID - Login Page - UserName",
+        "requirement": "4 | [Register with debit card] Button | Upon tapping, navigate to [CASA - w/o M2U ID] Enter Account Details screen",
+        "objective": "Verify 4 | [register with debit card] button | upon tapping, navigate to [casa - w/o m2u id] enter account details screen",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Login Page - Username",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 4 | [Register with debit card] Button | Upon tapping, navigate to [CASA - w/o M2U ID] Enter Account Details screen",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 4 | [Register with debit card] Button | Upon tapping, navigate to [CASA - w/o M2U ID] Enter Account Details screen",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 4 | [Register with debit card] Button | Upon tapping, navigate to [CASA - w/o M2U ID] Enter Account Details screen"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_LOGIN_PAGE_USERNAME_TC_014",
+        "featureName": "Function: ETB with M2U ID - Login Page - UserName",
+        "requirement": "5 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen and followed by Consent screen",
+        "objective": "Verify 5 | [x] button | upon tapping, exit & return to onboarding landing screen and followed by consent screen",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Login Page - Username",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 5 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen and followed by Consent screen",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 5 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen and followed by Consent screen",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 5 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen and followed by Consent screen"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_LOGIN_PAGE_USERNAME_TC_015",
+        "featureName": "Function: ETB with M2U ID - Login Page - UserName",
+        "requirement": "No. | Description | Integration | Remark",
+        "objective": "Verify no. | description | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Login Page - Username",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Description | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Description | Integration | Remark",
+        "priority": "P2",
+        "layer": "Integration",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: No. | Description | Integration | Remark"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITH_M2U_ID_LOGIN_PAGE_USERNAME_TC_016",
+        "featureName": "Function: ETB with M2U ID - Login Page - UserName",
+        "requirement": "1 | 1. Next button will trigger username mandatory field check only. 2. Security image verification screen will be prompted (refer to [A&A]). *No verification on username and will navigate to Login Password screen",
+        "objective": "Verify 1 | 1. next button will trigger username mandatory field check only. 2. security image verification screen will be prompted (refer to [a&a]). *no verification on username and will navigate to login password screen",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Login Page - Username",
+          "Fields",
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "2 | Title | N/A | Alphanumeric | Display | Integration | Display \"Let's get you logged in\" | CMS 1. Retrieve Title"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | 1. Next button will trigger username mandatory field check only. 2. Security image verification screen will be prompted (refer to [A&A]). *No verification on username and will navigate to Login Password screen",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | 1. Next button will trigger username mandatory field check only. 2. Security image verification screen will be prompted (refer to [A&A]). *No verification on username and will navigate to Login Password screen",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 1 | 1. Next button will trigger username mandatory field check only. 2. Security image verification screen will be prompted (refer to [A&A]). *No verification on username and will navigate to Login Password screen"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,624 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-05T13:38:25.135Z",
+  "bundle": {
+    "featureName": "Function: ETB Without M2U ID - Security Image",
+    "testCases": [
+      {
+        "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_SECURITY_IMAGE_TC_001",
+        "featureName": "Function: ETB Without M2U ID - Security Image",
+        "requirement": "Security image",
+        "objective": "Verify security image",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Actions"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Security image",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Security image",
+        "priority": "P1",
+        "layer": "Security",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Invalid input violating rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Invalid input violating rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Invalid input violating rule: Actions"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Boundary value around rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Boundary value around rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Boundary value around rule: Actions"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_SECURITY_IMAGE_TC_002",
+        "featureName": "Function: ETB Without M2U ID - Security Image",
+        "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+        "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Actions"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Invalid input violating rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Invalid input violating rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Invalid input violating rule: Actions"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Boundary value around rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Boundary value around rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Boundary value around rule: Actions"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_SECURITY_IMAGE_TC_003",
+        "featureName": "Function: ETB Without M2U ID - Security Image",
+        "requirement": "1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+        "objective": "Verify 1 | title and description | n/a | alphanumeric | display | integration | display images layout as per screen: - title \"choose a security image\" - description \"this image will display when you log in on legitimate maybank channels\" | cms: 1. retrieve title & description",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Actions"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Validate expected behavior using visual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "visual",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Invalid input violating rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Invalid input violating rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Invalid input violating rule: Actions"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Boundary value around rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Boundary value around rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Boundary value around rule: Actions"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_SECURITY_IMAGE_TC_004",
+        "featureName": "Function: ETB Without M2U ID - Security Image",
+        "requirement": "2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+        "objective": "Verify 2 | security images | yes | image | display | integration | display list of security images. highlight image when selected. | iam: 1. retrieve list of security images",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Actions"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Invalid input violating rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Invalid input violating rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Invalid input violating rule: Actions"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Boundary value around rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Boundary value around rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Boundary value around rule: Actions"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_SECURITY_IMAGE_TC_005",
+        "featureName": "Function: ETB Without M2U ID - Security Image",
+        "requirement": "3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+        "objective": "Verify 3 | insight banner | yes | alphanumeric | display | integration | display \"this image will be used every time you log in\" | cms 1. retrieve insight message 2. retrieve icon",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Actions"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+        "priority": "P2",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Invalid input violating rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Invalid input violating rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Invalid input violating rule: Actions"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Boundary value around rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Boundary value around rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Boundary value around rule: Actions"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_SECURITY_IMAGE_TC_006",
+        "featureName": "Function: ETB Without M2U ID - Security Image",
+        "requirement": "Actions",
+        "objective": "Verify actions",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Actions"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Actions",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Actions",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Invalid input violating rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Invalid input violating rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Invalid input violating rule: Actions"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Boundary value around rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Boundary value around rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Boundary value around rule: Actions"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_SECURITY_IMAGE_TC_007",
+        "featureName": "Function: ETB Without M2U ID - Security Image",
+        "requirement": "No. | Action | Description | Integration | Remark",
+        "objective": "Verify no. | action | description | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Actions"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Action | Description | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Action | Description | Integration | Remark",
+        "priority": "P2",
+        "layer": "Integration",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Invalid input violating rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Invalid input violating rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Invalid input violating rule: Actions"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Boundary value around rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Boundary value around rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Boundary value around rule: Actions"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_SECURITY_IMAGE_TC_008",
+        "featureName": "Function: ETB Without M2U ID - Security Image",
+        "requirement": "1 | Camera Icon | Display bottom drawer, with following value : 1. Take Photo 2. Select from Gallery 3. Cancel",
+        "objective": "Verify 1 | camera icon | display bottom drawer, with following value : 1. take photo 2. select from gallery 3. cancel",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Actions"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | Camera Icon | Display bottom drawer, with following value : 1. Take Photo 2. Select from Gallery 3. Cancel",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | Camera Icon | Display bottom drawer, with following value : 1. Take Photo 2. Select from Gallery 3. Cancel",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Invalid input violating rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Invalid input violating rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Invalid input violating rule: Actions"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Boundary value around rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Boundary value around rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Boundary value around rule: Actions"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_SECURITY_IMAGE_TC_009",
+        "featureName": "Function: ETB Without M2U ID - Security Image",
+        "requirement": "2 | [Next] Button | Upon tapping, navigate to [A&A] Verification - SMS OTP. If Verification passed, navigate to [CASA/CC - w/o M2U ID] M2U Access created",
+        "objective": "Verify 2 | [next] button | upon tapping, navigate to [a&a] verification - sms otp. if verification passed, navigate to [casa/cc - w/o m2u id] m2u access created",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Actions"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | [Next] Button | Upon tapping, navigate to [A&A] Verification - SMS OTP. If Verification passed, navigate to [CASA/CC - w/o M2U ID] M2U Access created",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | [Next] Button | Upon tapping, navigate to [A&A] Verification - SMS OTP. If Verification passed, navigate to [CASA/CC - w/o M2U ID] M2U Access created",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Invalid input violating rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Invalid input violating rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Invalid input violating rule: Actions"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Boundary value around rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Boundary value around rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Boundary value around rule: Actions"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_SECURITY_IMAGE_TC_010",
+        "featureName": "Function: ETB Without M2U ID - Security Image",
+        "requirement": "3 | [<] Button | Navigate back to [CASA/CC - w/o M2U ID] Create password screen",
+        "objective": "Verify 3 | [<] button | navigate back to [casa/cc - w/o m2u id] create password screen",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Actions"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 3 | [<] Button | Navigate back to [CASA/CC - w/o M2U ID] Create password screen",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 3 | [<] Button | Navigate back to [CASA/CC - w/o M2U ID] Create password screen",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Invalid input violating rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Invalid input violating rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Invalid input violating rule: Actions"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Boundary value around rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Boundary value around rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Boundary value around rule: Actions"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_SECURITY_IMAGE_TC_011",
+        "featureName": "Function: ETB Without M2U ID - Security Image",
+        "requirement": "4 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen.",
+        "objective": "Verify 4 | [x] button | upon tapping, exit & return to onboarding landing screen.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Actions"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 4 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 4 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Invalid input violating rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Invalid input violating rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Invalid input violating rule: Actions"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Boundary value around rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Boundary value around rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Boundary value around rule: Actions"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_SECURITY_IMAGE_TC_012",
+        "featureName": "Function: ETB Without M2U ID - Security Image",
+        "requirement": "No. | Description | Integration | Remark",
+        "objective": "Verify no. | description | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Actions"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Description | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Description | Integration | Remark",
+        "priority": "P2",
+        "layer": "Integration",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Invalid input violating rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Invalid input violating rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Invalid input violating rule: Actions"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Boundary value around rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Boundary value around rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Boundary value around rule: Actions"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_SECURITY_IMAGE_TC_013",
+        "featureName": "Function: ETB Without M2U ID - Security Image",
+        "requirement": "1 | Add Image behaviour: 1. Take Photo, triggers device camera (assuming permission granted). - capture image and display/replace the image in the \"camera\" image placeholder. 2. Select from gallery, opens native photo gallery (asusming permission granted) - select & confirm image, display/replace the image in the \"camera\" image placeholder, and auto-select uploaded image 3. Camera icon feature to be configurable - turn on/off - for ID, will be turned off first during go live, will only avail this feature when cleared any security compliance or OJK requirements | NGBO 1. Retrieve flag (on/off) value for camera icon feature",
+        "objective": "Verify 1 | add image behaviour: 1. take photo, triggers device camera (assuming permission granted). - capture image and display/replace the image in the \"camera\" image placeholder. 2. select from gallery, opens native photo gallery (asusming permission granted) - select & confirm image, display/replace the image in the \"camera\" image placeholder, and auto-select uploaded image 3. camera icon feature to be configurable - turn on/off - for id, will be turned off first during go live, will only avail this feature when cleared any security compliance or ojk requirements | ngbo 1. retrieve flag (on/off) value for camera icon feature",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Actions"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | Add Image behaviour: 1. Take Photo, triggers device camera (assuming permission granted). - capture image and display/replace the image in the \"camera\" image placeholder. 2. Select from gallery, opens native photo gallery (asusming permission granted) - select & confirm image, display/replace the image in the \"camera\" image placeholder, and auto-select uploaded image 3. Camera icon feature to be configurable - turn on/off - for ID, will be turned off first during go live, will only avail this feature when cleared any security compliance or OJK requirements | NGBO 1. Retrieve flag (on/off) value for camera icon feature",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | Add Image behaviour: 1. Take Photo, triggers device camera (assuming permission granted). - capture image and display/replace the image in the \"camera\" image placeholder. 2. Select from gallery, opens native photo gallery (asusming permission granted) - select & confirm image, display/replace the image in the \"camera\" image placeholder, and auto-select uploaded image 3. Camera icon feature to be configurable - turn on/off - for ID, will be turned off first during go live, will only avail this feature when cleared any security compliance or OJK requirements | NGBO 1. Retrieve flag (on/off) value for camera icon feature",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Invalid input violating rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Invalid input violating rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Invalid input violating rule: Actions"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Boundary value around rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Boundary value around rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Boundary value around rule: Actions"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_SECURITY_IMAGE_TC_014",
+        "featureName": "Function: ETB Without M2U ID - Security Image",
+        "requirement": "2 | Upon tapping Next button, perform below: 1. Image validation - Image Size Limit: 5 MB - Image Format: JPG / PNG only 2. If validation passed - if user capture photo or selected own photo from gallery but didn't select to use as Security Image, system won't store user's newly added image",
+        "objective": "Verify 2 | upon tapping next button, perform below: 1. image validation - image size limit: 5 mb - image format: jpg / png only 2. if validation passed - if user capture photo or selected own photo from gallery but didn't select to use as security image, system won't store user's newly added image",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Actions"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | Upon tapping Next button, perform below: 1. Image validation - Image Size Limit: 5 MB - Image Format: JPG / PNG only 2. If validation passed - if user capture photo or selected own photo from gallery but didn't select to use as Security Image, system won't store user's newly added image",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | Upon tapping Next button, perform below: 1. Image validation - Image Size Limit: 5 MB - Image Format: JPG / PNG only 2. If validation passed - if user capture photo or selected own photo from gallery but didn't select to use as Security Image, system won't store user's newly added image",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Invalid input violating rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Invalid input violating rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Invalid input violating rule: Actions"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Boundary value around rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Boundary value around rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Boundary value around rule: Actions"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_ETB_WITHOUT_M2U_ID_SECURITY_IMAGE_TC_015",
+        "featureName": "Function: ETB Without M2U ID - Security Image",
+        "requirement": "3 | Upon Verification - SMS OTP, perform below: 1. Regardless successful or unsuccessful verification, send data to FMS 2. If successful verification: - Perform User ID creation, includes: >> Store username >> Store password >> Store selected security image (compressed version Max. 20KB) | FMS: 1. Fraud Monitoring IAM: 1. User ID Creation - Store username, password & security image M2U: 1. User ID Creation",
+        "objective": "Verify 3 | upon verification - sms otp, perform below: 1. regardless successful or unsuccessful verification, send data to fms 2. if successful verification: - perform user id creation, includes: >> store username >> store password >> store selected security image (compressed version max. 20kb) | fms: 1. fraud monitoring iam: 1. user id creation - store username, password & security image m2u: 1. user id creation",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Actions"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 3 | Upon Verification - SMS OTP, perform below: 1. Regardless successful or unsuccessful verification, send data to FMS 2. If successful verification: - Perform User ID creation, includes: >> Store username >> Store password >> Store selected security image (compressed version Max. 20KB) | FMS: 1. Fraud Monitoring IAM: 1. User ID Creation - Store username, password & security image M2U: 1. User ID Creation",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 3 | Upon Verification - SMS OTP, perform below: 1. Regardless successful or unsuccessful verification, send data to FMS 2. If successful verification: - Perform User ID creation, includes: >> Store username >> Store password >> Store selected security image (compressed version Max. 20KB) | FMS: 1. Fraud Monitoring IAM: 1. User ID Creation - Store username, password & security image M2U: 1. User ID Creation",
+        "priority": "P1",
+        "layer": "Security",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Invalid input violating rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Invalid input violating rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Invalid input violating rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Invalid input violating rule: Actions"
+        ],
+        "edgeCases": [
+          "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Boundary value around rule: 1 | Title and Description | N/A | Alphanumeric | Display | Integration | Display images layout as per screen: - Title \"Choose a security image\" - Description \"This image will display when you log in on legitimate Maybank channels\" | CMS: 1. Retrieve Title & Description",
+          "Boundary value around rule: 2 | Security Images | Yes | Image | Display | Integration | Display list of security images. Highlight image when selected. | IAM: 1. Retrieve list of security images",
+          "Boundary value around rule: 3 | Insight banner | Yes | Alphanumeric | Display | Integration | Display \"This image will be used every time you log in\" | CMS 1. Retrieve insight message 2. Retrieve icon",
+          "Boundary value around rule: Actions"
+        ]
+      }
+    ]
+  }
+}

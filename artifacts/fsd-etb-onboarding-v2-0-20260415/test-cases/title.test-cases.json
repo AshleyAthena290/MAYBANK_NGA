@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-05T13:38:25.079Z",
+  "bundle": {
+    "featureName": "Title",
+    "testCases": [
+      {
+        "testCaseId": "TITLE_TC_001",
+        "featureName": "Title",
+        "requirement": "2026-04-15T00:00:00.000Z | 1. Update section Actions: 3.0 ETB - w M2U Login Username 4.0 ETB - w M2U Login Pwd 2. Update section Business Rules: 1.0 ETB - Onboard Landing 1.1 ETB - Onboard Lang 2.0 ETB - Consent 2.1 ETB - DL Consent Drawer 3.0 ETB - w M2U Login Username 4.0 ETB - w M2U Login Pwd 5.0 ETB - w M2U Notice 8.0 ETB - Primary Acc 3. Update section Screen & Field: 15.0 ETB - wo M2U Create Security Image 17.0 ETB - wo M2U Final | 2 | Adella Rakha",
+        "objective": "Verify 2026-04-15t00:00:00.000z | 1. update section actions: 3.0 etb - w m2u login username 4.0 etb - w m2u login pwd 2. update section business rules: 1.0 etb - onboard landing 1.1 etb - onboard lang 2.0 etb - consent 2.1 etb - dl consent drawer 3.0 etb - w m2u login username 4.0 etb - w m2u login pwd 5.0 etb - w m2u notice 8.0 etb - primary acc 3. update section screen & field: 15.0 etb - wo m2u create security image 17.0 etb - wo m2u final | 2 | adella rakha",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "2026-04-15T00:00:00.000Z | 1. Update section Actions: 3.0 ETB - w M2U Login Username 4.0 ETB - w M2U Login Pwd 2. Update section Business Rules: 1.0 ETB - Onboard Landing 1.1 ETB - Onboard Lang 2.0 ETB - Consent 2.1 ETB - DL Consent Drawer 3.0 ETB - w M2U Login Username 4.0 ETB - w M2U Login Pwd 5.0 ETB - w M2U Notice 8.0 ETB - Primary Acc 3. Update section Screen & Field: 15.0 ETB - wo M2U Create Security Image 17.0 ETB - wo M2U Final | 2 | Adella Rakha"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2026-04-15T00:00:00.000Z | 1. Update section Actions: 3.0 ETB - w M2U Login Username 4.0 ETB - w M2U Login Pwd 2. Update section Business Rules: 1.0 ETB - Onboard Landing 1.1 ETB - Onboard Lang 2.0 ETB - Consent 2.1 ETB - DL Consent Drawer 3.0 ETB - w M2U Login Username 4.0 ETB - w M2U Login Pwd 5.0 ETB - w M2U Notice 8.0 ETB - Primary Acc 3. Update section Screen & Field: 15.0 ETB - wo M2U Create Security Image 17.0 ETB - wo M2U Final | 2 | Adella Rakha",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2026-04-15T00:00:00.000Z | 1. Update section Actions: 3.0 ETB - w M2U Login Username 4.0 ETB - w M2U Login Pwd 2. Update section Business Rules: 1.0 ETB - Onboard Landing 1.1 ETB - Onboard Lang 2.0 ETB - Consent 2.1 ETB - DL Consent Drawer 3.0 ETB - w M2U Login Username 4.0 ETB - w M2U Login Pwd 5.0 ETB - w M2U Notice 8.0 ETB - Primary Acc 3. Update section Screen & Field: 15.0 ETB - wo M2U Create Security Image 17.0 ETB - wo M2U Final | 2 | Adella Rakha",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Invalid flow for requirement: 2026-04-15T00:00:00.000Z | 1. Update section Actions: 3.0 ETB - w M2U Login Username 4.0 ETB - w M2U Login Pwd 2. Update section Business Rules: 1.0 ETB - Onboard Landing 1.1 ETB - Onboard Lang 2.0 ETB - Consent 2.1 ETB - DL Consent Drawer 3.0 ETB - w M2U Login Username 4.0 ETB - w M2U Login Pwd 5.0 ETB - w M2U Notice 8.0 ETB - Primary Acc 3. Update section Screen & Field: 15.0 ETB - wo M2U Create Security Image 17.0 ETB - wo M2U Final | 2 | Adella Rakha"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      }
+    ]
+  }
+}

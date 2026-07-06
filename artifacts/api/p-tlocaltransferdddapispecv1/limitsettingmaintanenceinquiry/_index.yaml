@@ -1,0 +1,64 @@
+# Test Case Index
+# p-tlocaltransferdddapispecv1 - LimitSettingMaintanenceInquiry
+# Generated: 2026-07-02T13:25:27.405Z
+---
+feature: p-tlocaltransferdddapispecv1
+apiName: LimitSettingMaintanenceInquiry
+description: Test cases for LimitSettingMaintanenceInquiry endpoint
+totalScenarios: 7
+scenarios:
+  - id: LimitSettingMaintanenceInquiry-001-positive
+    title: GET /maintenance?productCodes=productCodes - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - limitsettingmaintanenceinquiry
+    priority: P1
+  - id: LimitSettingMaintanenceInquiry-002-missing-auth
+    title: GET /maintenance?productCodes=productCodes - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: LimitSettingMaintanenceInquiry-003-invalid-auth
+    title: GET /maintenance?productCodes=productCodes - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: LimitSettingMaintanenceInquiry-004-invalid-content-type
+    title: GET /maintenance?productCodes=productCodes - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: LimitSettingMaintanenceInquiry-005-duplicate-correlation-id
+    title: GET /maintenance?productCodes=productCodes - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: LimitSettingMaintanenceInquiry-006-request-timeout
+    title: GET /maintenance?productCodes=productCodes - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: LimitSettingMaintanenceInquiry-007-empty-request-body
+    title: GET /maintenance?productCodes=productCodes - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-02T13:25:27.402Z'

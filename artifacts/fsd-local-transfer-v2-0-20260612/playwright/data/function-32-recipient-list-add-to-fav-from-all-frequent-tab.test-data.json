@@ -1,0 +1,527 @@
+[
+  {
+    "testCaseId": "FUNCTION_32_RECIPIENT_LIST_ADD_TO_FAV_FROM_ALL_FREQUENT_TAB_TC_003",
+    "featureName": "FUNCTION 32: RECIPIENT LIST - ADD TO FAV (FROM ALL, FREQUENT TAB)",
+    "requirement": "4 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as Favourite 2. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+    "objective": "Verify 4 | status image & status | n/a | image | display | integration | available status: 1. added as favourite 2. update unsuccessful | cms: 1. retrieve image & stautus message for: - successful - unsuccessful",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Add To Favourite List",
+      "Permutation of favourite list selections | Error handling - Failed add to favourite | Adding to Fav (Bene already has nickname)",
+      "4 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as Favourite 2. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+      "5 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 4 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as Favourite 2. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 4 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as Favourite 2. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_32_RECIPIENT_LIST_ADD_TO_FAV_FROM_ALL_FREQUENT_TAB_TC_004",
+    "featureName": "FUNCTION 32: RECIPIENT LIST - ADD TO FAV (FROM ALL, FREQUENT TAB)",
+    "requirement": "5 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time.",
+    "objective": "Verify 5 | date & timestamp | n/a | alphanumeric | display | local server | display date and time.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Add To Favourite List",
+      "Permutation of favourite list selections | Error handling - Failed add to favourite | Adding to Fav (Bene already has nickname)",
+      "4 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as Favourite 2. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+      "5 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 5 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 5 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_32_RECIPIENT_LIST_ADD_TO_FAV_FROM_ALL_FREQUENT_TAB_TC_005",
+    "featureName": "FUNCTION 32: RECIPIENT LIST - ADD TO FAV (FROM ALL, FREQUENT TAB)",
+    "requirement": "6 | Ref ID | N/A | Alphanumeric | Display | Local Server | Display generated Reference ID.",
+    "objective": "Verify 6 | ref id | n/a | alphanumeric | display | local server | display generated reference id.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Add To Favourite List",
+      "Permutation of favourite list selections | Error handling - Failed add to favourite | Adding to Fav (Bene already has nickname)",
+      "4 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as Favourite 2. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+      "5 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 6 | Ref ID | N/A | Alphanumeric | Display | Local Server | Display generated Reference ID.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 6 | Ref ID | N/A | Alphanumeric | Display | Local Server | Display generated Reference ID.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_32_RECIPIENT_LIST_ADD_TO_FAV_FROM_ALL_FREQUENT_TAB_TC_007",
+    "featureName": "FUNCTION 32: RECIPIENT LIST - ADD TO FAV (FROM ALL, FREQUENT TAB)",
+    "requirement": "7 | Account Holder Name | N/A | Alphanumeric | Display | Local Server | Populate from Beneficiary Listing page.",
+    "objective": "Verify 7 | account holder name | n/a | alphanumeric | display | local server | populate from beneficiary listing page.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Add To Favourite List",
+      "Permutation of favourite list selections | Error handling - Failed add to favourite | Adding to Fav (Bene already has nickname)",
+      "4 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as Favourite 2. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+      "5 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 7 | Account Holder Name | N/A | Alphanumeric | Display | Local Server | Populate from Beneficiary Listing page.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 7 | Account Holder Name | N/A | Alphanumeric | Display | Local Server | Populate from Beneficiary Listing page.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_32_RECIPIENT_LIST_ADD_TO_FAV_FROM_ALL_FREQUENT_TAB_TC_008",
+    "featureName": "FUNCTION 32: RECIPIENT LIST - ADD TO FAV (FROM ALL, FREQUENT TAB)",
+    "requirement": "8 | Account Number | N/A | Alphanumeric | Display | Local Server | Populate from Beneficiary Listing page.",
+    "objective": "Verify 8 | account number | n/a | alphanumeric | display | local server | populate from beneficiary listing page.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Add To Favourite List",
+      "Permutation of favourite list selections | Error handling - Failed add to favourite | Adding to Fav (Bene already has nickname)",
+      "4 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as Favourite 2. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+      "5 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 8 | Account Number | N/A | Alphanumeric | Display | Local Server | Populate from Beneficiary Listing page.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 8 | Account Number | N/A | Alphanumeric | Display | Local Server | Populate from Beneficiary Listing page.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_32_RECIPIENT_LIST_ADD_TO_FAV_FROM_ALL_FREQUENT_TAB_TC_009",
+    "featureName": "FUNCTION 32: RECIPIENT LIST - ADD TO FAV (FROM ALL, FREQUENT TAB)",
+    "requirement": "9 | Recipient Bank | N/A | Alphanumeric | Display | Local Server | Populate from Beneficiary Listing page.",
+    "objective": "Verify 9 | recipient bank | n/a | alphanumeric | display | local server | populate from beneficiary listing page.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Add To Favourite List",
+      "Permutation of favourite list selections | Error handling - Failed add to favourite | Adding to Fav (Bene already has nickname)",
+      "4 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as Favourite 2. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+      "5 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 9 | Recipient Bank | N/A | Alphanumeric | Display | Local Server | Populate from Beneficiary Listing page.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 9 | Recipient Bank | N/A | Alphanumeric | Display | Local Server | Populate from Beneficiary Listing page.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_32_RECIPIENT_LIST_ADD_TO_FAV_FROM_ALL_FREQUENT_TAB_TC_010",
+    "featureName": "FUNCTION 32: RECIPIENT LIST - ADD TO FAV (FROM ALL, FREQUENT TAB)",
+    "requirement": "10 | Nickname | N/A | Alphanumeric | Display | Local Server | Populate from Beneficiary Listing page (if nickname is available).",
+    "objective": "Verify 10 | nickname | n/a | alphanumeric | display | local server | populate from beneficiary listing page (if nickname is available).",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Add To Favourite List",
+      "Permutation of favourite list selections | Error handling - Failed add to favourite | Adding to Fav (Bene already has nickname)",
+      "4 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as Favourite 2. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+      "5 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 10 | Nickname | N/A | Alphanumeric | Display | Local Server | Populate from Beneficiary Listing page (if nickname is available).",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 10 | Nickname | N/A | Alphanumeric | Display | Local Server | Populate from Beneficiary Listing page (if nickname is available).",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_32_RECIPIENT_LIST_ADD_TO_FAV_FROM_ALL_FREQUENT_TAB_TC_012",
+    "featureName": "FUNCTION 32: RECIPIENT LIST - ADD TO FAV (FROM ALL, FREQUENT TAB)",
+    "requirement": "11 | Transaction Type | N/A | Alphanumeric | Display | Local Server | Display Transaction Type \"Add Favourite\"",
+    "objective": "Verify 11 | transaction type | n/a | alphanumeric | display | local server | display transaction type \"add favourite\"",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Add To Favourite List",
+      "Permutation of favourite list selections | Error handling - Failed add to favourite | Adding to Fav (Bene already has nickname)",
+      "4 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as Favourite 2. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+      "5 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 11 | Transaction Type | N/A | Alphanumeric | Display | Local Server | Display Transaction Type \"Add Favourite\"",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 11 | Transaction Type | N/A | Alphanumeric | Display | Local Server | Display Transaction Type \"Add Favourite\"",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_32_RECIPIENT_LIST_ADD_TO_FAV_FROM_ALL_FREQUENT_TAB_TC_014",
+    "featureName": "FUNCTION 32: RECIPIENT LIST - ADD TO FAV (FROM ALL, FREQUENT TAB)",
+    "requirement": "No. | Action | Description | Integration | Remark",
+    "objective": "Verify no. | action | description | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Add To Favourite List",
+      "Permutation of favourite list selections | Error handling - Failed add to favourite | Adding to Fav (Bene already has nickname)",
+      "4 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as Favourite 2. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+      "5 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Action | Description | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Action | Description | Integration | Remark",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_32_RECIPIENT_LIST_ADD_TO_FAV_FROM_ALL_FREQUENT_TAB_TC_015",
+    "featureName": "FUNCTION 32: RECIPIENT LIST - ADD TO FAV (FROM ALL, FREQUENT TAB)",
+    "requirement": "5 | [Done] button | Upon tapping, system redirects to Transfer Landing Page.",
+    "objective": "Verify 5 | [done] button | upon tapping, system redirects to transfer landing page.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Add To Favourite List",
+      "Permutation of favourite list selections | Error handling - Failed add to favourite | Adding to Fav (Bene already has nickname)",
+      "4 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as Favourite 2. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+      "5 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 5 | [Done] button | Upon tapping, system redirects to Transfer Landing Page.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 5 | [Done] button | Upon tapping, system redirects to Transfer Landing Page.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_32_RECIPIENT_LIST_ADD_TO_FAV_FROM_ALL_FREQUENT_TAB_TC_016",
+    "featureName": "FUNCTION 32: RECIPIENT LIST - ADD TO FAV (FROM ALL, FREQUENT TAB)",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Add To Favourite List",
+      "Permutation of favourite list selections | Error handling - Failed add to favourite | Adding to Fav (Bene already has nickname)",
+      "4 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as Favourite 2. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+      "5 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_32_RECIPIENT_LIST_ADD_TO_FAV_FROM_ALL_FREQUENT_TAB_TC_017",
+    "featureName": "FUNCTION 32: RECIPIENT LIST - ADD TO FAV (FROM ALL, FREQUENT TAB)",
+    "requirement": "No. | Description | Integration | Remark",
+    "objective": "Verify no. | description | integration | remark",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Add To Favourite List",
+      "Permutation of favourite list selections | Error handling - Failed add to favourite | Adding to Fav (Bene already has nickname)",
+      "4 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as Favourite 2. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+      "5 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remark",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remark",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_32_RECIPIENT_LIST_ADD_TO_FAV_FROM_ALL_FREQUENT_TAB_TC_018",
+    "featureName": "FUNCTION 32: RECIPIENT LIST - ADD TO FAV (FROM ALL, FREQUENT TAB)",
+    "requirement": "1 | 1. Long press or tap on 3 dots behaviour, please refer to [Recipient - Add Note] 2. At Select a favourites list drawer, system pre-select Fav or Custom List which the Bene already exist.",
+    "objective": "Verify 1 | 1. long press or tap on 3 dots behaviour, please refer to [recipient - add note] 2. at select a favourites list drawer, system pre-select fav or custom list which the bene already exist.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Add To Favourite List",
+      "Permutation of favourite list selections | Error handling - Failed add to favourite | Adding to Fav (Bene already has nickname)",
+      "4 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as Favourite 2. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+      "5 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | 1. Long press or tap on 3 dots behaviour, please refer to [Recipient - Add Note] 2. At Select a favourites list drawer, system pre-select Fav or Custom List which the Bene already exist.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | 1. Long press or tap on 3 dots behaviour, please refer to [Recipient - Add Note] 2. At Select a favourites list drawer, system pre-select Fav or Custom List which the Bene already exist.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_32_RECIPIENT_LIST_ADD_TO_FAV_FROM_ALL_FREQUENT_TAB_TC_019",
+    "featureName": "FUNCTION 32: RECIPIENT LIST - ADD TO FAV (FROM ALL, FREQUENT TAB)",
+    "requirement": "2 | 1. Upon tapping Add to favourite, to display a drawer consists of favourite and custom beneficiary category list. a. If the number of tab list is less than maximum allowed, system to display the (+) Create new list button. Otherwise, hide (+) Create new list button b. User is able to select multiple Fav & Custom list to add the recipient to. c. User is able to deselect Fav & Custom list by re-tapping the list until the check mark is removed. Note: For Local Transfer, maximum tab list is 8 (including with All, Frequent, Favourite, Own, and Custom).",
+    "objective": "Verify 2 | 1. upon tapping add to favourite, to display a drawer consists of favourite and custom beneficiary category list. a. if the number of tab list is less than maximum allowed, system to display the (+) create new list button. otherwise, hide (+) create new list button b. user is able to select multiple fav & custom list to add the recipient to. c. user is able to deselect fav & custom list by re-tapping the list until the check mark is removed. note: for local transfer, maximum tab list is 8 (including with all, frequent, favourite, own, and custom).",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Add To Favourite List",
+      "Permutation of favourite list selections | Error handling - Failed add to favourite | Adding to Fav (Bene already has nickname)",
+      "4 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as Favourite 2. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+      "5 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | 1. Upon tapping Add to favourite, to display a drawer consists of favourite and custom beneficiary category list. a. If the number of tab list is less than maximum allowed, system to display the (+) Create new list button. Otherwise, hide (+) Create new list button b. User is able to select multiple Fav & Custom list to add the recipient to. c. User is able to deselect Fav & Custom list by re-tapping the list until the check mark is removed. Note: For Local Transfer, maximum tab list is 8 (including with All, Frequent, Favourite, Own, and Custom).",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | 1. Upon tapping Add to favourite, to display a drawer consists of favourite and custom beneficiary category list. a. If the number of tab list is less than maximum allowed, system to display the (+) Create new list button. Otherwise, hide (+) Create new list button b. User is able to select multiple Fav & Custom list to add the recipient to. c. User is able to deselect Fav & Custom list by re-tapping the list until the check mark is removed. Note: For Local Transfer, maximum tab list is 8 (including with All, Frequent, Favourite, Own, and Custom).",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_32_RECIPIENT_LIST_ADD_TO_FAV_FROM_ALL_FREQUENT_TAB_TC_020",
+    "featureName": "FUNCTION 32: RECIPIENT LIST - ADD TO FAV (FROM ALL, FREQUENT TAB)",
+    "requirement": "3 | 1. Upon tapping [Save] button: a. If the beneficiary is added to \"Favourites\" list, S2U is required. b. If the beneficiary is added to Custom list only, S2U is not required. c. Combination of list selection which includes Favourites, S2U is required. d. If beneficiary is already in Favourites and is now added to Custom list, S2U is not required. e. If none of the Fav or Custom list is selected, display toastbar error message \"Please select an option to proceed.\" 2. For adding to favourites/custom list: a. If action requires S2U, display Status End Screen as a result. b. If action does not require S2U, display toastbar message. For successful addition, system displays \"List added.\" c. Combination of favourite and custom add to list will always result Status End screen as this requires S2U authorisation. 3. For successful attempt: - recipient will be added to the selected Fav/Custom tabs 4. For unsuccessful attempt: - If S2U required and failed to save, display Update unsuccessful screen. - If S2U is not required and failed to save, display toastbar error message \"Service temporarily unavailable\". Notes: - M2U/RMBP Favourite List will be synced with NGA Favourites list and displayed in NGA. (One way sync from M2U/RMBP to NGA - for Add Favourite only. No sync from M2U/RMBP Delete Fav, and no sync from NGA to M2U/RMBP) | IAM: 1. S2U Auth & status ECLIPSE: Update favourites lis twith the recipient selected",
+    "objective": "Verify 3 | 1. upon tapping [save] button: a. if the beneficiary is added to \"favourites\" list, s2u is required. b. if the beneficiary is added to custom list only, s2u is not required. c. combination of list selection which includes favourites, s2u is required. d. if beneficiary is already in favourites and is now added to custom list, s2u is not required. e. if none of the fav or custom list is selected, display toastbar error message \"please select an option to proceed.\" 2. for adding to favourites/custom list: a. if action requires s2u, display status end screen as a result. b. if action does not require s2u, display toastbar message. for successful addition, system displays \"list added.\" c. combination of favourite and custom add to list will always result status end screen as this requires s2u authorisation. 3. for successful attempt: - recipient will be added to the selected fav/custom tabs 4. for unsuccessful attempt: - if s2u required and failed to save, display update unsuccessful screen. - if s2u is not required and failed to save, display toastbar error message \"service temporarily unavailable\". notes: - m2u/rmbp favourite list will be synced with nga favourites list and displayed in nga. (one way sync from m2u/rmbp to nga - for add favourite only. no sync from m2u/rmbp delete fav, and no sync from nga to m2u/rmbp) | iam: 1. s2u auth & status eclipse: update favourites lis twith the recipient selected",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Add To Favourite List",
+      "Permutation of favourite list selections | Error handling - Failed add to favourite | Adding to Fav (Bene already has nickname)",
+      "4 | Status Image & Status | N/A | Image | Display | Integration | Available status: 1. Added as Favourite 2. Update unsuccessful | CMS: 1. Retrieve image & stautus message for: - Successful - Unsuccessful",
+      "5 | Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display date and time."
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 3 | 1. Upon tapping [Save] button: a. If the beneficiary is added to \"Favourites\" list, S2U is required. b. If the beneficiary is added to Custom list only, S2U is not required. c. Combination of list selection which includes Favourites, S2U is required. d. If beneficiary is already in Favourites and is now added to Custom list, S2U is not required. e. If none of the Fav or Custom list is selected, display toastbar error message \"Please select an option to proceed.\" 2. For adding to favourites/custom list: a. If action requires S2U, display Status End Screen as a result. b. If action does not require S2U, display toastbar message. For successful addition, system displays \"List added.\" c. Combination of favourite and custom add to list will always result Status End screen as this requires S2U authorisation. 3. For successful attempt: - recipient will be added to the selected Fav/Custom tabs 4. For unsuccessful attempt: - If S2U required and failed to save, display Update unsuccessful screen. - If S2U is not required and failed to save, display toastbar error message \"Service temporarily unavailable\". Notes: - M2U/RMBP Favourite List will be synced with NGA Favourites list and displayed in NGA. (One way sync from M2U/RMBP to NGA - for Add Favourite only. No sync from M2U/RMBP Delete Fav, and no sync from NGA to M2U/RMBP) | IAM: 1. S2U Auth & status ECLIPSE: Update favourites lis twith the recipient selected",
+      "Validate expected behavior using api assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 3 | 1. Upon tapping [Save] button: a. If the beneficiary is added to \"Favourites\" list, S2U is required. b. If the beneficiary is added to Custom list only, S2U is not required. c. Combination of list selection which includes Favourites, S2U is required. d. If beneficiary is already in Favourites and is now added to Custom list, S2U is not required. e. If none of the Fav or Custom list is selected, display toastbar error message \"Please select an option to proceed.\" 2. For adding to favourites/custom list: a. If action requires S2U, display Status End Screen as a result. b. If action does not require S2U, display toastbar message. For successful addition, system displays \"List added.\" c. Combination of favourite and custom add to list will always result Status End screen as this requires S2U authorisation. 3. For successful attempt: - recipient will be added to the selected Fav/Custom tabs 4. For unsuccessful attempt: - If S2U required and failed to save, display Update unsuccessful screen. - If S2U is not required and failed to save, display toastbar error message \"Service temporarily unavailable\". Notes: - M2U/RMBP Favourite List will be synced with NGA Favourites list and displayed in NGA. (One way sync from M2U/RMBP to NGA - for Add Favourite only. No sync from M2U/RMBP Delete Fav, and no sync from NGA to M2U/RMBP) | IAM: 1. S2U Auth & status ECLIPSE: Update favourites lis twith the recipient selected",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "api",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  }
+]

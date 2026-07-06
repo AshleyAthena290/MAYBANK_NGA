@@ -1,0 +1,90 @@
+# BDD Test Case - p-tlocaltransferdddapispecv1
+# Generated for: POST /pre-check - Duplicate Correlation ID
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: IntraPreMonetaryCheck-005-duplicate-correlation-id
+title: POST /pre-check - Duplicate Correlation ID
+feature: p-tlocaltransferdddapispecv1
+description: Same request with duplicate correlation ID should be idempotent
+tags:
+  - edge-case
+  - idempotency
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+  - First request with correlation ID has been processed
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/intrabank/v1/ext/pre-check
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/intrabank/v1/ext/pre-check
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: duplicate-correlation-123
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    transferType: <value>
+    creditAccountBankCode: <value>
+    creditAccountNo: <value>
+    ? "{\n  \"transferType\": \"THIRD_PARTY_TRANSFER\",     \n  \"creditAccountBankCode\": \"MBB\",\n  \"creditAccountNo\": \"1234567890\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: 'Null'
+    data: Object
+    preCheckId: String
+    transferType: String
+    creditAccount: Object
+    creditAccountNo: String
+    creditAccountType: String
+    creditAccountName: String
+    creditAccountBankCode: String
+    creditAccountCurrency: String
+    isFavourite: Boolean
+    limits: Array<Object>
+    productCode: String
+    dailyLimit: Integer
+    dailyLimitRemaining: Integer
+    limitCurrency: String
+    error: 'Null'
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 (or 202 for idempotent)
+    type: custom
+  - description: Same response as first request
+    type: custom
+  - description: No duplicate processing occurred
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: IntraPreMonetaryCheck
+  sourceRows: ''
+  apiSpecFile: IntraPreMonetaryCheck

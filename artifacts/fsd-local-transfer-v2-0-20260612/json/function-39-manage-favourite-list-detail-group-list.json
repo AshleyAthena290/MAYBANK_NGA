@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.533Z",
+  "featureId": "function-39-manage-favourite-list-detail-group-list",
+  "featureName": "FUNCTION 39: MANAGE FAVOURITE LIST - DETAIL GROUP LIST",
+  "sourceType": "FSD",
+  "content": {
+    "featureName": "FUNCTION 39: MANAGE FAVOURITE LIST - DETAIL GROUP LIST",
+    "description": "",
+    "flow": [],
+    "uiElements": [
+      "Manage Favourites List - Detail Group list | Manage Favourites List - Detail Group list (Empty) | Manage Custom List - Detail Group List"
+    ],
+    "validationRules": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "businessRules": [
+      "No. | Description | Integration | Remarks",
+      "1 | Favourites Listing: 1. Display beneficiaries in Favouritess, sorted in ascending order (A-Z, 0-9) in the below order: - Beneficiary Name - Beneficiary Bank Name - Account Number 2. If the recipient list is not empty, [Edit] option will be displayed. Otherwise hide. 3. Lazy load is available | ECLIPSE: 1. Retrieve Fav beneficiary list with sorting order specified, & pagination.",
+      "2 | Custom Listing: 1. Display beneficiaries in selected Custom list, sorted in ascending order (A-Z, 0-9) in the below order: - Beneficiary Name - Beneficiary Bank Name - Account Number 2. If the recipient list is not empty, [Edit] option will be displayed. Otherwise hide. 3. Lazy load is available | ECLIPSE: 1. Retrieve Custom list with sorting order specified, & pagination."
+    ],
+    "apis": [],
+    "dependencies": [],
+    "errorMessages": [],
+    "navigation": [],
+    "remarks": []
+  },
+  "chunks": [
+    {
+      "section": "uiElements",
+      "content": "Manage Favourites List - Detail Group list | Manage Favourites List - Detail Group list (Empty) | Manage Custom List - Detail Group List",
+      "tokensHint": 29
+    },
+    {
+      "section": "validationRules",
+      "content": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "tokensHint": 23
+    },
+    {
+      "section": "businessRules",
+      "content": "No. | Description | Integration | Remarks\n1 | Favourites Listing: 1. Display beneficiaries in Favouritess, sorted in ascending order (A-Z, 0-9) in the below order: - Beneficiary Name - Beneficiary Bank Name - Account Number 2. If the recipient list is not empty, [Edit] option will be displayed. Otherwise hide. 3. Lazy load is available | ECLIPSE: 1. Retrieve Fav beneficiary list with sorting order specified, & pagination.\n2 | Custom Listing: 1. Display beneficiaries in selected Custom list, sorted in ascending order (A-Z, 0-9) in the below order: - Beneficiary Name - Beneficiary Bank Name - Account Number 2. If the recipient list is not empty, [Edit] option will be displayed. Otherwise hide. 3. Lazy load is available | ECLIPSE: 1. Retrieve Custom list with sorting order specified, & pagination.",
+      "tokensHint": 159
+    }
+  ],
+  "retrievalHints": {
+    "keywords": [
+      "function",
+      "manage",
+      "favourite",
+      "list",
+      "detail",
+      "group",
+      "favourites",
+      "empty",
+      "custom",
+      "field",
+      "mandatory",
+      "data",
+      "type",
+      "format",
+      "source",
+      "validation",
+      "integration",
+      "remarks",
+      "description",
+      "listing",
+      "display",
+      "beneficiaries",
+      "favouritess",
+      "sorted",
+      "ascending",
+      "order",
+      "the",
+      "below",
+      "beneficiary",
+      "name",
+      "bank",
+      "account",
+      "number",
+      "recipient",
+      "not",
+      "edit",
+      "option",
+      "will",
+      "displayed",
+      "otherwise",
+      "hide",
+      "lazy",
+      "load",
+      "available",
+      "eclipse",
+      "retrieve",
+      "fav",
+      "with",
+      "sorting",
+      "specified",
+      "pagination",
+      "selected"
+    ],
+    "hasApis": false,
+    "hasValidations": true,
+    "hasBusinessRules": true
+  }
+}

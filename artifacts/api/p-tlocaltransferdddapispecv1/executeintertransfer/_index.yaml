@@ -1,0 +1,64 @@
+# Test Case Index
+# p-tlocaltransferdddapispecv1 - ExecuteInterTransfer
+# Generated: 2026-07-02T13:23:53.595Z
+---
+feature: p-tlocaltransferdddapispecv1
+apiName: ExecuteInterTransfer
+description: Test cases for ExecuteInterTransfer endpoint
+totalScenarios: 7
+scenarios:
+  - id: ExecuteInterTransfer-001-positive
+    title: POST /transfers - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - executeintertransfer
+    priority: P1
+  - id: ExecuteInterTransfer-002-missing-auth
+    title: POST /transfers - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: ExecuteInterTransfer-003-invalid-auth
+    title: POST /transfers - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: ExecuteInterTransfer-004-invalid-content-type
+    title: POST /transfers - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: ExecuteInterTransfer-005-duplicate-correlation-id
+    title: POST /transfers - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: ExecuteInterTransfer-006-request-timeout
+    title: POST /transfers - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: ExecuteInterTransfer-007-empty-request-body
+    title: POST /transfers - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-02T13:23:53.593Z'

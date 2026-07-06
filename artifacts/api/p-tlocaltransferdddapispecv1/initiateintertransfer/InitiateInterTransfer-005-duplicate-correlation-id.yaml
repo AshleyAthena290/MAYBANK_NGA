@@ -1,0 +1,108 @@
+# BDD Test Case - p-tlocaltransferdddapispecv1
+# Generated for: POST /initiate - Duplicate Correlation ID
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: InitiateInterTransfer-005-duplicate-correlation-id
+title: POST /initiate - Duplicate Correlation ID
+feature: p-tlocaltransferdddapispecv1
+description: Same request with duplicate correlation ID should be idempotent
+tags:
+  - edge-case
+  - idempotency
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+  - First request with correlation ID has been processed
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/ext/initiate
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/ext/initiate
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: duplicate-correlation-123
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    preCheckId: <value>
+    transferModeCode: <value>
+    debitAccountNo: <value>
+    debitAccountType: <value>
+    debitAccountCurrency: <value>
+    creditAccountBankCode: <value>
+    creditAccountNo: <value>
+    creditAccountType: <value>
+    creditAccountCurrency: <value>
+    debitAmount: <value>
+    creditAmount: <value>
+    feeAmount: <value>
+    feeCurrency: <value>
+    purposeCode: <value>
+    sourceOfFundCode: <value>
+    recipientName: <value>
+    recipientTypeCode: <value>
+    recipientCitizenshipCode: <value>
+    remark: <value>
+    recipientEmail: <value>
+    recipientStatusCode: <value>
+    recipientNationalityCode: <value>
+    recipientCategoryCode: <value>
+    relationshipCode: <value>
+    transactionCategoryCode: <value>
+    transactionDetailCode: <value>
+    additionalDetailRemark: <value>
+    schedule: <value>
+    frequencyCode: <value>
+    startDate: <value>
+    endDate: <value>
+    ? "{\n  \"preCheckId\": \"PC_202605150001\",\n  \"transferModeCode\": \"BISKN\",\n  \"debitAccountNo\": \"1234567890\",\n  \"debitAccountType\": \"SA\",\n  \"debitAccountCurrency\": \"IDR\",\n  \"creditAccountBankCode\": \"BCA\",\n  \"creditAccountNo\": \"9876543210\",\n  \"creditAccountType\": \"SA\",\n  \"creditAccountCurrency\": \"IDR\",\n  \"debitAmount\": 150000.00,\n  \"creditAmount\": 150000.00,\n  \"feeAmount\": 2900.00,\n  \"feeCurrency\": \"IDR\",\n  \"purposeCode\": \"PAYMENT\",\n  \"sourceOfFundCode\": \"SALARY\",\n  \"recipientName\": \"Irfan Zulkifli\",\n  \"recipientTypeCode\": \"INDIVIDUAL\",\n  \"recipientCitizenshipCode\": \"NON_CITIZEN\",\n  \"remark\": \"Monthly support\",\n  \"recipientEmail\": \"recipient@gmail.com\",\n  \"recipientStatusCode\": \"SENDER_NOT_RECIPIENT\",\n  \"recipientNationalityCode\": \"MY\",\n  \"recipientCategoryCode\": \"INDIVIDUAL\",\n  \"relationshipCode\": \"NON_AFFILIATED\",\n  \"transactionCategoryCode\": \"PENGHASILAN_PENGELUARAN\",\n  \"transactionDetailCode\": \"TD001\",\n  \"additionalDetailRemark\": \"Untuk kebutuhan keluarga\",\n  \"schedule\": {\n    \"frequencyCode\": \"WEEKLY\", \n    \"startDate\": \"2026-05-01\",\n    \"endDate\": \"2026-08-01\"\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: 'Null'
+    data: Object
+    transactionRefId: String
+    paymentOrderId: String
+    transactionStatus: String
+    createdAt: String
+    error: 'Null'
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 (or 202 for idempotent)
+    type: custom
+  - description: Same response as first request
+    type: custom
+  - description: No duplicate processing occurred
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InitiateInterTransfer
+  sourceRows: ''
+  apiSpecFile: InitiateInterTransfer

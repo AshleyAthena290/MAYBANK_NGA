@@ -1,0 +1,134 @@
+import { test, expect } from "@playwright/test";
+import { buildApiHeaders, assertA11yStub, assertVisualStub } from "../helpers/assertions";
+import { Function1TransferLandingPagePage } from "../page-objects/function-1-transfer-landing-page.page";
+
+test.describe("FUNCTION 1: TRANSFER LANDING PAGE", () => {
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_002 | Transfer Landing Page | Transfer Landing Page - Empty State", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_003 | Transfer Landing Page Permutation - Special Case | Transfer Landing Page - Directional Sticky Header & Scrolling Behaviour | Transfer Landing Page - Search Beneficiary", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_004 | Long/Hold Press Beneficiary | Tap Bene […] icon | Tap [+ Transfer] button for Interbank & Intrabank (Refer to Trf - Input Acct No.)", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_005 | Tap Beneficiary from list (Refer to Trf - Input Amt) | Own Trf - IF selected Source Account is the Transfer To account | Own Trf - IF selected Transfer To account is the same as primary account/source account | Tap Beneficiary from list - If Bene only has Nickname, also populate Bene Name with Nickname", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_006 | No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_007 | 1 | Title Header | N/A | Alphanumeric | Display | Integration | 1. Display 'Transfer'. | CMS: 1. Retrieve label 'Transfer'.", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_008 | 2 | Three-dots Menu Icon | N/A | Alphanumeric | Icon | Integration | 1. Display 3 dots menu - More Actions drawer. a. Manage scheduled transfers b. Manage limits c. Manage favourite list | CMS: 1. Retrieve 3 dots menu icon 2. Retrieve More Actions menu items: - icon - title - info", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_010 | 4 | Search Bar | N | Alphanumeric | textbox X(100) | Input | 1. Support predictive wildcard search with minimum 2 characters. System to perform search in any of the field below: a. Beneficiary Account Name b. Beneficairy Nickname c. Beneficiary Account Number d. Beneficiary Bank Name 2. Search results will be cleared upon user changes from local to oversea tab, vice versa. | Refer to Business Rules", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_011 | 5 | Beneficiary Category Tabs | N/A | Alphanumeric | Button | Integration | 1. Values: a. All b. Frequent (Default), default regardless if has record. c. Favourites d. Own e. Custom List (Max 4 Custom Lists), only display if defined. Display based on creation sequence. 2. All, Frequent, Favourties & Own tabs are fixed and cannot be edited or removed. 3. Only Custom tabs can be added, edited or removed. Note: Requirement is total up to 8 Tabs are allowed. Hence for Local Transfer, since existing there are 4 tabs, hence custom list allowed is max 4. Whereas for Transfer Overseas, existing Tab are 3 (All, Freq & Fav), so up to 5 custom list are allowed. | Refer to Business Rules", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_012 | 6 | Beneficiary Category Tabs [+] button | N/A | Alphanumeric | Button | Local Server | 1. Displays the [+] IF numbers of total List < 8 2. Hide the [+] IF numbers of total List = 8", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_013 | 7 | Info Banner | N/A | Alphanumeric | Display | Integration | 1. If the Beneficiary Category has record listing, display information of each category tab. Otherwise, not required to display. 2. Not applicable for Custom tabs. | CMS: 1. Retrieve Info Banner a. All b. Frequent c. Own d. Favourite", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_014 | No. | Description | Integration | Remarks", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_016 | 2 | Overseas Transfer 1. Upon selecting the OVERSEAS transfer, system to display and perform all overseas transfer: a. Fast Remittance b. SWIFT This will be covered in Oversea Transfer FSD.", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_017 | 3 | Display criteria for Frequent list are: Upon page load, default beneficiary lists will be set at Frequent tab. a. Beneficiaries of which the transactions are successful for at least 2 times (parameterized in system config per country) in the past 90 days (in Digital Transaction - performed via NGA & RMBP & M2U Web), for all transfer mode EXCEPT 'Transfer to Own'. b. Beneficiaries will be sorted in below order: - most to least transaction frequency, - if same frequency, it will be display in no particular order. c. Maximum number of beneficiaries to display is 10. d. User is able to remove a beneficiary from the list. Details of beneficiary removal will be explained in respective section. e. IF list is empty, system to display 'No frequent transfers yet' with information (refer to screen). NGBO: 1 parameter by Country & Transfer (Local & Overseas) = Frequent successful transaction count (2 times). | ECLIPSE: 1. Retrieve Frequent Beneficiary list with criteria & sorting order specified. CMS: - EMPTY image, message & info. NGBO (P&T): - Retrieve 'display duration' for Frequent (90 days) - parameter by Country & Transfer (Local & Overseas) = Frequent successful transaction count (2 times).", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_018 | 4 | Display criteria for ALL list are: a. Beneficiaries consist combination of: - Successful transactions within the past 90 days via RMBP & M2U Web (applicable for user migrated to NGA). Past 90 days is from the day user onboard to NGA. - All successful transaction in NGA to date. - Virtual Accounts (display for recurring VA only, check isClosedPayment flag to identify if is one off VA or recurring). - EXCLUDE 'Transfer to Own'. - Duplication of beneficiary (unique key as per Biz Rule #8) will be displayed as single entry. (e.g. In the event beneficiary A is already in the bene list, and user initiates a new open transfer to beneficiary A (key in bank name + account number and retrieve same exact name as beneficiary A post-inquiry). Upon successful transaction, the new record will not be added to the bene list as there is already an existing record). b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order: (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in ascending order) (ii) Entity name (iii) Account number c. There is no maximum limit in ALL list. d. Lazy load is applicable. e. User will be able to remove a beneficiary from ALL list. Details of beneficiary removal will be explained in respective section. f. IF list is empty, system to display 'No transfers yet' with information (refer to screen Dashboard - Empty State). | ECLIPSE: 1. Retrieve ALL Beneficiary list with criteria & sorting order specified, and pagination. 2. For Maybank Bene, if VA, retrieve isClosedpayment flag to check if is single use. CMS: - EMPTY image, message & info.", async ({ request }) => {
+    const response = await request.post("/", {
+      headers: buildApiHeaders(),
+      data: {}
+    });
+    expect(response.ok()).toBeTruthy();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_019 | 5 | Display criteria for Favourites are: a. Beneficiaries of which are saved by user including the migrated favourites from RMBP & M2U. - Due to RMBP favourites are maintained per transaction rail, during migration, Unique Key for migration would be Bene Bank, Bene Account No & Bene Name hence migrated list should hv 1 entry based on the Unique Key. the migrated list is allowed to contain multiple entries with the identical account number and bank name. In the event the migrated entries has SAME Nickname with SAME account number & bank name but use DIFFERENT transfer modes, the system is to append the transfer mode to the existing Nickname. Example: - RMBP: -- Nickname: Alfredo; Transfer Mode: BI-FAST. -- Nickname: Alfredo; Transfer Mode: SKN. Upon migration, NGA to display above as 2 separate line items in every bene list: -- Nickname: Alfredo BI-FAST -- Nickname: Alfredo SKN b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order: (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in ascending order) (ii) Entity name (iii) Account number c. There is no maximum limit in favourite beneficiaries. d. Lazy load is available. e. User will be able to remove a beneficiary from Favourite list. Details of beneficiary removal will be explained in respective section. f. IF list is empty, system to display 'No recipients yet' with information (refer to screen Dashboard - Empty State). Info: Current M2U/RMBP has no max limit for favourites. | ECLIPSE: 1. Retrieve Fav Beneficiary list with criteria & sorting order specified, & pagination. CMS: - EMPTY image, message & info.", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_020 | 6 | Display criteria for OWN are: a. Account list includes: - user's own list of Active accounts. - all currencies - accounts list covers Deposit Accounts (CASA, RDN, and Term Savings only). Product Category to be displayed will be based on NGBO config by country. b.Sorting of product categories: Accounts > Cards > TD > Financing > Wealth > Insurance (In ID will be Deposit only) Sorting of individual product within each product category: Product Name in ascending order (A-Z, 0-9) c. IF user has only one active account and since the primary/SoF will be the same account, user will not be able to perform transfer to own account. When user taps on the only listed account, display an toastbar message 'You cannot send money to the same account your're transferring from' (Refer to screen). Note: - Long press is not available for Transfer to Own | ECLIPSE : 1. Retrieve Own Account list with criteria, ability to request by specifying Product Category (Deposit - CASA, RDN, Term Savings, VA; Cards; Financing; Wealth; Insurance). For ID, only Deposit is required. NGBO (P&T): 1. Transfer to Own - retrieve Product Category to be displayed (by country).", async ({ request }) => {
+    const response = await request.post("/", {
+      headers: buildApiHeaders(),
+      data: {}
+    });
+    expect(response.ok()).toBeTruthy();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_021 | 7 | Display criteria for CUSTOM LIST are: a. Beneficiaries will be listed based on the added Favourite - Custom List. b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order: (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in ascending order) (ii) Entity name (iii) Account number c. There is no maximum limit in custom list. d. Lazy load is available. e. User will be able to remove a beneficiary from Custom list. Details of beneficiary removal will be explained in respective section. f. IF list is empty, system to display 'No recipients yet' with information (refer to screen). | ECLIPSE: 1. Retrieve Fav Custom Beneficiary list with criteria & sorting order specified, with pagination. CMS: - EMPTY image, message & info.", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_022 | 8 | Search Bar: 1. Upon tapping the Search bar textbox, system to display phone's keyboard for user to type in. 2. Wildcard search will be performed once the user has entered 2 characters. Searching of beneficiaries include fields below: a. Beneficiaries Account Name b. Beneficiaries Nickname c. Beneficiaries Account Number d. Beneficiaries Bank Name - Search to include alias/tags (to be maintained in NGBO - Bank List). E.g. user types ''Bank Central'' or ''BCA'', system will match and list Bank Central Asia. 2. Search will be performed on selected Local or Overseas tab. Searching includes all beneficiary categories (ALL, Frequent, Favourite, Own, Custom) regardless which beneficiary category tab the user is at. (search whole DB - not just what is displayed on screen). 3. For search result that matched, display list of Beneficiaries in ascending order (A-Z, 0-9) in the below order, without max records. Lazy load is available. - Beneficiary Name - Beneficiary Bank Name - Account Number 4. For search result that returns EMPTY: a. System to display 'We couldn't find a match for <input data>' with information (refer to screen). b. IF contacts are synced with NGA, system to perform search on Contact's First Name & Last Name. Display Section 'Contacts' and the list of contact name & phone number, with Avatar (Contact Name's Initial). c. IF contacts are not synced with NGA, or no contact is matched, system to NOT display 'Contacts' section. 5. At the bottom of screen, display 'Make a new transfer instead?' section, and display icon & Account Number. Tapping on Account Number will navigate to Input Account Number. Note: 1. Unique key for Beneficiary: Bank Name + Account Number + Beneficiary Registered Name. | ECLIPSE: 1. Retrieve list of Bene based on search criteria & sorting order specified, with pagination. Search for all beneficiary categories (ALL, Frequent, Favourite, Own, Custom). 2. Bene Bank name search to include bank alias/tag. Phone Contacts: 1. Contact's First Name & Last Name CMS: - EMPTY image, message & info. - Icon for Account Number", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await assertA11yStub(page);
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_023 | 9 | Navigation after Beneficiary selection: 1. Upon tapping on one of the beneficiary lists in All, Frequent, Favourites, and Custom tab, to navigate to input amount screen 2. Upon tapping on one of the beneficiary lists in Own tab: a. IF beneficiary account selected is not the user's primary account, system to navigate to Input Amount screen. b. IF beneficiary account selected is primary account, and user only has 1 CASA account, system to display toastbar error message 'You cannot send money to the same account you're transferring from.' c. IF beneficiary account selected is primary account, and user has > 1 CASA account: - system to display the Transfer From drawer consists of user's own account list, highligt primary account and display toastbar error message 'You cannot send money to the same source you’re transferring from.' - User won't be able to select SoF account which is same as the receiving account number. Selection will be disabled. | ECLIPSE: 1. Retrieve Account & Info (Nickname, Account Ccy, Current Balance), with Primary Account Flag.", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+  test("FUNCTION_1_TRANSFER_LANDING_PAGE_TC_024 | 10 | Upon long press one of the Beneficiary or tap on 'Beneficiary 3 dots button, system displays: 1. Selected Bene info. 2. Menu options: - Add nickname, if beneficary Nickname is not defined. - Edit nickname, if beneficiary Nickname is defined. - Add to favourite, if beneficiary does not belong to any favourite/custom category. - Edit favourite list, if beneficiary belongs to at least 1 favourite/custom category. - Remove, from Bene Category list (Refer to Tab: Recipient - Remove from tab). 3. UI Display is different for Long Press (overlay) & 3 dots (refer to screens). 4. Long press and 3 dots button are not available for Own Tab due to: - Own account Add/Edit nickname to be done via Account Dashboard. - Add to favourites is not applicable. - Remove is not applicable. | CMS: 1. Menu name & icon for each", async ({ page }) => {
+    await page.goto("/");
+    const pageObject = new Function1TransferLandingPagePage(page);
+    await pageObject.open();
+    await expect(page.locator("body")).toBeVisible();
+  });
+});

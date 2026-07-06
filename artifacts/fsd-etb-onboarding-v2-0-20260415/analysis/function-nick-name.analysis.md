@@ -1,0 +1,57 @@
+# Requirement Analysis - Function: Nick Name
+
+- Generated At: 2026-07-05T13:38:24.846Z
+- Schema Version: 1.0.0
+
+## Missing Requirements
+
+- Feature description is missing.
+- User/system flow is missing.
+- Dependencies and prerequisites are missing.
+- Navigation path details are missing.
+
+## Ambiguities
+
+- None
+
+## Risks
+
+- Error handling behavior is not documented.
+- Input validation behavior is not documented.
+
+## Missing Validations
+
+- No explicit validation rules were found for user input or business constraints.
+- Boundary and negative validation cases are likely under-specified.
+
+## Security Concerns
+
+- Sensitive data is present without explicit masking/encryption requirements.
+
+## API Dependencies
+
+- None
+
+## UI Dependencies
+
+- Nickname
+- Back Button Permutation: Previous screen is Verification
+- Fields
+- No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark
+- 1 | Greeting Title & First Name Display | N/A | Alphanumeric | Display | Integration | 1. Display “Welcome back, {First Name}” - First name will be retrieved from DCIF - full name, system to take the "first name" (before first space) - IF "first name" > 17 char, trim and display first 17 chars. | CMS 1. Retrieve title 2. Retrieve description
+- 2 | Display name | Yes | Alphanumeric | Textbox X(17) | Input | 1. Minimum 3 characters, else display inline error "Minimum 3 characters required." 2. Alphabetical and spaces only (no special characters or numbers allowed), else display inline error "Only alphabets are allowed" 3. Display real-time counter "x/17", max 17 characters. 4. Trim leading and trailing space, >1 space to single space in between characters 5. Format and store display name in title case format.
+- Actions
+- No. | Action | Description | Integration | Remark
+- 1 | [Save & next] Button | If nickname is valid, navigate to App Permission
+- 2 | [<] Button | Upon tapping, navigate to Notice Screen.
+- 3 | [x] Button | Upon tapping, exit & return to Onboarding Landing screen.
+
+## Backend Dependencies
+
+- None
+
+## Testability Notes
+
+- Flow details are missing, reducing scenario traceability.
+- Validation rules are missing, increasing manual interpretation during test design.
+- Specification gaps and ambiguities should be resolved before automation implementation.

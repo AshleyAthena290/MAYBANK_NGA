@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.895Z",
+  "report": {
+    "featureName": "FUNCTION 33: RECIPIENT LIST - EDIT TO FAV (FROM ALL, FAVOURITE, CUSTOM TAB)",
+    "classifications": [
+      {
+        "requirement": "Edit Favourite List",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "Permutation of favourite list selections",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Description | Integration | Remark",
+        "layers": [
+          {
+            "layer": "Integration",
+            "reason": "Requirement depends on component or service interaction."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      },
+      {
+        "requirement": "1 | 1. Upon tapping [Save] button, system to check: a. If the beneficiary is either added to or removed from \"favourite\" list, S2U is required. b. If action does not require S2U and for successful attempt, system displays a toastbar message \"List updated.\" c. If none of the Fav or Custom list is selected, render the [Save] button to [Remove] button, it will trigger Remove function. Refer to Recipient - Add to Fav Business Rules for status screen behaviour. | IAM: 1. S2U Auth status ECLIPSE: Update favourite list(s) with the recipient selected",
+        "layers": [
+          {
+            "layer": "UI",
+            "reason": "Requirement references end-user interface behavior."
+          },
+          {
+            "layer": "Security",
+            "reason": "Requirement includes security or sensitive-data considerations."
+          },
+          {
+            "layer": "AutomationCandidate",
+            "reason": "Requirement has deterministic assertions suitable for automation."
+          }
+        ]
+      }
+    ]
+  }
+}

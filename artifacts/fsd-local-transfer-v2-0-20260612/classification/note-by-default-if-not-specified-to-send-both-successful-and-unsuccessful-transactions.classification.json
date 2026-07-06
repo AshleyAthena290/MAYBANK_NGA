@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.971Z",
+  "report": {
+    "featureName": "Note: By default, if not specified, to send both Successful and Unsuccessful transactions .",
+    "classifications": [
+      {
+        "requirement": "Data Extraction | Supporting Functions",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "No. | Module | Transaction Type | FMS | EDW | Rec7 | BI-FAST to Rec7 | SKN & RTGS to Rec 7 | SFTP | Activity Log (MSS/CCPP) | Transction Tracker (for Analytics) | PFM (Money in/ out) | NGBO | CMS",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "Next Day Extraction (for previous day transactions) | Same Day Extraction (12 Batches) | Same day (1 batch - evening)",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "1 | Local Transfer | Local Transfer (Immediate) - Interbank (BI-FAST, RTOL, BI-SKN, RTGS) | √ | √ BI-FAST only | √ SKN & RTGS",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "2 | Local Transfer | Local Transfer (Immediate) - Own - Intrabank (IBaaS, VA, within Maybank) | √",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "3 | Local Transfer | Manage Scheduled/Recurring: - Add - Cancel | √",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "4 | Local Transfer | Favourite Maintenance - Add, Edit & Remove - Add & Remove from List | √",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "5 | Local Transfer | Update Transaction Category | √",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "6 | Local Transfer | Update Daily Limit | √",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "For scheduled/recurring SKN/RTGS transaction. Current SI requires enhancement to include SKN/RTGS transactions originated from NGA into the existing file. (to Rec7)",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      },
+      {
+        "requirement": "Recurring transactions originating from NGA and executed by the Standing Instruction system need to be reported to FMS by the executing system.",
+        "layers": [
+          {
+            "layer": "Manual",
+            "reason": "Requirement lacks deterministic signals for direct automation."
+          }
+        ]
+      }
+    ]
+  }
+}

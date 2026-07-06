@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.766Z",
+  "report": {
+    "featureName": "FUNCTION 53: TRANSFER SETTINGS - MANAGE LIMITS DETAIL",
+    "missingRequirements": [
+      "Feature description is missing.",
+      "User/system flow is missing.",
+      "Dependencies and prerequisites are missing.",
+      "Navigation path details are missing."
+    ],
+    "ambiguities": [],
+    "risks": [
+      "Error handling behavior is not documented."
+    ],
+    "missingValidations": [],
+    "securityConcerns": [
+      "No direct API security concerns detected from current specification scope."
+    ],
+    "apiDependencies": [],
+    "uiDependencies": [
+      "Manage Limits - INTRABANK | Failed update limit",
+      "5 | Status Image & Status | N/A | Image | Display | Integration | 1. Display Image based on status: a. Successful b. Unsuccessful 2. Display transaction status | CMS 1. Retrieve Image & status: - successful - unsuccessful",
+      "6 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Display transaction date and time.",
+      "7 | Ref ID | N/A | Alphanumeric | Display | Local Server | Display generated Reference ID.",
+      "Limit Info (Applicable ONLY for successful)",
+      "8 | New Limit | N/A | Alphanumeric | Display | Local Server | Populate new user defined limit.",
+      "9 | Limit Type | N/A | Alphanumeric | Display | Local Server | Populate transfer mode from previous screen.",
+      "Transaction Type (Applicable ONLY for unsuccessful)",
+      "10 | Transaction Type | N/A | Alphanumeric | Display | Local Server | Populate transaction type - Manage Limit",
+      "Actions",
+      "No. | Action | Description | Integration | Remarks",
+      "1 | [<] icon | Upon tapping [<] icon, system to navigate to manage limit list screen",
+      "2 | Select new limit selection | Upon tapping, system to populate value to New Limit field.",
+      "3 | [Save] Button | Upon tapping, trigger [A&A] Secure2u authorisation screeen",
+      "4 | [Done] | Upon tapping, navigates to Transfer Limit Dashboard screen."
+    ],
+    "backendDependencies": [],
+    "testability": [
+      "Flow details are missing, reducing scenario traceability.",
+      "Validation rules can drive positive, negative, and boundary test design.",
+      "Specification gaps and ambiguities should be resolved before automation implementation."
+    ]
+  }
+}

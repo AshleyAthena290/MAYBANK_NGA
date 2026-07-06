@@ -1,0 +1,98 @@
+# BDD Test Case - p-tlocaltransferdddapispecv1
+# Generated for: POST /initiate - Duplicate Correlation ID
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: InitiateIntraTransfer-005-duplicate-correlation-id
+title: POST /initiate - Duplicate Correlation ID
+feature: p-tlocaltransferdddapispecv1
+description: Same request with duplicate correlation ID should be idempotent
+tags:
+  - edge-case
+  - idempotency
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+  - First request with correlation ID has been processed
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/intrabank/v1/ext/initiate
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/intrabank/v1/ext/initiate
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: duplicate-correlation-123
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    preCheckId: <value>
+    transferType: <value>
+    debitAccountNo: <value>
+    debitAccountType: <value>
+    debitAccountCurrency: <value>
+    creditAccountNo: <value>
+    creditAccountType: <value>
+    creditAccountBankCode: <value>
+    creditAccountCurrency: <value>
+    debitAmount: <value>
+    creditAmount: <value>
+    remark: <value>
+    recipientEmail: <value>
+    relationshipCode: <value>
+    transactionCategoryCode: <value>
+    transactionDetailCode: <value>
+    additionalDetailRemark: <value>
+    schedule: <value>
+    frequencyCode: <value>
+    startDate: <value>
+    endDate: <value>
+    ? "{\n  \"preCheckId\": \"PC_202605150001\",\n  \"transferType\": \"THIRD_PARTY_TRANSFER\",\n  \"debitAccountNo\": \"1234567890\",\n  \"debitAccountType\": \"SA\",\n  \"debitAccountCurrency\": \"IDR\",\n  \"creditAccountNo\": \"0987654321\",\n  \"creditAccountType\": \"SA\",\n  \"creditAccountBankCode\": \"MBB\",\n  \"creditAccountCurrency\": \"IDR\",\n  \"debitAmount\": 150000.00,\n  \"creditAmount\": 150000.00,\n  \"remark\": \"Monthly support\",\n  \"recipientEmail\": \"recipient@gmail.com\",\n  \"relationshipCode\": \"FRIEND\",\n  \"transactionCategoryCode\": \"PERSONAL\",\n  \"transactionDetailCode\": \"TD001\",\n  \"additionalDetailRemark\" \"Salary\",\n  \"schedule\": {\n    \"frequencyCode\": \"WEEKLY\", \n    \"startDate\": \"2026-05-01\",\n    \"endDate\": \"2026-08-01\"\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: 'Null'
+    data: Object
+    transactionRefId: String
+    paymentOrderId: String
+    transactionStatus: String
+    createdAt: String
+    error: 'Null'
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 (or 202 for idempotent)
+    type: custom
+  - description: Same response as first request
+    type: custom
+  - description: No duplicate processing occurred
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InitiateIntraTransfer
+  sourceRows: ''
+  apiSpecFile: InitiateIntraTransfer

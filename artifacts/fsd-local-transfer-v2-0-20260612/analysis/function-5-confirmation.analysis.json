@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.655Z",
+  "report": {
+    "featureName": "FUNCTION 5: CONFIRMATION",
+    "missingRequirements": [
+      "Feature description is missing.",
+      "User/system flow is missing.",
+      "Dependencies and prerequisites are missing.",
+      "Navigation path details are missing."
+    ],
+    "ambiguities": [],
+    "risks": [],
+    "missingValidations": [],
+    "securityConcerns": [
+      "Sensitive data is present without explicit masking/encryption requirements."
+    ],
+    "apiDependencies": [],
+    "uiDependencies": [
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Confirmation Screen | [INTERBANK] and [INTRABANK] - S2U Authorisation after tapping [Confirm] button.",
+      "[INTERBANK] BI-FAST Confirmation Screen",
+      "[INTERBANK] RTOL Confirmation Screen",
+      "[INTERBANK] BI-SKN (IDR to IDR) Confirmation Screen",
+      "[INTERBANK] RTGS (IDR to IDR) Confirmation Screen",
+      "[INTRABANK] IDR to IDR Confirmation Screen",
+      "[OWN] IDR - IDR Confirmation Screen",
+      "Scheduled/Recurring Confirmation Screen",
+      "SCENARIO 1: Initiate transaction via Transfer Landing Screen, if Beneficiary only has nickname (added manually via Account No), populate & replace with Registered Name.",
+      "SCENARIO 2: Initiate transaction via Transfer Landing Screen on a newly created favourite added by account number. Select BI-SKN. User input Account Holder Name.",
+      "Error Handling - SoF Eligibility & Limit Checking (To revisit term use for Account Bal once confirmed) | Confirmation with Terms & Condition for all Transfer Modes",
+      "[INTRABANK] Confirmation Screen w/ Additional Details",
+      "[INTRABANK] IDR to FCY Confirmation Screen | [INTRABANK] IDR to FCY Confirmation Screen (with GAA) Confirmation Screen | [INTRABANK] IDR to FCY with Special Rate Confirmation Screen | [INTRABANK] FCY to IDR Confirmation Screen (Pending Screen)",
+      "[INTRABANK] Confirmation Screen w/ Additional Details & Underlying Doc"
+    ],
+    "backendDependencies": [],
+    "testability": [
+      "Flow details are missing, reducing scenario traceability.",
+      "Validation rules can drive positive, negative, and boundary test design.",
+      "Specification gaps and ambiguities should be resolved before automation implementation."
+    ]
+  }
+}

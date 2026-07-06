@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-05T13:38:24.698Z",
+  "featureId": "table-of-contents",
+  "featureName": "Table of Contents",
+  "sourceType": "FSD",
+  "content": {
+    "featureName": "Table of Contents",
+    "description": "",
+    "flow": [],
+    "uiElements": [],
+    "validationRules": [],
+    "businessRules": [],
+    "apis": [],
+    "dependencies": [],
+    "errorMessages": [],
+    "navigation": [],
+    "remarks": []
+  },
+  "chunks": [],
+  "retrievalHints": {
+    "keywords": [
+      "table",
+      "contents"
+    ],
+    "hasApis": false,
+    "hasValidations": false,
+    "hasBusinessRules": false
+  }
+}

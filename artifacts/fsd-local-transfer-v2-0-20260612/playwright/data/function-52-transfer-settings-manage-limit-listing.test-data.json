@@ -1,0 +1,412 @@
+[
+  {
+    "testCaseId": "FUNCTION_52_TRANSFER_SETTINGS_MANAGE_LIMIT_LISTING_TC_001",
+    "featureName": "FUNCTION 52: TRANSFER SETTINGS - MANAGE LIMIT LISTING",
+    "requirement": "Entry Point 1 via Transfer Landing Page (PRE-REQUISITE) | Manage Limits List screen",
+    "objective": "Verify entry point 1 via transfer landing page (pre-requisite) | manage limits list screen",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Entry Point 1 via Transfer Landing Page (PRE-REQUISITE) | Manage Limits List screen",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Entry Point 1 via Transfer Landing Page (PRE-REQUISITE) | Manage Limits List screen",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_52_TRANSFER_SETTINGS_MANAGE_LIMIT_LISTING_TC_002",
+    "featureName": "FUNCTION 52: TRANSFER SETTINGS - MANAGE LIMIT LISTING",
+    "requirement": "Entry Point 2 to via Setting Page (PRE-REQUISITE)",
+    "objective": "Verify entry point 2 to via setting page (pre-requisite)",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Entry Point 2 to via Setting Page (PRE-REQUISITE)",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Entry Point 2 to via Setting Page (PRE-REQUISITE)",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_52_TRANSFER_SETTINGS_MANAGE_LIMIT_LISTING_TC_003",
+    "featureName": "FUNCTION 52: TRANSFER SETTINGS - MANAGE LIMIT LISTING",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_52_TRANSFER_SETTINGS_MANAGE_LIMIT_LISTING_TC_004",
+    "featureName": "FUNCTION 52: TRANSFER SETTINGS - MANAGE LIMIT LISTING",
+    "requirement": "1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+    "objective": "Verify 1 | title header | n/a | alphanumeric | display | local server | display \"transfer limit\" as title | cms: 1. retrieve title header. 2. retrieve reminder content cms: 1. to retrieve transfer modes",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_52_TRANSFER_SETTINGS_MANAGE_LIMIT_LISTING_TC_005",
+    "featureName": "FUNCTION 52: TRANSFER SETTINGS - MANAGE LIMIT LISTING",
+    "requirement": "2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+    "objective": "Verify 2 | reminder message | n/a | alphanumeric | display | integration | display reminder message \"you can only update one limit at a time.\" | cms: 1. retrieve title header. 2. retrieve reminder content cms: 1. to retrieve transfer modes",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_52_TRANSFER_SETTINGS_MANAGE_LIMIT_LISTING_TC_006",
+    "featureName": "FUNCTION 52: TRANSFER SETTINGS - MANAGE LIMIT LISTING",
+    "requirement": "3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+    "objective": "Verify 3 | transfer mode selections | n/a | alphanumeric | selection | integration | display selection of transfer modes: a. transfer within maybank b. bi-fast c. transfer online c. bi-skn d. rtgs | cms: 1. retrieve title header. 2. retrieve reminder content cms: 1. to retrieve transfer modes",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+    "priority": "P2",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_52_TRANSFER_SETTINGS_MANAGE_LIMIT_LISTING_TC_008",
+    "featureName": "FUNCTION 52: TRANSFER SETTINGS - MANAGE LIMIT LISTING",
+    "requirement": "No. | Action | Description | Integration | Remarks",
+    "objective": "Verify no. | action | description | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Action | Description | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Action | Description | Integration | Remarks",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_52_TRANSFER_SETTINGS_MANAGE_LIMIT_LISTING_TC_009",
+    "featureName": "FUNCTION 52: TRANSFER SETTINGS - MANAGE LIMIT LISTING",
+    "requirement": "1 | [<] icon | Upon tapping [<] icon, system to perform: 1. For Entry Point 1 navigates to Transfer Landing Page . 2. For Entry Point 2 navigates to Settings Page.",
+    "objective": "Verify 1 | [<] icon | upon tapping [<] icon, system to perform: 1. for entry point 1 navigates to transfer landing page . 2. for entry point 2 navigates to settings page.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | [<] icon | Upon tapping [<] icon, system to perform: 1. For Entry Point 1 navigates to Transfer Landing Page . 2. For Entry Point 2 navigates to Settings Page.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | [<] icon | Upon tapping [<] icon, system to perform: 1. For Entry Point 1 navigates to Transfer Landing Page . 2. For Entry Point 2 navigates to Settings Page.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_52_TRANSFER_SETTINGS_MANAGE_LIMIT_LISTING_TC_010",
+    "featureName": "FUNCTION 52: TRANSFER SETTINGS - MANAGE LIMIT LISTING",
+    "requirement": "2 | Menu Transfer Mode | Upon tapping option, navigate to Manage Limit Details screen per Transfer Mode.",
+    "objective": "Verify 2 | menu transfer mode | upon tapping option, navigate to manage limit details screen per transfer mode.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | Menu Transfer Mode | Upon tapping option, navigate to Manage Limit Details screen per Transfer Mode.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | Menu Transfer Mode | Upon tapping option, navigate to Manage Limit Details screen per Transfer Mode.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: Actions"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_52_TRANSFER_SETTINGS_MANAGE_LIMIT_LISTING_TC_011",
+    "featureName": "FUNCTION 52: TRANSFER SETTINGS - MANAGE LIMIT LISTING",
+    "requirement": "No. | Description | Integration | Remarks",
+    "objective": "Verify no. | description | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Actions"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remarks",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Invalid input violating rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Invalid input violating rule: Actions"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Boundary value around rule: 1 | Title header | N/A | Alphanumeric | Display | Local Server | Display \"Transfer limit\" as title | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 2 | Reminder message | N/A | Alphanumeric | Display | Integration | Display reminder message \"You can only update one limit at a time.\" | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: 3 | Transfer mode selections | N/A | Alphanumeric | Selection | Integration | Display selection of transfer modes: a. Transfer Within Maybank b. BI-FAST c. Transfer Online c. BI-SKN d. RTGS | CMS: 1. Retrieve title header. 2. Retrieve reminder content CMS: 1. To retrieve transfer modes",
+      "Boundary value around rule: Actions"
+    ]
+  }
+]

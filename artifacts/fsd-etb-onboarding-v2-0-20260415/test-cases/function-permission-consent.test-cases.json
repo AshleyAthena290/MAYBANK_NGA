@@ -1,0 +1,723 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-05T13:38:25.087Z",
+  "bundle": {
+    "featureName": "Function: Permission/Consent",
+    "testCases": [
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_001",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "Permission/Consent",
+        "objective": "Verify permission/consent",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Permission/Consent",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Permission/Consent",
+        "priority": "P1",
+        "layer": "Security",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_002",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "No. | Description | Integration | Remark",
+        "objective": "Verify no. | description | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Description | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Description | Integration | Remark",
+        "priority": "P2",
+        "layer": "Integration",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_003",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "1 | Consent: 1. One standard consent title, content & acknowledgement text for all ETB Onboarding (incl CASA & CC, with or without M2U ID). 2. When tap on \"I agree & consent\" button, consent will be \"cached\" on version binding with device ID, but will only be saved and stored upon successful S2U setup. - Stored consent will be one data entry per document, single tick mark covers multiple documents (e.g., one tick mark for 4 documents results in 4 stored entries, each tagged with its version and type). | MCM 1. Temporary store customer consent (by doc entry)",
+        "objective": "Verify 1 | consent: 1. one standard consent title, content & acknowledgement text for all etb onboarding (incl casa & cc, with or without m2u id). 2. when tap on \"i agree & consent\" button, consent will be \"cached\" on version binding with device id, but will only be saved and stored upon successful s2u setup. - stored consent will be one data entry per document, single tick mark covers multiple documents (e.g., one tick mark for 4 documents results in 4 stored entries, each tagged with its version and type). | mcm 1. temporary store customer consent (by doc entry)",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | Consent: 1. One standard consent title, content & acknowledgement text for all ETB Onboarding (incl CASA & CC, with or without M2U ID). 2. When tap on \"I agree & consent\" button, consent will be \"cached\" on version binding with device ID, but will only be saved and stored upon successful S2U setup. - Stored consent will be one data entry per document, single tick mark covers multiple documents (e.g., one tick mark for 4 documents results in 4 stored entries, each tagged with its version and type). | MCM 1. Temporary store customer consent (by doc entry)",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | Consent: 1. One standard consent title, content & acknowledgement text for all ETB Onboarding (incl CASA & CC, with or without M2U ID). 2. When tap on \"I agree & consent\" button, consent will be \"cached\" on version binding with device ID, but will only be saved and stored upon successful S2U setup. - Stored consent will be one data entry per document, single tick mark covers multiple documents (e.g., one tick mark for 4 documents results in 4 stored entries, each tagged with its version and type). | MCM 1. Temporary store customer consent (by doc entry)",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_004",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "2 | Drop-off: 1. If user drops off after SMS OTP but before S2U setup/verification, on re-launch they will be redirected to the Onboarding Landing screen, followed by the Consent screen. 2. If user drops off after completing S2U verification, Consent screen will be bypassed and user will be redirected directly to the [App Dashboard] - Pre-Login screen.",
+        "objective": "Verify 2 | drop-off: 1. if user drops off after sms otp but before s2u setup/verification, on re-launch they will be redirected to the onboarding landing screen, followed by the consent screen. 2. if user drops off after completing s2u verification, consent screen will be bypassed and user will be redirected directly to the [app dashboard] - pre-login screen.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | Drop-off: 1. If user drops off after SMS OTP but before S2U setup/verification, on re-launch they will be redirected to the Onboarding Landing screen, followed by the Consent screen. 2. If user drops off after completing S2U verification, Consent screen will be bypassed and user will be redirected directly to the [App Dashboard] - Pre-Login screen.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | Drop-off: 1. If user drops off after SMS OTP but before S2U setup/verification, on re-launch they will be redirected to the Onboarding Landing screen, followed by the Consent screen. 2. If user drops off after completing S2U verification, Consent screen will be bypassed and user will be redirected directly to the [App Dashboard] - Pre-Login screen.",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_005",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "3 | Error Handling: 1. When tap on \"I agree & consent\" button: (i) Checkbox is unticked, display inline error \"Required selection\"",
+        "objective": "Verify 3 | error handling: 1. when tap on \"i agree & consent\" button: (i) checkbox is unticked, display inline error \"required selection\"",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 3 | Error Handling: 1. When tap on \"I agree & consent\" button: (i) Checkbox is unticked, display inline error \"Required selection\"",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 3 | Error Handling: 1. When tap on \"I agree & consent\" button: (i) Checkbox is unticked, display inline error \"Required selection\"",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_006",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "4 | Applicable to anyone who has installed the app but has not onboarded/binded.",
+        "objective": "Verify 4 | applicable to anyone who has installed the app but has not onboarded/binded.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 4 | Applicable to anyone who has installed the app but has not onboarded/binded.",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 4 | Applicable to anyone who has installed the app but has not onboarded/binded.",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_007",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "Fields",
+        "objective": "Verify fields",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Fields",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Fields",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_008",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+        "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+        "priority": "P1",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_009",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+        "objective": "Verify 1 | maybank logo & name | n/a | alphanumeric | display | integration | display maybank logo & name image | cms: 1. retrieve maybank logo & name image",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+        "priority": "P2",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_010",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+        "objective": "Verify 1 | consent title | n/a | alphanumeric | display | integration | 1. retrieve & display \"select acknowledgment and consent\" | cms: 1. retrieve consent title based on language",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+        "priority": "P2",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_011",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header",
+        "objective": "Verify 2 | consent content | n/a | alphanumeric | display | integration | 1. retrieve & display acknowledgment content in one scrollable page. 2. for info: to allow jumping to respective section of the content upon clicking on hyperlink in acknowledgement text, cms is to maintain section header (anchor) with identifier. | cms: 1. retrieve consent content based on language, with identifier for section header",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header",
+        "priority": "P2",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_012",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "3 | Acknowledgement Text | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgement text. 2, Clickable Content for: a. Pernyataaan Penggunaan Data Maybank 2U ID b. Syarat dan Ketentuan Maybank2u ID c. Pemberitahuan Privasi Maybank2u ID. | CMS: 1. Retrieve Ack Text based on language, with clickable hyperlink",
+        "objective": "Verify 3 | acknowledgement text | n/a | alphanumeric | display | integration | 1. retrieve & display acknowledgement text. 2, clickable content for: a. pernyataaan penggunaan data maybank 2u id b. syarat dan ketentuan maybank2u id c. pemberitahuan privasi maybank2u id. | cms: 1. retrieve ack text based on language, with clickable hyperlink",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 3 | Acknowledgement Text | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgement text. 2, Clickable Content for: a. Pernyataaan Penggunaan Data Maybank 2U ID b. Syarat dan Ketentuan Maybank2u ID c. Pemberitahuan Privasi Maybank2u ID. | CMS: 1. Retrieve Ack Text based on language, with clickable hyperlink",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 3 | Acknowledgement Text | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgement text. 2, Clickable Content for: a. Pernyataaan Penggunaan Data Maybank 2U ID b. Syarat dan Ketentuan Maybank2u ID c. Pemberitahuan Privasi Maybank2u ID. | CMS: 1. Retrieve Ack Text based on language, with clickable hyperlink",
+        "priority": "P2",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_013",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "4 | Acknowledgement Checkbox | Yes | Alphanumeric | Checkbox | Input | 1. Checkbox required, else display inline error \"Required selection.\"",
+        "objective": "Verify 4 | acknowledgement checkbox | yes | alphanumeric | checkbox | input | 1. checkbox required, else display inline error \"required selection.\"",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 4 | Acknowledgement Checkbox | Yes | Alphanumeric | Checkbox | Input | 1. Checkbox required, else display inline error \"Required selection.\"",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 4 | Acknowledgement Checkbox | Yes | Alphanumeric | Checkbox | Input | 1. Checkbox required, else display inline error \"Required selection.\"",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_014",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "Actions",
+        "objective": "Verify actions",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: Actions",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: Actions",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_015",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "No. | Action | Description | Integration | Remark",
+        "objective": "Verify no. | action | description | integration | remark",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: No. | Action | Description | Integration | Remark",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: No. | Action | Description | Integration | Remark",
+        "priority": "P2",
+        "layer": "Integration",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_016",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "1 | [Review] Button | Upon tapping, move to next fold of consent. Remove \"Review\" button when reach the end of consent page.",
+        "objective": "Verify 1 | [review] button | upon tapping, move to next fold of consent. remove \"review\" button when reach the end of consent page.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 1 | [Review] Button | Upon tapping, move to next fold of consent. Remove \"Review\" button when reach the end of consent page.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 1 | [Review] Button | Upon tapping, move to next fold of consent. Remove \"Review\" button when reach the end of consent page.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_017",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "2 | Acknowledgement Checkbox | Upon ticking checkbox, select/deselect checkbox",
+        "objective": "Verify 2 | acknowledgement checkbox | upon ticking checkbox, select/deselect checkbox",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 2 | Acknowledgement Checkbox | Upon ticking checkbox, select/deselect checkbox",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 2 | Acknowledgement Checkbox | Upon ticking checkbox, select/deselect checkbox",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_018",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "3 | Acknowledgement Hyperlink | Upon tapping on each of the hyperlink, app to jump to the selected section in Consent content.",
+        "objective": "Verify 3 | acknowledgement hyperlink | upon tapping on each of the hyperlink, app to jump to the selected section in consent content.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 3 | Acknowledgement Hyperlink | Upon tapping on each of the hyperlink, app to jump to the selected section in Consent content.",
+          "Validate expected behavior using manual assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 3 | Acknowledgement Hyperlink | Upon tapping on each of the hyperlink, app to jump to the selected section in Consent content.",
+        "priority": "P3",
+        "layer": "Manual",
+        "automationCandidate": false,
+        "automationType": "none",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_019",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "4 | [I agree & consent] Button | Upon tapping, Navigate to Login Screen.",
+        "objective": "Verify 4 | [i agree & consent] button | upon tapping, navigate to login screen.",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 4 | [I agree & consent] Button | Upon tapping, Navigate to Login Screen.",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 4 | [I agree & consent] Button | Upon tapping, Navigate to Login Screen.",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_020",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "5 | Download Icon | Upon tapping, display Download Consent drawer",
+        "objective": "Verify 5 | download icon | upon tapping, display download consent drawer",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 5 | Download Icon | Upon tapping, display Download Consent drawer",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 5 | Download Icon | Upon tapping, display Download Consent drawer",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      },
+      {
+        "testCaseId": "FUNCTION_PERMISSION_CONSENT_TC_021",
+        "featureName": "Function: Permission/Consent",
+        "requirement": "6 | [<] Icon | Upon tapping, navigate back to Onboarding Landing screen",
+        "objective": "Verify 6 | [<] icon | upon tapping, navigate back to onboarding landing screen",
+        "preconditions": [
+          "Application is deployed and accessible"
+        ],
+        "testData": [
+          "Permission/Consent"
+        ],
+        "steps": [
+          "Prepare test data and environment",
+          "Perform user action in UI for requirement: 6 | [<] Icon | Upon tapping, navigate back to Onboarding Landing screen",
+          "Validate expected behavior using ui assertions"
+        ],
+        "expectedResult": "System satisfies requirement: 6 | [<] Icon | Upon tapping, navigate back to Onboarding Landing screen",
+        "priority": "P3",
+        "layer": "UI",
+        "automationCandidate": true,
+        "automationType": "ui",
+        "dependencies": [],
+        "negativeScenarios": [
+          "Trigger error path: Fields",
+          "Trigger error path: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remark",
+          "Trigger error path: 1 | Maybank logo & Name | N/A | Alphanumeric | Display | Integration | Display Maybank Logo & Name image | CMS: 1. Retrieve maybank Logo & Name image",
+          "Trigger error path: 1 | Consent Title | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display \"Select Acknowledgment and Consent\" | CMS: 1. Retrieve consent title based on language",
+          "Trigger error path: 2 | Consent content | N/A | Alphanumeric | Display | Integration | 1. Retrieve & display Acknowledgment content in one scrollable page. 2. For info: To allow jumping to respective section of the content upon clicking on hyperlink in Acknowledgement text, CMS is to maintain section header (anchor) with identifier. | CMS: 1. Retrieve consent content based on language, with identifier for section header"
+        ],
+        "edgeCases": [
+          "Null and empty input handling",
+          "Maximum supported input length"
+        ]
+      }
+    ]
+  }
+}

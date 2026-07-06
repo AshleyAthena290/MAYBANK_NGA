@@ -1,0 +1,290 @@
+[
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_INTRODUCTION_ENTRY_POINT_TC_002",
+    "featureName": "FUNCTION 1: TRANSFER INTRODUCTION/ENTRY POINT",
+    "requirement": "Post-Login State - Initiate Transfer (Quick Action) FIRST TIMER | Post-Login State - Initiate Transfer (Menu) FIRST TIMER | Post-Login State - Initiate Transfer (Quick Action) NON-FIRST TIMER | Post-Login State - Initiate Transfer (Menu) NON-FIRST TIMER",
+    "objective": "Verify post-login state - initiate transfer (quick action) first timer | post-login state - initiate transfer (menu) first timer | post-login state - initiate transfer (quick action) non-first timer | post-login state - initiate transfer (menu) non-first timer",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Pre-Login State - Initiate Transfer (Quick Action) | Pre-Login State - Initiate Transfer (Menu)",
+      "Post-Login State - Initiate Transfer (Quick Action) FIRST TIMER | Post-Login State - Initiate Transfer (Menu) FIRST TIMER | Post-Login State - Initiate Transfer (Quick Action) NON-FIRST TIMER | Post-Login State - Initiate Transfer (Menu) NON-FIRST TIMER",
+      "Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+      "CASA Account Details - Transfer Landing Page"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Send API request for requirement: Post-Login State - Initiate Transfer (Quick Action) FIRST TIMER | Post-Login State - Initiate Transfer (Menu) FIRST TIMER | Post-Login State - Initiate Transfer (Quick Action) NON-FIRST TIMER | Post-Login State - Initiate Transfer (Menu) NON-FIRST TIMER",
+      "Validate expected behavior using api assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Post-Login State - Initiate Transfer (Quick Action) FIRST TIMER | Post-Login State - Initiate Transfer (Menu) FIRST TIMER | Post-Login State - Initiate Transfer (Quick Action) NON-FIRST TIMER | Post-Login State - Initiate Transfer (Menu) NON-FIRST TIMER",
+    "priority": "P1",
+    "layer": "API",
+    "automationCandidate": true,
+    "automationType": "api",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_INTRODUCTION_ENTRY_POINT_TC_003",
+    "featureName": "FUNCTION 1: TRANSFER INTRODUCTION/ENTRY POINT",
+    "requirement": "Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+    "objective": "Verify error screen - unable to access transfer (no available account), randomise display for below options.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Pre-Login State - Initiate Transfer (Quick Action) | Pre-Login State - Initiate Transfer (Menu)",
+      "Post-Login State - Initiate Transfer (Quick Action) FIRST TIMER | Post-Login State - Initiate Transfer (Menu) FIRST TIMER | Post-Login State - Initiate Transfer (Quick Action) NON-FIRST TIMER | Post-Login State - Initiate Transfer (Menu) NON-FIRST TIMER",
+      "Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+      "CASA Account Details - Transfer Landing Page"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_INTRODUCTION_ENTRY_POINT_TC_004",
+    "featureName": "FUNCTION 1: TRANSFER INTRODUCTION/ENTRY POINT",
+    "requirement": "CASA Account Details - Transfer Landing Page",
+    "objective": "Verify casa account details - transfer landing page",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Pre-Login State - Initiate Transfer (Quick Action) | Pre-Login State - Initiate Transfer (Menu)",
+      "Post-Login State - Initiate Transfer (Quick Action) FIRST TIMER | Post-Login State - Initiate Transfer (Menu) FIRST TIMER | Post-Login State - Initiate Transfer (Quick Action) NON-FIRST TIMER | Post-Login State - Initiate Transfer (Menu) NON-FIRST TIMER",
+      "Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+      "CASA Account Details - Transfer Landing Page"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: CASA Account Details - Transfer Landing Page",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: CASA Account Details - Transfer Landing Page",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_INTRODUCTION_ENTRY_POINT_TC_005",
+    "featureName": "FUNCTION 1: TRANSFER INTRODUCTION/ENTRY POINT",
+    "requirement": "RDN Account Details - OWN Transfer > Input Amount Page",
+    "objective": "Verify rdn account details - own transfer > input amount page",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Pre-Login State - Initiate Transfer (Quick Action) | Pre-Login State - Initiate Transfer (Menu)",
+      "Post-Login State - Initiate Transfer (Quick Action) FIRST TIMER | Post-Login State - Initiate Transfer (Menu) FIRST TIMER | Post-Login State - Initiate Transfer (Quick Action) NON-FIRST TIMER | Post-Login State - Initiate Transfer (Menu) NON-FIRST TIMER",
+      "Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+      "CASA Account Details - Transfer Landing Page"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: RDN Account Details - OWN Transfer > Input Amount Page",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: RDN Account Details - OWN Transfer > Input Amount Page",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_INTRODUCTION_ENTRY_POINT_TC_006",
+    "featureName": "FUNCTION 1: TRANSFER INTRODUCTION/ENTRY POINT",
+    "requirement": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "objective": "Verify no. | field | mandatory | data type | format | data source | validation | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Pre-Login State - Initiate Transfer (Quick Action) | Pre-Login State - Initiate Transfer (Menu)",
+      "Post-Login State - Initiate Transfer (Quick Action) FIRST TIMER | Post-Login State - Initiate Transfer (Menu) FIRST TIMER | Post-Login State - Initiate Transfer (Quick Action) NON-FIRST TIMER | Post-Login State - Initiate Transfer (Menu) NON-FIRST TIMER",
+      "Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+      "CASA Account Details - Transfer Landing Page"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_INTRODUCTION_ENTRY_POINT_TC_007",
+    "featureName": "FUNCTION 1: TRANSFER INTRODUCTION/ENTRY POINT",
+    "requirement": "No. | Description | Integration | Remarks",
+    "objective": "Verify no. | description | integration | remarks",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Pre-Login State - Initiate Transfer (Quick Action) | Pre-Login State - Initiate Transfer (Menu)",
+      "Post-Login State - Initiate Transfer (Quick Action) FIRST TIMER | Post-Login State - Initiate Transfer (Menu) FIRST TIMER | Post-Login State - Initiate Transfer (Quick Action) NON-FIRST TIMER | Post-Login State - Initiate Transfer (Menu) NON-FIRST TIMER",
+      "Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+      "CASA Account Details - Transfer Landing Page"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: No. | Description | Integration | Remarks",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: No. | Description | Integration | Remarks",
+    "priority": "P2",
+    "layer": "Integration",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_INTRODUCTION_ENTRY_POINT_TC_008",
+    "featureName": "FUNCTION 1: TRANSFER INTRODUCTION/ENTRY POINT",
+    "requirement": "1 | For user at pre-login state and tap [Transfer] icon from home dashboard screen OR menu screen: 1. Redirects user to the login screen.",
+    "objective": "Verify 1 | for user at pre-login state and tap [transfer] icon from home dashboard screen or menu screen: 1. redirects user to the login screen.",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Pre-Login State - Initiate Transfer (Quick Action) | Pre-Login State - Initiate Transfer (Menu)",
+      "Post-Login State - Initiate Transfer (Quick Action) FIRST TIMER | Post-Login State - Initiate Transfer (Menu) FIRST TIMER | Post-Login State - Initiate Transfer (Quick Action) NON-FIRST TIMER | Post-Login State - Initiate Transfer (Menu) NON-FIRST TIMER",
+      "Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+      "CASA Account Details - Transfer Landing Page"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 1 | For user at pre-login state and tap [Transfer] icon from home dashboard screen OR menu screen: 1. Redirects user to the login screen.",
+      "Validate expected behavior using ui assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 1 | For user at pre-login state and tap [Transfer] icon from home dashboard screen OR menu screen: 1. Redirects user to the login screen.",
+    "priority": "P3",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "ui",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  },
+  {
+    "testCaseId": "FUNCTION_1_TRANSFER_INTRODUCTION_ENTRY_POINT_TC_009",
+    "featureName": "FUNCTION 1: TRANSFER INTRODUCTION/ENTRY POINT",
+    "requirement": "2 | For user at post-login state and tap [+Transfer] icon from home dashboard screen OR menu screen: 1. For first timer (user who has never accessed transfer page via NGA): a. Display Transfer Introduction Page. b. Mark the user as a \"non-first timer for transfer\", regardless whether tap on [Get Started]. 2. For non-first timer, to display Transfer Introduction Page based on NGBO configuration (display option by App Version, Start & End Date and Frequency to display within the defined period e.g. Once a day, once a week, once 1 month, X times within the period), a \"flag/counter\" will be used to track the display. 3. When user tap on Transfer or Intro Page [Get Started], system validates if user has any CASA account. a. IF user has no CASA account (to follow Transfer Local SoF eligibility check for Product Code & Segment ID, excluding Account Sttaus), display randomised \"Apply CASA now bottom drawer\". Randomiser will be displayed as follow: - Randomiser to select one available option from a dynamic pool of drawer variants (e.g. Option 1 to 5) Available options are maintainable via NGBO/CMS). - Each option will be displayed randomly in no particular order. - When tap on [Apply Now], navigate to \"Apply New - CA & SA products\". b. IF user has CASA account, proceed to display Transfer Landing Page. | NGA Channel Layer: 1. Transfer first timer flag 2. Intro Page Display Flag (non first timer) NGBO (P&T): 1. Retrieve Transfer Intro Page Config: - App Version - Start & End Date - Frequency to display within the defined period (e.g. Once a day, once a week, once 1 month, X times within the period) NGBO/CMS: 2. Retrieve \"Apply CASA now\" Randomised Options/Image: - Available options & Image content",
+    "objective": "Verify 2 | for user at post-login state and tap [+transfer] icon from home dashboard screen or menu screen: 1. for first timer (user who has never accessed transfer page via nga): a. display transfer introduction page. b. mark the user as a \"non-first timer for transfer\", regardless whether tap on [get started]. 2. for non-first timer, to display transfer introduction page based on ngbo configuration (display option by app version, start & end date and frequency to display within the defined period e.g. once a day, once a week, once 1 month, x times within the period), a \"flag/counter\" will be used to track the display. 3. when user tap on transfer or intro page [get started], system validates if user has any casa account. a. if user has no casa account (to follow transfer local sof eligibility check for product code & segment id, excluding account sttaus), display randomised \"apply casa now bottom drawer\". randomiser will be displayed as follow: - randomiser to select one available option from a dynamic pool of drawer variants (e.g. option 1 to 5) available options are maintainable via ngbo/cms). - each option will be displayed randomly in no particular order. - when tap on [apply now], navigate to \"apply new - ca & sa products\". b. if user has casa account, proceed to display transfer landing page. | nga channel layer: 1. transfer first timer flag 2. intro page display flag (non first timer) ngbo (p&t): 1. retrieve transfer intro page config: - app version - start & end date - frequency to display within the defined period (e.g. once a day, once a week, once 1 month, x times within the period) ngbo/cms: 2. retrieve \"apply casa now\" randomised options/image: - available options & image content",
+    "preconditions": [
+      "Application is deployed and accessible"
+    ],
+    "testData": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Pre-Login State - Initiate Transfer (Quick Action) | Pre-Login State - Initiate Transfer (Menu)",
+      "Post-Login State - Initiate Transfer (Quick Action) FIRST TIMER | Post-Login State - Initiate Transfer (Menu) FIRST TIMER | Post-Login State - Initiate Transfer (Quick Action) NON-FIRST TIMER | Post-Login State - Initiate Transfer (Menu) NON-FIRST TIMER",
+      "Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+      "CASA Account Details - Transfer Landing Page"
+    ],
+    "steps": [
+      "Prepare test data and environment",
+      "Perform user action in UI for requirement: 2 | For user at post-login state and tap [+Transfer] icon from home dashboard screen OR menu screen: 1. For first timer (user who has never accessed transfer page via NGA): a. Display Transfer Introduction Page. b. Mark the user as a \"non-first timer for transfer\", regardless whether tap on [Get Started]. 2. For non-first timer, to display Transfer Introduction Page based on NGBO configuration (display option by App Version, Start & End Date and Frequency to display within the defined period e.g. Once a day, once a week, once 1 month, X times within the period), a \"flag/counter\" will be used to track the display. 3. When user tap on Transfer or Intro Page [Get Started], system validates if user has any CASA account. a. IF user has no CASA account (to follow Transfer Local SoF eligibility check for Product Code & Segment ID, excluding Account Sttaus), display randomised \"Apply CASA now bottom drawer\". Randomiser will be displayed as follow: - Randomiser to select one available option from a dynamic pool of drawer variants (e.g. Option 1 to 5) Available options are maintainable via NGBO/CMS). - Each option will be displayed randomly in no particular order. - When tap on [Apply Now], navigate to \"Apply New - CA & SA products\". b. IF user has CASA account, proceed to display Transfer Landing Page. | NGA Channel Layer: 1. Transfer first timer flag 2. Intro Page Display Flag (non first timer) NGBO (P&T): 1. Retrieve Transfer Intro Page Config: - App Version - Start & End Date - Frequency to display within the defined period (e.g. Once a day, once a week, once 1 month, X times within the period) NGBO/CMS: 2. Retrieve \"Apply CASA now\" Randomised Options/Image: - Available options & Image content",
+      "Validate expected behavior using api assertions"
+    ],
+    "expectedResult": "System satisfies requirement: 2 | For user at post-login state and tap [+Transfer] icon from home dashboard screen OR menu screen: 1. For first timer (user who has never accessed transfer page via NGA): a. Display Transfer Introduction Page. b. Mark the user as a \"non-first timer for transfer\", regardless whether tap on [Get Started]. 2. For non-first timer, to display Transfer Introduction Page based on NGBO configuration (display option by App Version, Start & End Date and Frequency to display within the defined period e.g. Once a day, once a week, once 1 month, X times within the period), a \"flag/counter\" will be used to track the display. 3. When user tap on Transfer or Intro Page [Get Started], system validates if user has any CASA account. a. IF user has no CASA account (to follow Transfer Local SoF eligibility check for Product Code & Segment ID, excluding Account Sttaus), display randomised \"Apply CASA now bottom drawer\". Randomiser will be displayed as follow: - Randomiser to select one available option from a dynamic pool of drawer variants (e.g. Option 1 to 5) Available options are maintainable via NGBO/CMS). - Each option will be displayed randomly in no particular order. - When tap on [Apply Now], navigate to \"Apply New - CA & SA products\". b. IF user has CASA account, proceed to display Transfer Landing Page. | NGA Channel Layer: 1. Transfer first timer flag 2. Intro Page Display Flag (non first timer) NGBO (P&T): 1. Retrieve Transfer Intro Page Config: - App Version - Start & End Date - Frequency to display within the defined period (e.g. Once a day, once a week, once 1 month, X times within the period) NGBO/CMS: 2. Retrieve \"Apply CASA now\" Randomised Options/Image: - Available options & Image content",
+    "priority": "P1",
+    "layer": "UI",
+    "automationCandidate": true,
+    "automationType": "api",
+    "dependencies": [],
+    "negativeScenarios": [
+      "Trigger error path: Error Screen - Unable to access Transfer (no available account), randomise display for below options.",
+      "Invalid input violating rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "edgeCases": [
+      "Boundary value around rule: No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "Null and empty input handling",
+      "Maximum supported input length"
+    ]
+  }
+]

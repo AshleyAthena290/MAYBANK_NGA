@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.626Z",
+  "report": {
+    "featureName": "FUNCTION 3: INPUT AMOUNT",
+    "missingRequirements": [
+      "Feature description is missing.",
+      "User/system flow is missing.",
+      "Dependencies and prerequisites are missing.",
+      "Navigation path details are missing."
+    ],
+    "ambiguities": [],
+    "risks": [],
+    "missingValidations": [],
+    "securityConcerns": [
+      "Sensitive data is present without explicit masking/encryption requirements."
+    ],
+    "apiDependencies": [],
+    "uiDependencies": [
+      "[INTERBANK] Enter Amount IDR to IDR",
+      "[INTRABANK] Enter Amount - IDR to IDR",
+      "[OWN] Enter Amount - IDR to IDR | Error Handling - Selecting same Transfer to and from CASA",
+      "Scheduled/Recurring Transfer | ;",
+      "Scheduled/Recurring Transfer",
+      "Error Handling - Inline Error & Toastbar | Error Handling - Amount Limit Messages | [INTRABANK & INTERBANK] User has only 1 eligible account, hide Change button"
+    ],
+    "backendDependencies": [],
+    "testability": [
+      "Flow details are missing, reducing scenario traceability.",
+      "Validation rules can drive positive, negative, and boundary test design.",
+      "Specification gaps and ambiguities should be resolved before automation implementation."
+    ]
+  }
+}

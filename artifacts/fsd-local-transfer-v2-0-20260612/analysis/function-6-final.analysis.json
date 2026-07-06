@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.658Z",
+  "report": {
+    "featureName": "FUNCTION 6: FINAL",
+    "missingRequirements": [
+      "Feature description is missing.",
+      "User/system flow is missing.",
+      "Dependencies and prerequisites are missing.",
+      "Navigation path details are missing."
+    ],
+    "ambiguities": [],
+    "risks": [
+      "Error handling behavior is not documented."
+    ],
+    "missingValidations": [],
+    "securityConcerns": [
+      "Sensitive data is present without explicit masking/encryption requirements."
+    ],
+    "apiDependencies": [],
+    "uiDependencies": [
+      "NOTE: The following updates reflect the latest Figma changes and to be applied across the entire Local Transfer module",
+      "Transaction Successful Example | Transaction Unsuccesful Example | Transaction Receipt Example | Scheduled/Recurring Receipt Example",
+      "[INTERBANK] BI-FAST End Screen | [INTERBANK] RTOL End Screen | [INTERBANK] BI-SKN End Screen | [INTERBANK] RTGS End Screen",
+      "[INTRABANK] End Screen",
+      "[OWN] End Screen | S",
+      "[INTERBANK] End Screen w/ Additional Details | [INTRABANK] End Screen w/ Additional Details",
+      "Scheduled/Recurring End Screen | [INTERBANK] Scheduled/Recurring Receipt | [INTRABANK] Scheduled/Recurring Receipt | [OWN] Scheduled/Recurring Receipt",
+      "Select Transaction Category | [BI-SKN & RTGS] Transfer Prcocessing (Account Debited but Pending Credit) | Add Beneficiary to Favourite | Error Handling - tap/retap heart icon",
+      "Transaction Unsuccessful Example",
+      "With Foreign Currency",
+      "[INTERBANK] End Screen",
+      "[INTERBANK] BI-SKN (FCY - IDR) End Screen | [INTERBANK] IDR to IDR - Receipt | [INTERBANK] BI-SKN (FCY - IDR) Receipt | [INTERBANK] Unsuccesful End Flow",
+      "[INTRABANK] IDR to IDR end screen | [INTRABANK] FCY to FCY end screen | [INTRABANK] IDR to FCY end screen (GAA) | [INTRABANK] with Special Rate ID End Screen | [INTRABANK] IDR to IDR Receipt | [INTRABANK] FCY to FCY Receipt (For IDR to IDR, display IDR as Ccy) | [INTRABANK] IDR to FCY Receipt | [INTRABANK] IDR to FCY Special Rate",
+      "[INTERBANK] w/ Additional Details Receipt and Underlying Doc END SCREEN | [INTERBANK] w/ Additional Details & Underlying Doc RECEIPT | [INTRABANK] w/ Additional Details & Underlying Doc END SCREEN | [INTRABANK] w/ Additional Details & Underlying Doc RECEIPT",
+      "68 | Title Header | N/A | Alphanumeric | Display | Integration | Display \"Receipt\" | CMS: 1. Retrieve title header 2. Retrieve Maybank logo",
+      "69 | Maybank Logo | N/A | Image | Display | Integration | Display Maybank logo | CMS: 1. Retrieve title header 2. Retrieve Maybank logo",
+      "70 | Transaction Type | N/A | Alphanumeric | Display | Local Server | Display \"Transfer\"",
+      "71 | Transaction Status (Label) | N/A | Alphanumeric | Display | Local Server | Display either: 1. Successful (Green Label) 2. Scheduled - For recurring transaction (Orange label)",
+      "72 | Transaction Date & Timestamp | N/A | Alphanumeric | Display | Local Server | Populate from Status screen",
+      "73 | Ref ID | N/A | Alphanumeric | Display | Local Server | Populate from Status screen",
+      "74 | Total Amount | N/A | Alphanumeric | Display | Local Server | Populate from Status screen"
+    ],
+    "backendDependencies": [],
+    "testability": [
+      "Flow details are missing, reducing scenario traceability.",
+      "Validation rules can drive positive, negative, and boundary test design.",
+      "Specification gaps and ambiguities should be resolved before automation implementation."
+    ]
+  }
+}

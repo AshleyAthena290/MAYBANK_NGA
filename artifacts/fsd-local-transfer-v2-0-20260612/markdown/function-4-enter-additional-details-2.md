@@ -1,0 +1,47 @@
+# Feature: FUNCTION 4: ENTER ADDITIONAL DETAILS
+
+## AI Reasoning Summary
+Use this feature specification as the single source for requirement extraction, risk analysis, and test generation.
+
+## Description
+- Not specified
+## Flow
+- Not specified
+## UI Elements
+- Enter Recipient Details | Additional Documents Required (Screen for per trxn is incorrect) - To be Put after INPUT AMOUNT (Validation at Input Amount) - Bank to update the screen | To confirm: 1. According to the UST, these reminders are displayed after entering additional details? (For overseas trf, it indicate is displayed after input amount) Is it intended? And if tap change amount, it redirects back to Enter amount screen?
+- Upload Underlying Documents screen (non LCS) | To confirm: 1. Screen and UST are not aligned. >> FCY - FCY requires Underlying Docs? >> IDR - FCY just docs or POT too?
+- Upload Underlying Documents screen (IDR to LCS (Non MYR)) | To confirm: 1. Screen and UST are not aligned 2. Is PoT and Type of Docs same for each scenario? 3. PoT & RoT?
+- Upload Underlying Documents screen (IDR to LCS (MYR))
+- Error Handling
+- 5 | Title Header | N/A | Alphanumeric | Display | Integration | Display "Transfer" | CMS 1. Retrieve label "Transfer" 2. Retrieve label "Share the purpose of transfer" and description
+- 6 | Sub-header + Description | N/A | Alphanumeric | Display | Integration | Display "Share the purpose of this transfer" and description | CMS 1. Retrieve label "Transfer" 2. Retrieve label "Share the purpose of transfer" and description
+- 4 | [X] icon | Upon tapping [X] icon, system discards inputs and redirects to Transfer Landing screen.
+- 5 | [<] icon | Upon tapping the [<] icon, system redirects to Enter Additional Details screen.
+- 6 | [Trash] icon | Upon tapping, delete uploaded underlying document.
+- 7 | [Retry] icon | Upon tapping, retry uploading underlying document.
+- 8 | [Next] button | Upon tapping [Next] button, refer to business rules.
+- 9 | [Trash] icon | Upon tapping, delete uploaded underlying document.
+- 10 | [Retry] icon | Upon tapping, retry uploading underlying document.
+## Validation Rules
+- No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks
+## Business Rules
+- No. | Description | Integration | Remarks
+- 1 | Upload underlying documents screen is applicable for Intrabank Transaction that matches: 1. FCY transaction amount > USD 100K or equivalent by other currencies (Non-LCS) per month. 2. FCY transaction amount > USD 100K or equivalent by other currencies (Non-LCS) per transaction. 3. FCY transaction amount > USD 500K or equivalent by other currencies (LCS) per transaction. 4. FCY transaction <amount <= below USD 500K or equivalent by other currencies (LCS) per transaction. LCS: CNY, THB. *MYR is not applicable for Intrabank. | ESB - Trapi/Kondor+ ? 1. Retrieve FOREX 2. Retrieve and check user's current forex limit.
+- 2 | Upon tapping [Upload a file] 1. System opens mobile phone's native file uploader based on phone's operating system. 2. File Validation: a. Allowed file format: JPEG, PNG, HEIC, PDF, DOC. Else, display inline error message "Only PDF, JPEG, HEIC, or PNG formats are supported." with error icon. b. Maximum per file size: 5 MB. Else, display inline error message "Maximum file size is 5MB." with error icon. 3. Number of files: a. Maximum 5 files. b. If user has uploaded 5 files and taps [Upload a file], system displays a toastbar message "Maximum number of documents uploaded." 4. Exception Error: a. If system encounters exception errors that during upload (e.g. system or network errors), display toastbar message "There is an issue with your uploaded document. Please try again."
+- 6 | For Transfer (IDR - LCS) or (LCS - IDR) (CNY, THB) 1. For transaction amount <= USD 500,000 or equivalent, upload underlying documents field is disabled. 2. For transaction amount > USD 500,000 or equivalent, upload underlying documents field is enabled.
+- 7 | Upon tapping [Next] button: 1. Mandatory fields checking. a. IF purpose of transfer OR type of underlying document is empty/unselected, system displays error message" "Required field." b. IF no document is uploaded, system displays a toastbar message "Underlying document is a required field." 2. If all mandatory fields checking passed, system redirects to confirmation screen.
+## APIs
+- Not specified
+## Dependencies
+- Not specified
+## Error Messages
+- Error Handling
+## Navigation
+- Not specified
+## Remarks
+- Not specified
+
+## Prompting Hints
+- Keep requirement statements atomic.
+- Map validations to positive, negative, and boundary tests.
+- Use dependencies and APIs to derive integration scenarios.

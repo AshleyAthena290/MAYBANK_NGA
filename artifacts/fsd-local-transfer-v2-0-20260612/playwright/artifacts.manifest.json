@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:19.066Z",
+  "artifacts": [
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\table-of-contents.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\table-of-contents.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\table-of-contents.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-1-transfer-introduction-entry-point.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-1-transfer-introduction-entry-point.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-1-transfer-introduction-entry-point.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-1-transfer-landing-page.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-1-transfer-landing-page.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-1-transfer-landing-page.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-2-transfer-to-input-account-number.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-2-transfer-to-input-account-number.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-2-transfer-to-input-account-number.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-3-input-amount.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-3-input-amount.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-3-input-amount.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\esb-1-interbank-account-inquiry-based-on-the-bene-account-number-inquiry-via-bifast-rtol-ngbo-p-t-1-forex-trxn-usd-threshold-10k-which-calls-for-additonal-details-eclipse-esb-1-retrieve-total-forex-transaction-amount-in-usd-per-month.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\esb-1-interbank-account-inquiry-based-on-the-bene-account-number-inquiry-via-bifast-rtol-ngbo-p-t-1-forex-trxn-usd-threshold-10k-which-calls-for-additonal-details-eclipse-esb-1-retrieve-total-forex-transaction-amount-in-usd-per-month.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\esb-1-interbank-account-inquiry-based-on-the-bene-account-number-inquiry-via-bifast-rtol-ngbo-p-t-1-forex-trxn-usd-threshold-10k-which-calls-for-additonal-details-eclipse-esb-1-retrieve-total-forex-transaction-amount-in-usd-per-month.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-4-enter-additional-details.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-4-enter-additional-details.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-4-enter-additional-details.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-4-enter-additional-details.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-4-enter-additional-details.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-4-enter-additional-details.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-5-confirmation.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-5-confirmation.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-5-confirmation.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-6-final.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-6-final.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-6-final.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-7-notification.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-7-notification.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-7-notification.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-8-create-new-list-from-recipient-list.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-8-create-new-list-from-recipient-list.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-8-create-new-list-from-recipient-list.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\1.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\1.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\1.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-32-recipient-list-add-to-fav-from-all-frequent-tab.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-32-recipient-list-add-to-fav-from-all-frequent-tab.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-32-recipient-list-add-to-fav-from-all-frequent-tab.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-33-recipient-list-edit-to-fav-from-all-favourite-custom-tab.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-33-recipient-list-edit-to-fav-from-all-favourite-custom-tab.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-33-recipient-list-edit-to-fav-from-all-favourite-custom-tab.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-34-recipient-list-remove-from-all-tab.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-34-recipient-list-remove-from-all-tab.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-34-recipient-list-remove-from-all-tab.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-31-recipient-list-edit-delete-nickname-note.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-31-recipient-list-edit-delete-nickname-note.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-31-recipient-list-edit-delete-nickname-note.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-10-manage-favourite-list-dashboard.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-10-manage-favourite-list-dashboard.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-10-manage-favourite-list-dashboard.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-39-manage-favourite-list-detail-group-list.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-39-manage-favourite-list-detail-group-list.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-39-manage-favourite-list-detail-group-list.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-40-manage-favourite-list-add-recipient-from-account-number.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-40-manage-favourite-list-add-recipient-from-account-number.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-40-manage-favourite-list-add-recipient-from-account-number.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-41-manage-favourites-list-add-recipient-from-recent-transfer.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-41-manage-favourites-list-add-recipient-from-recent-transfer.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-41-manage-favourites-list-add-recipient-from-recent-transfer.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-43-manage-favourites-list-final-screen.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-43-manage-favourites-list-final-screen.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-43-manage-favourites-list-final-screen.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-44-manage-favourite-list-edit-remove-group-list.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-44-manage-favourite-list-edit-remove-group-list.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-44-manage-favourite-list-edit-remove-group-list.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-48-transfer-settings-manage-schedule-transfer-dashboard.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-48-transfer-settings-manage-schedule-transfer-dashboard.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-48-transfer-settings-manage-schedule-transfer-dashboard.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-49-transfer-settings-manage-schedule-transfer-list.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-49-transfer-settings-manage-schedule-transfer-list.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-49-transfer-settings-manage-schedule-transfer-list.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-50-transfer-settings-recurring-detail-remove-recurring.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-50-transfer-settings-recurring-detail-remove-recurring.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-50-transfer-settings-recurring-detail-remove-recurring.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-51-transfer-settings-manage-limits-dashboard.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-51-transfer-settings-manage-limits-dashboard.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-51-transfer-settings-manage-limits-dashboard.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-52-transfer-settings-manage-limit-listing.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-52-transfer-settings-manage-limit-listing.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-52-transfer-settings-manage-limit-listing.page.ts"
+    },
+    {
+      "testFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\tests\\function-53-transfer-settings-manage-limits-detail.spec.ts",
+      "fixturePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\fixtures\\base.fixture.ts",
+      "dataFilePath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\data\\function-53-transfer-settings-manage-limits-detail.test-data.json",
+      "pageObjectPath": "artifacts\\fsd-local-transfer-v2-0-20260612\\playwright\\page-objects\\function-53-transfer-settings-manage-limits-detail.page.ts"
+    }
+  ]
+}

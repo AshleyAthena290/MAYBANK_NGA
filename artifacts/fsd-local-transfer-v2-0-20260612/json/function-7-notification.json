@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-06-26T08:29:17.496Z",
+  "featureId": "function-7-notification",
+  "featureName": "FUNCTION 7: NOTIFICATION",
+  "sourceType": "FSD",
+  "content": {
+    "featureName": "FUNCTION 7: NOTIFICATION",
+    "description": "",
+    "flow": [],
+    "uiElements": [
+      "Notification Centre - ID (Transaction) | Notification - Apple | Notification - Android"
+    ],
+    "validationRules": [
+      "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks"
+    ],
+    "businessRules": [
+      "No. | Description | Integration | Remarks",
+      "1 | For successful transaction, notification is available for below: a. Interbank: (i) Push & Email notification to sender, if defined in Settings > Notification > Transactions. (ii) Email notification to beneficiary, if recipient email is entered b. Intrabank (i) Push & Email notification to sender, if defined in Settings > Notification > Transactions. (ii) Push notification to beneficiary. (iii) Email notification to beneficiary, if recipient email is entered . c. Transfer to Own: (i) Push & Email notification to sender, if defined in Settings > Notification > Transactions. | MBPNS: 1. To trigger notification via: - email - push.",
+      "2 | Push & Email notificaton content to Sender (Immediate, Scheduled, Recurring) to be provided & documented separately: a. Intrabank b. Interbank (i) BI-FAST (ii) RTOL (iii) BI-SKN (iv) RTGS c. Own",
+      "3 | Email notification content to Beneficiary to be provided & documented separately: a. Intrabank a. Intrabank b. Interbank (i) BI-FAST (ii) RTOL (iii) BI-SKN (iv) RTGS"
+    ],
+    "apis": [],
+    "dependencies": [],
+    "errorMessages": [],
+    "navigation": [],
+    "remarks": []
+  },
+  "chunks": [
+    {
+      "section": "uiElements",
+      "content": "Notification Centre - ID (Transaction) | Notification - Apple | Notification - Android",
+      "tokensHint": 16
+    },
+    {
+      "section": "validationRules",
+      "content": "No. | Field | Mandatory | Data Type | Format | Data Source | Validation | Integration | Remarks",
+      "tokensHint": 23
+    },
+    {
+      "section": "businessRules",
+      "content": "No. | Description | Integration | Remarks\n1 | For successful transaction, notification is available for below: a. Interbank: (i) Push & Email notification to sender, if defined in Settings > Notification > Transactions. (ii) Email notification to beneficiary, if recipient email is entered b. Intrabank (i) Push & Email notification to sender, if defined in Settings > Notification > Transactions. (ii) Push notification to beneficiary. (iii) Email notification to beneficiary, if recipient email is entered . c. Transfer to Own: (i) Push & Email notification to sender, if defined in Settings > Notification > Transactions. | MBPNS: 1. To trigger notification via: - email - push.\n2 | Push & Email notificaton content to Sender (Immediate, Scheduled, Recurring) to be provided & documented separately: a. Intrabank b. Interbank (i) BI-FAST (ii) RTOL (iii) BI-SKN (iv) RTGS c. Own\n3 | Email notification content to Beneficiary to be provided & documented separately: a. Intrabank a. Intrabank b. Interbank (i) BI-FAST (ii) RTOL (iii) BI-SKN (iv) RTGS",
+      "tokensHint": 200
+    }
+  ],
+  "retrievalHints": {
+    "keywords": [
+      "function",
+      "notification",
+      "centre",
+      "transaction",
+      "apple",
+      "android",
+      "field",
+      "mandatory",
+      "data",
+      "type",
+      "format",
+      "source",
+      "validation",
+      "integration",
+      "remarks",
+      "description",
+      "for",
+      "successful",
+      "available",
+      "below",
+      "interbank",
+      "push",
+      "email",
+      "sender",
+      "defined",
+      "settings",
+      "transactions",
+      "beneficiary",
+      "recipient",
+      "entered",
+      "intrabank",
+      "iii",
+      "transfer",
+      "own",
+      "mbpns",
+      "trigger",
+      "via",
+      "notificaton",
+      "content",
+      "immediate",
+      "scheduled",
+      "recurring",
+      "provided",
+      "documented",
+      "separately",
+      "fast",
+      "rtol",
+      "skn",
+      "rtgs"
+    ],
+    "hasApis": false,
+    "hasValidations": true,
+    "hasBusinessRules": true
+  }
+}

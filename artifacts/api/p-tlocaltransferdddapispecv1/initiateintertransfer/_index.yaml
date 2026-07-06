@@ -1,0 +1,64 @@
+# Test Case Index
+# p-tlocaltransferdddapispecv1 - InitiateInterTransfer
+# Generated: 2026-07-02T13:23:38.180Z
+---
+feature: p-tlocaltransferdddapispecv1
+apiName: InitiateInterTransfer
+description: Test cases for InitiateInterTransfer endpoint
+totalScenarios: 7
+scenarios:
+  - id: InitiateInterTransfer-001-positive
+    title: POST /initiate - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - initiateintertransfer
+    priority: P1
+  - id: InitiateInterTransfer-002-missing-auth
+    title: POST /initiate - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: InitiateInterTransfer-003-invalid-auth
+    title: POST /initiate - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: InitiateInterTransfer-004-invalid-content-type
+    title: POST /initiate - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: InitiateInterTransfer-005-duplicate-correlation-id
+    title: POST /initiate - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: InitiateInterTransfer-006-request-timeout
+    title: POST /initiate - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: InitiateInterTransfer-007-empty-request-body
+    title: POST /initiate - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-02T13:23:38.180Z'

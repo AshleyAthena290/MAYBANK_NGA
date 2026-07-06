@@ -1,0 +1,62 @@
+# BDD Test Case - p-tlocaltransferdddapispecv1
+# Generated for: POST /settings - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: LimitSettingUpdate-004-invalid-content-type
+title: POST /settings - Invalid Content-Type
+feature: p-tlocaltransferdddapispecv1
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Payment-IP}:{Payment-PORT}/pt/limits/v1/external/settings'
+  endpoint: 'https: //{Payment-IP}:{Payment-PORT}/pt/limits/v1/external/settings'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1782998715662
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    productCode: <value>
+    limitType: <value>
+    intervalType: <value>
+    requestedLimitAmount: <value>
+    amount: <value>
+    currency: <value>
+    ? "{\n  \"productCode\": \"P3\",\n  \"limitType\": [\n    {\n      \"intervalType\": \"DAILY\",\n      \"requestedLimitAmount\": {\n        \"amount\": 1200,\n        \"currency\": \"IDR\"\n      }\n    },\n    {\n      \"intervalType\": \"PERTXN\",\n      \"requestedLimitAmount\": {\n        \"amount\": 500,\n        \"currency\": \"IDR\"\n      }\n    },\n    {\n      \"intervalType\": \"QUICK\",\n      \"requestedLimitAmount\": {\n        \"amount\": 200,\n        \"currency\": \"IDR\"\n      }\n    }\n  ]\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: LimitSettingUpdate
+  sourceRows: ''
+  apiSpecFile: LimitSettingUpdate
