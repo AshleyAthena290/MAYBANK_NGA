@@ -1,0 +1,294 @@
+schemaVersion: 1.0.0
+generatedAt: '2026-07-14T04:39:58.204Z'
+source: P&T_Local_Transfer_DDD_Screen_to_API_v1.xlsx
+feature: Local Transfer (All Journeys)
+category: Transfer / Dashboard / Settings
+journey:
+  title: Journey 1 – Transfer Dashboard
+  code: Manage_Dashboard
+  description: The dashboard landing screen where user opens the transfer feature.
+summary:
+  totalTestCases: 11
+  apiLinkedCases: 11
+  uiOnlyCases: 0
+keyApis:
+  - name: GetJourneyContent
+    method: GET
+    endpoint: cms/journeys/payment_transfer_local_flow?locale=en_MY&channel=MOBILE
+  - name: getCustomGroups
+    method: GET
+    endpoint: /v1/external/transfer/groups/custom?scope=LOCAL
+  - name: getTransferBeneficiaries
+    method: GET
+    endpoint: /v1/external/transfer?scope=LOCAL&groupType={type}&page=0&limit=10
+  - name: getDashboard
+    method: GET
+    endpoint: /v1/external/accounts?accountGroup=CASA
+  - name: getTransferBeneficiariesSearch
+    method: GET
+    endpoint: /v1/external/transfer/search?scope=LOCAL&groupType=ALL&keyword={kw}&page=0&limit=10
+  - name: getBeneficiaryInquiry
+    method: GET
+    endpoint: /v1/internal/inquiry?accountId={id}&bicCode=MBBEMYKL&currency={cur}
+testCases:
+  - id: TC_DASH_001
+    title: Transfer Dashboard loads CMS content successfully
+    feature: Transfer Dashboard
+    type: Positive
+    priority: High
+    api: GetJourneyContent
+    businessFlow:
+      preconditions:
+        - User is authenticated and taps the Transfer module.
+      steps:
+        - Launch the app and log in.
+        - Navigate to the Transfer module.
+        - Observe the Transfer Dashboard screen.
+      expectedResults:
+        - >-
+          CMS content (navigation, tabs, banners) is loaded from
+          cms/journeys/payment_transfer_local_flow?locale=en_MY&channel=MOBILE.
+        - Screen title, tab labels (Local, Overseas), and other CMS-driven UI elements are displayed correctly.
+    apiJourney:
+      automationType: api-business-flow
+      requiresApiValidation: true
+      references:
+        - name: GetJourneyContent
+          method: GET
+          endpoint: cms/journeys/payment_transfer_local_flow?locale=en_MY&channel=MOBILE
+  - id: TC_DASH_002
+    title: Custom group tabs are loaded from API
+    feature: Transfer Dashboard
+    type: Positive
+    priority: High
+    api: getCustomGroups
+    businessFlow:
+      preconditions:
+        - User has existing custom groups configured.
+        - User is on Transfer Dashboard.
+      steps:
+        - Navigate to Transfer Dashboard.
+        - Observe the group tabs at the top of the recipient list.
+      expectedResults:
+        - Custom group tabs are fetched via GET /v1/external/transfer/groups/custom?scope=LOCAL.
+        - User-created custom group names appear as selectable tabs.
+    apiJourney:
+      automationType: api-business-flow
+      requiresApiValidation: true
+      references:
+        - name: getCustomGroups
+          method: GET
+          endpoint: /v1/external/transfer/groups/custom?scope=LOCAL
+  - id: TC_DASH_003
+    title: Frequent tab displays beneficiary list
+    feature: Transfer Dashboard
+    type: Positive
+    priority: High
+    api: getTransferBeneficiaries
+    businessFlow:
+      preconditions:
+        - User has frequent transfer recipients.
+        - User is on Transfer Dashboard.
+      steps:
+        - Navigate to Transfer Dashboard.
+        - Tap the "Frequent" tab.
+        - Observe the displayed list.
+      expectedResults:
+        - API GET /v1/external/transfer?scope=LOCAL&groupType=FREQUENT&page=0&limit=10 is called.
+        - Frequent beneficiaries are listed correctly with name, account number, and bank.
+    apiJourney:
+      automationType: api-business-flow
+      requiresApiValidation: true
+      references:
+        - name: getTransferBeneficiaries
+          method: GET
+          endpoint: /v1/external/transfer?scope=LOCAL&groupType={type}&page=0&limit=10
+  - id: TC_DASH_004
+    title: Favourites tab displays beneficiary list
+    feature: Transfer Dashboard
+    type: Positive
+    priority: Medium
+    api: getTransferBeneficiaries
+    businessFlow:
+      preconditions:
+        - User has at least one favourite recipient.
+        - User is on Transfer Dashboard.
+      steps:
+        - Navigate to Transfer Dashboard.
+        - Tap the "Favourites" tab.
+        - Observe the list.
+      expectedResults:
+        - API GET /v1/external/transfer?scope=LOCAL&groupType=FAVORITES&page=0&limit=10 is called.
+        - Favourite beneficiaries are displayed correctly.
+    apiJourney:
+      automationType: api-business-flow
+      requiresApiValidation: true
+      references:
+        - name: getTransferBeneficiaries
+          method: GET
+          endpoint: /v1/external/transfer?scope=LOCAL&groupType={type}&page=0&limit=10
+  - id: TC_DASH_005
+    title: Custom tab displays filtered beneficiary list
+    feature: Transfer Dashboard
+    type: Positive
+    priority: Medium
+    api: getTransferBeneficiaries
+    businessFlow:
+      preconditions:
+        - User has a custom group (e.g., groupId=G002) with recipients.
+      steps:
+        - Navigate to Transfer Dashboard.
+        - Tap a Custom group tab (e.g., "Work").
+        - Observe the displayed list.
+      expectedResults:
+        - API GET /v1/external/transfer?scope=LOCAL&groupType=CUSTOM&groupId=G002&page=0&limit=10 is called.
+        - Only recipients belonging to that custom group are displayed.
+    apiJourney:
+      automationType: api-business-flow
+      requiresApiValidation: true
+      references:
+        - name: getTransferBeneficiaries
+          method: GET
+          endpoint: /v1/external/transfer?scope=LOCAL&groupType={type}&page=0&limit=10
+  - id: TC_DASH_006
+    title: Own tab displays own CASA accounts
+    feature: Transfer Dashboard
+    type: Positive
+    priority: High
+    api: getDashboard
+    businessFlow:
+      preconditions:
+        - User has at least one CASA account.
+        - User is on Transfer Dashboard.
+      steps:
+        - Navigate to Transfer Dashboard.
+        - Tap the "Own" tab.
+        - Observe the displayed accounts.
+      expectedResults:
+        - API GET /v1/external/accounts?accountGroup=CASA is called.
+        - User's own CASA account(s) are displayed for selection.
+    apiJourney:
+      automationType: api-business-flow
+      requiresApiValidation: true
+      references:
+        - name: getDashboard
+          method: GET
+          endpoint: /v1/external/accounts?accountGroup=CASA
+  - id: TC_DASH_007
+    title: All tab displays full beneficiary list
+    feature: Transfer Dashboard
+    type: Positive
+    priority: Medium
+    api: getTransferBeneficiaries
+    businessFlow:
+      preconditions:
+        - User has multiple beneficiaries.
+        - User is on Transfer Dashboard.
+      steps:
+        - Navigate to Transfer Dashboard.
+        - Tap the "All" tab.
+        - Observe the list.
+      expectedResults:
+        - API GET /v1/external/transfer?scope=LOCAL&groupType=ALL&page=0&limit=10 is called.
+        - All beneficiaries (across all groups) are displayed.
+    apiJourney:
+      automationType: api-business-flow
+      requiresApiValidation: true
+      references:
+        - name: getTransferBeneficiaries
+          method: GET
+          endpoint: /v1/external/transfer?scope=LOCAL&groupType={type}&page=0&limit=10
+  - id: TC_DASH_008
+    title: Search returns matching beneficiaries
+    feature: Transfer Dashboard
+    type: Positive
+    priority: High
+    api: getTransferBeneficiariesSearch
+    businessFlow:
+      preconditions:
+        - User is on Transfer Dashboard with at least one beneficiary named containing "ABC".
+      steps:
+        - Navigate to Transfer Dashboard.
+        - Tap the Search input field.
+        - Type the keyword "ABC".
+        - Observe the search results.
+      expectedResults:
+        - API GET /v1/external/transfer/search?scope=LOCAL&groupType=ALL&keyword=ABC&page=0&limit=10 is called.
+        - Matching beneficiaries are returned and displayed in the results list.
+    apiJourney:
+      automationType: api-business-flow
+      requiresApiValidation: true
+      references:
+        - name: getTransferBeneficiariesSearch
+          method: GET
+          endpoint: /v1/external/transfer/search?scope=LOCAL&groupType=ALL&keyword={kw}&page=0&limit=10
+  - id: TC_DASH_009
+    title: Search with no matching keyword returns empty state
+    feature: Transfer Dashboard
+    type: Negative
+    priority: Medium
+    api: getTransferBeneficiariesSearch
+    businessFlow:
+      preconditions:
+        - User is on Transfer Dashboard.
+      steps:
+        - Navigate to Transfer Dashboard.
+        - Tap the Search input field.
+        - Type a keyword that matches no beneficiary (e.g., "ZZZNOMATCH").
+        - Observe the result.
+      expectedResults:
+        - API returns an empty list.
+        - Empty state message or illustration is displayed to the user.
+    apiJourney:
+      automationType: api-business-flow
+      requiresApiValidation: true
+      references:
+        - name: getTransferBeneficiariesSearch
+          method: GET
+          endpoint: /v1/external/transfer/search?scope=LOCAL&groupType=ALL&keyword={kw}&page=0&limit=10
+  - id: TC_DASH_010
+    title: Beneficiary inquiry returns account details for intrabank
+    feature: Transfer Dashboard
+    type: Positive
+    priority: High
+    api: getBeneficiaryInquiry
+    businessFlow:
+      preconditions:
+        - User selects a beneficiary for account validation.
+      steps:
+        - Navigate to Transfer Dashboard.
+        - Select an intrabank beneficiary to initiate a transfer.
+        - Observe account validation.
+      expectedResults:
+        - API GET /v1/internal/inquiry?accountId={id}&bicCode=MBBEMYKL&currency={cur} is called.
+        - Beneficiary account name and details are returned and displayed.
+    apiJourney:
+      automationType: api-business-flow
+      requiresApiValidation: true
+      references:
+        - name: getBeneficiaryInquiry
+          method: GET
+          endpoint: /v1/internal/inquiry?accountId={id}&bicCode=MBBEMYKL&currency={cur}
+  - id: TC_DASH_011
+    title: CMS content API failure shows error / fallback
+    feature: Transfer Dashboard
+    type: Negative
+    priority: High
+    api: GetJourneyContent
+    businessFlow:
+      preconditions:
+        - CMS API is unavailable or returns an error.
+      steps:
+        - Simulate CMS API failure (network error or 5xx response).
+        - Navigate to the Transfer module.
+        - Observe the screen behaviour.
+      expectedResults:
+        - An appropriate error message or fallback UI is shown.
+        - The app does not crash.
+    apiJourney:
+      automationType: api-business-flow
+      requiresApiValidation: true
+      references:
+        - name: GetJourneyContent
+          method: GET
+          endpoint: cms/journeys/payment_transfer_local_flow?locale=en_MY&channel=MOBILE
