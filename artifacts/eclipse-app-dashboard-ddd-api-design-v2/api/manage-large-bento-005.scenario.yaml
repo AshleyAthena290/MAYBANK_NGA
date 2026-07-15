@@ -2,18 +2,18 @@
 # DO NOT EDIT: This file is regenerated on each pipeline run.
 # For business intent, see the FSD Markdown artifacts.
 metadata:
-  id: API_SPECS_INDEX_001
-  title: Transfer Initialization
-  feature: Api Specs Index
-  description: Transfer Initialization
+  id: MANAGE_LARGE_BENTO_005
+  title: GET /dashboard/v1/external/accounts?accountGroup=NET_WORTH
+  feature: Manage Large Bento
+  description: GET /dashboard/v1/external/accounts?accountGroup=NET_WORTH
   author: AI
   generatedDate: '2026-07-15'
-  sourceWorksheet: API_Specs_Index
-  sourceRows: Row 2
-  apiSpecFile: P&T_Local_Transfer_DDD_API_Spec_v1.xlsx
+  sourceWorksheet: Manage_Large_Bento
+  sourceRows: Row 9
+  apiSpecFile: ECLIPSE_App_Dashboard_DDD_API_Design_v2.xlsx
 tags:
   - get
-priority: P1
+priority: P3
 environment:
   - SIT
   - UAT
@@ -24,7 +24,7 @@ preconditions:
 testData: {}
 request:
   method: GET
-  endpoint: pt/maintenance/v1/transfers/init
+  endpoint: /dashboard/v1/external/accounts?accountGroup=NET_WORTH
   headers: {}
   pathParams: {}
   queryParams: {}
@@ -43,6 +43,6 @@ negativeScenarios:
   - Send request to non-existent resource — expect 404 Not Found
 cleanup: []
 references:
-  fsdFeature: API_Specs_Index
-  sourceWorksheet: API_Specs_Index
-  apiSpecFile: P&T_Local_Transfer_DDD_API_Spec_v1.xlsx
+  fsdFeature: Manage_Large_Bento
+  sourceWorksheet: Manage_Large_Bento
+  apiSpecFile: ECLIPSE_App_Dashboard_DDD_API_Design_v2.xlsx

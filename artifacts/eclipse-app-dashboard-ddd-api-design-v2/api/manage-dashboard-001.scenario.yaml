@@ -2,18 +2,27 @@
 # DO NOT EDIT: This file is regenerated on each pipeline run.
 # For business intent, see the FSD Markdown artifacts.
 metadata:
-  id: API_SPECS_INDEX_001
-  title: Transfer Initialization
-  feature: Api Specs Index
-  description: Transfer Initialization
+  id: MANAGE_DASHBOARD_001
+  title: GET //v1/external/primary
+  feature: Manage Dashboard
+  description: >-
+    Upon page load, FE call /dashboard/v1/primary to retrieve primary account balance. BE call erp-account to get
+    primary accountId and accountType from ECLIPSE primary DB. Based on the accountType to indicate which module need to
+    call either casa or card. 
+
+
+    Flow: 
+
+    erp-dashboard -> erp-account (get primary accountId from ECLIPSE DB)
+                                 -> erp-{casa/card} (get account from ESB)
   author: AI
   generatedDate: '2026-07-15'
-  sourceWorksheet: API_Specs_Index
+  sourceWorksheet: Manage_Dashboard
   sourceRows: Row 2
-  apiSpecFile: P&T_Local_Transfer_DDD_API_Spec_v1.xlsx
+  apiSpecFile: ECLIPSE_App_Dashboard_DDD_API_Design_v2.xlsx
 tags:
   - get
-priority: P1
+priority: P3
 environment:
   - SIT
   - UAT
@@ -24,7 +33,7 @@ preconditions:
 testData: {}
 request:
   method: GET
-  endpoint: pt/maintenance/v1/transfers/init
+  endpoint: //v1/external/primary
   headers: {}
   pathParams: {}
   queryParams: {}
@@ -43,6 +52,6 @@ negativeScenarios:
   - Send request to non-existent resource — expect 404 Not Found
 cleanup: []
 references:
-  fsdFeature: API_Specs_Index
-  sourceWorksheet: API_Specs_Index
-  apiSpecFile: P&T_Local_Transfer_DDD_API_Spec_v1.xlsx
+  fsdFeature: Manage_Dashboard
+  sourceWorksheet: Manage_Dashboard
+  apiSpecFile: ECLIPSE_App_Dashboard_DDD_API_Design_v2.xlsx
