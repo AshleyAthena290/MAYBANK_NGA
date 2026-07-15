@@ -1,0 +1,81 @@
+# BDD Test Case - eclipseappdashboarddddapidesignv2
+# Generated for: GET /relationship-manager - Duplicate Correlation ID
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: -005-duplicate-correlation-id
+title: GET /relationship-manager - Duplicate Correlation ID
+feature: eclipseappdashboarddddapidesignv2
+description: Same request with duplicate correlation ID should be idempotent
+tags:
+  - edge-case
+  - idempotency
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+  - First request with correlation ID has been processed
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/relationship-manager'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/relationship-manager'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: duplicate-correlation-123
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    'GET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/relationship-manager': <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: Integer
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+    data: Object
+    relationshipManager: Object
+    name: String
+    email: String
+    contactNumber: String
+    designation: String
+    branchName: String
+    links: Object
+    url: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 (or 202 for idempotent)
+    type: custom
+  - description: Same response as first request
+    type: custom
+  - description: No duplicate processing occurred
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getRelationshipManager
+  sourceRows: ''
+  apiSpecFile: ''

@@ -7,7 +7,7 @@ metadata:
   feature: Api Specs Index
   description: Cancel Scheduled Transfer
   author: AI
-  generatedDate: '2026-07-06'
+  generatedDate: '2026-07-15'
   sourceWorksheet: API_Specs_Index
   sourceRows: Row 16
   apiSpecFile: P&T_Local_Transfer_DDD_API_Spec_v1.xlsx
