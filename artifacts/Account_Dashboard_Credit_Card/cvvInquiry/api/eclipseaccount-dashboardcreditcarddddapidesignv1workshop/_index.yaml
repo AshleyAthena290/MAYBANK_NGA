@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipseaccount-dashboardcreditcarddddapidesignv1workshop - 
+# Generated: 2026-07-16T09:46:31.779Z
+---
+feature: eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+apiName: ''
+description: Test cases for  endpoint
+totalScenarios: 7
+scenarios:
+  - id: -001-positive
+    title: POST /cvv-inquiry - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - ''
+    priority: P1
+  - id: -002-missing-auth
+    title: POST /cvv-inquiry - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: -003-invalid-auth
+    title: POST /cvv-inquiry - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: -004-invalid-content-type
+    title: POST /cvv-inquiry - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: -005-duplicate-correlation-id
+    title: POST /cvv-inquiry - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: -006-request-timeout
+    title: POST /cvv-inquiry - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: -007-empty-request-body
+    title: POST /cvv-inquiry - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-16T09:46:31.779Z'

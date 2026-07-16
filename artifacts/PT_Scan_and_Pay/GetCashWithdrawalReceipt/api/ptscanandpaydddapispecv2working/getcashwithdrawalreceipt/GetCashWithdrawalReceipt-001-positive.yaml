@@ -1,0 +1,297 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: GET /{txnRef} - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: GetCashWithdrawalReceipt-001-positive
+title: GET /{txnRef} - Happy Path
+feature: ptscanandpaydddapispecv2working
+description: Retrieves Cardless Withdrawal receipt details for Receipt screen display after successful transaction posting. pt-qr-id retrieves the cached transaction result from Hazelcast txn_flow cache and returns structured receipt data including withdrawal details, source-of-fund account, ATM location, reference ID, and disclaimer information.
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - getcashwithdrawalreceipt
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/receipt/{txnRef}
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/receipt/{txnRef}
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784197561949
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body: {}
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    txnRef: String
+    status: String
+    referenceId: String
+    transactionType: String
+    timestamp: String
+    sofAccountName: String
+    sofAccountNumberMasked: String
+    withdrawalAmount: Object
+    currency: String
+    amount: Integer
+    serviceFee: Object
+    totalAmount: Object
+    atmLocation: String
+    disclaimer: String
+    entityName: String
+    withdrawalType: String
+  expectedFields:
+    - fieldPath: txnRef
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: txnRef'
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: referenceId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: referenceId'
+    - fieldPath: transactionType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: transactionType'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: sofAccountName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: sofAccountName'
+    - fieldPath: sofAccountNumberMasked
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: sofAccountNumberMasked'
+    - fieldPath: withdrawalAmount
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: withdrawalAmount'
+    - fieldPath: withdrawalAmount.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: withdrawalAmount
+    - fieldPath: withdrawalAmount.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: withdrawalAmount
+    - fieldPath: serviceFee
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: serviceFee'
+    - fieldPath: serviceFee.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: serviceFee
+    - fieldPath: serviceFee.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: serviceFee
+    - fieldPath: totalAmount
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: totalAmount'
+    - fieldPath: totalAmount.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: totalAmount
+    - fieldPath: totalAmount.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: totalAmount
+    - fieldPath: atmLocation
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: atmLocation'
+    - fieldPath: disclaimer
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: disclaimer'
+    - fieldPath: entityName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: entityName'
+    - fieldPath: withdrawalType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: withdrawalType'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'txnRef' exists in response
+    type: field-exists
+    target: txnRef
+  - description: Field 'txnRef' is of type 'String'
+    type: field-type
+    target: txnRef
+    expectedValue: String
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'referenceId' exists in response
+    type: field-exists
+    target: referenceId
+  - description: Field 'referenceId' is of type 'String'
+    type: field-type
+    target: referenceId
+    expectedValue: String
+  - description: Field 'transactionType' exists in response
+    type: field-exists
+    target: transactionType
+  - description: Field 'transactionType' is of type 'String'
+    type: field-type
+    target: transactionType
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'sofAccountName' exists in response
+    type: field-exists
+    target: sofAccountName
+  - description: Field 'sofAccountName' is of type 'String'
+    type: field-type
+    target: sofAccountName
+    expectedValue: String
+  - description: Field 'sofAccountNumberMasked' exists in response
+    type: field-exists
+    target: sofAccountNumberMasked
+  - description: Field 'sofAccountNumberMasked' is of type 'String'
+    type: field-type
+    target: sofAccountNumberMasked
+    expectedValue: String
+  - description: Field 'withdrawalAmount' exists in response
+    type: field-exists
+    target: withdrawalAmount
+  - description: Field 'withdrawalAmount' is of type 'Object'
+    type: field-type
+    target: withdrawalAmount
+    expectedValue: Object
+  - description: Field 'serviceFee' exists in response
+    type: field-exists
+    target: serviceFee
+  - description: Field 'serviceFee' is of type 'Object'
+    type: field-type
+    target: serviceFee
+    expectedValue: Object
+  - description: Field 'totalAmount' exists in response
+    type: field-exists
+    target: totalAmount
+  - description: Field 'totalAmount' is of type 'Object'
+    type: field-type
+    target: totalAmount
+    expectedValue: Object
+  - description: Field 'atmLocation' exists in response
+    type: field-exists
+    target: atmLocation
+  - description: Field 'atmLocation' is of type 'String'
+    type: field-type
+    target: atmLocation
+    expectedValue: String
+  - description: Field 'disclaimer' exists in response
+    type: field-exists
+    target: disclaimer
+  - description: Field 'disclaimer' is of type 'String'
+    type: field-type
+    target: disclaimer
+    expectedValue: String
+  - description: Field 'entityName' exists in response
+    type: field-exists
+    target: entityName
+  - description: Field 'entityName' is of type 'String'
+    type: field-type
+    target: entityName
+    expectedValue: String
+  - description: Field 'withdrawalType' exists in response
+    type: field-exists
+    target: withdrawalType
+  - description: Field 'withdrawalType' is of type 'String'
+    type: field-type
+    target: withdrawalType
+    expectedValue: String
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: GetCashWithdrawalReceipt
+  sourceRows: ''
+  apiSpecFile: GetCashWithdrawalReceipt

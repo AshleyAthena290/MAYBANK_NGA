@@ -1,0 +1,145 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: GET /{txnRef} - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: GetCashWithdrawalStatus-001-positive
+title: GET /{txnRef} - Happy Path
+feature: ptscanandpaydddapispecv2working
+description: 'Retrieves the latest Cardless Withdrawal transaction posting status when submitCashWithdrawal returns RC_300 or timeout (RC68 scenario). pt-qr-id calls ESB eChannelServices (DE003: 27XX00) to determine the actual posting result from downstream systems, updates the transaction result in Hazelcast txn_flow cache, and returns the latest transaction status to NGA App.'
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - getcashwithdrawalstatus
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/status/{txnRef}
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/status/{txnRef}
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784197533043
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body: {}
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    txnRef: String
+    status: String
+    postingRef: String
+    timestamp: String
+    errorCode: 'Null'
+    errorMessage: 'Null'
+  expectedFields:
+    - fieldPath: txnRef
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: txnRef'
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: postingRef
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: postingRef'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: errorCode
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: errorCode'
+    - fieldPath: errorMessage
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: errorMessage'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'txnRef' exists in response
+    type: field-exists
+    target: txnRef
+  - description: Field 'txnRef' is of type 'String'
+    type: field-type
+    target: txnRef
+    expectedValue: String
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'postingRef' exists in response
+    type: field-exists
+    target: postingRef
+  - description: Field 'postingRef' is of type 'String'
+    type: field-type
+    target: postingRef
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'errorCode' exists in response
+    type: field-exists
+    target: errorCode
+  - description: Field 'errorCode' is of type 'Null'
+    type: field-type
+    target: errorCode
+    expectedValue: 'Null'
+  - description: Field 'errorMessage' exists in response
+    type: field-exists
+    target: errorMessage
+  - description: Field 'errorMessage' is of type 'Null'
+    type: field-type
+    target: errorMessage
+    expectedValue: 'Null'
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: GetCashWithdrawalStatus
+  sourceRows: ''
+  apiSpecFile: GetCashWithdrawalStatus

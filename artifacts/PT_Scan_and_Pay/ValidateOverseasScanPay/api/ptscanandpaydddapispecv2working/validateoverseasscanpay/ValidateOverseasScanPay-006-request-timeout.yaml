@@ -1,0 +1,63 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /validate - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: ValidateOverseasScanPay-006-request-timeout
+title: POST /validate - Request Timeout
+feature: ptscanandpaydddapispecv2working
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/validate
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/validate
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784197258187
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    txnRef: <value>
+    sofAccountId: <value>
+    sofCurrency: <value>
+    sofAccountType: <value>
+    merchantAmount: <value>
+    merchantCurrency: <value>
+    promoCode: <value>
+    ? "{\n  \"txnRef\": \"QR-CB-20260509-001\",\n  \"sofAccountId\": \"514013314526\",\n  \"sofCurrency\": \"IDR\",\n  \"sofAccountType\": \"CASA\",\n  \"merchantAmount\": 38.50,\n  \"merchantCurrency\": \"MYR\",\n  \"promoCode\": null\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: ValidateOverseasScanPay
+  sourceRows: ''
+  apiSpecFile: ValidateOverseasScanPay

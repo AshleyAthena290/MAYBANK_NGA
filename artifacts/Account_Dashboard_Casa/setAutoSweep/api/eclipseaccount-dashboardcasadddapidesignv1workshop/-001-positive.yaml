@@ -1,0 +1,168 @@
+# BDD Test Case - eclipseaccount-dashboardcasadddapidesignv1workshop
+# Generated for: POST /auto-sweep - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: -001-positive
+title: POST /auto-sweep - Happy Path
+feature: eclipseaccount-dashboardcasadddapidesignv1workshop
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - ''
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/auto-sweep'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/auto-sweep'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784193188422
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    primaryCurrency: <value>
+    primaryLimit: <value>
+    accountId: <value>
+    autoSweepFlag: <value>
+    Path Variable: <value>
+    ? "POST https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/auto-sweep\n\n{\n  \"primaryCurrency\": \"IDR\",\n  \"primaryLimit\": 200000,\n  \"accountId\": \"123456789012\",\n  \"autoSweepFlag\": \"Y\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    extra: String
+    note: String
+    header: String
+    desc: String
+    details: String
+    receipt: String
+  expectedFields:
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: extra
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: extra'
+    - fieldPath: note
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: note'
+    - fieldPath: header
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: header'
+    - fieldPath: desc
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: desc'
+    - fieldPath: details
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: details'
+    - fieldPath: receipt
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: receipt'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'extra' exists in response
+    type: field-exists
+    target: extra
+  - description: Field 'extra' is of type 'String'
+    type: field-type
+    target: extra
+    expectedValue: String
+  - description: Field 'note' exists in response
+    type: field-exists
+    target: note
+  - description: Field 'note' is of type 'String'
+    type: field-type
+    target: note
+    expectedValue: String
+  - description: Field 'header' exists in response
+    type: field-exists
+    target: header
+  - description: Field 'header' is of type 'String'
+    type: field-type
+    target: header
+    expectedValue: String
+  - description: Field 'desc' exists in response
+    type: field-exists
+    target: desc
+  - description: Field 'desc' is of type 'String'
+    type: field-type
+    target: desc
+    expectedValue: String
+  - description: Field 'details' exists in response
+    type: field-exists
+    target: details
+  - description: Field 'details' is of type 'String'
+    type: field-type
+    target: details
+    expectedValue: String
+  - description: Field 'receipt' exists in response
+    type: field-exists
+    target: receipt
+  - description: Field 'receipt' is of type 'String'
+    type: field-type
+    target: receipt
+    expectedValue: String
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: setAutoSweep
+  sourceRows: ''
+  apiSpecFile: ''

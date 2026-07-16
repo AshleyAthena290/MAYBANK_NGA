@@ -1,0 +1,67 @@
+# BDD Test Case - eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+# Generated for: POST /cvv-inquiry - Missing Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: -002-missing-auth
+title: POST /cvv-inquiry - Missing Authentication
+feature: eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+description: Request without authentication credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/cvv-inquiry'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/cvv-inquiry'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers: {}
+  pathParams: {}
+  queryParams: {}
+  body:
+    cardNumber: <value>
+    Request Parameter: <value>
+    ? "POST  https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/cvv-inquiry\n\n{\n    \"cardNumber\": \"4966092287163342\"\n}"
+    : <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized - Authentication required
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+      description: Error code
+    - fieldPath: message
+      type: String
+      mandatory: true
+      description: Error message
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Field 'error' exists and is of type String
+    type: field-type
+    target: error
+    expectedValue: String
+  - description: Error message indicates missing authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: cvvInquiry
+  sourceRows: ''
+  apiSpecFile: ''

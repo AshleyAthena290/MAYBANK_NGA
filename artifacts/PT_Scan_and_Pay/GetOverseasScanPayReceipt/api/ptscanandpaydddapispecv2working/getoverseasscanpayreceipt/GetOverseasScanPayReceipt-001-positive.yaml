@@ -1,0 +1,266 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: GET /{txnRef} - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: GetOverseasScanPayReceipt-001-positive
+title: GET /{txnRef} - Happy Path
+feature: ptscanandpaydddapispecv2working
+description: Initializes a cash withdrawal transaction request by validating customer and transaction details, generating a transaction reference, and storing the initial transaction state for further processing. This API prepares the withdrawal flow before authorization and cash disbursement execution.
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - getoverseasscanpayreceipt
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/receipt/{txnRef}
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/receipt/{txnRef}
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784197378428
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body: {}
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    txnRef: String
+    refId: String
+    transactionDateTime: String
+    transactionType: String
+    merchant: Object
+    merchantName: String
+    merchantCity: String
+    merchantCountryCode: String
+    cpan: String
+    sofAccount: Object
+    accountName: String
+    accountNumberMasked: String
+    amountDetails: Object
+    merchantAmount: Decimal
+    merchantCurrency: String
+    finalRate: Decimal
+    finalIDRAmount: Decimal
+    promoDiscount: Integer
+    totalDebitIDRAmount: Decimal
+    promoCode: 'Null'
+  expectedFields:
+    - fieldPath: txnRef
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: txnRef'
+    - fieldPath: refId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: refId'
+    - fieldPath: transactionDateTime
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: transactionDateTime'
+    - fieldPath: transactionType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: transactionType'
+    - fieldPath: merchant
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: merchant'
+    - fieldPath: merchant.merchantName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: merchantName'
+      parentField: merchant
+    - fieldPath: merchant.merchantCity
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: merchantCity'
+      parentField: merchant
+    - fieldPath: merchant.merchantCountryCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: merchantCountryCode'
+      parentField: merchant
+    - fieldPath: merchant.cpan
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: cpan'
+      parentField: merchant
+    - fieldPath: sofAccount
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: sofAccount'
+    - fieldPath: sofAccount.accountName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountName'
+      parentField: sofAccount
+    - fieldPath: sofAccount.accountNumberMasked
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountNumberMasked'
+      parentField: sofAccount
+    - fieldPath: amountDetails
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: amountDetails'
+    - fieldPath: amountDetails.merchantAmount
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: merchantAmount'
+      parentField: amountDetails
+    - fieldPath: amountDetails.merchantCurrency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: merchantCurrency'
+      parentField: amountDetails
+    - fieldPath: amountDetails.finalRate
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: finalRate'
+      parentField: amountDetails
+    - fieldPath: amountDetails.finalIDRAmount
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: finalIDRAmount'
+      parentField: amountDetails
+    - fieldPath: amountDetails.promoDiscount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: promoDiscount'
+      parentField: amountDetails
+    - fieldPath: amountDetails.totalDebitIDRAmount
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: totalDebitIDRAmount'
+      parentField: amountDetails
+    - fieldPath: promoCode
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: promoCode'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'txnRef' exists in response
+    type: field-exists
+    target: txnRef
+  - description: Field 'txnRef' is of type 'String'
+    type: field-type
+    target: txnRef
+    expectedValue: String
+  - description: Field 'refId' exists in response
+    type: field-exists
+    target: refId
+  - description: Field 'refId' is of type 'String'
+    type: field-type
+    target: refId
+    expectedValue: String
+  - description: Field 'transactionDateTime' exists in response
+    type: field-exists
+    target: transactionDateTime
+  - description: Field 'transactionDateTime' is of type 'String'
+    type: field-type
+    target: transactionDateTime
+    expectedValue: String
+  - description: Field 'transactionType' exists in response
+    type: field-exists
+    target: transactionType
+  - description: Field 'transactionType' is of type 'String'
+    type: field-type
+    target: transactionType
+    expectedValue: String
+  - description: Field 'merchant' exists in response
+    type: field-exists
+    target: merchant
+  - description: Field 'merchant' is of type 'Object'
+    type: field-type
+    target: merchant
+    expectedValue: Object
+  - description: Field 'sofAccount' exists in response
+    type: field-exists
+    target: sofAccount
+  - description: Field 'sofAccount' is of type 'Object'
+    type: field-type
+    target: sofAccount
+    expectedValue: Object
+  - description: Field 'amountDetails' exists in response
+    type: field-exists
+    target: amountDetails
+  - description: Field 'amountDetails' is of type 'Object'
+    type: field-type
+    target: amountDetails
+    expectedValue: Object
+  - description: Field 'promoCode' exists in response
+    type: field-exists
+    target: promoCode
+  - description: Field 'promoCode' is of type 'Null'
+    type: field-type
+    target: promoCode
+    expectedValue: 'Null'
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: GetOverseasScanPayReceipt
+  sourceRows: ''
+  apiSpecFile: GetOverseasScanPayReceipt

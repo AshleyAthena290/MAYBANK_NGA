@@ -1,0 +1,58 @@
+# BDD Test Case - eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+# Generated for: POST /unblock - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: -004-invalid-content-type
+title: POST /unblock - Invalid Content-Type
+feature: eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/unblock'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/unblock'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784195106085
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    cardNumber: <value>
+    Request Parameter: <value>
+    ? "POST  https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/unblock\n\n{\n    \"cardNumber\": \"4966092287163342\"\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: creditCardUnblock
+  sourceRows: ''
+  apiSpecFile: ''

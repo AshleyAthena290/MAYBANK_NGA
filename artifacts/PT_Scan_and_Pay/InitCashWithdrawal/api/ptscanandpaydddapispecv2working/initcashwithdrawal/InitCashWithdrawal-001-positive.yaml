@@ -1,0 +1,312 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /init - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: InitCashWithdrawal-001-positive
+title: POST /init - Happy Path
+feature: ptscanandpaydddapispecv2working
+description: Initializes a QR-based cash withdrawal transaction by parsing and validating the QR payload, identifying the withdrawal type, retrieving ATM and source-of-fund account information, and calculating the withdrawal amount and applicable service fee. The API returns transaction reference details, ATM information, eligible customer accounts, and default source-of-fund account for the next withdrawal authorization step.  Stores context in Hazelcast pre_txn_flow cache (TTL=10 min).
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - initcashwithdrawal
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: '{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/init'
+  endpoint: '{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/init'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784197422578
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    qrPayload: <value>
+    deviceId: <value>
+    customerCif: <value>
+    accessId: <value>
+    ? "{\n  \"qrPayload\": \"00020101021226580014ID.CO.BRI.WWW01189360001500000000002020403UBE03041234520454099000,00530336054061000005802ID5914MAYBANK ATM ID6013JAKARTA PUSAT61051234062070703RX23ADA6304ABCD\",\n  \"deviceId\": \"DEVICE-ABC-123\",\n  \"customerCif\": \"000784756\",\n  \"accessId\": \"5264782000027873\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    txnRef: String
+    withdrawalType: String
+    atmInfo: Object
+    terminalId: String
+    atmName: String
+    atmLocation: String
+    atmAddress: String
+    withdrawalAmount: Object
+    currency: String
+    amount: Integer
+    serviceFee: Object
+    totalAmount: Object
+    accounts: Array<Object>
+    '[]': Array<Object>
+    accountId: String
+    accountName: String
+    accountNumber: String
+    accountType: String
+    balance: Decimal
+    isPrimary: Boolean
+    defaultSofAccountId: String
+  expectedFields:
+    - fieldPath: txnRef
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: txnRef'
+    - fieldPath: withdrawalType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: withdrawalType'
+    - fieldPath: atmInfo
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: atmInfo'
+    - fieldPath: atmInfo.terminalId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: terminalId'
+      parentField: atmInfo
+    - fieldPath: atmInfo.atmName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: atmName'
+      parentField: atmInfo
+    - fieldPath: atmInfo.atmLocation
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: atmLocation'
+      parentField: atmInfo
+    - fieldPath: atmInfo.atmAddress
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: atmAddress'
+      parentField: atmInfo
+    - fieldPath: withdrawalAmount
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: withdrawalAmount'
+    - fieldPath: withdrawalAmount.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: withdrawalAmount
+    - fieldPath: withdrawalAmount.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: withdrawalAmount
+    - fieldPath: serviceFee
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: serviceFee'
+    - fieldPath: serviceFee.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: serviceFee
+    - fieldPath: serviceFee.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: serviceFee
+    - fieldPath: totalAmount
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: totalAmount'
+    - fieldPath: totalAmount.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: totalAmount
+    - fieldPath: totalAmount.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: totalAmount
+    - fieldPath: accounts
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: accounts'
+    - fieldPath: accounts.[]
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: Array of items
+      parentField: accounts
+    - fieldPath: accounts[].accountId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountId'
+      parentField: accounts[]
+    - fieldPath: accounts[].accountName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountName'
+      parentField: accounts[]
+    - fieldPath: accounts[].accountNumber
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountNumber'
+      parentField: accounts[]
+    - fieldPath: accounts[].accountType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountType'
+      parentField: accounts[]
+    - fieldPath: accounts[].currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: accounts[]
+    - fieldPath: accounts[].balance
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: balance'
+      parentField: accounts[]
+    - fieldPath: accounts[].isPrimary
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: isPrimary'
+      parentField: accounts[]
+    - fieldPath: defaultSofAccountId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: defaultSofAccountId'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'txnRef' exists in response
+    type: field-exists
+    target: txnRef
+  - description: Field 'txnRef' is of type 'String'
+    type: field-type
+    target: txnRef
+    expectedValue: String
+  - description: Field 'withdrawalType' exists in response
+    type: field-exists
+    target: withdrawalType
+  - description: Field 'withdrawalType' is of type 'String'
+    type: field-type
+    target: withdrawalType
+    expectedValue: String
+  - description: Field 'atmInfo' exists in response
+    type: field-exists
+    target: atmInfo
+  - description: Field 'atmInfo' is of type 'Object'
+    type: field-type
+    target: atmInfo
+    expectedValue: Object
+  - description: Field 'withdrawalAmount' exists in response
+    type: field-exists
+    target: withdrawalAmount
+  - description: Field 'withdrawalAmount' is of type 'Object'
+    type: field-type
+    target: withdrawalAmount
+    expectedValue: Object
+  - description: Field 'serviceFee' exists in response
+    type: field-exists
+    target: serviceFee
+  - description: Field 'serviceFee' is of type 'Object'
+    type: field-type
+    target: serviceFee
+    expectedValue: Object
+  - description: Field 'totalAmount' exists in response
+    type: field-exists
+    target: totalAmount
+  - description: Field 'totalAmount' is of type 'Object'
+    type: field-type
+    target: totalAmount
+    expectedValue: Object
+  - description: Field 'accounts' exists in response
+    type: field-exists
+    target: accounts
+  - description: Field 'accounts' is of type 'Array<Object>'
+    type: field-type
+    target: accounts
+    expectedValue: Array<Object>
+  - description: Field 'defaultSofAccountId' exists in response
+    type: field-exists
+    target: defaultSofAccountId
+  - description: Field 'defaultSofAccountId' is of type 'String'
+    type: field-type
+    target: defaultSofAccountId
+    expectedValue: String
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InitCashWithdrawal
+  sourceRows: ''
+  apiSpecFile: InitCashWithdrawal

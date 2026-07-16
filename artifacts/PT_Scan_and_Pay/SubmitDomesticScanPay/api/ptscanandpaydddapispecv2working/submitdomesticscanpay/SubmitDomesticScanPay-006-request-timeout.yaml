@@ -1,0 +1,70 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /submit - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: SubmitDomesticScanPay-006-request-timeout
+title: POST /submit - Request Timeout
+feature: ptscanandpaydddapispecv2working
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-local/submit
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-local/submit
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784197083360
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    txnRef: <value>
+    idempotencyKey: <value>
+    sofAccountId: <value>
+    sofAccountNumber: <value>
+    sofAccountType: <value>
+    cpan: <value>
+    terminalId: <value>
+    paymentAmount: <value>
+    tipAmount: <value>
+    promoDiscount: <value>
+    totalDebitAmount: <value>
+    currency: <value>
+    authToken: <value>
+    promoCode: <value>
+    ? "{\n  \"txnRef\": \"QR202605100001\",\n  \"idempotencyKey\": \"9f4c9d2f-5e6d-4e9a-8c0b-a3723a9b91d2\",\n  \"sofAccountId\": \"514013314526\",\n  \"sofAccountNumber\": \"514013314526\",\n  \"sofAccountType\": \"CASA\",\n  \"cpan\": null,\n  \"terminalId\": \"T001234\",\n  \"paymentAmount\": 50000.00,\n  \"tipAmount\": 5000.00,\n  \"promoDiscount\": 0.00,\n  \"totalDebitAmount\": 55000.00,\n  \"currency\": \"IDR\",\n  \"authToken\": \"S2U-AUTH-TOKEN-XYZ\",\n  \"promoCode\": null\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: SubmitDomesticScanPay
+  sourceRows: ''
+  apiSpecFile: SubmitDomesticScanPay

@@ -1,0 +1,91 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /init - Duplicate Correlation ID
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: InitCashWithdrawal-005-duplicate-correlation-id
+title: POST /init - Duplicate Correlation ID
+feature: ptscanandpaydddapispecv2working
+description: Same request with duplicate correlation ID should be idempotent
+tags:
+  - edge-case
+  - idempotency
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+  - First request with correlation ID has been processed
+testData: {}
+request:
+  method: POST
+  url: '{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/init'
+  endpoint: '{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/init'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: duplicate-correlation-123
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    qrPayload: <value>
+    deviceId: <value>
+    customerCif: <value>
+    accessId: <value>
+    ? "{\n  \"qrPayload\": \"00020101021226580014ID.CO.BRI.WWW01189360001500000000002020403UBE03041234520454099000,00530336054061000005802ID5914MAYBANK ATM ID6013JAKARTA PUSAT61051234062070703RX23ADA6304ABCD\",\n  \"deviceId\": \"DEVICE-ABC-123\",\n  \"customerCif\": \"000784756\",\n  \"accessId\": \"5264782000027873\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    txnRef: String
+    withdrawalType: String
+    atmInfo: Object
+    terminalId: String
+    atmName: String
+    atmLocation: String
+    atmAddress: String
+    withdrawalAmount: Object
+    currency: String
+    amount: Integer
+    serviceFee: Object
+    totalAmount: Object
+    accounts: Array<Object>
+    '[]': Array<Object>
+    accountId: String
+    accountName: String
+    accountNumber: String
+    accountType: String
+    balance: Decimal
+    isPrimary: Boolean
+    defaultSofAccountId: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 (or 202 for idempotent)
+    type: custom
+  - description: Same response as first request
+    type: custom
+  - description: No duplicate processing occurred
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InitCashWithdrawal
+  sourceRows: ''
+  apiSpecFile: InitCashWithdrawal

@@ -1,0 +1,64 @@
+# Test Case Index
+# ptscanandpaydddapispecv2working - InitDomesticScanPay
+# Generated: 2026-07-16T09:57:26.262Z
+---
+feature: ptscanandpaydddapispecv2working
+apiName: InitDomesticScanPay
+description: Test cases for InitDomesticScanPay endpoint
+totalScenarios: 7
+scenarios:
+  - id: InitDomesticScanPay-001-positive
+    title: POST /init - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - initdomesticscanpay
+    priority: P1
+  - id: InitDomesticScanPay-002-missing-auth
+    title: POST /init - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: InitDomesticScanPay-003-invalid-auth
+    title: POST /init - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: InitDomesticScanPay-004-invalid-content-type
+    title: POST /init - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: InitDomesticScanPay-005-duplicate-correlation-id
+    title: POST /init - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: InitDomesticScanPay-006-request-timeout
+    title: POST /init - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: InitDomesticScanPay-007-empty-request-body
+    title: POST /init - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-16T09:57:26.260Z'

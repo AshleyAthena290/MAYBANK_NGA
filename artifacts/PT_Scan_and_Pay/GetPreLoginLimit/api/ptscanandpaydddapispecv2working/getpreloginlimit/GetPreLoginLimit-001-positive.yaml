@@ -1,0 +1,99 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: GET /limit - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: GetPreLoginLimit-001-positive
+title: GET /limit - Happy Path
+feature: ptscanandpaydddapispecv2working
+description: |-
+  Retrieves the configured pre-login transaction limit for QR Pay transactions. The pre-login limit is used by NGA App during the Confirmation step of the QR Pre-Login (L1) journey to determine whether step-up authentication is required before Secure2U (S2U) authorization.
+
+  If:
+
+  transactionAmount > preLoginLimit → user must perform step-up authentication (L1 → L3)
+  transactionAmount <= preLoginLimit → user may proceed directly to S2U authorization
+
+  This API supports QR Pay Domestic and QR Pay Overseas only. Cardless Withdrawal (ATM Cash Out) is excluded from pre-login flow eligibility.
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - getpreloginlimit
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{Payment-IP}:{Payment-PORT}/qr/v1/pre-login/limit
+  endpoint: https://{Payment-IP}:{Payment-PORT}/qr/v1/pre-login/limit
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784197674774
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body: {}
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    preLoginLimit: Object
+    amount: Integer
+    currency: String
+  expectedFields:
+    - fieldPath: preLoginLimit
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: preLoginLimit'
+    - fieldPath: preLoginLimit.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: preLoginLimit
+    - fieldPath: preLoginLimit.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: preLoginLimit
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'preLoginLimit' exists in response
+    type: field-exists
+    target: preLoginLimit
+  - description: Field 'preLoginLimit' is of type 'Object'
+    type: field-type
+    target: preLoginLimit
+    expectedValue: Object
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: GetPreLoginLimit
+  sourceRows: ''
+  apiSpecFile: GetPreLoginLimit

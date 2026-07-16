@@ -1,0 +1,63 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: GET /status - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: GetScanPayActivationStatus-001-positive
+title: GET /status - Happy Path
+feature: ptscanandpaydddapispecv2working
+description: Retrieves the QR activation status for the current user. Returns a map of activation type (SCAN_TO_PAY, OVERSEAS_SCAN_PAY, ATM_CASH_OUT) and their respective statuses. Used as the entry-point check across all QR journeys and pre-login routing.
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - getscanpayactivationstatus
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/activation/status
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/activation/status
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784195702807
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body: {}
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: GetScanPayActivationStatus
+  sourceRows: ''
+  apiSpecFile: GetScanPayActivationStatus

@@ -1,0 +1,305 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /validate - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: ValidateCashWithdrawal-001-positive
+title: POST /validate - Happy Path
+feature: ptscanandpaydddapispecv2working
+description: Validates a QR cash withdrawal transaction before proceeding to Confirmation Screen by verifying the selected source-of-fund account, withdrawal amount, currency, transaction limits, and applicable service fee. Updates Hazelcast txn_flow cache (TTL=10 min).
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - validatecashwithdrawal
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: '{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/validate'
+  endpoint: '{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/validate'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784197452286
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    txnRef: <value>
+    sofAccountId: <value>
+    sofAccountNumber: <value>
+    sofCurrency: <value>
+    withdrawalAmount: <value>
+    currency: <value>
+    ? "{\n  \"txnRef\": \"QW-20251003-001234\",\n  \"sofAccountId\": \"514013314526\",\n  \"sofAccountNumber\": \"514013314526\",\n  \"sofCurrency\": \"IDR\",\n  \"withdrawalAmount\": 100000.0,\n  \"currency\": \"IDR\",\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    txnRef: String
+    validationStatus: String
+    withdrawalType: String
+    sofAccountId: String
+    withdrawalAmount: Object
+    currency: String
+    amount: Integer
+    serviceFee: Object
+    totalAmount: Object
+    atmInfo: Object
+    terminalId: String
+    atmName: String
+    atmLocation: String
+    atmAddress: String
+    limit: Object
+    dailyLimitRemaining: Object
+    transactionLimit: Object
+  expectedFields:
+    - fieldPath: txnRef
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: txnRef'
+    - fieldPath: validationStatus
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: validationStatus'
+    - fieldPath: withdrawalType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: withdrawalType'
+    - fieldPath: sofAccountId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: sofAccountId'
+    - fieldPath: withdrawalAmount
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: withdrawalAmount'
+    - fieldPath: withdrawalAmount.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: withdrawalAmount
+    - fieldPath: withdrawalAmount.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: withdrawalAmount
+    - fieldPath: serviceFee
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: serviceFee'
+    - fieldPath: serviceFee.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: serviceFee
+    - fieldPath: serviceFee.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: serviceFee
+    - fieldPath: totalAmount
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: totalAmount'
+    - fieldPath: totalAmount.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: totalAmount
+    - fieldPath: totalAmount.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: totalAmount
+    - fieldPath: atmInfo
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: atmInfo'
+    - fieldPath: atmInfo.terminalId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: terminalId'
+      parentField: atmInfo
+    - fieldPath: atmInfo.atmName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: atmName'
+      parentField: atmInfo
+    - fieldPath: atmInfo.atmLocation
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: atmLocation'
+      parentField: atmInfo
+    - fieldPath: atmInfo.atmAddress
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: atmAddress'
+      parentField: atmInfo
+    - fieldPath: limit
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: limit'
+    - fieldPath: limit.dailyLimitRemaining
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: dailyLimitRemaining'
+      parentField: limit
+    - fieldPath: limit.dailyLimitRemaining.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: limit.dailyLimitRemaining
+    - fieldPath: limit.dailyLimitRemaining.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: limit.dailyLimitRemaining
+    - fieldPath: limit.transactionLimit
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: transactionLimit'
+      parentField: limit
+    - fieldPath: limit.transactionLimit.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: limit.transactionLimit
+    - fieldPath: limit.transactionLimit.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: limit.transactionLimit
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'txnRef' exists in response
+    type: field-exists
+    target: txnRef
+  - description: Field 'txnRef' is of type 'String'
+    type: field-type
+    target: txnRef
+    expectedValue: String
+  - description: Field 'validationStatus' exists in response
+    type: field-exists
+    target: validationStatus
+  - description: Field 'validationStatus' is of type 'String'
+    type: field-type
+    target: validationStatus
+    expectedValue: String
+  - description: Field 'withdrawalType' exists in response
+    type: field-exists
+    target: withdrawalType
+  - description: Field 'withdrawalType' is of type 'String'
+    type: field-type
+    target: withdrawalType
+    expectedValue: String
+  - description: Field 'sofAccountId' exists in response
+    type: field-exists
+    target: sofAccountId
+  - description: Field 'sofAccountId' is of type 'String'
+    type: field-type
+    target: sofAccountId
+    expectedValue: String
+  - description: Field 'withdrawalAmount' exists in response
+    type: field-exists
+    target: withdrawalAmount
+  - description: Field 'withdrawalAmount' is of type 'Object'
+    type: field-type
+    target: withdrawalAmount
+    expectedValue: Object
+  - description: Field 'serviceFee' exists in response
+    type: field-exists
+    target: serviceFee
+  - description: Field 'serviceFee' is of type 'Object'
+    type: field-type
+    target: serviceFee
+    expectedValue: Object
+  - description: Field 'totalAmount' exists in response
+    type: field-exists
+    target: totalAmount
+  - description: Field 'totalAmount' is of type 'Object'
+    type: field-type
+    target: totalAmount
+    expectedValue: Object
+  - description: Field 'atmInfo' exists in response
+    type: field-exists
+    target: atmInfo
+  - description: Field 'atmInfo' is of type 'Object'
+    type: field-type
+    target: atmInfo
+    expectedValue: Object
+  - description: Field 'limit' exists in response
+    type: field-exists
+    target: limit
+  - description: Field 'limit' is of type 'Object'
+    type: field-type
+    target: limit
+    expectedValue: Object
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: ValidateCashWithdrawal
+  sourceRows: ''
+  apiSpecFile: ValidateCashWithdrawal

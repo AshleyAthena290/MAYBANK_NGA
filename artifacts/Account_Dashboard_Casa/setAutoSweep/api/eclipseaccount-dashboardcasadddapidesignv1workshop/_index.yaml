@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipseaccount-dashboardcasadddapidesignv1workshop - 
+# Generated: 2026-07-16T09:13:08.439Z
+---
+feature: eclipseaccount-dashboardcasadddapidesignv1workshop
+apiName: ''
+description: Test cases for  endpoint
+totalScenarios: 7
+scenarios:
+  - id: -001-positive
+    title: POST /auto-sweep - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - ''
+    priority: P1
+  - id: -002-missing-auth
+    title: POST /auto-sweep - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: -003-invalid-auth
+    title: POST /auto-sweep - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: -004-invalid-content-type
+    title: POST /auto-sweep - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: -005-duplicate-correlation-id
+    title: POST /auto-sweep - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: -006-request-timeout
+    title: POST /auto-sweep - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: -007-empty-request-body
+    title: POST /auto-sweep - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-16T09:13:08.438Z'

@@ -1,0 +1,64 @@
+# Test Case Index
+# ptscanandpaydddapispecv2working - SubmitCashWithdrawal
+# Generated: 2026-07-16T10:24:33.693Z
+---
+feature: ptscanandpaydddapispecv2working
+apiName: SubmitCashWithdrawal
+description: Test cases for SubmitCashWithdrawal endpoint
+totalScenarios: 7
+scenarios:
+  - id: SubmitCashWithdrawal-001-positive
+    title: POST /submit - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - submitcashwithdrawal
+    priority: P1
+  - id: SubmitCashWithdrawal-002-missing-auth
+    title: POST /submit - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: SubmitCashWithdrawal-003-invalid-auth
+    title: POST /submit - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: SubmitCashWithdrawal-004-invalid-content-type
+    title: POST /submit - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: SubmitCashWithdrawal-005-duplicate-correlation-id
+    title: POST /submit - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: SubmitCashWithdrawal-006-request-timeout
+    title: POST /submit - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: SubmitCashWithdrawal-007-empty-request-body
+    title: POST /submit - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-16T10:24:33.690Z'

@@ -1,0 +1,77 @@
+# BDD Test Case - eclipseaccount-dashboardcasadddapidesignv1workshop
+# Generated for: POST /linked-card - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: -006-request-timeout
+title: POST /linked-card - Request Timeout
+feature: eclipseaccount-dashboardcasadddapidesignv1workshop
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/linked-card'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/linked-card'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784193249090
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    '> account (object)': <value>
+    accountId: <value>
+    branchCode: <value>
+    currency: <value>
+    type: <value>
+    openingDateTime: <value>
+    '> customer (object)': <value>
+    phoneNumber: <value>
+    '> address (object)': <value>
+    address1: <value>
+    province: <value>
+    city: <value>
+    district: <value>
+    subDistrict: <value>
+    neighborhoodUnit: <value>
+    communityUnit: <value>
+    postcode: <value>
+    '> card (object)': <value>
+    cardNumber: <value>
+    primaryFlag: <value>
+    ? "POST https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/linked-card\n\n{\n  \"account\": {\n    \"accountId\": \"514013314526\",\n    \"branchCode\": \"001\",\n    \"currency\": \"IDR\",\n    \"type\": \"CA\",\n    \"openingDateTime\": \"2026-02-27 14:57:38\"\n  },\n  \"customer\": {\n    \"name\": \"DDEV SIX\",\n    \"phoneNumber\": \"800225556814\"\n  },\n  \"address\": {\n    \"address1\": \"Jl. Asia Afrika Sentral Senayan 3\",\n    \"province\": \"Jakarta Selatan\",\n    \"city\": \"Kebayoran Baru\",\n    \"district\": \"Bendungan Hilir\",\n    \"subDistrict\": \"Gelora\",\n    \"neighborhoodUnit\": \"001\",\n    \"communityUnit\": \"004\",\n    \"postcode\": \"10270\"\n  },\n  \"card\": {\n    \"unlinkedCardNumber\": \"5140133145267788\",\n    \"linkedCardNumber\": \"5140133145267596\",\n    \"primaryFlag\": true,\n    \"classCode\": \"J1\",\n    \"designCode\": \"01\",\n    \"feeCode\": \"00\"\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: setLinkedCard
+  sourceRows: ''
+  apiSpecFile: ''
