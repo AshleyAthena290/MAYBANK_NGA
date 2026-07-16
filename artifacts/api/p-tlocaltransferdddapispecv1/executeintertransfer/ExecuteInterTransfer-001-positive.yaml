@@ -32,7 +32,7 @@ request:
     Content-Type: application/json
     Accept: application/json
     X-Correlation-Id: test-correlation-id-1782998633553
-    Authorization: Bearer <token>
+    Authorization: NGAID260703094512_1001
   pathParams: {}
   queryParams: {}
   body:
