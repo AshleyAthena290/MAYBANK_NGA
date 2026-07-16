@@ -1,0 +1,64 @@
+# Test Case Index
+# ptscanandpaydddapispecv2working - GetScanPayActivationStatus
+# Generated: 2026-07-16T02:08:55.331Z
+---
+feature: ptscanandpaydddapispecv2working
+apiName: GetScanPayActivationStatus
+description: Test cases for GetScanPayActivationStatus endpoint
+totalScenarios: 7
+scenarios:
+  - id: GetScanPayActivationStatus-001-positive
+    title: GET /status - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getscanpayactivationstatus
+    priority: P1
+  - id: GetScanPayActivationStatus-002-missing-auth
+    title: GET /status - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetScanPayActivationStatus-003-invalid-auth
+    title: GET /status - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetScanPayActivationStatus-004-invalid-content-type
+    title: GET /status - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: GetScanPayActivationStatus-005-duplicate-correlation-id
+    title: GET /status - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: GetScanPayActivationStatus-006-request-timeout
+    title: GET /status - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: GetScanPayActivationStatus-007-empty-request-body
+    title: GET /status - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-16T02:08:55.329Z'
