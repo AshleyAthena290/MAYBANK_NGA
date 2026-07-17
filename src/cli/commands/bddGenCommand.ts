@@ -52,17 +52,18 @@ async function executeBddGenCommand(options: unknown): Promise<void> {
   const parser = new ApiSpecSheetParserService();
   const apiSpec = await parser.parseSheet(opts.input, opts.sheet);
 
-  logger.info(`API spec parsed: ${apiSpec.apiName} (${apiSpec.method}) with ${apiSpec.requestHeaders.length} request headers and ${apiSpec.responseFields.length} response fields`);
+  const effectiveApiName = apiSpec.apiName || opts.sheet || 'API';
+  logger.info(`API spec parsed: ${effectiveApiName} (${apiSpec.method}) with ${apiSpec.requestHeaders.length} request headers and ${apiSpec.responseFields.length} response fields`);
 
   // Convert ApiSpecMetadata to ApiScenario
-  const scenario = convertToApiScenario(apiSpec, opts.sheet);
+  const scenario = convertToApiScenario(apiSpec, opts.sheet, effectiveApiName);
 
   // Generate BDD test cases
   const generator = new BddYamlTestCaseGeneratorService();
   const testCases = generator.generateTestCases(
     scenario,
     extractFeatureName(opts.input),
-    apiSpec.apiName,
+    effectiveApiName,
     apiSpec.url,
     apiSpec.responseFields // Pass response fields for field-level validation
   );
@@ -85,7 +86,7 @@ async function executeBddGenCommand(options: unknown): Promise<void> {
   console.log(`📄 Files created: ${outputFiles.length}`);
 }
 
-function convertToApiScenario(apiSpec: any, sheetName: string): ApiScenario {
+function convertToApiScenario(apiSpec: any, sheetName: string, apiName: string): ApiScenario {
   // Extract endpoint from URL
   const urlMatch = apiSpec.url?.match(/\/([^/]+)(?:\?|$)/);
   const endpoint = urlMatch ? `/${urlMatch[1]}` : apiSpec.url || '/api/endpoint';
@@ -112,7 +113,7 @@ function convertToApiScenario(apiSpec: any, sheetName: string): ApiScenario {
   };
 
   return {
-    id: apiSpec.apiName,
+    id: apiName,
     title: `${apiSpec.method} ${endpoint}`,
     feature: extractFeatureName(''),
     description: apiSpec.apiDescription || 'API endpoint test scenario',
@@ -120,7 +121,7 @@ function convertToApiScenario(apiSpec: any, sheetName: string): ApiScenario {
     endpoint,
     authentication: 'OAuth2',
     environment: ['SIT', 'UAT', 'PROD'],
-    tags: ['api', apiSpec.apiName.toLowerCase()],
+    tags: ['api', apiName.toLowerCase().replace(/\s+/g, '-')],
     priority: 'P1',
     preconditions: [
       'Service is operational',
@@ -139,7 +140,7 @@ function convertToApiScenario(apiSpec: any, sheetName: string): ApiScenario {
       fsdFeature: extractFeatureName(''),
       sourceWorksheet: sheetName,
       sourceRows: '',
-      apiSpecFile: apiSpec.apiName,
+      apiSpecFile: apiName,
     },
     negativeScenarios: [
       'Missing authentication headers',

@@ -41,13 +41,40 @@ if (!inputDir) {
   process.exit(1);
 }
 
-// Derive API name from input directory if not provided
+function deriveApiNameFromYaml(directory) {
+  const apiDir = path.join(directory, 'api');
+  if (!fs.existsSync(apiDir)) return undefined;
+
+  const files = fs.readdirSync(apiDir)
+    .filter(f => f.endsWith('.scenario.yaml'))
+    .sort();
+
+  if (files.length === 0) return undefined;
+
+  const firstFile = path.join(apiDir, files[0]);
+  const content = fs.readFileSync(firstFile, 'utf-8');
+  const data = yamlLoad(content);
+
+  return (
+    data?.metadata?.service ||
+    data?.metadata?.feature ||
+    data?.feature ||
+    data?.title?.split(' - ')[0]
+  );
+}
+
+// Derive API name from YAML metadata or input directory if not provided
 if (!apiName) {
-  const dirName = path.basename(inputDir);
-  apiName = dirName
-    .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
+  const serviceName = deriveApiNameFromYaml(inputDir);
+  if (serviceName) {
+    apiName = String(serviceName).replace(/[-_]+/g, ' ').trim();
+  } else {
+    const dirName = path.basename(inputDir);
+    apiName = dirName
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  }
 }
 
 // Function to read all YAML files

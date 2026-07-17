@@ -57,7 +57,11 @@ export class ApiSpecSheetParserService {
 
       // ──── Metadata rows ────
       if (firstCol === 'api name') {
-        spec.apiName = values[1] || '';
+        spec.apiName = values[1] || spec.apiName || '';
+        return;
+      }
+      if (firstCol === 'service' || firstCol === 'service name') {
+        spec.apiName = spec.apiName || values[1] || '';
         return;
       }
       if (firstCol === 'api description') {
