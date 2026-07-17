@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipseaccount-dashboardcreditcarddddapidesignv1workshop - applyInstalmentConversion
+# Generated: 2026-07-17T06:10:10.923Z
+---
+feature: eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+apiName: applyInstalmentConversion
+description: Test cases for applyInstalmentConversion endpoint
+totalScenarios: 7
+scenarios:
+  - id: applyInstalmentConversion-001-positive
+    title: POST /apply-instalment-conversion - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - applyinstalmentconversion
+    priority: P1
+  - id: applyInstalmentConversion-002-missing-auth
+    title: POST /apply-instalment-conversion - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: applyInstalmentConversion-003-invalid-auth
+    title: POST /apply-instalment-conversion - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: applyInstalmentConversion-004-invalid-content-type
+    title: POST /apply-instalment-conversion - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: applyInstalmentConversion-005-duplicate-correlation-id
+    title: POST /apply-instalment-conversion - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: applyInstalmentConversion-006-request-timeout
+    title: POST /apply-instalment-conversion - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: applyInstalmentConversion-007-empty-request-body
+    title: POST /apply-instalment-conversion - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T06:10:10.921Z'

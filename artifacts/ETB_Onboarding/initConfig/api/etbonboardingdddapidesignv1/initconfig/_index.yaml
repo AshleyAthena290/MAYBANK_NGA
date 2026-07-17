@@ -1,0 +1,64 @@
+# Test Case Index
+# etbonboardingdddapidesignv1 - initConfig
+# Generated: 2026-07-17T03:32:57.558Z
+---
+feature: etbonboardingdddapidesignv1
+apiName: initConfig
+description: Test cases for initConfig endpoint
+totalScenarios: 7
+scenarios:
+  - id: initConfig-001-positive
+    title: GET /init - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - initconfig
+    priority: P1
+  - id: initConfig-002-missing-auth
+    title: GET /init - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: initConfig-003-invalid-auth
+    title: GET /init - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: initConfig-004-invalid-content-type
+    title: GET /init - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: initConfig-005-duplicate-correlation-id
+    title: GET /init - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: initConfig-006-request-timeout
+    title: GET /init - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: initConfig-007-empty-request-body
+    title: GET /init - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T03:32:57.555Z'

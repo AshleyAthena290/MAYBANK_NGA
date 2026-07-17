@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipseaccount-dashboardcreditcarddddapidesignv1workshop - creditCardUnblock
+# Generated: 2026-07-17T06:02:27.823Z
+---
+feature: eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+apiName: creditCardUnblock
+description: Test cases for creditCardUnblock endpoint
+totalScenarios: 7
+scenarios:
+  - id: creditCardUnblock-001-positive
+    title: POST /unblock - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - creditcardunblock
+    priority: P1
+  - id: creditCardUnblock-002-missing-auth
+    title: POST /unblock - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: creditCardUnblock-003-invalid-auth
+    title: POST /unblock - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: creditCardUnblock-004-invalid-content-type
+    title: POST /unblock - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: creditCardUnblock-005-duplicate-correlation-id
+    title: POST /unblock - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: creditCardUnblock-006-request-timeout
+    title: POST /unblock - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: creditCardUnblock-007-empty-request-body
+    title: POST /unblock - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T06:02:27.821Z'

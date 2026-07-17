@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipseaccount-dashboarddebitcarddddapidesignv1workshop - linkAccountToCard
+# Generated: 2026-07-17T05:25:23.142Z
+---
+feature: eclipseaccount-dashboarddebitcarddddapidesignv1workshop
+apiName: linkAccountToCard
+description: Test cases for linkAccountToCard endpoint
+totalScenarios: 7
+scenarios:
+  - id: linkAccountToCard-001-positive
+    title: POST /linked-account - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - linkaccounttocard
+    priority: P1
+  - id: linkAccountToCard-002-missing-auth
+    title: POST /linked-account - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: linkAccountToCard-003-invalid-auth
+    title: POST /linked-account - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: linkAccountToCard-004-invalid-content-type
+    title: POST /linked-account - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: linkAccountToCard-005-duplicate-correlation-id
+    title: POST /linked-account - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: linkAccountToCard-006-request-timeout
+    title: POST /linked-account - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: linkAccountToCard-007-empty-request-body
+    title: POST /linked-account - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T05:25:23.140Z'

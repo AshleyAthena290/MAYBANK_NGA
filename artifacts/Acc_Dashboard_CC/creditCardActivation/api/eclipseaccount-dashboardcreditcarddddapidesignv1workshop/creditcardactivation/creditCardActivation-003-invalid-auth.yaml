@@ -1,0 +1,63 @@
+# BDD Test Case - eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+# Generated for: POST /activate - Invalid Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: creditCardActivation-003-invalid-auth
+title: POST /activate - Invalid Authentication
+feature: eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+description: Request with invalid credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/activate'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/activate'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784268301150
+    Authorization: Bearer invalid_token_12345
+  pathParams: {}
+  queryParams: {}
+  body:
+    pinBlock: <value>
+    cardNumber: <value>
+    Request Parameter: <value>
+    ? "POST  https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/activate\n\n{\n    \"pinBlock\": \"80H287H678A\",\n    \"cardNumber\": \"2944809912348888\"\n}"
+    : <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized - Invalid credentials
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Error message indicates invalid authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: creditCardActivation
+  sourceRows: ''
+  apiSpecFile: creditCardActivation

@@ -1,0 +1,64 @@
+# Test Case Index
+# etbonboardingdddapidesignv1 - verifyUsername
+# Generated: 2026-07-17T03:36:25.243Z
+---
+feature: etbonboardingdddapidesignv1
+apiName: verifyUsername
+description: Test cases for verifyUsername endpoint
+totalScenarios: 7
+scenarios:
+  - id: verifyUsername-001-positive
+    title: POST /verify-username - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - verifyusername
+    priority: P1
+  - id: verifyUsername-002-missing-auth
+    title: POST /verify-username - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: verifyUsername-003-invalid-auth
+    title: POST /verify-username - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: verifyUsername-004-invalid-content-type
+    title: POST /verify-username - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: verifyUsername-005-duplicate-correlation-id
+    title: POST /verify-username - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: verifyUsername-006-request-timeout
+    title: POST /verify-username - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: verifyUsername-007-empty-request-body
+    title: POST /verify-username - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T03:36:25.243Z'

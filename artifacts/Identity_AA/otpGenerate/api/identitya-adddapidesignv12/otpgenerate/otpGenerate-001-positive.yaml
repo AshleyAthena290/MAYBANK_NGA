@@ -1,0 +1,215 @@
+# BDD Test Case - identitya-adddapidesignv12
+# Generated for: POST /generate - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: otpGenerate-001-positive
+title: POST /generate - Happy Path
+feature: identitya-adddapidesignv12
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - otpgenerate
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/identity/cerebro/v1/identity/otp/generate'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/identity/cerebro/v1/identity/otp/generate'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784268244905
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    ? "{\n  \"customerKey\": \"CUS00012345\"\n  \"otpType\": \"SECURE2U_REGISTRATION\",\n  \"deliveryChannel\": \"SMS\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    data: Object
+    credentialId: String
+    otpReferenceId: String
+    deliveryChannel: String
+    maskedDestination: String
+    expiresIn: Integer
+    resendAfter: Integer
+    nextAction: String
+    error: 'Null'
+    meta: 'Null'
+  expectedFields:
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: correlationId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: correlationId'
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.credentialId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: credentialId'
+      parentField: data
+    - fieldPath: data.otpReferenceId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: otpReferenceId'
+      parentField: data
+    - fieldPath: data.deliveryChannel
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: deliveryChannel'
+      parentField: data
+    - fieldPath: data.maskedDestination
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: maskedDestination'
+      parentField: data
+    - fieldPath: data.expiresIn
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: expiresIn'
+      parentField: data
+    - fieldPath: data.resendAfter
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: resendAfter'
+      parentField: data
+    - fieldPath: data.nextAction
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: nextAction'
+      parentField: data
+    - fieldPath: error
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: error'
+    - fieldPath: meta
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: meta'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'String'
+    type: field-type
+    target: message
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'correlationId' exists in response
+    type: field-exists
+    target: correlationId
+  - description: Field 'correlationId' is of type 'String'
+    type: field-type
+    target: correlationId
+    expectedValue: String
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+  - description: Field 'error' exists in response
+    type: field-exists
+    target: error
+  - description: Field 'error' is of type 'Null'
+    type: field-type
+    target: error
+    expectedValue: 'Null'
+  - description: Field 'meta' exists in response
+    type: field-exists
+    target: meta
+  - description: Field 'meta' is of type 'Null'
+    type: field-type
+    target: meta
+    expectedValue: 'Null'
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: otpGenerate
+  sourceRows: ''
+  apiSpecFile: otpGenerate

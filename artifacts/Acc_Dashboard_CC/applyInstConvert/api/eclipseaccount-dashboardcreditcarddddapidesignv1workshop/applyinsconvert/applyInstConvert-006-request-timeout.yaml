@@ -1,0 +1,69 @@
+# BDD Test Case - eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+# Generated for: POST /apply-instalment-conversion - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: applyInstalmentConversion-006-request-timeout
+title: POST /apply-instalment-conversion - Request Timeout
+feature: eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/apply-instalment-conversion'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/apply-instalment-conversion'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784268610899
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    transactions[] (list): <value>
+    referenceId: <value>
+    cardNumber: <value>
+    description: <value>
+    mid: <value>
+    plan: <value>
+    tenure: <value>
+    interest: <value>
+    monthlyInstalment: <value>
+    adminFee: <value>
+    conversionFee: <value>
+    amount: <value>
+    Request Parameter: <value>
+    ? "POST  https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/apply-instalment-conversion\n\n{\n    \"transactions\": [\n        {\n            \"referenceId\": \"1234567890\",\n            \"cardNumber\": \"4047760034916300\",\n            \"description\": \"175200 7648 - 175200 \\n764800940 QR PAY-GUTEN \\nMORGEN 00000\",\n            \"mid\": 22,\n            \"plan\": 7,\n            \"tenure\": 3,\n            \"interest\": 1,\n            \"monthlyInstalment\": 337833.33,\n            \"adminFee\": 10000,\n            \"conversionFee\": 3500,\n            \"amount\": 1000000\n        }\n    ]\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: applyInstalmentConversion
+  sourceRows: ''
+  apiSpecFile: applyInstalmentConversion

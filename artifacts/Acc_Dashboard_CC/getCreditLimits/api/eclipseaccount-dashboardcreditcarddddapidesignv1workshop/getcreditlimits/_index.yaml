@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipseaccount-dashboardcreditcarddddapidesignv1workshop - getCreditLimits
+# Generated: 2026-07-17T05:58:06.572Z
+---
+feature: eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+apiName: getCreditLimits
+description: Test cases for getCreditLimits endpoint
+totalScenarios: 7
+scenarios:
+  - id: getCreditLimits-001-positive
+    title: GET /credit-limits - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getcreditlimits
+    priority: P1
+  - id: getCreditLimits-002-missing-auth
+    title: GET /credit-limits - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getCreditLimits-003-invalid-auth
+    title: GET /credit-limits - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getCreditLimits-004-invalid-content-type
+    title: GET /credit-limits - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getCreditLimits-005-duplicate-correlation-id
+    title: GET /credit-limits - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getCreditLimits-006-request-timeout
+    title: GET /credit-limits - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getCreditLimits-007-empty-request-body
+    title: GET /credit-limits - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T05:58:06.570Z'

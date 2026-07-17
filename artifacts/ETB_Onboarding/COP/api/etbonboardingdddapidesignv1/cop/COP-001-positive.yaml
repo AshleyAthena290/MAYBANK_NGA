@@ -1,0 +1,149 @@
+# BDD Test Case - etbonboardingdddapidesignv1
+# Generated for: POST /cooldown - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: COP-001-positive
+title: POST /cooldown - Happy Path
+feature: etbonboardingdddapidesignv1
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - cop
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/identity/cop/v1/cooldown'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/identity/cop/v1/cooldown'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784267132925
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    ? "{\n  \"app_id\": \"NGA\",\n  \"coolDownSeconds\": 86400,\n  \"needLengthenCp\": true,\n  \"lengthenCpStartTime\": \"2200\",\n  \"lengthenCpEndTime\": \"0600\",\n  \"lengthenCoolDownSeconds\": 172800\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    userId: String
+    actionType: String
+    countryCode: String
+    configCode: String
+    overrideDuration: Integer
+    overrideUnit: String
+  expectedFields:
+    - fieldPath: userId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: userId'
+    - fieldPath: actionType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: actionType'
+    - fieldPath: countryCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: countryCode'
+    - fieldPath: configCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: configCode'
+    - fieldPath: overrideDuration
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: overrideDuration'
+    - fieldPath: overrideUnit
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: overrideUnit'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'userId' exists in response
+    type: field-exists
+    target: userId
+  - description: Field 'userId' is of type 'String'
+    type: field-type
+    target: userId
+    expectedValue: String
+  - description: Field 'actionType' exists in response
+    type: field-exists
+    target: actionType
+  - description: Field 'actionType' is of type 'String'
+    type: field-type
+    target: actionType
+    expectedValue: String
+  - description: Field 'countryCode' exists in response
+    type: field-exists
+    target: countryCode
+  - description: Field 'countryCode' is of type 'String'
+    type: field-type
+    target: countryCode
+    expectedValue: String
+  - description: Field 'configCode' exists in response
+    type: field-exists
+    target: configCode
+  - description: Field 'configCode' is of type 'String'
+    type: field-type
+    target: configCode
+    expectedValue: String
+  - description: Field 'overrideDuration' exists in response
+    type: field-exists
+    target: overrideDuration
+  - description: Field 'overrideDuration' is of type 'Integer'
+    type: field-type
+    target: overrideDuration
+    expectedValue: Integer
+  - description: Field 'overrideUnit' exists in response
+    type: field-exists
+    target: overrideUnit
+  - description: Field 'overrideUnit' is of type 'String'
+    type: field-type
+    target: overrideUnit
+    expectedValue: String
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: COP
+  sourceRows: ''
+  apiSpecFile: COP

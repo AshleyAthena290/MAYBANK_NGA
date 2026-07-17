@@ -1,0 +1,64 @@
+# Test Case Index
+# identitya-adddapidesignv12 - otpVerify
+# Generated: 2026-07-17T06:05:43.468Z
+---
+feature: identitya-adddapidesignv12
+apiName: otpVerify
+description: Test cases for otpVerify endpoint
+totalScenarios: 7
+scenarios:
+  - id: otpVerify-001-positive
+    title: POST /verify - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - otpverify
+    priority: P1
+  - id: otpVerify-002-missing-auth
+    title: POST /verify - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: otpVerify-003-invalid-auth
+    title: POST /verify - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: otpVerify-004-invalid-content-type
+    title: POST /verify - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: otpVerify-005-duplicate-correlation-id
+    title: POST /verify - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: otpVerify-006-request-timeout
+    title: POST /verify - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: otpVerify-007-empty-request-body
+    title: POST /verify - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T06:05:43.464Z'

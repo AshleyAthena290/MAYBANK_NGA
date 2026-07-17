@@ -1,0 +1,246 @@
+# BDD Test Case - identitya-adddapidesignv12
+# Generated for: GET /init - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: init transaction-001-positive
+title: GET /init - Happy Path
+feature: identitya-adddapidesignv12
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - init-transaction
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Identity-IP}:{Identity-PORT}/identity/cerebro/v1/security/init'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/identity/cerebro/v1/security/init'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784267891836
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    data: Object
+    securityConfig: Object
+    mtlsEnabled: Boolean
+    certificatePinningEnabled: Boolean
+    biometricEnabled: Boolean
+    deviceBindingEnabled: Boolean
+    coolingPeriodEnabled: Boolean
+    tokenLevel: String
+    minAppVersion: String
+    latestAppVersion: String
+    forceUpdate: Boolean
+    sessionTimeoutSeconds: Integer
+    maxRetry: Integer
+    error: 'Null'
+    meta: 'Null'
+  expectedFields:
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: correlationId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: correlationId'
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.securityConfig
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: securityConfig'
+      parentField: data
+    - fieldPath: data.securityConfig.mtlsEnabled
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: mtlsEnabled'
+      parentField: data.securityConfig
+    - fieldPath: data.securityConfig.certificatePinningEnabled
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: certificatePinningEnabled'
+      parentField: data.securityConfig
+    - fieldPath: data.securityConfig.biometricEnabled
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: biometricEnabled'
+      parentField: data.securityConfig
+    - fieldPath: data.securityConfig.deviceBindingEnabled
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: deviceBindingEnabled'
+      parentField: data.securityConfig
+    - fieldPath: data.securityConfig.coolingPeriodEnabled
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: coolingPeriodEnabled'
+      parentField: data.securityConfig
+    - fieldPath: data.securityConfig.tokenLevel
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: tokenLevel'
+      parentField: data.securityConfig
+    - fieldPath: data.securityConfig.minAppVersion
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: minAppVersion'
+      parentField: data.securityConfig
+    - fieldPath: data.securityConfig.latestAppVersion
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: latestAppVersion'
+      parentField: data.securityConfig
+    - fieldPath: data.securityConfig.forceUpdate
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: forceUpdate'
+      parentField: data.securityConfig
+    - fieldPath: data.securityConfig.sessionTimeoutSeconds
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: sessionTimeoutSeconds'
+      parentField: data.securityConfig
+    - fieldPath: data.securityConfig.maxRetry
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: maxRetry'
+      parentField: data.securityConfig
+    - fieldPath: error
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: error'
+    - fieldPath: meta
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: meta'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'String'
+    type: field-type
+    target: message
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'correlationId' exists in response
+    type: field-exists
+    target: correlationId
+  - description: Field 'correlationId' is of type 'String'
+    type: field-type
+    target: correlationId
+    expectedValue: String
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+  - description: Field 'error' exists in response
+    type: field-exists
+    target: error
+  - description: Field 'error' is of type 'Null'
+    type: field-type
+    target: error
+    expectedValue: 'Null'
+  - description: Field 'meta' exists in response
+    type: field-exists
+    target: meta
+  - description: Field 'meta' is of type 'Null'
+    type: field-type
+    target: meta
+    expectedValue: 'Null'
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: securityInit
+  sourceRows: ''
+  apiSpecFile: init transaction

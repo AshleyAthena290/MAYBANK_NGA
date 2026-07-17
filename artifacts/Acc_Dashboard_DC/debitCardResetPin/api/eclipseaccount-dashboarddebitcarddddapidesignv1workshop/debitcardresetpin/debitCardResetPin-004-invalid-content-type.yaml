@@ -1,0 +1,68 @@
+# BDD Test Case - eclipseaccount-dashboarddebitcarddddapidesignv1workshop
+# Generated for: POST /reset-pin - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: debitCardResetPin-004-invalid-content-type
+title: POST /reset-pin - Invalid Content-Type
+feature: eclipseaccount-dashboarddebitcarddddapidesignv1workshop
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/debit-card/reset-pin'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/debit-card/reset-pin'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784266155481
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    cardNumber: <value>
+    cardExpiry: <value>
+    pinBlock: <value>
+    actionCode: <value>
+    Request Parameter: <value>
+    status: <value>
+    extra: <value>
+    note: <value>
+    header: <value>
+    desc: <value>
+    details: <value>
+    receipt: <value>
+    ? "POST  https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/debit-card/reset-pin\n\n{\n    \"cardNumber\": \"4966092287163342\",\n    \"cardExpiry\": \"0128\",\n    \"pinBlock\": \"80H287H678A\",\n    \"actionCode\": \"1\"\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: debitCardResetPin
+  sourceRows: ''
+  apiSpecFile: debitCardResetPin

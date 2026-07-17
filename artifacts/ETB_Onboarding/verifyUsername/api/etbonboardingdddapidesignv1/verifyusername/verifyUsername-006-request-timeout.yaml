@@ -1,0 +1,58 @@
+# BDD Test Case - etbonboardingdddapidesignv1
+# Generated for: POST /verify-username - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: verifyUsername-006-request-timeout
+title: POST /verify-username - Request Timeout
+feature: etbonboardingdddapidesignv1
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/identity/cerebro/v1/user/verify-username'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/identity/cerebro/v1/user/verify-username'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784259385209
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    username: <value>
+    Request Parameter: <value>
+    ? "{\n    \"username\": \"Azmanmbb9\",     \n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: verifyUsername
+  sourceRows: ''
+  apiSpecFile: verifyUsername

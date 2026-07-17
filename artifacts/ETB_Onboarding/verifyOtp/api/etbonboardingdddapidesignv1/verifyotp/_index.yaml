@@ -1,0 +1,64 @@
+# Test Case Index
+# etbonboardingdddapidesignv1 - verifyOtp
+# Generated: 2026-07-17T03:53:15.206Z
+---
+feature: etbonboardingdddapidesignv1
+apiName: verifyOtp
+description: Test cases for verifyOtp endpoint
+totalScenarios: 7
+scenarios:
+  - id: verifyOtp-001-positive
+    title: POST /verify - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - verifyotp
+    priority: P1
+  - id: verifyOtp-002-missing-auth
+    title: POST /verify - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: verifyOtp-003-invalid-auth
+    title: POST /verify - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: verifyOtp-004-invalid-content-type
+    title: POST /verify - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: verifyOtp-005-duplicate-correlation-id
+    title: POST /verify - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: verifyOtp-006-request-timeout
+    title: POST /verify - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: verifyOtp-007-empty-request-body
+    title: POST /verify - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T03:53:15.206Z'
