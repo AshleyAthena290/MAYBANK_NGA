@@ -1,11 +1,11 @@
-# BDD Test Case - ptscanandpaydddapispecv2working
-# Generated for: POST /execute - Empty Request Body
+# BDD Test Case - eclipseaccount-dashboardcasadddapidesignv1workshop
+# Generated for: POST /reactivate - Empty Request Body
 # Purpose: API endpoint test case for QA, BA, and business user review
 # Note: This is a business-readable specification, not a technical implementation
 ---
-id: ExecuteActivation-007-empty-request-body
-title: POST /execute - Empty Request Body
-feature: ptscanandpaydddapispecv2working
+id: reactivateAccount-007-empty-request-body
+title: POST /reactivate - Empty Request Body
+feature: eclipseaccount-dashboardcasadddapidesignv1workshop
 description: Request with empty body should be properly rejected
 tags:
   - edge-case
@@ -22,13 +22,13 @@ preconditions:
 testData: {}
 request:
   method: POST
-  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/activation/execute
-  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/activation/execute
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/reactivate'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/reactivate'
   baseUrl: https://{Payment-IP}:{Payment-PORT}
   headers:
     Content-Type: application/json
     Accept: application/json
-    X-Correlation-Id: test-correlation-id-1784271257470
+    X-Correlation-Id: test-correlation-id-1784270983887
     Authorization: Bearer <token>
   pathParams: {}
   queryParams: {}
@@ -49,6 +49,6 @@ assertions:
 cleanup: []
 references:
   fsdFeature: api-spec
-  sourceWorksheet: ExecuteActivation
+  sourceWorksheet: reactivateAccount
   sourceRows: ''
-  apiSpecFile: ExecuteActivation
+  apiSpecFile: reactivateAccount

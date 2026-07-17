@@ -1,11 +1,11 @@
-# BDD Test Case - ptscanandpaydddapispecv2working
-# Generated for: GET /status - Invalid Content-Type
+# BDD Test Case - eclipseaccount-dashboardcasadddapidesignv1workshop
+# Generated for: POST /block - Invalid Content-Type
 # Purpose: API endpoint test case for QA, BA, and business user review
 # Note: This is a business-readable specification, not a technical implementation
 ---
-id: GetScanPayActivationStatus-004-invalid-content-type
-title: GET /status - Invalid Content-Type
-feature: ptscanandpaydddapispecv2working
+id: blockAccounts-004-invalid-content-type
+title: POST /block - Invalid Content-Type
+feature: eclipseaccount-dashboardcasadddapidesignv1workshop
 description: Request with invalid Content-Type should fail
 tags:
   - negative
@@ -21,18 +21,23 @@ preconditions:
   - Valid authentication credentials available
 testData: {}
 request:
-  method: GET
-  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/activation/status
-  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/activation/status
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/block'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/block'
   baseUrl: https://{Payment-IP}:{Payment-PORT}
   headers:
     Content-Type: application/xml
     Accept: application/json
-    X-Correlation-Id: test-correlation-id-1784271203680
+    X-Correlation-Id: test-correlation-id-1784270938601
     Authorization: Bearer <token>
   pathParams: {}
   queryParams: {}
-  body: {}
+  body:
+    accounts[] (list): <value>
+    accountId: <value>
+    Request Parameter: <value>
+    ? "POST  https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/block\n\n{\n    \"accounts\": [\n        {\n            \"accountId\": \"183476335222\"\n        },\n        {\n            \"accountId\": \"898876334567\"\n        }\n    ]\n}"
+    : <value>
 response:
   successStatusCode: 400
   successDescription: Bad Request - Invalid Content-Type
@@ -49,6 +54,6 @@ assertions:
 cleanup: []
 references:
   fsdFeature: api-spec
-  sourceWorksheet: GetScanPayActivationStatus
+  sourceWorksheet: blockAccounts
   sourceRows: ''
-  apiSpecFile: GetScanPayActivationStatus
+  apiSpecFile: blockAccounts

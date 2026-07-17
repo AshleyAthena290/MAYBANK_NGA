@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipseaccount-dashboardcasadddapidesignv1workshop - reactivateAccount
+# Generated: 2026-07-17T06:49:43.939Z
+---
+feature: eclipseaccount-dashboardcasadddapidesignv1workshop
+apiName: reactivateAccount
+description: Test cases for reactivateAccount endpoint
+totalScenarios: 7
+scenarios:
+  - id: reactivateAccount-001-positive
+    title: POST /reactivate - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - reactivateaccount
+    priority: P1
+  - id: reactivateAccount-002-missing-auth
+    title: POST /reactivate - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: reactivateAccount-003-invalid-auth
+    title: POST /reactivate - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: reactivateAccount-004-invalid-content-type
+    title: POST /reactivate - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: reactivateAccount-005-duplicate-correlation-id
+    title: POST /reactivate - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: reactivateAccount-006-request-timeout
+    title: POST /reactivate - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: reactivateAccount-007-empty-request-body
+    title: POST /reactivate - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T06:49:43.936Z'

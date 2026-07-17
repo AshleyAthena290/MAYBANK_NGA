@@ -1,6 +1,6 @@
 # Test Case Index
 # ptscanandpaydddapispecv2working - GetScanPayActivationStatus
-# Generated: 2026-07-16T09:55:02.852Z
+# Generated: 2026-07-17T06:53:23.708Z
 ---
 feature: ptscanandpaydddapispecv2working
 apiName: GetScanPayActivationStatus
@@ -61,4 +61,4 @@ scenarios:
       - edge-case
       - validation
     priority: P2
-generatedAt: '2026-07-16T09:55:02.849Z'
+generatedAt: '2026-07-17T06:53:23.706Z'

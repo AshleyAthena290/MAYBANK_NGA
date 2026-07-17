@@ -1,11 +1,11 @@
-# BDD Test Case - ptscanandpaydddapispecv2working
-# Generated for: GET /status - Request Timeout
+# BDD Test Case - eclipseaccount-dashboardcasadddapidesignv1workshop
+# Generated for: GET /manage - Request Timeout
 # Purpose: API endpoint test case for QA, BA, and business user review
 # Note: This is a business-readable specification, not a technical implementation
 ---
-id: GetScanPayActivationStatus-006-request-timeout
-title: GET /status - Request Timeout
-feature: ptscanandpaydddapispecv2working
+id: getManageDebitCard-006-request-timeout
+title: GET /manage - Request Timeout
+feature: eclipseaccount-dashboardcasadddapidesignv1workshop
 description: Request exceeding timeout threshold should fail gracefully
 tags:
   - edge-case
@@ -22,17 +22,20 @@ preconditions:
 testData: {}
 request:
   method: GET
-  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/activation/status
-  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/activation/status
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/debit-card/manage'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/debit-card/manage'
   baseUrl: https://{Payment-IP}:{Payment-PORT}
   headers:
     Content-Type: application/json
     Accept: application/json
-    X-Correlation-Id: test-correlation-id-1784271203680
+    X-Correlation-Id: test-correlation-id-1784267998632
     Authorization: Bearer <token>
   pathParams: {}
   queryParams: {}
-  body: {}
+  body:
+    Request Parameter: <value>
+    accountId: <value>
+    'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/debit-card/manage?accountId=900000097152': <value>
 response:
   successStatusCode: 504
   successDescription: Gateway Timeout
@@ -49,6 +52,6 @@ assertions:
 cleanup: []
 references:
   fsdFeature: api-spec
-  sourceWorksheet: GetScanPayActivationStatus
+  sourceWorksheet: getManageDebitCard
   sourceRows: ''
-  apiSpecFile: GetScanPayActivationStatus
+  apiSpecFile: getManageDebitCard
