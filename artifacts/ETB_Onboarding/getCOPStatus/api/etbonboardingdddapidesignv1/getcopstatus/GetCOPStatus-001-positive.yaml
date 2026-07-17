@@ -1,0 +1,216 @@
+# BDD Test Case - etbonboardingdddapidesignv1
+# Generated for: GET /{id} - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: GetCOPStatus-001-positive
+title: GET /{id} - Happy Path
+feature: etbonboardingdddapidesignv1
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - getcopstatus
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Identity-IP}:{Identity-PORT}/identity/api/v1/cool-period/{id}'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/identity/api/v1/cool-period/{id}'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784267087611
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    GET /identity/api/v1/cool-period/1: <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    recordId: Integer
+    userId: String
+    actionType: String
+    status: String
+    startTime: String
+    endTime: String
+    coolPeriodDuration: Integer
+    coolPeriodUnit: String
+    countryCode: String
+    configCode: String
+    parentRecordId: 'Null'
+  expectedFields:
+    - fieldPath: recordId
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: recordId'
+    - fieldPath: userId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: userId'
+    - fieldPath: actionType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: actionType'
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: startTime
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: startTime'
+    - fieldPath: endTime
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: endTime'
+    - fieldPath: coolPeriodDuration
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: coolPeriodDuration'
+    - fieldPath: coolPeriodUnit
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: coolPeriodUnit'
+    - fieldPath: countryCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: countryCode'
+    - fieldPath: configCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: configCode'
+    - fieldPath: parentRecordId
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: parentRecordId'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'recordId' exists in response
+    type: field-exists
+    target: recordId
+  - description: Field 'recordId' is of type 'Integer'
+    type: field-type
+    target: recordId
+    expectedValue: Integer
+  - description: Field 'userId' exists in response
+    type: field-exists
+    target: userId
+  - description: Field 'userId' is of type 'String'
+    type: field-type
+    target: userId
+    expectedValue: String
+  - description: Field 'actionType' exists in response
+    type: field-exists
+    target: actionType
+  - description: Field 'actionType' is of type 'String'
+    type: field-type
+    target: actionType
+    expectedValue: String
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'startTime' exists in response
+    type: field-exists
+    target: startTime
+  - description: Field 'startTime' is of type 'String'
+    type: field-type
+    target: startTime
+    expectedValue: String
+  - description: Field 'endTime' exists in response
+    type: field-exists
+    target: endTime
+  - description: Field 'endTime' is of type 'String'
+    type: field-type
+    target: endTime
+    expectedValue: String
+  - description: Field 'coolPeriodDuration' exists in response
+    type: field-exists
+    target: coolPeriodDuration
+  - description: Field 'coolPeriodDuration' is of type 'Integer'
+    type: field-type
+    target: coolPeriodDuration
+    expectedValue: Integer
+  - description: Field 'coolPeriodUnit' exists in response
+    type: field-exists
+    target: coolPeriodUnit
+  - description: Field 'coolPeriodUnit' is of type 'String'
+    type: field-type
+    target: coolPeriodUnit
+    expectedValue: String
+  - description: Field 'countryCode' exists in response
+    type: field-exists
+    target: countryCode
+  - description: Field 'countryCode' is of type 'String'
+    type: field-type
+    target: countryCode
+    expectedValue: String
+  - description: Field 'configCode' exists in response
+    type: field-exists
+    target: configCode
+  - description: Field 'configCode' is of type 'String'
+    type: field-type
+    target: configCode
+    expectedValue: String
+  - description: Field 'parentRecordId' exists in response
+    type: field-exists
+    target: parentRecordId
+  - description: Field 'parentRecordId' is of type 'Null'
+    type: field-type
+    target: parentRecordId
+    expectedValue: 'Null'
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getCOPStatus
+  sourceRows: ''
+  apiSpecFile: GetCOPStatus

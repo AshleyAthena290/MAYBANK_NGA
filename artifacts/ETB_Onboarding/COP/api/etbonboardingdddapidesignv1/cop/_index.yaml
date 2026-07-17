@@ -1,0 +1,64 @@
+# Test Case Index
+# etbonboardingdddapidesignv1 - COP
+# Generated: 2026-07-17T05:45:32.969Z
+---
+feature: etbonboardingdddapidesignv1
+apiName: COP
+description: Test cases for COP endpoint
+totalScenarios: 7
+scenarios:
+  - id: COP-001-positive
+    title: POST /cooldown - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - cop
+    priority: P1
+  - id: COP-002-missing-auth
+    title: POST /cooldown - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: COP-003-invalid-auth
+    title: POST /cooldown - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: COP-004-invalid-content-type
+    title: POST /cooldown - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: COP-005-duplicate-correlation-id
+    title: POST /cooldown - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: COP-006-request-timeout
+    title: POST /cooldown - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: COP-007-empty-request-body
+    title: POST /cooldown - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T05:45:32.966Z'

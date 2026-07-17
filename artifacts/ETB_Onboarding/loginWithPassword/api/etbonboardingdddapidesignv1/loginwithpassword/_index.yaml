@@ -1,0 +1,64 @@
+# Test Case Index
+# etbonboardingdddapidesignv1 - loginWithPassword
+# Generated: 2026-07-17T03:46:03.198Z
+---
+feature: etbonboardingdddapidesignv1
+apiName: loginWithPassword
+description: Test cases for loginWithPassword endpoint
+totalScenarios: 7
+scenarios:
+  - id: loginWithPassword-001-positive
+    title: POST /password - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - loginwithpassword
+    priority: P1
+  - id: loginWithPassword-002-missing-auth
+    title: POST /password - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: loginWithPassword-003-invalid-auth
+    title: POST /password - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: loginWithPassword-004-invalid-content-type
+    title: POST /password - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: loginWithPassword-005-duplicate-correlation-id
+    title: POST /password - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: loginWithPassword-006-request-timeout
+    title: POST /password - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: loginWithPassword-007-empty-request-body
+    title: POST /password - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T03:46:03.194Z'

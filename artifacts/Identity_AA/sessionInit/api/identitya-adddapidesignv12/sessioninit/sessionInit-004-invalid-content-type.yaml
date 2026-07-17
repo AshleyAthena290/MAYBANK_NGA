@@ -1,0 +1,57 @@
+# BDD Test Case - identitya-adddapidesignv12
+# Generated for: POST /init - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: sessionInit-004-invalid-content-type
+title: POST /init - Invalid Content-Type
+feature: identitya-adddapidesignv12
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/identity/cerebro/v1/session/init'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/identity/cerebro/v1/session/init'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784268013087
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    ? "{\n  \"deviceId\": \"ANDROID-123456\",\n  \"hardwareId\": \"HW-ABC-123\",\n  \"platform\": \"ANDROID\",\n  \"appVersion\": \"2.5.1\",\n  \"deviceModel\": \"Samsung S24 Ultra\",\n  \"osVersion\": \"Android 16\",\n  \"publicKey\": \"-----BEGIN PUBLIC KEY-----XXXX\",\n  \"customerKey\": null\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: sessionInit
+  sourceRows: ''
+  apiSpecFile: sessionInit

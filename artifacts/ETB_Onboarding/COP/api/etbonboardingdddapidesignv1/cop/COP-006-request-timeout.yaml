@@ -1,0 +1,57 @@
+# BDD Test Case - etbonboardingdddapidesignv1
+# Generated for: POST /cooldown - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: COP-006-request-timeout
+title: POST /cooldown - Request Timeout
+feature: etbonboardingdddapidesignv1
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/identity/cop/v1/cooldown'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/identity/cop/v1/cooldown'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784267132925
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    ? "{\n  \"app_id\": \"NGA\",\n  \"coolDownSeconds\": 86400,\n  \"needLengthenCp\": true,\n  \"lengthenCpStartTime\": \"2200\",\n  \"lengthenCpEndTime\": \"0600\",\n  \"lengthenCoolDownSeconds\": 172800\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: COP
+  sourceRows: ''
+  apiSpecFile: COP

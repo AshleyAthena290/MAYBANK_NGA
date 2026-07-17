@@ -1,0 +1,68 @@
+# BDD Test Case - etbonboardingdddapidesignv1
+# Generated for: POST /generate - Invalid Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: generateOTP-003-invalid-auth
+title: POST /generate - Invalid Authentication
+feature: etbonboardingdddapidesignv1
+description: Request with invalid credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/identity/tac/v1/otp/generate'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/identity/tac/v1/otp/generate'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784260880640
+    Authorization: Bearer invalid_token_12345
+  pathParams: {}
+  queryParams: {}
+  body:
+    appid: <value>
+    username: <value>
+    phoneNumber: <value>
+    expiry: <value>
+    emailAddress: <value>
+    subject: <value>
+    message: <value>
+    Request Parameter: <value>
+    ? "{\n  \"appid\": \"MYAPP01\",\n  \"username\": \"john.doe\",\n  \"phoneNumber\": \"60123456789\",\n  \"expiry\": 300,\n  \"emailAddress\": \"john.doe@example.com\",\n  \"subject\": \"Your OTP Code\"\n  \"message\": \"Your OTP is: {{otp}}. Valid for 5 minutes.\",\n}"
+    : <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized - Invalid credentials
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Error message indicates invalid authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: generateOtp (TAC)
+  sourceRows: ''
+  apiSpecFile: generateOTP

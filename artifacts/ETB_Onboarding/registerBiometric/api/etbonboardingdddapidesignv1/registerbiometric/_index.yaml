@@ -1,0 +1,64 @@
+# Test Case Index
+# etbonboardingdddapidesignv1 - registerBiometric
+# Generated: 2026-07-17T03:51:24.079Z
+---
+feature: etbonboardingdddapidesignv1
+apiName: registerBiometric
+description: Test cases for registerBiometric endpoint
+totalScenarios: 7
+scenarios:
+  - id: registerBiometric-001-positive
+    title: POST /biometric - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - registerbiometric
+    priority: P1
+  - id: registerBiometric-002-missing-auth
+    title: POST /biometric - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: registerBiometric-003-invalid-auth
+    title: POST /biometric - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: registerBiometric-004-invalid-content-type
+    title: POST /biometric - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: registerBiometric-005-duplicate-correlation-id
+    title: POST /biometric - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: registerBiometric-006-request-timeout
+    title: POST /biometric - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: registerBiometric-007-empty-request-body
+    title: POST /biometric - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T03:51:24.079Z'

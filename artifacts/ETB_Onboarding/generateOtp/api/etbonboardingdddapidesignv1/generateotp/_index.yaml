@@ -1,0 +1,64 @@
+# Test Case Index
+# etbonboardingdddapidesignv1 - generateOTP
+# Generated: 2026-07-17T03:50:31.505Z
+---
+feature: etbonboardingdddapidesignv1
+apiName: generateOTP
+description: Test cases for generateOTP endpoint
+totalScenarios: 7
+scenarios:
+  - id: generateOTP-001-positive
+    title: POST /generate - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - generateotp
+    priority: P1
+  - id: generateOTP-002-missing-auth
+    title: POST /generate - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: generateOTP-003-invalid-auth
+    title: POST /generate - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: generateOTP-004-invalid-content-type
+    title: POST /generate - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: generateOTP-005-duplicate-correlation-id
+    title: POST /generate - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: generateOTP-006-request-timeout
+    title: POST /generate - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: generateOTP-007-empty-request-body
+    title: POST /generate - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T03:50:31.503Z'

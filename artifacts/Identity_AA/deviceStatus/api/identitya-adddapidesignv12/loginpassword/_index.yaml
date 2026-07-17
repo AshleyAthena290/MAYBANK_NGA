@@ -1,0 +1,64 @@
+# Test Case Index
+# identitya-adddapidesignv12 - loginPassword
+# Generated: 2026-07-17T06:02:18.401Z
+---
+feature: identitya-adddapidesignv12
+apiName: loginPassword
+description: Test cases for loginPassword endpoint
+totalScenarios: 7
+scenarios:
+  - id: loginPassword-001-positive
+    title: POST /status - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - loginpassword
+    priority: P1
+  - id: loginPassword-002-missing-auth
+    title: POST /status - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: loginPassword-003-invalid-auth
+    title: POST /status - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: loginPassword-004-invalid-content-type
+    title: POST /status - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: loginPassword-005-duplicate-correlation-id
+    title: POST /status - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: loginPassword-006-request-timeout
+    title: POST /status - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: loginPassword-007-empty-request-body
+    title: POST /status - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T06:02:18.399Z'
