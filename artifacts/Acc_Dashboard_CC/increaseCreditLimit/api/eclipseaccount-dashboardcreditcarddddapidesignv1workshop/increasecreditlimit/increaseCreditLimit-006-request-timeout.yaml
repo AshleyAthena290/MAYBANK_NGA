@@ -1,0 +1,67 @@
+# BDD Test Case - eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+# Generated for: POST /increase-credit-limit - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: increaseCreditLimit-006-request-timeout
+title: POST /increase-credit-limit - Request Timeout
+feature: eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/increase-credit-limit'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/increase-credit-limit'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784268533169
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    cardNumber: <value>
+    newCreditLimit: <value>
+    increaseLimitType: <value>
+    startDate: <value>
+    endDate: <value>
+    '> identification (object)': <value>
+    type: <value>
+    id: <value>
+    '> document (Object)': <value>
+    data: <value>
+    Request Parameter: <value>
+    ? "POST  https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/increase-credit-limit\n\nExamples of permanent increase limit with NPWP uploaded\n{\n    \"cardNumber\": \"4047760034916300\",\n    \"newCreditLimit\": 110000000.0,\n    \"increaseLimitType\": \"PERMANENT\",\n    \"identification\": {\n        \"type\": \"NPWP\",\n        \"id\": \"3676011607931145\"\n    },\n    \"document\": {\n        \"type\": \"image/png\",\n        \"data\": \"iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==\"\n    }\n}\n\nExamples of temporary increase limit if NPWP same with e-KTP\n{\n    \"cardNumber\": \"4047760034916300\",\n    \"newCreditLimit\": 110000000.0,\n    \"increaseLimitType\": \"TEMPORARY\",\n    \"startDate\": \"2026-05-06 20:25:33\",\n    \"endDate\": \"2027-05-06 20:25:33\",\n    \"identification\": {\n        \"type\": \"EKTP\",\n        \"id\": \"3676011607931145\"\n    }\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: increaseCreditLimit
+  sourceRows: ''
+  apiSpecFile: increaseCreditLimit

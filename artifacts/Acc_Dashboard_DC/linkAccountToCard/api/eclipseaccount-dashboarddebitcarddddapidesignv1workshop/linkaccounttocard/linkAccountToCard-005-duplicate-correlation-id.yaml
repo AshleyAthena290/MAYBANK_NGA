@@ -1,0 +1,87 @@
+# BDD Test Case - eclipseaccount-dashboarddebitcarddddapidesignv1workshop
+# Generated for: POST /linked-account - Duplicate Correlation ID
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: linkAccountToCard-005-duplicate-correlation-id
+title: POST /linked-account - Duplicate Correlation ID
+feature: eclipseaccount-dashboarddebitcarddddapidesignv1workshop
+description: Same request with duplicate correlation ID should be idempotent
+tags:
+  - edge-case
+  - idempotency
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+  - First request with correlation ID has been processed
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/debit-card/linked-account'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/debit-card/linked-account'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: duplicate-correlation-123
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    '>linkAccounts[] (list)': <value>
+    accountId: <value>
+    currency: <value>
+    type: <value>
+    openingDateTime: <value>
+    branch: <value>
+    '>unlinkAccounts[] (list)': <value>
+    '>cards (object)': <value>
+    cardNumber: <value>
+    embossName: <value>
+    classCode: <value>
+    designCode: <value>
+    feeCode: <value>
+    Request Parameter: <value>
+    ? "POST  https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/debit-card/linked-account\n\n{\n    \"linkAccounts\": [\n        {\n            \"accountId\": \"123456789012\",\n            \"currency\": \"IDR\",\n            \"type\": \"CA\",\n            \"openingDateTime\": \"2026-02-06 20:25:29\",\n            \"branch\": \"001\"\n        }\n    ],\n    \"unlinkAccounts\": [\n        {\n            \"accountId\": \"455456786711\",\n            \"currency\": \"IDR\",\n            \"type\": \"CA\",\n            \"openingDateTime\": \"2026-02-06 20:25:29\",\n            \"branch\": \"001\"\n        }\n    ],\n    \"card\": {\n        \"cardNumber\": \"3243937423432434\",\n        \"embossName\": \"SITI FATIMAH\",\n        \"classCode\": \"099\",\n        \"designCode\": \"100\",\n        \"feeCode\": \"722\"\n    }\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    extra: String
+    note: String
+    header: String
+    desc: String
+    details: String
+    receipt: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 (or 202 for idempotent)
+    type: custom
+  - description: Same response as first request
+    type: custom
+  - description: No duplicate processing occurred
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: linkAccountToCard
+  sourceRows: ''
+  apiSpecFile: linkAccountToCard
