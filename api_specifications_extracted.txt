@@ -1,0 +1,545 @@
+========================================================================================================================
+ECLIPSE ACCOUNT DASHBOARD API SPECIFICATIONS EXTRACTION
+========================================================================================================================
+
+
+TOTAL UNIQUE APIs: 32
+
+========================================================================================================================
+1. API LIST SUMMARY
+========================================================================================================================
+
+No.   API Name                                 Method     Microservice         Endpoint                                                    
+--------------------------------------------------------------------------------------------------------------------------------------------
+1     Casa dashboard                           GET        dep-dashboard        /v1/external/accounts?accountGroup={accountGroup}           
+2     Casa detail                              GET        info-casa            /v1/external/accounts/account-type/{accountType}/accoun...  
+3     Casa transaction history                 GET        info-casa            /v1/external/accounts/account-type/{accountType}/accoun...  
+4     Casa view linked card                    GET        info-casa            /v1/external/accounts/account-type/{accountType}/accoun...  
+5     Manage - add casa nickname               POST       info-casa            /v1/external/accounts/nickname                              
+6     Manage - update casa nickname            PATCH      info-casa            /v1/external/accounts/nickname                              
+7     Manage - delete casa nickname            DELETE     info-casa            /v1/external/accounts/{accountId}/nickname                  
+8     Casa transaction detail                  GET        info-customer        /v1/external/transaction/detail/{transactionReferenceId}    
+9     Casa view receipt                        GET        dep-receipt          /v1/external/receipts/{transactionReferenceId}              
+10    Casa view all transaction history        GET        info-casa            /v1/external/accounts/account-type/{accountType}/accoun...  
+11    Casa search all transaction history      GET        info-casa            /v1/external/accounts/account-type/{accountType}/accoun...  
+12    Casa filter transaction history          GET        info-casa            /v1/external/accounts/account-type/{accountType}/accoun...  
+13    Casa export transaction history          GET        info-casa            /v1/external/accounts/account-type/{accountType}/accoun...  
+14    Casa manage linked card                  GET        dep-card             /v1/external/debit-card/manage?accountId={accountId}        
+15    Debit card dashboard                     GET        dep-dashboard        /v1/external/accounts?accountGroup={accountGroup}           
+16    Casa linked debit card                   POST       dep-casa             /v1/external/casa/linked-card                               
+17    Casa block account                       POST       dep-casa             /v1/external/casa/block                                     
+18    Personal information                     GET        info-customer        /v1/external/information                                    
+19    Casa reactivate account                  POST       dep-casa             /v1/external/casa/reactivate                                
+20    Global access detail                     GET        info-casa            /v1/external/accounts/account-type/{accountType}/accoun...  
+21    Global access transaction history        GET        info-casa            /v1/external/accounts/account-type/{accountType}/accoun...  
+22    Manage - auto sweep                      GET        info-casa            /v1/external/accounts/{accountId}/auto-sweep                
+23    Manage - update auto sweep               POST       dep-casa             /v1/external/casa/auto-sweep                                
+24    Manage - remove currency                 DELETE     info-casa            /v1/external/accounts/{accountId}/currency/{currency}       
+25    Giro detail                              GET        info-casa            /v1/external/accounts/account-type/{accountType}/accoun...  
+26    Giro access transaction history          GET        info-casa            /v1/external/accounts/account-type/{accountType}/accoun...  
+
+
+========================================================================================================================
+2. DETAILED API SPECIFICATIONS
+========================================================================================================================
+
+========================================================================================================================
+API: Unknown
+========================================================================================================================
+
+HTTP Method: N/A
+Endpoint URL: N/A
+Message Type: N/A
+
+========================================================================================================================
+API: Unknown
+========================================================================================================================
+
+HTTP Method: N/A
+Endpoint URL: N/A
+Message Type: N/A
+
+========================================================================================================================
+API: Unknown
+========================================================================================================================
+
+HTTP Method: N/A
+Endpoint URL: N/A
+Message Type: N/A
+
+========================================================================================================================
+API: blockAccounts
+========================================================================================================================
+
+HTTP Method: POST
+Endpoint URL: https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/block
+Message Type: JSON
+
+REQUEST HEADERS:
+  • authorization (String) - Mandatory: Y
+    Description: Authentication Access Token required for channel calls (e.g. PNT app calls Eclipse)
+    Sample: Bearer <ACCESS_TOKEN>
+  • client-id (String) - Mandatory: Y
+    Description: Unique Client Id per channel
+    Sample: pnt-17ht3
+  • api-key (String) - Mandatory: N
+    Description: Unique Id per channel
+    Sample: a7dfa879sd8a7sd8
+  • env (String) - Mandatory: Y
+    Description: Environment values
+    Sample: UAT
+  • accept (String) - Mandatory: N
+    Description: Content type
+    Sample: application/json
+  • HTTP Body (None) - Mandatory: None
+  • accounts[] (list) (None) - Mandatory: None
+  • accountId (String) - Mandatory: Y
+  • Request Parameter (None) - Mandatory: None
+
+REQUEST BODY:
+  • accounts[] (list) (None)
+  • accountId (String)
+  • Request Parameter (None)
+
+RESPONSE STRUCTURE:
+  • status (String)
+    Description: Status of S2U in i18n key
+  • extra (String)
+  • note (String)
+    Description: Note of S2U transaction acknowledgment (if applicable)
+  • header (String)
+    Description: S2U transaction header
+  • desc (String)
+    Description: S2U transaction description (if applicable)
+  • details (String)
+    Description: S2U transaction details
+  • receipt (String)
+    Description: S2U receipt body (if applicable)
+
+REQUEST SAMPLE URL:
+  POST  https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/block
+
+{
+    "accounts": [
+        {
+            "accountId": "183476335222"
+        },
+        {
+            "accountId": "898876334567"
+        }
+    ]
+}
+
+========================================================================================================================
+API: getAutoSweep
+========================================================================================================================
+
+HTTP Method: GET
+Endpoint URL: https: //{Eclipse-IP}:{Eclipse-PORT}/info/casa/v1/external/accounts/{accountId}/auto-sweep
+Message Type: JSON
+
+REQUEST HEADERS:
+  • authorization (String) - Mandatory: Y
+    Description: Authentication Access Token required for channel calls (e.g. PNT app calls Eclipse)
+    Sample: Bearer <ACCESS_TOKEN>
+  • client-id (String) - Mandatory: Y
+    Description: Unique Client Id per channel
+    Sample: pnt-17ht3
+  • api-key (String) - Mandatory: N
+    Description: Unique Id per channel
+    Sample: a7dfa879sd8a7sd8
+  • env (String) - Mandatory: Y
+    Description: Environment values
+    Sample: UAT
+  • accept (String) - Mandatory: N
+    Description: Content type
+    Sample: application/json
+  • HTTP Body (None) - Mandatory: None
+  • Path Variable (None) - Mandatory: None
+  • accountId (String) - Mandatory: Y
+
+REQUEST BODY:
+  • Path Variable (None)
+  • accountId (String)
+
+RESPONSE STRUCTURE:
+  • > meta (object) (None)
+  • > data (object) (None)
+  • >> autoSweep (object) (None)
+  • flag (String)
+  • primaryCurrency (String)
+  • primaryLimit (String)
+  • > link (object) (None)
+
+REQUEST SAMPLE URL:
+  https: //{Eclipse-IP}:{Eclipse-PORT}/info/casa/v1/external/accounts/123456789012/auto-sweep
+
+========================================================================================================================
+API: getManageDebitCard
+========================================================================================================================
+
+HTTP Method: GET
+Endpoint URL: https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/debit-card/manage
+Message Type: JSON
+
+REQUEST HEADERS:
+  • authorization (String) - Mandatory: Y
+    Description: Authentication Access Token required for channel calls (e.g. PNT app calls Eclipse)
+    Sample: Bearer <ACCESS_TOKEN>
+  • client-id (String) - Mandatory: Y
+    Description: Unique Client Id per channel
+    Sample: pnt-17ht3
+  • api-key (String) - Mandatory: N
+    Description: Unique Id per channel
+    Sample: a7dfa879sd8a7sd8
+  • env (String) - Mandatory: Y
+    Description: Environment values
+    Sample: UAT
+  • accept (String) - Mandatory: N
+    Description: Content type
+    Sample: application/json
+  • HTTP Body (None) - Mandatory: None
+  • Request Parameter (None) - Mandatory: None
+  • accountId (String) - Mandatory: Y
+    Sample: 900000097152
+
+REQUEST PARAMETERS:
+  • accountId (String) - Mandatory: Y
+    Sample: 900000097152
+
+REQUEST BODY:
+  • Request Parameter (None)
+  • accountId (String)
+
+RESPONSE STRUCTURE:
+  • > meta (object) (None)
+  • > data (object) (None)
+  • >> accounts[] (list) (None)
+  • status (String)
+    Description: Account Status 
+Refer to confluence : https://confluence.maybank.com.my/display/NEXTGENDIGP/Account+Status
+  • accountId (String)
+  • cardNumber (String)
+  • nickname (String)
+  • name (String)
+  • isLinked (boolean)
+  • > link (object) (None)
+  • self (String)
+  • next (String)
+  • previous (String)
+
+REQUEST SAMPLE URL:
+  https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/debit-card/manage?accountId=900000097152
+
+========================================================================================================================
+API: reactivateAccount
+========================================================================================================================
+
+HTTP Method: POST
+Endpoint URL: https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/reactivate
+Message Type: JSON
+
+REQUEST HEADERS:
+  • authorization (String) - Mandatory: Y
+    Description: Authentication Access Token required for channel calls (e.g. PNT app calls Eclipse)
+    Sample: Bearer <ACCESS_TOKEN>
+  • client-id (String) - Mandatory: Y
+    Description: Unique Client Id per channel
+    Sample: pnt-17ht3
+  • api-key (String) - Mandatory: N
+    Description: Unique Id per channel
+    Sample: a7dfa879sd8a7sd8
+  • env (String) - Mandatory: Y
+    Description: Environment values
+    Sample: UAT
+  • accept (String) - Mandatory: N
+    Description: Content type
+    Sample: application/json
+  • HTTP Body (None) - Mandatory: None
+  • accountId (String) - Mandatory: Y
+  • Request Parameter (None) - Mandatory: None
+
+REQUEST BODY:
+  • accountId (String)
+  • Request Parameter (None)
+
+RESPONSE STRUCTURE:
+  • status (String)
+    Description: Status of S2U in i18n key
+  • extra (String)
+  • note (String)
+    Description: Note of S2U transaction acknowledgment (if applicable)
+  • header (String)
+    Description: S2U transaction header
+  • desc (String)
+    Description: S2U transaction description (if applicable)
+  • details (String)
+    Description: S2U transaction details
+  • receipt (String)
+    Description: S2U receipt body (if applicable)
+
+REQUEST SAMPLE URL:
+  POST  https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/reactivate
+
+{
+    "accountId": "183476335222",
+    "email": "susi.doyo@gmail.com",
+    "contact": [
+        {
+            "type": "MB",
+            "number": "6783945567652",
+            "oldNumber": "6783945111111"
+        }
+    ],
+    "employment": {
+        "occupationCode": "ACCOUNTING",
+        "industryCode": "FINANCE",
+        "companyName": "Maybank Indonesia",
+        "positionCode": "MANAGER",
+        "categoryCode": "TECHNOLOGY",
+        "startDate": "2000-05-30",
+        "sourceOfIncomeCode": "SALARY",
+        "annualIncome": 10000000000
+    },
+    "address": [
+        {
+            "type": "OFFICE",
+            "address1": "Jl. Asia Afrika Sentral Senayan 3",
+            "province": "Jakarta Selatan",
+            "city": "Kebayoran Baru",
+            "district": "Bendungan Hilir",
+            "subDistrict": "Gelora",
+            "postcode": "10270"
+        },
+        {
+            "type": "HOME",
+            "address1": "Jl. Asia Afrika Sentral Senayan 3",
+            "province": "Jakarta Selatan",
+            "city": "Kebayoran Baru",
+            "district": "Bendungan Hilir",
+            "subDistrict": "Gelora",
+            "neighborhoodUnit": "001",
+            "communityUnit": "004",
+            "postcode": "10270"
+        },
+        {
+            "type": "MAILING",
+            "address1": "Jl. Asia Afrika Sentral Senayan 3",
+            "province": "Jakarta Selatan",
+            "city": "Kebayoran Baru",
+            "district": "Bendungan Hilir",
+            "subDistrict": "Gelora",
+            "neighborhoodUnit": "001",
+            "communityUnit": "004",
+            "postcode": "10270"
+        }
+    ]
+}
+
+========================================================================================================================
+API: setAutoSweep
+========================================================================================================================
+
+HTTP Method: POST
+Endpoint URL: https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/auto-sweep
+Message Type: JSON
+
+REQUEST HEADERS:
+  • authorization (String) - Mandatory: Y
+    Description: Authentication Access Token required for channel calls (e.g. PNT app calls Eclipse)
+    Sample: Bearer <ACCESS_TOKEN>
+  • client-id (String) - Mandatory: Y
+    Description: Unique Client Id per channel
+    Sample: pnt-17ht3
+  • api-key (String) - Mandatory: N
+    Description: Unique Id per channel
+    Sample: a7dfa879sd8a7sd8
+  • env (String) - Mandatory: Y
+    Description: Environment values
+    Sample: UAT
+  • accept (String) - Mandatory: N
+    Description: Content type
+    Sample: application/json
+  • HTTP Body (None) - Mandatory: None
+  • primaryCurrency (String) - Mandatory: Y
+  • primaryLimit (String) - Mandatory: Y
+  • accountId (String) - Mandatory: Y
+  • autoSweepFlag (String) - Mandatory: Y
+  • Path Variable (None) - Mandatory: None
+
+REQUEST BODY:
+  • primaryCurrency (String)
+  • primaryLimit (String)
+  • accountId (String)
+  • autoSweepFlag (String)
+  • Path Variable (None)
+
+RESPONSE STRUCTURE:
+  • status (String)
+    Description: Status of S2U in i18n key
+  • extra (String)
+  • note (String)
+    Description: Note of S2U transaction acknowledgment (if applicable)
+  • header (String)
+    Description: S2U transaction header
+  • desc (String)
+    Description: S2U transaction description (if applicable)
+  • details (String)
+    Description: S2U transaction details
+  • receipt (String)
+    Description: S2U receipt body (if applicable)
+
+REQUEST SAMPLE URL:
+  POST https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/auto-sweep
+
+{
+  "primaryCurrency": "IDR",
+  "primaryLimit": 200000,
+  "accountId": "123456789012",
+  "autoSweepFlag": "Y"
+}
+
+========================================================================================================================
+API: setLinkedCard
+========================================================================================================================
+
+HTTP Method: POST
+Endpoint URL: https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/linked-card
+Message Type: JSON
+
+REQUEST HEADERS:
+  • authorization (String) - Mandatory: Y
+    Description: Authentication Access Token required for channel calls (e.g. PNT app calls Eclipse)
+    Sample: Bearer <ACCESS_TOKEN>
+  • client-id (String) - Mandatory: Y
+    Description: Unique Client Id per channel
+    Sample: pnt-17ht3
+  • api-key (String) - Mandatory: N
+    Description: Unique Id per channel
+    Sample: a7dfa879sd8a7sd8
+  • env (String) - Mandatory: Y
+    Description: Environment values
+    Sample: UAT
+  • accept (String) - Mandatory: N
+    Description: Content type
+    Sample: application/json
+  • HTTP Body (None) - Mandatory: None
+  • Request Parameter (None) - Mandatory: None
+  • > account (object) (None) - Mandatory: None
+  • accountId (String) - Mandatory: Y
+  • branchCode (String) - Mandatory: Y
+  • currency (String) - Mandatory: Y
+  • type (String) - Mandatory: Y
+  • openingDateTime (DateTime) - Mandatory: Y
+  • > customer (object) (None) - Mandatory: None
+  • name (String) - Mandatory: Y
+  • phoneNumber (String) - Mandatory: Y
+  • > address (object) (None) - Mandatory: None
+  • address1 (String) - Mandatory: Y
+  • province (String) - Mandatory: Y
+  • city (String) - Mandatory: Y
+  • district (String) - Mandatory: Y
+  • subDistrict (String) - Mandatory: Y
+  • neighborhoodUnit (String) - Mandatory: Y
+  • communityUnit (String) - Mandatory: Y
+  • postcode (String) - Mandatory: Y
+  • > card (object) (None) - Mandatory: None
+  • cardNumber (String) - Mandatory: Y
+  • primaryFlag (Boolean) - Mandatory: Y
+
+REQUEST PARAMETERS:
+  • > account (object) (None) - Mandatory: None
+  • accountId (String) - Mandatory: Y
+  • branchCode (String) - Mandatory: Y
+  • currency (String) - Mandatory: Y
+  • type (String) - Mandatory: Y
+  • openingDateTime (DateTime) - Mandatory: Y
+  • > customer (object) (None) - Mandatory: None
+  • name (String) - Mandatory: Y
+  • phoneNumber (String) - Mandatory: Y
+  • > address (object) (None) - Mandatory: None
+  • address1 (String) - Mandatory: Y
+  • province (String) - Mandatory: Y
+  • city (String) - Mandatory: Y
+  • district (String) - Mandatory: Y
+  • subDistrict (String) - Mandatory: Y
+  • neighborhoodUnit (String) - Mandatory: Y
+  • communityUnit (String) - Mandatory: Y
+  • postcode (String) - Mandatory: Y
+  • > card (object) (None) - Mandatory: None
+  • cardNumber (String) - Mandatory: Y
+  • primaryFlag (Boolean) - Mandatory: Y
+
+REQUEST BODY:
+  • Request Parameter (None)
+  • > account (object) (None)
+  • accountId (String)
+  • branchCode (String)
+  • currency (String)
+  • type (String)
+  • openingDateTime (DateTime)
+  • > customer (object) (None)
+  • name (String)
+  • phoneNumber (String)
+  • > address (object) (None)
+  • address1 (String)
+  • province (String)
+  • city (String)
+  • district (String)
+  • subDistrict (String)
+  • neighborhoodUnit (String)
+  • communityUnit (String)
+  • postcode (String)
+  • > card (object) (None)
+  • cardNumber (String)
+  • primaryFlag (Boolean)
+
+RESPONSE STRUCTURE:
+  • status (String)
+    Description: Status of S2U in i18n key
+  • extra (String)
+  • note (String)
+    Description: Note of S2U transaction acknowledgment (if applicable)
+  • header (String)
+    Description: S2U transaction header
+  • desc (String)
+    Description: S2U transaction description (if applicable)
+  • details (String)
+    Description: S2U transaction details
+  • receipt (String)
+    Description: S2U receipt body (if applicable)
+
+REQUEST SAMPLE URL:
+  POST https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/linked-card
+
+{
+  "account": {
+    "accountId": "514013314526",
+    "branchCode": "001",
+    "currency": "IDR",
+    "type": "CA",
+    "openingDateTime": "2026-02-27 14:57:38"
+  },
+  "customer": {
+    "name": "DDEV SIX",
+    "phoneNumber": "800225556814"
+  },
+  "address": {
+    "address1": "Jl. Asia Afrika Sentral Senayan 3",
+    "province": "Jakarta Selatan",
+    "city": "Kebayoran Baru",
+    "district": "Bendungan Hilir",
+    "subDistrict": "Gelora",
+    "neighborhoodUnit": "001",
+    "communityUnit": "004",
+    "postcode": "10270"
+  },
+  "card": {
+    "unlinkedCardNumber": "5140133145267788",
+    "linkedCardNumber": "5140133145267596",
+    "primaryFlag": true,
+    "classCode": "J1",
+    "designCode": "01",
+    "feeCode": "00"
+  }
+}
