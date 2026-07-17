@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipseaccount-dashboarddebitcarddddapidesignv1workshop - replaceDebitCard
+# Generated: 2026-07-17T05:27:00.831Z
+---
+feature: eclipseaccount-dashboarddebitcarddddapidesignv1workshop
+apiName: replaceDebitCard
+description: Test cases for replaceDebitCard endpoint
+totalScenarios: 7
+scenarios:
+  - id: replaceDebitCard-001-positive
+    title: POST /replacement - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - replacedebitcard
+    priority: P1
+  - id: replaceDebitCard-002-missing-auth
+    title: POST /replacement - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: replaceDebitCard-003-invalid-auth
+    title: POST /replacement - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: replaceDebitCard-004-invalid-content-type
+    title: POST /replacement - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: replaceDebitCard-005-duplicate-correlation-id
+    title: POST /replacement - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: replaceDebitCard-006-request-timeout
+    title: POST /replacement - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: replaceDebitCard-007-empty-request-body
+    title: POST /replacement - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T05:27:00.827Z'

@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipseaccount-dashboarddebitcarddddapidesignv1workshop - getManageCasa
+# Generated: 2026-07-17T04:06:17.160Z
+---
+feature: eclipseaccount-dashboarddebitcarddddapidesignv1workshop
+apiName: getManageCasa
+description: Test cases for getManageCasa endpoint
+totalScenarios: 7
+scenarios:
+  - id: getManageCasa-001-positive
+    title: GET /manage - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getmanagecasa
+    priority: P1
+  - id: getManageCasa-002-missing-auth
+    title: GET /manage - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getManageCasa-003-invalid-auth
+    title: GET /manage - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getManageCasa-004-invalid-content-type
+    title: GET /manage - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getManageCasa-005-duplicate-correlation-id
+    title: GET /manage - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getManageCasa-006-request-timeout
+    title: GET /manage - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getManageCasa-007-empty-request-body
+    title: GET /manage - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T04:06:17.158Z'

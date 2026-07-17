@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipseaccount-dashboardcreditcarddddapidesignv1workshop - creditCardActivation
+# Generated: 2026-07-17T06:05:01.180Z
+---
+feature: eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+apiName: creditCardActivation
+description: Test cases for creditCardActivation endpoint
+totalScenarios: 7
+scenarios:
+  - id: creditCardActivation-001-positive
+    title: POST /activate - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - creditcardactivation
+    priority: P1
+  - id: creditCardActivation-002-missing-auth
+    title: POST /activate - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: creditCardActivation-003-invalid-auth
+    title: POST /activate - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: creditCardActivation-004-invalid-content-type
+    title: POST /activate - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: creditCardActivation-005-duplicate-correlation-id
+    title: POST /activate - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: creditCardActivation-006-request-timeout
+    title: POST /activate - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: creditCardActivation-007-empty-request-body
+    title: POST /activate - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T06:05:01.178Z'

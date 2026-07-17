@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipseaccount-dashboardcreditcarddddapidesignv1workshop - getInstalmentConversionSchedule
+# Generated: 2026-07-17T06:00:39.184Z
+---
+feature: eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+apiName: getInstalmentConversionSchedule
+description: Test cases for getInstalmentConversionSchedule endpoint
+totalScenarios: 7
+scenarios:
+  - id: getInstalmentConversionSchedule-001-positive
+    title: GET /instalment-conversion - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getinstalmentconversionschedule
+    priority: P1
+  - id: getInstalmentConversionSchedule-002-missing-auth
+    title: GET /instalment-conversion - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getInstalmentConversionSchedule-003-invalid-auth
+    title: GET /instalment-conversion - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getInstalmentConversionSchedule-004-invalid-content-type
+    title: GET /instalment-conversion - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getInstalmentConversionSchedule-005-duplicate-correlation-id
+    title: GET /instalment-conversion - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getInstalmentConversionSchedule-006-request-timeout
+    title: GET /instalment-conversion - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getInstalmentConversionSchedule-007-empty-request-body
+    title: GET /instalment-conversion - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T06:00:39.181Z'

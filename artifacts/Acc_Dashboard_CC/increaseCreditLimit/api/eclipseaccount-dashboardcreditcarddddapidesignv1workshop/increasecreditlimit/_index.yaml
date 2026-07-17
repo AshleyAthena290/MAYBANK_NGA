@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipseaccount-dashboardcreditcarddddapidesignv1workshop - increaseCreditLimit
+# Generated: 2026-07-17T06:08:53.201Z
+---
+feature: eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+apiName: increaseCreditLimit
+description: Test cases for increaseCreditLimit endpoint
+totalScenarios: 7
+scenarios:
+  - id: increaseCreditLimit-001-positive
+    title: POST /increase-credit-limit - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - increasecreditlimit
+    priority: P1
+  - id: increaseCreditLimit-002-missing-auth
+    title: POST /increase-credit-limit - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: increaseCreditLimit-003-invalid-auth
+    title: POST /increase-credit-limit - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: increaseCreditLimit-004-invalid-content-type
+    title: POST /increase-credit-limit - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: increaseCreditLimit-005-duplicate-correlation-id
+    title: POST /increase-credit-limit - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: increaseCreditLimit-006-request-timeout
+    title: POST /increase-credit-limit - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: increaseCreditLimit-007-empty-request-body
+    title: POST /increase-credit-limit - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T06:08:53.199Z'

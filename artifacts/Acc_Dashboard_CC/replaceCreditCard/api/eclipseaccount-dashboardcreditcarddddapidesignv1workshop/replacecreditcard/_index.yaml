@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipseaccount-dashboardcreditcarddddapidesignv1workshop - replaceCreditCard
+# Generated: 2026-07-17T06:09:29.223Z
+---
+feature: eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+apiName: replaceCreditCard
+description: Test cases for replaceCreditCard endpoint
+totalScenarios: 7
+scenarios:
+  - id: replaceCreditCard-001-positive
+    title: POST /replacement - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - replacecreditcard
+    priority: P1
+  - id: replaceCreditCard-002-missing-auth
+    title: POST /replacement - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: replaceCreditCard-003-invalid-auth
+    title: POST /replacement - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: replaceCreditCard-004-invalid-content-type
+    title: POST /replacement - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: replaceCreditCard-005-duplicate-correlation-id
+    title: POST /replacement - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: replaceCreditCard-006-request-timeout
+    title: POST /replacement - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: replaceCreditCard-007-empty-request-body
+    title: POST /replacement - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T06:09:29.220Z'

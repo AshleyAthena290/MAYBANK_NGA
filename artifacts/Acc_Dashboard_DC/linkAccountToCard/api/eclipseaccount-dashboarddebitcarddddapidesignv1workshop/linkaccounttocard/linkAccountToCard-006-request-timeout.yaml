@@ -1,0 +1,70 @@
+# BDD Test Case - eclipseaccount-dashboarddebitcarddddapidesignv1workshop
+# Generated for: POST /linked-account - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: linkAccountToCard-006-request-timeout
+title: POST /linked-account - Request Timeout
+feature: eclipseaccount-dashboarddebitcarddddapidesignv1workshop
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/debit-card/linked-account'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/debit-card/linked-account'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784265923119
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    '>linkAccounts[] (list)': <value>
+    accountId: <value>
+    currency: <value>
+    type: <value>
+    openingDateTime: <value>
+    branch: <value>
+    '>unlinkAccounts[] (list)': <value>
+    '>cards (object)': <value>
+    cardNumber: <value>
+    embossName: <value>
+    classCode: <value>
+    designCode: <value>
+    feeCode: <value>
+    Request Parameter: <value>
+    ? "POST  https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/debit-card/linked-account\n\n{\n    \"linkAccounts\": [\n        {\n            \"accountId\": \"123456789012\",\n            \"currency\": \"IDR\",\n            \"type\": \"CA\",\n            \"openingDateTime\": \"2026-02-06 20:25:29\",\n            \"branch\": \"001\"\n        }\n    ],\n    \"unlinkAccounts\": [\n        {\n            \"accountId\": \"455456786711\",\n            \"currency\": \"IDR\",\n            \"type\": \"CA\",\n            \"openingDateTime\": \"2026-02-06 20:25:29\",\n            \"branch\": \"001\"\n        }\n    ],\n    \"card\": {\n        \"cardNumber\": \"3243937423432434\",\n        \"embossName\": \"SITI FATIMAH\",\n        \"classCode\": \"099\",\n        \"designCode\": \"100\",\n        \"feeCode\": \"722\"\n    }\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: linkAccountToCard
+  sourceRows: ''
+  apiSpecFile: linkAccountToCard
