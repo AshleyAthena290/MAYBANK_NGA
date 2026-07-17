@@ -1,0 +1,64 @@
+# Test Case Index
+# identitya-adddapidesignv12 - sessionInit
+# Generated: 2026-07-17T06:00:13.131Z
+---
+feature: identitya-adddapidesignv12
+apiName: sessionInit
+description: Test cases for sessionInit endpoint
+totalScenarios: 7
+scenarios:
+  - id: sessionInit-001-positive
+    title: POST /init - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - sessioninit
+    priority: P1
+  - id: sessionInit-002-missing-auth
+    title: POST /init - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: sessionInit-003-invalid-auth
+    title: POST /init - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: sessionInit-004-invalid-content-type
+    title: POST /init - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: sessionInit-005-duplicate-correlation-id
+    title: POST /init - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: sessionInit-006-request-timeout
+    title: POST /init - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: sessionInit-007-empty-request-body
+    title: POST /init - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T06:00:13.127Z'

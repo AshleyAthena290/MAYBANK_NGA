@@ -1,0 +1,64 @@
+# Test Case Index
+# etbonboardingdddapidesignv1 - GetUserStatus
+# Generated: 2026-07-17T03:48:37.266Z
+---
+feature: etbonboardingdddapidesignv1
+apiName: GetUserStatus
+description: Test cases for GetUserStatus endpoint
+totalScenarios: 7
+scenarios:
+  - id: GetUserStatus-001-positive
+    title: GET /status - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getuserstatus
+    priority: P1
+  - id: GetUserStatus-002-missing-auth
+    title: GET /status - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetUserStatus-003-invalid-auth
+    title: GET /status - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetUserStatus-004-invalid-content-type
+    title: GET /status - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: GetUserStatus-005-duplicate-correlation-id
+    title: GET /status - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: GetUserStatus-006-request-timeout
+    title: GET /status - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: GetUserStatus-007-empty-request-body
+    title: GET /status - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T03:48:37.264Z'

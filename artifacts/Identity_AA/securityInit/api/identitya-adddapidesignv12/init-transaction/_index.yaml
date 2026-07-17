@@ -1,0 +1,64 @@
+# Test Case Index
+# identitya-adddapidesignv12 - init transaction
+# Generated: 2026-07-17T05:58:11.881Z
+---
+feature: identitya-adddapidesignv12
+apiName: init transaction
+description: Test cases for init transaction endpoint
+totalScenarios: 7
+scenarios:
+  - id: init transaction-001-positive
+    title: GET /init - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - init-transaction
+    priority: P1
+  - id: init transaction-002-missing-auth
+    title: GET /init - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: init transaction-003-invalid-auth
+    title: GET /init - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: init transaction-004-invalid-content-type
+    title: GET /init - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: init transaction-005-duplicate-correlation-id
+    title: GET /init - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: init transaction-006-request-timeout
+    title: GET /init - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: init transaction-007-empty-request-body
+    title: GET /init - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T05:58:11.879Z'

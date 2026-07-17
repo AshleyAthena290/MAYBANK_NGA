@@ -1,0 +1,65 @@
+# BDD Test Case - etbonboardingdddapidesignv1
+# Generated for: POST /verify - Invalid Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: verifyCard-003-invalid-auth
+title: POST /verify - Invalid Authentication
+feature: etbonboardingdddapidesignv1
+description: Request with invalid credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/identity/cerebro/v1/cards/verify'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/identity/cerebro/v1/cards/verify'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784266140829
+    Authorization: Bearer invalid_token_12345
+  pathParams: {}
+  queryParams: {}
+  body:
+    cardType: <value>
+    cardNumber: <value>
+    encryptedPinBlock: <value>
+    expiryDate: <value>
+    Request Parameter: <value>
+    ? "{\n  \"cardType\": \"DEBIT\",\n  \"cardNumber\": \"5520********1234\",\n  \"encryptedPinBlock\": \"9F86D08188AA9\",\n  \"expiryDate\": \"11/28\",\n}"
+    : <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized - Invalid credentials
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Error message indicates invalid authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: verifyCard
+  sourceRows: ''
+  apiSpecFile: verifyCard

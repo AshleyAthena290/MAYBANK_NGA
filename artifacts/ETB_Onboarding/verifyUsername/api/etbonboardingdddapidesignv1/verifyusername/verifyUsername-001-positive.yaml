@@ -1,0 +1,67 @@
+# BDD Test Case - etbonboardingdddapidesignv1
+# Generated for: POST /verify-username - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: verifyUsername-001-positive
+title: POST /verify-username - Happy Path
+feature: etbonboardingdddapidesignv1
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - verifyusername
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/identity/cerebro/v1/user/verify-username'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/identity/cerebro/v1/user/verify-username'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784259385208
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    username: <value>
+    Request Parameter: <value>
+    ? "{\n    \"username\": \"Azmanmbb9\",     \n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: verifyUsername
+  sourceRows: ''
+  apiSpecFile: verifyUsername

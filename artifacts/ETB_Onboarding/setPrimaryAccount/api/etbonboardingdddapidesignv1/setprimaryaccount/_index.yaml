@@ -1,0 +1,64 @@
+# Test Case Index
+# etbonboardingdddapidesignv1 - SetPrimaryAccount
+# Generated: 2026-07-17T03:54:05.639Z
+---
+feature: etbonboardingdddapidesignv1
+apiName: SetPrimaryAccount
+description: Test cases for SetPrimaryAccount endpoint
+totalScenarios: 7
+scenarios:
+  - id: SetPrimaryAccount-001-positive
+    title: PUT /primary - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - setprimaryaccount
+    priority: P1
+  - id: SetPrimaryAccount-002-missing-auth
+    title: PUT /primary - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: SetPrimaryAccount-003-invalid-auth
+    title: PUT /primary - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: SetPrimaryAccount-004-invalid-content-type
+    title: PUT /primary - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: SetPrimaryAccount-005-duplicate-correlation-id
+    title: PUT /primary - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: SetPrimaryAccount-006-request-timeout
+    title: PUT /primary - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: SetPrimaryAccount-007-empty-request-body
+    title: PUT /primary - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T03:54:05.636Z'

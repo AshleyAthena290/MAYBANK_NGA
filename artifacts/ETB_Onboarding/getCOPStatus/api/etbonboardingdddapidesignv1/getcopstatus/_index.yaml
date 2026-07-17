@@ -1,0 +1,64 @@
+# Test Case Index
+# etbonboardingdddapidesignv1 - GetCOPStatus
+# Generated: 2026-07-17T05:44:47.649Z
+---
+feature: etbonboardingdddapidesignv1
+apiName: GetCOPStatus
+description: Test cases for GetCOPStatus endpoint
+totalScenarios: 7
+scenarios:
+  - id: GetCOPStatus-001-positive
+    title: GET /{id} - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getcopstatus
+    priority: P1
+  - id: GetCOPStatus-002-missing-auth
+    title: GET /{id} - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetCOPStatus-003-invalid-auth
+    title: GET /{id} - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetCOPStatus-004-invalid-content-type
+    title: GET /{id} - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: GetCOPStatus-005-duplicate-correlation-id
+    title: GET /{id} - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: GetCOPStatus-006-request-timeout
+    title: GET /{id} - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: GetCOPStatus-007-empty-request-body
+    title: GET /{id} - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T05:44:47.647Z'

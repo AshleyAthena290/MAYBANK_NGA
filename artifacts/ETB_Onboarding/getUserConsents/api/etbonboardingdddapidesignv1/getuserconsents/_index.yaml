@@ -1,0 +1,64 @@
+# Test Case Index
+# etbonboardingdddapidesignv1 - getUserConsents
+# Generated: 2026-07-17T03:44:46.251Z
+---
+feature: etbonboardingdddapidesignv1
+apiName: getUserConsents
+description: Test cases for getUserConsents endpoint
+totalScenarios: 7
+scenarios:
+  - id: getUserConsents-001-positive
+    title: GET /consents - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getuserconsents
+    priority: P1
+  - id: getUserConsents-002-missing-auth
+    title: GET /consents - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getUserConsents-003-invalid-auth
+    title: GET /consents - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getUserConsents-004-invalid-content-type
+    title: GET /consents - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getUserConsents-005-duplicate-correlation-id
+    title: GET /consents - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getUserConsents-006-request-timeout
+    title: GET /consents - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getUserConsents-007-empty-request-body
+    title: GET /consents - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T03:44:46.248Z'

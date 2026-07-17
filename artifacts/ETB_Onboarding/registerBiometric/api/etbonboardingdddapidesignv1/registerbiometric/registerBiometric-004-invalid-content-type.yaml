@@ -1,0 +1,60 @@
+# BDD Test Case - etbonboardingdddapidesignv1
+# Generated for: POST /biometric - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: registerBiometric-004-invalid-content-type
+title: POST /biometric - Invalid Content-Type
+feature: etbonboardingdddapidesignv1
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/identity/cerebro/v1/user/biometric'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/identity/cerebro/v1/user/biometric'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784260284053
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    biometricType: <value>
+    publicKey: <value>
+    signedChallenge: <value>
+    Request Parameter: <value>
+    ? "{\n    \"biometricType\": \"FACE_ID\",\n    \"publicKey\": \"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwlZfQ8Q5z3Z1nY1VZ6nZ\",\n    \"signedChallenge\": \"BASE64_SIGNATURE\"\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: registerBiometric
+  sourceRows: ''
+  apiSpecFile: registerBiometric

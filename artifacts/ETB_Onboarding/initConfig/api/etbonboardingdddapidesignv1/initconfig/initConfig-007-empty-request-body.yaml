@@ -1,0 +1,54 @@
+# BDD Test Case - etbonboardingdddapidesignv1
+# Generated for: GET /init - Empty Request Body
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: initConfig-007-empty-request-body
+title: GET /init - Empty Request Body
+feature: etbonboardingdddapidesignv1
+description: Request with empty body should be properly rejected
+tags:
+  - edge-case
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Identity-IP}:{Identity-PORT}/identity/cerebro/v2/init'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/identity/cerebro/v2/init'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784259177524
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body: {}
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid or missing required fields
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message lists missing required fields
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: initConfig
+  sourceRows: ''
+  apiSpecFile: initConfig

@@ -1,0 +1,64 @@
+# Test Case Index
+# etbonboardingdddapidesignv1 - GetLanguagePreferences
+# Generated: 2026-07-17T03:40:52.122Z
+---
+feature: etbonboardingdddapidesignv1
+apiName: GetLanguagePreferences
+description: Test cases for GetLanguagePreferences endpoint
+totalScenarios: 7
+scenarios:
+  - id: GetLanguagePreferences-001-positive
+    title: GET /language-preferences - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getlanguagepreferences
+    priority: P1
+  - id: GetLanguagePreferences-002-missing-auth
+    title: GET /language-preferences - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetLanguagePreferences-003-invalid-auth
+    title: GET /language-preferences - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetLanguagePreferences-004-invalid-content-type
+    title: GET /language-preferences - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: GetLanguagePreferences-005-duplicate-correlation-id
+    title: GET /language-preferences - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: GetLanguagePreferences-006-request-timeout
+    title: GET /language-preferences - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: GetLanguagePreferences-007-empty-request-body
+    title: GET /language-preferences - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T03:40:52.120Z'

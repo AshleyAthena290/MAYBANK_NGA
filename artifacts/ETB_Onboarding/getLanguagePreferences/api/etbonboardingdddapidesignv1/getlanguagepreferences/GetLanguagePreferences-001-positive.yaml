@@ -1,0 +1,140 @@
+# BDD Test Case - etbonboardingdddapidesignv1
+# Generated for: GET /language-preferences - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: GetLanguagePreferences-001-positive
+title: GET /language-preferences - Happy Path
+feature: etbonboardingdddapidesignv1
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - getlanguagepreferences
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Identity-IP}:{Identity-PORT}/identity/cerebro/v1/user/language-preferences'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/identity/cerebro/v1/user/language-preferences'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784259652096
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    GET /identity/cerebro/v1/user/language-preferences: <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: Integer
+    message: String
+    timestamp: String
+    meta: 'Null'
+    data: Object
+    languageCode: String
+  expectedFields:
+    - fieldPath: status
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: status'
+    - fieldPath: message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: meta
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: meta'
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.languageCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: languageCode'
+      parentField: data
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'Integer'
+    type: field-type
+    target: status
+    expectedValue: Integer
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'String'
+    type: field-type
+    target: message
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'meta' exists in response
+    type: field-exists
+    target: meta
+  - description: Field 'meta' is of type 'Null'
+    type: field-type
+    target: meta
+    expectedValue: 'Null'
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getLanguagePreferences
+  sourceRows: ''
+  apiSpecFile: GetLanguagePreferences
