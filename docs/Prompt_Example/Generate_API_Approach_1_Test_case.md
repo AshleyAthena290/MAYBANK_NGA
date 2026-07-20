@@ -91,3 +91,4 @@ Produce the following deliverables:
 * Ensure each test case has corresponding test data.
 * If any requirement is ambiguous or missing, clearly document the assumptions made.
 * Avoid duplicate or redundant test cases.
+* Make sure the test case cover .yaml file in all subfolders for `\artifacts\Acc_Dashboard_CC`
