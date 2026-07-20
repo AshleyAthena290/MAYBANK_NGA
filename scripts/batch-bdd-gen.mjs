@@ -58,19 +58,9 @@ function runBddGen(sheet) {
       '--input', inputFile,
       '--sheet', sheet,
       '--outDir', outDir
-    ]);
-
-    let stdoutData = '';
-    let stderrData = '';
-
-    child.stdout.on('data', (data) => {
-      stdoutData += data.toString();
-      process.stdout.write(data);
-    });
-
-    child.stderr.on('data', (data) => {
-      stderrData += data.toString();
-      process.stderr.write(data);
+    ], {
+      shell: true,
+      stdio: 'inherit'
     });
 
     child.on('close', (code) => {

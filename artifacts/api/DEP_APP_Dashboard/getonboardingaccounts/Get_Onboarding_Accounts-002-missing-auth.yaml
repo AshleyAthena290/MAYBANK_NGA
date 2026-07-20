@@ -1,0 +1,65 @@
+# BDD Test Case - depappdashboarddddapidesignv1
+# Generated for: GET /accounts - Missing Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: Get_Onboarding_Accounts-002-missing-auth
+title: GET /accounts - Missing Authentication
+feature: depappdashboarddddapidesignv1
+description: Request without authentication credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: /wealth/v1/onboarding/accounts
+  endpoint: /wealth/v1/onboarding/accounts
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers: {}
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    'GET  https: //{IP}:{PORT}/wealth/v1/onboarding/accounts': <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized - Authentication required
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+      description: Error code
+    - fieldPath: message
+      type: String
+      mandatory: true
+      description: Error message
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Field 'error' exists and is of type String
+    type: field-type
+    target: error
+    expectedValue: String
+  - description: Error message indicates missing authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: Get_Onboarding_Accounts
+  sourceRows: ''
+  apiSpecFile: Get_Onboarding_Accounts

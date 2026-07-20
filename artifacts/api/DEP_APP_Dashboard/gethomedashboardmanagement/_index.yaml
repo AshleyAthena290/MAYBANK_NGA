@@ -1,0 +1,64 @@
+# Test Case Index
+# depappdashboarddddapidesignv1 - getHomeDashboardManagement
+# Generated: 2026-07-20T05:52:48.500Z
+---
+feature: depappdashboarddddapidesignv1
+apiName: getHomeDashboardManagement
+description: Test cases for getHomeDashboardManagement endpoint
+totalScenarios: 7
+scenarios:
+  - id: getHomeDashboardManagement-001-positive
+    title: GET /home-dashboard - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - gethomedashboardmanagement
+    priority: P1
+  - id: getHomeDashboardManagement-002-missing-auth
+    title: GET /home-dashboard - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getHomeDashboardManagement-003-invalid-auth
+    title: GET /home-dashboard - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getHomeDashboardManagement-004-invalid-content-type
+    title: GET /home-dashboard - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getHomeDashboardManagement-005-duplicate-correlation-id
+    title: GET /home-dashboard - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getHomeDashboardManagement-006-request-timeout
+    title: GET /home-dashboard - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getHomeDashboardManagement-007-empty-request-body
+    title: GET /home-dashboard - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-20T05:52:48.498Z'

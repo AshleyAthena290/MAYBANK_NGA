@@ -1,0 +1,236 @@
+# BDD Test Case - depappdashboarddddapidesignv1
+# Generated for: GET /accounts - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: Get_Onboarding_Accounts-001-positive
+title: GET /accounts - Happy Path
+feature: depappdashboarddddapidesignv1
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - get_onboarding_accounts
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: /wealth/v1/onboarding/accounts
+  endpoint: /wealth/v1/onboarding/accounts
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784526703364
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    'GET  https: //{IP}:{PORT}/wealth/v1/onboarding/accounts': <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    success: Boolean
+    message: Object
+    code: String
+    key: String
+    data: Object
+    accounts: Array<Object>
+    name: String
+    type: String
+    number: String
+    currency: String
+    amount: Integer
+    nickname: 'Null'
+    status: 'Null'
+    isPrimary: Boolean
+    metadata: Object
+    page: 'Null'
+    size: 'Null'
+    total: 'Null'
+    responseTime: Integer
+  expectedFields:
+    - fieldPath: success
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: success'
+    - fieldPath: message
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: message'
+    - fieldPath: message.code
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: code'
+      parentField: message
+    - fieldPath: message.key
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: key'
+      parentField: message
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.accounts
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: accounts'
+      parentField: data
+    - fieldPath: data.accounts[].name
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: name'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].code
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: code'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].type
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: type'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].number
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: number'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].nickname
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: nickname'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].status
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: status'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].isPrimary
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: isPrimary'
+      parentField: data.accounts[]
+    - fieldPath: metadata
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: metadata'
+    - fieldPath: metadata.page
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: page'
+      parentField: metadata
+    - fieldPath: metadata.size
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: size'
+      parentField: metadata
+    - fieldPath: metadata.total
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: total'
+      parentField: metadata
+    - fieldPath: metadata.responseTime
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: responseTime'
+      parentField: metadata
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'success' exists in response
+    type: field-exists
+    target: success
+  - description: Field 'success' is of type 'Boolean'
+    type: field-type
+    target: success
+    expectedValue: Boolean
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'Object'
+    type: field-type
+    target: message
+    expectedValue: Object
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+  - description: Field 'metadata' exists in response
+    type: field-exists
+    target: metadata
+  - description: Field 'metadata' is of type 'Object'
+    type: field-type
+    target: metadata
+    expectedValue: Object
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: Get_Onboarding_Accounts
+  sourceRows: ''
+  apiSpecFile: Get_Onboarding_Accounts

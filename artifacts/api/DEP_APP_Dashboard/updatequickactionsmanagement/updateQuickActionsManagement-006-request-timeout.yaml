@@ -1,0 +1,60 @@
+# BDD Test Case - depappdashboarddddapidesignv1
+# Generated for: POST https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/ - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: updateQuickActionsManagement-006-request-timeout
+title: 'POST https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/ - Request Timeout'
+feature: depappdashboarddddapidesignv1
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/'
+  endpoint: 'https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784526795580
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    quickActions: <value>
+    id: <value>
+    sequence: <value>
+    Request Parameter: <value>
+    ? "{\n  \"quickActions\": [\n    { \"id\": \"transfer\", \"sequence\": 1 },\n    { \"id\": \"unified_payment\", \"sequence\": 2 },\n    { \"id\": \"accounts\", \"sequence\": 3 }\n  ]\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: updateQuickActionsManagement
+  sourceRows: ''
+  apiSpecFile: updateQuickActionsManagement

@@ -1,0 +1,57 @@
+# BDD Test Case - depappdashboarddddapidesignv1
+# Generated for: GET /for-you-tiles - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getForYouTiles-006-request-timeout
+title: GET /for-you-tiles - Request Timeout
+feature: depappdashboarddddapidesignv1
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/for-you-tiles'
+  endpoint: 'https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/for-you-tiles'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784526742353
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    ecosystem: <value>
+    'GET  https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/for-you-tiles?ecosystem=banking': <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getForYouTiles
+  sourceRows: ''
+  apiSpecFile: getForYouTiles

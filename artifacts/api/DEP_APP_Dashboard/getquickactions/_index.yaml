@@ -1,0 +1,64 @@
+# Test Case Index
+# depappdashboarddddapidesignv1 - getQuickActions
+# Generated: 2026-07-20T05:52:27.314Z
+---
+feature: depappdashboarddddapidesignv1
+apiName: getQuickActions
+description: Test cases for getQuickActions endpoint
+totalScenarios: 7
+scenarios:
+  - id: getQuickActions-001-positive
+    title: GET /quick-actions - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getquickactions
+    priority: P1
+  - id: getQuickActions-002-missing-auth
+    title: GET /quick-actions - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getQuickActions-003-invalid-auth
+    title: GET /quick-actions - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getQuickActions-004-invalid-content-type
+    title: GET /quick-actions - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getQuickActions-005-duplicate-correlation-id
+    title: GET /quick-actions - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getQuickActions-006-request-timeout
+    title: GET /quick-actions - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getQuickActions-007-empty-request-body
+    title: GET /quick-actions - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-20T05:52:27.312Z'

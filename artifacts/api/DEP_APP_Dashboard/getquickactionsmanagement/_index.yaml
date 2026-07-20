@@ -1,0 +1,64 @@
+# Test Case Index
+# depappdashboarddddapidesignv1 - getQuickActionsManagement
+# Generated: 2026-07-20T05:53:10.268Z
+---
+feature: depappdashboarddddapidesignv1
+apiName: getQuickActionsManagement
+description: Test cases for getQuickActionsManagement endpoint
+totalScenarios: 7
+scenarios:
+  - id: getQuickActionsManagement-001-positive
+    title: 'GET https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/ - Happy Path'
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getquickactionsmanagement
+    priority: P1
+  - id: getQuickActionsManagement-002-missing-auth
+    title: 'GET https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/ - Missing Authentication'
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getQuickActionsManagement-003-invalid-auth
+    title: 'GET https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/ - Invalid Authentication'
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getQuickActionsManagement-004-invalid-content-type
+    title: 'GET https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/ - Invalid Content-Type'
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getQuickActionsManagement-005-duplicate-correlation-id
+    title: 'GET https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/ - Duplicate Correlation ID'
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getQuickActionsManagement-006-request-timeout
+    title: 'GET https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/ - Request Timeout'
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getQuickActionsManagement-007-empty-request-body
+    title: 'GET https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/ - Empty Request Body'
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-20T05:53:10.265Z'
