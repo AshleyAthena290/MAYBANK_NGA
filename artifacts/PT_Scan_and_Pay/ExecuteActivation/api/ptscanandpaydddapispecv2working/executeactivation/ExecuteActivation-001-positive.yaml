@@ -1,0 +1,226 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /execute - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: ExecuteActivation-001-positive
+title: POST /execute - Happy Path
+feature: ptscanandpaydddapispecv2working
+description: Executes the QR activation for the specified activation type after successful S2U authorization. Persists activation record in TBL_QR_ACTIVATION and sets the default primary account in TBL_QR_PRIMARY_ACCOUNT. Triggers async MBPNS notification and FMS data push.
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - executeactivation
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/activation/execute
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/activation/execute
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784271257470
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    customerCif: <value>
+    accessId: <value>
+    activationType: <value>
+    journeyType: <value>
+    authToken: <value>
+    primaryAccount: <value>
+    accountId: <value>
+    accountType: <value>
+    limitSetting: <value>
+    dailyLimit: <value>
+    transactionLimit: <value>
+    preLoginLimit: <value>
+    ? "{\n  \"idType\": \"CIF\",\n  \"accessId\": \"ABC123456789\",\n  \"activationType\": \"SCAN_TO_PAY\",\n  \"journeyType\": \"SCAN_TO_PAY\",\n  \"authToken\": \"S2U-AUTH-TOKEN-XYZ\",\n  \"primaryAccount\": {\n    \"accountId\": \"514013314526\",\n    \"accountType\": \"CASA\",\n    \"accountName\": \"account name\"\n  },\n  \"limitSetting\": {\n    \"dailyLimit\": 20000000.00,\n    \"transactionLimit\": 5000000.00,\n    \"preLoginLimit\": 500000.00\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    activationRefId: String
+    activationType: String
+    journeyType: String
+    status: String
+    activatedAt: String
+    account: Object
+    accountId: String
+    accountType: String
+    accountName: String
+    accountNumberMasked: String
+    limitSetting: Object
+    dailyLimit: Integer
+    transactionLimit: Integer
+    preLoginLimit: Integer
+  expectedFields:
+    - fieldPath: activationRefId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: activationRefId'
+    - fieldPath: activationType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: activationType'
+    - fieldPath: journeyType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: journeyType'
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: activatedAt
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: activatedAt'
+    - fieldPath: account
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: account'
+    - fieldPath: account.accountId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountId'
+      parentField: account
+    - fieldPath: account.accountType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountType'
+      parentField: account
+    - fieldPath: account.accountName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountName'
+      parentField: account
+    - fieldPath: account.accountNumberMasked
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountNumberMasked'
+      parentField: account
+    - fieldPath: limitSetting
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: limitSetting'
+    - fieldPath: limitSetting.dailyLimit
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: dailyLimit'
+      parentField: limitSetting
+    - fieldPath: limitSetting.transactionLimit
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: transactionLimit'
+      parentField: limitSetting
+    - fieldPath: limitSetting.preLoginLimit
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: preLoginLimit'
+      parentField: limitSetting
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'activationRefId' exists in response
+    type: field-exists
+    target: activationRefId
+  - description: Field 'activationRefId' is of type 'String'
+    type: field-type
+    target: activationRefId
+    expectedValue: String
+  - description: Field 'activationType' exists in response
+    type: field-exists
+    target: activationType
+  - description: Field 'activationType' is of type 'String'
+    type: field-type
+    target: activationType
+    expectedValue: String
+  - description: Field 'journeyType' exists in response
+    type: field-exists
+    target: journeyType
+  - description: Field 'journeyType' is of type 'String'
+    type: field-type
+    target: journeyType
+    expectedValue: String
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'activatedAt' exists in response
+    type: field-exists
+    target: activatedAt
+  - description: Field 'activatedAt' is of type 'String'
+    type: field-type
+    target: activatedAt
+    expectedValue: String
+  - description: Field 'account' exists in response
+    type: field-exists
+    target: account
+  - description: Field 'account' is of type 'Object'
+    type: field-type
+    target: account
+    expectedValue: Object
+  - description: Field 'limitSetting' exists in response
+    type: field-exists
+    target: limitSetting
+  - description: Field 'limitSetting' is of type 'Object'
+    type: field-type
+    target: limitSetting
+    expectedValue: Object
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: ExecuteActivation
+  sourceRows: ''
+  apiSpecFile: ExecuteActivation

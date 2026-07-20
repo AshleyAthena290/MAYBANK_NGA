@@ -1,0 +1,79 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /submit - Missing Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: SubmitDomesticScanPay-002-missing-auth
+title: POST /submit - Missing Authentication
+feature: ptscanandpaydddapispecv2working
+description: Request without authentication credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-local/submit
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-local/submit
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers: {}
+  pathParams: {}
+  queryParams: {}
+  body:
+    txnRef: <value>
+    idempotencyKey: <value>
+    sofAccountId: <value>
+    sofAccountNumber: <value>
+    sofAccountType: <value>
+    cpan: <value>
+    terminalId: <value>
+    paymentAmount: <value>
+    tipAmount: <value>
+    promoDiscount: <value>
+    totalDebitAmount: <value>
+    currency: <value>
+    authToken: <value>
+    promoCode: <value>
+    ? "{\n  \"txnRef\": \"QR202605100001\",\n  \"idempotencyKey\": \"9f4c9d2f-5e6d-4e9a-8c0b-a3723a9b91d2\",\n  \"sofAccountId\": \"514013314526\",\n  \"sofAccountNumber\": \"514013314526\",\n  \"sofAccountType\": \"CASA\",\n  \"cpan\": null,\n  \"terminalId\": \"T001234\",\n  \"paymentAmount\": 50000.00,\n  \"tipAmount\": 5000.00,\n  \"promoDiscount\": 0.00,\n  \"totalDebitAmount\": 55000.00,\n  \"currency\": \"IDR\",\n  \"authToken\": \"S2U-AUTH-TOKEN-XYZ\",\n  \"promoCode\": null\n}"
+    : <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized - Authentication required
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+      description: Error code
+    - fieldPath: message
+      type: String
+      mandatory: true
+      description: Error message
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Field 'error' exists and is of type String
+    type: field-type
+    target: error
+    expectedValue: String
+  - description: Error message indicates missing authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: SubmitDomesticScanPay
+  sourceRows: ''
+  apiSpecFile: SubmitDomesticScanPay

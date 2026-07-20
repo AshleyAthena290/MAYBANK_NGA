@@ -1,0 +1,92 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /execute - Duplicate Correlation ID
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: ExecuteActivation-005-duplicate-correlation-id
+title: POST /execute - Duplicate Correlation ID
+feature: ptscanandpaydddapispecv2working
+description: Same request with duplicate correlation ID should be idempotent
+tags:
+  - edge-case
+  - idempotency
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+  - First request with correlation ID has been processed
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/activation/execute
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/activation/execute
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: duplicate-correlation-123
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    customerCif: <value>
+    accessId: <value>
+    activationType: <value>
+    journeyType: <value>
+    authToken: <value>
+    primaryAccount: <value>
+    accountId: <value>
+    accountType: <value>
+    limitSetting: <value>
+    dailyLimit: <value>
+    transactionLimit: <value>
+    preLoginLimit: <value>
+    ? "{\n  \"idType\": \"CIF\",\n  \"accessId\": \"ABC123456789\",\n  \"activationType\": \"SCAN_TO_PAY\",\n  \"journeyType\": \"SCAN_TO_PAY\",\n  \"authToken\": \"S2U-AUTH-TOKEN-XYZ\",\n  \"primaryAccount\": {\n    \"accountId\": \"514013314526\",\n    \"accountType\": \"CASA\",\n    \"accountName\": \"account name\"\n  },\n  \"limitSetting\": {\n    \"dailyLimit\": 20000000.00,\n    \"transactionLimit\": 5000000.00,\n    \"preLoginLimit\": 500000.00\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    activationRefId: String
+    activationType: String
+    journeyType: String
+    status: String
+    activatedAt: String
+    account: Object
+    accountId: String
+    accountType: String
+    accountName: String
+    accountNumberMasked: String
+    limitSetting: Object
+    dailyLimit: Integer
+    transactionLimit: Integer
+    preLoginLimit: Integer
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 (or 202 for idempotent)
+    type: custom
+  - description: Same response as first request
+    type: custom
+  - description: No duplicate processing occurred
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: ExecuteActivation
+  sourceRows: ''
+  apiSpecFile: ExecuteActivation

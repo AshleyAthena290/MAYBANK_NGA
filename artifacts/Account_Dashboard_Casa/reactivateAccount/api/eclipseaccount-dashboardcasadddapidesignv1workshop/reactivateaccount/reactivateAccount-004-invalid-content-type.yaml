@@ -1,0 +1,58 @@
+# BDD Test Case - eclipseaccount-dashboardcasadddapidesignv1workshop
+# Generated for: POST /reactivate - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: reactivateAccount-004-invalid-content-type
+title: POST /reactivate - Invalid Content-Type
+feature: eclipseaccount-dashboardcasadddapidesignv1workshop
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/reactivate'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/reactivate'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784270983887
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    accountId: <value>
+    Request Parameter: <value>
+    ? "POST  https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/reactivate\n\n{\n    \"accountId\": \"183476335222\",\n    \"email\": \"susi.doyo@gmail.com\",\n    \"contact\": [\n        {\n            \"type\": \"MB\",\n            \"number\": \"6783945567652\",\n            \"oldNumber\": \"6783945111111\"\n        }\n    ],\n    \"employment\": {\n        \"occupationCode\": \"ACCOUNTING\",\n        \"industryCode\": \"FINANCE\",\n        \"companyName\": \"Maybank Indonesia\",\n        \"positionCode\": \"MANAGER\",\n        \"categoryCode\": \"TECHNOLOGY\",\n        \"startDate\": \"2000-05-30\",\n        \"sourceOfIncomeCode\": \"SALARY\",\n        \"annualIncome\": 10000000000\n    },\n    \"address\": [\n        {\n            \"type\": \"OFFICE\",\n            \"address1\": \"Jl. Asia Afrika Sentral Senayan 3\",\n            \"province\": \"Jakarta Selatan\",\n            \"city\": \"Kebayoran Baru\",\n            \"district\": \"Bendungan Hilir\",\n            \"subDistrict\": \"Gelora\",\n            \"postcode\": \"10270\"\n        },\n        {\n            \"type\": \"HOME\",\n            \"address1\": \"Jl. Asia Afrika Sentral Senayan 3\",\n            \"province\": \"Jakarta Selatan\",\n            \"city\": \"Kebayoran Baru\",\n            \"district\": \"Bendungan Hilir\",\n            \"subDistrict\": \"Gelora\",\n            \"neighborhoodUnit\": \"001\",\n            \"communityUnit\": \"004\",\n            \"postcode\": \"10270\"\n        },\n        {\n            \"type\": \"MAILING\",\n            \"address1\": \"Jl. Asia Afrika Sentral Senayan 3\",\n            \"province\": \"Jakarta Selatan\",\n            \"city\": \"Kebayoran Baru\",\n            \"district\": \"Bendungan Hilir\",\n            \"subDistrict\": \"Gelora\",\n            \"neighborhoodUnit\": \"001\",\n            \"communityUnit\": \"004\",\n            \"postcode\": \"10270\"\n        }\n    ]\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: reactivateAccount
+  sourceRows: ''
+  apiSpecFile: reactivateAccount

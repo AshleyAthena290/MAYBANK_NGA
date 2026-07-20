@@ -1,0 +1,69 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /init - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: InitOverseasScanPay-001-positive
+title: POST /init - Happy Path
+feature: ptscanandpaydddapispecv2working
+description: Initializes the overseas QR Pay journey by decoding the cross-border QR payload. Detects overseas routing from Tag 58 (Country Code ≠ ID). Retrieves eligible IDR CASA accounts (CC not supported for overseas). Fetches indicative FX rate from ESB > Systematics Closing Rate × (1 + service fee%). Stores context in Hazelcast pre_txn_flow cache (TTL=10 min).
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - initoverseasscanpay
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/init
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/init
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784197227208
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    qrPayload: <value>
+    deviceId: <value>
+    customerCif: <value>
+    accessId: <value>
+    ? "{\n  \"qrPayload\": \"<raw overseas QR string>\",\n  \"deviceId\": \"DEVICE-ABC-123\",\n  \"customerCif\": \"000784756\",\n  \"accessId\": \"52647823\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InitOverseasScanPay
+  sourceRows: ''
+  apiSpecFile: InitOverseasScanPay

@@ -1,0 +1,64 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /init - Invalid Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: InitCashWithdrawal-003-invalid-auth
+title: POST /init - Invalid Authentication
+feature: ptscanandpaydddapispecv2working
+description: Request with invalid credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: '{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/init'
+  endpoint: '{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/init'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784197422579
+    Authorization: Bearer invalid_token_12345
+  pathParams: {}
+  queryParams: {}
+  body:
+    qrPayload: <value>
+    deviceId: <value>
+    customerCif: <value>
+    accessId: <value>
+    ? "{\n  \"qrPayload\": \"00020101021226580014ID.CO.BRI.WWW01189360001500000000002020403UBE03041234520454099000,00530336054061000005802ID5914MAYBANK ATM ID6013JAKARTA PUSAT61051234062070703RX23ADA6304ABCD\",\n  \"deviceId\": \"DEVICE-ABC-123\",\n  \"customerCif\": \"000784756\",\n  \"accessId\": \"5264782000027873\"\n}"
+    : <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized - Invalid credentials
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Error message indicates invalid authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InitCashWithdrawal
+  sourceRows: ''
+  apiSpecFile: InitCashWithdrawal

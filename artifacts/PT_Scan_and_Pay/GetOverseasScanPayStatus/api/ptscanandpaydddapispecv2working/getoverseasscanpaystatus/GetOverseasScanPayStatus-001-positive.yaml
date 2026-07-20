@@ -1,0 +1,159 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: GET /{txnRef} - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: GetOverseasScanPayStatus-001-positive
+title: GET /{txnRef} - Happy Path
+feature: ptscanandpaydddapispecv2working
+description: 'Polls the actual posting status of an overseas QR Pay transaction. Triggered only when SubmitOverseasScanPay returns RC_300 or RC68 timeout. Calls ESB eChannelServices (DE003: 27XX00) for definitive status. Updates Hazelcast txn_flow cache with final result.'
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - getoverseasscanpaystatus
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/status/{txnRef}
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/status/{txnRef}
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784197343226
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body: {}
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    txnRef: String
+    transactionStatus: String
+    postingRef: String
+    transactionDateTime: String
+    totalDebitIDRAmount: Decimal
+    errorCode: 'Null'
+    errorMessage: 'Null'
+  expectedFields:
+    - fieldPath: txnRef
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: txnRef'
+    - fieldPath: transactionStatus
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: transactionStatus'
+    - fieldPath: postingRef
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: postingRef'
+    - fieldPath: transactionDateTime
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: transactionDateTime'
+    - fieldPath: totalDebitIDRAmount
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: totalDebitIDRAmount'
+    - fieldPath: errorCode
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: errorCode'
+    - fieldPath: errorMessage
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: errorMessage'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'txnRef' exists in response
+    type: field-exists
+    target: txnRef
+  - description: Field 'txnRef' is of type 'String'
+    type: field-type
+    target: txnRef
+    expectedValue: String
+  - description: Field 'transactionStatus' exists in response
+    type: field-exists
+    target: transactionStatus
+  - description: Field 'transactionStatus' is of type 'String'
+    type: field-type
+    target: transactionStatus
+    expectedValue: String
+  - description: Field 'postingRef' exists in response
+    type: field-exists
+    target: postingRef
+  - description: Field 'postingRef' is of type 'String'
+    type: field-type
+    target: postingRef
+    expectedValue: String
+  - description: Field 'transactionDateTime' exists in response
+    type: field-exists
+    target: transactionDateTime
+  - description: Field 'transactionDateTime' is of type 'String'
+    type: field-type
+    target: transactionDateTime
+    expectedValue: String
+  - description: Field 'totalDebitIDRAmount' exists in response
+    type: field-exists
+    target: totalDebitIDRAmount
+  - description: Field 'totalDebitIDRAmount' is of type 'Decimal'
+    type: field-type
+    target: totalDebitIDRAmount
+    expectedValue: Decimal
+  - description: Field 'errorCode' exists in response
+    type: field-exists
+    target: errorCode
+  - description: Field 'errorCode' is of type 'Null'
+    type: field-type
+    target: errorCode
+    expectedValue: 'Null'
+  - description: Field 'errorMessage' exists in response
+    type: field-exists
+    target: errorMessage
+  - description: Field 'errorMessage' is of type 'Null'
+    type: field-type
+    target: errorMessage
+    expectedValue: 'Null'
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: GetOverseasScanPayStatus
+  sourceRows: ''
+  apiSpecFile: GetOverseasScanPayStatus

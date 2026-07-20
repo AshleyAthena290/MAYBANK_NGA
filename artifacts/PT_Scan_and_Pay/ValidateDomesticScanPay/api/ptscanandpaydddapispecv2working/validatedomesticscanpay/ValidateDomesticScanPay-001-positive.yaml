@@ -1,0 +1,72 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /validate - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: ValidateDomesticScanPay-001-positive
+title: POST /validate - Happy Path
+feature: ptscanandpaydddapispecv2working
+description: Validates the domestic QR Pay transaction before proceeding to the Confirmation screen. Performs QR context validation, amount validation, SoF eligibility check, and limit check (per-transaction and daily) against P&T DB. Derives CPAN for Off-Us QR. Optionally validates promo code via Alphabit. Updates Hazelcast txn_flow cache (TTL=10 min).
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - validatedomesticscanpay
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-local/validate
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-local/validate
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784195892516
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    txnRef: <value>
+    sofAccountId: <value>
+    sofAccountType: <value>
+    sofCurrency: <value>
+    paymentAmount: <value>
+    tipAmount: <value>
+    promoCode: <value>
+    ? "{\n  \"txnRef\": \"QR202605100001\",\n  \"sofAccountId\": \"514013314526\",\n  \"sofAccountType\": \"CASA\",\n  \"sofCurrency\": \"IDR\",\n  \"paymentAmount\": 50000.00,\n  \"tipAmount\": 5000.00,\n  \"promoCode\": \"PROMO123\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: ValidateDomesticScanPay
+  sourceRows: ''
+  apiSpecFile: ValidateDomesticScanPay

@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipseaccount-dashboardcasadddapidesignv1workshop - getAutoSweep
+# Generated: 2026-07-17T06:00:49.402Z
+---
+feature: eclipseaccount-dashboardcasadddapidesignv1workshop
+apiName: getAutoSweep
+description: Test cases for getAutoSweep endpoint
+totalScenarios: 7
+scenarios:
+  - id: getAutoSweep-001-positive
+    title: GET /auto-sweep - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getautosweep
+    priority: P1
+  - id: getAutoSweep-002-missing-auth
+    title: GET /auto-sweep - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getAutoSweep-003-invalid-auth
+    title: GET /auto-sweep - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getAutoSweep-004-invalid-content-type
+    title: GET /auto-sweep - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getAutoSweep-005-duplicate-correlation-id
+    title: GET /auto-sweep - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getAutoSweep-006-request-timeout
+    title: GET /auto-sweep - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getAutoSweep-007-empty-request-body
+    title: GET /auto-sweep - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T06:00:49.402Z'

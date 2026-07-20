@@ -1,0 +1,68 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /execute - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: ExecuteActivation-006-request-timeout
+title: POST /execute - Request Timeout
+feature: ptscanandpaydddapispecv2working
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/activation/execute
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/activation/execute
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784271257470
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    customerCif: <value>
+    accessId: <value>
+    activationType: <value>
+    journeyType: <value>
+    authToken: <value>
+    primaryAccount: <value>
+    accountId: <value>
+    accountType: <value>
+    limitSetting: <value>
+    dailyLimit: <value>
+    transactionLimit: <value>
+    preLoginLimit: <value>
+    ? "{\n  \"idType\": \"CIF\",\n  \"accessId\": \"ABC123456789\",\n  \"activationType\": \"SCAN_TO_PAY\",\n  \"journeyType\": \"SCAN_TO_PAY\",\n  \"authToken\": \"S2U-AUTH-TOKEN-XYZ\",\n  \"primaryAccount\": {\n    \"accountId\": \"514013314526\",\n    \"accountType\": \"CASA\",\n    \"accountName\": \"account name\"\n  },\n  \"limitSetting\": {\n    \"dailyLimit\": 20000000.00,\n    \"transactionLimit\": 5000000.00,\n    \"preLoginLimit\": 500000.00\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: ExecuteActivation
+  sourceRows: ''
+  apiSpecFile: ExecuteActivation
