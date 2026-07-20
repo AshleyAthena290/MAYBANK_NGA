@@ -1,0 +1,877 @@
+{
+  "1.2 Account Listing": {
+    "Service": "Screen",
+    "Method": "Unknown",
+    "URL": "Unknown",
+    "MessageType": "JSON",
+    "HTTPHeaders": [],
+    "HTTPBody": [],
+    "RequestParameters": [],
+    "Response": [],
+    "ErrorResponses": []
+  },
+  "1.2.1 CASA": {
+    "Service": "Screen",
+    "Method": "Unknown",
+    "URL": "Unknown",
+    "MessageType": "JSON",
+    "HTTPHeaders": [],
+    "HTTPBody": [],
+    "RequestParameters": [],
+    "Response": [],
+    "ErrorResponses": []
+  },
+  "1.2.1.1 Transaction Details": {
+    "Service": "Screen",
+    "Method": "Unknown",
+    "URL": "Unknown",
+    "MessageType": "JSON",
+    "HTTPHeaders": [],
+    "HTTPBody": [],
+    "RequestParameters": [],
+    "Response": [],
+    "ErrorResponses": []
+  },
+  "1.2.1.2 ViewAllTrans": {
+    "Service": "Screen",
+    "Method": "Unknown",
+    "URL": "Unknown",
+    "MessageType": "JSON",
+    "HTTPHeaders": [],
+    "HTTPBody": [],
+    "RequestParameters": [],
+    "Response": [],
+    "ErrorResponses": []
+  },
+  "1.2.1.3 ManageLinkedCard": {
+    "Service": "Screen",
+    "Method": "Unknown",
+    "URL": "Unknown",
+    "MessageType": "JSON",
+    "HTTPHeaders": [],
+    "HTTPBody": [],
+    "RequestParameters": [],
+    "Response": [],
+    "ErrorResponses": []
+  },
+  "1.2.1.4 BlockAccount": {
+    "Service": "Screen",
+    "Method": "Unknown",
+    "URL": "Unknown",
+    "MessageType": "JSON",
+    "HTTPHeaders": [],
+    "HTTPBody": [],
+    "RequestParameters": [],
+    "Response": [],
+    "ErrorResponses": []
+  },
+  "1.2.1.5 DormantAccount": {
+    "Service": "Screen",
+    "Method": "Unknown",
+    "URL": "Unknown",
+    "MessageType": "JSON",
+    "HTTPHeaders": [],
+    "HTTPBody": [],
+    "RequestParameters": [],
+    "Response": [],
+    "ErrorResponses": []
+  },
+  "1.2.1.6 Inactive Account": {
+    "Service": "Screen",
+    "Method": "Unknown",
+    "URL": "Unknown",
+    "MessageType": "JSON",
+    "HTTPHeaders": [],
+    "HTTPBody": [],
+    "RequestParameters": [],
+    "Response": [],
+    "ErrorResponses": []
+  },
+  "1.2.1.7 Closed Account": {
+    "Service": "Screen",
+    "Method": "Unknown",
+    "URL": "Unknown",
+    "MessageType": "JSON",
+    "HTTPHeaders": [],
+    "HTTPBody": [],
+    "RequestParameters": [],
+    "Response": [],
+    "ErrorResponses": []
+  },
+  "1.2.6 Global Access": {
+    "Service": "Screen",
+    "Method": "Unknown",
+    "URL": "Unknown",
+    "MessageType": "JSON",
+    "HTTPHeaders": [],
+    "HTTPBody": [],
+    "RequestParameters": [],
+    "Response": [],
+    "ErrorResponses": []
+  },
+  "1.2.6.3 Remove Currency": {
+    "Service": "Screen",
+    "Method": "Unknown",
+    "URL": "Unknown",
+    "MessageType": "JSON",
+    "HTTPHeaders": [],
+    "HTTPBody": [],
+    "RequestParameters": [],
+    "Response": [],
+    "ErrorResponses": []
+  },
+  "1.2.7 Giro Multicurrency": {
+    "Service": "Screen",
+    "Method": "Unknown",
+    "URL": "Unknown",
+    "MessageType": "JSON",
+    "HTTPHeaders": [],
+    "HTTPBody": [],
+    "RequestParameters": [],
+    "Response": [],
+    "ErrorResponses": []
+  },
+  "XP APIs >>": {
+    "Service": "Unknown",
+    "Method": "Unknown",
+    "URL": "Unknown",
+    "MessageType": "JSON",
+    "HTTPHeaders": [],
+    "HTTPBody": [],
+    "RequestParameters": [],
+    "Response": [],
+    "ErrorResponses": []
+  },
+  "getManageDebitCard": {
+    "Service": "getManageDebitCard",
+    "Method": "GET",
+    "URL": "https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/debit-card/manage",
+    "MessageType": "JSON",
+    "HTTPHeaders": [
+      {
+        "Name": "Name",
+        "Type": "Type",
+        "Length": "Length",
+        "Mandatory": "Mandatory",
+        "Sample Value": "Sample Value",
+        "Description": "Description"
+      },
+      {
+        "Name": "authorization",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "Y",
+        "Sample Value": "Bearer <ACCESS_TOKEN>",
+        "Description": "Authentication Access Token required for channel calls (e.g. PNT app calls Eclipse)"
+      },
+      {
+        "Name": "client-id",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "Y",
+        "Sample Value": "pnt-17ht3",
+        "Description": "Unique Client Id per channel"
+      },
+      {
+        "Name": "api-key",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "N",
+        "Sample Value": "a7dfa879sd8a7sd8",
+        "Description": "Unique Id per channel"
+      },
+      {
+        "Name": "env",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "Y",
+        "Sample Value": "UAT",
+        "Description": "Environment values"
+      },
+      {
+        "Name": "accept",
+        "Type": "String",
+        "Length": "16",
+        "Mandatory": "N",
+        "Sample Value": "application/json",
+        "Description": "Content type"
+      }
+    ],
+    "HTTPBody": [
+      {
+        "Name": "Name",
+        "Type": "Type",
+        "Length": "Length",
+        "Mandatory": "Mandatory",
+        "Sample Value": "Sample Value",
+        "Description": "Description"
+      }
+    ],
+    "RequestParameters": [
+      {
+        "Name": "Name",
+        "Type": "Type",
+        "Length": "Length",
+        "Mandatory": "Mandatory",
+        "Sample Value": "Sample Value",
+        "Description": "Description"
+      },
+      {
+        "Name": "accountId",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "900000097152",
+        "Description": "-"
+      }
+    ],
+    "Response": [],
+    "ErrorResponses": []
+  },
+  "ECLIPSE APIs >>": {
+    "Service": "Unknown",
+    "Method": "Unknown",
+    "URL": "Unknown",
+    "MessageType": "JSON",
+    "HTTPHeaders": [],
+    "HTTPBody": [],
+    "RequestParameters": [],
+    "Response": [],
+    "ErrorResponses": []
+  },
+  "getAutoSweep": {
+    "Service": "getAutoSweep",
+    "Method": "GET",
+    "URL": "https: //{Eclipse-IP}:{Eclipse-PORT}/info/casa/v1/external/accounts/{accountId}/auto-sweep",
+    "MessageType": "JSON",
+    "HTTPHeaders": [
+      {
+        "Name": "Name",
+        "Type": "Type",
+        "Length": "Length",
+        "Mandatory": "Mandatory",
+        "Sample Value": "Sample Value",
+        "Description": "Description"
+      },
+      {
+        "Name": "authorization",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "Y",
+        "Sample Value": "Bearer <ACCESS_TOKEN>",
+        "Description": "Authentication Access Token required for channel calls (e.g. PNT app calls Eclipse)"
+      },
+      {
+        "Name": "client-id",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "Y",
+        "Sample Value": "pnt-17ht3",
+        "Description": "Unique Client Id per channel"
+      },
+      {
+        "Name": "api-key",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "N",
+        "Sample Value": "a7dfa879sd8a7sd8",
+        "Description": "Unique Id per channel"
+      },
+      {
+        "Name": "env",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "Y",
+        "Sample Value": "UAT",
+        "Description": "Environment values"
+      },
+      {
+        "Name": "accept",
+        "Type": "String",
+        "Length": "16",
+        "Mandatory": "N",
+        "Sample Value": "application/json",
+        "Description": "Content type"
+      }
+    ],
+    "HTTPBody": [
+      {
+        "Name": "Name",
+        "Type": "Type",
+        "Length": "Length",
+        "Mandatory": "Mandatory",
+        "Sample Value": "Sample Value",
+        "Description": "Description"
+      }
+    ],
+    "RequestParameters": [],
+    "Response": [],
+    "ErrorResponses": [],
+    "PathVariables": [
+      {
+        "Name": "Name",
+        "Type": "Type",
+        "Length": "Length",
+        "Mandatory": "Mandatory",
+        "Sample Value": "Sample Value",
+        "Description": "Description"
+      },
+      {
+        "Name": "accountId",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      }
+    ]
+  },
+  "S2U APIs >>": {
+    "Service": "Unknown",
+    "Method": "Unknown",
+    "URL": "Unknown",
+    "MessageType": "JSON",
+    "HTTPHeaders": [],
+    "HTTPBody": [],
+    "RequestParameters": [],
+    "Response": [],
+    "ErrorResponses": []
+  },
+  "setAutoSweep": {
+    "Service": "setAutoSweep",
+    "Method": "POST",
+    "URL": "https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/auto-sweep",
+    "MessageType": "JSON",
+    "HTTPHeaders": [
+      {
+        "Name": "Name",
+        "Type": "Type",
+        "Length": "Length",
+        "Mandatory": "Mandatory",
+        "Sample Value": "Sample Value",
+        "Description": "Description"
+      },
+      {
+        "Name": "authorization",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "Y",
+        "Sample Value": "Bearer <ACCESS_TOKEN>",
+        "Description": "Authentication Access Token required for channel calls (e.g. PNT app calls Eclipse)"
+      },
+      {
+        "Name": "client-id",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "Y",
+        "Sample Value": "pnt-17ht3",
+        "Description": "Unique Client Id per channel"
+      },
+      {
+        "Name": "api-key",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "N",
+        "Sample Value": "a7dfa879sd8a7sd8",
+        "Description": "Unique Id per channel"
+      },
+      {
+        "Name": "env",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "Y",
+        "Sample Value": "UAT",
+        "Description": "Environment values"
+      },
+      {
+        "Name": "accept",
+        "Type": "String",
+        "Length": "16",
+        "Mandatory": "N",
+        "Sample Value": "application/json",
+        "Description": "Content type"
+      }
+    ],
+    "HTTPBody": [
+      {
+        "Name": "Name",
+        "Type": "Type",
+        "Length": "Length",
+        "Mandatory": "Mandatory",
+        "Sample Value": "Sample Value",
+        "Description": "Description"
+      },
+      {
+        "Name": "primaryCurrency",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "primaryLimit",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "accountId",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "autoSweepFlag",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      }
+    ],
+    "RequestParameters": [],
+    "Response": [],
+    "ErrorResponses": [],
+    "PathVariables": [
+      {
+        "Name": "Name",
+        "Type": "Type",
+        "Length": "Length",
+        "Mandatory": "Mandatory",
+        "Sample Value": "Sample Value",
+        "Description": "Description"
+      }
+    ]
+  },
+  "setLinkedCard": {
+    "Service": "setLinkedCard",
+    "Method": "POST",
+    "URL": "https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/linked-card",
+    "MessageType": "JSON",
+    "HTTPHeaders": [
+      {
+        "Name": "Name",
+        "Type": "Type",
+        "Length": "Length",
+        "Mandatory": "Mandatory",
+        "Sample Value": "Sample Value",
+        "Description": "Description"
+      },
+      {
+        "Name": "authorization",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "Y",
+        "Sample Value": "Bearer <ACCESS_TOKEN>",
+        "Description": "Authentication Access Token required for channel calls (e.g. PNT app calls Eclipse)"
+      },
+      {
+        "Name": "client-id",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "Y",
+        "Sample Value": "pnt-17ht3",
+        "Description": "Unique Client Id per channel"
+      },
+      {
+        "Name": "api-key",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "N",
+        "Sample Value": "a7dfa879sd8a7sd8",
+        "Description": "Unique Id per channel"
+      },
+      {
+        "Name": "env",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "Y",
+        "Sample Value": "UAT",
+        "Description": "Environment values"
+      },
+      {
+        "Name": "accept",
+        "Type": "String",
+        "Length": "16",
+        "Mandatory": "N",
+        "Sample Value": "application/json",
+        "Description": "Content type"
+      }
+    ],
+    "HTTPBody": [
+      {
+        "Name": "Name",
+        "Type": "Type",
+        "Length": "Length",
+        "Mandatory": "Mandatory",
+        "Sample Value": "Sample Value",
+        "Description": "Description"
+      }
+    ],
+    "RequestParameters": [
+      {
+        "Name": "Name",
+        "Type": "Type",
+        "Length": "Length",
+        "Mandatory": "Mandatory",
+        "Sample Value": "Sample Value",
+        "Description": "Description"
+      },
+      {
+        "Name": "> account (object)",
+        "Type": "-",
+        "Length": "-",
+        "Mandatory": "-",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "accountId",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "branchCode",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "currency",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "type",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "openingDateTime",
+        "Type": "DateTime",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "> customer (object)",
+        "Type": "-",
+        "Length": "-",
+        "Mandatory": "-",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "name",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "phoneNumber",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "> address (object)",
+        "Type": "-",
+        "Length": "-",
+        "Mandatory": "-",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "address1",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "province",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "city",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "district",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "subDistrict",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "neighborhoodUnit",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "communityUnit",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "postcode",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "> card (object)",
+        "Type": "-",
+        "Length": "-",
+        "Mandatory": "-",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "cardNumber",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "primaryFlag",
+        "Type": "Boolean",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      }
+    ],
+    "Response": [],
+    "ErrorResponses": []
+  },
+  "blockAccounts": {
+    "Service": "blockAccounts",
+    "Method": "POST",
+    "URL": "https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/block",
+    "MessageType": "JSON",
+    "HTTPHeaders": [
+      {
+        "Name": "Name",
+        "Type": "Type",
+        "Length": "Length",
+        "Mandatory": "Mandatory",
+        "Sample Value": "Sample Value",
+        "Description": "Description"
+      },
+      {
+        "Name": "authorization",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "Y",
+        "Sample Value": "Bearer <ACCESS_TOKEN>",
+        "Description": "Authentication Access Token required for channel calls (e.g. PNT app calls Eclipse)"
+      },
+      {
+        "Name": "client-id",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "Y",
+        "Sample Value": "pnt-17ht3",
+        "Description": "Unique Client Id per channel"
+      },
+      {
+        "Name": "api-key",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "N",
+        "Sample Value": "a7dfa879sd8a7sd8",
+        "Description": "Unique Id per channel"
+      },
+      {
+        "Name": "env",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "Y",
+        "Sample Value": "UAT",
+        "Description": "Environment values"
+      },
+      {
+        "Name": "accept",
+        "Type": "String",
+        "Length": "16",
+        "Mandatory": "N",
+        "Sample Value": "application/json",
+        "Description": "Content type"
+      }
+    ],
+    "HTTPBody": [
+      {
+        "Name": "Name",
+        "Type": "Type",
+        "Length": "Length",
+        "Mandatory": "Mandatory",
+        "Sample Value": "Sample Value",
+        "Description": "Description"
+      },
+      {
+        "Name": "accounts[] (list)",
+        "Type": "-",
+        "Length": "-",
+        "Mandatory": "-",
+        "Sample Value": "-",
+        "Description": "-"
+      },
+      {
+        "Name": "accountId",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      }
+    ],
+    "RequestParameters": [
+      {
+        "Name": "Name",
+        "Type": "Type",
+        "Length": "Length",
+        "Mandatory": "Mandatory",
+        "Sample Value": "Sample Value",
+        "Description": "Description"
+      }
+    ],
+    "Response": [],
+    "ErrorResponses": []
+  },
+  "reactivateAccount": {
+    "Service": "reactivateAccount",
+    "Method": "POST",
+    "URL": "https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/reactivate",
+    "MessageType": "JSON",
+    "HTTPHeaders": [
+      {
+        "Name": "Name",
+        "Type": "Type",
+        "Length": "Length",
+        "Mandatory": "Mandatory",
+        "Sample Value": "Sample Value",
+        "Description": "Description"
+      },
+      {
+        "Name": "authorization",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "Y",
+        "Sample Value": "Bearer <ACCESS_TOKEN>",
+        "Description": "Authentication Access Token required for channel calls (e.g. PNT app calls Eclipse)"
+      },
+      {
+        "Name": "client-id",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "Y",
+        "Sample Value": "pnt-17ht3",
+        "Description": "Unique Client Id per channel"
+      },
+      {
+        "Name": "api-key",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "N",
+        "Sample Value": "a7dfa879sd8a7sd8",
+        "Description": "Unique Id per channel"
+      },
+      {
+        "Name": "env",
+        "Type": "String",
+        "Length": "Dynamic",
+        "Mandatory": "Y",
+        "Sample Value": "UAT",
+        "Description": "Environment values"
+      },
+      {
+        "Name": "accept",
+        "Type": "String",
+        "Length": "16",
+        "Mandatory": "N",
+        "Sample Value": "application/json",
+        "Description": "Content type"
+      }
+    ],
+    "HTTPBody": [
+      {
+        "Name": "Name",
+        "Type": "Type",
+        "Length": "Length",
+        "Mandatory": "Mandatory",
+        "Sample Value": "Sample Value",
+        "Description": "Description"
+      },
+      {
+        "Name": "accountId",
+        "Type": "String",
+        "Length": "-",
+        "Mandatory": "Y",
+        "Sample Value": "-",
+        "Description": "-"
+      }
+    ],
+    "RequestParameters": [
+      {
+        "Name": "Name",
+        "Type": "Type",
+        "Length": "Length",
+        "Mandatory": "Mandatory",
+        "Sample Value": "Sample Value",
+        "Description": "Description"
+      }
+    ],
+    "Response": [],
+    "ErrorResponses": []
+  }
+}

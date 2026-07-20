@@ -1,0 +1,85 @@
+Endpoint,Test_ID,Test_Name,Type,Priority,HTTP_Method,Description,Preconditions,Test_Steps,Expected_Result,Mandatory_Headers,Mandatory_Body_Params,Mandatory_Path_Params
+getManageDebitCard,getManageDebitCard_001_HappyPath,getManageDebitCard - Happy Path,Positive,P0,GET,Verify successful GET request to getManageDebitCard endpoint with all mandatory parameters,"Valid authentication token, User has necessary permissions","1. Prepare GET request to https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/debit-card/manage
+2. Include all mandatory headers: authorization, client-id, env
+3. Include all mandatory body/parameters
+4. Send request",HTTP 200 OK response with valid response structure,"authorization, client-id, env",,accountId
+getManageDebitCard,getManageDebitCard_002_MissingAuth,getManageDebitCard - Missing Authorization Header,Negative,P0,GET,Verify error when authorization header is missing,None,"1. Prepare GET request without authorization header
+2. Include other mandatory headers
+3. Send request",HTTP 401 Unauthorized response,"client-id, env",,accountId
+getManageDebitCard,getManageDebitCard_003_InvalidToken,getManageDebitCard - Invalid Authorization Token,Negative,P1,GET,Verify error when authorization token is invalid/expired,None,"1. Prepare GET request
+2. Include authorization header with invalid token ""Bearer invalid_token_12345""
+3. Send request",HTTP 401 Unauthorized response,"authorization, client-id, env",,accountId
+getAutoSweep,getAutoSweep_001_HappyPath,getAutoSweep - Happy Path,Positive,P0,GET,Verify successful GET request to getAutoSweep endpoint with all mandatory parameters,"Valid authentication token, User has necessary permissions","1. Prepare GET request to https: //{Eclipse-IP}:{Eclipse-PORT}/info/casa/v1/external/accounts/{accountId}/auto-sweep
+2. Include all mandatory headers: authorization, client-id, env
+3. Include all mandatory body/parameters
+4. Send request",HTTP 200 OK response with valid response structure,"authorization, client-id, env",,
+getAutoSweep,getAutoSweep_002_MissingAuth,getAutoSweep - Missing Authorization Header,Negative,P0,GET,Verify error when authorization header is missing,None,"1. Prepare GET request without authorization header
+2. Include other mandatory headers
+3. Send request",HTTP 401 Unauthorized response,"client-id, env",,
+getAutoSweep,getAutoSweep_003_InvalidToken,getAutoSweep - Invalid Authorization Token,Negative,P1,GET,Verify error when authorization token is invalid/expired,None,"1. Prepare GET request
+2. Include authorization header with invalid token ""Bearer invalid_token_12345""
+3. Send request",HTTP 401 Unauthorized response,"authorization, client-id, env",,
+setAutoSweep,setAutoSweep_001_HappyPath,setAutoSweep - Happy Path,Positive,P0,POST,Verify successful POST request to setAutoSweep endpoint with all mandatory parameters,"Valid authentication token, User has necessary permissions","1. Prepare POST request to https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/auto-sweep
+2. Include all mandatory headers: authorization, client-id, env
+3. Include all mandatory body/parameters
+4. Send request",HTTP 200 OK response with valid response structure,"authorization, client-id, env","primaryCurrency, primaryLimit, accountId, autoSweepFlag",
+setAutoSweep,setAutoSweep_002_MissingAuth,setAutoSweep - Missing Authorization Header,Negative,P0,POST,Verify error when authorization header is missing,None,"1. Prepare POST request without authorization header
+2. Include other mandatory headers
+3. Send request",HTTP 401 Unauthorized response,"client-id, env","primaryCurrency, primaryLimit, accountId, autoSweepFlag",
+setAutoSweep,setAutoSweep_003_InvalidToken,setAutoSweep - Invalid Authorization Token,Negative,P1,POST,Verify error when authorization token is invalid/expired,None,"1. Prepare POST request
+2. Include authorization header with invalid token ""Bearer invalid_token_12345""
+3. Send request",HTTP 401 Unauthorized response,"authorization, client-id, env","primaryCurrency, primaryLimit, accountId, autoSweepFlag",
+setAutoSweep,setAutoSweep_04_MissingBodyParam,setAutoSweep - Missing primaryCurrency Parameter,Negative,P1,POST,"Verify error when mandatory body parameter ""primaryCurrency"" is missing",Valid authentication token,"1. Prepare POST request
+2. Include all headers and parameters except ""primaryCurrency""
+3. Send request",HTTP 400 Bad Request response indicating missing required parameter,"authorization, client-id, env","primaryLimit, accountId, autoSweepFlag",
+setAutoSweep,setAutoSweep_05_MissingBodyParam,setAutoSweep - Missing primaryLimit Parameter,Negative,P1,POST,"Verify error when mandatory body parameter ""primaryLimit"" is missing",Valid authentication token,"1. Prepare POST request
+2. Include all headers and parameters except ""primaryLimit""
+3. Send request",HTTP 400 Bad Request response indicating missing required parameter,"authorization, client-id, env","primaryCurrency, accountId, autoSweepFlag",
+setAutoSweep,setAutoSweep_006_InvalidDataType,setAutoSweep - Invalid Data Type,Negative,P2,POST,Verify error when body parameter has invalid data type,Valid authentication token,"1. Prepare POST request
+2. Include all mandatory parameters
+3. Set a numeric parameter to a string value
+4. Send request",HTTP 400 Bad Request response indicating data type mismatch,"authorization, client-id, env","primaryCurrency, primaryLimit, accountId, autoSweepFlag",
+setLinkedCard,setLinkedCard_001_HappyPath,setLinkedCard - Happy Path,Positive,P0,POST,Verify successful POST request to setLinkedCard endpoint with all mandatory parameters,"Valid authentication token, User has necessary permissions","1. Prepare POST request to https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/linked-card
+2. Include all mandatory headers: authorization, client-id, env
+3. Include all mandatory body/parameters
+4. Send request",HTTP 200 OK response with valid response structure,"authorization, client-id, env",,"accountId, branchCode, currency, type, openingDateTime, name, phoneNumber, address1, province, city, district, subDistrict, neighborhoodUnit, communityUnit, postcode, cardNumber, primaryFlag"
+setLinkedCard,setLinkedCard_002_MissingAuth,setLinkedCard - Missing Authorization Header,Negative,P0,POST,Verify error when authorization header is missing,None,"1. Prepare POST request without authorization header
+2. Include other mandatory headers
+3. Send request",HTTP 401 Unauthorized response,"client-id, env",,"accountId, branchCode, currency, type, openingDateTime, name, phoneNumber, address1, province, city, district, subDistrict, neighborhoodUnit, communityUnit, postcode, cardNumber, primaryFlag"
+setLinkedCard,setLinkedCard_003_InvalidToken,setLinkedCard - Invalid Authorization Token,Negative,P1,POST,Verify error when authorization token is invalid/expired,None,"1. Prepare POST request
+2. Include authorization header with invalid token ""Bearer invalid_token_12345""
+3. Send request",HTTP 401 Unauthorized response,"authorization, client-id, env",,"accountId, branchCode, currency, type, openingDateTime, name, phoneNumber, address1, province, city, district, subDistrict, neighborhoodUnit, communityUnit, postcode, cardNumber, primaryFlag"
+blockAccounts,blockAccounts_001_HappyPath,blockAccounts - Happy Path,Positive,P0,POST,Verify successful POST request to blockAccounts endpoint with all mandatory parameters,"Valid authentication token, User has necessary permissions","1. Prepare POST request to https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/block
+2. Include all mandatory headers: authorization, client-id, env
+3. Include all mandatory body/parameters
+4. Send request",HTTP 200 OK response with valid response structure,"authorization, client-id, env",accountId,
+blockAccounts,blockAccounts_002_MissingAuth,blockAccounts - Missing Authorization Header,Negative,P0,POST,Verify error when authorization header is missing,None,"1. Prepare POST request without authorization header
+2. Include other mandatory headers
+3. Send request",HTTP 401 Unauthorized response,"client-id, env",accountId,
+blockAccounts,blockAccounts_003_InvalidToken,blockAccounts - Invalid Authorization Token,Negative,P1,POST,Verify error when authorization token is invalid/expired,None,"1. Prepare POST request
+2. Include authorization header with invalid token ""Bearer invalid_token_12345""
+3. Send request",HTTP 401 Unauthorized response,"authorization, client-id, env",accountId,
+blockAccounts,blockAccounts_04_MissingBodyParam,blockAccounts - Missing accountId Parameter,Negative,P1,POST,"Verify error when mandatory body parameter ""accountId"" is missing",Valid authentication token,"1. Prepare POST request
+2. Include all headers and parameters except ""accountId""
+3. Send request",HTTP 400 Bad Request response indicating missing required parameter,"authorization, client-id, env",,
+blockAccounts,blockAccounts_006_InvalidDataType,blockAccounts - Invalid Data Type,Negative,P2,POST,Verify error when body parameter has invalid data type,Valid authentication token,"1. Prepare POST request
+2. Include all mandatory parameters
+3. Set a numeric parameter to a string value
+4. Send request",HTTP 400 Bad Request response indicating data type mismatch,"authorization, client-id, env",accountId,
+reactivateAccount,reactivateAccount_001_HappyPath,reactivateAccount - Happy Path,Positive,P0,POST,Verify successful POST request to reactivateAccount endpoint with all mandatory parameters,"Valid authentication token, User has necessary permissions","1. Prepare POST request to https: //{Eclipse-IP}:{Eclipse-PORT}/dep/casa/v1/external/casa/reactivate
+2. Include all mandatory headers: authorization, client-id, env
+3. Include all mandatory body/parameters
+4. Send request",HTTP 200 OK response with valid response structure,"authorization, client-id, env",accountId,
+reactivateAccount,reactivateAccount_002_MissingAuth,reactivateAccount - Missing Authorization Header,Negative,P0,POST,Verify error when authorization header is missing,None,"1. Prepare POST request without authorization header
+2. Include other mandatory headers
+3. Send request",HTTP 401 Unauthorized response,"client-id, env",accountId,
+reactivateAccount,reactivateAccount_003_InvalidToken,reactivateAccount - Invalid Authorization Token,Negative,P1,POST,Verify error when authorization token is invalid/expired,None,"1. Prepare POST request
+2. Include authorization header with invalid token ""Bearer invalid_token_12345""
+3. Send request",HTTP 401 Unauthorized response,"authorization, client-id, env",accountId,
+reactivateAccount,reactivateAccount_04_MissingBodyParam,reactivateAccount - Missing accountId Parameter,Negative,P1,POST,"Verify error when mandatory body parameter ""accountId"" is missing",Valid authentication token,"1. Prepare POST request
+2. Include all headers and parameters except ""accountId""
+3. Send request",HTTP 400 Bad Request response indicating missing required parameter,"authorization, client-id, env",,
+reactivateAccount,reactivateAccount_006_InvalidDataType,reactivateAccount - Invalid Data Type,Negative,P2,POST,Verify error when body parameter has invalid data type,Valid authentication token,"1. Prepare POST request
+2. Include all mandatory parameters
+3. Set a numeric parameter to a string value
+4. Send request",HTTP 400 Bad Request response indicating data type mismatch,"authorization, client-id, env",accountId,

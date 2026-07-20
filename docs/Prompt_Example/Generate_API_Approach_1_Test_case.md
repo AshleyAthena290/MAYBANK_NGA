@@ -10,7 +10,7 @@ Generate comprehensive API test cases and test data based on the API specificati
 
 ## Input Files
 
-* **API Design Document:** `ECLIPSE_Account Dashboard_Credit_Card_DDD_API_Design_v1_Workshop.xlsx`
+* **API Design Document:** `ECLIPSE_Account Dashboard_Casa_DDD_API_Design_v1_Workshop.xlsx`
 * **Reference Test Case Format:** `PT_Local_Transfer_Test_Cases.md` and `PT_Local_Transfer_Test_Cases_2026-07-15.xlsx`
 * **Reference Test Data Format:** `PT_Local_Transfer_Test_Data_2026-07-15.xlsx`
 
@@ -91,4 +91,3 @@ Produce the following deliverables:
 * Ensure each test case has corresponding test data.
 * If any requirement is ambiguous or missing, clearly document the assumptions made.
 * Avoid duplicate or redundant test cases.
-* Make sure the test case cover .yaml file in all subfolders for `\artifacts\Acc_Dashboard_CC`
