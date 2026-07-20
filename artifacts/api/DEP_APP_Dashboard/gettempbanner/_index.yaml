@@ -1,0 +1,64 @@
+# Test Case Index
+# depappdashboarddddapidesignv1 - getTempBanner
+# Generated: 2026-07-20T05:52:12.368Z
+---
+feature: depappdashboarddddapidesignv1
+apiName: getTempBanner
+description: Test cases for getTempBanner endpoint
+totalScenarios: 7
+scenarios:
+  - id: getTempBanner-001-positive
+    title: GET /temp-banner - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - gettempbanner
+    priority: P1
+  - id: getTempBanner-002-missing-auth
+    title: GET /temp-banner - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getTempBanner-003-invalid-auth
+    title: GET /temp-banner - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getTempBanner-004-invalid-content-type
+    title: GET /temp-banner - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getTempBanner-005-duplicate-correlation-id
+    title: GET /temp-banner - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getTempBanner-006-request-timeout
+    title: GET /temp-banner - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getTempBanner-007-empty-request-body
+    title: GET /temp-banner - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-20T05:52:12.366Z'

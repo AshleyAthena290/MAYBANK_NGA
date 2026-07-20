@@ -1,0 +1,64 @@
+# Test Case Index
+# depappdashboarddddapidesignv1 - updateHomeDashboardManagement
+# Generated: 2026-07-20T05:52:53.785Z
+---
+feature: depappdashboarddddapidesignv1
+apiName: updateHomeDashboardManagement
+description: Test cases for updateHomeDashboardManagement endpoint
+totalScenarios: 7
+scenarios:
+  - id: updateHomeDashboardManagement-001-positive
+    title: POST /home-dashboard - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - updatehomedashboardmanagement
+    priority: P1
+  - id: updateHomeDashboardManagement-002-missing-auth
+    title: POST /home-dashboard - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: updateHomeDashboardManagement-003-invalid-auth
+    title: POST /home-dashboard - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: updateHomeDashboardManagement-004-invalid-content-type
+    title: POST /home-dashboard - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: updateHomeDashboardManagement-005-duplicate-correlation-id
+    title: POST /home-dashboard - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: updateHomeDashboardManagement-006-request-timeout
+    title: POST /home-dashboard - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: updateHomeDashboardManagement-007-empty-request-body
+    title: POST /home-dashboard - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-20T05:52:53.781Z'

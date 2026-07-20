@@ -1,0 +1,64 @@
+# Test Case Index
+# depappdashboarddddapidesignv1 - getActionList
+# Generated: 2026-07-20T05:52:07.461Z
+---
+feature: depappdashboarddddapidesignv1
+apiName: getActionList
+description: Test cases for getActionList endpoint
+totalScenarios: 7
+scenarios:
+  - id: getActionList-001-positive
+    title: GET /action-list - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getactionlist
+    priority: P1
+  - id: getActionList-002-missing-auth
+    title: GET /action-list - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getActionList-003-invalid-auth
+    title: GET /action-list - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getActionList-004-invalid-content-type
+    title: GET /action-list - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getActionList-005-duplicate-correlation-id
+    title: GET /action-list - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getActionList-006-request-timeout
+    title: GET /action-list - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getActionList-007-empty-request-body
+    title: GET /action-list - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-20T05:52:07.458Z'

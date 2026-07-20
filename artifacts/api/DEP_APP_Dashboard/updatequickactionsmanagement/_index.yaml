@@ -1,0 +1,64 @@
+# Test Case Index
+# depappdashboarddddapidesignv1 - updateQuickActionsManagement
+# Generated: 2026-07-20T05:53:15.607Z
+---
+feature: depappdashboarddddapidesignv1
+apiName: updateQuickActionsManagement
+description: Test cases for updateQuickActionsManagement endpoint
+totalScenarios: 7
+scenarios:
+  - id: updateQuickActionsManagement-001-positive
+    title: 'POST https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/ - Happy Path'
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - updatequickactionsmanagement
+    priority: P1
+  - id: updateQuickActionsManagement-002-missing-auth
+    title: 'POST https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/ - Missing Authentication'
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: updateQuickActionsManagement-003-invalid-auth
+    title: 'POST https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/ - Invalid Authentication'
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: updateQuickActionsManagement-004-invalid-content-type
+    title: 'POST https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/ - Invalid Content-Type'
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: updateQuickActionsManagement-005-duplicate-correlation-id
+    title: 'POST https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/ - Duplicate Correlation ID'
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: updateQuickActionsManagement-006-request-timeout
+    title: 'POST https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/ - Request Timeout'
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: updateQuickActionsManagement-007-empty-request-body
+    title: 'POST https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/ - Empty Request Body'
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-20T05:53:15.605Z'
