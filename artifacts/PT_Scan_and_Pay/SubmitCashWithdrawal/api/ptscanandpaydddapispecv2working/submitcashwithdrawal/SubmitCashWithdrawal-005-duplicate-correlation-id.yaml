@@ -1,0 +1,95 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /submit - Duplicate Correlation ID
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: SubmitCashWithdrawal-005-duplicate-correlation-id
+title: POST /submit - Duplicate Correlation ID
+feature: ptscanandpaydddapispecv2working
+description: Same request with duplicate correlation ID should be idempotent
+tags:
+  - edge-case
+  - idempotency
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+  - First request with correlation ID has been processed
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/submit
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/submit
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: duplicate-correlation-123
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    txnRef: <value>
+    idempotencyKey: <value>
+    debitAccountNo: <value>
+    sofCurrency: <value>
+    withdrawalAmount: <value>
+    currency: <value>
+    amount: <value>
+    withdrawalType: <value>
+    atmTerminalId: <value>
+    deviceId: <value>
+    authToken: <value>
+    ? "{\n  \"txnRef\": \"QW-20251003-001234\",\n  \"idempotencyKey\": \"c8f1b0d0-3d12-4f8e-9e56-7fdb5d88a123\",\n  \"debitAccountNo\": \"514013314526\",\n  \"sofCurrency\": \"IDR\",\n  \"withdrawalAmount\": {\n    \"currency\": \"IDR\",\n    \"amount\": 100000.00\n  },\n  \"withdrawalType\": \"ON_US\",\n  \"atmTerminalId\": \"RX23ADA\",\n  \"deviceId\": \"DEVICE-ABC-123\",\n  \"authToken\": \"S2U-AUTH-TOKEN-XYZ\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    txnRef: String
+    status: String
+    postingRef: String
+    timestamp: String
+    withdrawalAmount: Object
+    currency: String
+    amount: Integer
+    serviceFee: Object
+    totalAmount: Object
+    atmInfo: Object
+    terminalId: String
+    atmName: String
+    atmAddress: String
+    sofAccountNumber: String
+    sofAccountName: String
+    referenceId: String
+    errorCode: 'Null'
+    errorMessage: 'Null'
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 (or 202 for idempotent)
+    type: custom
+  - description: Same response as first request
+    type: custom
+  - description: No duplicate processing occurred
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: SubmitCashWithdrawal
+  sourceRows: ''
+  apiSpecFile: SubmitCashWithdrawal

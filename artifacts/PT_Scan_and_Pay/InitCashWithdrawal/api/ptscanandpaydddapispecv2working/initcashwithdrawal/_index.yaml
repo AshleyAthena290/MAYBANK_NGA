@@ -1,0 +1,64 @@
+# Test Case Index
+# ptscanandpaydddapispecv2working - InitCashWithdrawal
+# Generated: 2026-07-16T10:23:42.719Z
+---
+feature: ptscanandpaydddapispecv2working
+apiName: InitCashWithdrawal
+description: Test cases for InitCashWithdrawal endpoint
+totalScenarios: 7
+scenarios:
+  - id: InitCashWithdrawal-001-positive
+    title: POST /init - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - initcashwithdrawal
+    priority: P1
+  - id: InitCashWithdrawal-002-missing-auth
+    title: POST /init - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: InitCashWithdrawal-003-invalid-auth
+    title: POST /init - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: InitCashWithdrawal-004-invalid-content-type
+    title: POST /init - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: InitCashWithdrawal-005-duplicate-correlation-id
+    title: POST /init - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: InitCashWithdrawal-006-request-timeout
+    title: POST /init - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: InitCashWithdrawal-007-empty-request-body
+    title: POST /init - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-16T10:23:42.706Z'

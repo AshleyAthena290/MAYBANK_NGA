@@ -1,0 +1,178 @@
+# BDD Test Case - eclipseaccount-dashboardcasadddapidesignv1workshop
+# Generated for: GET /auto-sweep - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getAutoSweep-001-positive
+title: GET /auto-sweep - Happy Path
+feature: eclipseaccount-dashboardcasadddapidesignv1workshop
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - getautosweep
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/casa/v1/external/accounts/{accountId}/auto-sweep'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/casa/v1/external/accounts/{accountId}/auto-sweep'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784268049382
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    accountId: <value>
+    'https: //{Eclipse-IP}:{Eclipse-PORT}/info/casa/v1/external/accounts/123456789012/auto-sweep': <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: Integer
+    message: String
+    timestamp: String
+    correlationId: String
+    data: Object
+    autoSweep: Object
+    flag: String
+    primaryCurrency: String
+    primaryLimit: String
+    link: Object
+  expectedFields:
+    - fieldPath: status
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: status'
+    - fieldPath: message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: correlationId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: correlationId'
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.autoSweep
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: autoSweep'
+      parentField: data
+    - fieldPath: data.autoSweep.flag
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: flag'
+      parentField: data.autoSweep
+    - fieldPath: data.autoSweep.primaryCurrency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: primaryCurrency'
+      parentField: data.autoSweep
+    - fieldPath: data.autoSweep.primaryLimit
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: primaryLimit'
+      parentField: data.autoSweep
+    - fieldPath: link
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: link'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'Integer'
+    type: field-type
+    target: status
+    expectedValue: Integer
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'String'
+    type: field-type
+    target: message
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'correlationId' exists in response
+    type: field-exists
+    target: correlationId
+  - description: Field 'correlationId' is of type 'String'
+    type: field-type
+    target: correlationId
+    expectedValue: String
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+  - description: Field 'link' exists in response
+    type: field-exists
+    target: link
+  - description: Field 'link' is of type 'Object'
+    type: field-type
+    target: link
+    expectedValue: Object
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getAutoSweep
+  sourceRows: ''
+  apiSpecFile: getAutoSweep

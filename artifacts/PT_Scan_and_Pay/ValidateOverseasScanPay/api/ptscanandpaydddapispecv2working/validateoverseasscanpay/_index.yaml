@@ -1,0 +1,64 @@
+# Test Case Index
+# ptscanandpaydddapispecv2working - ValidateOverseasScanPay
+# Generated: 2026-07-16T10:20:58.236Z
+---
+feature: ptscanandpaydddapispecv2working
+apiName: ValidateOverseasScanPay
+description: Test cases for ValidateOverseasScanPay endpoint
+totalScenarios: 7
+scenarios:
+  - id: ValidateOverseasScanPay-001-positive
+    title: POST /validate - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - validateoverseasscanpay
+    priority: P1
+  - id: ValidateOverseasScanPay-002-missing-auth
+    title: POST /validate - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: ValidateOverseasScanPay-003-invalid-auth
+    title: POST /validate - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: ValidateOverseasScanPay-004-invalid-content-type
+    title: POST /validate - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: ValidateOverseasScanPay-005-duplicate-correlation-id
+    title: POST /validate - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: ValidateOverseasScanPay-006-request-timeout
+    title: POST /validate - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: ValidateOverseasScanPay-007-empty-request-body
+    title: POST /validate - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-16T10:20:58.233Z'

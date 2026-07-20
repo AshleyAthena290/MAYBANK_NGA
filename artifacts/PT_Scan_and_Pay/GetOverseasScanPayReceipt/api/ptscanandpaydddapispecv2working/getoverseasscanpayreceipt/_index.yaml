@@ -1,0 +1,64 @@
+# Test Case Index
+# ptscanandpaydddapispecv2working - GetOverseasScanPayReceipt
+# Generated: 2026-07-16T10:22:58.515Z
+---
+feature: ptscanandpaydddapispecv2working
+apiName: GetOverseasScanPayReceipt
+description: Test cases for GetOverseasScanPayReceipt endpoint
+totalScenarios: 7
+scenarios:
+  - id: GetOverseasScanPayReceipt-001-positive
+    title: GET /{txnRef} - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getoverseasscanpayreceipt
+    priority: P1
+  - id: GetOverseasScanPayReceipt-002-missing-auth
+    title: GET /{txnRef} - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetOverseasScanPayReceipt-003-invalid-auth
+    title: GET /{txnRef} - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetOverseasScanPayReceipt-004-invalid-content-type
+    title: GET /{txnRef} - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: GetOverseasScanPayReceipt-005-duplicate-correlation-id
+    title: GET /{txnRef} - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: GetOverseasScanPayReceipt-006-request-timeout
+    title: GET /{txnRef} - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: GetOverseasScanPayReceipt-007-empty-request-body
+    title: GET /{txnRef} - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-16T10:22:58.510Z'

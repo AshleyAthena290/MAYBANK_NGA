@@ -1,0 +1,67 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /submit - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: SubmitCashWithdrawal-004-invalid-content-type
+title: POST /submit - Invalid Content-Type
+feature: ptscanandpaydddapispecv2working
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/submit
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/submit
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784197473643
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    txnRef: <value>
+    idempotencyKey: <value>
+    debitAccountNo: <value>
+    sofCurrency: <value>
+    withdrawalAmount: <value>
+    currency: <value>
+    amount: <value>
+    withdrawalType: <value>
+    atmTerminalId: <value>
+    deviceId: <value>
+    authToken: <value>
+    ? "{\n  \"txnRef\": \"QW-20251003-001234\",\n  \"idempotencyKey\": \"c8f1b0d0-3d12-4f8e-9e56-7fdb5d88a123\",\n  \"debitAccountNo\": \"514013314526\",\n  \"sofCurrency\": \"IDR\",\n  \"withdrawalAmount\": {\n    \"currency\": \"IDR\",\n    \"amount\": 100000.00\n  },\n  \"withdrawalType\": \"ON_US\",\n  \"atmTerminalId\": \"RX23ADA\",\n  \"deviceId\": \"DEVICE-ABC-123\",\n  \"authToken\": \"S2U-AUTH-TOKEN-XYZ\"\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: SubmitCashWithdrawal
+  sourceRows: ''
+  apiSpecFile: SubmitCashWithdrawal

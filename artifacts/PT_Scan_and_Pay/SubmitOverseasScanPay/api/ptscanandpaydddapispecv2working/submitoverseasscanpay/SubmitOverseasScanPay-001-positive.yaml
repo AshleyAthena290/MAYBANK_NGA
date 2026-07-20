@@ -1,0 +1,242 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /submit - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: SubmitOverseasScanPay-001-positive
+title: POST /submit - Happy Path
+feature: ptscanandpaydddapispecv2working
+description: Submits the overseas QR Pay transaction to downstream after successful S2U authorization. Retrieves cached ALTO rate reference number from Hazelcast. Routes to ESB > Vynamic Payment > Systematics (debit IDR CASA) > ALTO (cross-border posting). Rate reference number must be echoed in ESB posting field D32. Triggers async limit update, MBPNS, and FMS.
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - submitoverseasscanpay
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/submit
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/submit
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784197306182
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    txnRef: <value>
+    journeyType: <value>
+    sourceAccountId: <value>
+    merchantAmount: <value>
+    merchantCurrency: <value>
+    finalIDRAmount: <value>
+    rateRefNo: <value>
+    cpan: <value>
+    authToken: <value>
+    promoCode: <value>
+    ? "{\n  \"txnRef\": \"QR-CB-20260509-001\",\n  \"journeyType\": \"CROSSBORDER\",\n  \"sourceAccountId\": \"514013314526\",\n  \"merchantAmount\": 38.50,\n  \"merchantCurrency\": \"MYR\",\n  \"finalIDRAmount\": 152175.15,\n  \"rateRefNo\": \"ALTO-REF-20260509-001\",\n  \"cpan\": \"60060012345678901\",\n  \"authToken\": \"S2U-AUTH-TOKEN-XYZ\",\n  \"promoCode\": null\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    txnRef: String
+    transactionStatus: String
+    postingRef: String
+    transactionDateTime: String
+    merchantAmount: Decimal
+    merchantCurrency: String
+    finalRate: Decimal
+    totalDebitIDRAmount: Decimal
+    sofAccount: Object
+    accountName: String
+    accountNumberMasked: String
+    errorCode: 'Null'
+    errorMessage: 'Null'
+  expectedFields:
+    - fieldPath: txnRef
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: txnRef'
+    - fieldPath: transactionStatus
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: transactionStatus'
+    - fieldPath: postingRef
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: postingRef'
+    - fieldPath: transactionDateTime
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: transactionDateTime'
+    - fieldPath: merchantAmount
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: merchantAmount'
+    - fieldPath: merchantCurrency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: merchantCurrency'
+    - fieldPath: finalRate
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: finalRate'
+    - fieldPath: totalDebitIDRAmount
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: totalDebitIDRAmount'
+    - fieldPath: sofAccount
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: sofAccount'
+    - fieldPath: sofAccount.accountName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountName'
+      parentField: sofAccount
+    - fieldPath: sofAccount.accountNumberMasked
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountNumberMasked'
+      parentField: sofAccount
+    - fieldPath: errorCode
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: errorCode'
+    - fieldPath: errorMessage
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: errorMessage'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'txnRef' exists in response
+    type: field-exists
+    target: txnRef
+  - description: Field 'txnRef' is of type 'String'
+    type: field-type
+    target: txnRef
+    expectedValue: String
+  - description: Field 'transactionStatus' exists in response
+    type: field-exists
+    target: transactionStatus
+  - description: Field 'transactionStatus' is of type 'String'
+    type: field-type
+    target: transactionStatus
+    expectedValue: String
+  - description: Field 'postingRef' exists in response
+    type: field-exists
+    target: postingRef
+  - description: Field 'postingRef' is of type 'String'
+    type: field-type
+    target: postingRef
+    expectedValue: String
+  - description: Field 'transactionDateTime' exists in response
+    type: field-exists
+    target: transactionDateTime
+  - description: Field 'transactionDateTime' is of type 'String'
+    type: field-type
+    target: transactionDateTime
+    expectedValue: String
+  - description: Field 'merchantAmount' exists in response
+    type: field-exists
+    target: merchantAmount
+  - description: Field 'merchantAmount' is of type 'Decimal'
+    type: field-type
+    target: merchantAmount
+    expectedValue: Decimal
+  - description: Field 'merchantCurrency' exists in response
+    type: field-exists
+    target: merchantCurrency
+  - description: Field 'merchantCurrency' is of type 'String'
+    type: field-type
+    target: merchantCurrency
+    expectedValue: String
+  - description: Field 'finalRate' exists in response
+    type: field-exists
+    target: finalRate
+  - description: Field 'finalRate' is of type 'Decimal'
+    type: field-type
+    target: finalRate
+    expectedValue: Decimal
+  - description: Field 'totalDebitIDRAmount' exists in response
+    type: field-exists
+    target: totalDebitIDRAmount
+  - description: Field 'totalDebitIDRAmount' is of type 'Decimal'
+    type: field-type
+    target: totalDebitIDRAmount
+    expectedValue: Decimal
+  - description: Field 'sofAccount' exists in response
+    type: field-exists
+    target: sofAccount
+  - description: Field 'sofAccount' is of type 'Object'
+    type: field-type
+    target: sofAccount
+    expectedValue: Object
+  - description: Field 'errorCode' exists in response
+    type: field-exists
+    target: errorCode
+  - description: Field 'errorCode' is of type 'Null'
+    type: field-type
+    target: errorCode
+    expectedValue: 'Null'
+  - description: Field 'errorMessage' exists in response
+    type: field-exists
+    target: errorMessage
+  - description: Field 'errorMessage' is of type 'Null'
+    type: field-type
+    target: errorMessage
+    expectedValue: 'Null'
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: SubmitOverseasScanPay
+  sourceRows: ''
+  apiSpecFile: SubmitOverseasScanPay

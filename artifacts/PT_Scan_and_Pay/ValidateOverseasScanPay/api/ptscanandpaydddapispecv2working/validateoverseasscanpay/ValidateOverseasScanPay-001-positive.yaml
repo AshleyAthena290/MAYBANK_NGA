@@ -1,0 +1,72 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /validate - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: ValidateOverseasScanPay-001-positive
+title: POST /validate - Happy Path
+feature: ptscanandpaydddapispecv2working
+description: Validates the overseas QR Pay transaction after the user taps [Next] on the amount input screen. Fetches the actual FX rate from ALTO via ESB > Vynamic Payment. Calculates final IDR debit amount = merchant amount × actual ALTO rate × (1 + service fee%). Validates SoF eligibility (IDR CASA only), amount, and limits. Stores ALTO rate reference number in Hazelcast for use in posting.
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - validateoverseasscanpay
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/validate
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/validate
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784197258186
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    txnRef: <value>
+    sofAccountId: <value>
+    sofCurrency: <value>
+    sofAccountType: <value>
+    merchantAmount: <value>
+    merchantCurrency: <value>
+    promoCode: <value>
+    ? "{\n  \"txnRef\": \"QR-CB-20260509-001\",\n  \"sofAccountId\": \"514013314526\",\n  \"sofCurrency\": \"IDR\",\n  \"sofAccountType\": \"CASA\",\n  \"merchantAmount\": 38.50,\n  \"merchantCurrency\": \"MYR\",\n  \"promoCode\": null\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: ValidateOverseasScanPay
+  sourceRows: ''
+  apiSpecFile: ValidateOverseasScanPay

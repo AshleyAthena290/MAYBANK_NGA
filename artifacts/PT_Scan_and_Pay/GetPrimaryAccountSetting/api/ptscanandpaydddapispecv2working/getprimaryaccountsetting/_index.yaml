@@ -1,0 +1,64 @@
+# Test Case Index
+# ptscanandpaydddapispecv2working - GetPrimaryAccountSetting
+# Generated: 2026-07-16T10:28:28.272Z
+---
+feature: ptscanandpaydddapispecv2working
+apiName: GetPrimaryAccountSetting
+description: Test cases for GetPrimaryAccountSetting endpoint
+totalScenarios: 7
+scenarios:
+  - id: GetPrimaryAccountSetting-001-positive
+    title: GET /setting?journeyType={journeyType} - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getprimaryaccountsetting
+    priority: P1
+  - id: GetPrimaryAccountSetting-002-missing-auth
+    title: GET /setting?journeyType={journeyType} - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetPrimaryAccountSetting-003-invalid-auth
+    title: GET /setting?journeyType={journeyType} - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetPrimaryAccountSetting-004-invalid-content-type
+    title: GET /setting?journeyType={journeyType} - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: GetPrimaryAccountSetting-005-duplicate-correlation-id
+    title: GET /setting?journeyType={journeyType} - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: GetPrimaryAccountSetting-006-request-timeout
+    title: GET /setting?journeyType={journeyType} - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: GetPrimaryAccountSetting-007-empty-request-body
+    title: GET /setting?journeyType={journeyType} - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-16T10:28:28.266Z'
