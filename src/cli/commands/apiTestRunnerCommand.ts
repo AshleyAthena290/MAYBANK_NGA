@@ -4,6 +4,7 @@ import { load as yamlLoad } from "js-yaml";
 import { Command } from "commander";
 import { z } from "zod";
 import type { AppLogger } from "../../services/logger.js";
+import { ReportGenerator } from "../../services/reportGenerator.js";
 
 type AssertionType =
   | "status"
@@ -73,7 +74,8 @@ const ApiTestRunOptionsSchema = z.object({
   id: z.string().optional(),
   baseUrl: z.string().optional(),
   timeoutMs: z.coerce.number().int().positive().default(15000),
-  failFast: z.coerce.boolean().default(false)
+  failFast: z.coerce.boolean().default(false),
+  reportDir: z.string().optional()
 });
 
 type ApiTestRunOptions = z.infer<typeof ApiTestRunOptionsSchema>;
@@ -90,6 +92,7 @@ export function registerApiTestRunnerCommand(program: Command, logger: AppLogger
     .option("--baseUrl <url>", "Override host, keep endpoint path from YAML")
     .option("--timeoutMs <ms>", "HTTP timeout in milliseconds", "15000")
     .option("--failFast", "Stop on first failure", false)
+    .option("--reportDir <path>", "Output directory for HTML/Excel reports", "./artifacts/reports")
     .action(async (rawOptions: unknown) => {
       try {
         const options = ApiTestRunOptionsSchema.parse(rawOptions);
@@ -104,6 +107,8 @@ export function registerApiTestRunnerCommand(program: Command, logger: AppLogger
 }
 
 async function executeApiTestRunnerCommand(options: ApiTestRunOptions, logger: AppLogger): Promise<void> {
+  const startTime = Date.now();
+  
   const yamlFiles = options.file
     ? [resolve(options.file)]
     : await findYamlFiles(resolve(options.inputDir));
@@ -154,9 +159,30 @@ async function executeApiTestRunnerCommand(options: ApiTestRunOptions, logger: A
     }
   }
 
+  const executionTime = Date.now() - startTime;
   const passedCount = results.filter((result) => result.passed).length;
   const failedCount = results.length - passedCount;
   console.log(`\nExecution summary: ${passedCount} passed, ${failedCount} failed, ${results.length} total`);
+  console.log(`Execution time: ${(executionTime / 1000).toFixed(2)}s`);
+
+  // Generate reports
+  try {
+    const reportGenerator = new ReportGenerator();
+    const reportPaths = await reportGenerator.generateReports(results, {
+      outputDir: options.reportDir ?? "./artifacts/reports",
+      executionTime
+    });
+    
+    console.log(`\n✓ Reports generated:`);
+    console.log(`  HTML: ${reportPaths.htmlPath}`);
+    console.log(`  Excel: ${reportPaths.excelPath}`);
+    
+    logger.info({ htmlPath: reportPaths.htmlPath, excelPath: reportPaths.excelPath }, "Reports generated successfully");
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    logger.warn({ error }, "Failed to generate reports");
+    console.warn(`Warning: Failed to generate reports: ${message}`);
+  }
 
   if (failedCount > 0) {
     process.exitCode = 1;
@@ -234,12 +260,20 @@ async function runSingleYamlTest(
   const timeoutHandle = setTimeout(() => controller.abort(), timeoutMs);
 
   try {
-    const response = await fetch(resolvedUrl, {
+    const fetchInit: RequestInit = {
       method,
-      headers: testCase.request?.headers,
-      body: shouldSendBody(method) ? JSON.stringify(requestBody ?? {}) : undefined,
       signal: controller.signal
-    });
+    };
+
+    if (testCase.request?.headers) {
+      fetchInit.headers = testCase.request.headers;
+    }
+
+    if (shouldSendBody(method)) {
+      fetchInit.body = JSON.stringify(requestBody ?? {});
+    }
+
+    const response = await fetch(resolvedUrl, fetchInit);
 
     const bodyText = await response.text();
     const parsedBody = safeJsonParse(bodyText);

@@ -90,6 +90,24 @@ Run by test case id:
 npm run dev -- api-test-run --id "GetPTMaintenanceTransferInit-001-positive" --baseUrl "http://localhost:3000"
 ```
 
+### Step 3: View test reports
+
+After running tests, HTML and Excel reports are automatically generated in the `artifacts/reports/` directory.
+
+**Generate reports in a custom location:**
+
+```bash
+npm run dev -- api-test-run --feature "p-tlocaltransferdddapispecv1" --baseUrl "http://localhost:3000" --reportDir ./my-reports
+```
+
+The generated reports include:
+- **HTML Report**: Interactive report with summary, detailed results, and failure analysis
+- **Excel Report**: Multi-sheet workbook with:
+  - Summary sheet: Statistics and execution metrics
+  - Test Results sheet: Complete test result table
+  - Assertions sheet: Individual assertion details
+  - Failed Details sheet: Comprehensive failure information
+
 ## Command reference
 
 ### Command: run
@@ -126,7 +144,8 @@ Options:
 5. --id <test-id>
 6. --baseUrl <url>
 7. --timeoutMs <ms> (default 15000)
-8. --failFast
+8. --reportDir <path> (default ./artifacts/reports)
+9. --failFast
 
 ## How YAML execution works
 
@@ -189,7 +208,9 @@ Runner output format:
 
 1. For GET requests, invalid Content-Type is usually not a strong validation scenario unless gateway rules enforce it.
 2. custom assertions are currently placeholders and should be implemented project-specifically if strict validation is needed.
-3. There is currently no persisted report file (JSON/HTML/JUnit) for api-test-run; output is console summary.
+3. Test reports (HTML and Excel) are automatically generated after each test run in the specified --reportDir.
+4. HTML reports are interactive and can be opened directly in any web browser.
+5. Excel reports have multiple sheets for different views of the results and can be filtered and sorted in Excel.
 
 ## Troubleshooting
 
