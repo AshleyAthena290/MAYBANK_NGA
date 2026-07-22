@@ -1,0 +1,1395 @@
+{
+  "timestamp": "2026-07-21T11:00:44.691106",
+  "total_apis": 2,
+  "total_test_cases": 39,
+  "apis": [
+    {
+      "sheet_name": "Get_Onboarding_Accounts",
+      "service": "Get_Onboarding_Accounts",
+      "description": "API to retrieve user's account listing to be set as primary during apps onboarding",
+      "business_rule": "System to retrieve user's deposit account from downstream BTS. If user don't have deposit account, system proceed to retrieve user's credit card lists from downstream BTS",
+      "method": "GET",
+      "url": "/wealth/v1/onboarding/accounts",
+      "message_type": "JSON",
+      "headers": [
+        {
+          "name": "Authorization",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "Bearer <ACCESS_TOKEN>",
+          "description": "Authentication access token required for apps to call API"
+        },
+        {
+          "name": "X-APP-PLATFORM",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "IOS",
+          "description": "Apps platform value"
+        },
+        {
+          "name": "X-APP-OS-VERSION",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "26.1",
+          "description": "Apps platform OS version"
+        },
+        {
+          "name": "X-APP-LOCALE",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "en_MY",
+          "description": "Apps locale"
+        },
+        {
+          "name": "Accept",
+          "type": "String",
+          "length": "16",
+          "mandatory": "N",
+          "sample": "application/json",
+          "description": "Content type"
+        },
+        {
+          "name": "HTTP Body",
+          "type": "",
+          "length": "",
+          "mandatory": "",
+          "sample": "",
+          "description": ""
+        },
+        {
+          "name": "Request Parameter",
+          "type": "",
+          "length": "",
+          "mandatory": "",
+          "sample": "",
+          "description": ""
+        },
+        {
+          "name": "success",
+          "type": "boolean",
+          "length": "",
+          "mandatory": "Y",
+          "sample": "true",
+          "description": "API response indicator for APIs whether it is success/failed"
+        },
+        {
+          "name": "message",
+          "type": "Object",
+          "length": "",
+          "mandatory": "",
+          "sample": "",
+          "description": "Message object for apps internationalization (i18n)"
+        },
+        {
+          "name": "code",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "G0000",
+          "description": "API response message code"
+        },
+        {
+          "name": "key",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "success",
+          "description": "API response i18n key"
+        },
+        {
+          "name": "data",
+          "type": "Object",
+          "length": "",
+          "mandatory": "",
+          "sample": "",
+          "description": "API response data object"
+        },
+        {
+          "name": "accounts",
+          "type": "Arrays",
+          "length": "",
+          "mandatory": "",
+          "sample": "",
+          "description": "Arrays of account listing"
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "Personal Current Account",
+          "description": "Account name"
+        },
+        {
+          "name": "code",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "03",
+          "description": "Account code"
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "D",
+          "description": "Account type"
+        },
+        {
+          "name": "number",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "5140130361300000000",
+          "description": "Account number"
+        },
+        {
+          "name": "currency",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "IDR",
+          "description": "Account main currency"
+        },
+        {
+          "name": "amount",
+          "type": "Number",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "872360.0",
+          "description": "Account main amount"
+        },
+        {
+          "name": "nickname",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "N",
+          "sample": "null",
+          "description": "Account's nickname"
+        },
+        {
+          "name": "status",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "N",
+          "sample": "null",
+          "description": "Account's status"
+        },
+        {
+          "name": "isPrimary",
+          "type": "boolean",
+          "length": "",
+          "mandatory": "Y",
+          "sample": "true",
+          "description": "Account's primary status"
+        },
+        {
+          "name": "metadata",
+          "type": "Object",
+          "length": "",
+          "mandatory": "",
+          "sample": "",
+          "description": "API response metadata"
+        },
+        {
+          "name": "page",
+          "type": "Number",
+          "length": "Dynamic",
+          "mandatory": "N",
+          "sample": "1",
+          "description": "API data response current page number"
+        },
+        {
+          "name": "size",
+          "type": "Number",
+          "length": "Dynamic",
+          "mandatory": "N",
+          "sample": "10",
+          "description": "API data response current page size"
+        },
+        {
+          "name": "total",
+          "type": "Number",
+          "length": "Dynamic",
+          "mandatory": "N",
+          "sample": "40",
+          "description": "API data response total size"
+        },
+        {
+          "name": "responseTime",
+          "type": "Number",
+          "length": "Dynamic",
+          "mandatory": "N",
+          "sample": "1768792982303",
+          "description": "API response epoch time format"
+        },
+        {
+          "name": "200",
+          "type": "OK",
+          "length": "",
+          "mandatory": "Indicates API response is good",
+          "sample": "",
+          "description": ""
+        },
+        {
+          "name": "204",
+          "type": "No content",
+          "length": "",
+          "mandatory": "Indicates API data object response is empty",
+          "sample": "",
+          "description": ""
+        },
+        {
+          "name": "400",
+          "type": "Bad request",
+          "length": "",
+          "mandatory": "Indicates API business rule validation failed",
+          "sample": "",
+          "description": ""
+        },
+        {
+          "name": "404",
+          "type": "Not found",
+          "length": "",
+          "mandatory": "Indicates API not found",
+          "sample": "",
+          "description": ""
+        },
+        {
+          "name": "500",
+          "type": "Internal server error",
+          "length": "",
+          "mandatory": "Indicates system/dowstream exception occurred",
+          "sample": "",
+          "description": ""
+        }
+      ],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": [],
+      "request_sample": "GET  https: //{IP}:{PORT}/wealth/v1/onboarding/accounts"
+    },
+    {
+      "sheet_name": "getDashboardState",
+      "service": "getDashboardState",
+      "description": "Retrieve aggregated App Dashboard response based on resolved state (POST_LOGIN / COOLING_OFF / PRE_LOGIN / PRE_BIND).",
+      "business_rule": "Istio Ingress forwards the call to NGA Channel Layer. Channel Layer resolves the state from token introspect + device binding + customerClass + regFlags, runs a version check against NGBO, then composes the response (applying Proxy/Masking for pre-login / cooling-off). Pre-login and public snapshots are cached in Hazelcast (TTL 5 / 10 min).",
+      "method": "GET",
+      "url": "/v1/dashboard/state",
+      "message_type": "JSON",
+      "headers": [
+        {
+          "name": "Authorization",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "Bearer <ACCESS_TOKEN>",
+          "description": "Authentication access token required for apps to call API"
+        },
+        {
+          "name": "X-APP-PLATFORM",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "IOS",
+          "description": "Apps platform value"
+        },
+        {
+          "name": "X-APP-OS-VERSION",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "26.1",
+          "description": "Apps platform OS version"
+        },
+        {
+          "name": "X-APP-LOCALE",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "en_MY",
+          "description": "Apps locale"
+        },
+        {
+          "name": "X-APP-VERSION",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "1.0.0",
+          "description": "Apps build version (used for version-check)"
+        },
+        {
+          "name": "Accept",
+          "type": "String",
+          "length": "16",
+          "mandatory": "N",
+          "sample": "application/json",
+          "description": "Content type"
+        },
+        {
+          "name": "X-APP-ACCESSTOKEN",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "eyJ...",
+          "description": "App access token (required to resolve state)"
+        },
+        {
+          "name": "X-Device-Bind",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "N",
+          "sample": "d-9d8a7...",
+          "description": "Device binding id (present on bound devices)"
+        },
+        {
+          "name": "HTTP Body",
+          "type": "",
+          "length": "",
+          "mandatory": "",
+          "sample": "",
+          "description": ""
+        },
+        {
+          "name": "Request Parameter",
+          "type": "",
+          "length": "",
+          "mandatory": "",
+          "sample": "",
+          "description": ""
+        },
+        {
+          "name": "success",
+          "type": "Boolean",
+          "length": "",
+          "mandatory": "Y",
+          "sample": "True",
+          "description": "API response indicator for success/failed"
+        },
+        {
+          "name": "message",
+          "type": "Object",
+          "length": "",
+          "mandatory": "N",
+          "sample": "",
+          "description": "Message object for i18n"
+        },
+        {
+          "name": "code",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "G0000",
+          "description": "API response message code"
+        },
+        {
+          "name": "key",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "success",
+          "description": "API response i18n key"
+        },
+        {
+          "name": "data",
+          "type": "Object",
+          "length": "",
+          "mandatory": "Y",
+          "sample": "",
+          "description": "API response data object"
+        },
+        {
+          "name": "state",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "Y",
+          "sample": "POST_LOGIN | COOLING_OFF | PRE_LOGIN | PRE_BIND",
+          "description": "Resolved dashboard state by channel layer"
+        },
+        {
+          "name": "upgradeBanner",
+          "type": "Boolean",
+          "length": "",
+          "mandatory": "N",
+          "sample": "",
+          "description": "Soft-upgrade banner flag"
+        },
+        {
+          "name": "forceUpgrade",
+          "type": "Boolean",
+          "length": "",
+          "mandatory": "N",
+          "sample": "",
+          "description": "Force-upgrade flag"
+        },
+        {
+          "name": "storeUrl",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "N",
+          "sample": "https://play.google.com/...",
+          "description": "Upgrade store URL"
+        },
+        {
+          "name": ">> avatar",
+          "type": "Object",
+          "length": "",
+          "mandatory": "N",
+          "sample": "",
+          "description": "Customer avatar info"
+        },
+        {
+          "name": "avatarRef",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "N",
+          "sample": "avatar-001",
+          "description": "Avatar reference id"
+        },
+        {
+          "name": "isMasked",
+          "type": "Boolean",
+          "length": "",
+          "mandatory": "N",
+          "sample": "True",
+          "description": "Whether avatar/profile is masked"
+        },
+        {
+          "name": "nickname",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "N",
+          "sample": "J*** D***",
+          "description": "Nickname (masked/full)"
+        },
+        {
+          "name": "lastLoginTs",
+          "type": "Date",
+          "length": "",
+          "mandatory": "N",
+          "sample": "2026-04-23T10:00:00Z",
+          "description": "Last login timestamp"
+        },
+        {
+          "name": ">> coolingOff",
+          "type": "Object",
+          "length": "",
+          "mandatory": "N",
+          "sample": "",
+          "description": "Cooling-off details"
+        },
+        {
+          "name": "remainingPeriod",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "N",
+          "sample": "24h 15m",
+          "description": "Cooling-off remaining period"
+        },
+        {
+          "name": ">> preferences",
+          "type": "Object",
+          "length": "",
+          "mandatory": "N",
+          "sample": "",
+          "description": "Non-sensitive dashboard preferences"
+        },
+        {
+          "name": "defaultEcosystem",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "N",
+          "sample": "BANKING",
+          "description": "Default ecosystem from CEP"
+        },
+        {
+          "name": "quickActions",
+          "type": "Arrays",
+          "length": "",
+          "mandatory": "N",
+          "sample": "",
+          "description": "Default quick action list"
+        },
+        {
+          "name": "mda",
+          "type": "String",
+          "length": "Dynamic",
+          "mandatory": "N",
+          "sample": "**** | 12,345.67",
+          "description": "Main display amount"
+        },
+        {
+          "name": "forYou",
+          "type": "Arrays",
+          "length": "",
+          "mandatory": "N",
+          "sample": "",
+          "description": "For-You feed"
+        },
+        {
+          "name": "metadata",
+          "type": "Object",
+          "length": "",
+          "mandatory": "N",
+          "sample": "",
+          "description": "API response metadata"
+        },
+        {
+          "name": "responseTime",
+          "type": "Number",
+          "length": "Dynamic",
+          "mandatory": "N",
+          "sample": "1768792982303",
+          "description": "API response epoch time format"
+        },
+        {
+          "name": "200",
+          "type": "OK",
+          "length": "",
+          "mandatory": "Indicates API response is good",
+          "sample": "",
+          "description": ""
+        },
+        {
+          "name": "204",
+          "type": "No content",
+          "length": "",
+          "mandatory": "Indicates API data object response is empty",
+          "sample": "",
+          "description": ""
+        },
+        {
+          "name": "400",
+          "type": "Bad request",
+          "length": "",
+          "mandatory": "Indicates API business rule validation failed",
+          "sample": "",
+          "description": ""
+        },
+        {
+          "name": "401",
+          "type": "Unauthorized",
+          "length": "",
+          "mandatory": "Indicates invalid / missing credentials",
+          "sample": "",
+          "description": ""
+        },
+        {
+          "name": "404",
+          "type": "Not found",
+          "length": "",
+          "mandatory": "Indicates API not found",
+          "sample": "",
+          "description": ""
+        },
+        {
+          "name": "426",
+          "type": "Upgrade Required",
+          "length": "",
+          "mandatory": "Indicates client must upgrade (force-upgrade)",
+          "sample": "",
+          "description": ""
+        },
+        {
+          "name": "500",
+          "type": "Server Error",
+          "length": "",
+          "mandatory": "Indicates internal server error",
+          "sample": "",
+          "description": ""
+        }
+      ],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": [],
+      "request_sample": "GET  https://{IP}:{PORT}/v1/dashboard/state"
+    }
+  ],
+  "test_cases": [
+    {
+      "id": "TC_API01_001",
+      "title": "Valid request with all mandatory headers",
+      "type": "Positive",
+      "category": "Field Validation / Request Format",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available; Required headers configured",
+      "steps": [
+        "1. Prepare valid request with GET method to /wealth/v1/onboarding/accounts",
+        "2. Include all mandatory headers with valid values",
+        "3. Set Content-Type to application/json",
+        "4. Send the API request",
+        "5. Verify the response is received"
+      ],
+      "input_data": "Method: GET\nURL: /wealth/v1/onboarding/accounts\nHeaders:\n  Authorization: Bearer <valid_access_token>\n  X-APP-PLATFORM: IOS\n  X-APP-OS-VERSION: 26.1\n  X-APP-LOCALE: en_MY\n",
+      "expected_result": "HTTP 200 OK; Response body contains success: true; Response includes message object with code and key; Data object returned with expected schema as per API specification",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API01_002",
+      "title": "Valid request with optional headers included",
+      "type": "Positive",
+      "category": "Field Validation / Request Format",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available; Required headers configured",
+      "steps": [
+        "1. Prepare valid request with GET method to /wealth/v1/onboarding/accounts",
+        "2. Include all mandatory headers with valid values",
+        "3. Set Content-Type to application/json",
+        "4. Send the API request",
+        "5. Verify the response is received"
+      ],
+      "input_data": "Method: GET\nURL: /wealth/v1/onboarding/accounts\nHeaders:\n  Authorization: Bearer <valid_access_token>\n  X-APP-PLATFORM: IOS\n  X-APP-OS-VERSION: 26.1\n  X-APP-LOCALE: en_MY\n  Accept: application/json\n",
+      "expected_result": "HTTP 200 OK; Response body contains success: true; Response includes message object with code and key; Data object returned with expected schema as per API specification",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API01_003",
+      "title": "Missing mandatory header: Authorization",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Exclude the mandatory header: Authorization",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: Authorization",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API01_004",
+      "title": "Missing mandatory header: X-APP-PLATFORM",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Exclude the mandatory header: X-APP-PLATFORM",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: X-APP-PLATFORM",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API01_005",
+      "title": "Missing mandatory header: X-APP-OS-VERSION",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Exclude the mandatory header: X-APP-OS-VERSION",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: X-APP-OS-VERSION",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API01_006",
+      "title": "Missing mandatory header: X-APP-LOCALE",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Exclude the mandatory header: X-APP-LOCALE",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: X-APP-LOCALE",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API01_007",
+      "title": "Missing mandatory header: success",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Exclude the mandatory header: success",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: success",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API01_008",
+      "title": "Missing mandatory header: code",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Exclude the mandatory header: code",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: code",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API01_009",
+      "title": "Missing mandatory header: key",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Exclude the mandatory header: key",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: key",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API01_010",
+      "title": "Missing mandatory header: name",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Exclude the mandatory header: name",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: name",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API01_011",
+      "title": "Missing mandatory header: code",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Exclude the mandatory header: code",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: code",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API01_012",
+      "title": "Missing mandatory header: type",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Exclude the mandatory header: type",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: type",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API01_013",
+      "title": "Missing mandatory header: number",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Exclude the mandatory header: number",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: number",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API01_014",
+      "title": "Missing mandatory header: currency",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Exclude the mandatory header: currency",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: currency",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API01_015",
+      "title": "Missing mandatory header: amount",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Exclude the mandatory header: amount",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: amount",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API01_016",
+      "title": "Missing mandatory header: isPrimary",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Exclude the mandatory header: isPrimary",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: isPrimary",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API01_017",
+      "title": "Malformed JSON in request body",
+      "type": "Negative",
+      "category": "Invalid Format",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Send malformed JSON (e.g., missing closing bracket)",
+        "3. Ensure Content-Type is application/json",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 400 Bad Request; Response indicates malformed request body",
+      "priority": "Medium"
+    },
+    {
+      "id": "TC_API01_018",
+      "title": "Missing authentication token",
+      "type": "Negative",
+      "category": "Authentication Error",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Omit the Authorization header",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 401 Unauthorized; Response indicates missing or invalid authentication token",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API01_019",
+      "title": "Invalid/expired authentication token",
+      "type": "Negative",
+      "category": "Authentication Error",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Set Authorization header to 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDAwMDAwMDB9.invalid'",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 401 Unauthorized; Response indicates missing or invalid authentication token",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API01_020",
+      "title": "Request with invalid authorization token format",
+      "type": "Negative",
+      "category": "Authorization Error",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Set Authorization header to 'Bearer invalid_format_token'",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 401 Unauthorized; Response indicates invalid token format",
+      "priority": "Medium"
+    },
+    {
+      "id": "TC_API01_021",
+      "title": "Incorrect HTTP method (POST instead of GET)",
+      "type": "Negative",
+      "category": "Invalid HTTP Method",
+      "api_endpoint": "/wealth/v1/onboarding/accounts",
+      "method": "GET",
+      "service": "Get_Onboarding_Accounts",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /wealth/v1/onboarding/accounts",
+        "2. Send POST request instead of GET",
+        "3. Include valid request body and headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /wealth/v1/onboarding/accounts",
+      "expected_result": "HTTP 405 Method Not Allowed; Response indicates unsupported HTTP method",
+      "priority": "Medium"
+    },
+    {
+      "id": "TC_API02_022",
+      "title": "Valid request with all mandatory headers",
+      "type": "Positive",
+      "category": "Field Validation / Request Format",
+      "api_endpoint": "/v1/dashboard/state",
+      "method": "GET",
+      "service": "getDashboardState",
+      "preconditions": "User is authenticated; Valid bearer token available; Required headers configured",
+      "steps": [
+        "1. Prepare valid request with GET method to /v1/dashboard/state",
+        "2. Include all mandatory headers with valid values",
+        "3. Set Content-Type to application/json",
+        "4. Send the API request",
+        "5. Verify the response is received"
+      ],
+      "input_data": "Method: GET\nURL: /v1/dashboard/state\nHeaders:\n  Authorization: Bearer <valid_access_token>\n  X-APP-PLATFORM: IOS\n  X-APP-OS-VERSION: 26.1\n  X-APP-LOCALE: en_MY\n",
+      "expected_result": "HTTP 200 OK; Response body contains success: true; Response includes message object with code and key; Data object returned with expected schema as per API specification",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API02_023",
+      "title": "Valid request with optional headers included",
+      "type": "Positive",
+      "category": "Field Validation / Request Format",
+      "api_endpoint": "/v1/dashboard/state",
+      "method": "GET",
+      "service": "getDashboardState",
+      "preconditions": "User is authenticated; Valid bearer token available; Required headers configured",
+      "steps": [
+        "1. Prepare valid request with GET method to /v1/dashboard/state",
+        "2. Include all mandatory headers with valid values",
+        "3. Set Content-Type to application/json",
+        "4. Send the API request",
+        "5. Verify the response is received"
+      ],
+      "input_data": "Method: GET\nURL: /v1/dashboard/state\nHeaders:\n  Authorization: Bearer <valid_access_token>\n  X-APP-PLATFORM: IOS\n  X-APP-OS-VERSION: 26.1\n  X-APP-LOCALE: en_MY\n  Accept: application/json\n",
+      "expected_result": "HTTP 200 OK; Response body contains success: true; Response includes message object with code and key; Data object returned with expected schema as per API specification",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API02_024",
+      "title": "Missing mandatory header: Authorization",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/v1/dashboard/state",
+      "method": "GET",
+      "service": "getDashboardState",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /v1/dashboard/state",
+        "2. Exclude the mandatory header: Authorization",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /v1/dashboard/state",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: Authorization",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API02_025",
+      "title": "Missing mandatory header: X-APP-PLATFORM",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/v1/dashboard/state",
+      "method": "GET",
+      "service": "getDashboardState",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /v1/dashboard/state",
+        "2. Exclude the mandatory header: X-APP-PLATFORM",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /v1/dashboard/state",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: X-APP-PLATFORM",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API02_026",
+      "title": "Missing mandatory header: X-APP-OS-VERSION",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/v1/dashboard/state",
+      "method": "GET",
+      "service": "getDashboardState",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /v1/dashboard/state",
+        "2. Exclude the mandatory header: X-APP-OS-VERSION",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /v1/dashboard/state",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: X-APP-OS-VERSION",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API02_027",
+      "title": "Missing mandatory header: X-APP-LOCALE",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/v1/dashboard/state",
+      "method": "GET",
+      "service": "getDashboardState",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /v1/dashboard/state",
+        "2. Exclude the mandatory header: X-APP-LOCALE",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /v1/dashboard/state",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: X-APP-LOCALE",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API02_028",
+      "title": "Missing mandatory header: X-APP-VERSION",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/v1/dashboard/state",
+      "method": "GET",
+      "service": "getDashboardState",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /v1/dashboard/state",
+        "2. Exclude the mandatory header: X-APP-VERSION",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /v1/dashboard/state",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: X-APP-VERSION",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API02_029",
+      "title": "Missing mandatory header: X-APP-ACCESSTOKEN",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/v1/dashboard/state",
+      "method": "GET",
+      "service": "getDashboardState",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /v1/dashboard/state",
+        "2. Exclude the mandatory header: X-APP-ACCESSTOKEN",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /v1/dashboard/state",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: X-APP-ACCESSTOKEN",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API02_030",
+      "title": "Missing mandatory header: success",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/v1/dashboard/state",
+      "method": "GET",
+      "service": "getDashboardState",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /v1/dashboard/state",
+        "2. Exclude the mandatory header: success",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /v1/dashboard/state",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: success",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API02_031",
+      "title": "Missing mandatory header: code",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/v1/dashboard/state",
+      "method": "GET",
+      "service": "getDashboardState",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /v1/dashboard/state",
+        "2. Exclude the mandatory header: code",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /v1/dashboard/state",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: code",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API02_032",
+      "title": "Missing mandatory header: key",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/v1/dashboard/state",
+      "method": "GET",
+      "service": "getDashboardState",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /v1/dashboard/state",
+        "2. Exclude the mandatory header: key",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /v1/dashboard/state",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: key",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API02_033",
+      "title": "Missing mandatory header: data",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/v1/dashboard/state",
+      "method": "GET",
+      "service": "getDashboardState",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /v1/dashboard/state",
+        "2. Exclude the mandatory header: data",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /v1/dashboard/state",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: data",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API02_034",
+      "title": "Missing mandatory header: state",
+      "type": "Negative",
+      "category": "Missing Header",
+      "api_endpoint": "/v1/dashboard/state",
+      "method": "GET",
+      "service": "getDashboardState",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /v1/dashboard/state",
+        "2. Exclude the mandatory header: state",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /v1/dashboard/state",
+      "expected_result": "HTTP 400/401 Bad Request; Response should include error message indicating missing header: state",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API02_035",
+      "title": "Malformed JSON in request body",
+      "type": "Negative",
+      "category": "Invalid Format",
+      "api_endpoint": "/v1/dashboard/state",
+      "method": "GET",
+      "service": "getDashboardState",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /v1/dashboard/state",
+        "2. Send malformed JSON (e.g., missing closing bracket)",
+        "3. Ensure Content-Type is application/json",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /v1/dashboard/state",
+      "expected_result": "HTTP 400 Bad Request; Response indicates malformed request body",
+      "priority": "Medium"
+    },
+    {
+      "id": "TC_API02_036",
+      "title": "Missing authentication token",
+      "type": "Negative",
+      "category": "Authentication Error",
+      "api_endpoint": "/v1/dashboard/state",
+      "method": "GET",
+      "service": "getDashboardState",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /v1/dashboard/state",
+        "2. Omit the Authorization header",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /v1/dashboard/state",
+      "expected_result": "HTTP 401 Unauthorized; Response indicates missing or invalid authentication token",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API02_037",
+      "title": "Invalid/expired authentication token",
+      "type": "Negative",
+      "category": "Authentication Error",
+      "api_endpoint": "/v1/dashboard/state",
+      "method": "GET",
+      "service": "getDashboardState",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /v1/dashboard/state",
+        "2. Set Authorization header to 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDAwMDAwMDB9.invalid'",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /v1/dashboard/state",
+      "expected_result": "HTTP 401 Unauthorized; Response indicates missing or invalid authentication token",
+      "priority": "High"
+    },
+    {
+      "id": "TC_API02_038",
+      "title": "Request with invalid authorization token format",
+      "type": "Negative",
+      "category": "Authorization Error",
+      "api_endpoint": "/v1/dashboard/state",
+      "method": "GET",
+      "service": "getDashboardState",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /v1/dashboard/state",
+        "2. Set Authorization header to 'Bearer invalid_format_token'",
+        "3. Include other required headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /v1/dashboard/state",
+      "expected_result": "HTTP 401 Unauthorized; Response indicates invalid token format",
+      "priority": "Medium"
+    },
+    {
+      "id": "TC_API02_039",
+      "title": "Incorrect HTTP method (POST instead of GET)",
+      "type": "Negative",
+      "category": "Invalid HTTP Method",
+      "api_endpoint": "/v1/dashboard/state",
+      "method": "GET",
+      "service": "getDashboardState",
+      "preconditions": "User is authenticated; Valid bearer token available",
+      "steps": [
+        "1. Prepare GET request to /v1/dashboard/state",
+        "2. Send POST request instead of GET",
+        "3. Include valid request body and headers",
+        "4. Send the API request",
+        "5. Verify the error response"
+      ],
+      "input_data": "Invalid/Incomplete request payload for /v1/dashboard/state",
+      "expected_result": "HTTP 405 Method Not Allowed; Response indicates unsupported HTTP method",
+      "priority": "Medium"
+    }
+  ]
+}

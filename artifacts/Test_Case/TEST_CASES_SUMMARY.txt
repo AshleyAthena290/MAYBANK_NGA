@@ -1,0 +1,73 @@
+================================================================================
+P&T LOCAL TRANSFER API - TEST CASES GENERATION SUMMARY
+================================================================================
+
+Generated: 2026-07-21 14:18:35
+Source Document: P&T_Local_Transfer_DDD_API_Spec_v1.xlsx
+
+SUMMARY STATISTICS
+--------------------------------------------------------------------------------
+Total APIs Covered:        18
+Total Test Cases:          216
+  - Positive (Happy Path): 36
+  - Negative (Error):      180
+Test Case Per API:         12
+
+APIs INCLUDED
+--------------------------------------------------------------------------------
+ 1. GetPTMaintenanceTransferInit                  (GET   ) pt/maintenance/v1/transfers/init
+ 2. GetPTMaintenanceCountries                     (GET   ) pt/maintenance/v1/transfers/countries
+ 3. GetPTMaintenanceBankListing                   (GET   ) pt/maintenance/v1/ext/banks
+ 4. GetSourceAccountList                          (GET   ) pt/{product}/v1/ext/source-accounts
+ 3. IntraPreMonetaryCheck                         (POST  ) pt/intrabank/v1/pre-check
+ 4. InitiateIntraTransfer                         (POST  ) pt/intrabank/v1/initiate
+ 5. ExecuteIntraTransfer                          (POST  ) pt/intrabank/v1/transfers
+ 6. InterPreMonetaryCheck                         (POST  ) pt/interbank/v1/pre-check
+ 7. InquireTransferFee                            (GET   ) pt/interbank/v1/ext/fee-inquiry
+ 8. InitiateInterTransfer                         (POST  ) pt/interbank/v1/initiate
+ 9. ExecuteInterTransfer                          (POST  ) pt/interbank/v1/transfers
+10. GetPTMaintenanceBankListing                   (GET   ) pt/maintenance/v1/banks
+11. GetScheduledListing                           (GET   ) pt/recurring/v1/transfer/listing
+12. GetScheduledDetails                           (GET   ) pt/recurring/v1/transfer/{transactionRefId}
+13. RemoveScheduled                               (POST  ) pt/recurring/v1/transfer/{transactionRefId}/remove
+14. LimitSettingInquiry                           (GET   ) pt/limits/v1/external/settings?productCodes=productCodes
+15. LimitSettingUpdate                            (POST  ) pt/limits/v1/external/settings
+16. LimitSettingMaintanenceList                   (GET   ) pt/limit/v1/setting/maintenance/list?productIds=productIds
+
+
+VALIDATION COVERAGE
+--------------------------------------------------------------------------------
+✓ Field Validation         - Mandatory, optional, data types
+✓ Authentication           - Token validation, missing creds
+✓ Business Rules           - Limits, duplicates, logic
+✓ Boundary Conditions      - Min/max values, ranges
+✓ Error Handling           - Error codes, messages
+✓ Security                 - SQL injection, XSS prevention
+✓ Data Types               - Type checking, formats
+
+GENERATED FILES
+--------------------------------------------------------------------------------
+1. artifacts/Test_Case/P&T_Local_Transfer_API_Test_Cases_Detailed.md
+   - Comprehensive markdown test cases with details
+   - Includes request/response specifications
+   - Test execution guide included
+
+2. artifacts/Test_Case/test_cases_complete.json
+   - Complete API specifications in JSON format
+   - All parameters and fields documented
+   - Ready for programmatic processing
+
+3. artifacts/Test_Case/TEST_CASES_SUMMARY.txt
+   - This summary report
+
+NEXT STEPS
+--------------------------------------------------------------------------------
+1. Review test cases in P&T_Local_Transfer_API_Test_Cases_Detailed.md
+2. Validate test cases against actual API specifications
+3. Prepare test data and test environment
+4. Execute positive tests first (happy path)
+5. Execute negative tests (error scenarios)
+6. Execute security tests (injection prevention)
+7. Document test results and coverage
+
+================================================================================

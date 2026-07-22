@@ -1,0 +1,197 @@
+{
+  "generation_date": "2026-07-21T14:17:17.223722",
+  "source_file": "P&T_Local_Transfer_DDD_API_Spec_v1.xlsx",
+  "total_apis": 18,
+  "total_test_cases": 216,
+  "apis": [
+    {
+      "no": 1,
+      "name": "GetPTMaintenanceTransferInit",
+      "method": "GET",
+      "endpoint": "pt/maintenance/v1/transfers/init",
+      "description": "Transfer Initialization",
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "no": 2,
+      "name": "GetPTMaintenanceCountries",
+      "method": "GET",
+      "endpoint": "pt/maintenance/v1/transfers/countries",
+      "description": "Retrieve Country List",
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "no": 3,
+      "name": "GetPTMaintenanceBankListing",
+      "method": "GET",
+      "endpoint": "pt/maintenance/v1/ext/banks",
+      "description": "Retrieve the list of active banks and their supported payment rails.",
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "no": 4,
+      "name": "GetSourceAccountList",
+      "method": "GET",
+      "endpoint": "pt/{product}/v1/ext/source-accounts",
+      "description": "Retrieves the list of source accounts.",
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "no": 3,
+      "name": "IntraPreMonetaryCheck",
+      "method": "POST",
+      "endpoint": "pt/intrabank/v1/pre-check",
+      "description": "Intrabank Pre Monetary Check (Account and Limit Inquiry)",
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "no": 4,
+      "name": "InitiateIntraTransfer",
+      "method": "POST",
+      "endpoint": "pt/intrabank/v1/initiate",
+      "description": "Intrabank Transfer Initiation",
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "no": 5,
+      "name": "ExecuteIntraTransfer",
+      "method": "POST",
+      "endpoint": "pt/intrabank/v1/transfers",
+      "description": "Intrabank Transfer Execution",
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "no": 6,
+      "name": "InterPreMonetaryCheck",
+      "method": "POST",
+      "endpoint": "pt/interbank/v1/pre-check",
+      "description": "Interbank Pre Monetary Check (Account and Limit Inquiry)",
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "no": 7,
+      "name": "InquireTransferFee",
+      "method": "GET",
+      "endpoint": "pt/interbank/v1/ext/fee-inquiry",
+      "description": "Inquire Service Fee for Interbank Transfer",
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "no": 8,
+      "name": "InitiateInterTransfer",
+      "method": "POST",
+      "endpoint": "pt/interbank/v1/initiate",
+      "description": "Interbank Transfer Initiation",
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "no": 9,
+      "name": "ExecuteInterTransfer",
+      "method": "POST",
+      "endpoint": "pt/interbank/v1/transfers",
+      "description": "Interbank Transfer Execution",
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "no": 10,
+      "name": "GetPTMaintenanceBankListing",
+      "method": "GET",
+      "endpoint": "pt/maintenance/v1/banks",
+      "description": "Retrieve Bank List",
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "no": 11,
+      "name": "GetScheduledListing",
+      "method": "GET",
+      "endpoint": "pt/recurring/v1/transfer/listing",
+      "description": "Retrieve Scheduled Setting Page",
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "no": 12,
+      "name": "GetScheduledDetails",
+      "method": "GET",
+      "endpoint": "pt/recurring/v1/transfer/{transactionRefId}",
+      "description": "Retrieve Scheduled Detailed Record",
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "no": 13,
+      "name": "RemoveScheduled",
+      "method": "POST",
+      "endpoint": "pt/recurring/v1/transfer/{transactionRefId}/remove",
+      "description": "Cancel Scheduled Transfer",
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "no": 14,
+      "name": "LimitSettingInquiry",
+      "method": "GET",
+      "endpoint": "pt/limits/v1/external/settings?productCodes=productCodes",
+      "description": "Retrieve Limit Setting Page",
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "no": 15,
+      "name": "LimitSettingUpdate",
+      "method": "POST",
+      "endpoint": "pt/limits/v1/external/settings",
+      "description": "Modify Limit Settings",
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "no": 16,
+      "name": "LimitSettingMaintanenceList",
+      "method": "GET",
+      "endpoint": "pt/limit/v1/setting/maintenance/list?productIds=productIds",
+      "description": "Retrieve Product Maintanence Limit",
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    }
+  ],
+  "validation_areas": [
+    "Field Validation",
+    "Authentication",
+    "Business Rules",
+    "Boundary Conditions",
+    "Error Handling",
+    "Data Type Checks",
+    "Required Fields"
+  ]
+}
