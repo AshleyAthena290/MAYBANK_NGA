@@ -1,0 +1,2093 @@
+{
+  "metadata": {
+    "generation_date": "2026-07-21T14:18:35.279303",
+    "source_file": "P&T_Local_Transfer_DDD_API_Spec_v1.xlsx",
+    "total_apis": 18,
+    "total_test_cases": 216,
+    "test_case_per_api": 12
+  },
+  "test_configuration": {
+    "positive_per_api": 2,
+    "negative_per_api": 10,
+    "categories": [
+      "Field Validation",
+      "Authentication",
+      "Business Rules",
+      "Boundary Conditions",
+      "Error Handling",
+      "Security"
+    ]
+  },
+  "apis": [
+    {
+      "id": 1,
+      "name": "GetPTMaintenanceTransferInit",
+      "method": "GET",
+      "endpoint": "pt/maintenance/v1/transfers/init",
+      "description": "Transfer Initialization",
+      "ownership": "pt-maintenance",
+      "url": "https://{Payment-IP}:{Payment-PORT}/pt/maintenance/v1/ext/transfers/init",
+      "headers": [],
+      "request_body": [],
+      "response_fields": [
+        {
+          "name": "transferModes",
+          "parent": "-",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "code",
+          "parent": "transferModes",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "name",
+          "parent": "transferModes",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "fee",
+          "parent": "transferModes",
+          "type": "Decimal",
+          "length": "-"
+        },
+        {
+          "name": "perTransactionMinAmount",
+          "parent": "transferModes",
+          "type": "Decimal",
+          "length": "-"
+        },
+        {
+          "name": "perTransactionMaxAmount",
+          "parent": "transferModes",
+          "type": "Decimal",
+          "length": "-"
+        },
+        {
+          "name": "operatingHoursLabel",
+          "parent": "transferModes",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "availabilityType",
+          "parent": "transferModes",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "isActive",
+          "parent": "transferModes",
+          "type": "Boolean",
+          "length": "-"
+        },
+        {
+          "name": "recurringOptions",
+          "parent": "-",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "frequencies",
+          "parent": "recurringOptions",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "code",
+          "parent": "frequencies",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "name",
+          "parent": "frequencies",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "minStartDate",
+          "parent": "recurringOptions",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "maxStartDate",
+          "parent": "recurringOptions",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "allowEndDate",
+          "parent": "recurringOptions",
+          "type": "Boolean",
+          "length": "-"
+        },
+        {
+          "name": "allowNumberOfTimes",
+          "parent": "recurringOptions",
+          "type": "Boolean",
+          "length": "-"
+        },
+        {
+          "name": "purposes",
+          "parent": "-",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "code",
+          "parent": "purposes",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "name",
+          "parent": "purposes",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "transferDetailOptions",
+          "parent": "-",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "sourceOfFunds",
+          "parent": "transferDetailOptions",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "code",
+          "parent": "sourceOfFunds",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "name",
+          "parent": "sourceOfFunds",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "recipientTypes",
+          "parent": "transferDetailOptions",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "code",
+          "parent": "recipientTypes",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "name",
+          "parent": "recipientTypes",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "recipientCitizenships",
+          "parent": "transferDetailOptions",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "code",
+          "parent": "recipientCitizenships",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "name",
+          "parent": "recipientCitizenships",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "remarkShortcuts",
+          "parent": "transferDetailOptions",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "remarkShortcuts",
+          "parent": "remarkShortcuts",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "additionalDetails",
+          "parent": "-",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "recipientStatuses",
+          "parent": "additionalDetails",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "code",
+          "parent": "recipientStatuses",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "name",
+          "parent": "recipientStatuses",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "recipientCategories",
+          "parent": "additionalDetails",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "code",
+          "parent": "recipientCategories",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "name",
+          "parent": "recipientCategories",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "relationships",
+          "parent": "additionalDetails",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "code",
+          "parent": "relationships",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "name",
+          "parent": "relationships",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "transactionCategories",
+          "parent": "additionalDetails",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "code",
+          "parent": "transactionCategories",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "name",
+          "parent": "transactionCategories",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "transactionDetails",
+          "parent": "transactionCategories",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "code",
+          "parent": "transactionDetails",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "name",
+          "parent": "transactionDetails",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "isRecommended",
+          "parent": "transactionDetails",
+          "type": "Boolean",
+          "length": "-"
+        },
+        {
+          "name": "{\n  \"status\": \"200\",\n  \"message\": \"Success\",\n  \"timestamp\": \"2026-05-20T09:30:15\",\n  \"correlationId\": \"d9b2d63d-a233-4123-8478-316827018c1e\",\n  \"meta\": null,\n  \"data\": {\n    \"transferModes\": [\n      {\n        \"code\": \"BIFAST\",\n        \"name\": \"BI-FAST\",\n        \"fee\": 2500,\n        \"perTransactionMinAmount\": 10000,\n        \"perTransactionMaxAmount\": 250000000,\n        \"operatingHoursLabel\": \"Setiap hari, 24 jam\",\n        \"availabilityType\": \"TWENTY_FOUR_SEVEN\",\n        \"isActive\": true\n      },\n      {\n        \"code\": \"RTOL\",\n        \"name\": \"Realtime Online\",\n        \"fee\": 6500,\n        \"perTransactionMinAmount\": 10000,\n        \"perTransactionMaxAmount\": 50000000,\n        \"operatingHoursLabel\": \"Setiap hari, 24 jam\",\n        \"availabilityType\": \"TWENTY_FOUR_SEVEN\",\n        \"isActive\": true\n      },\n      {\n        \"code\": \"BISKN\",\n        \"name\": \"BI-SKN / Kliring\",\n        \"fee\": 2900,\n        \"perTransactionMinAmount\": 10000,\n        \"perTransactionMaxAmount\": 500000000,\n        \"operatingHoursLabel\": \"Senin-Jumat, 08:00 - 15:30\",\n        \"availabilityType\": \"WINDOWED\",\n        \"isActive\": true\n      },\n      {\n        \"code\": \"RTGS\",\n        \"name\": \"RTGS\",\n        \"fee\": 25000,\n        \"perTransactionMinAmount\": 100000000,\n        \"perTransactionMaxAmount\": 999999999999.99,\n        \"operatingHoursLabel\": \"Senin-Jumat, 08:00 - 15:00\",\n        \"availabilityType\": \"WINDOWED\",\n        \"isActive\": true\n      }\n    ],\n    \"recurringOptions\": {\n      \"frequencies\": [\n        {\n          \"code\": \"ONCE\",\n          \"name\": \"Sekali\"\n        },\n        {\n          \"code\": \"WEEKLY\",\n          \"name\": \"Mingguan\"\n        },\n        {\n          \"code\": \"MONTHLY\",\n          \"name\": \"Bulanan\"\n        }\n      ],\n      \"minStartDate\": \"2025-12-19\",\n      \"maxStartDate\": \"2026-12-18\",\n      \"allowEndDate\": true,\n      \"allowNumberOfTimes\": true\n    },\n    \"purposes\": [\n      {\n        \"code\": \"PAYMENT\",\n        \"name\": \"Pembayaran\"\n      },\n      {\n        \"code\": \"INVESTMENT\",\n        \"name\": \"Investasi\"\n      },\n      {\n        \"code\": \"PERSONAL_SAVINGS\",\n        \"name\": \"Tabungan Pribadi\"\n      }\n    ],\n    \"transferDetailOptions\": {\n      \"sourceOfFunds\": [\n        {\n          \"code\": \"SALARY\",\n          \"name\": \"Gaji\"\n        },\n        {\n          \"code\": \"SAVINGS\",\n          \"name\": \"Tabungan\"\n        },\n        {\n          \"code\": \"BUSINESS_INCOME\",\n          \"name\": \"Pendapatan Usaha\"\n        },\n        {\n          \"code\": \"OTHERS\",\n          \"name\": \"Lainnya\"\n        }\n      ],\n      \"recipientTypes\": [\n        {\n          \"code\": \"INDIVIDUAL\",\n          \"name\": \"Perorangan\"\n        },\n        {\n          \"code\": \"CORPORATE\",\n          \"name\": \"Korporasi\"\n        },\n        {\n          \"code\": \"GOVERNMENT\",\n          \"name\": \"Pemerintah\"\n        }\n      ],\n      \"recipientCitizenships\": [\n        {\n          \"code\": \"CITIZEN\",\n          \"name\": \"Warga Negara\"\n        },\n        {\n          \"code\": \"NON_CITIZEN\",\n          \"name\": \"Bukan Warga Negara\"\n        }\n      ],\n      \"remarkShortcuts\": [\n        \"Makan Siang\",\n        \"Transfer\",\n        \"Tabungan\",\n        \"Bayar Tagihan\",\n        \"Sewa\",\n        \"Uang Saku\"\n      ]\n    },\n    \"additionalDetails\": {\n      \"recipientStatuses\": [\n        {\n          \"code\": \"SENDER_NOT_RECIPIENT\",\n          \"name\": \"Pengirim bukan penerima\"\n        },\n        {\n          \"code\": \"SENDER_IS_RECIPIENT\",\n          \"name\": \"Pengirim adalah penerima\"\n        }\n      ],\n      \"recipientCategories\": [\n        {\n          \"code\": \"INDIVIDUAL\",\n          \"name\": \"Perorangan\"\n        },\n        {\n          \"code\": \"COMPANY\",\n          \"name\": \"Perusahaan\"\n        }\n      ],\n      \"relationships\": [\n        {\n          \"code\": \"NON_AFFILIATED\",\n          \"name\": \"Non-afiliasi\"\n        },\n        {\n          \"code\": \"SHAREHOLDER\",\n          \"name\": \"Pemegang Saham\"\n        },\n        {\n          \"code\": \"SUBSIDIARY_COMPANY\",\n          \"name\": \"Perusahaan Anak\"\n        },\n        {\n          \"code\": \"GROUP\",\n          \"name\": \"Grup\"\n        }\n      ],\n      \"transactionCategories\": [\n        {\n          \"code\": \"PENGHASILAN_PENGELUARAN\",\n          \"name\": \"Penghasilan / Pengeluaran\",\n          \"transactionDetails\": [\n            {\n              \"code\": \"TD001\",\n              \"name\": \"Pembayaran gaji karyawan\",\n              \"isRecommended\": true\n            },\n            {\n              \"code\": \"TD002\",\n              \"name\": \"Pembayaran biaya operasional\",\n              \"isRecommended\": true\n            },\n            {\n              \"code\": \"TD003\",\n              \"name\": \"Pembayaran kebutuhan rumah tangga\",\n              \"isRecommended\": true\n            },\n            {\n              \"code\": \"TD004\",\n              \"name\": \"Pembayaran utilitas dan tagihan bulanan\",\n              \"isRecommended\": false\n            },\n            {\n              \"code\": \"TD005\",\n              \"name\": \"Pengeluaran untuk kebutuhan pribadi\",\n              \"isRecommended\": false\n            },\n            {\n              \"code\": \"TD006\",\n              \"name\": \"Pembayaran tunjangan atau manfaat\",\n              \"isRecommended\": false\n            }\n          ]\n        },\n        {\n          \"code\": \"TRANSAKSI_BARANG\",\n          \"name\": \"Transaksi Barang\",\n          \"transactionDetails\": [\n            {\n              \"code\": \"TD101\",\n              \"name\": \"Pembelian bahan baku\",\n              \"isRecommended\": true\n            },\n            {\n              \"code\": \"TD102\",\n              \"name\": \"Pembelian barang dagangan\",\n              \"isRecommended\": true\n            },\n            {\n              \"code\": \"TD103\",\n              \"name\": \"Pembayaran pengadaan inventaris\",\n              \"isRecommended\": true\n            },\n            {\n              \"code\": \"TD104\",\n              \"name\": \"Pembelian perlengkapan kantor\",\n              \"isRecommended\": false\n            },\n            {\n              \"code\": \"TD105\",\n              \"name\": \"Pembayaran atas pengiriman barang\",\n              \"isRecommended\": false\n            },\n            {\n              \"code\": \"TD106\",\n              \"name\": \"Pembayaran pembelian aset berwujud\",\n              \"isRecommended\": false\n            }\n          ]\n        },\n        {\n          \"code\": \"TRANSAKSI_JASA\",\n          \"name\": \"Transaksi Jasa\",\n          \"transactionDetails\": [\n            {\n              \"code\": \"TD201\",\n              \"name\": \"Pembayaran jasa konsultasi\",\n              \"isRecommended\": true\n            },\n            {\n              \"code\": \"TD202\",\n              \"name\": \"Pembayaran jasa profesional\",\n              \"isRecommended\": true\n            },\n            {\n              \"code\": \"TD203\",\n              \"name\": \"Pembayaran biaya perawatan dan servis\",\n              \"isRecommended\": true\n            },\n            {\n              \"code\": \"TD204\",\n              \"name\": \"Pembayaran jasa transportasi\",\n              \"isRecommended\": false\n            },\n            {\n              \"code\": \"TD205\",\n              \"name\": \"Pembayaran jasa sewa\",\n              \"isRecommended\": false\n            },\n            {\n              \"code\": \"TD206\",\n              \"name\": \"Pembayaran jasa teknologi informasi\",\n              \"isRecommended\": false\n            }\n          ]\n        },\n        {\n          \"code\": \"TRANSAKSI_KEUANGAN_MODAL\",\n          \"name\": \"Transaksi Keuangan / Modal\",\n          \"transactionDetails\": [\n            {\n              \"code\": \"TD301\",\n              \"name\": \"Penempatan dana investasi\",\n              \"isRecommended\": true\n            },\n            {\n              \"code\": \"TD302\",\n              \"name\": \"Penambahan modal usaha\",\n              \"isRecommended\": true\n            },\n            {\n              \"code\": \"TD303\",\n              \"name\": \"Pembayaran kewajiban pinjaman\",\n              \"isRecommended\": true\n            },\n            {\n              \"code\": \"TD304\",\n              \"name\": \"Transfer antar rekening investasi\",\n              \"isRecommended\": false\n            },\n            {\n              \"code\": \"TD305\",\n              \"name\": \"Pembayaran setoran modal\",\n              \"isRecommended\": false\n            },\n            {\n              \"code\": \"TD306\",\n              \"name\": \"Pelunasan fasilitas pembiayaan\",\n              \"isRecommended\": false\n            }\n          ]\n        }\n      ]\n    }\n  },\n  \"error\": null\n}",
+          "parent": "-",
+          "type": "",
+          "length": "-"
+        }
+      ],
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "id": 2,
+      "name": "GetPTMaintenanceCountries",
+      "method": "GET",
+      "endpoint": "pt/maintenance/v1/transfers/countries",
+      "description": "Retrieve Country List",
+      "ownership": "pt-maintenance",
+      "url": "https://{Payment-IP}:{Payment-PORT}/pt/maintenance/v1/ext/transfers/countries",
+      "headers": [],
+      "request_body": [],
+      "response_fields": [
+        {
+          "name": "countries",
+          "parent": "-",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "countryCode",
+          "parent": "countries",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "countryLogoUrl",
+          "parent": "countries",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "displaySequence",
+          "parent": "countries",
+          "type": "Integer",
+          "length": "-"
+        }
+      ],
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "id": 3,
+      "name": "GetPTMaintenanceBankListing",
+      "method": "GET",
+      "endpoint": "pt/maintenance/v1/ext/banks",
+      "description": "Retrieve the list of active banks and their supported payment rails.",
+      "ownership": "pt-maintenance",
+      "url": "https: //{Payment-IP}:{Payment-PORT}/pt/maintenance/v1/ext/banks",
+      "headers": [],
+      "request_body": [],
+      "response_fields": [
+        {
+          "name": "banks",
+          "parent": "-",
+          "type": "List",
+          "length": "-"
+        },
+        {
+          "name": "bankCode",
+          "parent": "banks",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "alias",
+          "parent": "banks",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "mode",
+          "parent": "banks",
+          "type": "List",
+          "length": "-"
+        },
+        {
+          "name": "code",
+          "parent": "mode",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "name",
+          "parent": "mode",
+          "type": "String",
+          "length": "-"
+        }
+      ],
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "id": 4,
+      "name": "GetSourceAccountList",
+      "method": "GET",
+      "endpoint": "pt/{product}/v1/ext/source-accounts",
+      "description": "Retrieves the list of source accounts.",
+      "ownership": "pt-maintenance",
+      "url": "https://{Payment-IP}:{Payment-PORT}/pt/{product}/v1/ext/source-accounts",
+      "headers": [],
+      "request_body": [],
+      "response_fields": [
+        {
+          "name": "sourceAccounts",
+          "parent": "root",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "accountNo",
+          "parent": "sourceAccounts",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "accountType",
+          "parent": "sourceAccounts",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "accountProductType",
+          "parent": "sourceAccounts",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "accountOwnership",
+          "parent": "sourceAccounts",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "accountStatus",
+          "parent": "sourceAccounts",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "isPrimary",
+          "parent": "sourceAccounts",
+          "type": "Boolean",
+          "length": "-"
+        },
+        {
+          "name": "isMultiCurrency",
+          "parent": "sourceAccounts",
+          "type": "Boolean",
+          "length": "-"
+        },
+        {
+          "name": "totalEquivalentBalance",
+          "parent": "sourceAccounts",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "amount",
+          "parent": "totalEquivalentBalance",
+          "type": "Number",
+          "length": "TBC"
+        },
+        {
+          "name": "currency",
+          "parent": "totalEquivalentBalance",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "accounts",
+          "parent": "sourceAccounts",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "currency",
+          "parent": "accounts",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "rawAccountNo",
+          "parent": "accounts",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "availableBalance",
+          "parent": "accounts",
+          "type": "Number",
+          "length": "TBC"
+        },
+        {
+          "name": "localEquivalentBalance",
+          "parent": "accounts",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "amount",
+          "parent": "localEquivalentBalance",
+          "type": "Number",
+          "length": "TBC"
+        },
+        {
+          "name": "currency",
+          "parent": "localEquivalentBalance",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "accountStatus",
+          "parent": "accounts",
+          "type": "String",
+          "length": "TBC"
+        }
+      ],
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "id": 3,
+      "name": "IntraPreMonetaryCheck",
+      "method": "POST",
+      "endpoint": "pt/intrabank/v1/pre-check",
+      "description": "Intrabank Pre Monetary Check (Account and Limit Inquiry)",
+      "ownership": "pt-intrabank-transfer",
+      "url": "https://{Payment-IP}:{Payment-PORT}/pt/intrabank/v1/ext/pre-check",
+      "headers": [],
+      "request_body": [],
+      "response_fields": [
+        {
+          "name": "preCheckId",
+          "parent": "root",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "transferType",
+          "parent": "root",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "creditAccount",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "creditAccountNo",
+          "parent": "creditAccount",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "creditAccountType",
+          "parent": "creditAccount",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "creditAccountBankCode",
+          "parent": "creditAccount",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "creditAccountCurrency",
+          "parent": "creditAccount",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "isFavourite",
+          "parent": "creditAccount",
+          "type": "Boolean",
+          "length": "-"
+        },
+        {
+          "name": "limits",
+          "parent": "root",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "productCode",
+          "parent": "limits",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "dailyLimit",
+          "parent": "limits",
+          "type": "Number",
+          "length": "TBC"
+        },
+        {
+          "name": "dailyLimitRemaining",
+          "parent": "limits",
+          "type": "Number",
+          "length": "TBC"
+        },
+        {
+          "name": "limitCurrency",
+          "parent": "limits",
+          "type": "String",
+          "length": "TBC"
+        }
+      ],
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "id": 4,
+      "name": "InitiateIntraTransfer",
+      "method": "POST",
+      "endpoint": "pt/intrabank/v1/initiate",
+      "description": "Intrabank Transfer Initiation",
+      "ownership": "pt-intrabank-transfer",
+      "url": "https://{Payment-IP}:{Payment-PORT}/pt/intrabank/v1/ext/initiate",
+      "headers": [],
+      "request_body": [],
+      "response_fields": [
+        {
+          "name": "transactionRefId",
+          "parent": "root",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "paymentOrderId",
+          "parent": "root",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "transactionStatus",
+          "parent": "root",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "createdAt",
+          "parent": "root",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "{\n  \"status\": \"200\",\n  \"message\": \"Success\",\n  \"timestamp\": \"2026-05-20T09:30:15\",\n  \"correlationId\": \"d9b2d63d-a233-4123-8478-316827018c1e\",\n  \"meta\": null,\n  \"data\": {\n    \"transactionRefId\": \"TXN202604220001\",\n    \"paymentOrderId\": \"9f4c9d2f-5e6d-4e9a-8c0b-a3723a9b91d2\",\n    \"transactionStatus\": \"INITIATED\",\n    \"createdAt\": \"2026-04-22T14:30:00+08:00\"\n  },\n  \"error\": null\n}",
+          "parent": "-",
+          "type": "",
+          "length": "-"
+        }
+      ],
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "id": 5,
+      "name": "ExecuteIntraTransfer",
+      "method": "POST",
+      "endpoint": "pt/intrabank/v1/transfers",
+      "description": "Intrabank Transfer Execution",
+      "ownership": "pt-intrabank-transfer",
+      "url": "https://{Payment-IP}:{Payment-PORT}/pt/intrabank/v1/ext/transfers",
+      "headers": [],
+      "request_body": [],
+      "response_fields": [
+        {
+          "name": "transactionRefId",
+          "parent": "root",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "transactionStatus",
+          "parent": "root",
+          "type": "String",
+          "length": "20"
+        },
+        {
+          "name": "transactionDateTime",
+          "parent": "root",
+          "type": "String",
+          "length": "25"
+        },
+        {
+          "name": "totalAmount",
+          "parent": "root",
+          "type": "Number",
+          "length": "18,2"
+        },
+        {
+          "name": "totalAmountCurrency",
+          "parent": "root",
+          "type": "String",
+          "length": "3"
+        },
+        {
+          "name": "expenseCategory",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "categoryId",
+          "parent": "expenseCategory",
+          "type": "String",
+          "length": "20"
+        },
+        {
+          "name": "name",
+          "parent": "expenseCategory",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "colorCode",
+          "parent": "expenseCategory",
+          "type": "String",
+          "length": "7"
+        },
+        {
+          "name": "icon",
+          "parent": "expenseCategory",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "debitAccount",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "debitAccountNoMasked",
+          "parent": "debitAccount",
+          "type": "String",
+          "length": "20"
+        },
+        {
+          "name": "creditAccount",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "creditAccountNo",
+          "parent": "creditAccount",
+          "type": "String",
+          "length": "20"
+        },
+        {
+          "name": "isFavourite",
+          "parent": "creditAccount",
+          "type": "Boolean",
+          "length": "-"
+        },
+        {
+          "name": "amountDetails",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "debitAmount",
+          "parent": "amountDetails",
+          "type": "Number",
+          "length": "18,2"
+        },
+        {
+          "name": "debitCurrency",
+          "parent": "amountDetails",
+          "type": "String",
+          "length": "3"
+        },
+        {
+          "name": "creditAmount",
+          "parent": "amountDetails",
+          "type": "Number",
+          "length": "18,2"
+        },
+        {
+          "name": "creditCurrency",
+          "parent": "amountDetails",
+          "type": "String",
+          "length": "3"
+        },
+        {
+          "name": "schedulingDetails",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "startDateLabel",
+          "parent": "schedulingDetails",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "endDateLabel",
+          "parent": "schedulingDetails",
+          "type": "String",
+          "length": "100"
+        },
+        {
+          "name": "otherDetails",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "transactionType",
+          "parent": "otherDetails",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "remark",
+          "parent": "otherDetails",
+          "type": "String",
+          "length": "255"
+        },
+        {
+          "name": "recipientEmail",
+          "parent": "otherDetails",
+          "type": "String",
+          "length": "100"
+        },
+        {
+          "name": "additionalDetails",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "relationshipLabel",
+          "parent": "additionalDetails",
+          "type": "String",
+          "length": "100"
+        },
+        {
+          "name": "transactionCategoryLabel",
+          "parent": "additionalDetails",
+          "type": "String",
+          "length": "100"
+        },
+        {
+          "name": "transactionDetailLabel",
+          "parent": "additionalDetails",
+          "type": "String",
+          "length": "255"
+        },
+        {
+          "name": "additionalDetailRemark",
+          "parent": "additionalDetails",
+          "type": "String",
+          "length": "255"
+        },
+        {
+          "name": "receipt",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "receiptTemplateCode",
+          "parent": "receipt",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "receiptTemplateVersion",
+          "parent": "receipt",
+          "type": "String",
+          "length": "10"
+        },
+        {
+          "name": "header",
+          "parent": "receipt",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "title",
+          "parent": "header",
+          "type": "String",
+          "length": "100"
+        },
+        {
+          "name": "transactionStatus",
+          "parent": "header",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "transactionDateTime",
+          "parent": "header",
+          "type": "String",
+          "length": "25"
+        },
+        {
+          "name": "referenceNumber",
+          "parent": "header",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "body",
+          "parent": "receipt",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "sectionTitle",
+          "parent": "body",
+          "type": "String",
+          "length": "100"
+        },
+        {
+          "name": "fields",
+          "parent": "body",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "label",
+          "parent": "fields",
+          "type": "String",
+          "length": "100"
+        },
+        {
+          "name": "value",
+          "parent": "fields",
+          "type": "String",
+          "length": "255"
+        },
+        {
+          "name": "footer",
+          "parent": "receipt",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "message",
+          "parent": "footer",
+          "type": "String",
+          "length": "255"
+        }
+      ],
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "id": 6,
+      "name": "InterPreMonetaryCheck",
+      "method": "POST",
+      "endpoint": "pt/interbank/v1/pre-check",
+      "description": "Interbank Pre Monetary Check (Account and Limit Inquiry)",
+      "ownership": "pt-interbank-transfer",
+      "url": "https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/ext/pre-check",
+      "headers": [],
+      "request_body": [],
+      "response_fields": [
+        {
+          "name": "preCheckId",
+          "parent": "root",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "creditAccount",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "creditAccountNo",
+          "parent": "creditAccount",
+          "type": "String",
+          "length": "20"
+        },
+        {
+          "name": "creditAccountType",
+          "parent": "creditAccount",
+          "type": "String",
+          "length": "5"
+        },
+        {
+          "name": "creditAccountBankCode",
+          "parent": "creditAccount",
+          "type": "String",
+          "length": "10"
+        },
+        {
+          "name": "creditAccountCurrency",
+          "parent": "creditAccount",
+          "type": "String",
+          "length": "3"
+        },
+        {
+          "name": "isFavourite",
+          "parent": "creditAccount",
+          "type": "Boolean",
+          "length": "-"
+        },
+        {
+          "name": "limits",
+          "parent": "root",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "productCode",
+          "parent": "limits",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "transferModeCode",
+          "parent": "limits",
+          "type": "String",
+          "length": "20"
+        },
+        {
+          "name": "dailyLimit",
+          "parent": "limits",
+          "type": "Number",
+          "length": "18,2"
+        },
+        {
+          "name": "dailyLimitRemaining",
+          "parent": "limits",
+          "type": "Number",
+          "length": "18,2"
+        },
+        {
+          "name": "limitCurrency",
+          "parent": "limits",
+          "type": "String",
+          "length": "3"
+        }
+      ],
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "id": 7,
+      "name": "InquireTransferFee",
+      "method": "GET",
+      "endpoint": "pt/interbank/v1/ext/fee-inquiry",
+      "description": "Inquire Service Fee for Interbank Transfer",
+      "ownership": "pt-interbank-transfer",
+      "url": "https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/ext/fee-inquiry",
+      "headers": [],
+      "request_body": [],
+      "response_fields": [
+        {
+          "name": "feeAmount",
+          "parent": "root",
+          "type": "Number",
+          "length": "TBC"
+        },
+        {
+          "name": "feeCurrency",
+          "parent": "root",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "feeType",
+          "parent": "root",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "{\n  \"status\": \"200\",\n  \"message\": \"Success\",\n  \"timestamp\": \"2026-05-20T09:30:15\",\n  \"correlationId\": \"d9b2d63d-a233-4123-8478-316827018c1e\",\n  \"meta\": null,\n  \"data\": {\n    \"feeAmount\": 2900,\n    \"feeCurrency\": \"IDR\",\n    \"feeType\": \"FEE1\"\n  },\n  \"error\": null\n}",
+          "parent": "-",
+          "type": "",
+          "length": "-"
+        }
+      ],
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "id": 8,
+      "name": "InitiateInterTransfer",
+      "method": "POST",
+      "endpoint": "pt/interbank/v1/initiate",
+      "description": "Interbank Transfer Initiation",
+      "ownership": "pt-interbank-transfer",
+      "url": "https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/ext/initiate",
+      "headers": [],
+      "request_body": [],
+      "response_fields": [
+        {
+          "name": "transactionRefId",
+          "parent": "root",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "paymentOrderId",
+          "parent": "root",
+          "type": "String",
+          "length": "36"
+        },
+        {
+          "name": "transactionStatus",
+          "parent": "root",
+          "type": "String",
+          "length": "20"
+        },
+        {
+          "name": "createdAt",
+          "parent": "root",
+          "type": "String",
+          "length": "25"
+        },
+        {
+          "name": "{\n  \"status\": \"200\",\n  \"message\": \"Success\",\n  \"timestamp\": \"2026-05-20T09:30:15\",\n  \"correlationId\": \"d9b2d63d-a233-4123-8478-316827018c1e\",\n  \"meta\": null,\n  \"data\": {\n    \"transactionRefId\": \"TXN202604220001\",\n    \"paymentOrderId\": \"9f4c9d2f-5e6d-4e9a-8c0b-a3723a9b91d2\",\n    \"transactionStatus\": \"INITIATED\",\n    \"createdAt\": \"2026-04-22T14:30:00+08:00\"\n  },\n  \"error\": null\n}",
+          "parent": "-",
+          "type": "",
+          "length": "-"
+        }
+      ],
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "id": 9,
+      "name": "ExecuteInterTransfer",
+      "method": "POST",
+      "endpoint": "pt/interbank/v1/transfers",
+      "description": "Interbank Transfer Execution",
+      "ownership": "pt-interbank-transfer",
+      "url": "https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/ext/transfers",
+      "headers": [],
+      "request_body": [],
+      "response_fields": [
+        {
+          "name": "transactionRefId",
+          "parent": "root",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "transactionStatus",
+          "parent": "root",
+          "type": "String",
+          "length": "20"
+        },
+        {
+          "name": "transactionDateTime",
+          "parent": "root",
+          "type": "String",
+          "length": "25"
+        },
+        {
+          "name": "totalAmount",
+          "parent": "root",
+          "type": "Number",
+          "length": "18,2"
+        },
+        {
+          "name": "totalAmountCurrency",
+          "parent": "root",
+          "type": "String",
+          "length": "3"
+        },
+        {
+          "name": "expenseCategory",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "categoryId",
+          "parent": "expenseCategory",
+          "type": "String",
+          "length": "20"
+        },
+        {
+          "name": "name",
+          "parent": "expenseCategory",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "colorCode",
+          "parent": "expenseCategory",
+          "type": "String",
+          "length": "7"
+        },
+        {
+          "name": "icon",
+          "parent": "expenseCategory",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "debitAccount",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "debitAccountNoMasked",
+          "parent": "debitAccount",
+          "type": "String",
+          "length": "20"
+        },
+        {
+          "name": "creditAccount",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "creditAccountNo",
+          "parent": "creditAccount",
+          "type": "String",
+          "length": "20"
+        },
+        {
+          "name": "isFavourite",
+          "parent": "creditAccount",
+          "type": "Boolean",
+          "length": "-"
+        },
+        {
+          "name": "amountDetails",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "debitAmount",
+          "parent": "amountDetails",
+          "type": "Number",
+          "length": "18,2"
+        },
+        {
+          "name": "debitCurrency",
+          "parent": "amountDetails",
+          "type": "String",
+          "length": "3"
+        },
+        {
+          "name": "creditAmount",
+          "parent": "amountDetails",
+          "type": "Number",
+          "length": "18,2"
+        },
+        {
+          "name": "creditCurrency",
+          "parent": "amountDetails",
+          "type": "String",
+          "length": "3"
+        },
+        {
+          "name": "feeAmount",
+          "parent": "amountDetails",
+          "type": "Number",
+          "length": "18,2"
+        },
+        {
+          "name": "feeCurrency",
+          "parent": "amountDetails",
+          "type": "String",
+          "length": "3"
+        },
+        {
+          "name": "schedulingDetails",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "startDateLabel",
+          "parent": "schedulingDetails",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "endDateLabel",
+          "parent": "schedulingDetails",
+          "type": "String",
+          "length": "100"
+        },
+        {
+          "name": "otherDetails",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "transactionType",
+          "parent": "otherDetails",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "transferMode",
+          "parent": "otherDetails",
+          "type": "String",
+          "length": "20"
+        },
+        {
+          "name": "purposeOfTransfer",
+          "parent": "otherDetails",
+          "type": "String",
+          "length": "100"
+        },
+        {
+          "name": "sourceOfFund",
+          "parent": "otherDetails",
+          "type": "String",
+          "length": "100"
+        },
+        {
+          "name": "recipientType",
+          "parent": "otherDetails",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "recipientCitizenship",
+          "parent": "otherDetails",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "remark",
+          "parent": "otherDetails",
+          "type": "String",
+          "length": "255"
+        },
+        {
+          "name": "recipientEmail",
+          "parent": "otherDetails",
+          "type": "String",
+          "length": "100"
+        },
+        {
+          "name": "additionalDetails",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "recipientStatus",
+          "parent": "additionalDetails",
+          "type": "String",
+          "length": "100"
+        },
+        {
+          "name": "recipientNationality",
+          "parent": "additionalDetails",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "recipientCategory",
+          "parent": "additionalDetails",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "relationship",
+          "parent": "additionalDetails",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "transactionCategory",
+          "parent": "additionalDetails",
+          "type": "String",
+          "length": "100"
+        },
+        {
+          "name": "transactionDetail",
+          "parent": "additionalDetails",
+          "type": "String",
+          "length": "255"
+        },
+        {
+          "name": "additionalDetailRemark",
+          "parent": "additionalDetails",
+          "type": "String",
+          "length": "255"
+        },
+        {
+          "name": "receipt",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "receiptTemplateCode",
+          "parent": "receipt",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "receiptTemplateVersion",
+          "parent": "receipt",
+          "type": "String",
+          "length": "10"
+        },
+        {
+          "name": "header",
+          "parent": "receipt",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "title",
+          "parent": "header",
+          "type": "String",
+          "length": "100"
+        },
+        {
+          "name": "transactionStatus",
+          "parent": "header",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "transactionDateTime",
+          "parent": "header",
+          "type": "String",
+          "length": "25"
+        },
+        {
+          "name": "referenceNumber",
+          "parent": "header",
+          "type": "String",
+          "length": "50"
+        },
+        {
+          "name": "body",
+          "parent": "receipt",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "sectionTitle",
+          "parent": "body",
+          "type": "String",
+          "length": "100"
+        },
+        {
+          "name": "fields",
+          "parent": "body",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "label",
+          "parent": "fields",
+          "type": "String",
+          "length": "100"
+        },
+        {
+          "name": "value",
+          "parent": "fields",
+          "type": "String",
+          "length": "255"
+        },
+        {
+          "name": "footer",
+          "parent": "receipt",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "message",
+          "parent": "footer",
+          "type": "String",
+          "length": "255"
+        }
+      ],
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "id": 10,
+      "name": "GetPTMaintenanceBankListing",
+      "method": "GET",
+      "endpoint": "pt/maintenance/v1/banks",
+      "description": "Retrieve Bank List",
+      "ownership": "pt-maintenance",
+      "url": "https: //{Payment-IP}:{Payment-PORT}/pt/maintenance/v1/ext/banks",
+      "headers": [],
+      "request_body": [],
+      "response_fields": [
+        {
+          "name": "banks",
+          "parent": "-",
+          "type": "List",
+          "length": "-"
+        },
+        {
+          "name": "bankCode",
+          "parent": "banks",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "alias",
+          "parent": "banks",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "mode",
+          "parent": "banks",
+          "type": "List",
+          "length": "-"
+        },
+        {
+          "name": "code",
+          "parent": "mode",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "name",
+          "parent": "mode",
+          "type": "String",
+          "length": "-"
+        }
+      ],
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "id": 11,
+      "name": "GetScheduledListing",
+      "method": "GET",
+      "endpoint": "pt/recurring/v1/transfer/listing",
+      "description": "Retrieve Scheduled Setting Page",
+      "ownership": "pt-recurring-management",
+      "url": "https://{Payment-IP}:{Payment-PORT}/pt/recurring/v1/external/transfer/listing",
+      "headers": [],
+      "request_body": [],
+      "response_fields": [
+        {
+          "name": "transfers",
+          "parent": "-",
+          "type": "Array",
+          "length": "-"
+        },
+        {
+          "name": "transactionRefId",
+          "parent": "transfers",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "debitAccountNoMasked",
+          "parent": "transfers",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "amount",
+          "parent": "transfers",
+          "type": "Decimal",
+          "length": "-"
+        },
+        {
+          "name": "currency",
+          "parent": "transfers",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "frequencyCode",
+          "parent": "transfers",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "startDate",
+          "parent": "transfers",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "endDate",
+          "parent": "transfers",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "numberOfTimes",
+          "parent": "transfers",
+          "type": "Integer",
+          "length": "-"
+        }
+      ],
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "id": 12,
+      "name": "GetScheduledDetails",
+      "method": "GET",
+      "endpoint": "pt/recurring/v1/transfer/{transactionRefId}",
+      "description": "Retrieve Scheduled Detailed Record",
+      "ownership": "pt-recurring-management",
+      "url": "https://{Payment-IP}:{Payment-PORT}/pt/recurring/v1/external/transfer/{transactionRefId}",
+      "headers": [],
+      "request_body": [],
+      "response_fields": [
+        {
+          "name": "transactionRefId",
+          "parent": "-",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "creditAccountNo",
+          "parent": "-",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "debitAccountNo",
+          "parent": "-",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "amount",
+          "parent": "-",
+          "type": "Decimal",
+          "length": "-"
+        },
+        {
+          "name": "currency",
+          "parent": "-",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "frequencyCode",
+          "parent": "-",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "startDate",
+          "parent": "-",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "endDate",
+          "parent": "-",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "numberOfTimes",
+          "parent": "-",
+          "type": "Integer",
+          "length": "-"
+        },
+        {
+          "name": "status",
+          "parent": "-",
+          "type": "String",
+          "length": "-"
+        }
+      ],
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "id": 13,
+      "name": "RemoveScheduled",
+      "method": "POST",
+      "endpoint": "pt/recurring/v1/transfer/{transactionRefId}/remove",
+      "description": "Cancel Scheduled Transfer",
+      "ownership": "pt-recurring-management",
+      "url": "https://{Payment-IP}:{Payment-PORT}/pt/recurring/v1/external/transfer/{transactionRefId}/remove",
+      "headers": [],
+      "request_body": [],
+      "response_fields": [
+        {
+          "name": "transactionRefId",
+          "parent": "root",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "status",
+          "parent": "root",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "cancelledAt",
+          "parent": "root",
+          "type": "String",
+          "length": "TBC"
+        },
+        {
+          "name": "transferDetails",
+          "parent": "root",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "creditAccountNo",
+          "parent": "transferDetails",
+          "type": "String",
+          "length": "TBC"
+        }
+      ],
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "id": 14,
+      "name": "LimitSettingInquiry",
+      "method": "GET",
+      "endpoint": "pt/limits/v1/external/settings?productCodes=productCodes",
+      "description": "Retrieve Limit Setting Page",
+      "ownership": "pt-limit-management",
+      "url": "https://{Payment-IP}:{Payment-PORT}/pt/limits/v1/external/settings?productCodes=productCodes",
+      "headers": [],
+      "request_body": [],
+      "response_fields": [
+        {
+          "name": "product",
+          "parent": "root",
+          "type": "array",
+          "length": "-"
+        },
+        {
+          "name": "productDescription",
+          "parent": "product",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "productId",
+          "parent": "product",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "productCode",
+          "parent": "product",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "limitType",
+          "parent": "product",
+          "type": "array",
+          "length": "-"
+        },
+        {
+          "name": "currentLimitAmount",
+          "parent": "limitType",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "newLimitAmount",
+          "parent": "limitType",
+          "type": "number",
+          "length": "-"
+        },
+        {
+          "name": "coolingExpiredAt",
+          "parent": "limitType",
+          "type": "timestamp",
+          "length": "-"
+        },
+        {
+          "name": "intervalType",
+          "parent": "limitType",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "limitDenominationList",
+          "parent": "limitType",
+          "type": "List",
+          "length": "-"
+        },
+        {
+          "name": "minAmount",
+          "parent": "limitDenominationList",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "maxAmount",
+          "parent": "limitDenominationList",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "increment",
+          "parent": "limitDenominationList",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "amount",
+          "parent": "minAmount, maxAmount, increment",
+          "type": "Decimal",
+          "length": "-"
+        },
+        {
+          "name": "currency",
+          "parent": "minAmount, maxAmount, increment",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "flag",
+          "parent": "product",
+          "type": "String",
+          "length": "-"
+        },
+        {
+          "name": "{\n  \"status\": \"200\",\n  \"message\": \"Success\",\n  \"timestamp\": \"2026-05-20T09:30:15\",\n  \"correlationId\": \"d9b2d63d-a233-4123-8478-316827018c1e\",\n  \"meta\": null,\n  \"data\": {\n    \"product\": [\n      {\n        \"productDescription\": \"Scan & Pay\",\n        \"productId\": \"P3\",\n        \"productCode\": \"PC3\",\n        \"limitType\": [\n          {\n            \"currentLimitAmount\": {\n              \"amount\": \"250.00\",\n              \"currency\": \"IDR\"\n            },\n            \"newLimitAmount\": null,\n            \"coolingExpiredAt\": null,\n            \"intervalType\": \"QUICK\",\n            \"limitDenominationList\": [\n              {\n                \"minAmount\": {\n                  \"amount\": \"0.00\",\n                  \"currency\": \"IDR\"\n                },\n                \"maxAmount\": {\n                  \"amount\": \"250.00\",\n                  \"currency\": \"IDR\"\n                },\n                \"increment\": {\n                  \"amount\": \"50.00\",\n                  \"currency\": \"IDR\"\n                }\n              }\n            ]\n          },\n          {\n            \"currentLimitAmount\": {\n              \"amount\": \"1000.00\",\n              \"currency\": \"IDR\"\n            },\n            \"newLimitAmount\": null,\n            \"coolingExpiredAt\": null,\n            \"intervalType\": \"DAILY\",\n            \"limitDenominationList\": [\n              {\n                \"minAmount\": {\n                  \"amount\": \"0.00\",\n                  \"currency\": \"IDR\"\n                },\n                \"maxAmount\": {\n                  \"amount\": \"100.00\",\n                  \"currency\": \"IDR\"\n                },\n                \"increment\": {\n                  \"amount\": \"10.00\",\n                  \"currency\": \"IDR\"\n                }\n              },\n              {\n                \"minAmount\": {\n                  \"amount\": \"100.00\",\n                  \"currency\": \"IDR\"\n                },\n                \"maxAmount\": {\n                  \"amount\": \"1000.00\",\n                  \"currency\": \"IDR\"\n                },\n                \"increment\": {\n                  \"amount\": \"100.00\",\n                  \"currency\": \"IDR\"\n                }\n              }\n            ]\n          },\n          {\n            \"currentLimitAmount\": {\n              \"amount\": \"1000.00\",\n              \"currency\": \"IDR\"\n            },\n            \"newLimitAmount\": null,\n            \"coolingExpiredAt\": null,\n            \"intervalType\": \"PERTXN\",\n            \"limitDenominationList\": [\n              {\n                \"minAmount\": {\n                  \"amount\": \"10.00\",\n                  \"currency\": \"IDR\"\n                },\n                \"maxAmount\": {\n                  \"amount\": \"250.00\",\n                  \"currency\": \"IDR\"\n                },\n                \"increment\": {\n                  \"amount\": \"20.00\",\n                  \"currency\": \"IDR\"\n                }\n              }\n            ]\n          }\n        ],\n        \"flag\": true\n      }\n    ]\n  },\n  \"error\": null\n}",
+          "parent": "-",
+          "type": "",
+          "length": "-"
+        }
+      ],
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "id": 15,
+      "name": "LimitSettingUpdate",
+      "method": "POST",
+      "endpoint": "pt/limits/v1/external/settings",
+      "description": "Modify Limit Settings",
+      "ownership": "pt-limit-management",
+      "url": "https: //{Payment-IP}:{Payment-PORT}/pt/limits/v1/external/settings",
+      "headers": [],
+      "request_body": [],
+      "response_fields": [
+        {
+          "name": "productId",
+          "parent": "-",
+          "type": "string",
+          "length": "-"
+        },
+        {
+          "name": "productCode",
+          "parent": "-",
+          "type": "string",
+          "length": "-"
+        },
+        {
+          "name": "updates",
+          "parent": "-",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "recordId",
+          "parent": "updates",
+          "type": "string",
+          "length": "-"
+        },
+        {
+          "name": "status",
+          "parent": "updates",
+          "type": "string",
+          "length": "-"
+        },
+        {
+          "name": "intervalType",
+          "parent": "updates",
+          "type": "string",
+          "length": "-"
+        },
+        {
+          "name": "currentLimit",
+          "parent": "updates",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "requestedLimit",
+          "parent": "updates",
+          "type": "Object",
+          "length": "-"
+        },
+        {
+          "name": "coolingEndTime",
+          "parent": "updates",
+          "type": "string",
+          "length": "-"
+        },
+        {
+          "name": "amount",
+          "parent": "currentLimit",
+          "type": "Decimal",
+          "length": "-"
+        },
+        {
+          "name": "currency",
+          "parent": "currentLimit",
+          "type": "string",
+          "length": "-"
+        },
+        {
+          "name": "amount",
+          "parent": "requestedLimit",
+          "type": "Decimal",
+          "length": "-"
+        },
+        {
+          "name": "currency",
+          "parent": "requestedLimit",
+          "type": "string",
+          "length": "-"
+        },
+        {
+          "name": "{\n  \"status\": \"200\",\n  \"message\": \"Success\",\n  \"timestamp\": \"2026-05-20T09:30:15\",\n  \"correlationId\": \"d9b2d63d-a233-4123-8478-316827018c1e\",\n  \"meta\": null,\n  \"data\": {\n    \"productId\": \"P3\",\n    \"productCode\": \"PC3\",\n    \"updates\": [\n      {\n        \"recordId\": \"de1e44dc-c4e1-4d67-8203-f6bac304c797\",\n        \"status\": \"PENDING\",\n        \"intervalType\": \"DAILY\",\n        \"currentLimit\": {\n          \"amount\": \"1000.00\",\n          \"currency\": \"IDR\"\n        },\n        \"requestedLimit\": {\n          \"amount\": \"1200.00\",\n          \"currency\": \"IDR\"\n        },\n        \"coolingEndTime\": \"2026-04-27T18:34:07.8220045\"\n      },\n      {\n        \"recordId\": \"da128960-fb76-4db1-9d46-70c0f87cae44\",\n        \"status\": \"PENDING\",\n        \"intervalType\": \"PERTXN\",\n        \"currentLimit\": {\n          \"amount\": \"300.00\",\n          \"currency\": \"IDR\"\n        },\n        \"requestedLimit\": {\n          \"amount\": \"500.00\",\n          \"currency\": \"IDR\"\n        },\n        \"coolingEndTime\": \"2026-04-27T18:34:07.8240055\"\n      },\n      {\n        \"recordId\": \"5b59d9bd-19aa-4910-a735-d916fad88d3f\",\n        \"status\": \"COMPLETED\",\n        \"intervalType\": \"QUICK\",\n        \"currentLimit\": {\n          \"amount\": \"200.00\",\n          \"currency\": \"IDR\"\n        },\n        \"requestedLimit\": {\n          \"amount\": \"200.00\",\n          \"currency\": \"IDR\"\n        },\n        \"coolingEndTime\": \"2026-04-27T18:29:07.8265064\"\n      }\n    ]\n  },\n  \"error\": null\n}",
+          "parent": "-",
+          "type": "",
+          "length": "-"
+        }
+      ],
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    },
+    {
+      "id": 16,
+      "name": "LimitSettingMaintanenceList",
+      "method": "GET",
+      "endpoint": "pt/limit/v1/setting/maintenance/list?productIds=productIds",
+      "description": "Retrieve Product Maintanence Limit",
+      "ownership": "pt-limit-management",
+      "url": "https://{Payment-IP}:{Payment-PORT}/pt/limits/v1/internal/setting/maintenance?productCodes=productCodes",
+      "headers": [],
+      "request_body": [],
+      "response_fields": [
+        {
+          "name": "limits",
+          "parent": "root",
+          "type": "array",
+          "length": "-"
+        },
+        {
+          "name": "productId",
+          "parent": "limits",
+          "type": "string",
+          "length": "-"
+        },
+        {
+          "name": "productCode",
+          "parent": "limits",
+          "type": "string",
+          "length": "-"
+        },
+        {
+          "name": "productDescription",
+          "parent": "limits",
+          "type": "string",
+          "length": "-"
+        },
+        {
+          "name": "perTxnMinLimit",
+          "parent": "limits",
+          "type": "object",
+          "length": "-"
+        },
+        {
+          "name": "amount",
+          "parent": "perTxnMinLimit",
+          "type": "string",
+          "length": "-"
+        },
+        {
+          "name": "currency",
+          "parent": "perTxnMinLimit",
+          "type": "string",
+          "length": "-"
+        },
+        {
+          "name": "perTxnMaxLimit",
+          "parent": "limits",
+          "type": "object",
+          "length": "-"
+        },
+        {
+          "name": "amount",
+          "parent": "perTxnMaxLimit",
+          "type": "string",
+          "length": "-"
+        },
+        {
+          "name": "currency",
+          "parent": "perTxnMaxLimit",
+          "type": "string",
+          "length": "-"
+        },
+        {
+          "name": "enabled",
+          "parent": "limits",
+          "type": "boolean",
+          "length": "-"
+        },
+        {
+          "name": "usageDate",
+          "parent": "root",
+          "type": "string",
+          "length": "-"
+        },
+        {
+          "name": "{\n  \"status\": \"200\",\n  \"message\": \"Success\",\n  \"timestamp\": \"2026-05-20T09:30:15\",\n  \"correlationId\": \"d9b2d63d-a233-4123-8478-316827018c1e\",\n  \"meta\": null,\n  \"data\": {\n    \"limits\": [\n      {\n        \"productId\": \"P1\",\n        \"productCode\": \"PC1\",\n        \"productDescription\": \"Interbank Transfer\",\n        \"perTxnMinLimit\": {\n          \"amount\": \"100.00\",\n          \"currency\": \"IDR\"\n        },\n        \"perTxnMaxLimit\": {\n          \"amount\": \"100.00\",\n          \"currency\": \"IDR\"\n        },\n        \"enabled\": true\n      },\n      {\n        \"productId\": \"P2\",\n        \"productCode\": \"PC2\",\n        \"productDescription\": \"Intrabank Transfer\",\n        \"perTxnMinLimit\": {\n          \"amount\": \"10.00\",\n          \"currency\": \"IDR\"\n        },\n        \"perTxnMaxLimit\": {\n          \"amount\": \"1000.00\",\n          \"currency\": \"IDR\"\n        },\n        \"enabled\": true\n      },\n      {\n        \"productId\": \"P3\",\n        \"productCode\": \"PC3\",\n        \"productDescription\": \"Scan & Pay\",\n        \"perTxnMinLimit\": {\n          \"amount\": \"10.00\",\n          \"currency\": \"IDR\"\n        },\n        \"perTxnMaxLimit\": {\n          \"amount\": \"500.00\",\n          \"currency\": \"IDR\"\n        },\n        \"enabled\": true\n      }\n    ],\n    \"usageDate\": \"2026-04-29\"\n  },\n  \"error\": null\n}",
+          "parent": "-",
+          "type": "",
+          "length": "-"
+        }
+      ],
+      "test_cases": 12,
+      "positive": 2,
+      "negative": 10
+    }
+  ]
+}

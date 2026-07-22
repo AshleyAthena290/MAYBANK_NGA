@@ -1,0 +1,103 @@
+{
+  "total_apis": 2,
+  "apis": [
+    {
+      "sheet_name": "Get_Onboarding_Accounts",
+      "service": "Get_Onboarding_Accounts",
+      "description": "API to retrieve user's account listing to be set as primary during apps onboarding",
+      "business_rule": "System to retrieve user's deposit account from downstream BTS. If user don't have deposit account, system proceed to retrieve user's credit card lists from downstream BTS",
+      "method": "GET",
+      "url": "/wealth/v1/onboarding/accounts",
+      "message_type": "JSON",
+      "headers": [
+        {
+          "name": "GET  https: //{IP}:{PORT}/wealth/v1/onboarding/accounts",
+          "type": "",
+          "length": "",
+          "mandatory": "",
+          "sample": "",
+          "description": ""
+        }
+      ],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": [
+        {
+          "name": "Http Status Code",
+          "type": "Http Status Description",
+          "length": "",
+          "mandatory": "Remarks",
+          "sample": "",
+          "description": ""
+        }
+      ],
+      "request_sample": "GET  https: //{IP}:{PORT}/wealth/v1/onboarding/accounts",
+      "response_sample": "{\n    \"success\": true,\n    \"message\": {\n        \"code\": \"0000\",\n        \"key\": \"success\"\n    },\n    \"data\": {\n        \"accounts\": [\n            {\n                \"name\": \"Personal Current Account\",\n                \"code\": \"03\",\n                \"type\": \"D\",\n                \"number\": \"5140130361300000000\",\n                \"currency\": \"IDR\",\n                \"amount\": 872360.0,\n                \"nickname\": null,\n                \"status\": null,\n                \"isPrimary\": true\n            },\n            {\n                \"name\": \"Global Access Account\",\n                \"code\": \"CE\",\n                \"type\": \"D\",\n                \"number\": \"9000000204780000000\",\n                \"currency\": \"IDR\",\n                \"amount\": 7123455.0,\n                \"nickname\": \"account overseas\",\n                \"status\": \"ACTIVE\",\n                \"isPrimary\": false\n            }\n        ]\n    },\n    \"metadata\": {\n        \"page\": null,\n        \"size\": null,\n        \"total\": null,\n        \"responseTime\": 1768792982303\n    }\n}"
+    },
+    {
+      "sheet_name": "getDashboardState",
+      "service": "getDashboardState",
+      "description": "Retrieve aggregated App Dashboard response based on resolved state (POST_LOGIN / COOLING_OFF / PRE_LOGIN / PRE_BIND).",
+      "business_rule": "Istio Ingress forwards the call to NGA Channel Layer. Channel Layer resolves the state from token introspect + device binding + customerClass + regFlags, runs a version check against NGBO, then composes the response (applying Proxy/Masking for pre-login / cooling-off). Pre-login and public snapshots are cached in Hazelcast (TTL 5 / 10 min).",
+      "method": "GET",
+      "url": "/v1/dashboard/state",
+      "message_type": "JSON",
+      "headers": [
+        {
+          "name": "GET  https://{IP}:{PORT}/v1/dashboard/state",
+          "type": "",
+          "length": "",
+          "mandatory": "",
+          "sample": "",
+          "description": ""
+        }
+      ],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": [
+        {
+          "name": "{\n  \"success\": true,\n  \"message\": { \"code\": \"G0000\", \"key\": \"success\" },\n  \"data\": {\n    \"state\": \"POST_LOGIN\",\n    \"upgradeBanner\": false,\n    \"forceUpgrade\": false,\n    \"avatar\": { \"avatarRef\": \"avatar-001\", \"isMasked\": false, \"nickname\": \"John Doe\" },\n    \"lastLoginTs\": \"2026-04-23T10:00:00Z\",\n    \"preferences\": {\n      \"defaultEcosystem\": \"BANKING\",\n      \"quickActions\": [\n        { \"id\": \"transfer\",  \"sequence\": 1 },\n        { \"id\": \"pay_bills\", \"sequence\": 2 },\n        { \"id\": \"top_up\",    \"sequence\": 3 }\n      ]\n    },\n    \"mda\": \"12,345.67\",\n    \"forYou\": [ { \"id\": \"promo-01\", \"title\": \"Spend & Win\", \"category\": \"PROMOTION\" } ]\n  },\n  \"metadata\": { \"responseTime\": 1768792982303 }\n}",
+          "type": "",
+          "length": "",
+          "mandatory": "",
+          "sample": "",
+          "description": ""
+        },
+        {
+          "name": "{\n  \"success\": true,\n  \"message\": { \"code\": \"G0000\", \"key\": \"success\" },\n  \"data\": {\n    \"state\": \"COOLING_OFF\",\n    \"upgradeBanner\": false,\n    \"forceUpgrade\": false,\n    \"avatar\": { \"avatarRef\": \"avatar-001\", \"isMasked\": true, \"nickname\": \"J*** D***\" },\n    \"lastLoginTs\": \"2026-04-23T10:00:00Z\",\n    \"coolingOff\": {\n      \"remainingPeriod\": \"24h 15m\",\n      \"reason\": \"DEVICE_CHANGE\",\n      \"unlockAt\": \"2026-04-24T11:00:00Z\"\n    },\n    \"preferences\": { \"defaultEcosystem\": \"BANKING\", \"quickActions\": [] },\n    \"mda\": \"****\",\n    \"forYou\": []\n  },\n  \"metadata\": { \"responseTime\": 1768792982303 }\n}",
+          "type": "",
+          "length": "",
+          "mandatory": "",
+          "sample": "",
+          "description": ""
+        },
+        {
+          "name": "{\n  \"success\": true,\n  \"message\": { \"code\": \"G0000\", \"key\": \"success\" },\n  \"data\": {\n    \"state\": \"PRE_LOGIN\",\n    \"upgradeBanner\": false,\n    \"forceUpgrade\": false,\n    \"avatar\": { \"avatarRef\": \"avatar-001\", \"isMasked\": true, \"nickname\": \"J*** D***\" },\n    \"lastLoginTs\": \"2026-04-23T10:00:00Z\",\n    \"preferences\": { \"defaultEcosystem\": \"BANKING\", \"quickActions\": [] },\n    \"mda\": \"****\",\n    \"forYou\": []\n  },\n  \"metadata\": { \"responseTime\": 1768792982303 }\n}",
+          "type": "",
+          "length": "",
+          "mandatory": "",
+          "sample": "",
+          "description": ""
+        },
+        {
+          "name": "{\n  \"success\": true,\n  \"message\": { \"code\": \"G0000\", \"key\": \"success\" },\n  \"data\": {\n    \"state\": \"PRE_BIND\",\n    \"upgradeBanner\": false,\n    \"forceUpgrade\": false,\n    \"avatar\": { \"avatarRef\": \"public-001\", \"isMasked\": true },\n    \"preferences\": {\n      \"defaultEcosystem\": \"BANKING\",\n      \"quickActions\": [\n        { \"id\": \"transfer\",  \"sequence\": 1 },\n        { \"id\": \"pay_bills\", \"sequence\": 2 }\n      ]\n    },\n    \"mda\": \"Log in to view balance\",\n    \"forYou\": [ { \"id\": \"promo-public-01\", \"title\": \"Welcome offer\" } ],\n  },\n  \"metadata\": { \"responseTime\": 1768792982303 }\n}",
+          "type": "",
+          "length": "",
+          "mandatory": "",
+          "sample": "",
+          "description": ""
+        },
+        {
+          "name": "Http Status Code",
+          "type": "Http Status Description",
+          "length": "",
+          "mandatory": "Remarks",
+          "sample": "",
+          "description": ""
+        }
+      ],
+      "request_sample": "GET  https://{IP}:{PORT}/v1/dashboard/state",
+      "response_sample": null
+    }
+  ]
+}
