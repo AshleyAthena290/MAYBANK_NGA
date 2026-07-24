@@ -1,0 +1,64 @@
+# Test Case Index
+# depappdashboarddddapidesignv1 - getLargeWidgetManagement
+# Generated: 2026-07-20T05:53:21.207Z
+---
+feature: depappdashboarddddapidesignv1
+apiName: getLargeWidgetManagement
+description: Test cases for getLargeWidgetManagement endpoint
+totalScenarios: 7
+scenarios:
+  - id: getLargeWidgetManagement-001-positive
+    title: 'GET https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/large-widget/ - Happy Path'
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getlargewidgetmanagement
+    priority: P1
+  - id: getLargeWidgetManagement-002-missing-auth
+    title: 'GET https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/large-widget/ - Missing Authentication'
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getLargeWidgetManagement-003-invalid-auth
+    title: 'GET https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/large-widget/ - Invalid Authentication'
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getLargeWidgetManagement-004-invalid-content-type
+    title: 'GET https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/large-widget/ - Invalid Content-Type'
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getLargeWidgetManagement-005-duplicate-correlation-id
+    title: 'GET https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/large-widget/ - Duplicate Correlation ID'
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getLargeWidgetManagement-006-request-timeout
+    title: 'GET https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/large-widget/ - Request Timeout'
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getLargeWidgetManagement-007-empty-request-body
+    title: 'GET https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/large-widget/ - Empty Request Body'
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-20T05:53:21.207Z'

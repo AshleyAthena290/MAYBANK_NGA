@@ -1,0 +1,64 @@
+# Test Case Index
+# ptscanandpaydddapispecv2working - ValidateDomesticScanPay
+# Generated: 2026-07-16T09:58:12.563Z
+---
+feature: ptscanandpaydddapispecv2working
+apiName: ValidateDomesticScanPay
+description: Test cases for ValidateDomesticScanPay endpoint
+totalScenarios: 7
+scenarios:
+  - id: ValidateDomesticScanPay-001-positive
+    title: POST /validate - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - validatedomesticscanpay
+    priority: P1
+  - id: ValidateDomesticScanPay-002-missing-auth
+    title: POST /validate - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: ValidateDomesticScanPay-003-invalid-auth
+    title: POST /validate - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: ValidateDomesticScanPay-004-invalid-content-type
+    title: POST /validate - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: ValidateDomesticScanPay-005-duplicate-correlation-id
+    title: POST /validate - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: ValidateDomesticScanPay-006-request-timeout
+    title: POST /validate - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: ValidateDomesticScanPay-007-empty-request-body
+    title: POST /validate - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-16T09:58:12.559Z'

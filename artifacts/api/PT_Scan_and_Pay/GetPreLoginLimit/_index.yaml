@@ -1,0 +1,64 @@
+# Test Case Index
+# ptscanandpaydddapispecv2working - GetPreLoginLimit
+# Generated: 2026-07-16T10:27:54.851Z
+---
+feature: ptscanandpaydddapispecv2working
+apiName: GetPreLoginLimit
+description: Test cases for GetPreLoginLimit endpoint
+totalScenarios: 7
+scenarios:
+  - id: GetPreLoginLimit-001-positive
+    title: GET /limit - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getpreloginlimit
+    priority: P1
+  - id: GetPreLoginLimit-002-missing-auth
+    title: GET /limit - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetPreLoginLimit-003-invalid-auth
+    title: GET /limit - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: GetPreLoginLimit-004-invalid-content-type
+    title: GET /limit - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: GetPreLoginLimit-005-duplicate-correlation-id
+    title: GET /limit - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: GetPreLoginLimit-006-request-timeout
+    title: GET /limit - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: GetPreLoginLimit-007-empty-request-body
+    title: GET /limit - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-16T10:27:54.845Z'

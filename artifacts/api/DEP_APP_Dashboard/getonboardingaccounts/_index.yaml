@@ -1,0 +1,64 @@
+# Test Case Index
+# depappdashboarddddapidesignv1 - Get_Onboarding_Accounts
+# Generated: 2026-07-20T05:51:43.389Z
+---
+feature: depappdashboarddddapidesignv1
+apiName: Get_Onboarding_Accounts
+description: Test cases for Get_Onboarding_Accounts endpoint
+totalScenarios: 7
+scenarios:
+  - id: Get_Onboarding_Accounts-001-positive
+    title: GET /accounts - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - get_onboarding_accounts
+    priority: P1
+  - id: Get_Onboarding_Accounts-002-missing-auth
+    title: GET /accounts - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: Get_Onboarding_Accounts-003-invalid-auth
+    title: GET /accounts - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: Get_Onboarding_Accounts-004-invalid-content-type
+    title: GET /accounts - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: Get_Onboarding_Accounts-005-duplicate-correlation-id
+    title: GET /accounts - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: Get_Onboarding_Accounts-006-request-timeout
+    title: GET /accounts - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: Get_Onboarding_Accounts-007-empty-request-body
+    title: GET /accounts - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-20T05:51:43.388Z'

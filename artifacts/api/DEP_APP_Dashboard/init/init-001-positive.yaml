@@ -1,0 +1,243 @@
+# BDD Test Case - depappdashboarddddapidesignv1
+# Generated for: GET /init - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: init-001-positive
+title: GET /init - Happy Path
+feature: depappdashboarddddapidesignv1
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - init
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/init'
+  endpoint: 'https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/init'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784526712329
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    'GET  https: //{IP}:{PORT}/dep/dashboard/v1/init': <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    data: Object
+    appVersion: Object
+    latestAppVersion: String
+    minAppVersion: String
+    dashboardVersion: Object
+    checksum: String
+    entryPoint: String
+    minVersion: String
+    name: String
+    version: String
+    endpoint: String
+    isEnabled: Boolean
+    sectionName: String
+    platform: String
+    minPlatformVersion: String
+  expectedFields:
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.appVersion
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: appVersion'
+      parentField: data
+    - fieldPath: data.appVersion.latestAppVersion
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: latestAppVersion'
+      parentField: data.appVersion
+    - fieldPath: data.appVersion.minAppVersion
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: minAppVersion'
+      parentField: data.appVersion
+    - fieldPath: data.dashboardVersion
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: dashboardVersion'
+      parentField: data
+    - fieldPath: data.dashboardVersion.checksum
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: checksum'
+      parentField: data.dashboardVersion
+    - fieldPath: data.dashboardVersion.entryPoint
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: entryPoint'
+      parentField: data.dashboardVersion
+    - fieldPath: data.dashboardVersion.minVersion
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: minVersion'
+      parentField: data.dashboardVersion
+    - fieldPath: data.dashboardVersion.name
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: name'
+      parentField: data.dashboardVersion
+    - fieldPath: data.dashboardVersion.version
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: version'
+      parentField: data.dashboardVersion
+    - fieldPath: data.endpoint
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: endpoint'
+      parentField: data
+    - fieldPath: data.endpoint[].endpoint
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: endpoint'
+      parentField: data.endpoint[]
+    - fieldPath: data.endpoint[].isEnabled
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: isEnabled'
+      parentField: data.endpoint[]
+    - fieldPath: data.endpoint[].sectionName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: sectionName'
+      parentField: data.endpoint[]
+    - fieldPath: data.platform
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: platform'
+      parentField: data
+    - fieldPath: data.platform[].minPlatformVersion
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: minPlatformVersion'
+      parentField: data.platform[]
+    - fieldPath: data.platform[].platform
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: platform'
+      parentField: data.platform[]
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'String'
+    type: field-type
+    target: message
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: init
+  sourceRows: ''
+  apiSpecFile: init

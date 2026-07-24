@@ -1,0 +1,323 @@
+{
+  "total_apis": 21,
+  "apis": [
+    {
+      "sheet_name": "Get_Onboarding_Accounts",
+      "service": "Get_Onboarding_Accounts",
+      "description": "API to retrieve user's account listing to be set as primary during apps onboarding",
+      "business_rule": "System to retrieve user's deposit account from downstream BTS. If user don't have deposit account, system proceed to retrieve user's credit card lists from downstream BTS",
+      "method": "GET",
+      "url": "/wealth/v1/onboarding/accounts",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": [
+        {
+          "name": "Http Status Code",
+          "type": "Http Status Description",
+          "length": "",
+          "mandatory": "Remarks",
+          "sample": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "sheet_name": "getDashboardState",
+      "service": "getDashboardState",
+      "description": "Retrieve aggregated App Dashboard response based on resolved state (POST_LOGIN / COOLING_OFF / PRE_LOGIN / PRE_BIND).",
+      "business_rule": "Istio Ingress forwards the call to NGA Channel Layer. Channel Layer resolves the state from token introspect + device binding + customerClass + regFlags, runs a version check against NGBO, then composes the response (applying Proxy/Masking for pre-login / cooling-off). Pre-login and public snapshots are cached in Hazelcast (TTL 5 / 10 min).",
+      "method": "GET",
+      "url": "/v1/dashboard/state",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": []
+    },
+    {
+      "sheet_name": "init",
+      "service": "init",
+      "description": "API to validate current supported version of Platform and Apps",
+      "business_rule": "Validate current configured supported version in Channel Layer with current installed version in NGA Apps.\nValidate current configured supported Platform version in Channel Layer with current platform version client devices.",
+      "method": "GET",
+      "url": "https:////{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/init",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": [
+        {
+          "name": "Http Status Code",
+          "type": "Http Status Description",
+          "length": "",
+          "mandatory": "Remarks",
+          "sample": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "sheet_name": "getMenu",
+      "service": "getMenu",
+      "description": "API to get the menu configuration for the application",
+      "business_rule": "This API is supported by L0, L1, and L3 tokens. All token levels return the same menu configuration response",
+      "method": "GET",
+      "url": "https:////{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/menu",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": []
+    },
+    {
+      "sheet_name": "getUserHeader",
+      "service": "getUserHeader",
+      "description": "API to get user header information",
+      "business_rule": "This API supports L0, L1, and L3 tokens:\nL0 returns the user state and basic user profile (avatar (Profile Picture), class, and nickname).\nL1 returns the user state, action nudge information, notification status, and user profile (avatar (Profile Picture), class, class level, last login, and nickname).\nL3 returns the user state, action nudge information, notification status, and user profile (avatar (Profile Picture), class, class level, last login, and nickname).",
+      "method": "GET",
+      "url": "https:////{IP}:{PORT}/dep/dashboard/v1/user-header",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": [
+        {
+          "name": "200",
+          "type": "OK",
+          "length": "",
+          "mandatory": "Indicates API response is good",
+          "sample": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "sheet_name": "getActionList",
+      "service": "getActionList",
+      "description": "API to get user action list",
+      "business_rule": "This API supports L0 and L3 tokens:\nL0 will return the action list and action nudge count.\nL3 will return the available user actions with action details and action nudge count.",
+      "method": "GET",
+      "url": "https:////{IP}:{PORT}/dep/dashboard/v1/action-list",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": [
+        {
+          "name": "Http Status Code",
+          "type": "Http Status Description",
+          "length": "",
+          "mandatory": "Remarks",
+          "sample": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "sheet_name": "getTempBanner",
+      "service": "getTempBanner",
+      "description": null,
+      "business_rule": null,
+      "method": "GET",
+      "url": "https:////{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/temp-banner",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": []
+    },
+    {
+      "sheet_name": "getMainPreview",
+      "service": "getMainPreview",
+      "description": "API to get User Main Preview",
+      "business_rule": "This API supports L0, L1, and L3 tokens:\nPRE_BIND will return user state only.\nPRE_LOGIN will return user state only.\nPOST_LOGIN will return account summary information including account type, balance, outstanding balance, and other account details.",
+      "method": "GET",
+      "url": "/dep/dashboard/v1/main-preview",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": [
+        {
+          "name": "Http Status Code",
+          "type": "Http Status Description",
+          "length": "",
+          "mandatory": "Remarks",
+          "sample": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "sheet_name": "getForYouTiles",
+      "service": "getForYouTiles",
+      "description": null,
+      "business_rule": null,
+      "method": "GET",
+      "url": "https:////{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/for-you-tiles",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": []
+    },
+    {
+      "sheet_name": "getQuickActions",
+      "service": "getQuickActions",
+      "description": null,
+      "business_rule": null,
+      "method": "GET",
+      "url": "https:////{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/quick-actions",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": []
+    },
+    {
+      "sheet_name": "getSmallWidget",
+      "service": "getSmallWidget",
+      "description": null,
+      "business_rule": null,
+      "method": "GET",
+      "url": "https:////{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/small-widget",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": []
+    },
+    {
+      "sheet_name": "getMediumWidget",
+      "service": "getMediumWidget",
+      "description": null,
+      "business_rule": null,
+      "method": "GET",
+      "url": "https:////{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/medium-widget",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": []
+    },
+    {
+      "sheet_name": "getLargeWidget",
+      "service": "getLargeWidget",
+      "description": null,
+      "business_rule": null,
+      "method": "GET",
+      "url": "https:////{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/large-widget",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": []
+    },
+    {
+      "sheet_name": "getHomeDashboardManagement",
+      "service": "getHomeDashboardManagement",
+      "description": null,
+      "business_rule": null,
+      "method": "GET",
+      "url": "https:////{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/home-dashboard",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": []
+    },
+    {
+      "sheet_name": "updateHomeDashboardManagement",
+      "service": "updateHomeDashboardManagement",
+      "description": null,
+      "business_rule": null,
+      "method": "POST",
+      "url": "https:////{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/home-dashboard",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": []
+    },
+    {
+      "sheet_name": "getMainPreviewManagement",
+      "service": "getMainPreviewManagement",
+      "description": null,
+      "business_rule": null,
+      "method": "GET",
+      "url": "https:////{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/main-preview",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": []
+    },
+    {
+      "sheet_name": "updateMainPreviewManagement",
+      "service": "updateMainPreviewManagement",
+      "description": null,
+      "business_rule": null,
+      "method": "PUT",
+      "url": "https:////{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/main-preview",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": []
+    },
+    {
+      "sheet_name": "getQuickActionsManagement",
+      "service": "getQuickActionsManagement",
+      "description": null,
+      "business_rule": null,
+      "method": "GET",
+      "url": "https:////{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": []
+    },
+    {
+      "sheet_name": "updateQuickActionsManagement",
+      "service": "updateQuickActionsManagement",
+      "description": null,
+      "business_rule": null,
+      "method": "POST",
+      "url": "https:////{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/quick-action/",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": []
+    },
+    {
+      "sheet_name": "getLargeWidgetManagement",
+      "service": "getLargeWidgetManagement",
+      "description": null,
+      "business_rule": null,
+      "method": "GET",
+      "url": "https:////{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/large-widget/",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": []
+    },
+    {
+      "sheet_name": "updateLargeWidgetManagement",
+      "service": "updateLargeWidgetManagement",
+      "description": null,
+      "business_rule": null,
+      "method": "PUT",
+      "url": "https:////{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/large-widget",
+      "message_type": "JSON",
+      "headers": [],
+      "body_params": [],
+      "query_params": [],
+      "response_fields": []
+    }
+  ]
+}

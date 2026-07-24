@@ -1,0 +1,317 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /submit - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: SubmitCashWithdrawal-001-positive
+title: POST /submit - Happy Path
+feature: ptscanandpaydddapispecv2working
+description: 'Submits the Cardless Withdrawal transaction to downstream after successful S2U authorization. Performs final limit validation, routes transaction to ESB eChannelServices based on withdrawal type (On-Us: DE003 26XX00 > Vynamic Payment > Systematics, Off-Us: DE003 41XX00 > Vynamic Payment > TCICO). Stores transaction result in Hazelcast txn_flow cache, updates limit asynchronously, triggers MBPNS notification, and sends fraud monitoring data to FMS.'
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - submitcashwithdrawal
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/submit
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/submit
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784197473643
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    txnRef: <value>
+    idempotencyKey: <value>
+    debitAccountNo: <value>
+    sofCurrency: <value>
+    withdrawalAmount: <value>
+    currency: <value>
+    amount: <value>
+    withdrawalType: <value>
+    atmTerminalId: <value>
+    deviceId: <value>
+    authToken: <value>
+    ? "{\n  \"txnRef\": \"QW-20251003-001234\",\n  \"idempotencyKey\": \"c8f1b0d0-3d12-4f8e-9e56-7fdb5d88a123\",\n  \"debitAccountNo\": \"514013314526\",\n  \"sofCurrency\": \"IDR\",\n  \"withdrawalAmount\": {\n    \"currency\": \"IDR\",\n    \"amount\": 100000.00\n  },\n  \"withdrawalType\": \"ON_US\",\n  \"atmTerminalId\": \"RX23ADA\",\n  \"deviceId\": \"DEVICE-ABC-123\",\n  \"authToken\": \"S2U-AUTH-TOKEN-XYZ\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    txnRef: String
+    status: String
+    postingRef: String
+    timestamp: String
+    withdrawalAmount: Object
+    currency: String
+    amount: Integer
+    serviceFee: Object
+    totalAmount: Object
+    atmInfo: Object
+    terminalId: String
+    atmName: String
+    atmAddress: String
+    sofAccountNumber: String
+    sofAccountName: String
+    referenceId: String
+    errorCode: 'Null'
+    errorMessage: 'Null'
+  expectedFields:
+    - fieldPath: txnRef
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: txnRef'
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: postingRef
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: postingRef'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: withdrawalAmount
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: withdrawalAmount'
+    - fieldPath: withdrawalAmount.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: withdrawalAmount
+    - fieldPath: withdrawalAmount.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: withdrawalAmount
+    - fieldPath: serviceFee
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: serviceFee'
+    - fieldPath: serviceFee.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: serviceFee
+    - fieldPath: serviceFee.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: serviceFee
+    - fieldPath: totalAmount
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: totalAmount'
+    - fieldPath: totalAmount.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: totalAmount
+    - fieldPath: totalAmount.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: totalAmount
+    - fieldPath: atmInfo
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: atmInfo'
+    - fieldPath: atmInfo.terminalId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: terminalId'
+      parentField: atmInfo
+    - fieldPath: atmInfo.atmName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: atmName'
+      parentField: atmInfo
+    - fieldPath: atmInfo.atmAddress
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: atmAddress'
+      parentField: atmInfo
+    - fieldPath: sofAccountNumber
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: sofAccountNumber'
+    - fieldPath: sofAccountName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: sofAccountName'
+    - fieldPath: referenceId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: referenceId'
+    - fieldPath: errorCode
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: errorCode'
+    - fieldPath: errorMessage
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: errorMessage'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'txnRef' exists in response
+    type: field-exists
+    target: txnRef
+  - description: Field 'txnRef' is of type 'String'
+    type: field-type
+    target: txnRef
+    expectedValue: String
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'postingRef' exists in response
+    type: field-exists
+    target: postingRef
+  - description: Field 'postingRef' is of type 'String'
+    type: field-type
+    target: postingRef
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'withdrawalAmount' exists in response
+    type: field-exists
+    target: withdrawalAmount
+  - description: Field 'withdrawalAmount' is of type 'Object'
+    type: field-type
+    target: withdrawalAmount
+    expectedValue: Object
+  - description: Field 'serviceFee' exists in response
+    type: field-exists
+    target: serviceFee
+  - description: Field 'serviceFee' is of type 'Object'
+    type: field-type
+    target: serviceFee
+    expectedValue: Object
+  - description: Field 'totalAmount' exists in response
+    type: field-exists
+    target: totalAmount
+  - description: Field 'totalAmount' is of type 'Object'
+    type: field-type
+    target: totalAmount
+    expectedValue: Object
+  - description: Field 'atmInfo' exists in response
+    type: field-exists
+    target: atmInfo
+  - description: Field 'atmInfo' is of type 'Object'
+    type: field-type
+    target: atmInfo
+    expectedValue: Object
+  - description: Field 'sofAccountNumber' exists in response
+    type: field-exists
+    target: sofAccountNumber
+  - description: Field 'sofAccountNumber' is of type 'String'
+    type: field-type
+    target: sofAccountNumber
+    expectedValue: String
+  - description: Field 'sofAccountName' exists in response
+    type: field-exists
+    target: sofAccountName
+  - description: Field 'sofAccountName' is of type 'String'
+    type: field-type
+    target: sofAccountName
+    expectedValue: String
+  - description: Field 'referenceId' exists in response
+    type: field-exists
+    target: referenceId
+  - description: Field 'referenceId' is of type 'String'
+    type: field-type
+    target: referenceId
+    expectedValue: String
+  - description: Field 'errorCode' exists in response
+    type: field-exists
+    target: errorCode
+  - description: Field 'errorCode' is of type 'Null'
+    type: field-type
+    target: errorCode
+    expectedValue: 'Null'
+  - description: Field 'errorMessage' exists in response
+    type: field-exists
+    target: errorMessage
+  - description: Field 'errorMessage' is of type 'Null'
+    type: field-type
+    target: errorMessage
+    expectedValue: 'Null'
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: SubmitCashWithdrawal
+  sourceRows: ''
+  apiSpecFile: SubmitCashWithdrawal

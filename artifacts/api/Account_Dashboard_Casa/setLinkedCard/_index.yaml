@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipseaccount-dashboardcasadddapidesignv1workshop - setLinkedCard
+# Generated: 2026-07-17T06:48:02.431Z
+---
+feature: eclipseaccount-dashboardcasadddapidesignv1workshop
+apiName: setLinkedCard
+description: Test cases for setLinkedCard endpoint
+totalScenarios: 7
+scenarios:
+  - id: setLinkedCard-001-positive
+    title: POST /linked-card - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - setlinkedcard
+    priority: P1
+  - id: setLinkedCard-002-missing-auth
+    title: POST /linked-card - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: setLinkedCard-003-invalid-auth
+    title: POST /linked-card - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: setLinkedCard-004-invalid-content-type
+    title: POST /linked-card - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: setLinkedCard-005-duplicate-correlation-id
+    title: POST /linked-card - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: setLinkedCard-006-request-timeout
+    title: POST /linked-card - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: setLinkedCard-007-empty-request-body
+    title: POST /linked-card - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T06:48:02.427Z'

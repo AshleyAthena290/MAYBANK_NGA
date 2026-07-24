@@ -1,0 +1,64 @@
+# Test Case Index
+# depappdashboarddddapidesignv1 - getMainPreview
+# Generated: 2026-07-20T05:52:17.469Z
+---
+feature: depappdashboarddddapidesignv1
+apiName: getMainPreview
+description: Test cases for getMainPreview endpoint
+totalScenarios: 7
+scenarios:
+  - id: getMainPreview-001-positive
+    title: GET /main-preview - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getmainpreview
+    priority: P1
+  - id: getMainPreview-002-missing-auth
+    title: GET /main-preview - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getMainPreview-003-invalid-auth
+    title: GET /main-preview - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getMainPreview-004-invalid-content-type
+    title: GET /main-preview - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getMainPreview-005-duplicate-correlation-id
+    title: GET /main-preview - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getMainPreview-006-request-timeout
+    title: GET /main-preview - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getMainPreview-007-empty-request-body
+    title: GET /main-preview - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-20T05:52:17.466Z'

@@ -1,0 +1,67 @@
+# BDD Test Case - depappdashboarddddapidesignv1
+# Generated for: GET /small-widget - Missing Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getSmallWidget-002-missing-auth
+title: GET /small-widget - Missing Authentication
+feature: depappdashboarddddapidesignv1
+description: Request without authentication credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/small-widget'
+  endpoint: 'https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/small-widget'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers: {}
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    Request Parameter: <value>
+    ecosystem: <value>
+    'GET  https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/small-widget?ecosystem=banking': <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized - Authentication required
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+      description: Error code
+    - fieldPath: message
+      type: String
+      mandatory: true
+      description: Error message
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Field 'error' exists and is of type String
+    type: field-type
+    target: error
+    expectedValue: String
+  - description: Error message indicates missing authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getSmallWidget
+  sourceRows: ''
+  apiSpecFile: getSmallWidget

@@ -1,0 +1,64 @@
+# Test Case Index
+# depappdashboarddddapidesignv1 - getMediumWidget
+# Generated: 2026-07-20T05:52:37.846Z
+---
+feature: depappdashboarddddapidesignv1
+apiName: getMediumWidget
+description: Test cases for getMediumWidget endpoint
+totalScenarios: 7
+scenarios:
+  - id: getMediumWidget-001-positive
+    title: GET /medium-widget - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getmediumwidget
+    priority: P1
+  - id: getMediumWidget-002-missing-auth
+    title: GET /medium-widget - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getMediumWidget-003-invalid-auth
+    title: GET /medium-widget - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getMediumWidget-004-invalid-content-type
+    title: GET /medium-widget - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getMediumWidget-005-duplicate-correlation-id
+    title: GET /medium-widget - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getMediumWidget-006-request-timeout
+    title: GET /medium-widget - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getMediumWidget-007-empty-request-body
+    title: GET /medium-widget - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-20T05:52:37.843Z'

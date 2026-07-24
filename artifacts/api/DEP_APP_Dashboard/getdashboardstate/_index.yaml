@@ -1,0 +1,64 @@
+# Test Case Index
+# depappdashboarddddapidesignv1 - getDashboardState
+# Generated: 2026-07-20T05:51:47.948Z
+---
+feature: depappdashboarddddapidesignv1
+apiName: getDashboardState
+description: Test cases for getDashboardState endpoint
+totalScenarios: 7
+scenarios:
+  - id: getDashboardState-001-positive
+    title: GET /state - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getdashboardstate
+    priority: P1
+  - id: getDashboardState-002-missing-auth
+    title: GET /state - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getDashboardState-003-invalid-auth
+    title: GET /state - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getDashboardState-004-invalid-content-type
+    title: GET /state - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getDashboardState-005-duplicate-correlation-id
+    title: GET /state - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getDashboardState-006-request-timeout
+    title: GET /state - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getDashboardState-007-empty-request-body
+    title: GET /state - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-20T05:51:47.947Z'

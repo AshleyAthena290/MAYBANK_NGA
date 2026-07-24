@@ -1,0 +1,75 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: GET /setting?journeyType={journeyType} - Duplicate Correlation ID
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: GetPrimaryAccountSetting-005-duplicate-correlation-id
+title: GET /setting?journeyType={journeyType} - Duplicate Correlation ID
+feature: ptscanandpaydddapispecv2working
+description: Same request with duplicate correlation ID should be idempotent
+tags:
+  - edge-case
+  - idempotency
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+  - First request with correlation ID has been processed
+testData: {}
+request:
+  method: GET
+  url: https://{Payment-IP}:{Payment-PORT}/qr/v1/primary-account/setting?journeyType={journeyType}
+  endpoint: https://{Payment-IP}:{Payment-PORT}/qr/v1/primary-account/setting?journeyType={journeyType}
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: duplicate-correlation-123
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body: {}
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: 'Null'
+    data: Object
+    journeyType: String
+    primaryAccount: Object
+    accountId: String
+    accountType: String
+    accountName: String
+    accountNumber: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 (or 202 for idempotent)
+    type: custom
+  - description: Same response as first request
+    type: custom
+  - description: No duplicate processing occurred
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: GetPrimaryAccountSetting
+  sourceRows: ''
+  apiSpecFile: GetPrimaryAccountSetting

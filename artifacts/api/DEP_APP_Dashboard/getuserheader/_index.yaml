@@ -1,0 +1,64 @@
+# Test Case Index
+# depappdashboarddddapidesignv1 - getUserHeader
+# Generated: 2026-07-20T05:52:01.855Z
+---
+feature: depappdashboarddddapidesignv1
+apiName: getUserHeader
+description: Test cases for getUserHeader endpoint
+totalScenarios: 7
+scenarios:
+  - id: getUserHeader-001-positive
+    title: GET /user-header - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getuserheader
+    priority: P1
+  - id: getUserHeader-002-missing-auth
+    title: GET /user-header - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getUserHeader-003-invalid-auth
+    title: GET /user-header - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getUserHeader-004-invalid-content-type
+    title: GET /user-header - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getUserHeader-005-duplicate-correlation-id
+    title: GET /user-header - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getUserHeader-006-request-timeout
+    title: GET /user-header - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getUserHeader-007-empty-request-body
+    title: GET /user-header - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-20T05:52:01.853Z'

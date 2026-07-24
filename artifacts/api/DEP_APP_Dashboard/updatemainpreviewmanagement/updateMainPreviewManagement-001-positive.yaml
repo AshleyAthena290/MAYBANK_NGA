@@ -1,0 +1,254 @@
+# BDD Test Case - depappdashboarddddapidesignv1
+# Generated for: PUT /main-preview - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: updateMainPreviewManagement-001-positive
+title: PUT /main-preview - Happy Path
+feature: depappdashboarddddapidesignv1
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - updatemainpreviewmanagement
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: PUT
+  url: 'https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/main-preview'
+  endpoint: 'https: //{EXP-IP}:{EXP-PORT}/dep/dashboard/v1/management/main-preview'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784526784856
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    ecosystem: <value>
+    aggregationType: <value>
+    Request Parameter: <value>
+    ? "{\n     \"ecosystem\": \"banking\",\n    \"mainPreviewId\": \"total_balance\"\n }"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: 'Null'
+    data: Array<Object>
+    '[]': Array<Object>
+    aggregationType: String
+    accountType: String
+    accountName: String
+    cmsReferenceKey: String
+    label: String
+    isEnabled: Boolean
+    balance: Integer
+    outstandingBalance: Integer
+    currency: String
+    isSelected: Boolean
+    hasGlobalAccessAccount: Boolean
+    error: 'Null'
+    meta: Object
+  expectedFields:
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: correlationId
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: correlationId'
+    - fieldPath: data
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: data'
+    - fieldPath: data.[]
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: Array of items
+      parentField: data
+    - fieldPath: data[].aggregationType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: aggregationType'
+      parentField: data[]
+    - fieldPath: data[].accountType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountType'
+      parentField: data[]
+    - fieldPath: data[].accountName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountName'
+      parentField: data[]
+    - fieldPath: data[].cmsReferenceKey
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: cmsReferenceKey'
+      parentField: data[]
+    - fieldPath: data[].label
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: label'
+      parentField: data[]
+    - fieldPath: data[].isEnabled
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: isEnabled'
+      parentField: data[]
+    - fieldPath: data[].balance
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: balance'
+      parentField: data[]
+    - fieldPath: data[].outstandingBalance
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: outstandingBalance'
+      parentField: data[]
+    - fieldPath: data[].currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: data[]
+    - fieldPath: data[].isSelected
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: isSelected'
+      parentField: data[]
+    - fieldPath: data[].hasGlobalAccessAccount
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: hasGlobalAccessAccount'
+      parentField: data[]
+    - fieldPath: error
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: error'
+    - fieldPath: meta
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: meta'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'String'
+    type: field-type
+    target: message
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'correlationId' exists in response
+    type: field-exists
+    target: correlationId
+  - description: Field 'correlationId' is of type 'Null'
+    type: field-type
+    target: correlationId
+    expectedValue: 'Null'
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Array<Object>'
+    type: field-type
+    target: data
+    expectedValue: Array<Object>
+  - description: Field 'error' exists in response
+    type: field-exists
+    target: error
+  - description: Field 'error' is of type 'Null'
+    type: field-type
+    target: error
+    expectedValue: 'Null'
+  - description: Field 'meta' exists in response
+    type: field-exists
+    target: meta
+  - description: Field 'meta' is of type 'Object'
+    type: field-type
+    target: meta
+    expectedValue: Object
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: updateMainPreviewManagement
+  sourceRows: ''
+  apiSpecFile: updateMainPreviewManagement

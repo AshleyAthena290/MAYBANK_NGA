@@ -1,0 +1,62 @@
+# BDD Test Case - eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+# Generated for: GET /instalment-conversion - Invalid Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getInstalmentConversionSchedule-003-invalid-auth
+title: GET /instalment-conversion - Invalid Authentication
+feature: eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+description: Request with invalid credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/external/credit-card/instalment-conversion'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/external/credit-card/instalment-conversion'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784268039154
+    Authorization: Bearer invalid_token_12345
+  pathParams: {}
+  queryParams: {}
+  body:
+    cardNumber: <value>
+    Request Parameter: <value>
+    ? "GET https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/external/credit-card/instalment-conversion\n\n{\n    \"cardNumber\": \"4047760034916300\"\n}"
+    : <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized - Invalid credentials
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Error message indicates invalid authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getInstalmentConversionSchedule
+  sourceRows: ''
+  apiSpecFile: getInstalmentConversionSchedule

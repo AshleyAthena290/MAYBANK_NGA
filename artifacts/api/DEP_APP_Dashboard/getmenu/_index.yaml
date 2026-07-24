@@ -1,0 +1,64 @@
+# Test Case Index
+# depappdashboarddddapidesignv1 - getMenu
+# Generated: 2026-07-20T05:51:56.894Z
+---
+feature: depappdashboarddddapidesignv1
+apiName: getMenu
+description: Test cases for getMenu endpoint
+totalScenarios: 7
+scenarios:
+  - id: getMenu-001-positive
+    title: GET /menu - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getmenu
+    priority: P1
+  - id: getMenu-002-missing-auth
+    title: GET /menu - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getMenu-003-invalid-auth
+    title: GET /menu - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getMenu-004-invalid-content-type
+    title: GET /menu - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getMenu-005-duplicate-correlation-id
+    title: GET /menu - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getMenu-006-request-timeout
+    title: GET /menu - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getMenu-007-empty-request-body
+    title: GET /menu - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-20T05:51:56.891Z'

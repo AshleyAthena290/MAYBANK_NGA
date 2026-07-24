@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipseaccount-dashboarddebitcarddddapidesignv1workshop - debitCardReplacementChargeRule
+# Generated: 2026-07-17T05:23:19.323Z
+---
+feature: eclipseaccount-dashboarddebitcarddddapidesignv1workshop
+apiName: debitCardReplacementChargeRule
+description: Test cases for debitCardReplacementChargeRule endpoint
+totalScenarios: 7
+scenarios:
+  - id: debitCardReplacementChargeRule-001-positive
+    title: GET /replacement-charge-rules - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - debitcardreplacementchargerule
+    priority: P1
+  - id: debitCardReplacementChargeRule-002-missing-auth
+    title: GET /replacement-charge-rules - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: debitCardReplacementChargeRule-003-invalid-auth
+    title: GET /replacement-charge-rules - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: debitCardReplacementChargeRule-004-invalid-content-type
+    title: GET /replacement-charge-rules - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: debitCardReplacementChargeRule-005-duplicate-correlation-id
+    title: GET /replacement-charge-rules - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: debitCardReplacementChargeRule-006-request-timeout
+    title: GET /replacement-charge-rules - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: debitCardReplacementChargeRule-007-empty-request-body
+    title: GET /replacement-charge-rules - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T05:23:19.319Z'

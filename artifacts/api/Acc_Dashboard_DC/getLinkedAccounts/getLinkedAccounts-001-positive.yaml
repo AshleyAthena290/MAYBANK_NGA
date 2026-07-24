@@ -1,0 +1,242 @@
+# BDD Test Case - eclipseaccount-dashboarddebitcarddddapidesignv1workshop
+# Generated for: GET /linked-accounts - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getLinkedAccounts-001-positive
+title: GET /linked-accounts - Happy Path
+feature: eclipseaccount-dashboarddebitcarddddapidesignv1workshop
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - getlinkedaccounts
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/external/accounts/debit-card/account-id/{accountId}/linked-accounts'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/external/accounts/debit-card/account-id/{accountId}/linked-accounts'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784261122256
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    accountId: <value>
+    'GET https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/external/accounts/debit-card/account-id/1111222233334444/linked-accounts': <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    code: String
+    message: String
+    timestamp: String
+    correlationId: 'Null'
+    data: Object
+    accountId: String
+    linkedAccounts: Array<Object>
+    currency: String
+    isPrimary: Boolean
+    productCode: String
+    sequence: Integer
+    type: String
+    error: 'Null'
+    meta: Object
+  expectedFields:
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: code
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: code'
+    - fieldPath: message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: correlationId
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: correlationId'
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.accountId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountId'
+      parentField: data
+    - fieldPath: data.linkedAccounts
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: linkedAccounts'
+      parentField: data
+    - fieldPath: data.linkedAccounts[].accountId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountId'
+      parentField: data.linkedAccounts[]
+    - fieldPath: data.linkedAccounts[].currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: data.linkedAccounts[]
+    - fieldPath: data.linkedAccounts[].isPrimary
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: isPrimary'
+      parentField: data.linkedAccounts[]
+    - fieldPath: data.linkedAccounts[].productCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: productCode'
+      parentField: data.linkedAccounts[]
+    - fieldPath: data.linkedAccounts[].sequence
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: sequence'
+      parentField: data.linkedAccounts[]
+    - fieldPath: data.linkedAccounts[].type
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: type'
+      parentField: data.linkedAccounts[]
+    - fieldPath: data.status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+      parentField: data
+    - fieldPath: error
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: error'
+    - fieldPath: meta
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: meta'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'code' exists in response
+    type: field-exists
+    target: code
+  - description: Field 'code' is of type 'String'
+    type: field-type
+    target: code
+    expectedValue: String
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'String'
+    type: field-type
+    target: message
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'correlationId' exists in response
+    type: field-exists
+    target: correlationId
+  - description: Field 'correlationId' is of type 'Null'
+    type: field-type
+    target: correlationId
+    expectedValue: 'Null'
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+  - description: Field 'error' exists in response
+    type: field-exists
+    target: error
+  - description: Field 'error' is of type 'Null'
+    type: field-type
+    target: error
+    expectedValue: 'Null'
+  - description: Field 'meta' exists in response
+    type: field-exists
+    target: meta
+  - description: Field 'meta' is of type 'Object'
+    type: field-type
+    target: meta
+    expectedValue: Object
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getLinkedAccounts
+  sourceRows: ''
+  apiSpecFile: getLinkedAccounts

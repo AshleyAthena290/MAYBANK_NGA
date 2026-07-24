@@ -1,0 +1,60 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /init - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: InitCashWithdrawal-004-invalid-content-type
+title: POST /init - Invalid Content-Type
+feature: ptscanandpaydddapispecv2working
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: '{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/init'
+  endpoint: '{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/init'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784197422579
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    qrPayload: <value>
+    deviceId: <value>
+    customerCif: <value>
+    accessId: <value>
+    ? "{\n  \"qrPayload\": \"00020101021226580014ID.CO.BRI.WWW01189360001500000000002020403UBE03041234520454099000,00530336054061000005802ID5914MAYBANK ATM ID6013JAKARTA PUSAT61051234062070703RX23ADA6304ABCD\",\n  \"deviceId\": \"DEVICE-ABC-123\",\n  \"customerCif\": \"000784756\",\n  \"accessId\": \"5264782000027873\"\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InitCashWithdrawal
+  sourceRows: ''
+  apiSpecFile: InitCashWithdrawal

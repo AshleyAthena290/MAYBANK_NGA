@@ -1,93 +1,59 @@
-# API Test Case Generation Prompt
+You are a QA/API Test Engineer. Using the attached DDD (Design Detail Document) file 
+"DEP_App_Dashboard_DDD_API_Design_v1", generate a complete set of API Validation Test Cases.
 
-## Role
+CONTEXT:
+- Reference document: DEP_App_Dashboard_DDD_API_Design_v1
+- Scope: Validate all APIs defined in this DDD, including endpoints, request/response schemas, 
+  field-level validations, business rules, error handling, and status codes described in the document.
 
-You are a Senior QA Engineer with expertise in API testing, banking systems, and test case design.
+OUTPUT STRUCTURE (please follow exactly):
 
-## Objective
+1. TEST SUMMARY
+   - Total number of APIs covered
+   - Total number of test cases (positive + negative)
+   - List of APIs/endpoints identified from the DDD
+   - Key validation areas covered (e.g., field validation, authentication, business logic, 
+     data type checks, boundary conditions, error handling)
+   - Any assumptions made where the DDD is ambiguous or incomplete
 
-Generate comprehensive API test cases and test data based on the API specification provided.
+2. DETAILED TEST CASES
+   For EACH API/endpoint in the DDD, provide test cases in a table with these columns:
+   - Test Case ID (e.g., TC_API01_001)
+   - Test Case Title
+   - Test Type (Positive / Negative)
+   - Test Category (e.g., Field Validation, Auth, Business Rule, Boundary, Error Handling)
+   - Pre-conditions
+   - Test Steps
+   - Input Data / Request Payload (sample JSON if applicable)
+   - Expected Result (including expected HTTP status code and response body/error message)
+   - Priority (High/Medium/Low)
 
-## Input Files
+REQUIREMENTS FOR TEST CASE COVERAGE:
+Positive test cases:
+   - Valid request with all mandatory fields
+   - Valid request with optional fields included
+   - Valid boundary values (min/max length, min/max numeric range)
+   - Valid data type formats as per DDD spec
 
-* **API Design Document:** `ECLIPSE_Account Dashboard_Credit_Card_DDD_API_Design_v1_Workshop.xlsx`
-* **Reference Test Case Format:** `PT_Local_Transfer_Test_Cases.md` and `PT_Local_Transfer_Test_Cases_2026-07-15.xlsx`
-* **Reference Test Data Format:** `PT_Local_Transfer_Test_Data_2026-07-15.xlsx`
+Negative test cases:
+   - Missing mandatory fields
+   - Invalid data types (e.g., string in numeric field)
+   - Invalid formats (e.g., wrong date format, invalid email)
+   - Out-of-range / boundary violations (below min, above max)
+   - Invalid/expired/missing authentication token
+   - Duplicate record submission (if applicable)
+   - Invalid enum/status values
+   - Special characters/SQL injection/XSS payloads in input fields
+   - Empty payload / malformed JSON
+   - Unauthorized access / incorrect role permissions
+   - Incorrect HTTP method usage
+   - Rate limiting / throttling behavior (if defined in DDD)
 
-## Task
+FORMAT:
+- Present the Test Summary first, then Detailed Test Cases grouped by API/endpoint.
+- Use a markdown and excel table for test cases.
+- Keep language clear and testable (no vague expected results).
+- If any validation rule is not explicitly stated in the DDD, flag it as "Assumption" rather 
+  than guessing silently.
 
-Analyze the API Design document and generate a complete set of API test cases using the same structure, layout, naming convention, and level of detail as the reference files.
-
-### Test Case Requirements
-
-Generate test cases for every API endpoint defined in the API Design document. The test cases should include, where applicable:
-
-* Test Case ID
-* Test Scenario
-* Test Objective
-* API Name
-* HTTP Method
-* Endpoint
-* Preconditions
-* Request Headers
-* Path Parameters
-* Query Parameters
-* Request Body
-* Test Steps
-* Expected Results
-* Expected HTTP Status Code
-* Business Validation
-* Priority
-* Test Type (Positive/Negative)
-* Requirement or API Reference
-
-### Test Coverage
-
-Ensure the generated test cases cover:
-
-* Positive scenarios
-* Negative scenarios
-* Mandatory field validation
-* Optional field validation
-* Input validation
-* Boundary value testing
-* Invalid data types
-* Invalid values
-* Empty and null values
-* Authentication and authorization validation
-* Response validation
-* HTTP status code validation
-* Error handling
-* Business rule validation
-* Integration scenarios (if applicable)
-
-## Test Data
-
-Generate a corresponding test data document using the same format and column structure as `PT_Local_Transfer_Test_Data_2026-07-15.xlsx`.
-
-Each test data entry should map to its respective test case and include all required request values and expected results.
-
-## Output
-
-Produce the following deliverables:
-
-1. `\artifacts\Test_Case\Markdown\Account_Dashboard_Credit_Card_DDD_Test_Cases.md`
-
-   * Follow the exact structure and formatting of `PT_Local_Transfer_Test_Cases.md`.
-
-2. `\artifacts\Test_Case\Excel\Account_Dashboard_Credit_Card_DDD_Test_Cases.xlsx`
-    
-   * Follow the exact structure and formatting of `PT_Local_Transfer_Test_Cases_2026-07-15.xlsx`.
-
-2. `\artifacts\Test_Case\Excel\Account_Dashboard_Credit_Card_DDD_Test_Data.xlsx`
-
-   * Follow the exact structure and formatting of `PT_Local_Transfer_Test_Data_2026-07-15.xlsx`.
-
-## Additional Instructions
-
-* Use the reference files as templates for formatting and structure.
-* Do not omit any API or business rule described in the API Design document.
-* Generate both positive and negative test cases.
-* Ensure each test case has corresponding test data.
-* If any requirement is ambiguous or missing, clearly document the assumptions made.
-* Avoid duplicate or redundant test cases.
+Please generate the full output now based on the attached DDD file.

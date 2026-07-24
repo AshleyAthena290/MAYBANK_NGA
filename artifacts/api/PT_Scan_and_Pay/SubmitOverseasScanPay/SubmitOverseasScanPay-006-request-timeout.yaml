@@ -1,0 +1,66 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /submit - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: SubmitOverseasScanPay-006-request-timeout
+title: POST /submit - Request Timeout
+feature: ptscanandpaydddapispecv2working
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/submit
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/submit
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1784197306184
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    txnRef: <value>
+    journeyType: <value>
+    sourceAccountId: <value>
+    merchantAmount: <value>
+    merchantCurrency: <value>
+    finalIDRAmount: <value>
+    rateRefNo: <value>
+    cpan: <value>
+    authToken: <value>
+    promoCode: <value>
+    ? "{\n  \"txnRef\": \"QR-CB-20260509-001\",\n  \"journeyType\": \"CROSSBORDER\",\n  \"sourceAccountId\": \"514013314526\",\n  \"merchantAmount\": 38.50,\n  \"merchantCurrency\": \"MYR\",\n  \"finalIDRAmount\": 152175.15,\n  \"rateRefNo\": \"ALTO-REF-20260509-001\",\n  \"cpan\": \"60060012345678901\",\n  \"authToken\": \"S2U-AUTH-TOKEN-XYZ\",\n  \"promoCode\": null\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: SubmitOverseasScanPay
+  sourceRows: ''
+  apiSpecFile: SubmitOverseasScanPay

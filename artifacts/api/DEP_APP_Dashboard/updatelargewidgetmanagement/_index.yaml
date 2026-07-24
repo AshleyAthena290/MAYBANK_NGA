@@ -1,0 +1,64 @@
+# Test Case Index
+# depappdashboarddddapidesignv1 - updateLargeWidgetManagement
+# Generated: 2026-07-20T05:53:26.506Z
+---
+feature: depappdashboarddddapidesignv1
+apiName: updateLargeWidgetManagement
+description: Test cases for updateLargeWidgetManagement endpoint
+totalScenarios: 7
+scenarios:
+  - id: updateLargeWidgetManagement-001-positive
+    title: PUT /large-widget - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - updatelargewidgetmanagement
+    priority: P1
+  - id: updateLargeWidgetManagement-002-missing-auth
+    title: PUT /large-widget - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: updateLargeWidgetManagement-003-invalid-auth
+    title: PUT /large-widget - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: updateLargeWidgetManagement-004-invalid-content-type
+    title: PUT /large-widget - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: updateLargeWidgetManagement-005-duplicate-correlation-id
+    title: PUT /large-widget - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: updateLargeWidgetManagement-006-request-timeout
+    title: PUT /large-widget - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: updateLargeWidgetManagement-007-empty-request-body
+    title: PUT /large-widget - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-20T05:53:26.503Z'

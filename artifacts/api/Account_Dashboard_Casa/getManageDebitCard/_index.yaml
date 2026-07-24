@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipseaccount-dashboardcasadddapidesignv1workshop - getManageDebitCard
+# Generated: 2026-07-17T05:59:58.648Z
+---
+feature: eclipseaccount-dashboardcasadddapidesignv1workshop
+apiName: getManageDebitCard
+description: Test cases for getManageDebitCard endpoint
+totalScenarios: 7
+scenarios:
+  - id: getManageDebitCard-001-positive
+    title: GET /manage - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getmanagedebitcard
+    priority: P1
+  - id: getManageDebitCard-002-missing-auth
+    title: GET /manage - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getManageDebitCard-003-invalid-auth
+    title: GET /manage - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getManageDebitCard-004-invalid-content-type
+    title: GET /manage - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getManageDebitCard-005-duplicate-correlation-id
+    title: GET /manage - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getManageDebitCard-006-request-timeout
+    title: GET /manage - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getManageDebitCard-007-empty-request-body
+    title: GET /manage - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T05:59:58.647Z'
