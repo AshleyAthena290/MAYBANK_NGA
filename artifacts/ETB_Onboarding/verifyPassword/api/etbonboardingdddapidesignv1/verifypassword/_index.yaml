@@ -1,0 +1,64 @@
+# Test Case Index
+# etbonboardingdddapidesignv1 - verifyPassword
+# Generated: 2026-07-17T06:49:16.957Z
+---
+feature: etbonboardingdddapidesignv1
+apiName: verifyPassword
+description: Test cases for verifyPassword endpoint
+totalScenarios: 7
+scenarios:
+  - id: verifyPassword-001-positive
+    title: POST /verify-password - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - verifypassword
+    priority: P1
+  - id: verifyPassword-002-missing-auth
+    title: POST /verify-password - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: verifyPassword-003-invalid-auth
+    title: POST /verify-password - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: verifyPassword-004-invalid-content-type
+    title: POST /verify-password - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: verifyPassword-005-duplicate-correlation-id
+    title: POST /verify-password - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: verifyPassword-006-request-timeout
+    title: POST /verify-password - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: verifyPassword-007-empty-request-body
+    title: POST /verify-password - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-07-17T06:49:16.951Z'
