@@ -1,0 +1,351 @@
+schemaVersion: 2.0.0
+generatedAt: '2026-07-27T03:25:39.685Z'
+source: P&T_Local_Transfer_DDD_Screen_to_API_v1.xlsx
+feature: P&T Local Transfer (All Journeys)
+category: API Journey
+journey:
+  title: Manage Scheduled Transfers Settings
+  code: Manage_Scheduling
+  description: User views all the scheduled transfers and remove them if it is needed
+summary:
+  totalSteps: 3
+  totalApiRows: 4
+  hasS2UAuthentication: true
+  testCaseIdPrefix: TC_MSCHED
+keyApis:
+  - name: GetScheduledListing
+    method: GET
+    endpoint: pt/recurring/v1/external/transfer/listing
+    microservice: pt-recurring-management
+  - name: GetJourneyContent
+    method: GET
+    endpoint: cms/journeys/payment_transfer_schedule_recurring?locale=en_MY&channel=MOBILE
+    microservice: CMS
+  - name: GetScheduledDetails
+    method: GET
+    endpoint: pt/recurring/v1/external/transfer/{transactionRefId}
+    microservice: pt-recurring-management
+  - name: S2U Init and Verify Journey
+    method: S2U INIT AND VERIFY JOURNEY
+    endpoint: S2U Init and Verify Journey
+    microservice: S2U Init and Verify Journey
+steps:
+  - stepNo: '1'
+    screen: Scheduled/Recurring Transfer Listing
+    userAction: |-
+      User opens Scheduled Transfers page from the submenu of the transfer dashboard (Entry Point 1)
+
+      User opens Scheduled Transfers page from the Settings (Entry Point 2)
+    systemBehaviour: >-
+      On Page Loads
+
+      Load the list of scheduled transfer from SI.
+
+
+      Default to Individual tab and display a list of active scheduled & recurring individual transfers. 
+
+
+      Action/Button Behavior
+
+      Individual/Batch Tabs - Option to switch between individual (single transaction) or batch (bulk transaction) (For
+      this journey, we will be covering only Individual)
+
+      Search Bar - Refer to Business Rules.
+
+      Filter Icon - Display the filter screen. (Refer to Step 2)
+
+      Scheduled Transfer Cards - Tap on the cards to view further details regarding to the scheduled transfer. (Refer to
+      Step 3)
+    businessRules: |-
+      For searching scheduled/recurring transactions:
+      a. Searching will be based on the selected Tab (Individual or Batch).
+      b. Support wildcard search by entering minimum 3 characters.
+      c. Searching criteria:
+      (i) Individual Tab:
+      - Beneficiary Name
+      - Amount
+      (ii) Batch Tab:
+      - Batch Name
+      - Amount
+      c. Display listing:
+      (i) Sort & display nearest scheduled transaction date (Transfer Date or Start Date) first.
+      (ii) In the event transaction date is same, sorting is based on date created (earliest to latest).
+      d. If searching returns empty, display "We could not find a match" screen.
+    apis:
+      - name: GetScheduledListing
+        method: GET
+        endpoint: pt/recurring/v1/external/transfer/listing
+        testCaseId: TC_MSCHED_001a
+        requestSample: null
+        responseSample:
+          status: '200'
+          message: Success
+          timestamp: '2026-05-20T09:30:15'
+          correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+          meta: null
+          data:
+            page: 1
+            size: 20
+            total: 3
+            transfers:
+              - transactionRefId: PNT260520A1B2C3D4E5
+                creditAccountName: JOHN DOE
+                debitAccountNoMasked: '******7890'
+                amount: 1000
+                currency: IDR
+                frequencyCode: MONTHLY
+                startDate: '2026-03-01'
+                endDate: '2026-07-01'
+                numberOfTimes: 2
+          error: null
+        mapping: null
+        microservice: pt-recurring-management
+        businessContext: |-
+          For searching scheduled/recurring transactions:
+          a. Searching will be based on the selected Tab (Individual or Batch).
+          b. Support wildcard search by entering minimum 3 characters.
+          c. Searching criteria:
+          (i) Individual Tab:
+          - Beneficiary Name
+          - Amount
+          (ii) Batch Tab:
+          - Batch Name
+          - Amount
+          c. Display listing:
+          (i) Sort & display nearest scheduled transaction date (Transfer Date or Start Date) first.
+          (ii) In the event transaction date is same, sorting is based on date created (earliest to latest).
+          d. If searching returns empty, display "We could not find a match" screen.
+        downstream: ESB
+        remarks: For the ESB, pending on the SI side to provide downstream API to support viewing the listing.
+      - name: GetJourneyContent
+        method: GET
+        endpoint: cms/journeys/payment_transfer_schedule_recurring?locale=en_MY&channel=MOBILE
+        testCaseId: TC_MSCHED_001b
+        requestSample: null
+        responseSample:
+          journeyId: local_transfer_manage_scheduled_recurring_transfer
+          version: 1.0.0
+          screens:
+            - screenId: local_transfer_manage_scheduled_recurring_transfer_list
+              navigation:
+                tab:
+                  - id: individual
+                    label: Individual
+                  - id: batch
+                    label: Batch
+              core:
+                typo:
+                  - id: transfer
+                    value: Transfer
+              container:
+                card:
+                  - id: scheduledTransferCard
+                    items:
+                      - id: amount
+                        label: Amount
+                      - id: frequency
+                        label: Frequency
+                      - id: transferDate
+                        label: Transfer date
+                      - id: startDate
+                        label: Start date
+                      - id: endDate
+                        label: End date
+            - screenId: local_transfer_manage_scheduled_remove_recurring_transfer
+              core:
+                typo:
+                  - id: amount
+                    value: Amount
+              container:
+                list:
+                  - id: scheduledTransferList
+                    items:
+                      - id: refID
+                        label: Reference ID
+                      - id: dateOfCreation
+                        label: Date of Creation
+                      - id: frequency
+                        label: Frequency
+                      - id: transferDate
+                        label: Transfer date
+                      - id: startDate
+                        label: Start date
+                      - id: endDate
+                        label: End date
+                      - id: sourceOfFund
+                        label: Source of fund
+              action:
+                button:
+                  - id: cancel
+                    label: Cancel
+            - screenId: local_transfer_remove_recurring_final
+              asset:
+                image:
+                  - id: success
+                    url: https://res.cloudinary.com/deoklsh3h/image/upload/v1776057612/success.png
+                  - id: failure
+                    url: https://res.cloudinary.com/deoklsh3h/image/upload/v1776057612/failure.png
+              core:
+                typo:
+                  - id: successRecurring
+                    value: Recurring transfer cancelled
+                  - id: successScheduled
+                    value: Scheduled transfer cancelled
+                  - id: refId
+                    value: 'Ref ID:'
+                  - id: failure
+                    value: Update unsuccessful
+              container:
+                list:
+                  - id: accountDetails
+                    items:
+                      - id: accountHolderName
+                        label: Account holder name
+                      - id: account_number
+                        label: Account number
+                      - id: recipientBank
+                        label: Recipient bank
+                      - id: transactionType
+                        label: Transaction type
+          modals:
+            - modalId: local_transfer_remove_recurring_transfer
+              navigation:
+                navigationHeader:
+                  - id: removeRecurringTransfer
+                    title: Remove recurring transfer?
+              core:
+                typo:
+                  - id: message
+                    value: >-
+                      Any recurring transfers to this recipient will be stopped and no longer processed. You may start a
+                      new transfer to set it up again.
+              action:
+                button:
+                  - id: remove
+                    label: Remove
+                  - id: keep
+                    label: Keep
+        mapping: null
+        microservice: CMS
+        businessContext: |-
+          For searching scheduled/recurring transactions:
+          a. Searching will be based on the selected Tab (Individual or Batch).
+          b. Support wildcard search by entering minimum 3 characters.
+          c. Searching criteria:
+          (i) Individual Tab:
+          - Beneficiary Name
+          - Amount
+          (ii) Batch Tab:
+          - Batch Name
+          - Amount
+          c. Display listing:
+          (i) Sort & display nearest scheduled transaction date (Transfer Date or Start Date) first.
+          (ii) In the event transaction date is same, sorting is based on date created (earliest to latest).
+          d. If searching returns empty, display "We could not find a match" screen.
+  - stepNo: '2'
+    screen: Filtering tools for Scheduled/Recurring Transfer Listing
+    userAction: User is able to filter the list of scheduled transfers through the filtering tools.
+    systemBehaviour: |-
+      On Page Loads
+      Load the filtering options.
+
+      Action/Button Behavior
+      Accounts - User is allow to filter based on source account of the scheduled transfer.
+      Frequency - User is allow to filter based on the frequency type of the scheduled transfer.
+    businessRules: There will be no API needed to be called here, the FE will handles the filter.
+    apis:
+      - name: GetScheduledDetails
+        method: GET
+        endpoint: pt/recurring/v1/external/transfer/{transactionRefId}
+        testCaseId: TC_MSCHED_002a
+        requestSample: null
+        responseSample:
+          status: '200'
+          message: Success
+          timestamp: '2026-05-20T09:30:15'
+          correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+          meta: null
+          data:
+            transactionRefId: PNT260520A1B2C3D4E5
+            creditAccountName: JOHN DOE
+            creditAccountNo: '0987654321'
+            creditAccountBankName: Bank CIMB Niaga
+            debitAccountName: SAVINGS ACCOUNT
+            debitAccountNo: '1234567890'
+            amount: 1000
+            currency: IDR
+            frequencyCode: MONTHLY
+            startDate: '2026-01-01'
+            endDate: '2026-12-01'
+            numberOfTimes: 12
+            status: SCHEDULED
+          error: null
+        mapping: null
+        microservice: pt-recurring-management
+        businessContext: >-
+          Cancellation of Scheduled/Recurring Transaction:
+
+          1. Upon tapping [Cancel] at Scheduled/Recurring transaction details,
+
+          a. IF Transaction Frequency = Just Once. 
+
+          - System to prompt confirmation message "Cancel Scheduled Transfer?" with message"The scheduled transfer to
+          this recipient will be stopped and no longer processed. You need to start a new transfer to set it up again."
+
+          b. IF Recurring, i.e. Transaction Frequency = Weekly or Monthly. 
+
+          - System to prompt confirmation message "Cancel recurring transfer?" with message "Any recurring transfer to
+          this recipient will be stopped and no longer processed. You need to start a new transfer to set it up again."
+
+
+          2. Upon tapping [Cancel] at Scheduled/Recurring transaction details, and is closer to scheduled date,
+
+          a. IF Transaction Frequency = Just Once. 
+
+          - [Cancel] buttton is hidden. System displays blue box notes "This transfer is already being processed."
+
+          b. IF Recurring, i.e. Transaction Frequency = Weekly 
+
+          - System to prompt confirmation message "Cancel recurring transfer?" with message "Your transfer for this week
+          is already being processed. Cancelling will only stop future recurring transfers. You may start a new pament
+          to set it up again."
+
+          c. IF Recurring, i.e. Transaction Frequency = Monthly
+
+          - System to prompt confirmation message "Cancel recurring transfer?" with message "Your transfer for this
+          month is already being processed. Cancelling will only stop future recurring transfers. You may start a new
+          pament to set it up again."
+
+
+          3. Upon tapping [Cancel] button at Confirmation message, system to navigate to S2U authorisation screen.
+
+          4. Upon successful S2U authorisation, system will canel & remove upcoming scheduled transaction or recurring
+          transactions instruction (remove the series), navigate to Status End Screen. 
+
+          a. If successful, display "Scheduled transfer cancelled" or "Recurring transfer cancelled".
+
+          b. If failed, display "Update unsuccessful"
+
+
+          For the full details regarding to the closer date calculation, please refer to the FSD.
+        downstream: >-
+          ESB:TerminateRecurring(Transfer) (Please refer to ESB Payment Transfer ESB Mapping Excel, Sheet:
+          TerminateRecurring(Transfer))
+        remarks: For the ESB, pending on the SI side to provide downstream API to support viewing the details.
+  - stepNo: S2U Init and Verify Journey
+    screen: S2U Init and Verify Journey
+    userAction: S2U Init and Verify Journey
+    systemBehaviour: S2U Init and Verify Journey
+    businessRules: S2U Init and Verify Journey
+    apis:
+      - name: S2U Init and Verify Journey
+        method: S2U INIT AND VERIFY JOURNEY
+        endpoint: S2U Init and Verify Journey
+        testCaseId: TC_MSCHED_002a
+        requestSample: S2U Init and Verify Journey
+        responseSample: S2U Init and Verify Journey
+        mapping: null
+        microservice: S2U Init and Verify Journey
+        businessContext: S2U Init and Verify Journey
+        downstream: S2U Init and Verify Journey
+        remarks: S2U Init and Verify Journey

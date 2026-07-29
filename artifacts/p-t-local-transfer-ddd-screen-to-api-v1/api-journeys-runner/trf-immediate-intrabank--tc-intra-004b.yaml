@@ -1,0 +1,109 @@
+id: TC_INTRA_004b
+title: 4. Input Amount - IntraPreMonetaryCheck
+feature: 3rd Party Account Transfer (Immediate)
+journey: Trf_Immediate_Intrabank
+stepNo: '4'
+screen: Input Amount
+userAction: User enters amount
+request:
+  method: POST
+  url: pt/intrabank/v1/external/pre-check
+  endpoint: pt/intrabank/v1/external/pre-check
+  headers:
+    Accept: application/json
+  body:
+    transferType: THIRD_PARTY_TRANSFER
+    creditAccountSource: NEW
+    creditAccountBankCode: MBB
+    creditAccountNo: '1234567890'
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: '200'
+    message: Success
+    timestamp: '2026-05-20T09:35:10'
+    correlationId: f7a1c89e-b456-4321-9988-776655443322
+    meta: null
+    data:
+      preCheckId: 59c47913-6f73-4aea-81f3-0ddbe83ec5f4
+      creditAccount:
+        creditAccountNo: '1234567890'
+        creditAccountType: SA
+        creditAccountName: ALI BIN ABU
+        creditAccountBankCode: MBB
+        creditAccountCurrency: IDR
+        isFavourite: false
+      limits:
+        productCode: INTRABANK_THIRD_PARTY
+        dailyLimit: 30000
+        dailyLimitRemaining: 15000
+        dailylimitCurrency: IDR
+    error: null
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: Transfer Amount - Remaining Limit:
+
+      a. New Transfer & Bene Listing
+
+      When entering amount, to check if remaining user daily limit (include the entered amount) hits > 70% of the
+      defined limit (Settings > Intrabank Transfer):
+
+      (i) "IDR - IDR" 
+
+      - display "Remaining limit IDR 999,999" with Manage limit hyperlink (refer to screen).
+
+      (ii) "IDR - FCY" & "FCY - IDR" 
+
+      - to calculate remaining limit using latest FOREX and display in IDR. 
+
+      (ii) "FCY - FCY", "FCY - xFCY" 
+
+      - xxx
+
+
+      Transfer Amount - Account Limit Checking:
+
+      System to display notes above amount field for below, but able to proceed:
+
+      a. If transaction amount exceeds user's daily remaining limit, display "Amount cannot exceed your remaining
+      limit".
+
+      b. If transaction amount exceeds SoF Account Balance, display "Amount should not exceed your account balance.".
+
+
+      When tap [Next] to proceed, perform validation:
+
+      1. Fields validation & all validation mentioned above
+
+      2. SoF Account eligibility (refer to Table 1 - SoF Eligibility Check). If SoF account is NOT eligible to perform
+      transfer, system displays toastbar message "This account is unable to make this transfer. Select another account."
+
+      3. Minimum per Transaction Limit:
+
+      a. Minimum transaction amount (from NGBO, basically is IDR10,000) for all transfer mode. If does not meet, display
+      inline error message "Minimum amount is IDR <min limit based on transfer mode>"
+
+
+      4. Daily Limit by Transfer Mode (from Settings) 
+
+      a. If exceeds, display warning message "Amount cannot exceed your remaining limit" (but can proceed).
+
+
+      5. SoF Balance Checking
+
+      a. If amount > SoF account balance, display warning message "Amount should not exceed your account balance." (but
+      can proceed)
+
+
+      6. If user tap [Next] button while not resolving the error, displays toastbar error message "Please resolve all
+      errors to proceed".
+
+
+      Once successful, system to redirect to Transfer Details screen.
+    type: custom
+references:
+  apiSpecFile: IntraPreMonetaryCheck
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Trf_Immediate_Intrabank

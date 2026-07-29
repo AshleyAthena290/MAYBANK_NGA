@@ -1,0 +1,76 @@
+id: TC_SETUPBIO_001a
+title: 1. Open Biometric Setup During Onboarding - Cerebro
+feature: ETB Setup Biometric Onboarding
+journey: Setup Biometric
+stepNo: '1'
+screen: Open Biometric Setup During Onboarding
+userAction: User Setup Biometric
+request:
+  method: POST
+  url: /identity/cerebro/v1/user/biometric
+  endpoint: /identity/cerebro/v1/user/biometric
+  headers:
+    Accept: application/json
+    X-MB-Authorization: NGAID260703094512_1001
+  body:
+    biometricType: FACE_ID
+    publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwlZfQ8Q5z3Z1nY1VZ6nZ
+    signedChallenge: BASE64_SIGNATURE
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: Request processed successfully
+    timestamp: '2026-01-13T12:00:00+07:00'
+    correlationId: null
+    data:
+      transactionId: 20260516-000001
+      biometricEnabled: true
+      registeredAt: '2026-05-16T10:30:00+07:00'
+    error: null
+    meta: null
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: Entry point:
+
+      1. Setup Biometric is triggered during onboarding after Primary Account setup.
+
+      2. Post-onboarding biometric setting is managed via Settings screen only.
+
+      3. If device does not support biometric or biometric is not configured at OS level, this screen cannot be
+      triggered.
+
+
+      Proceed button:
+
+      1. Upon proceeding, trigger device-native biometric permission / authentication.
+
+      2. If native biometric is disabled, navigate user to native device Settings screen to enable OS-level biometric.
+
+
+      Native biometric authentication:
+
+      1. If user taps Don’t Allow, close permission screen and return to Enable Biometric screen.
+
+      2. If user allows, open native biometric authentication.
+
+      3. Android supports face and fingerprint based on device capability.
+
+      4. iOS supports Face ID.
+
+      5. Attempt count follows native device biometric attempt limit.
+
+      6. If biometric authentication fails and reaches native max attempt, navigate to unsuccessful status screen.
+
+      7. If user cancels authentication, return to Enable Biometric screen.
+
+      8. If authentication succeeds, continue biometric registration.
+
+      9. If biometric setup fails due to system error, navigate to unsuccessful status screen.
+    type: custom
+references:
+  apiSpecFile: Cerebro
+  sourceWorksheet: ETB Onboarding Screen API Mapping (All Journeys) / Setup Biometric

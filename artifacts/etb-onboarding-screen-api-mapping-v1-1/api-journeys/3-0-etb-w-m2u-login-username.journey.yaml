@@ -1,0 +1,86 @@
+schemaVersion: 2.0.0
+generatedAt: '2026-07-27T06:52:54.096Z'
+source: ETB_Onboarding_Screen_API_Mapping_v1.1.xlsx
+feature: ETB Onboarding Screen API Mapping (All Journeys)
+category: API Journey
+journey:
+  title: ETB w M2U Login Username
+  code: 3.0 ETB - w M2U Login Username
+  description: ''
+summary:
+  totalSteps: 1
+  totalApiRows: 1
+  hasS2UAuthentication: false
+  testCaseIdPrefix: TC_30ETBWM2
+keyApis:
+  - name: Cerebro
+    method: POST
+    endpoint: /identity/cerebro/v1/user/verify-username
+    microservice: Cerebro
+steps:
+  - stepNo: '1'
+    screen: Enter Username
+    userAction: User enter username
+    systemBehaviour: N/A
+    businessRules: |-
+      Username Field 
+      1. Format Validation 
+      - Must be less than or equal to 20 characters and not empty. Disallow further input if more than 20 
+      - Cannot contain special characters or <Space> 
+      2. Copy and Paste is not allowed
+      3. If empty, show "Required field"
+
+      Next Button 
+      1. Always Enabled 
+      2. Field Validation: 
+      - Mandatory check: If username field empty and click Next button, then display inline error ("Required Field.") 
+      3. Navigate to Login - Confirm Security Image screen
+    apis:
+      - name: Cerebro
+        method: POST
+        endpoint: /identity/cerebro/v1/user/verify-username
+        testCaseId: TC_30ETBWM2_001a
+        requestSample: |-
+          {
+           "username": "Azmanmbb9", 
+          }
+        responseSample: |-
+          {
+           "status": 200,
+           "message": "Request processed successfully",
+           "timestamp": "2026-01-13T12:00:00",
+           "meta": null
+           "data": {
+           "securityImage": {
+           "imageId": "img_001",
+           "imagePath": "/security-images/img_001.png"
+           },
+           }
+          }
+        mapping: null
+        microservice: Cerebro
+        businessContext: >-
+          Username Field 
+
+          1. Format Validation 
+
+          - Must be less than or equal to 20 characters and not empty. Disallow further input if more than 20 
+
+          - Cannot contain special characters or <Space> 
+
+          2. Copy and Paste is not allowed
+
+          3. If empty, show "Required field"
+
+
+          Next Button 
+
+          1. Always Enabled 
+
+          2. Field Validation: 
+
+          - Mandatory check: If username field empty and click Next button, then display inline error ("Required
+          Field.") 
+
+          3. Navigate to Login - Confirm Security Image screen
+        downstream: OLM

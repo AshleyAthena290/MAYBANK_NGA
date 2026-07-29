@@ -1,0 +1,978 @@
+schemaVersion: 2.0.0
+generatedAt: '2026-07-27T03:25:39.685Z'
+source: P&T_Local_Transfer_DDD_Screen_to_API_v1.xlsx
+feature: P&T Local Transfer (All Journeys)
+category: API Journey
+journey:
+  title: 3rd Party Account Transfer (Immediate)
+  code: Trf_Immediate_Intrabank
+  description: User transfer money to the other party account within the same internal bank ecosystem
+summary:
+  totalSteps: 10
+  totalApiRows: 7
+  hasS2UAuthentication: true
+  testCaseIdPrefix: TC_INTRA
+keyApis:
+  - name: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+    method: PLEASE REFER TO THE MANAGE_DASHBOARD SHEETS FOR THE FULL DETAILS OF THE TRANSFER DASHBOARD
+    endpoint: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+    microservice: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+  - name: GetPtMaintenanceBankListing
+    method: GET
+    endpoint: pt/maintenance/v1/external/transfers/banks
+    microservice: pt-maintenance
+  - name: S2U Init and Verify Journey
+    method: S2U INIT AND VERIFY JOURNEY
+    endpoint: S2U Init and Verify Journey
+    microservice: S2U Init and Verify Journey
+  - name: GetSourceAccountList
+    method: GET
+    endpoint: pt/intrabank/v1/external/source-accounts
+    microservice: pt-intrabank-transfer
+  - name: IntraPreMonetaryCheck
+    method: POST
+    endpoint: pt/intrabank/v1/external/pre-check
+    microservice: pt-intrabank-transfer
+  - name: InitiateIntraTransfer
+    method: POST
+    endpoint: pt/intrabank/v1/external/initiate
+    microservice: pt-intrabank-transfer
+  - name: ExecuteIntraTransfer
+    method: POST
+    endpoint: pt/intrabank/v1/external/execute
+    microservice: pt-intrabank-transfer
+steps:
+  - stepNo: '1'
+    screen: Transfer Dashboard
+    userAction: |-
+      User initiates the new transfer from the dashboard
+
+      Frequent/Favourite/Custom Added Bene Transfer will be covered in Trf_Fav_Bene_Freq_Transfer.
+    systemBehaviour: >-
+      On Page Loads
+
+      Load the list of All List on the dashboard (Please refer to the next column for the criteria)
+
+
+      Action/Button Behavior
+
+      Local/Overseas Tabs - Option to switch between local or overseas transfer (Overseas requirement will be covered on
+      the next batch)
+
+      Search Bar - Wildcard search on the account list (Please refer to Manage_Dashboard sheet)
+
+      Beneficiary Category Tabs - Switching on the account categories (Please refer to Manage_Dashboard sheet)
+
+      List of Accounts - Tapping on one of the account from All list will start the Intrabank/Interbank Transfer Journey
+      (Refer to the step 3)
+
+      [+ Transfer ] Button - Upon tapping yellow [+] button, display banks selection drawer for initiating a new
+      transfer by account number.
+    businessRules: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+    apis:
+      - name: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+        method: PLEASE REFER TO THE MANAGE_DASHBOARD SHEETS FOR THE FULL DETAILS OF THE TRANSFER DASHBOARD
+        endpoint: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+        testCaseId: TC_INTRA_001a
+        requestSample: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+        responseSample: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+        mapping: null
+        microservice: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+        businessContext: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+        downstream: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+        remarks: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+  - stepNo: '2'
+    screen: Bank list
+    userAction: User selects the internal bank (Maybank)
+    systemBehaviour: >-
+      On Page Loads
+
+      Display the List of Banks (Please refer to the next column for the listing criteria)
+
+
+      Action/Button Behavior
+
+      List of Banks - Tapping on Maybank will start the Intrabank Transfer Journey 
+
+
+      Search Bar - Wildcard Bank search on Bank Name will be performed once user has entered 3 characters(Please refer
+      to the next column for the searching criteria).
+    businessRules: >-
+      "Transfer to/Select Bank drawer"" Category Tabs
+
+      1. Search & Listing - Wildcard Bank search on Bank Name will be performed once user has entered 3 characters. 
+
+      2. Search to include alias/tags (to be maintained in NGBO - Bank List). E.g. user types ""Bank Central"" or
+      ""BCA"", system will match and list Bank Central Asia. 
+
+      3. Listing will be displayed as below:
+
+      a. Maybank will be first in list.
+
+      b. Banks - list top 10 banks and follow by remaining bank list sorted in ascending order (A-Z, 0-9). 
+
+      4. Banks with status = Offline (configured in NGBO)
+
+      a. Display label ""Service offline"" (without affecting the sorting & display sequence).
+
+      b. Selection is disabled.
+
+      5. If search returns empty, display "We couldn't find a match for <input value>".
+    apis:
+      - name: GetPtMaintenanceBankListing
+        method: GET
+        endpoint: pt/maintenance/v1/external/transfers/banks
+        testCaseId: TC_INTRA_002a
+        requestSample: null
+        responseSample:
+          status: '200'
+          message: Success
+          timestamp: '2026-05-20T09:30:15'
+          correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+          meta: null
+          data:
+            banks:
+              - bankCode: BCA
+                bankName: Bank Central Asia
+                alias: BCA
+                mode:
+                  - code: BI_FAST
+                    name: BI_FAST
+                    bankCode: XXX
+                  - code: ONLINE_TRANSFER
+                    name: ONLINE_TRANSFER
+                    bankCode: XXX
+                  - code: SKNBI
+                    name: SKNBI
+                    bankCode: XXX
+                  - code: RTGS
+                    name: RTGS
+                    bankCode: XXX
+              - bankCode: BNI
+                bankName: Bank Negara Indonesia
+                alias: BNI
+                mode:
+                  - code: ONLINE_TRANSFER
+                    name: ONLINE_TRANSFER
+                    bankCode: XXX
+                  - code: SKNBI
+                    name: SKNBI
+                    bankCode: XXX
+                  - code: RTGS
+                    name: RTGS
+                    bankCode: XXX
+          error: null
+        mapping: null
+        microservice: pt-maintenance
+        businessContext: >-
+          "Transfer to/Select Bank drawer"" Category Tabs
+
+          1. Search & Listing - Wildcard Bank search on Bank Name will be performed once user has entered 3 characters. 
+
+          2. Search to include alias/tags (to be maintained in NGBO - Bank List). E.g. user types ""Bank Central"" or
+          ""BCA"", system will match and list Bank Central Asia. 
+
+          3. Listing will be displayed as below:
+
+          a. Maybank will be first in list.
+
+          b. Banks - list top 10 banks and follow by remaining bank list sorted in ascending order (A-Z, 0-9). 
+
+          4. Banks with status = Offline (configured in NGBO)
+
+          a. Display label ""Service offline"" (without affecting the sorting & display sequence).
+
+          b. Selection is disabled.
+
+          5. If search returns empty, display "We couldn't find a match for <input value>".
+        downstream: |-
+          NGBO (P&T)
+          - TBL_MT_BANK
+          - TBL_MT_BANK_RAIL
+          - TBL_MT_PRODUCT_CATALOG
+          - TBL_MT_TRF_MODE
+  - stepNo: S2U Init and Verify Journey
+    screen: S2U Init and Verify Journey
+    userAction: S2U Init and Verify Journey
+    systemBehaviour: S2U Init and Verify Journey
+    businessRules: S2U Init and Verify Journey
+    apis:
+      - name: S2U Init and Verify Journey
+        method: S2U INIT AND VERIFY JOURNEY
+        endpoint: S2U Init and Verify Journey
+        testCaseId: TC_INTRA_002a
+        requestSample: S2U Init and Verify Journey
+        responseSample: S2U Init and Verify Journey
+        mapping: null
+        microservice: S2U Init and Verify Journey
+        businessContext: S2U Init and Verify Journey
+        downstream: S2U Init and Verify Journey
+        remarks: S2U Init and Verify Journey
+  - stepNo: '3'
+    screen: Enter Account No
+    userAction: User enters account no
+    systemBehaviour: |-
+      On Page Loads
+      Display the Input Account Number Page
+
+      Action/Button Behavior
+      Transfer [X] icon - Upon tapping [X], discard input and navigate to Transfer Landing Page.
+      [Next] button - Upon tapping [Next], navigate to Input Amount screen.
+    businessRules: >-
+      Field Validation
+
+      Transfer to
+
+      1. Pre-populated with selected Bank from Transfer to drawer.
+
+      2. If a new bank is selected, system clears the account number field.
+
+
+      Refer to Business Rules in Step 2 for details.
+
+      Account Number:
+
+      1. Upon tapping, system draws up phone's numeric keypad.
+
+      2. Upon tapping on Done on keypad, account number will be formatted & displayed.
+
+      4. Paste is supported for numeric only. Pasted alphabets and special characters will be removed from the field and
+      show only the numeric values.
+
+      5. For Maybank, accepts both CASA & VA. 
+
+
+      Business Rule:
+
+      Intrabank
+
+      1. Via [+Transfer], at "Input Acct No" page, when tap on [Next]:
+
+      a. Perform fields validation.
+
+      - If account number field is empty, display inline error message "Required field".
+
+      b. Perform an inquiry to check Account Type & retrieve Beneficiary Name. 
+
+      - If invalid account, display inline error "Please enter a valid account number"
+
+      c. If Bene Account Type = GAA, system to display "Select currency drawer", select currency option to proceed. If
+      Bene Account Type is not GAA, skip this step.
+
+      d. Display Input Amount page.
+    apis: []
+  - stepNo: '4'
+    screen: Input Amount
+    userAction: User enters amount
+    systemBehaviour: >-
+      On Page Load
+
+      System loads the Input Amount Page with Source and Beneficiary Details
+
+
+      Action/Button Behavior
+
+      [<] icon - 
+
+      Upon tapping back [<] icon:
+
+      1. Redirect back to input account number if previous entry point was new transfer (manual input).
+
+      2. Redirect back to Transfer Landing Page if previous entry point was from bene list.
+
+      [X] icon - Upon tapping [X], exit and redirect user to the Transfer Landing Page
+
+      [Change] button - Upon tapping [Change] button, display drawer containing selection of Source of Funds account
+      lists. Schedule or set recurring [toggle] - Options to trigger scheduling transfer, (Not covered in this scope)
+
+      [Next] button - Upon tapping [NEXT] button, navigate to Transfer details. Refer to Business rules for validation.
+    businessRules: >-
+      Transfer Amount - Remaining Limit:
+
+      a. New Transfer & Bene Listing
+
+      When entering amount, to check if remaining user daily limit (include the entered amount) hits > 70% of the
+      defined limit (Settings > Intrabank Transfer):
+
+      (i) "IDR - IDR" 
+
+      - display "Remaining limit IDR 999,999" with Manage limit hyperlink (refer to screen).
+
+      (ii) "IDR - FCY" & "FCY - IDR" 
+
+      - to calculate remaining limit using latest FOREX and display in IDR. 
+
+      (ii) "FCY - FCY", "FCY - xFCY" 
+
+      - xxx
+
+
+      Transfer Amount - Account Limit Checking:
+
+      System to display notes above amount field for below, but able to proceed:
+
+      a. If transaction amount exceeds user's daily remaining limit, display "Amount cannot exceed your remaining
+      limit".
+
+      b. If transaction amount exceeds SoF Account Balance, display "Amount should not exceed your account balance.".
+
+
+      When tap [Next] to proceed, perform validation:
+
+      1. Fields validation & all validation mentioned above
+
+      2. SoF Account eligibility (refer to Table 1 - SoF Eligibility Check). If SoF account is NOT eligible to perform
+      transfer, system displays toastbar message "This account is unable to make this transfer. Select another account."
+
+      3. Minimum per Transaction Limit:
+
+      a. Minimum transaction amount (from NGBO, basically is IDR10,000) for all transfer mode. If does not meet, display
+      inline error message "Minimum amount is IDR <min limit based on transfer mode>"
+
+
+      4. Daily Limit by Transfer Mode (from Settings) 
+
+      a. If exceeds, display warning message "Amount cannot exceed your remaining limit" (but can proceed).
+
+
+      5. SoF Balance Checking
+
+      a. If amount > SoF account balance, display warning message "Amount should not exceed your account balance." (but
+      can proceed)
+
+
+      6. If user tap [Next] button while not resolving the error, displays toastbar error message "Please resolve all
+      errors to proceed".
+
+
+      Once successful, system to redirect to Transfer Details screen.
+    apis:
+      - name: GetSourceAccountList
+        method: GET
+        endpoint: pt/intrabank/v1/external/source-accounts
+        testCaseId: TC_INTRA_004a
+        requestSample: null
+        responseSample:
+          status: '200'
+          message: Success
+          timestamp: '2026-05-20T09:30:15'
+          correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+          meta: null
+          data:
+            sourceAccounts:
+              - accountName: Global Access Account
+                accountNo: '514013314526'
+                accountType: SA
+                accountProductType: CONVENTIONAL
+                accountOwnership: INDIVIDUAL
+                accountStatus: ACTIVE
+                isPrimary: true
+                isMultiCurrency: true
+                totalEquivalentBalance:
+                  amount: 248512617.15
+                  currency: IDR
+                accounts:
+                  - currency: IDR
+                    rawAccountNo: 514013314526-001
+                    availableBalance: 98592617.15
+                    accountStatus: ACTIVE
+                  - currency: USD
+                    rawAccountNo: 514013314526-002
+                    availableBalance: 8200.5
+                    localEquivalentBalance:
+                      amount: 134520000
+                      currency: IDR
+                    accountStatus: ACTIVE
+                  - currency: SGD
+                    rawAccountNo: 514013314526-003
+                    availableBalance: 1250
+                    localEquivalentBalance:
+                      amount: 15400000
+                      currency: IDR
+                    accountStatus: INACTIVE
+              - accountName: Savings Account
+                accountNo: '164017833708'
+                accountType: SA
+                accountProductType: ISLAMIC
+                accountOwnership: INDIVIDUAL
+                accountStatus: ACTIVE
+                isPrimary: false
+                isMultiCurrency: false
+                totalEquivalentBalance:
+                  amount: 9261785
+                  currency: IDR
+                accounts:
+                  - currency: IDR
+                    rawAccountNo: '164017833708'
+                    availableBalance: 9261785
+                    accountStatus: ACTIVE
+          error: null
+        mapping: null
+        microservice: pt-intrabank-transfer
+        businessContext: >-
+          Transfer Amount - Remaining Limit:
+
+          a. New Transfer & Bene Listing
+
+          When entering amount, to check if remaining user daily limit (include the entered amount) hits > 70% of the
+          defined limit (Settings > Intrabank Transfer):
+
+          (i) "IDR - IDR" 
+
+          - display "Remaining limit IDR 999,999" with Manage limit hyperlink (refer to screen).
+
+          (ii) "IDR - FCY" & "FCY - IDR" 
+
+          - to calculate remaining limit using latest FOREX and display in IDR. 
+
+          (ii) "FCY - FCY", "FCY - xFCY" 
+
+          - xxx
+
+
+          Transfer Amount - Account Limit Checking:
+
+          System to display notes above amount field for below, but able to proceed:
+
+          a. If transaction amount exceeds user's daily remaining limit, display "Amount cannot exceed your remaining
+          limit".
+
+          b. If transaction amount exceeds SoF Account Balance, display "Amount should not exceed your account
+          balance.".
+
+
+          When tap [Next] to proceed, perform validation:
+
+          1. Fields validation & all validation mentioned above
+
+          2. SoF Account eligibility (refer to Table 1 - SoF Eligibility Check). If SoF account is NOT eligible to
+          perform transfer, system displays toastbar message "This account is unable to make this transfer. Select
+          another account."
+
+          3. Minimum per Transaction Limit:
+
+          a. Minimum transaction amount (from NGBO, basically is IDR10,000) for all transfer mode. If does not meet,
+          display inline error message "Minimum amount is IDR <min limit based on transfer mode>"
+
+
+          4. Daily Limit by Transfer Mode (from Settings) 
+
+          a. If exceeds, display warning message "Amount cannot exceed your remaining limit" (but can proceed).
+
+
+          5. SoF Balance Checking
+
+          a. If amount > SoF account balance, display warning message "Amount should not exceed your account balance."
+          (but can proceed)
+
+
+          6. If user tap [Next] button while not resolving the error, displays toastbar error message "Please resolve
+          all errors to proceed".
+
+
+          Once successful, system to redirect to Transfer Details screen.
+        downstream: |-
+          Own Account Inquiry:
+          Eclipse downsteam
+          URL: POST /erp//account/v1/own?accountGroup=CASA (Please refer to Eclipse Local Transfer API Spec)
+
+          Caching:
+          source-accounts:{userId}:interbank
+          TTL: 5 secs
+      - name: IntraPreMonetaryCheck
+        method: POST
+        endpoint: pt/intrabank/v1/external/pre-check
+        testCaseId: TC_INTRA_004b
+        requestSample:
+          transferType: THIRD_PARTY_TRANSFER
+          creditAccountSource: NEW
+          creditAccountBankCode: MBB
+          creditAccountNo: '1234567890'
+        responseSample:
+          status: '200'
+          message: Success
+          timestamp: '2026-05-20T09:35:10'
+          correlationId: f7a1c89e-b456-4321-9988-776655443322
+          meta: null
+          data:
+            preCheckId: 59c47913-6f73-4aea-81f3-0ddbe83ec5f4
+            creditAccount:
+              creditAccountNo: '1234567890'
+              creditAccountType: SA
+              creditAccountName: ALI BIN ABU
+              creditAccountBankCode: MBB
+              creditAccountCurrency: IDR
+              isFavourite: false
+            limits:
+              productCode: INTRABANK_THIRD_PARTY
+              dailyLimit: 30000
+              dailyLimitRemaining: 15000
+              dailylimitCurrency: IDR
+          error: null
+        mapping: null
+        microservice: pt-intrabank-transfer
+        businessContext: >-
+          Transfer Amount - Remaining Limit:
+
+          a. New Transfer & Bene Listing
+
+          When entering amount, to check if remaining user daily limit (include the entered amount) hits > 70% of the
+          defined limit (Settings > Intrabank Transfer):
+
+          (i) "IDR - IDR" 
+
+          - display "Remaining limit IDR 999,999" with Manage limit hyperlink (refer to screen).
+
+          (ii) "IDR - FCY" & "FCY - IDR" 
+
+          - to calculate remaining limit using latest FOREX and display in IDR. 
+
+          (ii) "FCY - FCY", "FCY - xFCY" 
+
+          - xxx
+
+
+          Transfer Amount - Account Limit Checking:
+
+          System to display notes above amount field for below, but able to proceed:
+
+          a. If transaction amount exceeds user's daily remaining limit, display "Amount cannot exceed your remaining
+          limit".
+
+          b. If transaction amount exceeds SoF Account Balance, display "Amount should not exceed your account
+          balance.".
+
+
+          When tap [Next] to proceed, perform validation:
+
+          1. Fields validation & all validation mentioned above
+
+          2. SoF Account eligibility (refer to Table 1 - SoF Eligibility Check). If SoF account is NOT eligible to
+          perform transfer, system displays toastbar message "This account is unable to make this transfer. Select
+          another account."
+
+          3. Minimum per Transaction Limit:
+
+          a. Minimum transaction amount (from NGBO, basically is IDR10,000) for all transfer mode. If does not meet,
+          display inline error message "Minimum amount is IDR <min limit based on transfer mode>"
+
+
+          4. Daily Limit by Transfer Mode (from Settings) 
+
+          a. If exceeds, display warning message "Amount cannot exceed your remaining limit" (but can proceed).
+
+
+          5. SoF Balance Checking
+
+          a. If amount > SoF account balance, display warning message "Amount should not exceed your account balance."
+          (but can proceed)
+
+
+          6. If user tap [Next] button while not resolving the error, displays toastbar error message "Please resolve
+          all errors to proceed".
+
+
+          Once successful, system to redirect to Transfer Details screen.
+        downstream: |-
+          Limit Inquiry: 
+          pt-limit-management
+          URL: GET /pt/limits/v1/internal/inquiry (Please refer to P&T Component API Spec)
+
+          Beneficiary Account Inquiry:
+          Eclipse downsteam
+          URL: POST /erp/beneficiary/v1/inquiry (Please refer to Eclipse Local Transfer API Spec)
+
+          Caching:
+          PRE_TXN: {preCheckId} (Please refer to the Caching section in the Local Transfer DDD Document)
+          TTL: 10 Mins
+          This caches all the beneficiary details.
+  - stepNo: '5'
+    screen: Change Source Account (Pop Up)
+    userAction: User change the source account (Optional)
+    systemBehaviour: |-
+      On Page Loads
+      System loads the source account listing in a pop up drawer.
+
+      Action/Button Behavior
+      Source Account - Tap one of the account to select it and return to previous page.
+    businessRules: >-
+      Transfer From (Source of Funds):
+
+      1. Retrieve & default to primary account (from Settings > Primary App Account).
+
+      2. User can tap on [Change] to change SoF. IF user changes the SoF account, it will not change/update the default
+      SoF for the subsequent transfers.
+
+      3. Transfer From Drawer: 
+
+      a. Retrieve list of user's account based on "Table 1 - SoF Eligibility Check in Local Transfer Journey FSD" 
+
+      b. Indicate Primary Account
+
+      3. IF user has only 1 SoF account, [Change] button will be hidden.
+    apis: []
+  - stepNo: '6'
+    screen: Transfer Details
+    userAction: User input the remark and recipient email (Optional)
+    systemBehaviour: >-
+      On Page Loads
+
+      System loads the Transfer Details Page with Source Account Details.
+
+
+      Action/Button Behavior
+
+      [<] icon - Upon tapping back [<] icon, redirect back to Input Amount screen.
+
+      [X] icon - Upon tapping [X], redirect to Transfer Landing Page
+
+
+      [Next] button - Upon tapping [Next], system to redirect to confirmation screen. Refer to business rules for more
+      details.
+    businessRules: >-
+      Upon tapping [Next], perform validation:
+
+      1. Fields validation checking & all validation mentioned above. 
+
+      - "Invalid Account", display toastbar error message: "Please enter a valid account number"
+
+      2. If validation passed, system to redirect user to Confirm screen.
+
+
+      For FCY:
+
+      1. IF [INTERBANK] FCY to IDR and amount > USD 10,000., system to redirect to Additional Details screen.
+
+      2. IF [INTRABANK] with FCY (Non-LCS) and amount > USD 10,000 or equivalent in other currencies, system to redirect
+      to Additional Details screen.
+
+      3. IF [INTRABANK] with FCY (Non-LCS) and transaction amount > USD 50,000 or equivalent in currencies per Month,
+      system to redirect to Additional Details screen.
+    apis: []
+  - stepNo: '7'
+    screen: Additional Details
+    userAction: User to fill down the additional details
+    systemBehaviour: |-
+      On Page Loads
+      System loads the Enter Additional details Page.
+
+      Action/Button Behavior
+      [X] icon - Upon tapping [X] icon, discard inputs and redirects to Transfer Landing screen.
+      [<] icon - Upon tapping the [<] icon, redirect to Transfer Details screen.
+      [Next] button - Upon tapping [Next] button, refer to business rules.
+    businessRules: >-
+      Additional Details is applicable based on the "LLD & FOREX Matrix - Additional Details required for conditions
+      below". 
+
+      This screen will be displayed if the conditions are met.
+
+
+      Refer to FSD 1.1.2.1(LLD & FOREX Matrix) for furthur details.
+    apis: []
+  - stepNo: '8'
+    screen: Review & Confirm
+    userAction: User reviews details and slide to Confirm
+    systemBehaviour: >-
+      On Page Loads
+
+      System loads the Confirmation Page.
+
+
+      Action/Button Behavior
+
+      Change Button - Upon tapping [Change] button, display drawer containing selection of Source of Funds account
+      lists.
+
+      Edit (Amount Details) - Redirect to the Input Amount Screen. 
+
+      Edit (Transaction Details) - Redirect to the Input Amount Screen.
+
+      Confirm Button - Upon tapping [Confirm] button, system will initiate the transfer. Refer to Business rules for
+      validation. (Refer to the Step No 6)
+    businessRules: >-
+      'Upon tapping [Confirm] button, system performs:
+
+      1. SoF Account eligibility (refer to Local Transfer FSD "Input Amt" > Table 1 - SoF Eligibility Check). If SoF
+      account is NOT eligible to perform transfer, system displays toastbar message "This account is unable to make this
+      transfer. Select another account."
+
+      2. Minimum amount per Transaction Limit:
+
+      a. Minimum transaction amount (from NGBO, basically is IDR10,000) for selected transfer mode. If does not meet,
+      display toastbar error message "Minimum amount is IDR <min limit based on transfer mode>"
+
+      (i) Own
+
+      (ii) Intrabank 
+
+      (iii) Interbank
+
+      3. Daily Limit by Transfer Mode (from Settings) - for INTERBANK & INTRABANK only
+
+      a. If exceeds, display toastbar error message "Amount cannot exceed your remaining limit" 
+
+      4. SoF Balance Checking
+
+      a. If amount > SoF available balance, display toastbar error message "Transaction amount cannot exceed you
+      available balance." 
+
+      5. Maximum per Transaction Limit:
+
+      a. Maximum transaction amount for selected transfer mode. If exceed, display toastbar error message "Transaction
+      amount cannot exceed your maximum transaction limit for this transfer mode."
+
+      (i) Own
+
+      (ii) Intrabank 
+
+      (iii) Interbank
+
+      6. If all above validation passed, navigate to Status End Screen.
+    apis:
+      - name: InitiateIntraTransfer
+        method: POST
+        endpoint: pt/intrabank/v1/external/initiate
+        testCaseId: TC_INTRA_008a
+        requestSample: |-
+          {
+           "preCheckId": "59c47913-6f73-4aea-81f3-0ddbe83ec5f4",
+           "transferType": "THIRD_PARTY_TRANSFER",
+           "debitAccountNo": "1234567890",
+           "debitAccountType": "SA",
+           "debitAccountCurrency": "IDR",
+           "creditAccountNo": "0987654321",
+           "creditAccountType": "SA",
+           "creditAccountBankCode": "MBB",
+           "creditAccountCurrency": "IDR",
+           "debitAmount": 150000.00,
+           "creditAmount": 150000.00,
+           "remark": "Monthly support",
+           "recipientEmail": "recipient@gmail.com",
+           "relationshipCode": "FRIEND",
+           "transactionCategoryCode": "PERSONAL",
+           "transactionDetailCode": "TD001",
+           "additionalDetailRemark" "Salary",
+           "schedule": {
+           "frequencyCode": "ONE_OFF",
+           "startDate": "2025-12-25"
+           }
+          }
+        responseSample:
+          status: '200'
+          message: Success
+          timestamp: '2026-05-20T09:30:15'
+          correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+          meta: null
+          data:
+            paymentOrderId: 01ARZ3NDEKTSV4RRFFQ69G5FAV
+            transactionStatus: INITIATED
+            createdAt: '2026-04-22T14:30:00+08:00'
+          error: null
+        mapping: null
+        microservice: pt-intrabank-transfer
+        businessContext: >-
+          'Upon tapping [Confirm] button, system performs:
+
+          1. SoF Account eligibility (refer to Local Transfer FSD "Input Amt" > Table 1 - SoF Eligibility Check). If SoF
+          account is NOT eligible to perform transfer, system displays toastbar message "This account is unable to make
+          this transfer. Select another account."
+
+          2. Minimum amount per Transaction Limit:
+
+          a. Minimum transaction amount (from NGBO, basically is IDR10,000) for selected transfer mode. If does not
+          meet, display toastbar error message "Minimum amount is IDR <min limit based on transfer mode>"
+
+          (i) Own
+
+          (ii) Intrabank 
+
+          (iii) Interbank
+
+          3. Daily Limit by Transfer Mode (from Settings) - for INTERBANK & INTRABANK only
+
+          a. If exceeds, display toastbar error message "Amount cannot exceed your remaining limit" 
+
+          4. SoF Balance Checking
+
+          a. If amount > SoF available balance, display toastbar error message "Transaction amount cannot exceed you
+          available balance." 
+
+          5. Maximum per Transaction Limit:
+
+          a. Maximum transaction amount for selected transfer mode. If exceed, display toastbar error message
+          "Transaction amount cannot exceed your maximum transaction limit for this transfer mode."
+
+          (i) Own
+
+          (ii) Intrabank 
+
+          (iii) Interbank
+
+          6. If all above validation passed, navigate to Status End Screen.
+        downstream: |-
+          No Downstream is needed.
+
+          Caching:
+          PRE_TXN: {preCheckId} will be expired here.
+
+          TXN:{paymentOrderId}
+          TTL: 15minutes
+          Transaction Payload, lifecycle state, payment order Id will be cached here.
+        remarks: |-
+          Lifecycle state:
+          -INITIATED
+
+          paymentOrderId is based on ULID
+  - stepNo: '9'
+    screen: Transfer Result
+    userAction: User view the transfer result screen. (S2U Acknowledgement Screen)
+    systemBehaviour: >-
+      On Page Loads
+
+      System loads the Transfer Result Screen.
+
+
+      Action/Button Behavior
+
+      Love Button - Upon tapping the Love icon, system to add beneficiary to favourite list and change the Love icon
+      black color. (Please refer to the Post_Trf_Add_Fav sheet)
+
+      [View Receipt] button - Upon tapping View receipt, navigate to receipt page. 
+
+      [New Transfer] button - Upon tapping New Transfer, navigate to Transfer Landing Page. 
+
+      [View interaction] button - Navigate to Realtime chat and Scan near me module. (Further details pending to be
+      covered) [Share Receipt] button - Upon tapping share receipt, system to generate receipt as an image/PDF (TBC) and
+      trigger device's native share.
+
+      [Done] button - Upon tapping Done, direct to App Dashboard page.
+    businessRules: |-
+      Upon transfer confirmation, below are the possible status:
+      a. Transfer Successful - For a successful transaction posting.
+      b. Transfer Scheduled - For a successful scheduled or recurring transaction.
+      c. Transfer Processing - For a successful debit but pending credit/status returned from BI-SKN or RTGS.
+      d. Transfer Unsuccessful:
+      - For Unsuccessful transaction posting.
+      - For Unsuccessful scheduled or recurring transaction.
+      e. Authorisation failed (refer to [A&A] S2U for:
+      - S2U authorisation expired, rejected or failed.
+    apis:
+      - name: ExecuteIntraTransfer
+        method: POST
+        endpoint: pt/intrabank/v1/external/execute
+        testCaseId: TC_INTRA_009a
+        requestSample:
+          paymentOrderId: 01ARZ3NDEKTSV4RRFFQ69G5FAV
+        responseSample:
+          status: '200'
+          message: Success
+          timestamp: '2026-05-20T09:30:15'
+          correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+          meta: null
+          data:
+            transactionRefId: PNT260520A1B2C3D4E5
+            transactionStatus: SUCCESS
+            transactionDateTime: '2026-04-22T15:05:45+08:00'
+            totalAmount: 150000
+            totalAmountCurrency: IDR
+            expenseCategory:
+              categoryId: FB001
+              name: Family Support
+              colorCode: '#FFAB40'
+              icon: family
+            debitAccount:
+              debitAccountName: U Goal Saver
+              debitAccountNoMasked: '********7890'
+            creditAccount:
+              creditAccountName: Irfan Zulkifli
+              creditAccountNo: '0987654321'
+              creditAccountBankName: Maybank Indonesia
+              isFavourite: false
+            amountDetails:
+              debitAmount: 150000
+              debitCurrency: IDR
+              creditAmount: 150000
+              creditCurrency: IDR
+            otherDetails:
+              transactionType: Transfer
+              remark: Transfer bantuan bulanan
+              recipientEmail: irfan@gmail.com
+            additionalDetails:
+              relationshipLabel: Non-affiliated
+              transactionCategoryLabel: Personal
+              transactionDetailLabel: Transfer untuk kebutuhan sehari-hari
+              additionalDetailRemark: Untuk kebutuhan keluarga
+            receipt:
+              receiptTemplateCode: THIRD_PARTY_TRANSFER
+              receiptTemplateVersion: V1
+              header:
+                title: Transfer Berhasil
+                transactionStatus: SUCCESS
+                transactionDateTime: '2026-04-22T15:05:45+08:00'
+                referenceNumber: TXN202604220002
+              body:
+                - sectionTitle: Informasi Transfer
+                  fields:
+                    - label: Jenis Transfer
+                      value: Third Party Transfer
+                - sectionTitle: Rekening Sumber
+                  fields:
+                    - label: Nama Rekening
+                      value: U Goal Saver
+                    - label: Nomor Rekening
+                      value: '********7890'
+                - sectionTitle: Rekening Penerima
+                  fields:
+                    - label: Nama Penerima
+                      value: Irfan Zulkifli
+                    - label: Bank Penerima
+                      value: Maybank Indonesia
+                    - label: Nomor Rekening
+                      value: '0987654321'
+                - sectionTitle: Detail Nominal
+                  fields:
+                    - label: Jumlah Transfer
+                      value: IDR 150,000.00
+                    - label: Total
+                      value: IDR 150,000.00
+                - sectionTitle: Informasi Tambahan
+                  fields:
+                    - label: Hubungan
+                      value: Non-affiliated
+                    - label: Kategori Transaksi
+                      value: Personal
+                    - label: Detail Transaksi
+                      value: Transfer untuk kebutuhan sehari-hari
+                    - label: Catatan
+                      value: Untuk kebutuhan keluarga
+              footer:
+                message: Resi ini dibuat secara elektronik dan tidak memerlukan tanda tangan.
+          error: null
+        mapping: null
+        microservice: pt-intrabank-transfer
+        businessContext: |-
+          Upon transfer confirmation, below are the possible status:
+          a. Transfer Successful - For a successful transaction posting.
+          b. Transfer Scheduled - For a successful scheduled or recurring transaction.
+          c. Transfer Processing - For a successful debit but pending credit/status returned from BI-SKN or RTGS.
+          d. Transfer Unsuccessful:
+          - For Unsuccessful transaction posting.
+          - For Unsuccessful scheduled or recurring transaction.
+          e. Authorisation failed (refer to [A&A] S2U for:
+          - S2U authorisation expired, rejected or failed.
+        downstream: |-
+          ESB: Payment Transfer ESB, Within-Bank-HOST PT (Please refer to ESB Payment Transfer ESB Mapping)
+
+          Caching:
+          Update TXN:{paymentOrderId}
+          TTL to 60 secs
+        remarks: |-
+          Lifecycle State:
+          -VALIDATED
+          -PROCESSED
+          -FULFILLED (Empty State? As one API can settle all)
+          -COMPLETED
+
+          Receipt object will be confirm by IAM Team for the cerebro.
+
+          transactionRefId is based on [DOMAIN: 3] [DATE: 6] [RANDOM: 10] (Temporary)

@@ -1,0 +1,230 @@
+schemaVersion: 2.0.0
+generatedAt: '2026-07-27T03:25:39.685Z'
+source: P&T_Local_Transfer_DDD_Screen_to_API_v1.xlsx
+feature: P&T Local Transfer (All Journeys)
+category: API Journey
+journey:
+  title: Manage Limit Settings
+  code: Manage_Limit
+  description: User views all the Limit configuration and update qif needed
+summary:
+  totalSteps: 3
+  totalApiRows: 3
+  hasS2UAuthentication: true
+  testCaseIdPrefix: TC_LIMIT
+keyApis:
+  - name: GetJourneyContent
+    method: GET
+    endpoint: cms/journeys/payment_transfer_set_limit?locale=en_MY&channel=MOBILE
+    microservice: CMS
+  - name: LimitSettingInquiry
+    method: GET
+    endpoint: pt/limits/v1/external/settings?productIds=productIds
+    microservice: pt-limit-management
+  - name: S2U Init and Verify Journey
+    method: S2U INIT AND VERIFY JOURNEY
+    endpoint: S2U Init and Verify Journey
+    microservice: S2U Init and Verify Journey
+steps:
+  - stepNo: '1'
+    screen: Manage Limits - Dashboard
+    userAction: >-
+      Entry Point 1: At Transfer landing page, tap three-dots menu and select "Manage limits".
+
+
+      Entry Point 2: At Home Dashboard page, navigate to settings > biometric/password authentication > Transactions >
+      Select "Transfer limits".
+
+
+      User click on Transfer from the menu
+    systemBehaviour: |-
+      On Page Loads
+      The system loads the limit categories based on products.
+
+      Action/Button Behavior
+      Limit Category - Tapping into one of the category will load the full details of the limit tie to that product.
+    businessRules: NA
+    apis:
+      - name: GetJourneyContent
+        method: GET
+        endpoint: cms/journeys/payment_transfer_set_limit?locale=en_MY&channel=MOBILE
+        testCaseId: TC_LIMIT_001a
+        requestSample: null
+        responseSample:
+          status: '200'
+          message: Success
+          timestamp: '2026-05-20T09:30:15'
+          correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+          meta: null
+          data:
+            journeyId: local_transfer_limit
+            version: 1.0.0
+            screens:
+              - screenId: transfer_manage_transfer_limit_list
+                core:
+                  typo:
+                    - id: paymentTransferLimitTitle
+                      value: Transfer limit
+                statusAndFeedback:
+                  alertBanner:
+                    - id: alertLimit
+                      message: You can only update one limit at a time.
+                      icon: Lightbulb
+              - screenId: local_transfer_manage_limit_detail
+                core:
+                  typo:
+                    - id: intrabankTransferLimit
+                      value: Intrabank transfer limit
+                      description: Set how much you can transfer per day, up to a maximum of IDR 1,000,000.
+                container:
+                  list:
+                    - id: intrabankLimit
+                      items:
+                        - id: maximumLimit
+                          label: Maximum limit
+                        - id: currentLimit
+                          label: Current limit
+                input:
+                  textInput:
+                    - id: inputLimit
+                      label: New limit
+                      placeholder: Select new limit
+                      required: true
+                action:
+                  button:
+                    - id: btn_save
+                      label: Save
+                      url: ''
+              - screenId: local_transfer_manage_favourite_nickname
+                core:
+                  typo:
+                    - id: limitUpdate
+                      value: Limit updated
+                    - id: refId
+                      value: 'Ref ID:'
+                container:
+                  list:
+                    - id: limit
+                      items:
+                        - id: limitType
+                          label: Limit type
+                        - id: newLimit
+                          label: New limit
+            modals:
+              - modalId: local_transfer_select_new_limit_modal
+                navigation:
+                  navigationHeader:
+                    - id: selectNewLimit
+                      title: Select new limit
+          error: null
+        mapping: null
+        microservice: CMS
+      - name: LimitSettingInquiry
+        method: GET
+        endpoint: pt/limits/v1/external/settings?productIds=productIds
+        testCaseId: TC_LIMIT_001b
+        requestSample: null
+        responseSample:
+          status: '200'
+          message: Success
+          timestamp: '2026-05-20T09:30:15'
+          correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+          meta: null
+          data:
+            product:
+              - productDescription: Scan & Pay
+                productId: P3
+                productCode: PC3
+                limitType:
+                  - currentLimitAmount:
+                      amount: '250.00'
+                      currency: IDR
+                    newLimitAmount: null
+                    coolingExpiredAt: null
+                    intervalType: QUICK
+                    limitDenominationList:
+                      - minAmount:
+                          amount: '0.00'
+                          currency: IDR
+                        maxAmount:
+                          amount: '250.00'
+                          currency: IDR
+                        increment:
+                          amount: '50.00'
+                          currency: IDR
+                  - currentLimitAmount:
+                      amount: '1000.00'
+                      currency: IDR
+                    newLimitAmount: null
+                    coolingExpiredAt: null
+                    intervalType: DAILY
+                    limitDenominationList:
+                      - minAmount:
+                          amount: '0.00'
+                          currency: IDR
+                        maxAmount:
+                          amount: '100.00'
+                          currency: IDR
+                        increment:
+                          amount: '10.00'
+                          currency: IDR
+                      - minAmount:
+                          amount: '100.00'
+                          currency: IDR
+                        maxAmount:
+                          amount: '1000.00'
+                          currency: IDR
+                        increment:
+                          amount: '100.00'
+                          currency: IDR
+                  - currentLimitAmount:
+                      amount: '1000.00'
+                      currency: IDR
+                    newLimitAmount: null
+                    coolingExpiredAt: null
+                    intervalType: PERTXN
+                    limitDenominationList:
+                      - minAmount:
+                          amount: '10.00'
+                          currency: IDR
+                        maxAmount:
+                          amount: '250.00'
+                          currency: IDR
+                        increment:
+                          amount: '20.00'
+                          currency: IDR
+                flag: true
+          error: null
+        mapping: null
+        microservice: pt-limit-management
+        downstream: NGBO (P&T)
+  - stepNo: S2U Init and Verify Journey
+    screen: S2U Init and Verify Journey
+    userAction: S2U Init and Verify Journey
+    systemBehaviour: S2U Init and Verify Journey
+    businessRules: S2U Init and Verify Journey
+    apis:
+      - name: S2U Init and Verify Journey
+        method: S2U INIT AND VERIFY JOURNEY
+        endpoint: S2U Init and Verify Journey
+        testCaseId: TC_LIMIT_002a
+        requestSample: S2U Init and Verify Journey
+        responseSample: S2U Init and Verify Journey
+        mapping: null
+        microservice: S2U Init and Verify Journey
+        businessContext: S2U Init and Verify Journey
+        downstream: S2U Init and Verify Journey
+        remarks: S2U Init and Verify Journey
+  - stepNo: '3'
+    screen: Manage Limits - Limit Detail
+    userAction: User choosen limit amount and clicked on Save button
+    systemBehaviour: |-
+      On Page Loads
+      The system loads the maximum limit and the current limit of the selected product.
+
+      Action/Button Behavior
+      [Save] Button - Initiate the S2U and saves the configured new lmit.
+    businessRules: |-
+      New Limit Drawer:
+      Display denomination of limit (NGBO)
+    apis: []

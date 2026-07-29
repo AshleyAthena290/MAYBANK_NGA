@@ -1,0 +1,42 @@
+id: TC_RECIP_008a
+title: 8. Transfer - Recipients - Remove Favorite - deleteBeneficiaries
+feature: Custom Recipient Management
+journey: Manage_Recipient
+stepNo: '8'
+screen: Transfer - Recipients - Remove Favorite
+userAction: Remove favorites list from ALL - Without Favourite group
+request:
+  method: DELETE
+  url: /v1/external/transfer?groupType=ALL&accountId=598322219222
+  endpoint: /v1/external/transfer?groupType=ALL&accountId=598322219222
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: delete_beneficiaries_success
+    timestamp: '2026-01-13T12:00:00'
+    correlationId: abc123-correlation-id
+    meta:
+      provider: erp
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: "Removing Beneficiary from ALL tab:
+
+      a. Remove the selected beneficiary from All, Frequent, Favourite, and Custom lists where selected Bene exist.
+
+      b. If removal of beneficiary that appears under Favourite, navigate to S2U authorisation screen.
+
+      c. If action requires S2U, upon successful removal, navigate to Status removed screen.
+
+      d. If action does not require S2U, upon successful removal, system displays ""Recipient removed."" Else display
+      ""Service temporarily unavailable""."
+    type: custom
+references:
+  apiSpecFile: deleteBeneficiaries
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Recipient

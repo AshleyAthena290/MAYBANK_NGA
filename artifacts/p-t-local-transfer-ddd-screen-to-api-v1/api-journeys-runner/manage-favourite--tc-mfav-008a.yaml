@@ -1,0 +1,46 @@
+id: TC_MFAV_008a
+title: 8. Manage Favorite - Custom - deleteBeneficiaries
+feature: Favourite Management
+journey: Manage_Favourite
+stepNo: '8'
+screen: Manage Favorite - Custom
+userAction: Delete Custom Recipient
+request:
+  method: DELETE
+  url: /v1/external/transfer?groupType=CUSTOM&groupId=G001&accountId=598322219222
+  endpoint: /v1/external/transfer?groupType=CUSTOM&groupId=G001&accountId=598322219222
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: delete_beneficiaries_success
+    timestamp: '2026-01-13T12:00:00'
+    correlationId: abc123-correlation-id
+    meta:
+      provider: erp
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: For deletion (tapping trash icon):
+
+      1. User can delete the recipient one-by-one.
+
+      2. For every recipient removed, to display a toast message "Recipient removed." For editing, system allows for a
+      custom list to have 0 recipients.
+
+      3. User is able to delete the whole custom list by tapping on [Remove List]. A pop up confirmation will be
+      displayed:
+
+      a. Tap on [Remove]: Delete the whole custom list and navigate to manage favourite list dashboard with toast
+      message "List removed."
+
+      b. Tap on [Keep]: No changes, whole list is retained.
+    type: custom
+references:
+  apiSpecFile: deleteBeneficiaries
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Favourite

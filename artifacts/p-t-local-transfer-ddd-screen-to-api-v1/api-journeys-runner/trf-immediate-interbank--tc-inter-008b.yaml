@@ -1,0 +1,126 @@
+id: TC_INTER_008b
+title: 8. Initiating the transaction (Pre S2U) - ExecuteInterTransfer
+feature: Interbank Account Transfer (Immediate)
+journey: Trf_Immediate_Interbank
+stepNo: '8'
+screen: Initiating the transaction (Pre S2U)
+userAction: User reviews details and slide to Confirm
+request:
+  method: POST
+  url: pt/interbank/v1/external/execute
+  endpoint: pt/interbank/v1/external/execute
+  headers:
+    Accept: application/json
+  body:
+    paymentOrderId: 01ARZ3NDEKTSV4RRFFQ69G5FAV
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: '200'
+    message: Success
+    timestamp: '2026-05-20T09:30:15'
+    correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+    meta: null
+    data:
+      transactionRefId: PNT260520A1B2C3D4E5
+      transactionStatus: SUCCESS
+      transactionDateTime: '2026-04-22T14:32:10+08:00'
+      totalAmount: 152500
+      totalAmountCurrency: IDR
+      expenseCategory:
+        categoryId: FB001
+        name: Restaurant
+        colorCode: '#FFAB40'
+        icon: restaurant
+      debitAccount:
+        debitAccountName: U Goal Saver
+        debitAccountNoMasked: '********7890'
+      creditAccount:
+        creditAccountName: U Transaction Account IB
+        creditAccountNo: '0987654321'
+        creditAccountBankName: Maybank Indonesia
+        isFavourite: false
+      amountDetails:
+        debitAmount: 150000
+        debitCurrency: IDR
+        creditAmount: 150000
+        creditCurrency: IDR
+        feeAmount: 2500
+        feeCurrency: IDR
+      otherDetails:
+        transactionType: Transfer
+        transferMode: BI-FAST
+        recipientName: Irfan Zulkifli
+        purposeOfTransfer: Pembayaran
+        sourceOfFund: Gaji
+        recipientType: Perorangan
+        recipientCitizenship: Bukan Warga Negara
+        remark: Moving Money
+        recipientEmail: abc@gmail.com
+      additionalDetails:
+        recipientStatus: Sender is not the recipient
+        recipientNationality: Indonesia
+        recipientCategory: Individual
+        relationship: Non-affiliated
+        transactionCategory: Penghasilan / Pengeluaran
+        transactionDetail: Pembayaran gaji karyawan
+        additionalDetailRemark: Untuk kebutuhan keluarga
+      receipt:
+        receiptTemplateCode: INTERBANK_BI_FAST
+        receiptTemplateVersion: V1
+        header:
+          title: Transfer Berhasil
+          transactionStatus: SUCCESS
+          transactionDateTime: '2026-04-22T14:32:10+08:00'
+          referenceNumber: PNT260520A1B2C3D4E5
+        body:
+          - sectionTitle: Transfer Information
+            fields:
+              - label: Transfer Type
+                value: Interbank Transfer
+              - label: Transfer Mode
+                value: BI-FAST
+              - label: Purpose of Transfer
+                value: Pembayaran
+          - sectionTitle: Sender Information
+            fields:
+              - label: Account Name
+                value: U Goal Saver
+              - label: Account Number
+                value: '********7890'
+          - sectionTitle: Recipient Information
+            fields:
+              - label: Recipient Name
+                value: Irfan Zulkifli
+              - label: Bank Name
+                value: Maybank Indonesia
+              - label: Account Number
+                value: '0987654321'
+          - sectionTitle: Amount Details
+            fields:
+              - label: Transfer Amount
+                value: IDR 150,000.00
+              - label: Service Fee
+                value: IDR 2,500.00
+              - label: Total Amount
+                value: IDR 152,500.00
+          - sectionTitle: Additional Information
+            fields:
+              - label: Source of Fund
+                value: Gaji
+              - label: Recipient Type
+                value: Perorangan
+              - label: Remark
+                value: Moving Money
+        footer:
+          message: This receipt is generated electronically and does not require a signature.
+    error: null
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: 'Validate business outcome: System will generate Idempotency Token for the transfer.'
+    type: custom
+references:
+  apiSpecFile: ExecuteInterTransfer
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Trf_Immediate_Interbank

@@ -1,0 +1,156 @@
+id: TC_INTER_004a
+title: 4. Input Amount - GetSourceAccountList
+feature: Interbank Account Transfer (Immediate)
+journey: Trf_Immediate_Interbank
+stepNo: '4'
+screen: Input Amount
+userAction: User enters amount
+request:
+  method: GET
+  url: pt/interbank/v1/external/source-accounts
+  endpoint: pt/interbank/v1/external/source-accounts
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: '200'
+    message: Success
+    timestamp: '2026-05-20T09:30:15'
+    correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+    meta: null
+    data:
+      sourceAccounts:
+        - accountName: Global Access Account
+          accountNo: '514013314526'
+          accountType: SA
+          accountProductType: CONVENTIONAL
+          accountOwnership: INDIVIDUAL
+          accountStatus: ACTIVE
+          isPrimary: true
+          isMultiCurrency: true
+          totalEquivalentBalance:
+            amount: 248512617.15
+            currency: IDR
+          accounts:
+            - currency: IDR
+              rawAccountNo: 514013314526-001
+              availableBalance: 98592617.15
+              accountStatus: ACTIVE
+            - currency: USD
+              rawAccountNo: 514013314526-002
+              availableBalance: 8200.5
+              localEquivalentBalance:
+                amount: 134520000
+                currency: IDR
+              accountStatus: ACTIVE
+            - currency: SGD
+              rawAccountNo: 514013314526-003
+              availableBalance: 1250
+              localEquivalentBalance:
+                amount: 15400000
+                currency: IDR
+              accountStatus: INACTIVE
+        - accountName: Savings Account
+          accountNo: '164017833708'
+          accountType: SA
+          accountProductType: ISLAMIC
+          accountOwnership: INDIVIDUAL
+          accountStatus: ACTIVE
+          isPrimary: false
+          isMultiCurrency: false
+          totalEquivalentBalance:
+            amount: 9261785
+            currency: IDR
+          accounts:
+            - currency: IDR
+              rawAccountNo: '164017833708'
+              availableBalance: 9261785
+              accountStatus: ACTIVE
+    error: null
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: Transfer Amount - Transfer Currency:
+
+      INTERBANK
+
+      a. To default Transfer Ccy = IDR. Refer to "Table 2 - Default Transfer Currency" in Local Transfer Journey FSD.
+
+
+      Transfer Amount - Remaining Limit:
+
+      INTERBANK
+
+      a. New Transfer & Bene Listing
+
+      When entering amount, to check if remaining user daily limit (include the entered amount) hits > 70% of the
+      defined limit (Settings > BI-FAST/ Transfer Online/ BI-SKN/ RTGS): 
+
+      (i) "IDR - IDR"
+
+      - display "Remaining limit IDR 999,999" with Manage limit hyperlink (refer to screen).
+
+
+      Transfer Amount - Account Limit Checking:
+
+      System to display notes above amount field for below, but able to proceed:
+
+      a. If transaction amount exceeds user's daily remaining limit, display "Amount cannot exceed your remaining
+      limit".
+
+      b. If transaction amount exceeds SoF Account Balance, display "Amount should not exceed your account balance.".
+
+
+      When tap [Next] to proceed, perform validation:
+
+      1. Fields validation & all validation mentioned above
+
+      2. SoF Account eligibility (refer to Table 1 - SoF Eligibility Check in Local Transfer Journey FSD). If SoF
+      account is NOT eligible to perform transfer, system displays toastbar message "This account is unable to make this
+      transfer. Select another account."
+
+      3.Minimum per Transaction Limit:
+
+      a. Minimum transaction amount (from NGBO, basically is IDR10,000) for all transfer mode. If does not meet, display
+      inline error message "Minimum amount is IDR <min limit based on transfer mode>"
+
+      (i) Own
+
+      (ii) Intrabank 
+
+      (iii) Interbank
+
+      4. Daily Limit by Transfer Mode (from Settings) 
+
+      a. If exceeds, display warning message "Amount cannot exceed your remaining limit" (but can proceed).
+
+      b. Applies to Intrabank & Interbank (BI-FAST, RTOL, BI-SKN, RTGS) only. 
+
+      5. SoF Balance Checking
+
+      a. If amount > SoF account balance, display warning message "Amount should not exceed your account balance." (but
+      can proceed)
+
+      5. Maximum per Transaction Limit:
+
+      a. Interbank - it is not allowed to transfer more than USD 50k. System displays "Maximum amount is USD 50,000."
+      (To confirm if this is required since it would have exceeded Payment Rail's max limit)
+
+      - use Counter Rate (from Trapi) for conversion to USD.
+
+      5. Special rate validation checking (if applied). IF outside validation period, system to display "Special rate
+      not available" pop up.
+
+      6. If user tap [Next] button while not resolving the error, displays toastbar error message "Please resolve all
+      errors to proceed".
+
+
+      Once successful, system to redirect to Transfer Details screen.
+    type: custom
+references:
+  apiSpecFile: GetSourceAccountList
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Trf_Immediate_Interbank

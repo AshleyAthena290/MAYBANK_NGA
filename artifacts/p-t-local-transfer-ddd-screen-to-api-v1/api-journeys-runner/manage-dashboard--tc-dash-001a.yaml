@@ -1,0 +1,511 @@
+id: TC_DASH_001a
+title: 1. Init Module - GetJourneyContent
+feature: Transfer Dashboard
+journey: Manage_Dashboard
+stepNo: '1'
+screen: Init Module
+userAction: User Lands into Transfer Dashboard
+request:
+  method: GET
+  url: cms/journeys/payment_transfer_local_flow?locale=en_MY&channel=MOBILE
+  endpoint: cms/journeys/payment_transfer_local_flow?locale=en_MY&channel=MOBILE
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 400
+  sampleResponse:
+    journeyId: local_transfer_flow
+    version: 1.0.0
+    screens:
+      - screenId: local_transfer_landing_page
+        version: 1.0.0
+        navigation:
+          topNavigation:
+            - id: title
+              title: Transfer
+          tab:
+            - id: local
+              label: Local
+            - id: overseas
+              label: Overseas
+        input:
+          searchInput:
+            - id: search
+              placeholder: Search
+        container:
+          banner:
+            - id: all
+              description: See recipients you've sent money to here
+            - id: frequent
+              description: Recipients you regularly send money to in the last 90 days will appear here.
+            - id: own
+              description: Make transfers or payments to your Maybank accounts, cards or financing here.
+            - id: favourite
+              description: Your favourites will sync with Maybank2u web when you add or remove recipients.
+          core:
+            typo:
+              - id: caughtUp
+                value: You're all caught up
+              - id: emptySearch
+                value: We couldn't find a match for %<keyword>%
+                description: Check the spelling or try a different code.
+              - id: all
+                value: No transfers yet
+                description: See recipients you've sent money to here
+              - id: frequent
+                value: No frequent transfers yet
+                description: Recipients you regularly send money to in the last 90 days will appear here.
+              - id: favourite
+                value: No recipients yet
+                description: Recipients you favourite will appear here.
+              - id: other
+                value: No recipients yet
+                description: Press and hold on a recipient to add them to favourites.
+          lists:
+            - id: makeNewTransfer
+              title: Make a new transfer instead?
+              items:
+                - id: accountNumber
+                  label: Account number
+                  icon: Bank
+          asset:
+            illustration:
+              - id: searchIllustration
+                url: https://res.cloudinary.com/deoklsh3h/image/upload/v1776057612/searchIllustration.png
+        action:
+          button:
+            - id: transfer
+              label: Transfer
+          chip:
+            - id: all
+              label: All
+            - id: frequent
+              label: Frequent
+            - id: favourite
+              label: Favourites
+            - id: own
+              label: Own
+        editMenu:
+          - id: addnickname
+            label: Add nickname
+            icon: Pencil
+          - id: editNickname
+            label: Edit nickname
+            icon: Pencil
+          - id: editFavourite
+            label: Edit favourites list
+            icon: Love
+          - id: remove
+            label: Remove
+            icon: Bin
+      - screenId: local_transfer_input_acc_number
+        navigation:
+          topNavigation:
+            - id: transfer
+              title: Transfer
+        input:
+          textInput:
+            - id: transferTo
+              label: Transfer to
+              required: true
+            - id: accountNumber
+              label: Account number
+              placeholder: Enter account number
+              required: true
+              pattern: ^[0-9]{10,12}$
+              errorMessage:
+                - id: invalidAccountNumber
+                  message: Please enter a valid account number
+                - id: required
+                  title: Required field
+            - id: transferMode
+              label: Transfer mode
+              required: true
+            - id: accountHolderName
+              label: Account holder name
+              required: true
+              placeholder: Enter name
+        action:
+          button:
+            - id: next
+              label: Next
+        statusAndFeedback:
+          alertBanner:
+            - id: biFastServiceUnavailable
+              message: BI-FAST service is temporarily offline. Please review the transfer mode before continuing.
+              icon: Warning
+            - id: recipientDetails
+              message: Ensure the recipient details are correct before proceeding.
+              icon: Lightbulb
+      - screenId: local_transfer_input_amount
+        navigation:
+          topNavigation:
+            - id: transfer
+              title: Transfer
+          sectionHeader:
+            - id: transferTo
+              title: Transfer to
+            - id: transferFrom
+              title: Transfer from
+        core:
+          typo:
+            - id: remainingLimit
+              label: Remaining limit
+        input:
+          textInput:
+            - id: amount
+              label: Amount
+              placeholder: '0'
+              validation:
+                required: true
+              errorMessages:
+                required: Required field
+                minimumAmount: Minimum amount is %<minLimit>%
+            - id: frequency
+              label: Frequency
+              placeholder: Select frequency
+              required: true
+            - id: startDate
+              label: Start date
+              required: true
+              placeholder: Select start date
+            - id: endDate
+              label: End date
+              required: true
+              placeholder: Select end date
+        container:
+          alertBanner:
+            - id: remainingLimitExceeded
+              message: Amount cannot exceed your remaining limit.
+              icon: Lightbulb
+            - id: availableBalanceExceeded
+              message: Amount cannot exceed your available balance.
+              icon: Lightbulb
+            - id: manualTry
+              message: >-
+                Please check the transaction status on the scheduled date. In the event of a disrupted transfer, you
+                will need to manually retry.
+              icon: Lightbulb
+        toggle:
+          - id: scheduleRecurring
+            label: Schedule or set recurring
+        action:
+          button:
+            - id: change
+              label: Change
+            - id: next
+              label: Next
+            - id: changeLimit
+              label: Change limit
+      - screenId: local_transfer_details
+        navigation:
+          topNavigation:
+            - id: transfer
+              title: Transfer
+          sectionHeader:
+            - id: transferTo
+              title: Transfer to
+          core:
+            typo:
+              - id: transferModedetails
+                label: BI-SKN transfer is not instant
+          input:
+            textInput:
+              - id: transferMode
+                label: Transfer mode
+                required: true
+              - id: purposeOfTransfer
+                label: Purpose of transfer
+                required: true
+                placeholder: Select purpose of transfer
+                errorMessage:
+                  - id: required
+                    title: Required selection
+              - id: sourceOfFund
+                label: Source of fund
+                pklaceholder: Select source of fund
+                required: true
+              - id: recipientType
+                label: Recipient type
+                placeholder: Select recipient type
+                required: true
+              - id: recipientCitizenship
+                label: Recipient citizenship
+                placeholder: Select recipient citizenship status
+                required: true
+              - id: remark
+                label: Remark
+                placeholder: Optional
+              - id: recipientEmail
+                label: Recipient email
+                placeholder: Optional
+                errorMessage:
+                  - id: emailValidation
+                    title: Please enter a valid email address
+          action:
+            button:
+              - id: next
+                label: Next
+              - id: learnMore
+                label: Learn more
+                url: https://www.maybank2u.com.my/mbb_info/m2u/public/personal/accounts/accounts_casa/bi_skn.page
+      - screenId: local_transfer_additional_details
+        navigation:
+          topNavigation:
+            - id: transfer
+              title: Transfer
+          sectionHeader:
+            - id: additionalDetails
+              title: Enter additional details
+        input:
+          textInput:
+            - id: recipientStatus
+              label: Recipient status
+              required: true
+              placeholder: Select recipient status
+            - id: recipientNationality
+              label: Recipient nationality
+              placeholder: Select recipient nationality
+              required: true
+            - id: recipientCategory
+              label: Recipient category
+              placeholder: Select recipient category
+              required: true
+            - id: relationship
+              label: Relationship
+              placeholder: Select relationship
+              required: true
+            - id: transactionCategory
+              label: Transaction category
+              placeholder: Select transaction category
+              required: true
+            - id: transactionDetails
+              label: Transaction details
+              placeholder: Select transaction details
+              required: true
+            - id: remark
+              label: Remark
+              placeholder: Optional
+      - screenId: local_transfer_confirmation
+        navigation:
+          topNavigation:
+            - id: confirmation
+              title: Confirmation
+          sectionHeader:
+            - id: transferTo
+              title: Transfer to
+            - id: transferFrom
+              title: Transfer from
+          core:
+            typo:
+              - id: confirmationMessage
+                value: By proceeding, you agree to the
+                linkLabel: terms and conditions
+                url: https://example.com/terms-and-conditions.pdf
+          container:
+            card:
+              - id: transferTo
+                title: Transfer to
+              - id: transferFrom
+                title: Transfer from
+          list:
+            - id: amountDetails
+              title: Amount details
+              items:
+                - id: transferAmount
+                  label: Transfer amount
+                - id: serviceFee
+                  label: Service fee
+                - id: totalAmount
+                  label: Total amount
+            - id: transactionDetails
+              title: Transaction details
+              items:
+                - id: transactionType
+                  label: Transaction type
+                - id: transferMode
+                  label: Transfer mode
+                - id: purpose
+                  label: Purpose of transfer
+                - id: remark
+                  label: Remark
+            - id: schedulingDetails
+              title: Scheduling details
+              items:
+                - id: frequency
+                  label: Frequency
+                - id: startDate
+                  label: Start date
+                - id: endDate
+                  label: End date
+          action:
+            button:
+              - id: confirm
+                label: Confirm
+              - id: edit
+                label: Edit
+              - id: change
+                label: Change
+              - id: review
+                label: Review
+      - screenId: local_transfer_final
+        core:
+          typo:
+            - id: statusProcessing
+              value: Transfer processing
+            - id: statusSuccess
+              value: Transfer successful
+            - id: statusFailure
+              value: Transfer unsuccessful
+            - id: referenceIdLabel
+              value: Ref ID
+        asset:
+          image:
+            - id: maybank
+              url: https://res.cloudinary.com/deoklsh3h/image/upload/v1776057612/maybank.png
+        container:
+          card:
+            - id: transferTo
+              title: Transfer to
+            - id: transferFrom
+              title: Transfer from
+          list:
+            - id: category
+              items:
+                - id: foodBeverage
+                  label: Food & beverage
+                  icon: FoodAndBeverage
+          banner:
+            - id: adsBanner1
+              imageUrl: https://res.cloudinary.com/deoklsh3h/image/upload/v1776057879/adsBanner.png
+          accordion:
+            - id: amountDetails
+              title: Amount details
+              sections:
+                - id: transferAmount
+                  label: Transfer amount
+                - id: serviceFee
+                  label: Service fee
+            - id: schedulingDetails
+              title: Scheduling details
+              sections:
+                - id: frequency
+                  label: Frequency
+                - id: transferDate
+                  label: Transfer date
+                - id: startDate
+                  label: Start date
+                - id: endDate
+                  label: End date
+            - id: otherDetails
+              title: Other details
+              sections:
+                - id: transactionType
+                  label: Transaction type
+                - id: transferMode
+                  label: Transfer mode
+                - id: purposeOfTransfer
+                  label: Purpose of transfer
+                - id: remark
+                  label: Remark
+        action:
+          buttonQuickAction:
+            - id: viewReceipt
+              label: View receipt
+              icon: Receipt
+            - id: viewInteraction
+              label: View interaction
+              icon: Interaction
+            - id: newTransfer
+              label: New transfer
+              icon: Transfer
+          button:
+            - id: shareReceipt
+              label: Share receipt
+            - id: done
+              label: Done
+              icon: Done
+    modals:
+      - modalId: local_transfer_more_actions_modal
+        navigation:
+          topNavigation:
+            - id: moreActions
+              title: More Actions
+        container:
+          lists:
+            - id: moreActionsList
+              title: More actions
+              items:
+                - id: manageScheduleTransfer
+                  label: Manage scheduled transfers
+                  description: View upcoming and pending transactions.
+                  icon: Calendar
+                - id: manageLimit
+                  label: Manage limits
+                  description: Adjust the current limit for your transfers.
+                  icon: Limit
+                - id: manageFavouriteList
+                  label: Manage favourite list
+                  description: Sort recipients info lists to find them easily.
+                  icon: Setting
+      - modalId: local_transfer_introduction
+        asset:
+          image:
+            - id: transferIntro
+              url: https://res.cloudinary.com/deoklsh3h/image/upload/v1776057612/transfer.png
+        core:
+          typo:
+            - id: title
+              value: Transfer
+              description: Send money securely. Transfer locally, overseas and manage recipients with ease.
+        action:
+          button:
+            - id: start
+              label: Get started
+      - modalId: local_transfer_select_bank_modal
+        navigation:
+          topNavigation:
+            - id: transferTo
+              title: Transfer to
+      - modalId: local_transfer_select_account_modal
+        navigation:
+          topNavigation:
+            - id: transferFrom
+              title: Transfer from
+      - modalId: local_transfer_select_transfer_mode_modal
+        core:
+          typo:
+            - id: serviceFee
+              value: Service fee
+            - id: transactionLimit
+              value: Transaction limit
+            - id: operatingHours
+              value: Operating hours
+        asset:
+          - id: modeIcon
+            url: https://res.cloudinary.com/deoklsh3h/image/upload/v1776057612/transferMode.png
+      - modalId: local_transfer_select_date_modal
+        navigation:
+          topNavigation:
+            - id: selectStartDate
+              title: Select start date
+              subTitle: Repeat every day from 4 to 25 Oct 2025 • 21 times
+            - id: selectEndDate
+              title: Select end date
+          tab:
+            - id: endDate
+              label: No of transactions
+        action:
+          button:
+            - id: set
+              label: Set
+assertions:
+  - description: Status code equals 400
+    type: status
+    expectedValue: 400
+  - description: 'Validate business outcome: NA'
+    type: custom
+references:
+  apiSpecFile: GetJourneyContent
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Dashboard

@@ -1,0 +1,67 @@
+id: TC_SCHED_001a
+title: >-
+  1. Input Amount - Please refer to the Relevant Transfer Sheets (Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank or
+  Trf_Immediate_Interbank)
+feature: Scheduling/Recurring Transfer (For All Types)
+journey: Trf_Scheduling_All
+stepNo: '1'
+screen: Input Amount
+userAction: User input amount and ready to toggle on the scheduling/recurring.
+request:
+  method: >-
+    PLEASE REFER TO THE RELEVANT TRANSFER SHEETS (TRF_IMMEDIATE_OWNACCOUNT, TRF_IMMEDIATE_INTRABANK OR
+    TRF_IMMEDIATE_INTERBANK)
+  url: >-
+    Please refer to the Relevant Transfer Sheets (Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank or
+    Trf_Immediate_Interbank)
+  endpoint: >-
+    Please refer to the Relevant Transfer Sheets (Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank or
+    Trf_Immediate_Interbank)
+  headers:
+    Accept: application/json
+  body: >-
+    Please refer to the Relevant Transfer Sheets (Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank or
+    Trf_Immediate_Interbank)
+response:
+  successStatusCode: 200
+  sampleResponse: >-
+    Please refer to the Relevant Transfer Sheets (Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank or
+    Trf_Immediate_Interbank)
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: Schedule/ Recurring option:
+
+      1. End Date & No. of Transaction behaviour
+
+      (i) IF user changes the Number of Transaction, system will re-calculate the corresponding end date based on the
+      Number of Transactions selected. 
+
+      (ii) IF user returns to End Date tab, system to default & display the newly derived date. 
+
+      (iii) IF user changes the End Date after Number of Transaction is selected, system will re-calculate the
+      corresponding Number of Transaction based on the End Date selected.
+
+      (iv) IF user returns to Number of Transaction tab, system to default & display the newly derived value. 
+
+
+      2. Scheduled/ recurring transaction is NOT applicable for (hide "Schedule or set recurring" Toggle field):
+
+      a. Interbank transfer FCY to IDR
+
+      b. Intrabank transfer with FCY, i.e. IDR to FCY, FCY to IDR, FCY to same FCY & FCY to xFCY.
+
+      c. Own & Intrabank - beneficiary account is Virtual Account
+
+      d. Own & Intrabank - beneficiary account is IBAAS Account (Islamic Banking as a Service)
+
+
+      This sheet will only focus on scheduling, for other business rules please refer to immediate transfer sheets.
+    type: custom
+references:
+  apiSpecFile: >-
+    Please refer to the Relevant Transfer Sheets (Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank or
+    Trf_Immediate_Interbank)
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Trf_Scheduling_All

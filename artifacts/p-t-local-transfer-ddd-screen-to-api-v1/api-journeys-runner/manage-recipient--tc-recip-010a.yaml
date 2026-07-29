@@ -1,0 +1,65 @@
+id: TC_RECIP_010a
+title: 10. Transfer - Recipients - Remove Favorite - S2UBeneficiaries
+feature: Custom Recipient Management
+journey: Manage_Recipient
+stepNo: '10'
+screen: Transfer - Recipients - Remove Favorite
+userAction: Remove favorites list from Favorite
+request:
+  method: POST
+  url: /v1/external/beneficiaries
+  endpoint: /v1/external/beneficiaries
+  headers:
+    Accept: application/json
+  body:
+    groups:
+      - operation: delete
+        type: FAVOURITES
+        name: Favourites
+    beneficiaries:
+      - accountId: '4700025122'
+        accountHolderName: MUHAMMAD ALI MUTHU
+        nickname: ali nickname
+        bicCode: PBBEMYKL
+        bankName: PUBLIC BANK
+        transactionType: TRANSFER/PAYMENT
+        transactionSubtype: INTERBANK
+        transactionMetadata:
+          serviceFees: 11
+          firstTimeTac: '1'
+          idNumber: null
+          idType: null
+          mobileNumber: ''
+          idFlag: ''
+          swiftCode: PBBEMYKL
+          acquirerId: '564162'
+          accountType: ''
+          accountSubType: ''
+          currency: ''
+          balance: 0
+          paymentCode: '01'
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: success
+    extra: ''
+    note: ''
+    header: recipient_removed_success_header
+    desc: ''
+    details: >-
+      {"reference_id":"268614863M","date_time":"07 May 2026, 04:05 PM","account_holder_name":"Andy
+      Loo","account_number":"5042 3341 3421","recipient_bank":"Maybank", "nickname":"andy loo nickname"}
+    receipt: ''
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: |-
+      Validate business outcome: Removing Beneficiary from FAVOURITES tab:
+      a. Remove the beneficiary from Favourites list only.
+      b. S2U authorisation is required to confirm the removal from the list.
+      c. Upon successful removal, navigate to Status removed screen.
+    type: custom
+references:
+  apiSpecFile: S2UBeneficiaries
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Recipient

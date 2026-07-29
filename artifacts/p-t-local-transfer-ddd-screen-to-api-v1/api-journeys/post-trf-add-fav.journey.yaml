@@ -1,0 +1,181 @@
+schemaVersion: 2.0.0
+generatedAt: '2026-07-27T03:25:39.685Z'
+source: P&T_Local_Transfer_DDD_Screen_to_API_v1.xlsx
+feature: P&T Local Transfer (All Journeys)
+category: API Journey
+journey:
+  title: Post Transfer Favourite Addition
+  code: Post_Trf_Add_Fav
+  description: User to add Favourite after transaction completed
+summary:
+  totalSteps: 2
+  totalApiRows: 2
+  hasS2UAuthentication: true
+  testCaseIdPrefix: TC_PTAF
+keyApis:
+  - name: addBeneficiaries
+    method: POST
+    endpoint: /v1/external/transfer
+    microservice: erp-beneficiary
+  - name: >-
+      The completion of intrabank or any interbank type of transfer, for full details please refer to the relevant
+      immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    method: >-
+      THE COMPLETION OF INTRABANK OR ANY INTERBANK TYPE OF TRANSFER, FOR FULL DETAILS PLEASE REFER TO THE RELEVANT
+      IMMEDIATE TRANSFER SHEETS: TRF_IMMEDIATE_INTRABANK AND TRF_IMMEDIATE_INTERBANK.
+    endpoint: >-
+      The completion of intrabank or any interbank type of transfer, for full details please refer to the relevant
+      immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    microservice: >-
+      The completion of intrabank or any interbank type of transfer, for full details please refer to the relevant
+      immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+steps:
+  - stepNo: '1'
+    screen: Transfer Result
+    userAction: |-
+      User view the transfer result screen. (S2U Acknowledgement Screen)
+
+      User can add the user as favourite here with the love button.
+    systemBehaviour: >-
+      On Page Loads
+
+      System loads the Transfer Result Screen.
+
+
+      Action/Button Behavior
+
+      Love Button - Upon tapping the Love icon, system to add beneficiary to favourite list and change the Love icon
+      black color. 
+
+      [View Receipt] button - Upon tapping View receipt, navigate to receipt page. (Please refer to the immediate
+      transfer journey sheets.) 
+
+      [New Transfer] button - Upon tapping New Transfer, navigate to Transfer Landing Page. (Please refer to the
+      immediate transfer journey sheets.) 
+
+      [View interaction] button - Navigate to Realtime chat and Scan near me module. (further details pending to be
+      covered) [Share Receipt] button - Upon tapping share receipt, system to generate receipt as an image/PDF (TBC) and
+      trigger device's native share. (Please refer to the immediate transfer journey sheets.) 
+
+      [Done] button - Upon tapping Done, direct to App Dashboard page.
+    businessRules: >-
+      Adding to favourite:
+
+      1. Tapping love icon will add beneficiary to favourite. As a result, heart shape will be filled with a full black
+      color. Retapping on black heart will remove the added beneficiary from favourite. No maximum attempts. S2U is not
+      required.
+
+      2. For Transfer to Beneficiary that is already a favourite, love icon is hidden.
+
+      3. For Transfer to Maybnak's one-off VA account (closedPayment flag), heart icon is hidden.
+
+
+      As this current sheet, we will only focus on the adding favourites on post transfer, other screen behaviors and
+      rules can be referred by to the immediate transfer sheets.
+    apis:
+      - name: addBeneficiaries
+        method: POST
+        endpoint: /v1/external/transfer
+        testCaseId: TC_PTAF_001a
+        requestSample:
+          groups:
+            - type: FAVOURITES
+              name: Favourites
+          beneficiaries:
+            - accountId: '4700025122'
+              accountHolderName: MUHAMMAD ALI MUTHU
+              nickname: ali nickname
+              bicCode: PBBEMYKL
+              bankName: PUBLIC BANK
+              transactionType: TRANSFER/PAYMENT
+              transactionSubtype: INTERBANK
+              transactionMetadata:
+                serviceFees: 11
+                firstTimeTac: '1'
+                idNumber: null
+                idType: null
+                mobileNumber: ''
+                idFlag: ''
+                swiftCode: PBBEMYKL
+                acquirerId: '564162'
+                accountType: ''
+                accountSubType: ''
+                currency: ''
+                balance: 0
+                paymentCode: '01'
+        responseSample:
+          status: 200
+          message: add_beneficiaries_success
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: >-
+          Adding to favourite:
+
+          1. Tapping love icon will add beneficiary to favourite. As a result, heart shape will be filled with a full
+          black color. Retapping on black heart will remove the added beneficiary from favourite. No maximum attempts.
+          S2U is not required.
+
+          2. For Transfer to Beneficiary that is already a favourite, love icon is hidden.
+
+          3. For Transfer to Maybnak's one-off VA account (closedPayment flag), heart icon is hidden.
+
+
+          As this current sheet, we will only focus on the adding favourites on post transfer, other screen behaviors
+          and rules can be referred by to the immediate transfer sheets.
+        downstream: |-
+          ECLIPSE DB: 
+          1. favourite_group 
+          2. favourite_account
+          3. favourite_group_account
+          4. account_nickname
+  - stepNo: >-
+      The completion of intrabank or any interbank type of transfer, for full details please refer to the relevant
+      immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    screen: >-
+      The completion of intrabank or any interbank type of transfer, for full details please refer to the relevant
+      immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    userAction: >-
+      The completion of intrabank or any interbank type of transfer, for full details please refer to the relevant
+      immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    systemBehaviour: >-
+      The completion of intrabank or any interbank type of transfer, for full details please refer to the relevant
+      immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    businessRules: >-
+      The completion of intrabank or any interbank type of transfer, for full details please refer to the relevant
+      immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    apis:
+      - name: >-
+          The completion of intrabank or any interbank type of transfer, for full details please refer to the relevant
+          immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        method: >-
+          THE COMPLETION OF INTRABANK OR ANY INTERBANK TYPE OF TRANSFER, FOR FULL DETAILS PLEASE REFER TO THE RELEVANT
+          IMMEDIATE TRANSFER SHEETS: TRF_IMMEDIATE_INTRABANK AND TRF_IMMEDIATE_INTERBANK.
+        endpoint: >-
+          The completion of intrabank or any interbank type of transfer, for full details please refer to the relevant
+          immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        testCaseId: >-
+          TC_PTAF_The completion of intrabank or any interbank type of transfer, for full details please refer to the
+          relevant immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.a
+        requestSample: >-
+          The completion of intrabank or any interbank type of transfer, for full details please refer to the relevant
+          immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        responseSample: >-
+          The completion of intrabank or any interbank type of transfer, for full details please refer to the relevant
+          immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        mapping: null
+        microservice: >-
+          The completion of intrabank or any interbank type of transfer, for full details please refer to the relevant
+          immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        businessContext: >-
+          The completion of intrabank or any interbank type of transfer, for full details please refer to the relevant
+          immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        downstream: >-
+          The completion of intrabank or any interbank type of transfer, for full details please refer to the relevant
+          immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        remarks: >-
+          The completion of intrabank or any interbank type of transfer, for full details please refer to the relevant
+          immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.

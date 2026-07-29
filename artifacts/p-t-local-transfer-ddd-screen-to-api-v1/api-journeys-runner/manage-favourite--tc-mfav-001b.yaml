@@ -1,0 +1,197 @@
+id: TC_MFAV_001b
+title: 1. Manage Favorite - GetJourneyContent
+feature: Favourite Management
+journey: Manage_Favourite
+stepNo: '1'
+screen: Manage Favorite
+userAction: Favourite Group
+request:
+  method: GET
+  url: cms/journeys/payment_transfer_manage_favourite?locale=en_MY&channel=MOBILE
+  endpoint: cms/journeys/payment_transfer_manage_favourite?locale=en_MY&channel=MOBILE
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    journeyId: local_transfer_manage_favourite
+    version: 1.0.0
+    screens:
+      - screenId: local_transfer_create_new_list
+        core:
+          typo:
+            - id: title
+              value: Manage favourite list
+              description: Edit or create a new list and manage who’s in it.
+        navigation:
+          tab:
+            - id: local
+              label: Local
+            - id: overseas
+              label: Overseas
+        action:
+          button:
+            - id: create_new_list
+              label: Create new list
+      - screenId: local_transfer_favourites_list_overview
+        core:
+          typo:
+            - id: title
+              value: Favourites
+        container:
+          banner:
+            - id: favSync
+              description: Your favourites will sync with Maybank2u web when you add or remove recipients.
+        action:
+          button:
+            - id: edit
+              label: Edit
+            - id: add_recipient
+              label: Add recipient
+            - id: done
+              label: Done
+      - screenId: local_transfer_add_recipient_account
+        core:
+          typo:
+            - id: addRecipient
+              value: Add recipient
+              description: Fill in the details to add them to favourites.
+        input:
+          textInput:
+            - id: recipientBank
+              label: Recipient bank/eWallet
+              required: true
+            - id: account_number
+              label: Account number
+              placeholder: Enter account number
+              required: true
+              minLength: 9
+              maxLength: 20
+              pattern: ^[0-9]{9,20}$
+              errorMessage:
+                - id: invalidAcc
+                  message: Invalid account number
+            - id: nickname
+              label: Nickname
+              placeholder: Optional
+              required: false
+              maxLength: 50
+              minLength: 0
+        statusAndFeedback:
+          alertBanner:
+            - id: reminder
+              message: Ensure the details are correct before proceeding.
+              icon: Shield
+        action:
+          button:
+            - id: next
+              label: Next
+      - screenId: local_transfer_manage_favourite_final
+        asset:
+          image:
+            - id: success
+              url: https://res.cloudinary.com/deoklsh3h/image/upload/v1776057612/success.png
+            - id: failure
+              url: https://res.cloudinary.com/deoklsh3h/image/upload/v1776057612/failure.png
+        core:
+          typo:
+            - id: success
+              value: Added as favourite
+            - id: failure
+              value: Update unsuccessful
+            - id: refId
+              value: 'Ref ID:'
+        container:
+          list:
+            - id: accountDetails
+              items:
+                - id: accountHolderName
+                  label: Account holder name
+                - id: account_number
+                  label: Account number
+                - id: recipientBank
+                  label: Recipient bank
+    modals:
+      - modalId: local_transfer_add_favourite_recipient_modal
+        container:
+          list:
+            - id: add_method_list
+              title: Add recipient via
+              items:
+                - id: recentTransfers
+                  label: Recent transfers
+                  icon: Recent
+                - id: accountNumber
+                  label: Account Number
+                  icon: Bank
+      - modalId: local_transfer_select_bank_modal
+        navigation:
+          topNavigation:
+            - id: transferTo
+              title: Transfer to
+          tab:
+            - id: all
+              label: All
+            - id: banks
+              label: Banks
+            - id: ewallets
+              label: eWallets
+        input:
+          searchInput:
+            - id: search_recipient
+              placeholder: Search
+      - modalId: local_transfer_select_recipient_modal
+        navigation:
+          topNavigation:
+            - id: selectRecipient
+              title: Select recipient
+        input:
+          searchInput:
+            - id: searchRecipient
+              placeholder: Search
+        core:
+          typo:
+            - id: all
+              value: All
+        action:
+          button:
+            - id: add
+              label: Add
+      - modalId: local_transfer_nickname_tooltip
+        navigation:
+          topNavigation:
+            - id: nickname
+              title: Nickname
+        core:
+          typo:
+            - id: nickname1
+              description: Quickly recognise who you’re sending money to. You can edit this at any time.
+      - modalId: local_transfer_manage_favourite_edit_remove
+        navigation:
+          topNavigation:
+            - id: editRemove
+              title: Remove from this list?
+        core:
+          typo:
+            - id: removeList
+              value: This will also remove the recipient from your favourites on Maybank2u web.
+        action:
+          button:
+            - id: remove
+              label: Remove
+            - id: keep
+              label: Keep
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: IF the number of Custom Favourite List is less than 4, (+) Create New List button will
+      be available. 
+
+      Otherwise, hide the button
+    type: custom
+references:
+  apiSpecFile: GetJourneyContent
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Favourite

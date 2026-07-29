@@ -1,0 +1,55 @@
+id: TC_30ETBWM2_001a
+title: 1. Enter Username - Cerebro
+feature: ETB w M2U Login Username
+journey: 3.0 ETB - w M2U Login Username
+stepNo: '1'
+screen: Enter Username
+userAction: User enter username
+request:
+  method: POST
+  url: /identity/cerebro/v1/user/verify-username
+  endpoint: /identity/cerebro/v1/user/verify-username
+  headers:
+    Accept: application/json
+    X-MB-Authorization: NGAID260703094512_1001
+    Content-Type: application/json
+  body: |-
+    {
+     "username": "Azmanmbb9"
+    }
+response:
+  successStatusCode: 200
+  sampleResponse: |-
+    {
+     "status": 200,
+     "message": "Request processed successfully",
+     "timestamp": "2026-01-13T12:00:00",
+     "meta": null
+     "data": {
+     "securityImage": {
+     "imageId": "img_001",
+     "imagePath": "/security-images/img_001.png"
+     },
+     }
+    }
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: |-
+      Validate business outcome: Username Field 
+      1. Format Validation 
+      - Must be less than or equal to 20 characters and not empty. Disallow further input if more than 20 
+      - Cannot contain special characters or <Space> 
+      2. Copy and Paste is not allowed
+      3. If empty, show "Required field"
+
+      Next Button 
+      1. Always Enabled 
+      2. Field Validation: 
+      - Mandatory check: If username field empty and click Next button, then display inline error ("Required Field.") 
+      3. Navigate to Login - Confirm Security Image screen
+    type: custom
+references:
+  apiSpecFile: Cerebro
+  sourceWorksheet: ETB Onboarding Screen API Mapping (All Journeys) / 3.0 ETB - w M2U Login Username

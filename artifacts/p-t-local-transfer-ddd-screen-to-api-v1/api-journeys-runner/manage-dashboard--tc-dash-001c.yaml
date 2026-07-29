@@ -1,0 +1,47 @@
+id: TC_DASH_001c
+title: 1. Init Module - GetPTMaintenanceCountries
+feature: Transfer Dashboard
+journey: Manage_Dashboard
+stepNo: '1'
+screen: Init Module
+userAction: User Lands into Transfer Dashboard
+request:
+  method: GET
+  url: pt/maintenance/v1/external/transfers/countries
+  endpoint: pt/maintenance/v1/external/transfers/countries
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    countries:
+      - countryCode: ID
+        countryName: Indonesia
+        countryLogoUrl: https://cdn.bank.com/assets/flags/id.png
+        displaySequence: 1
+      - countryCode: MY
+        countryName: Malaysia
+        countryLogoUrl: https://cdn.bank.com/assets/flags/my.png
+        displaySequence: 2
+      - countryCode: SG
+        countryName: Singapore
+        countryLogoUrl: https://cdn.bank.com/assets/flags/sg.png
+        displaySequence: 3
+      - countryCode: TH
+        countryName: Thailand
+        countryLogoUrl: https://cdn.bank.com/assets/flags/th.png
+        displaySequence: 4
+      - countryCode: PH
+        countryName: Philippines
+        countryLogoUrl: https://cdn.bank.com/assets/flags/ph.png
+        displaySequence: 5
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: 'Validate business outcome: NA'
+    type: custom
+references:
+  apiSpecFile: GetPTMaintenanceCountries
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Dashboard

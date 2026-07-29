@@ -1,0 +1,80 @@
+id: TC_EXP_003a
+title: 3. PFM - Category & Sub-category list - getCategories
+feature: Expenses Tracker
+journey: Trf_Expenses_Tracker
+stepNo: '3'
+screen: PFM - Category & Sub-category list
+userAction: Category & Subcategory listing
+request:
+  method: GET
+  url: /v1/external/categories
+  endpoint: /v1/external/categories
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: Request processed successfully
+    timestamp: '2026-01-13T12:00:00'
+    correlationId: abc123-correlation-id
+    meta:
+      provider: erp
+    data:
+      categories:
+        - id: 1
+          name: Automotive
+          colorCode: '#BE3BFF'
+          icon: car
+          subCategories:
+            - id: 1
+              name: Auto maintenance
+              colorCode: '#BE3BFF'
+              icon: car
+              isSystem: true
+            - id: 2
+              name: Car wash
+              colorCode: '#BE3BFF'
+              icon: car
+              isSystem: true
+            - id: 3
+              name: Automotive
+              colorCode: '#BE3BFF'
+              icon: car
+              isSystem: true
+        - id: 2
+          name: Education
+          colorCode: '#FFAB40'
+          icon: education
+          subCategories:
+            - id: 4
+              name: Education
+              colorCode: '#FFAB40'
+              icon: education
+              isSystem: true
+            - id: 5
+              name: Education - others
+              colorCode: '#FFAB40'
+              icon: education
+              isSystem: true
+            - id: 6
+              name: Elementary School
+              colorCode: '#FFAB40'
+              icon: education
+              isSystem: false
+            - id: 7
+              name: College & University
+              colorCode: '#FFAB40'
+              icon: education
+              isSystem: false
+    Link: {}
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: 'Validate business outcome: Retrieve category list for expenses, this should allocate into cache'
+    type: custom
+references:
+  apiSpecFile: getCategories
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Trf_Expenses_Tracker

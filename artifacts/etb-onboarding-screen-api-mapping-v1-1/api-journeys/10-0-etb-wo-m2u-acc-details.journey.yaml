@@ -1,0 +1,70 @@
+schemaVersion: 2.0.0
+generatedAt: '2026-07-27T06:52:54.096Z'
+source: ETB_Onboarding_Screen_API_Mapping_v1.1.xlsx
+feature: ETB Onboarding Screen API Mapping (All Journeys)
+category: API Journey
+journey:
+  title: ETB w M2U Final
+  code: 10.0 ETB - wo M2U acc Details
+  description: ''
+summary:
+  totalSteps: 1
+  totalApiRows: 0
+  hasS2UAuthentication: false
+  testCaseIdPrefix: TC_100ETBWO
+keyApis: []
+steps:
+  - stepNo: '1'
+    screen: Register with Debit / Credit Card
+    userAction: User Input Debit / Credit Card Details and click Next
+    systemBehaviour: System to Get TPK for PIN encryption during on Load
+    businessRules: >-
+      "When tap on Next button, perform validation below:
+
+      1. Mandatory Check. If mandatory field empty, display inline error ""Required input.""
+
+      2. Format validation, if failed display inline messsage. 
+
+      3. M2U or NGA User ID validation
+
+      - check if customer has existing M2U/NGA user ID. If yes, then navigate to Forgot Account Details Page.
+
+      4. Account validity , if failed display snackbar error
+
+      a. Credit card
+
+      i. Validate card number, expiry date, PIN validity, else display snackbar error ""Invalid card details or status.
+      Please check your details or try another card."" 
+
+      ii. Validate card with following rules, else display snackbar error ""Invalid card details or status. Please check
+      your details or try another card."":
+
+      - CC Status allowed = Active (1) dan Inactive (2, i.e. no trxn in last 180 days) 
+
+      - CC Block code allowed = Normal (Null or ” “) or Late Payment (B, C, H, I, J, K, M, N, O, P)
+
+      - CC Card Type = Primary (PP)
+
+      b. Debit card
+
+      i. Validate card number,expiry date, PIN validity, else display snackbar error ""Invalid card details or status.
+      Please check your details or try another card."" 
+
+      ii. Check card with following rules, else display snackbar error ""Invalid card details/status. Please check your
+      details or try another card.""
+
+      - Debit Card status allowed : Active (1,6)
+
+      - Debit Card relationship code not allowed: Joint Account (02, 32, 03, 33)
+
+      - CASA status allowed: Active or Inactive (IM07, ST01)
+
+      5. IF user enter invalid PIN only >3 times, card will be temporary blocked.
+
+
+      Once above is completed successfully, perform CIF retrieval and extract info below:
+
+      1. Customer Name (To populate first name for Nickname screen)
+
+      2. DOB (For password check)
+    apis: []

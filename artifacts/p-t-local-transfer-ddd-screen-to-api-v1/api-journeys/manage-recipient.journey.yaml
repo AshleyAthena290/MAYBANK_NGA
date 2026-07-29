@@ -1,0 +1,934 @@
+schemaVersion: 2.0.0
+generatedAt: '2026-07-27T03:25:39.685Z'
+source: P&T_Local_Transfer_DDD_Screen_to_API_v1.xlsx
+feature: P&T Local Transfer (All Journeys)
+category: API Journey
+journey:
+  title: Custom Recipient Management
+  code: Manage_Recipient
+  description: |-
+    Add/Update/Delete Nickname 
+    Add/Update/Remove Favourite
+summary:
+  totalSteps: 11
+  totalApiRows: 12
+  hasS2UAuthentication: true
+  testCaseIdPrefix: TC_RECIP
+keyApis:
+  - name: addBeneficiaries
+    method: POST
+    endpoint: /v1/external/transfer
+    microservice: erp-beneficiary
+  - name: getTransferBeneficiaries
+    method: GET
+    endpoint: /v1/external/transfer?scope=LOCAL&groupType=ALL&page=0&limit=10
+    microservice: erp-beneficiary
+  - name: getTransferBeneficiariesSearch
+    method: GET
+    endpoint: /v1/external/transfer/search?scope=LOCAL&groupType=ALL&keyword=ABC&page=0&limit=10
+    microservice: erp-beneficiary
+  - name: addNickname
+    method: POST
+    endpoint: /v1/external/accounts/nickname
+    microservice: erp-beneficiary
+  - name: updateNickname
+    method: PATCH
+    endpoint: /v1/external/accounts/nickname
+    microservice: erp-beneficiary
+  - name: deleteNickname
+    method: DELETE
+    endpoint: /v1/external/accounts/nickname?accountId=3939393933
+    microservice: erp-beneficiary
+  - name: S2UBeneficiaries
+    method: POST
+    endpoint: /v1/external/beneficiaries
+    microservice: erp-xp-transaction
+  - name: deleteBeneficiaries
+    method: DELETE
+    endpoint: /v1/external/transfer?groupType=ALL&accountId=598322219222
+    microservice: erp-beneficiary
+  - name: updateBeneficiaries
+    method: PATCH
+    endpoint: /v1/external/transfer
+    microservice: erp-beneficiary
+  - name: deleteBeneficiaries
+    method: DELETE
+    endpoint: /v1/external/transfer?groupType=FREQUENT&accountId=598322219222
+    microservice: erp-beneficiary
+steps:
+  - stepNo: '1'
+    screen: Transfer - Add Recipient
+    userAction: Create new favorite custom group with with recipients
+    systemBehaviour: Create new favorite custom group with with recipients
+    businessRules: >-
+      At Create New List Screen, user is required to enter the List Name.
+
+      To add recipient(s), user is required to tap [(+) Add recipient] button, system to display select recipient
+      drawer:
+
+      1. Single tap will mark and highlight the recipient with a checkbox ticked. 
+
+      2. Multiple recipients selection is supported.
+
+      3. Re-tapping recipient will de-select and uncheck recipient.
+
+      4. Tap [Save] to confirm the selection. Selected recipients will be moved to Create New List Screen.
+
+
+      Upon tapping [Add] button:
+
+      1. If no selected recipient(s), system displays toastbar message "Please select at least 1 recipient."
+
+
+      Upon tapping [Create list] button, system performs:
+
+      1. Mandatory checking. If List name is empty, system displays inline error message "Required field."
+
+      2. Duplication checking, list name cannot be the same as other existing custom list AND default list (All,
+      Frequent, Own, Favourite). System display inline error message: "Name cannot be the same as existing lists."
+
+      3. IF there is no recipient(s), system displays toastbar message "Please select at least 1 recipient."
+
+      4. There is no limit to the maximum recipient(s) in a single custom list.
+
+
+      Upon succesful creation, system to display a toast message "List Updated" and Custom List is created & placed in
+      the right most tab. System then navigates to the newly created custom beneficiary category tab.
+    apis:
+      - name: addBeneficiaries
+        method: POST
+        endpoint: /v1/external/transfer
+        testCaseId: TC_RECIP_001a
+        requestSample:
+          groups:
+            - type: FAVOURITES
+              name: Favourites
+          beneficiaries:
+            - accountId: '4700025122'
+              accountHolderName: MUHAMMAD ALI MUTHU
+              nickname: ali nickname
+              bicCode: PBBEMYKL
+              bankName: PUBLIC BANK
+              transactionType: TRANSFER/PAYMENT
+              transactionSubtype: INTERBANK
+              transactionMetadata:
+                serviceFees: 11
+                firstTimeTac: '1'
+                idNumber: null
+                idType: null
+                mobileNumber: ''
+                idFlag: ''
+                swiftCode: PBBEMYKL
+                acquirerId: '564162'
+                accountType: ''
+                accountSubType: ''
+                currency: ''
+                balance: 0
+                paymentCode: '01'
+        responseSample:
+          status: 200
+          message: add_beneficiaries_success
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: >-
+          At Create New List Screen, user is required to enter the List Name.
+
+          To add recipient(s), user is required to tap [(+) Add recipient] button, system to display select recipient
+          drawer:
+
+          1. Single tap will mark and highlight the recipient with a checkbox ticked. 
+
+          2. Multiple recipients selection is supported.
+
+          3. Re-tapping recipient will de-select and uncheck recipient.
+
+          4. Tap [Save] to confirm the selection. Selected recipients will be moved to Create New List Screen.
+
+
+          Upon tapping [Add] button:
+
+          1. If no selected recipient(s), system displays toastbar message "Please select at least 1 recipient."
+
+
+          Upon tapping [Create list] button, system performs:
+
+          1. Mandatory checking. If List name is empty, system displays inline error message "Required field."
+
+          2. Duplication checking, list name cannot be the same as other existing custom list AND default list (All,
+          Frequent, Own, Favourite). System display inline error message: "Name cannot be the same as existing lists."
+
+          3. IF there is no recipient(s), system displays toastbar message "Please select at least 1 recipient."
+
+          4. There is no limit to the maximum recipient(s) in a single custom list.
+
+
+          Upon succesful creation, system to display a toast message "List Updated" and Custom List is created & placed
+          in the right most tab. System then navigates to the newly created custom beneficiary category tab.
+        downstream: |-
+          ECLIPSE DB: 
+          1. favourite_group 
+          2. favourite_account
+          3. favourite_group_account
+          4. account_nickname
+  - stepNo: '2'
+    screen: Transfer - All Beneficiary List
+    userAction: Recipient List
+    systemBehaviour: Recipient List
+    businessRules: Populate from "ALL" category
+    apis:
+      - name: getTransferBeneficiaries
+        method: GET
+        endpoint: /v1/external/transfer?scope=LOCAL&groupType=ALL&page=0&limit=10
+        testCaseId: TC_RECIP_002a
+        requestSample: null
+        responseSample:
+          status: 200
+          message: Request processed successfully
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+            page: 0
+            limit: 10
+            total: 55
+            nextPage: '1'
+          data:
+            beneficiaries:
+              - accountId: '4700025122'
+                accountHolderName: MUHAMMAD ALI MUTHU
+                nickname: ali account
+                bicCode: PBBEMYKL
+                bankName: PUBLIC BANK
+                profileImage: 3dieieo383992020202
+                groups:
+                  - id: G001
+                    type: FAVORITES
+                    name: Favorites
+                  - id: G002
+                    type: CUSTOM
+                    name: Family
+                  - id: G003
+                    type: CUSTOM
+                    name: Friends
+                transactionType: TRANSFER/PAYMENT
+                transactionSubtype: INTERBANK
+                transactionMetadata:
+                  serviceFees: 11
+                  firstTimeTac: '1'
+                  idNumber: null
+                  idType: null
+                  mobileNumber: ''
+                  idFlag: ''
+                  acquirerId: '564162'
+                  currency: ''
+                  balance: 0
+                  paymentCode: '01'
+              - accountId: '5500025133'
+                accountHolderName: 'MUHAMMAD AHMAD '
+                nickname: ahmad account
+                bicCode: PBBEMYKL
+                bankName: PUBLIC BANK
+                profileImage: 3dieieo383992020202
+                groups:
+                  - id: G001
+                    type: FAVORITES
+                    name: Favorites
+                  - id: G003
+                    type: CUSTOM
+                    name: Friends
+                transactionType: TRANSFER/PAYMENT
+                transactionSubtype: INTERBANK
+                transactionMetadata:
+                  serviceFees: 11
+                  firstTimeTac: '1'
+                  idNumber: null
+                  idType: null
+                  mobileNumber: ''
+                  idFlag: ''
+                  acquirerId: '564162'
+                  currency: ''
+                  balance: 0
+                  paymentCode: '01'
+          link: {}
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: Populate from "ALL" category
+        downstream: |-
+          ECLIPSE DB: 
+          1. recent_transfer
+          2. favourite_group
+          3. favourite_account
+          4. favourite_group_account
+          5. account_nickname
+  - stepNo: '3'
+    screen: Transfer - All Beneficiary List
+    userAction: Recipient Search
+    systemBehaviour: Recipient Search
+    businessRules: ''
+    apis:
+      - name: getTransferBeneficiariesSearch
+        method: GET
+        endpoint: /v1/external/transfer/search?scope=LOCAL&groupType=ALL&keyword=ABC&page=0&limit=10
+        testCaseId: TC_RECIP_003a
+        requestSample: null
+        responseSample:
+          status: 200
+          message: Request processed successfully
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+            page: 0
+            limit: 10
+            total: 55
+            nextPage: '1'
+          data:
+            beneficiaries:
+              - accountId: '4700025122'
+                accountHolderName: MUHAMMAD ALI MUTHU
+                nickname: ali account
+                bicCode: PBBEMYKL
+                bankName: PUBLIC BANK
+                profileImage: 3dieieo383992020202
+                groups:
+                  - id: G001
+                    type: FAVORITES
+                    name: Favorites
+                  - id: G002
+                    type: CUSTOM
+                    name: Family
+                  - id: G003
+                    type: CUSTOM
+                    name: Friends
+                transactionType: TRANSFER/PAYMENT
+                transactionSubtype: INTERBANK
+                transactionMetadata:
+                  serviceFees: 11
+                  firstTimeTac: '1'
+                  idNumber: null
+                  idType: null
+                  mobileNumber: ''
+                  idFlag: ''
+                  acquirerId: '564162'
+                  currency: ''
+                  balance: 0
+                  paymentCode: '01'
+              - accountId: '5500025133'
+                accountHolderName: 'MUHAMMAD AHMAD '
+                nickname: ahmad account
+                bicCode: PBBEMYKL
+                bankName: PUBLIC BANK
+                profileImage: 3dieieo383992020202
+                groups:
+                  - id: G001
+                    type: FAVORITES
+                    name: Favorites
+                  - id: G003
+                    type: CUSTOM
+                    name: Friends
+                transactionType: TRANSFER/PAYMENT
+                transactionSubtype: INTERBANK
+                transactionMetadata:
+                  serviceFees: 11
+                  firstTimeTac: '1'
+                  idNumber: null
+                  idType: null
+                  mobileNumber: ''
+                  idFlag: ''
+                  acquirerId: '564162'
+                  currency: ''
+                  balance: 0
+                  paymentCode: '01'
+          link: {}
+        mapping: null
+        microservice: erp-beneficiary
+        downstream: |-
+          ECLIPSE DB: 
+          1. recent_transfer
+          2. favourite_group
+          3. favourite_account
+          4. favourite_group_account
+          5. account_nickname
+  - stepNo: '4'
+    screen: Transfer - Recipients - Nickname
+    userAction: Add nickname
+    systemBehaviour: Add nickname
+    businessRules: >-
+      Upon entering nickname:
+
+      1. If user enter OR paste other than allowable characters, display inline error message "only alphabets, digits,
+      and spaces are allowed."
+
+      2. If user sets the nickname with empty value and tap [Save] button, proceed to save with no value.
+
+      3. If user enter valid value, proceed to save and once successful, redirect user to the last active tab and
+      display a successful toast message "Nickname added".
+
+      4. Saved nickname will be reflected across the other tabs (Frequent, Fav or Custom) i.e. 1 beneficiary will only
+      have 1 nickname.
+
+      5. For unsuccessful creation, system to redirect user to the last active tab and display a successful toast
+      message "Service Temporary unavailable".
+    apis:
+      - name: addNickname
+        method: POST
+        endpoint: /v1/external/accounts/nickname
+        testCaseId: TC_RECIP_004a
+        requestSample:
+          accountId: '504233415671'
+          nickname: MUTHU
+        responseSample:
+          status: 200
+          message: add_nickname_success
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: >-
+          Upon entering nickname:
+
+          1. If user enter OR paste other than allowable characters, display inline error message "only alphabets,
+          digits, and spaces are allowed."
+
+          2. If user sets the nickname with empty value and tap [Save] button, proceed to save with no value.
+
+          3. If user enter valid value, proceed to save and once successful, redirect user to the last active tab and
+          display a successful toast message "Nickname added".
+
+          4. Saved nickname will be reflected across the other tabs (Frequent, Fav or Custom) i.e. 1 beneficiary will
+          only have 1 nickname.
+
+          5. For unsuccessful creation, system to redirect user to the last active tab and display a successful toast
+          message "Service Temporary unavailable".
+        downstream: |-
+          ECLIPSE DB: 
+          1. account_nickname
+  - stepNo: '5'
+    screen: Transfer - Recipients - Nickname
+    userAction: Edit Nickname
+    systemBehaviour: Edit Nickname
+    businessRules: >-
+      Upon entering Nickname:
+
+      1. If user enter OR paste other than allowable characters, display inline error message "only alphabets, digits,
+      and spaces are allowed."
+
+      2. If user cleared the nickname with empty value, [Save] button will be changed to [Remove]. 
+
+      3. If user enter valid value, proceed to save and once successful, redirect user to the last active tab and
+      display a successful toast message "Nickname updated".
+
+      4. If user tap on [Remove], delete the nickname and once successful, redirect user to the last active tab and
+      display a successful toast message "Nickname removed".
+
+      5. Nickname update will be reflected across the other tabs (Frequent, Fav or Custom) i.e. 1 beneficiary will only
+      have 1 nickname.
+
+      6. For unsuccessful update or removal, system to redirect user to the last active tab and display a successful
+      toast message "Service Temporary unavailable".
+    apis:
+      - name: updateNickname
+        method: PATCH
+        endpoint: /v1/external/accounts/nickname
+        testCaseId: TC_RECIP_005a
+        requestSample:
+          accountId: '504233415671'
+          nickname: MUTHU
+        responseSample:
+          status: 200
+          message: update_nickname_success
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: >-
+          Upon entering Nickname:
+
+          1. If user enter OR paste other than allowable characters, display inline error message "only alphabets,
+          digits, and spaces are allowed."
+
+          2. If user cleared the nickname with empty value, [Save] button will be changed to [Remove]. 
+
+          3. If user enter valid value, proceed to save and once successful, redirect user to the last active tab and
+          display a successful toast message "Nickname updated".
+
+          4. If user tap on [Remove], delete the nickname and once successful, redirect user to the last active tab and
+          display a successful toast message "Nickname removed".
+
+          5. Nickname update will be reflected across the other tabs (Frequent, Fav or Custom) i.e. 1 beneficiary will
+          only have 1 nickname.
+
+          6. For unsuccessful update or removal, system to redirect user to the last active tab and display a successful
+          toast message "Service Temporary unavailable".
+        downstream: |-
+          ECLIPSE DB: 
+          1. account_nickname
+  - stepNo: '6'
+    screen: Transfer - Recipients - Nickname
+    userAction: Delete nickname
+    systemBehaviour: Delete nickname
+    businessRules: >-
+      Upon entering Nickname:
+
+      1. If user enter OR paste other than allowable characters, display inline error message "only alphabets, digits,
+      and spaces are allowed."
+
+      2. If user cleared the nickname with empty value, [Save] button will be changed to [Remove]. 
+
+      3. If user enter valid value, proceed to save and once successful, redirect user to the last active tab and
+      display a successful toast message "Nickname updated".
+
+      4. If user tap on [Remove], delete the nickname and once successful, redirect user to the last active tab and
+      display a successful toast message "Nickname removed".
+
+      5. Nickname update will be reflected across the other tabs (Frequent, Fav or Custom) i.e. 1 beneficiary will only
+      have 1 nickname.
+
+      6. For unsuccessful update or removal, system to redirect user to the last active tab and display a successful
+      toast message "Service Temporary unavailable".
+    apis:
+      - name: deleteNickname
+        method: DELETE
+        endpoint: /v1/external/accounts/nickname?accountId=3939393933
+        testCaseId: TC_RECIP_006a
+        requestSample: null
+        responseSample:
+          status: 200
+          message: delete_nickname_success
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: >-
+          Upon entering Nickname:
+
+          1. If user enter OR paste other than allowable characters, display inline error message "only alphabets,
+          digits, and spaces are allowed."
+
+          2. If user cleared the nickname with empty value, [Save] button will be changed to [Remove]. 
+
+          3. If user enter valid value, proceed to save and once successful, redirect user to the last active tab and
+          display a successful toast message "Nickname updated".
+
+          4. If user tap on [Remove], delete the nickname and once successful, redirect user to the last active tab and
+          display a successful toast message "Nickname removed".
+
+          5. Nickname update will be reflected across the other tabs (Frequent, Fav or Custom) i.e. 1 beneficiary will
+          only have 1 nickname.
+
+          6. For unsuccessful update or removal, system to redirect user to the last active tab and display a successful
+          toast message "Service Temporary unavailable".
+        downstream: |-
+          ECLIPSE DB: 
+          1. account_nickname
+  - stepNo: '7'
+    screen: Transfer - Recipients - Add to Favorite
+    userAction: Add to favorites from ALL
+    systemBehaviour: Add to favorites from ALL
+    businessRules: >-
+      1. Upon tapping [Save] button:
+
+      a. If the beneficiary is added to "Favourites" list, S2U is required.
+
+      b. If the beneficiary is added to Custom list only, S2U is not required.
+
+      c. Combination of list selection which includes Favourites, S2U is required.
+
+      d. If beneficiary is already in Favourites and is now added to Custom list, S2U is not required.
+
+      e. If none of the Fav or Custom list is selected, display toastbar error message "Please select an option to
+      proceed."
+
+      2. For adding to favourites/custom list:
+
+      a. If action requires S2U, display Status End Screen as a result.
+
+      b. If action does not require S2U, display toastbar message. For successful addition, system displays "List
+      added."
+
+      c. Combination of favourite and custom add to list will always result Status End screen as this requires S2U
+      authorisation.
+
+      3. For successful attempt:
+
+      - recipient will be added to the selected Fav/Custom tabs
+
+      4. For unsuccessful attempt:
+
+      - If S2U required and failed to save, display Update unsuccessful screen.
+
+      - If S2U is not required and failed to save, display toastbar error message "Service temporarily unavailable".
+
+
+      Notes:
+
+      - M2U/RMBP Favourite List will be synced with NGA Favourites list and displayed in NGA.
+    apis:
+      - name: S2UBeneficiaries
+        method: POST
+        endpoint: /v1/external/beneficiaries
+        testCaseId: TC_RECIP_007a
+        requestSample:
+          groups:
+            - operation: add
+              type: FAVOURITES
+              name: Favourites
+          beneficiaries:
+            - accountId: '4700025122'
+              accountHolderName: MUHAMMAD ALI MUTHU
+              nickname: ali nickname
+              bicCode: PBBEMYKL
+              bankName: PUBLIC BANK
+              transactionType: TRANSFER/PAYMENT
+              transactionSubtype: INTERBANK
+              transactionMetadata:
+                serviceFees: 11
+                firstTimeTac: '1'
+                idNumber: null
+                idType: null
+                mobileNumber: ''
+                idFlag: ''
+                swiftCode: PBBEMYKL
+                acquirerId: '564162'
+                accountType: ''
+                accountSubType: ''
+                currency: ''
+                balance: 0
+                paymentCode: '01'
+        responseSample:
+          status: success
+          extra: ''
+          note: ''
+          header: added_as_favourite_success_header
+          desc: ''
+          details: >-
+            {"reference_id":"268614863M","date_time":"07 May 2026, 04:05 PM","account_holder_name":"Andy
+            Loo","account_number":"5042 3341 3421","recipient_bank":"Maybank"}
+          receipt: ''
+        mapping: null
+        microservice: erp-xp-transaction
+        businessContext: >-
+          1. Upon tapping [Save] button:
+
+          a. If the beneficiary is added to "Favourites" list, S2U is required.
+
+          b. If the beneficiary is added to Custom list only, S2U is not required.
+
+          c. Combination of list selection which includes Favourites, S2U is required.
+
+          d. If beneficiary is already in Favourites and is now added to Custom list, S2U is not required.
+
+          e. If none of the Fav or Custom list is selected, display toastbar error message "Please select an option to
+          proceed."
+
+          2. For adding to favourites/custom list:
+
+          a. If action requires S2U, display Status End Screen as a result.
+
+          b. If action does not require S2U, display toastbar message. For successful addition, system displays "List
+          added."
+
+          c. Combination of favourite and custom add to list will always result Status End screen as this requires S2U
+          authorisation.
+
+          3. For successful attempt:
+
+          - recipient will be added to the selected Fav/Custom tabs
+
+          4. For unsuccessful attempt:
+
+          - If S2U required and failed to save, display Update unsuccessful screen.
+
+          - If S2U is not required and failed to save, display toastbar error message "Service temporarily unavailable".
+
+
+          Notes:
+
+          - M2U/RMBP Favourite List will be synced with NGA Favourites list and displayed in NGA.
+        downstream: |-
+          ECLIPSE DB: 
+          1. favourite_group
+          2. favourite_account
+          3. favourite_group_account
+          4. account_nickname
+  - stepNo: '8'
+    screen: Transfer - Recipients - Remove Favorite
+    userAction: Remove favorites list from ALL - Without Favourite group
+    systemBehaviour: Remove favorites list from ALL - Without Favourite group
+    businessRules: >-
+      "Removing Beneficiary from ALL tab:
+
+      a. Remove the selected beneficiary from All, Frequent, Favourite, and Custom lists where selected Bene exist.
+
+      b. If removal of beneficiary that appears under Favourite, navigate to S2U authorisation screen.
+
+      c. If action requires S2U, upon successful removal, navigate to Status removed screen.
+
+      d. If action does not require S2U, upon successful removal, system displays ""Recipient removed."" Else display
+      ""Service temporarily unavailable""."
+    apis:
+      - name: deleteBeneficiaries
+        method: DELETE
+        endpoint: /v1/external/transfer?groupType=ALL&accountId=598322219222
+        testCaseId: TC_RECIP_008a
+        requestSample: null
+        responseSample:
+          status: 200
+          message: delete_beneficiaries_success
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: >-
+          "Removing Beneficiary from ALL tab:
+
+          a. Remove the selected beneficiary from All, Frequent, Favourite, and Custom lists where selected Bene exist.
+
+          b. If removal of beneficiary that appears under Favourite, navigate to S2U authorisation screen.
+
+          c. If action requires S2U, upon successful removal, navigate to Status removed screen.
+
+          d. If action does not require S2U, upon successful removal, system displays ""Recipient removed."" Else
+          display ""Service temporarily unavailable""."
+        downstream: |-
+          ECLIPSE DB: 
+          1. recent_transfer
+          2. favourites_group
+          3. favourites_account
+          4. favourites_group_account
+  - stepNo: '9'
+    screen: Transfer - Recipients - Remove Favorite
+    userAction: Remove favorites list from ALL - With Favourite group
+    systemBehaviour: Remove favorites list from ALL - With Favourite group
+    businessRules: >-
+      "1. Upon tapping [Save] button, system to check:
+
+      a. If the beneficiary is either added to or removed from ""favourite"" list, S2U is required.
+
+      b. If action does not require S2U and for successful attempt, system displays a toastbar message ""List updated.""
+
+      c. If none of the Fav or Custom list is selected, render the [Save] button to [Remove] button, it will trigger
+      Remove function.
+
+
+      Refer to Recipient - Add to Fav Business Rules for status screen behaviour."
+    apis:
+      - name: S2UBeneficiaries
+        method: POST
+        endpoint: /v1/external/beneficiaries
+        testCaseId: TC_RECIP_009a
+        requestSample:
+          groups:
+            - operation: delete
+              type: FAVOURITES
+              name: Favourites
+          beneficiaries:
+            - accountId: '4700025122'
+              accountHolderName: MUHAMMAD ALI MUTHU
+              nickname: ali nickname
+              bicCode: PBBEMYKL
+              bankName: PUBLIC BANK
+              transactionType: TRANSFER/PAYMENT
+              transactionSubtype: INTERBANK
+              transactionMetadata:
+                serviceFees: 11
+                firstTimeTac: '1'
+                idNumber: null
+                idType: null
+                mobileNumber: ''
+                idFlag: ''
+                swiftCode: PBBEMYKL
+                acquirerId: '564162'
+                accountType: ''
+                accountSubType: ''
+                currency: ''
+                balance: 0
+                paymentCode: '01'
+        responseSample:
+          status: success
+          extra: ''
+          note: ''
+          header: recipient_removed_success_header
+          desc: ''
+          details: >-
+            {"reference_id":"268614863M","date_time":"07 May 2026, 04:05 PM","account_holder_name":"Andy
+            Loo","account_number":"5042 3341 3421","recipient_bank":"Maybank", "nickname":"andy loo nickname"}
+          receipt: ''
+        mapping: null
+        microservice: erp-xp-transaction
+        downstream: |-
+          ECLIPSE DB: 
+          1. recent_transfer
+          2. favourites_group
+          3. favourites_account
+          4. favourites_group_account
+      - name: updateBeneficiaries
+        method: PATCH
+        endpoint: /v1/external/transfer
+        testCaseId: TC_RECIP_009b
+        requestSample:
+          groups:
+            - operation: add
+              id: G002
+              type: CUSTOM
+              name: Friends
+          beneficiaries:
+            - accountId: '4700025122'
+              accountHolderName: MUHAMMAD ALI MUTHU
+              nickname: ali nickname
+              bicCode: PBBEMYKL
+              bankName: PUBLIC BANK
+              transactionType: TRANSFER/PAYMENT
+              transactionSubtype: INTERBANK
+              transactionMetadata:
+                serviceFees: 11
+                firstTimeTac: '1'
+                idNumber: null
+                idType: null
+                mobileNumber: ''
+                idFlag: ''
+                acquirerId: '564162'
+                accountType: ''
+                accountSubType: ''
+                currency: ''
+                balance: 0
+                paymentCode: '01'
+        responseSample:
+          status: 200
+          message: update_beneficiaries_success
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: >-
+          "1. Upon tapping [Save] button, system to check:
+
+          a. If the beneficiary is either added to or removed from ""favourite"" list, S2U is required.
+
+          b. If action does not require S2U and for successful attempt, system displays a toastbar message ""List
+          updated.""
+
+          c. If none of the Fav or Custom list is selected, render the [Save] button to [Remove] button, it will trigger
+          Remove function.
+
+
+          Refer to Recipient - Add to Fav Business Rules for status screen behaviour."
+        downstream: |-
+          ECLIPSE DB: 
+          1. favourite_group 
+          2. favourite_account
+          3. favourite_group_account
+          4. account_nickname
+  - stepNo: '10'
+    screen: Transfer - Recipients - Remove Favorite
+    userAction: Remove favorites list from Favorite
+    systemBehaviour: Remove favorites list from Favorite
+    businessRules: |-
+      Removing Beneficiary from FAVOURITES tab:
+      a. Remove the beneficiary from Favourites list only.
+      b. S2U authorisation is required to confirm the removal from the list.
+      c. Upon successful removal, navigate to Status removed screen.
+    apis:
+      - name: S2UBeneficiaries
+        method: POST
+        endpoint: /v1/external/beneficiaries
+        testCaseId: TC_RECIP_010a
+        requestSample:
+          groups:
+            - operation: delete
+              type: FAVOURITES
+              name: Favourites
+          beneficiaries:
+            - accountId: '4700025122'
+              accountHolderName: MUHAMMAD ALI MUTHU
+              nickname: ali nickname
+              bicCode: PBBEMYKL
+              bankName: PUBLIC BANK
+              transactionType: TRANSFER/PAYMENT
+              transactionSubtype: INTERBANK
+              transactionMetadata:
+                serviceFees: 11
+                firstTimeTac: '1'
+                idNumber: null
+                idType: null
+                mobileNumber: ''
+                idFlag: ''
+                swiftCode: PBBEMYKL
+                acquirerId: '564162'
+                accountType: ''
+                accountSubType: ''
+                currency: ''
+                balance: 0
+                paymentCode: '01'
+        responseSample:
+          status: success
+          extra: ''
+          note: ''
+          header: recipient_removed_success_header
+          desc: ''
+          details: >-
+            {"reference_id":"268614863M","date_time":"07 May 2026, 04:05 PM","account_holder_name":"Andy
+            Loo","account_number":"5042 3341 3421","recipient_bank":"Maybank", "nickname":"andy loo nickname"}
+          receipt: ''
+        mapping: null
+        microservice: erp-xp-transaction
+        businessContext: |-
+          Removing Beneficiary from FAVOURITES tab:
+          a. Remove the beneficiary from Favourites list only.
+          b. S2U authorisation is required to confirm the removal from the list.
+          c. Upon successful removal, navigate to Status removed screen.
+        downstream: |-
+          ECLIPSE DB: 
+          1. favourites_group
+          2. favourites_account
+          3. favourites_group_account
+  - stepNo: '11'
+    screen: Transfer - Recipients - Remove Favorite
+    userAction: Remove beneficiary list from Frequent
+    systemBehaviour: Remove beneficiary list from Frequent
+    businessRules: >-
+      Removing Beneficiary from FREQUENT tab:
+
+      a. Remove the beneficiary from Frequent list only.
+
+      b. For successful removal, to navigate to Transfer Landing Page under Frequent tab and display a toast message
+      "Recipient removed."
+    apis:
+      - name: deleteBeneficiaries
+        method: DELETE
+        endpoint: /v1/external/transfer?groupType=FREQUENT&accountId=598322219222
+        testCaseId: TC_RECIP_011a
+        requestSample: null
+        responseSample:
+          status: 200
+          message: delete_beneficiaries_success
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: >-
+          Removing Beneficiary from FREQUENT tab:
+
+          a. Remove the beneficiary from Frequent list only.
+
+          b. For successful removal, to navigate to Transfer Landing Page under Frequent tab and display a toast message
+          "Recipient removed."
+        downstream: |-
+          ECLIPSE DB: 
+          1. recent_transfer

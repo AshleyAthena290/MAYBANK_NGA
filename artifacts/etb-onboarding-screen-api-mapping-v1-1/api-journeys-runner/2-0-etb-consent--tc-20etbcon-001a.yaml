@@ -1,0 +1,51 @@
+id: TC_20ETBCON_001a
+title: 1. Consent - Cerebro
+feature: ETB Consent
+journey: 2.0 ETB - Consent
+stepNo: '1'
+screen: Consent
+userAction: User View and Tab I Agree & Consent
+request:
+  method: GET
+  url: /identity/cerebro/v1/user/consents
+  endpoint: /identity/cerebro/v1/user/consents
+  headers:
+    Accept: application/json
+    X-MB-Authorization: NGAID260703094512_1001
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse: |-
+    {
+     "status": 200,
+     "message": "Request processed successfully",
+     "timestamp": "2026-01-13T12:00:00+07:00",
+     "meta": null,
+     "data": {
+     "consentRequired": true,
+     "consentVersion": "1.0",
+     "documents": [
+     {
+     "documentType": "TERMS_AND_CONDITIONS",
+     "documentName": "Terms and Conditions",
+     "documentVersion": "1.0",
+     "downloadUrl": "https://{url}/documents/terms-and-conditions-v1.pdf"
+     },
+     ]
+     }
+    }
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: |-
+      Validate business outcome: Entry point:
+      1. User enters onboarding flow before Login screen.
+      2. System validates token and onboarding context.
+      3. System retrieves passport object to continue the onboarding journey.
+      4. If user already completed LOA / verification, system may redirect to App Dashboard / pre-login.
+      5. If user has not completed required onboarding step, system continues to onboarding consent flow.
+    type: custom
+references:
+  apiSpecFile: Cerebro
+  sourceWorksheet: ETB Onboarding Screen API Mapping (All Journeys) / 2.0 ETB - Consent

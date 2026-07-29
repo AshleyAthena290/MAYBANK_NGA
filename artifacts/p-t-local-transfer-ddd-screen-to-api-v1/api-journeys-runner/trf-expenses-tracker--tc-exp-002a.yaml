@@ -1,0 +1,52 @@
+id: TC_EXP_002a
+title: |-
+  2. Transfer Result Screen - Please refer to Trf_immediate_Intrabank for Intrabank Final Transfer Result Screen
+
+  Please refer to Trf_immediate_Interbank for Interbank Final Transfer Result Screen
+feature: Expenses Tracker
+journey: Trf_Expenses_Tracker
+stepNo: '2'
+screen: Transfer Result Screen
+userAction: User completed the transfer process.
+request:
+  method: |-
+    PLEASE REFER TO TRF_IMMEDIATE_INTRABANK FOR INTRABANK FINAL TRANSFER RESULT SCREEN
+
+    PLEASE REFER TO TRF_IMMEDIATE_INTERBANK FOR INTERBANK FINAL TRANSFER RESULT SCREEN
+  url: |-
+    Please refer to Trf_immediate_Intrabank for Intrabank Final Transfer Result Screen
+
+    Please refer to Trf_immediate_Interbank for Interbank Final Transfer Result Screen
+  endpoint: |-
+    Please refer to Trf_immediate_Intrabank for Intrabank Final Transfer Result Screen
+
+    Please refer to Trf_immediate_Interbank for Interbank Final Transfer Result Screen
+  headers:
+    Accept: application/json
+  body: |-
+    Please refer to Trf_immediate_Intrabank for Intrabank Final Transfer Result Screen
+
+    Please refer to Trf_immediate_Interbank for Interbank Final Transfer Result Screen
+response:
+  successStatusCode: 200
+  sampleResponse: |-
+    Please refer to Trf_immediate_Intrabank for Intrabank Final Transfer Result Screen
+
+    Please refer to Trf_immediate_Interbank for Interbank Final Transfer Result Screen
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: The post transaction events that sent to Eclipse domain includes the insertion of Inet
+      records, generation of receipt and the expense category of the transaction. 
+
+
+      Therefore, there is no related API for this step.
+    type: custom
+references:
+  apiSpecFile: |-
+    Please refer to Trf_immediate_Intrabank for Intrabank Final Transfer Result Screen
+
+    Please refer to Trf_immediate_Interbank for Interbank Final Transfer Result Screen
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Trf_Expenses_Tracker

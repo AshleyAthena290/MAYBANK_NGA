@@ -1,0 +1,57 @@
+id: TC_160ETBWO_001b
+title: 1. Request OTP SMS - Cerebro
+feature: ETB w M2U Final
+journey: 16.0 ETB-wo M2U Access Create
+stepNo: '1'
+screen: Request OTP SMS
+userAction: User Click "Request OTP"
+request:
+  method: POST
+  url: /cerebro/v1/otp/verify
+  endpoint: /cerebro/v1/otp/verify
+  headers:
+    Accept: application/json
+    X-MB-Authorization: NGAID260703094512_1001
+  body:
+    transactionId: TXN_REF_001
+    otpToken: '123456'
+response:
+  successStatusCode: 200
+  sampleResponse: |-
+    {
+     "status": "200",
+     "message": "Operation completed successfully.",
+     "timestamp": "2026-05-22T02:42:09.396073800Z",
+     "correlationId": null,
+     "data": {
+     "verified": true,
+     "transactionId": "TXN_REF_001"
+     "attempt": {
+     "count": 0,
+     "max": 3,
+     "remaining": 3,
+     }
+     "accountStatus": "ACTIVE"
+     },
+     "error": null,
+     "meta": null
+    }
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: OTP flow will be triggered for journeys requiring OTP validation (this is not a
+      fallback for S2U)
+
+
+      Mobile Number Display
+
+      1. Format: First space after area code, second space after next 2 digits, rest of phone number and mask last 4
+      digits
+
+      a. If no mobile number then Mobile Number Not Found page will be displayed
+    type: custom
+references:
+  apiSpecFile: Cerebro
+  sourceWorksheet: ETB Onboarding Screen API Mapping (All Journeys) / 16.0 ETB-wo M2U Access Create

@@ -1,0 +1,51 @@
+id: TC_MFAV_001a
+title: 1. Manage Favorite - getManageGroups
+feature: Favourite Management
+journey: Manage_Favourite
+stepNo: '1'
+screen: Manage Favorite
+userAction: Favourite Group
+request:
+  method: GET
+  url: /v1/external/transfer/groups/management?scope=LOCAL
+  endpoint: /v1/external/transfer/groups/management?scope=LOCAL
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: Request processed successfully
+    timestamp: '2026-01-13T12:00:00'
+    correlationId: abc123-correlation-id
+    meta:
+      provider: erp
+    data:
+      groups:
+        - id: G001
+          type: FAVORITES
+          name: Favorites
+          count: 3
+        - id: G002
+          type: CUSTOM
+          name: Family
+          count: 4
+        - id: G003
+          type: CUSTOM
+          name: Friends
+          count: 2
+    link: {}
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: IF the number of Custom Favourite List is less than 4, (+) Create New List button will
+      be available. 
+
+      Otherwise, hide the button
+    type: custom
+references:
+  apiSpecFile: getManageGroups
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Favourite

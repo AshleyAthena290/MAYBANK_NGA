@@ -1,0 +1,223 @@
+schemaVersion: 2.0.0
+generatedAt: '2026-07-27T06:52:54.096Z'
+source: ETB_Onboarding_Screen_API_Mapping_v1.1.xlsx
+feature: ETB Onboarding Screen API Mapping (All Journeys)
+category: API Journey
+journey:
+  title: ETB w M2U Login Password
+  code: 4.0 ETB - w M2U Login Pwd
+  description: ''
+summary:
+  totalSteps: 1
+  totalApiRows: 1
+  hasS2UAuthentication: false
+  testCaseIdPrefix: TC_40ETBWM2
+keyApis:
+  - name: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/login/password
+    microservice: Cerebro
+steps:
+  - stepNo: '1'
+    screen: Enter Password
+    userAction: User enter Password
+    systemBehaviour: ''
+    businessRules: >-
+      Entry point
+
+      1. From Login - Username screen - refer to [3.0 Login - Username], or 
+
+      2. Features / journey that requires user authentication
+
+
+      Password input 
+
+      1. Masking behaviour:
+
+      - Each entered character must be displayed unmasked for 2 seconds, after which it is automatically masked
+
+      - If a new character is entered, the previous character must be masked immediately regardless of the remaining
+      time
+
+      - If the user taps on CTA to proceed, the most recent character must be masked immediately
+
+      - The 2-second visibility rule applies only to the most recent character, unless interrupted by new input or CTA
+      interaction
+
+      2. Upon tapping textbox, display in-app custom numeric keyboard with the following rules:
+
+      - Copy and Paste is not allowed
+
+      - Auto complete/autofill is not allowed
+
+      - Auto correction is not allowed
+
+      - No prompt to ""save password"" linked to password managers (keyboard/native/app)
+
+
+      Log In button
+
+      1. Password Format validation
+
+      - Password is empty: Snap focus to password field with inline error (""Required field."")
+
+      - Password < 8 char: Snap focus to password field with inline error (""Please enter a valid password"") and this
+      will be counted as incorrect attempt.
+
+      - Password > 20 char: Disabled input
+
+      2. Username validity
+
+      - Invalid OR non-existent username: Display snackbar error (""Your username and password do not match."")
+
+      3. Password validity 
+
+      (i) Password incorrect AND attempt < 3x: Display snackbar error (""Incorrect password. Your account will be locked
+      after [Remaining no. of attempts] more unsuccessful attempts."")
+
+      (i) Password incorrect AND attempt = 3x : Navigate to Locked Account Screen
+
+      (ii). Remaining Attemps counter:
+
+      - Counter for wrong password input will persist indefinitely across devices/platforms
+
+      - Counter can be reset if the user:
+
+      - Inputs a correct password (before the account is locked i.e. within the 3 attempts)
+
+      - Resets password
+
+      - Changes password
+
+      - Unlocks account
+
+      4. If user attempted to further login and account status:
+
+      (i) Status = ""locked"" OR ""disabled"": Navigate to Locked Account / Disabled Account Screen (refer to [1.6
+      Account Locked])
+
+
+      5. If all the above passed, navigate to intended next landing screen of the respective journey requiring login.
+
+
+      Upon Verification - After Login with Password or Biometric, perform below:
+
+      1. Regardless successful or unsuccessful attempt, send data to FMS
+    apis:
+      - name: Cerebro
+        method: POST
+        endpoint: /cerebro/v1/login/password
+        testCaseId: TC_40ETBWM2_001a
+        requestSample: |-
+          {
+           "username": "soleproptest01",
+           "password": "pFjAM8Y1RyE3SkmGwF+623wcGxUzpH+gB5/Ii="
+           "mobileSDK": []
+          }
+        responseSample: |-
+          {
+           "status": 200,
+           "message": "Request processed successfully",
+           "timestamp": "2026-01-13T12:00:00",
+           "workflowId": "abc123-workflow-id",
+           "meta": {
+           "provider": "keycloak"
+           },
+           "data": {
+           "correlationId": "b7f2e4a1-91c4-4b1b-a1cc-2f7a8d9e1001",
+           "authResult": {
+           "tokenLevel": "L3",
+           "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...",
+           "refreshToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...",
+           "expiresIn": 300,
+           "tokenTier": 4,
+           "transactionId": "txn-001",
+           "pushApproved": true
+           },
+           }
+          }
+        mapping: null
+        microservice: Cerebro
+        businessContext: >-
+          Entry point
+
+          1. From Login - Username screen - refer to [3.0 Login - Username], or 
+
+          2. Features / journey that requires user authentication
+
+
+          Password input 
+
+          1. Masking behaviour:
+
+          - Each entered character must be displayed unmasked for 2 seconds, after which it is automatically masked
+
+          - If a new character is entered, the previous character must be masked immediately regardless of the remaining
+          time
+
+          - If the user taps on CTA to proceed, the most recent character must be masked immediately
+
+          - The 2-second visibility rule applies only to the most recent character, unless interrupted by new input or
+          CTA interaction
+
+          2. Upon tapping textbox, display in-app custom numeric keyboard with the following rules:
+
+          - Copy and Paste is not allowed
+
+          - Auto complete/autofill is not allowed
+
+          - Auto correction is not allowed
+
+          - No prompt to ""save password"" linked to password managers (keyboard/native/app)
+
+
+          Log In button
+
+          1. Password Format validation
+
+          - Password is empty: Snap focus to password field with inline error (""Required field."")
+
+          - Password < 8 char: Snap focus to password field with inline error (""Please enter a valid password"") and
+          this will be counted as incorrect attempt.
+
+          - Password > 20 char: Disabled input
+
+          2. Username validity
+
+          - Invalid OR non-existent username: Display snackbar error (""Your username and password do not match."")
+
+          3. Password validity 
+
+          (i) Password incorrect AND attempt < 3x: Display snackbar error (""Incorrect password. Your account will be
+          locked after [Remaining no. of attempts] more unsuccessful attempts."")
+
+          (i) Password incorrect AND attempt = 3x : Navigate to Locked Account Screen
+
+          (ii). Remaining Attemps counter:
+
+          - Counter for wrong password input will persist indefinitely across devices/platforms
+
+          - Counter can be reset if the user:
+
+          - Inputs a correct password (before the account is locked i.e. within the 3 attempts)
+
+          - Resets password
+
+          - Changes password
+
+          - Unlocks account
+
+          4. If user attempted to further login and account status:
+
+          (i) Status = ""locked"" OR ""disabled"": Navigate to Locked Account / Disabled Account Screen (refer to [1.6
+          Account Locked])
+
+
+          5. If all the above passed, navigate to intended next landing screen of the respective journey requiring
+          login.
+
+
+          Upon Verification - After Login with Password or Biometric, perform below:
+
+          1. Regardless successful or unsuccessful attempt, send data to FMS
+        downstream: OLM / TOS

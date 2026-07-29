@@ -1,0 +1,276 @@
+schemaVersion: 2.0.0
+generatedAt: '2026-07-27T06:52:54.096Z'
+source: ETB_Onboarding_Screen_API_Mapping_v1.1.xlsx
+feature: ETB Onboarding Screen API Mapping (All Journeys)
+category: API Journey
+journey:
+  title: ETB w M2U Final
+  code: 16.0 ETB-wo M2U Access Create
+  description: ''
+summary:
+  totalSteps: 2
+  totalApiRows: 4
+  hasS2UAuthentication: true
+  testCaseIdPrefix: TC_160ETBWO
+keyApis:
+  - name: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/otp/generate
+    microservice: Cerebro
+  - name: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/otp/verify
+    microservice: Cerebro
+steps:
+  - stepNo: '1'
+    screen: Request OTP SMS
+    userAction: User Click "Request OTP"
+    systemBehaviour: ''
+    businessRules: >-
+      OTP flow will be triggered for journeys requiring OTP validation (this is not a fallback for S2U)
+
+
+      Mobile Number Display
+
+      1. Format: First space after area code, second space after next 2 digits, rest of phone number and mask last 4
+      digits
+
+      a. If no mobile number then Mobile Number Not Found page will be displayed
+    apis:
+      - name: Cerebro
+        method: POST
+        endpoint: /cerebro/v1/otp/generate
+        testCaseId: TC_160ETBWO_001a
+        requestSample:
+          otpChannel: SMS
+          otpPurpose: SECURE2U_SETUP
+        responseSample:
+          status: 200
+          message: Request processed successfully
+          timestamp: '2026-01-13T12:00:00+07:00'
+          correlationId: null
+          data:
+            transactionId: otp_20260113120000_001
+            otpSent: true
+            expiresIn: 300
+            deliveryChannel: PHONE
+          error: null
+          meta: null
+        mapping: null
+        microservice: Cerebro
+        businessContext: >-
+          OTP flow will be triggered for journeys requiring OTP validation (this is not a fallback for S2U)
+
+
+          Mobile Number Display
+
+          1. Format: First space after area code, second space after next 2 digits, rest of phone number and mask last 4
+          digits
+
+          a. If no mobile number then Mobile Number Not Found page will be displayed
+        downstream: TAC
+      - name: Cerebro
+        method: POST
+        endpoint: /cerebro/v1/otp/verify
+        testCaseId: TC_160ETBWO_001b
+        requestSample:
+          transactionId: TXN_REF_001
+          otpToken: '123456'
+        responseSample: |-
+          {
+           "status": "200",
+           "message": "Operation completed successfully.",
+           "timestamp": "2026-05-22T02:42:09.396073800Z",
+           "correlationId": null,
+           "data": {
+           "verified": true,
+           "transactionId": "TXN_REF_001"
+           "attempt": {
+           "count": 0,
+           "max": 3,
+           "remaining": 3,
+           }
+           "accountStatus": "ACTIVE"
+           },
+           "error": null,
+           "meta": null
+          }
+        mapping: null
+        microservice: Cerebro
+        businessContext: >-
+          OTP Box
+
+          1. Copy and paste is not allowed
+
+
+          OTP Countdown Timer
+
+          1. Upon screen entry, start countdown timer from the defined duration of OTP validity set (e.g., 3 minutes) in
+          back office
+
+          2. After countdown finishes, display ("OTP timeout.") and Resend OTP link
+
+          3. If Resend OTP is tapped, redisplay the countdown timer and reset the m:ss
+
+
+          Resend OTP
+
+          1. Max allowable resend for OTP request is configure in back office which includes the initial from previous
+          request page
+
+
+          OTP Validation
+
+          1. OTP Validity
+
+          - Each OTP sent will expire after 3 minutes. If last expired OTP used, display inline error ("Please enter a
+          valid OTP.")
+
+          - If OTP is resent, old OTP becomes invalid
+
+          - If input is less than 4 digits and tap Enter (✓), this won't be counted as an invalid attempt and display
+          inline error ("Please enter a valid OTP.')
+
+          2. Submit OTP
+
+          - Max 3 attempts for OTP input; 
+
+          - If incorrect OTP is submitted then red outline on OTP boxes and show snackbar ("Incorrect OTP. Your account
+          will be locked after [Remaining attempt] more unsuccessful attempt.") and clear OTP field
+
+          - If 3rd attempt failed, account will be locked and user navigated to the lock account screen
+
+          - Successful validation will land customer to the transaction result page indicating success [Refer to 1.5 S2U
+          - Result]
+
+
+          Locked account
+
+          1. For locked account, Account Locked screen will be displayed (refer to [1.6 Account Locked])
+        downstream: TAC
+  - stepNo: '2'
+    screen: Request OTP SMS
+    userAction: User Click "Request OTP"
+    systemBehaviour: ''
+    businessRules: >-
+      OTP flow will be triggered for journeys requiring OTP validation (this is not a fallback for S2U)
+
+
+      Mobile Number Display
+
+      1. Format: First space after area code, second space after next 2 digits, rest of phone number and mask last 4
+      digits
+
+      a. If no mobile number then Mobile Number Not Found page will be displayed
+    apis:
+      - name: Cerebro
+        method: POST
+        endpoint: /cerebro/v1/otp/generate
+        testCaseId: TC_160ETBWO_002a
+        requestSample:
+          otpChannel: SMS
+          otpPurpose: SECURE2U_SETUP
+        responseSample:
+          status: 200
+          message: Request processed successfully
+          timestamp: '2026-01-13T12:00:00+07:00'
+          correlationId: null
+          data:
+            transactionId: otp_20260113120000_001
+            otpSent: true
+            expiresIn: 300
+            deliveryChannel: PHONE
+          error: null
+          meta: null
+        mapping: null
+        microservice: Cerebro
+        businessContext: >-
+          OTP flow will be triggered for journeys requiring OTP validation (this is not a fallback for S2U)
+
+
+          Mobile Number Display
+
+          1. Format: First space after area code, second space after next 2 digits, rest of phone number and mask last 4
+          digits
+
+          a. If no mobile number then Mobile Number Not Found page will be displayed
+        downstream: MBPNS
+      - name: Cerebro
+        method: POST
+        endpoint: /cerebro/v1/otp/verify
+        testCaseId: TC_160ETBWO_002b
+        requestSample:
+          transactionId: TXN_REF_001
+          otpToken: '123456'
+        responseSample: |-
+          {
+           "status": "200",
+           "message": "Operation completed successfully.",
+           "timestamp": "2026-05-22T02:42:09.396073800Z",
+           "correlationId": null,
+           "data": {
+           "verified": true,
+           "transactionId": "TXN_REF_001"
+           "attempt": {
+           "count": 0,
+           "max": 3,
+           "remaining": 3,
+           }
+           "accountStatus": "ACTIVE"
+           },
+           "error": null,
+           "meta": null
+          }
+        mapping: null
+        microservice: Cerebro
+        businessContext: >-
+          OTP Box
+
+          1. Copy and paste is not allowed
+
+
+          OTP Countdown Timer
+
+          1. Upon screen entry, start countdown timer from the defined duration of OTP validity set (e.g., 3 minutes) in
+          back office
+
+          2. After countdown finishes, display ("OTP timeout.") and Resend OTP link
+
+          3. If Resend OTP is tapped, redisplay the countdown timer and reset the m:ss
+
+
+          Resend OTP
+
+          1. Max allowable resend for OTP request is configure in back office which includes the initial from previous
+          request page
+
+
+          OTP Validation
+
+          1. OTP Validity
+
+          - Each OTP sent will expire after 3 minutes. If last expired OTP used, display inline error ("Please enter a
+          valid OTP.")
+
+          - If OTP is resent, old OTP becomes invalid
+
+          - If input is less than 4 digits and tap Enter (✓), this won't be counted as an invalid attempt and display
+          inline error ("Please enter a valid OTP.')
+
+          2. Submit OTP
+
+          - Max 3 attempts for OTP input; 
+
+          - If incorrect OTP is submitted then red outline on OTP boxes and show snackbar ("Incorrect OTP. Your account
+          will be locked after [Remaining attempt] more unsuccessful attempt.") and clear OTP field
+
+          - If 3rd attempt failed, account will be locked and user navigated to the lock account screen
+
+          - Successful validation will land customer to the transaction result page indicating success [Refer to 1.5 S2U
+          - Result]
+
+
+          Locked account
+
+          1. For locked account, Account Locked screen will be displayed (refer to [1.6 Account Locked])
+        downstream: MCM

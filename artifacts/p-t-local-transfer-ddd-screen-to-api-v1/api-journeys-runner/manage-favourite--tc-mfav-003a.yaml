@@ -1,0 +1,84 @@
+id: TC_MFAV_003a
+title: 3. Manage Favorite - Details - getTransferBeneficiaries
+feature: Favourite Management
+journey: Manage_Favourite
+stepNo: '3'
+screen: Manage Favorite - Details
+userAction: Custom Listing
+request:
+  method: GET
+  url: /v1/external/transfer?scope=LOCAL&groupType=CUSTOM&groupId=G002&page=0&limit=10
+  endpoint: /v1/external/transfer?scope=LOCAL&groupType=CUSTOM&groupId=G002&page=0&limit=10
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: Request processed successfully
+    timestamp: '2026-01-13T12:00:00'
+    correlationId: abc123-correlation-id
+    meta:
+      provider: erp
+      page: 0
+      limit: 10
+      total: 55
+      nextPage: '1'
+    data:
+      beneficiaries:
+        - accountId: '4700025122'
+          accountHolderName: MUHAMMAD ALI MUTHU
+          nickname: ali account
+          bicCode: PBBEMYKL
+          bankName: PUBLIC BANK
+          profileImage: 3dieieo383992020202
+          transactionType: TRANSFER/PAYMENT
+          transactionSubtype: INTERBANK
+          transactionMetadata:
+            serviceFees: 11
+            firstTimeTac: '1'
+            idNumber: null
+            idType: null
+            mobileNumber: ''
+            idFlag: ''
+            acquirerId: '564162'
+            currency: ''
+            balance: 0
+            paymentCode: '01'
+        - accountId: '5500025133'
+          accountHolderName: 'MUHAMMAD AHMAD '
+          nickname: ahmad account
+          bicCode: PBBEMYKL
+          bankName: PUBLIC BANK
+          profileImage: 3dieieo383992020202
+          transactionType: TRANSFER/PAYMENT
+          transactionSubtype: INTERBANK
+          transactionMetadata:
+            serviceFees: 11
+            firstTimeTac: '1'
+            idNumber: null
+            idType: null
+            mobileNumber: ''
+            idFlag: ''
+            acquirerId: '564162'
+            currency: ''
+            balance: 0
+            paymentCode: '01'
+    link: {}
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: |-
+      Validate business outcome: Custom Listing:
+      1. Display beneficiaries in selected Custom list, sorted in ascending order (A-Z, 0-9) in the below order:
+      - Beneficiary Name 
+      - Beneficiary Bank Name 
+      - Account Number 
+      2. If the recipient list is not empty, [Edit] option will be displayed. Otherwise hide.
+      3. Lazy load is available
+    type: custom
+references:
+  apiSpecFile: getTransferBeneficiaries
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Favourite

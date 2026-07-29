@@ -1,0 +1,44 @@
+id: TC_SECUR2US_002a
+title: |-
+  2. Request SMS / Email
+  OTP - Cerebro
+feature: ETB App Permission
+journey: Secure 2U Setup
+stepNo: '2'
+screen: |-
+  Request SMS / Email
+  OTP
+userAction: User Tab Generate OTP
+request:
+  method: POST
+  url: /cerebro/v1/otp/generate
+  endpoint: /cerebro/v1/otp/generate
+  headers:
+    Accept: application/json
+    X-MB-Authorization: NGAID260703094512_1001
+  body:
+    otpChannel: SMS
+    otpPurpose: SECURE2U_SETUP
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: Request processed successfully
+    timestamp: '2026-01-13T12:00:00+07:00'
+    correlationId: null
+    data:
+      transactionId: otp_20260113120000_001
+      otpSent: true
+      expiresIn: 300
+      deliveryChannel: PHONE
+    error: null
+    meta: null
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: 'Validate business outcome: Refer to [7.0 OTP - SMS or Email Request] screen'
+    type: custom
+references:
+  apiSpecFile: Cerebro
+  sourceWorksheet: ETB Onboarding Screen API Mapping (All Journeys) / Secure 2U Setup

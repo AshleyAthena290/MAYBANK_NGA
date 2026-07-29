@@ -1,0 +1,98 @@
+id: TC_DASH_002a
+title: 2. Transfer - Local (Frequent) - getTransferBeneficiaries
+feature: Transfer Dashboard
+journey: Manage_Dashboard
+stepNo: '2'
+screen: Transfer - Local (Frequent)
+userAction: Landing Page - Default Local Frequent list
+request:
+  method: GET
+  url: /v1/external/transfer?scope=LOCAL&groupType=FREQUENT&page=0&limit=10
+  endpoint: /v1/external/transfer?scope=LOCAL&groupType=FREQUENT&page=0&limit=10
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: Request processed successfully
+    timestamp: '2026-01-13T12:00:00'
+    correlationId: abc123-correlation-id
+    meta:
+      provider: erp
+      page: 0
+      limit: 10
+      total: 55
+      nextPage: '1'
+    data:
+      beneficiaries:
+        - accountId: '4700025122'
+          accountHolderName: MUHAMMAD ALI MUTHU
+          nickname: ali account
+          bicCode: PBBEMYKL
+          bankName: PUBLIC BANK
+          profileImage: 3dieieo383992020202
+          transactionType: TRANSFER/PAYMENT
+          transactionSubtype: INTERBANK
+          transactionMetadata:
+            serviceFees: 11
+            firstTimeTac: '1'
+            idNumber: null
+            idType: null
+            mobileNumber: ''
+            idFlag: ''
+            acquirerId: '564162'
+            currency: ''
+            balance: 0
+            paymentCode: '01'
+        - accountId: '5500025133'
+          accountHolderName: 'MUHAMMAD AHMAD '
+          nickname: ahmad account
+          bicCode: PBBEMYKL
+          bankName: PUBLIC BANK
+          profileImage: 3dieieo383992020202
+          transactionType: TRANSFER/PAYMENT
+          transactionSubtype: INTERBANK
+          transactionMetadata:
+            serviceFees: 11
+            firstTimeTac: '1'
+            idNumber: null
+            idType: null
+            mobileNumber: ''
+            idFlag: ''
+            acquirerId: '564162'
+            currency: ''
+            balance: 0
+            paymentCode: '01'
+    link: {}
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: Upon page load, the default beneficiary lists will be set at Frequent Beneficiary
+      Category.
+
+
+      Display criteria for FREQUENT Lists are:
+
+      a. Beneficiaries of which the transactions are successful for at least 2 times in the past 90 days (in Digital
+      Transaction - performed via NGA & RMBP & M2U Web), for all transfer mode EXCEPT "Transfer to Own".
+
+      b. Beneficiaries will be sorted in below order:
+
+      - most to least transaction frequency,
+
+      - if same frequency, it will be display in no particular order.
+
+      c. Maximum number of beneficiaries to display is 10.
+
+      d. User is able to remove a beneficiary from the list. Details of beneficiary removal will be explained in
+      respective section.
+
+      e. IF list is empty, system to display ""No frequent transfers yet"" with information (refer to screen)."
+    type: custom
+references:
+  apiSpecFile: getTransferBeneficiaries
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Dashboard

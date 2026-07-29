@@ -1,0 +1,26 @@
+id: TC_FAVTRF_001a
+title: 1. Input Amount - Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+feature: Transfer from Beneficary List (All, Favourite, Frequent and Custom)
+journey: Trf_Fav_Bene_Freq_Transfer
+stepNo: '1'
+screen: Input Amount
+userAction: User taps one of the beneficary name inside the "All","Frequent","Favourites" and the custom group list
+request:
+  method: PLEASE REFER TO THE MANAGE_DASHBOARD SHEET FOR TRANSFER DASHBOARD BEHAVIORS.
+  url: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+  endpoint: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+  headers:
+    Accept: application/json
+  body: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+response:
+  successStatusCode: 200
+  sampleResponse: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: 'Validate business outcome: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.'
+    type: custom
+references:
+  apiSpecFile: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Trf_Fav_Bene_Freq_Transfer

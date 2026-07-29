@@ -1,0 +1,45 @@
+id: TC_EXP_004a
+title: 4. PFM - Subcategory - addSubCategory
+feature: Expenses Tracker
+journey: Trf_Expenses_Tracker
+stepNo: '4'
+screen: PFM - Subcategory
+userAction: Add Subcategory
+request:
+  method: POST
+  url: /v1/external/sub-categories
+  endpoint: /v1/external/sub-categories
+  headers:
+    Accept: application/json
+  body:
+    categoryId: FB001
+    name: Restaurant
+    colorCode: '#FFAB40'
+    icon: restaurant
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: add_sub_category_success
+    timestamp: '2026-01-13T12:00:00'
+    correlationId: abc123-correlation-id
+    meta:
+      provider: erp
+    data:
+      subCategory:
+        categoryId: '001'
+        id: '009'
+        name: Abu Cafe
+        colorCode: '#FFAB40'
+        icon: restaurant
+        isSystem: false
+    link: {}
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: 'Validate business outcome: Add subcategory, revalidate and put into cache after update'
+    type: custom
+references:
+  apiSpecFile: addSubCategory
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Trf_Expenses_Tracker
