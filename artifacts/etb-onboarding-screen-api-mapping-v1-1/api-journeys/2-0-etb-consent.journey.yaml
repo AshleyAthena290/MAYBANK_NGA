@@ -1,0 +1,110 @@
+schemaVersion: 2.0.0
+generatedAt: '2026-07-27T06:52:54.096Z'
+source: ETB_Onboarding_Screen_API_Mapping_v1.1.xlsx
+feature: ETB Onboarding Screen API Mapping (All Journeys)
+category: API Journey
+journey:
+  title: ETB Consent
+  code: 2.0 ETB - Consent
+  description: ''
+summary:
+  totalSteps: 3
+  totalApiRows: 2
+  hasS2UAuthentication: false
+  testCaseIdPrefix: TC_20ETBCON
+keyApis:
+  - name: Cerebro
+    method: GET
+    endpoint: /identity/cerebro/v1/user/consents
+    microservice: Cerebro
+steps:
+  - stepNo: '1'
+    screen: Consent
+    userAction: User View and Tab I Agree & Consent
+    systemBehaviour: ''
+    businessRules: |-
+      Entry point:
+      1. User enters onboarding flow before Login screen.
+      2. System validates token and onboarding context.
+      3. System retrieves passport object to continue the onboarding journey.
+      4. If user already completed LOA / verification, system may redirect to App Dashboard / pre-login.
+      5. If user has not completed required onboarding step, system continues to onboarding consent flow.
+    apis:
+      - name: Cerebro
+        method: GET
+        endpoint: /identity/cerebro/v1/user/consents
+        testCaseId: TC_20ETBCON_001a
+        requestSample: null
+        responseSample: |-
+          {
+           "status": 200,
+           "message": "Request processed successfully",
+           "timestamp": "2026-01-13T12:00:00+07:00",
+           "meta": null,
+           "data": {
+           "consentRequired": true,
+           "consentVersion": "1.0",
+           "documents": [
+           {
+           "documentType": "TERMS_AND_CONDITIONS",
+           "documentName": "Terms and Conditions",
+           "documentVersion": "1.0",
+           "downloadUrl": "https://{url}/documents/terms-and-conditions-v1.pdf"
+           },
+           ]
+           }
+          }
+        mapping: null
+        microservice: Cerebro
+        businessContext: |-
+          Entry point:
+          1. User enters onboarding flow before Login screen.
+          2. System validates token and onboarding context.
+          3. System retrieves passport object to continue the onboarding journey.
+          4. If user already completed LOA / verification, system may redirect to App Dashboard / pre-login.
+          5. If user has not completed required onboarding step, system continues to onboarding consent flow.
+      - name: Cerebro
+        method: GET
+        endpoint: /identity/cerebro/v1/user/consents
+        testCaseId: TC_20ETBCON_001b
+        requestSample: null
+        responseSample: |-
+          {
+           "status": 200,
+           "message": "Request processed successfully",
+           "timestamp": "2026-01-13T12:00:00+07:00",
+           "meta": null,
+           "data": {
+           "consentRequired": true,
+           "consentVersion": "1.0",
+           "documents": [
+           {
+           "documentType": "TERMS_AND_CONDITIONS",
+           "documentName": "Terms and Conditions",
+           "documentVersion": "1.0",
+           "downloadUrl": "https://{url}/documents/terms-and-conditions-v1.pdf"
+           },
+           ]
+           }
+          }
+        mapping: null
+        microservice: Cerebro
+        businessContext: |-
+          Entry point:
+          1. User enters onboarding flow before Login screen.
+          2. System validates token and onboarding context.
+          3. System retrieves passport object to continue the onboarding journey.
+          4. If user already completed LOA / verification, system may redirect to App Dashboard / pre-login.
+          5. If user has not completed required onboarding step, system continues to onboarding consent flow.
+  - stepNo: '3'
+    screen: Account locked
+    userAction: N/A
+    systemBehaviour: ''
+    businessRules: ''
+    apis: []
+  - stepNo: '4'
+    screen: Authorisation Failed
+    userAction: N/A
+    systemBehaviour: ''
+    businessRules: ''
+    apis: []

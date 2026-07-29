@@ -1,0 +1,26 @@
+id: TC_OWN_002a
+title: S2U Init and Verify Journey. S2U Init and Verify Journey - S2U Init and Verify Journey
+feature: Own Account Transfer (Immediate)
+journey: Trf_Immediate_OwnAccount
+stepNo: S2U Init and Verify Journey
+screen: S2U Init and Verify Journey
+userAction: S2U Init and Verify Journey
+request:
+  method: S2U INIT AND VERIFY JOURNEY
+  url: S2U Init and Verify Journey
+  endpoint: S2U Init and Verify Journey
+  headers:
+    Accept: application/json
+  body: S2U Init and Verify Journey
+response:
+  successStatusCode: 200
+  sampleResponse: S2U Init and Verify Journey
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: 'Validate business outcome: S2U Init and Verify Journey'
+    type: custom
+references:
+  apiSpecFile: S2U Init and Verify Journey
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Trf_Immediate_OwnAccount

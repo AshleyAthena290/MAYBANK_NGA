@@ -1,0 +1,48 @@
+schemaVersion: 2.0.0
+generatedAt: '2026-07-27T06:52:54.096Z'
+source: ETB_Onboarding_Screen_API_Mapping_v1.1.xlsx
+feature: ETB Onboarding Screen API Mapping (All Journeys)
+category: API Journey
+journey:
+  title: ETB Nickname
+  code: 6.0 ETB - Nickname
+  description: ''
+summary:
+  totalSteps: 1
+  totalApiRows: 0
+  hasS2UAuthentication: false
+  testCaseIdPrefix: TC_60ETBNIC
+keyApis: []
+steps:
+  - stepNo: '1'
+    screen: Welcome & display name
+    userAction: ''
+    systemBehaviour: ''
+    businessRules: |-
+      Entry point:
+      1. From Verification Process: SMS OTP / Email OTP.
+      2. From Notice screen.
+
+      Back icon behaviour:
+      1. If previous screen is Verification Process, Back icon is not displayed.
+      2. If previous screen is Notice screen, Back icon is displayed.
+      3. If Back icon is displayed and user taps Back, navigate back to Notice screen.
+
+      Greeting preview:
+      1. Initial greeting uses customer’s first name.
+      2. If nickname input is not empty, update greeting preview to “Welcome back, {nickname}”.
+      3. If user removes all input, reset greeting preview using customer’s first name.
+
+      Display name validation:
+      1. Display name is mandatory.
+      2. Minimum 3 characters.
+      3. Maximum 17 characters with counter x/17.
+      4. Alphabets and spaces only.
+      5. Special characters, emoji, emoticon, and numbers are not allowed.
+      6. Trim leading/trailing spaces and trim multiple spaces into single space.
+      7. Store display name in title case format.
+      8. If empty, show inline error “Required field.”
+      9. If invalid character, show inline error “Only alphabets and spaces allowed.”
+      10. Nickname duplication check is not required.
+      11. If validation passed, store nickname in FE state / device cache and navigate to App Permission screen.
+    apis: []

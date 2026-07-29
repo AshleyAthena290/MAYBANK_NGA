@@ -1,0 +1,41 @@
+id: TC_MFAV_007a
+title: 7. Manage Favorite - Custom - updateBeneficiaryGroup
+feature: Favourite Management
+journey: Manage_Favourite
+stepNo: '7'
+screen: Manage Favorite - Custom
+userAction: Edit Custom Group Name
+request:
+  method: PATCH
+  url: /v1/external/transfer/groups/G001
+  endpoint: /v1/external/transfer/groups/G001
+  headers:
+    Accept: application/json
+  body:
+    groupName: New best friend
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: update_beneficiaries_group_success
+    timestamp: '2026-01-13T12:00:00'
+    correlationId: abc123-correlation-id
+    meta:
+      provider: erp
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: 1. List name is mandatory and is not allowed to have duplicate name with other list
+      (Favourite & Custom): 
+
+      a. Perform mandatory checking on List name.
+
+      b. If list name is duplicated, display error message: "Name cannot be the same as existing lists."
+
+      2. For successful update after tapping Done, display toast message "List name updated."
+    type: custom
+references:
+  apiSpecFile: updateBeneficiaryGroup
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Favourite

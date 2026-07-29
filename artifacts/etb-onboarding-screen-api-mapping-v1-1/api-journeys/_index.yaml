@@ -1,0 +1,78 @@
+schemaVersion: 1.0.0
+generatedAt: '2026-07-27T06:52:54.096Z'
+source: ETB_Onboarding_Screen_API_Mapping_v1.1.xlsx
+feature: ETB Onboarding Screen API Mapping (All Journeys)
+category: API Journey
+journeys:
+  - title: ETB Consent
+    code: 2.0 ETB - Consent
+    file: 2-0-etb-consent.journey.yaml
+    totalTestCases: 3
+    apiLinkedCases: 2
+    uiOnlyCases: 2
+  - title: ETB w M2U Login Username
+    code: 3.0 ETB - w M2U Login Username
+    file: 3-0-etb-w-m2u-login-username.journey.yaml
+    totalTestCases: 1
+    apiLinkedCases: 1
+    uiOnlyCases: 0
+  - title: ETB w M2U Login Password
+    code: 4.0 ETB - w M2U Login Pwd
+    file: 4-0-etb-w-m2u-login-pwd.journey.yaml
+    totalTestCases: 1
+    apiLinkedCases: 1
+    uiOnlyCases: 0
+  - title: ETB Nickname
+    code: 6.0 ETB - Nickname
+    file: 6-0-etb-nickname.journey.yaml
+    totalTestCases: 1
+    apiLinkedCases: 0
+    uiOnlyCases: 1
+  - title: ETB App Permission
+    code: 7.0 ETB - App Permission
+    file: 7-0-etb-app-permission.journey.yaml
+    totalTestCases: 4
+    apiLinkedCases: 0
+    uiOnlyCases: 4
+  - title: ETB App Permission
+    code: Secure 2U Setup
+    file: secure-2u-setup.journey.yaml
+    totalTestCases: 3
+    apiLinkedCases: 10
+    uiOnlyCases: 0
+  - title: ETB Primary Account
+    code: 8.0 ETB - Primary Acc
+    file: 8-0-etb-primary-acc.journey.yaml
+    totalTestCases: 6
+    apiLinkedCases: 2
+    uiOnlyCases: 4
+  - title: ETB Setup Biometric Onboarding
+    code: Setup Biometric
+    file: setup-biometric.journey.yaml
+    totalTestCases: 1
+    apiLinkedCases: 1
+    uiOnlyCases: 0
+  - title: ETB w M2U Final
+    code: 9.0 ETB - w M2U Final
+    file: 9-0-etb-w-m2u-final.journey.yaml
+    totalTestCases: 2
+    apiLinkedCases: 1
+    uiOnlyCases: 1
+  - title: ETB w M2U Final
+    code: 10.0 ETB - wo M2U acc Details
+    file: 10-0-etb-wo-m2u-acc-details.journey.yaml
+    totalTestCases: 1
+    apiLinkedCases: 0
+    uiOnlyCases: 1
+  - title: ETB w M2U Final
+    code: 16.0 ETB-wo M2U Access Create
+    file: 16-0-etb-wo-m2u-access-create.journey.yaml
+    totalTestCases: 2
+    apiLinkedCases: 4
+    uiOnlyCases: 0
+  - title: ETB wo M2U Final
+    code: 17.0 ETB - wo M2U Final
+    file: 17-0-etb-wo-m2u-final.journey.yaml
+    totalTestCases: 1
+    apiLinkedCases: 1
+    uiOnlyCases: 0

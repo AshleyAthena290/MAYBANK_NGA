@@ -1,0 +1,212 @@
+id: TC_DASH_001b
+title: 1. Init Module - GetPTMaintenanceTransferInit
+feature: Transfer Dashboard
+journey: Manage_Dashboard
+stepNo: '1'
+screen: Init Module
+userAction: User Lands into Transfer Dashboard
+request:
+  method: GET
+  url: pt/maintenance/v1/ext/transfers/init
+  endpoint: pt/maintenance/v1/ext/transfers/init
+  headers:
+    Accept: application/json
+    Content-Type: application/json
+    X-MB-Authorization: NGAID260703094512_1001
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    transferModes:
+      - code: BIFAST
+        desc: BI-FAST
+        fee: 2500
+        perTransactionMinAmount: 10000
+        perTransactionMaxAmount: 250000000
+        operatingHoursLabel: Setiap hari, 24 jam
+        availabilityType: TWENTY_FOUR_SEVEN
+        isActive: true
+      - code: RTOL
+        desc: Realtime Online
+        fee: 6501
+        perTransactionMinAmount: 10000
+        perTransactionMaxAmount: 50000000
+        operatingHoursLabel: Setiap hari, 24 jam
+        availabilityType: TWENTY_FOUR_SEVEN
+        isActive: true
+      - code: BISKN
+        desc: BI-SKN / Kliring
+        fee: 2900
+        perTransactionMinAmount: 10000
+        perTransactionMaxAmount: 500000000
+        operatingHoursLabel: Senin-Jumat, 08:00 - 15:30
+        availabilityType: WINDOWED
+        isActive: true
+      - code: RTGS
+        desc: RTGS
+        fee: 25000
+        perTransactionMinAmount: 100000000
+        perTransactionMaxAmount: 999999999999.99
+        operatingHoursLabel: Senin-Jumat, 08:00 - 15:00
+        availabilityType: WINDOWED
+        isActive: true
+    recurringOptions:
+      frequencies:
+        - code: ONCE
+          desc: Sekali
+        - code: WEEKLY
+          desc: Mingguan
+        - code: MONTHLY
+          desc: Bulanan
+      minStartDate: '2025-12-19'
+      maxStartDate: '2026-12-18'
+    purposes:
+      - code: PAYMENT
+        desc: Pembayaran
+      - code: INVESTMENT
+        desc: Investasi
+      - code: PERSONAL_SAVINGS
+        desc: Tabungan Pribadi
+    transferDetailOptions:
+      sourceOfFunds:
+        - code: SALARY
+          desc: Gaji
+        - code: SAVINGS
+          desc: Tabungan
+        - code: BUSINESS_INCOME
+          desc: Pendapatan Usaha
+        - code: OTHERS
+          desc: Lainnya
+      recipientTypes:
+        - code: INDIVIDUAL
+          desc: Perorangan
+        - code: CORPORATE
+          desc: Korporasi
+        - code: GOVERNMENT
+          desc: Pemerintah
+      recipientCitizenships:
+        - code: CITIZEN
+          desc: Warga Negara
+        - code: NON_CITIZEN
+          desc: Bukan Warga Negara
+      remarkShortcuts:
+        - Makan Siang
+        - Transfer
+        - Tabungan
+        - Bayar Tagihan
+        - Sewa
+        - Uang Saku
+    additionalDetails:
+      recipientStatuses:
+        - code: SENDER_NOT_RECIPIENT
+          desc: Pengirim bukan penerima
+        - code: SENDER_IS_RECIPIENT
+          desc: Pengirim adalah penerima
+      recipientCategories:
+        - code: INDIVIDUAL
+          desc: Perorangan
+        - code: COMPANY
+          desc: Perusahaan
+      relationships:
+        - code: NON_AFFILIATED
+          desc: Non-afiliasi
+        - code: SHAREHOLDER
+          desc: Pemegang Saham
+        - code: SUBSIDIARY_COMPANY
+          desc: Perusahaan Anak
+        - code: GROUP
+          desc: Grup
+      transactionCategories:
+        - code: PENGHASILAN_PENGELUARAN
+          desc: Penghasilan / Pengeluaran
+          transactionDetails:
+            - code: TD001
+              desc: Pembayaran gaji karyawan
+              isRecommended: true
+            - code: TD002
+              desc: Pembayaran biaya operasional
+              isRecommended: true
+            - code: TD003
+              desc: Pembayaran kebutuhan rumah tangga
+              isRecommended: true
+            - code: TD004
+              desc: Pembayaran utilitas dan tagihan bulanan
+              isRecommended: false
+            - code: TD005
+              desc: Pengeluaran untuk kebutuhan pribadi
+              isRecommended: false
+            - code: TD006
+              desc: Pembayaran tunjangan atau manfaat
+              isRecommended: false
+        - code: TRANSAKSI_BARANG
+          desc: Transaksi Barang
+          transactionDetails:
+            - code: TD101
+              desc: Pembelian bahan baku
+              isRecommended: true
+            - code: TD102
+              desc: Pembelian barang dagangan
+              isRecommended: true
+            - code: TD103
+              desc: Pembayaran pengadaan inventaris
+              isRecommended: true
+            - code: TD104
+              desc: Pembelian perlengkapan kantor
+              isRecommended: false
+            - code: TD105
+              desc: Pembayaran atas pengiriman barang
+              isRecommended: false
+            - code: TD106
+              desc: Pembayaran pembelian aset berwujud
+              isRecommended: false
+        - code: TRANSAKSI_JASA
+          desc: Transaksi Jasa
+          transactionDetails:
+            - code: TD201
+              desc: Pembayaran jasa konsultasi
+              isRecommended: true
+            - code: TD202
+              desc: Pembayaran jasa profesional
+              isRecommended: true
+            - code: TD203
+              desc: Pembayaran biaya perawatan dan servis
+              isRecommended: true
+            - code: TD204
+              desc: Pembayaran jasa transportasi
+              isRecommended: false
+            - code: TD205
+              desc: Pembayaran jasa sewa
+              isRecommended: false
+            - code: TD206
+              desc: Pembayaran jasa teknologi informasi
+              isRecommended: false
+        - code: TRANSAKSI_KEUANGAN_MODAL
+          desc: Transaksi Keuangan / Modal
+          transactionDetails:
+            - code: TD301
+              desc: Penempatan dana investasi
+              isRecommended: true
+            - code: TD302
+              desc: Penambahan modal usaha
+              isRecommended: true
+            - code: TD303
+              desc: Pembayaran kewajiban pinjaman
+              isRecommended: true
+            - code: TD304
+              desc: Transfer antar rekening investasi
+              isRecommended: false
+            - code: TD305
+              desc: Pembayaran setoran modal
+              isRecommended: false
+            - code: TD306
+              desc: Pelunasan fasilitas pembiayaan
+              isRecommended: false
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: 'Validate business outcome: NA'
+    type: custom
+references:
+  apiSpecFile: GetPTMaintenanceTransferInit
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Dashboard

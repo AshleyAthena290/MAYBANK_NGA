@@ -1,0 +1,42 @@
+id: TC_SCHED_007a
+title: >-
+  7. Review & Confirm - Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount,
+  Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+feature: Scheduling/Recurring Transfer (For All Types)
+journey: Trf_Scheduling_All
+stepNo: '7'
+screen: Review & Confirm
+userAction: User reviews details of the scheduling options on the confirmation screen.
+request:
+  method: >-
+    PLEASE REFER TO THE RELEVANT IMMEDIATE TRANSFER SHEETS: TRF_IMMEDIATE_OWNACCOUNT, TRF_IMMEDIATE_INTRABANK AND
+    TRF_IMMEDIATE_INTERBANK.
+  url: >-
+    Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+    Trf_Immediate_Interbank.
+  endpoint: >-
+    Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+    Trf_Immediate_Interbank.
+  headers:
+    Accept: application/json
+  body: >-
+    Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+    Trf_Immediate_Interbank.
+response:
+  successStatusCode: 200
+  sampleResponse: >-
+    Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+    Trf_Immediate_Interbank.
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount,
+      Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    type: custom
+references:
+  apiSpecFile: >-
+    Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+    Trf_Immediate_Interbank.
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Trf_Scheduling_All

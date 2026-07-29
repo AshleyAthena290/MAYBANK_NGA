@@ -1,0 +1,83 @@
+id: TC_INTRA_002a
+title: 2. Bank list - GetPtMaintenanceBankListing
+feature: 3rd Party Account Transfer (Immediate)
+journey: Trf_Immediate_Intrabank
+stepNo: '2'
+screen: Bank list
+userAction: User selects the internal bank (Maybank)
+request:
+  method: GET
+  url: pt/maintenance/v1/external/transfers/banks
+  endpoint: pt/maintenance/v1/external/transfers/banks
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: '200'
+    message: Success
+    timestamp: '2026-05-20T09:30:15'
+    correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+    meta: null
+    data:
+      banks:
+        - bankCode: BCA
+          bankName: Bank Central Asia
+          alias: BCA
+          mode:
+            - code: BI_FAST
+              name: BI_FAST
+              bankCode: XXX
+            - code: ONLINE_TRANSFER
+              name: ONLINE_TRANSFER
+              bankCode: XXX
+            - code: SKNBI
+              name: SKNBI
+              bankCode: XXX
+            - code: RTGS
+              name: RTGS
+              bankCode: XXX
+        - bankCode: BNI
+          bankName: Bank Negara Indonesia
+          alias: BNI
+          mode:
+            - code: ONLINE_TRANSFER
+              name: ONLINE_TRANSFER
+              bankCode: XXX
+            - code: SKNBI
+              name: SKNBI
+              bankCode: XXX
+            - code: RTGS
+              name: RTGS
+              bankCode: XXX
+    error: null
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: "Transfer to/Select Bank drawer"" Category Tabs
+
+      1. Search & Listing - Wildcard Bank search on Bank Name will be performed once user has entered 3 characters. 
+
+      2. Search to include alias/tags (to be maintained in NGBO - Bank List). E.g. user types ""Bank Central"" or
+      ""BCA"", system will match and list Bank Central Asia. 
+
+      3. Listing will be displayed as below:
+
+      a. Maybank will be first in list.
+
+      b. Banks - list top 10 banks and follow by remaining bank list sorted in ascending order (A-Z, 0-9). 
+
+      4. Banks with status = Offline (configured in NGBO)
+
+      a. Display label ""Service offline"" (without affecting the sorting & display sequence).
+
+      b. Selection is disabled.
+
+      5. If search returns empty, display "We couldn't find a match for <input value>".
+    type: custom
+references:
+  apiSpecFile: GetPtMaintenanceBankListing
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Trf_Immediate_Intrabank

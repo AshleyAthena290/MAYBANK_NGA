@@ -1,0 +1,132 @@
+id: TC_DASH_007a
+title: 7.  - getTransferBeneficiariesSearch
+feature: Transfer Dashboard
+journey: Manage_Dashboard
+stepNo: '7'
+screen: ''
+userAction: Search tab
+request:
+  method: GET
+  url: /v1/external/transfer/search?scope=LOCAL&groupType=ALL&keyword=ABC&page=0&limit=10
+  endpoint: /v1/external/transfer/search?scope=LOCAL&groupType=ALL&keyword=ABC&page=0&limit=10
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: Request processed successfully
+    timestamp: '2026-01-13T12:00:00'
+    correlationId: abc123-correlation-id
+    meta:
+      provider: erp
+      page: 0
+      limit: 10
+      total: 55
+      nextPage: '1'
+    data:
+      beneficiaries:
+        - accountId: '4700025122'
+          accountHolderName: MUHAMMAD ALI MUTHU
+          nickname: ali account
+          bicCode: PBBEMYKL
+          bankName: PUBLIC BANK
+          profileImage: 3dieieo383992020202
+          groups:
+            - id: G001
+              type: FAVORITES
+              name: Favorites
+            - id: G002
+              type: CUSTOM
+              name: Family
+            - id: G003
+              type: CUSTOM
+              name: Friends
+          transactionType: TRANSFER/PAYMENT
+          transactionSubtype: INTERBANK
+          transactionMetadata:
+            serviceFees: 11
+            firstTimeTac: '1'
+            idNumber: null
+            idType: null
+            mobileNumber: ''
+            idFlag: ''
+            acquirerId: '564162'
+            currency: ''
+            balance: 0
+            paymentCode: '01'
+        - accountId: '5500025133'
+          accountHolderName: 'MUHAMMAD AHMAD '
+          nickname: ahmad account
+          bicCode: PBBEMYKL
+          bankName: PUBLIC BANK
+          profileImage: 3dieieo383992020202
+          groups:
+            - id: G001
+              type: FAVORITES
+              name: Favorites
+            - id: G003
+              type: CUSTOM
+              name: Friends
+          transactionType: TRANSFER/PAYMENT
+          transactionSubtype: INTERBANK
+          transactionMetadata:
+            serviceFees: 11
+            firstTimeTac: '1'
+            idNumber: null
+            idType: null
+            mobileNumber: ''
+            idFlag: ''
+            acquirerId: '564162'
+            currency: ''
+            balance: 0
+            paymentCode: '01'
+    link: {}
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: 1. Upon tapping the Search bar textbox, system to display phone's keyboard for user to
+      type in.
+
+      2. Wildcard search will be performed once the user has entered 3 characters. Searching of beneficiaries include
+      fields below:
+
+      a. Beneficiaries Account Name
+
+      b. Beneficiaries Nickname
+
+      c. Beneficiaries Account Number
+
+      d. Beneficiaries Bank Name
+
+      2. Search will be performed on selected Local or Overseas tab. Searching includes all beneficiary categories (ALL,
+      Frequent, Favourite, Own, Custom) regardless which beneficiary category tab the user is at. (search whole DB - not
+      just what is displayed on screen).
+
+      3. For search result that matched, display list of Beneficiaries in ascending order (A-Z, 0-9) in the below order,
+      without max records. Lazy load is available.
+
+      - Beneficiary Name 
+
+      - Beneficiary Bank Name 
+
+      - Account Number
+
+      4. For search result that returns EMPTY:
+
+      a. System to display "We couldn't find a match for <input data>" with information (refer to screen).
+
+      b. IF contacts are synced with NGA, system to perform search on Contact's First Name & Last Name. Display Section
+      "Contacts" and the list of contact name & phone number, with Avatar (Contact Name's Initial). 
+
+      c. IF contacts are not synced with NGA, or no contact is matched, system to NOT display "Contacts" section.
+
+      5. At the bottom of screen, display "Make a new transfer instead?" section, and display icon & Account Number.
+      Tapping on Account Number will navigate to Input Account Number.
+    type: custom
+references:
+  apiSpecFile: getTransferBeneficiariesSearch
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Dashboard

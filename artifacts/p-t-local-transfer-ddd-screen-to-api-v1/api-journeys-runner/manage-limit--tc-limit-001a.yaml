@@ -1,0 +1,100 @@
+id: TC_LIMIT_001a
+title: 1. Manage Limits - Dashboard - GetJourneyContent
+feature: Manage Limit Settings
+journey: Manage_Limit
+stepNo: '1'
+screen: Manage Limits - Dashboard
+userAction: >-
+  Entry Point 1: At Transfer landing page, tap three-dots menu and select "Manage limits".
+
+
+  Entry Point 2: At Home Dashboard page, navigate to settings > biometric/password authentication > Transactions >
+  Select "Transfer limits".
+
+
+  User click on Transfer from the menu
+request:
+  method: GET
+  url: cms/journeys/payment_transfer_set_limit?locale=en_MY&channel=MOBILE
+  endpoint: cms/journeys/payment_transfer_set_limit?locale=en_MY&channel=MOBILE
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: '200'
+    message: Success
+    timestamp: '2026-05-20T09:30:15'
+    correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+    meta: null
+    data:
+      journeyId: local_transfer_limit
+      version: 1.0.0
+      screens:
+        - screenId: transfer_manage_transfer_limit_list
+          core:
+            typo:
+              - id: paymentTransferLimitTitle
+                value: Transfer limit
+          statusAndFeedback:
+            alertBanner:
+              - id: alertLimit
+                message: You can only update one limit at a time.
+                icon: Lightbulb
+        - screenId: local_transfer_manage_limit_detail
+          core:
+            typo:
+              - id: intrabankTransferLimit
+                value: Intrabank transfer limit
+                description: Set how much you can transfer per day, up to a maximum of IDR 1,000,000.
+          container:
+            list:
+              - id: intrabankLimit
+                items:
+                  - id: maximumLimit
+                    label: Maximum limit
+                  - id: currentLimit
+                    label: Current limit
+          input:
+            textInput:
+              - id: inputLimit
+                label: New limit
+                placeholder: Select new limit
+                required: true
+          action:
+            button:
+              - id: btn_save
+                label: Save
+                url: ''
+        - screenId: local_transfer_manage_favourite_nickname
+          core:
+            typo:
+              - id: limitUpdate
+                value: Limit updated
+              - id: refId
+                value: 'Ref ID:'
+          container:
+            list:
+              - id: limit
+                items:
+                  - id: limitType
+                    label: Limit type
+                  - id: newLimit
+                    label: New limit
+      modals:
+        - modalId: local_transfer_select_new_limit_modal
+          navigation:
+            navigationHeader:
+              - id: selectNewLimit
+                title: Select new limit
+    error: null
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: 'Validate business outcome: NA'
+    type: custom
+references:
+  apiSpecFile: GetJourneyContent
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Limit

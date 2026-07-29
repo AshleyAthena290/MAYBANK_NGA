@@ -1,0 +1,38 @@
+id: TC_RECIP_011a
+title: 11. Transfer - Recipients - Remove Favorite - deleteBeneficiaries
+feature: Custom Recipient Management
+journey: Manage_Recipient
+stepNo: '11'
+screen: Transfer - Recipients - Remove Favorite
+userAction: Remove beneficiary list from Frequent
+request:
+  method: DELETE
+  url: /v1/external/transfer?groupType=FREQUENT&accountId=598322219222
+  endpoint: /v1/external/transfer?groupType=FREQUENT&accountId=598322219222
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: delete_beneficiaries_success
+    timestamp: '2026-01-13T12:00:00'
+    correlationId: abc123-correlation-id
+    meta:
+      provider: erp
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: Removing Beneficiary from FREQUENT tab:
+
+      a. Remove the beneficiary from Frequent list only.
+
+      b. For successful removal, to navigate to Transfer Landing Page under Frequent tab and display a toast message
+      "Recipient removed."
+    type: custom
+references:
+  apiSpecFile: deleteBeneficiaries
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Recipient

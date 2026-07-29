@@ -1,0 +1,98 @@
+id: TC_RECIP_007a
+title: 7. Transfer - Recipients - Add to Favorite - S2UBeneficiaries
+feature: Custom Recipient Management
+journey: Manage_Recipient
+stepNo: '7'
+screen: Transfer - Recipients - Add to Favorite
+userAction: Add to favorites from ALL
+request:
+  method: POST
+  url: /v1/external/beneficiaries
+  endpoint: /v1/external/beneficiaries
+  headers:
+    Accept: application/json
+  body:
+    groups:
+      - operation: add
+        type: FAVOURITES
+        name: Favourites
+    beneficiaries:
+      - accountId: '4700025122'
+        accountHolderName: MUHAMMAD ALI MUTHU
+        nickname: ali nickname
+        bicCode: PBBEMYKL
+        bankName: PUBLIC BANK
+        transactionType: TRANSFER/PAYMENT
+        transactionSubtype: INTERBANK
+        transactionMetadata:
+          serviceFees: 11
+          firstTimeTac: '1'
+          idNumber: null
+          idType: null
+          mobileNumber: ''
+          idFlag: ''
+          swiftCode: PBBEMYKL
+          acquirerId: '564162'
+          accountType: ''
+          accountSubType: ''
+          currency: ''
+          balance: 0
+          paymentCode: '01'
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: success
+    extra: ''
+    note: ''
+    header: added_as_favourite_success_header
+    desc: ''
+    details: >-
+      {"reference_id":"268614863M","date_time":"07 May 2026, 04:05 PM","account_holder_name":"Andy
+      Loo","account_number":"5042 3341 3421","recipient_bank":"Maybank"}
+    receipt: ''
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: 1. Upon tapping [Save] button:
+
+      a. If the beneficiary is added to "Favourites" list, S2U is required.
+
+      b. If the beneficiary is added to Custom list only, S2U is not required.
+
+      c. Combination of list selection which includes Favourites, S2U is required.
+
+      d. If beneficiary is already in Favourites and is now added to Custom list, S2U is not required.
+
+      e. If none of the Fav or Custom list is selected, display toastbar error message "Please select an option to
+      proceed."
+
+      2. For adding to favourites/custom list:
+
+      a. If action requires S2U, display Status End Screen as a result.
+
+      b. If action does not require S2U, display toastbar message. For successful addition, system displays "List
+      added."
+
+      c. Combination of favourite and custom add to list will always result Status End screen as this requires S2U
+      authorisation.
+
+      3. For successful attempt:
+
+      - recipient will be added to the selected Fav/Custom tabs
+
+      4. For unsuccessful attempt:
+
+      - If S2U required and failed to save, display Update unsuccessful screen.
+
+      - If S2U is not required and failed to save, display toastbar error message "Service temporarily unavailable".
+
+
+      Notes:
+
+      - M2U/RMBP Favourite List will be synced with NGA Favourites list and displayed in NGA.
+    type: custom
+references:
+  apiSpecFile: S2UBeneficiaries
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Recipient

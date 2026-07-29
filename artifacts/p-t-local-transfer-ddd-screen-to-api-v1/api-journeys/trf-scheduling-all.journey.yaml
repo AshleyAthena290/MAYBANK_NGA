@@ -1,0 +1,814 @@
+schemaVersion: 2.0.0
+generatedAt: '2026-07-27T03:25:39.685Z'
+source: P&T_Local_Transfer_DDD_Screen_to_API_v1.xlsx
+feature: P&T Local Transfer (All Journeys)
+category: API Journey
+journey:
+  title: Scheduling/Recurring Transfer (For All Types)
+  code: Trf_Scheduling_All
+  description: User scheduled for a future dated one-time or recurring transaction
+summary:
+  totalSteps: 10
+  totalApiRows: 9
+  hasS2UAuthentication: true
+  testCaseIdPrefix: TC_SCHED
+keyApis:
+  - name: >-
+      Please refer to the Relevant Transfer Sheets (Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank or
+      Trf_Immediate_Interbank)
+    method: >-
+      PLEASE REFER TO THE RELEVANT TRANSFER SHEETS (TRF_IMMEDIATE_OWNACCOUNT, TRF_IMMEDIATE_INTRABANK OR
+      TRF_IMMEDIATE_INTERBANK)
+    endpoint: >-
+      Please refer to the Relevant Transfer Sheets (Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank or
+      Trf_Immediate_Interbank)
+    microservice: >-
+      Please refer to the Relevant Transfer Sheets (Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank or
+      Trf_Immediate_Interbank)
+  - name: S2U Init and Verify Journey
+    method: S2U INIT AND VERIFY JOURNEY
+    endpoint: S2U Init and Verify Journey
+    microservice: S2U Init and Verify Journey
+  - name: InitiateIntraTransfer
+    method: POST
+    endpoint: pt/intrabank/v1/external/initiate
+    microservice: pt-intrabank-transfer
+  - name: InitiateInterTransfer
+    method: POST
+    endpoint: pt/interbank/v1/external/initiate
+    microservice: pt-interbank-transfer
+  - name: ExecuteIntraTransfer
+    method: POST
+    endpoint: pt/intrabank/v1/external/execute
+    microservice: pt-intrabank-transfer
+  - name: ExecuteInterTransfer
+    method: POST
+    endpoint: pt/interbank/v1/external/execute
+    microservice: pt-interbank-transfer
+  - name: >-
+      Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+      Trf_Immediate_Interbank.
+    method: >-
+      PLEASE REFER TO THE RELEVANT IMMEDIATE TRANSFER SHEETS: TRF_IMMEDIATE_OWNACCOUNT, TRF_IMMEDIATE_INTRABANK AND
+      TRF_IMMEDIATE_INTERBANK.
+    endpoint: >-
+      Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+      Trf_Immediate_Interbank.
+    microservice: >-
+      Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+      Trf_Immediate_Interbank.
+  - name: >-
+      Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    method: >-
+      PROCESS OF INITIATING A NEW TRANSFER, PLEASE REFER TO THE RELEVANT IMMEDIATE TRANSFER SHEETS:
+      TRF_IMMEDIATE_OWNACCOUNT, TRF_IMMEDIATE_INTRABANK AND TRF_IMMEDIATE_INTERBANK.
+    endpoint: >-
+      Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    microservice: >-
+      Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+  - name: >-
+      Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    method: >-
+      TRANSFER DETAILS AND ADDITIONAL DETAILS, PLEASE REFER TO THE RELEVANT IMMEDIATE TRANSFER SHEETS:
+      TRF_IMMEDIATE_OWNACCOUNT, TRF_IMMEDIATE_INTRABANK AND TRF_IMMEDIATE_INTERBANK.
+    endpoint: >-
+      Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    microservice: >-
+      Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+steps:
+  - stepNo: '1'
+    screen: Input Amount
+    userAction: User input amount and ready to toggle on the scheduling/recurring.
+    systemBehaviour: >-
+      On Page Load
+
+      System loads the Input Amount Page with Source and Beneficiary Details
+
+
+      Action/Button Behavior
+
+      [Change] button - Upon tapping [Change] button, display drawer containing selection of Source of Funds account
+      lists. (Please refer to the immediate transfer sheets)
+
+      Schedule or set recurring [toggle] - Options to trigger scheduling transfer. 
+
+      [Next] button - Upon tapping [NEXT] button, navigate to Transfer details. Refer to Business rules for validation.
+    businessRules: >-
+      Schedule/ Recurring option:
+
+      1. End Date & No. of Transaction behaviour
+
+      (i) IF user changes the Number of Transaction, system will re-calculate the corresponding end date based on the
+      Number of Transactions selected. 
+
+      (ii) IF user returns to End Date tab, system to default & display the newly derived date. 
+
+      (iii) IF user changes the End Date after Number of Transaction is selected, system will re-calculate the
+      corresponding Number of Transaction based on the End Date selected.
+
+      (iv) IF user returns to Number of Transaction tab, system to default & display the newly derived value. 
+
+
+      2. Scheduled/ recurring transaction is NOT applicable for (hide "Schedule or set recurring" Toggle field):
+
+      a. Interbank transfer FCY to IDR
+
+      b. Intrabank transfer with FCY, i.e. IDR to FCY, FCY to IDR, FCY to same FCY & FCY to xFCY.
+
+      c. Own & Intrabank - beneficiary account is Virtual Account
+
+      d. Own & Intrabank - beneficiary account is IBAAS Account (Islamic Banking as a Service)
+
+
+      This sheet will only focus on scheduling, for other business rules please refer to immediate transfer sheets.
+    apis:
+      - name: >-
+          Please refer to the Relevant Transfer Sheets (Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank or
+          Trf_Immediate_Interbank)
+        method: >-
+          PLEASE REFER TO THE RELEVANT TRANSFER SHEETS (TRF_IMMEDIATE_OWNACCOUNT, TRF_IMMEDIATE_INTRABANK OR
+          TRF_IMMEDIATE_INTERBANK)
+        endpoint: >-
+          Please refer to the Relevant Transfer Sheets (Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank or
+          Trf_Immediate_Interbank)
+        testCaseId: TC_SCHED_001a
+        requestSample: >-
+          Please refer to the Relevant Transfer Sheets (Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank or
+          Trf_Immediate_Interbank)
+        responseSample: >-
+          Please refer to the Relevant Transfer Sheets (Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank or
+          Trf_Immediate_Interbank)
+        mapping: null
+        microservice: >-
+          Please refer to the Relevant Transfer Sheets (Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank or
+          Trf_Immediate_Interbank)
+        businessContext: >-
+          Schedule/ Recurring option:
+
+          1. End Date & No. of Transaction behaviour
+
+          (i) IF user changes the Number of Transaction, system will re-calculate the corresponding end date based on
+          the Number of Transactions selected. 
+
+          (ii) IF user returns to End Date tab, system to default & display the newly derived date. 
+
+          (iii) IF user changes the End Date after Number of Transaction is selected, system will re-calculate the
+          corresponding Number of Transaction based on the End Date selected.
+
+          (iv) IF user returns to Number of Transaction tab, system to default & display the newly derived value. 
+
+
+          2. Scheduled/ recurring transaction is NOT applicable for (hide "Schedule or set recurring" Toggle field):
+
+          a. Interbank transfer FCY to IDR
+
+          b. Intrabank transfer with FCY, i.e. IDR to FCY, FCY to IDR, FCY to same FCY & FCY to xFCY.
+
+          c. Own & Intrabank - beneficiary account is Virtual Account
+
+          d. Own & Intrabank - beneficiary account is IBAAS Account (Islamic Banking as a Service)
+
+
+          This sheet will only focus on scheduling, for other business rules please refer to immediate transfer sheets.
+        downstream: >-
+          Please refer to the Relevant Transfer Sheets (Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank or
+          Trf_Immediate_Interbank)
+        remarks: >-
+          Please refer to the Relevant Transfer Sheets (Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank or
+          Trf_Immediate_Interbank)
+  - stepNo: '2'
+    screen: Schedule or set Recurring (Just Once)
+    userAction: User toggled on the scheduling option and choose "Just Once"
+    systemBehaviour: >-
+      On Page Load
+
+      System loads the scheduling configuration in the pop up drawer.
+
+
+      Action/Button Behavior
+
+      Frequency Picker - User can select the preferred frequency mode including Just Once, Weekly and Monthly.
+
+      Transfer Date / Start Date - Date picker for the start date of the recurring option. (For "Just Once", there will
+      be only transfer date indicating the scheduled date.)
+
+      End Date - Date picker for the end date of the recurring option. (Only available in "Weekly" and "Monthly")
+
+      Number of Transaction - User can choose the number of transaction that needed to be made based on the chosen
+      frequency. (Only available in "Weekly" and "Monthly")
+    businessRules: |-
+      Please refer to Step 1 for the Business Rule / Validation.
+
+      For full validation details please refer to the Local Transfer FSD.
+    apis: []
+  - stepNo: S2U Init and Verify Journey
+    screen: S2U Init and Verify Journey
+    userAction: S2U Init and Verify Journey
+    systemBehaviour: S2U Init and Verify Journey
+    businessRules: S2U Init and Verify Journey
+    apis:
+      - name: S2U Init and Verify Journey
+        method: S2U INIT AND VERIFY JOURNEY
+        endpoint: S2U Init and Verify Journey
+        testCaseId: TC_SCHED_002a
+        requestSample: S2U Init and Verify Journey
+        responseSample: S2U Init and Verify Journey
+        mapping: null
+        microservice: S2U Init and Verify Journey
+        businessContext: S2U Init and Verify Journey
+        downstream: S2U Init and Verify Journey
+        remarks: S2U Init and Verify Journey
+  - stepNo: '3'
+    screen: Schedule or set Recurring (Weekly)
+    userAction: User toggled on the scheduling option and choose "Weekly"
+    systemBehaviour: >-
+      On Page Load
+
+      System loads the scheduling configuration in the pop up drawer.
+
+
+      Action/Button Behavior
+
+      Frequency Picker - User can select the preferred frequency mode including Just Once, Weekly and Monthly.
+
+      Transfer Date / Start Date - Date picker for the start date of the recurring option. (For "Just Once", there will
+      be only transfer date indicating the scheduled date.)
+
+      End Date - Date picker for the end date of the recurring option. (Only available in "Weekly" and "Monthly")
+
+      Number of Transaction - User can choose the number of transaction that needed to be made based on the chosen
+      frequency. (Only available in "Weekly" and "Monthly")
+    businessRules: |-
+      Please refer to Step 1 for the Business Rule / Validation.
+
+      For full validation details please refer to the Local Transfer FSD.
+    apis: []
+  - stepNo: '4'
+    screen: Schedule or set Recurring (Monthly)
+    userAction: User toggled on the scheduling option and choose "Monthly"
+    systemBehaviour: >-
+      On Page Load
+
+      System loads the scheduling configuration in the pop up drawer.
+
+
+      Action/Button Behavior
+
+      Frequency Picker - User can select the preferred frequency mode including Just Once, Weekly and Monthly.
+
+      Transfer Date / Start Date - Date picker for the start date of the recurring option. (For "Just Once", there will
+      be only transfer date indicating the scheduled date.)
+
+      End Date - Date picker for the end date of the recurring option. (Only available in "Weekly" and "Monthly")
+
+      Number of Transaction - User can choose the number of transaction that needed to be made based on the chosen
+      frequency. (Only available in "Weekly" and "Monthly")
+    businessRules: |-
+      Please refer to Step 1 for the Business Rule / Validation.
+
+      For full validation details please refer to the Local Transfer FSD.
+    apis: []
+  - stepNo: '5'
+    screen: Initiating the transaction (Pre S2U)
+    userAction: User initiates the transaction.
+    systemBehaviour: >-
+      On Page Loads
+
+      The scheduling options will be embeded into the request payload based on the transfer journey when its available,
+      please refer to the highlighted section in the Request Payload column.
+
+
+      In this case, both of the transfer journey initiation API has been shown for reference purposes.
+
+
+      Action/Button Behavior
+
+      NA
+    businessRules: NA
+    apis:
+      - name: InitiateIntraTransfer
+        method: POST
+        endpoint: pt/intrabank/v1/external/initiate
+        testCaseId: TC_SCHED_005a
+        requestSample: |-
+          {
+           "preCheckId": "59c47913-6f73-4aea-81f3-0ddbe83ec5f4",
+           "transferType": "THIRD_PARTY_TRANSFER",
+           "debitAccountNo": "1234567890",
+           "debitAccountType": "SA",
+           "debitAccountCurrency": "IDR",
+           "creditAccountNo": "0987654321",
+           "creditAccountType": "SA",
+           "creditAccountBankCode": "MBB",
+           "creditAccountCurrency": "IDR",
+           "debitAmount": 150000.00,
+           "creditAmount": 150000.00,
+           "remark": "Monthly support",
+           "recipientEmail": "recipient@gmail.com",
+           "relationshipCode": "FRIEND",
+           "transactionCategoryCode": "PERSONAL",
+           "transactionDetailCode": "TD001",
+           "additionalDetailRemark" "Salary",
+           "schedule": {
+           "frequencyCode": "WEEKLY", 
+           "startDate": "2026-05-01",
+           "endDate": "2026-08-01"
+           }
+          }
+        responseSample:
+          status: '200'
+          message: Success
+          timestamp: '2026-05-20T09:30:15'
+          correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+          meta: null
+          data:
+            paymentOrderId: 01ARZ3NDEKTSV4RRFFQ69G5FAV
+            transactionStatus: INITIATED
+            createdAt: '2026-04-22T14:30:00+08:00'
+          error: null
+        mapping: null
+        microservice: pt-intrabank-transfer
+        downstream: |-
+          No Downstream is needed.
+
+          Caching:
+          PRE_TXN: {preCheckId} will be expired here.
+
+          TXN:{paymentOrderId}
+          TTL: 15minutes
+          Transaction Payload, lifecycle state, payment order Id will be cached here.
+        remarks: |-
+          Lifecycle state:
+          -INITIATED
+      - name: InitiateInterTransfer
+        method: POST
+        endpoint: pt/interbank/v1/external/initiate
+        testCaseId: TC_SCHED_005b
+        requestSample:
+          preCheckId: 59c47913-6f73-4aea-81f3-0ddbe83ec5f4
+          transferModeCode: BISKN
+          debitAccountNo: '1234567890'
+          debitAccountType: SA
+          debitAccountCurrency: IDR
+          creditAccountBankCode: BCA
+          creditAccountNo: '9876543210'
+          creditAccountType: SA
+          creditAccountCurrency: IDR
+          debitAmount: 150000
+          creditAmount: 150000
+          feeAmount: 2900
+          feeCurrency: IDR
+          purposeCode: PAYMENT
+          sourceOfFundCode: SALARY
+          recipientName: Irfan Zulkifli
+          recipientTypeCode: INDIVIDUAL
+          recipientCitizenshipCode: NON_CITIZEN
+          remark: Monthly support
+          recipientEmail: recipient@gmail.com
+          recipientStatusCode: SENDER_NOT_RECIPIENT
+          recipientNationalityCode: MY
+          recipientCategoryCode: INDIVIDUAL
+          relationshipCode: NON_AFFILIATED
+          transactionCategoryCode: PENGHASILAN_PENGELUARAN
+          transactionDetailCode: TD001
+          additionalDetailRemark: Untuk kebutuhan keluarga
+          schedule:
+            frequencyCode: WEEKLY
+            startDate: '2026-05-01'
+            endDate: '2026-08-01'
+        responseSample:
+          status: '200'
+          message: Success
+          timestamp: '2026-05-20T09:30:15'
+          correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+          meta: null
+          data:
+            paymentOrderId: 01ARZ3NDEKTSV4RRFFQ69G5FAV
+            transactionStatus: INITIATED
+            createdAt: '2026-04-22T14:30:00+08:00'
+          error: null
+        mapping: null
+        microservice: pt-interbank-transfer
+        downstream: |-
+          No Downstream is needed.
+
+          Caching:
+          PRE_TXN: {preCheckId} will be expired here.
+
+          TXN:{paymentOrderId}
+          TTL: 15minutes
+          Transaction Payload, lifecycle state, payment order Id will be cached here.
+        remarks: |-
+          Lifecycle state:
+          -INITIATED
+  - stepNo: '6'
+    screen: Transfer Result
+    userAction: User reviews details of the scheduling result on the transfer result screen.
+    systemBehaviour: >-
+      On Page Loads
+
+      The scheduling result details will be embeded into the response payload based on the transfer journey when its
+      available, please refer to the highlighted section in the Request Payload column.
+
+
+      In this case, both of the transfer journey execution API has been shown for reference purposes.
+
+
+      As this current sheet, we will only focus on the scheduling/recurring options of the transfer, other screen
+      behaviors and rules can be referred by to the immediate transfer sheets.
+    businessRules: NA
+    apis:
+      - name: ExecuteIntraTransfer
+        method: POST
+        endpoint: pt/intrabank/v1/external/execute
+        testCaseId: TC_SCHED_006a
+        requestSample:
+          paymentOrderId: 01ARZ3NDEKTSV4RRFFQ69G5FAV
+        responseSample:
+          status: '200'
+          message: Success
+          timestamp: '2026-05-20T09:30:15'
+          correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+          meta: null
+          data:
+            transactionRefId: PNT260520A1B2C3D4E5
+            transactionStatus: SUCCESS
+            transactionDateTime: '2026-04-22T14:32:10+08:00'
+            totalAmount: 150000
+            totalAmountCurrency: IDR
+            expenseCategory:
+              categoryId: FB001
+              name: Restaurant
+              colorCode: '#FFAB40'
+              icon: restaurant
+            debitAccount:
+              debitAccountName: U Goal Saver
+              debitAccountNoMasked: '********7890'
+            creditAccount:
+              creditAccountName: U Transaction Account IB
+              creditAccountNo: '0987654321'
+              creditAccountBankName: Maybank
+              isFavourite: false
+            amountDetails:
+              debitAmount: 150000
+              debitCurrency: IDR
+              creditAmount: 150000
+              creditCurrency: IDR
+            schedulingDetails:
+              frequencyName: Weekly
+              startDateLabel: 4 Oct 2025
+              endDateLabel: 4 Nov 2025 (2 Times)
+            otherDetails:
+              transactionType: Transfer
+              remark: Moving Money
+              recipientEmail: abc@gmail.com
+            additionalDetails:
+              relationshipLabel: Non-affiliated
+              transactionCategoryLabel: Personal
+              transactionDetailLabel: Transfer for daily living expenses
+              additionalDetailRemark: For monthly support
+            receipt:
+              receiptTemplateCode: THIRD_PARTY_TRANSFER
+              receiptTemplateVersion: V1
+              header:
+                title: Transfer Berhasil
+                transactionStatus: SUCCESS
+                transactionDateTime: '2026-04-22T15:05:45+08:00'
+                referenceNumber: TXN202604220002
+              body:
+                - sectionTitle: Informasi Transfer
+                  fields:
+                    - label: Jenis Transfer
+                      value: Third Party Transfer
+                - sectionTitle: Rekening Sumber
+                  fields:
+                    - label: Nama Rekening
+                      value: U Goal Saver
+                    - label: Nomor Rekening
+                      value: '********7890'
+                - sectionTitle: Rekening Penerima
+                  fields:
+                    - label: Nama Penerima
+                      value: Irfan Zulkifli
+                    - label: Bank Penerima
+                      value: Maybank Indonesia
+                    - label: Nomor Rekening
+                      value: '0987654321'
+                - sectionTitle: Detail Nominal
+                  fields:
+                    - label: Jumlah Transfer
+                      value: IDR 150,000.00
+                    - label: Total
+                      value: IDR 150,000.00
+                - sectionTitle: Informasi Tambahan
+                  fields:
+                    - label: Hubungan
+                      value: Non-affiliated
+                    - label: Kategori Transaksi
+                      value: Personal
+                    - label: Detail Transaksi
+                      value: Transfer untuk kebutuhan sehari-hari
+                    - label: Catatan
+                      value: Untuk kebutuhan keluarga
+              footer:
+                message: Resi ini dibuat secara elektronik dan tidak memerlukan tanda tangan.
+          error: null
+        mapping: null
+        microservice: pt-intrabank-transfer
+        downstream: |-
+          ESB:
+          Within-Bank Recurring SI
+          (Please refer to ESB Payment Transfer ESB Mapping Excel, Sheet: Within-Bank Recurring SI)
+
+          Caching:
+          Update TXN:{paymentOrderId}
+          TTL to 60 secs
+        remarks: |-
+          Lifecycle State:
+          -VALIDATED
+          -PROCESSED
+          -FULFILLED (Empty State? As one API can settle all)
+          -COMPLETED
+
+          Receipt object will be confirm by IAM Team for the cerebro.
+      - name: ExecuteInterTransfer
+        method: POST
+        endpoint: pt/interbank/v1/external/execute
+        testCaseId: TC_SCHED_006b
+        requestSample:
+          paymentOrderId: 01ARZ3NDEKTSV4RRFFQ69G5FAV
+        responseSample:
+          status: '200'
+          message: Success
+          timestamp: '2026-05-20T09:30:15'
+          correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+          meta: null
+          data:
+            transactionRefId: PNT260520A1B2C3D4E5
+            transactionStatus: SUCCESS
+            transactionDateTime: '2026-04-22T14:32:10+08:00'
+            totalAmount: 152500
+            totalAmountCurrency: IDR
+            expenseCategory:
+              categoryId: FB001
+              name: Restaurant
+              colorCode: '#FFAB40'
+              icon: restaurant
+            debitAccount:
+              debitAccountName: U Goal Saver
+              debitAccountNoMasked: '********7890'
+            creditAccount:
+              creditAccountName: U Transaction Account IB
+              creditAccountNo: '0987654321'
+              creditAccountBankName: Maybank Indonesia
+              isFavourite: false
+            amountDetails:
+              debitAmount: 150000
+              debitCurrency: IDR
+              creditAmount: 150000
+              creditCurrency: IDR
+              feeAmount: 2500
+              feeCurrency: IDR
+            schedulingDetails:
+              frequencyName: Weekly
+              startDateLabel: 4 Oct 2025
+              endDateLabel: 4 Nov 2025 (2 Times)
+            otherDetails:
+              transactionType: Transfer
+              transferMode: BI-FAST
+              recipientName: Irfan Zulkifli
+              purposeOfTransfer: Pembayaran
+              sourceOfFund: Gaji
+              recipientType: Perorangan
+              recipientCitizenship: Bukan Warga Negara
+              remark: Moving Money
+              recipientEmail: abc@gmail.com
+            additionalDetails:
+              recipientStatus: Sender is not the recipient
+              recipientNationality: Indonesia
+              recipientCategory: Individual
+              relationship: Non-affiliated
+              transactionCategory: Penghasilan / Pengeluaran
+              transactionDetail: Pembayaran gaji karyawan
+              additionalDetailRemark: Untuk kebutuhan keluarga
+            receipt:
+              receiptTemplateCode: THIRD_PARTY_TRANSFER
+              receiptTemplateVersion: V1
+              header:
+                title: Transfer Berhasil
+                transactionStatus: SUCCESS
+                transactionDateTime: '2026-04-22T15:05:45+08:00'
+                referenceNumber: TXN202604220002
+              body:
+                - sectionTitle: Informasi Transfer
+                  fields:
+                    - label: Jenis Transfer
+                      value: Third Party Transfer
+                - sectionTitle: Rekening Sumber
+                  fields:
+                    - label: Nama Rekening
+                      value: U Goal Saver
+                    - label: Nomor Rekening
+                      value: '********7890'
+                - sectionTitle: Rekening Penerima
+                  fields:
+                    - label: Nama Penerima
+                      value: Irfan Zulkifli
+                    - label: Bank Penerima
+                      value: Maybank Indonesia
+                    - label: Nomor Rekening
+                      value: '0987654321'
+                - sectionTitle: Detail Nominal
+                  fields:
+                    - label: Jumlah Transfer
+                      value: IDR 150,000.00
+                    - label: Total
+                      value: IDR 150,000.00
+                - sectionTitle: Informasi Tambahan
+                  fields:
+                    - label: Hubungan
+                      value: Non-affiliated
+                    - label: Kategori Transaksi
+                      value: Personal
+                    - label: Detail Transaksi
+                      value: Transfer untuk kebutuhan sehari-hari
+                    - label: Catatan
+                      value: Untuk kebutuhan keluarga
+              footer:
+                message: Resi ini dibuat secara elektronik dan tidak memerlukan tanda tangan.
+          error: null
+        mapping: null
+        microservice: pt-interbank-transfer
+        downstream: |-
+          ESB:
+          BI-SKN:
+          Within-Bank Recurring SI
+          (Please refer to ESB Payment Transfer ESB Mapping Excel, Sheet: Within-Bank Recurring SI)
+
+          RTGS:
+          RTGS Recurring SI
+          (Please refer to ESB Payment Transfer ESB Mapping Excel, Sheet: RTGS Recurring SI)
+
+          BI-FAST and RTOL still pending for SI team to provide updates.
+
+          Caching:
+          Update TXN:{paymentOrderId}
+          TTL to 60 secs
+        remarks: |-
+          Lifecycle State:
+          -VALIDATED
+          -PROCESSED
+          -FULFILLED (Empty State? As one API can settle all)
+          -COMPLETED
+
+          Receipt object will be confirm by IAM Team for the cerebro.
+  - stepNo: '7'
+    screen: Review & Confirm
+    userAction: User reviews details of the scheduling options on the confirmation screen.
+    systemBehaviour: >-
+      On Page Loads
+
+      System loads the Confirmation Page.
+
+
+      Action/Button Behavior
+
+      Confirm Button - Upon tapping [Confirm] button, system will initiate the transfer and apply the scheduling
+      options. (Refer to the Step No 5)
+
+
+      As this current sheet, we will only focus on the scheduling/recurring options of the transfer, other screen
+      behaviors and rules can be referred by to the immediate transfer sheets.
+    businessRules: >-
+      Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+      Trf_Immediate_Interbank.
+    apis:
+      - name: >-
+          Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+          Trf_Immediate_Interbank.
+        method: >-
+          PLEASE REFER TO THE RELEVANT IMMEDIATE TRANSFER SHEETS: TRF_IMMEDIATE_OWNACCOUNT, TRF_IMMEDIATE_INTRABANK AND
+          TRF_IMMEDIATE_INTERBANK.
+        endpoint: >-
+          Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+          Trf_Immediate_Interbank.
+        testCaseId: TC_SCHED_007a
+        requestSample: >-
+          Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+          Trf_Immediate_Interbank.
+        responseSample: >-
+          Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+          Trf_Immediate_Interbank.
+        mapping: null
+        microservice: >-
+          Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+          Trf_Immediate_Interbank.
+        businessContext: >-
+          Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+          Trf_Immediate_Interbank.
+        downstream: >-
+          Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+          Trf_Immediate_Interbank.
+        remarks: >-
+          Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+          Trf_Immediate_Interbank.
+  - stepNo: >-
+      Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    screen: >-
+      Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    userAction: >-
+      Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    systemBehaviour: >-
+      Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    businessRules: >-
+      Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    apis:
+      - name: >-
+          Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+          Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        method: >-
+          PROCESS OF INITIATING A NEW TRANSFER, PLEASE REFER TO THE RELEVANT IMMEDIATE TRANSFER SHEETS:
+          TRF_IMMEDIATE_OWNACCOUNT, TRF_IMMEDIATE_INTRABANK AND TRF_IMMEDIATE_INTERBANK.
+        endpoint: >-
+          Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+          Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        testCaseId: >-
+          TC_SCHED_Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+          Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.a
+        requestSample: >-
+          Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+          Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        responseSample: >-
+          Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+          Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        mapping: null
+        microservice: >-
+          Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+          Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        businessContext: >-
+          Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+          Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        downstream: >-
+          Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+          Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        remarks: >-
+          Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+          Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+  - stepNo: >-
+      Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    screen: >-
+      Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    userAction: >-
+      Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    systemBehaviour: >-
+      Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    businessRules: >-
+      Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    apis:
+      - name: >-
+          Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+          Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        method: >-
+          TRANSFER DETAILS AND ADDITIONAL DETAILS, PLEASE REFER TO THE RELEVANT IMMEDIATE TRANSFER SHEETS:
+          TRF_IMMEDIATE_OWNACCOUNT, TRF_IMMEDIATE_INTRABANK AND TRF_IMMEDIATE_INTERBANK.
+        endpoint: >-
+          Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+          Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        testCaseId: >-
+          TC_SCHED_Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+          Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.a
+        requestSample: >-
+          Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+          Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        responseSample: >-
+          Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+          Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        mapping: null
+        microservice: >-
+          Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+          Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        businessContext: >-
+          Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+          Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        downstream: >-
+          Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+          Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        remarks: >-
+          Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+          Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.

@@ -1,0 +1,47 @@
+id: TC_SECUR2US_003c
+title: 3. Input OTP SMS / Email - Cerebro
+feature: ETB App Permission
+journey: Secure 2U Setup
+stepNo: '3'
+screen: Input OTP SMS / Email
+userAction: User Input OTP
+request:
+  method: POST
+  url: /cerebro/v1/otp/verify
+  endpoint: /cerebro/v1/otp/verify
+  headers:
+    Accept: application/json
+    X-MB-Authorization: NGAID260703094512_1001
+  body:
+    transactionId: TXN_REF_001
+    otpToken: '123456'
+response:
+  successStatusCode: 200
+  sampleResponse: |-
+    {
+     "status": "200",
+     "message": "Operation completed successfully.",
+     "timestamp": "2026-05-22T02:42:09.396073800Z",
+     "correlationId": null,
+     "data": {
+     "verified": true,
+     "transactionId": "TXN_REF_001"
+     "attempt": {
+     "count": 0,
+     "max": 3,
+     "remaining": 3,
+     }
+     "accountStatus": "ACTIVE"
+     },
+     "error": null,
+     "meta": null
+    }
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: 'Validate business outcome: Refer to [8.0 OTP - SMS or Email Input] screen'
+    type: custom
+references:
+  apiSpecFile: Cerebro
+  sourceWorksheet: ETB Onboarding Screen API Mapping (All Journeys) / Secure 2U Setup

@@ -1,0 +1,72 @@
+id: TC_RECIP_009a
+title: 9. Transfer - Recipients - Remove Favorite - S2UBeneficiaries
+feature: Custom Recipient Management
+journey: Manage_Recipient
+stepNo: '9'
+screen: Transfer - Recipients - Remove Favorite
+userAction: Remove favorites list from ALL - With Favourite group
+request:
+  method: POST
+  url: /v1/external/beneficiaries
+  endpoint: /v1/external/beneficiaries
+  headers:
+    Accept: application/json
+  body:
+    groups:
+      - operation: delete
+        type: FAVOURITES
+        name: Favourites
+    beneficiaries:
+      - accountId: '4700025122'
+        accountHolderName: MUHAMMAD ALI MUTHU
+        nickname: ali nickname
+        bicCode: PBBEMYKL
+        bankName: PUBLIC BANK
+        transactionType: TRANSFER/PAYMENT
+        transactionSubtype: INTERBANK
+        transactionMetadata:
+          serviceFees: 11
+          firstTimeTac: '1'
+          idNumber: null
+          idType: null
+          mobileNumber: ''
+          idFlag: ''
+          swiftCode: PBBEMYKL
+          acquirerId: '564162'
+          accountType: ''
+          accountSubType: ''
+          currency: ''
+          balance: 0
+          paymentCode: '01'
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: success
+    extra: ''
+    note: ''
+    header: recipient_removed_success_header
+    desc: ''
+    details: >-
+      {"reference_id":"268614863M","date_time":"07 May 2026, 04:05 PM","account_holder_name":"Andy
+      Loo","account_number":"5042 3341 3421","recipient_bank":"Maybank", "nickname":"andy loo nickname"}
+    receipt: ''
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: "1. Upon tapping [Save] button, system to check:
+
+      a. If the beneficiary is either added to or removed from ""favourite"" list, S2U is required.
+
+      b. If action does not require S2U and for successful attempt, system displays a toastbar message ""List updated.""
+
+      c. If none of the Fav or Custom list is selected, render the [Save] button to [Remove] button, it will trigger
+      Remove function.
+
+
+      Refer to Recipient - Add to Fav Business Rules for status screen behaviour."
+    type: custom
+references:
+  apiSpecFile: S2UBeneficiaries
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Recipient

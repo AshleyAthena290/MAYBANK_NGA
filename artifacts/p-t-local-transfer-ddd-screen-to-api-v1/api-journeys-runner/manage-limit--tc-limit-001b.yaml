@@ -1,0 +1,104 @@
+id: TC_LIMIT_001b
+title: 1. Manage Limits - Dashboard - LimitSettingInquiry
+feature: Manage Limit Settings
+journey: Manage_Limit
+stepNo: '1'
+screen: Manage Limits - Dashboard
+userAction: >-
+  Entry Point 1: At Transfer landing page, tap three-dots menu and select "Manage limits".
+
+
+  Entry Point 2: At Home Dashboard page, navigate to settings > biometric/password authentication > Transactions >
+  Select "Transfer limits".
+
+
+  User click on Transfer from the menu
+request:
+  method: GET
+  url: pt/limits/v1/external/settings?productIds=productIds
+  endpoint: pt/limits/v1/external/settings?productIds=productIds
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: '200'
+    message: Success
+    timestamp: '2026-05-20T09:30:15'
+    correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+    meta: null
+    data:
+      product:
+        - productDescription: Scan & Pay
+          productId: P3
+          productCode: PC3
+          limitType:
+            - currentLimitAmount:
+                amount: '250.00'
+                currency: IDR
+              newLimitAmount: null
+              coolingExpiredAt: null
+              intervalType: QUICK
+              limitDenominationList:
+                - minAmount:
+                    amount: '0.00'
+                    currency: IDR
+                  maxAmount:
+                    amount: '250.00'
+                    currency: IDR
+                  increment:
+                    amount: '50.00'
+                    currency: IDR
+            - currentLimitAmount:
+                amount: '1000.00'
+                currency: IDR
+              newLimitAmount: null
+              coolingExpiredAt: null
+              intervalType: DAILY
+              limitDenominationList:
+                - minAmount:
+                    amount: '0.00'
+                    currency: IDR
+                  maxAmount:
+                    amount: '100.00'
+                    currency: IDR
+                  increment:
+                    amount: '10.00'
+                    currency: IDR
+                - minAmount:
+                    amount: '100.00'
+                    currency: IDR
+                  maxAmount:
+                    amount: '1000.00'
+                    currency: IDR
+                  increment:
+                    amount: '100.00'
+                    currency: IDR
+            - currentLimitAmount:
+                amount: '1000.00'
+                currency: IDR
+              newLimitAmount: null
+              coolingExpiredAt: null
+              intervalType: PERTXN
+              limitDenominationList:
+                - minAmount:
+                    amount: '10.00'
+                    currency: IDR
+                  maxAmount:
+                    amount: '250.00'
+                    currency: IDR
+                  increment:
+                    amount: '20.00'
+                    currency: IDR
+          flag: true
+    error: null
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: 'Validate business outcome: NA'
+    type: custom
+references:
+  apiSpecFile: LimitSettingInquiry
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Limit

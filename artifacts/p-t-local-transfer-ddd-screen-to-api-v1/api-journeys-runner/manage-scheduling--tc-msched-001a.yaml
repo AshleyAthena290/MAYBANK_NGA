@@ -1,0 +1,63 @@
+id: TC_MSCHED_001a
+title: 1. Scheduled/Recurring Transfer Listing - GetScheduledListing
+feature: Manage Scheduled Transfers Settings
+journey: Manage_Scheduling
+stepNo: '1'
+screen: Scheduled/Recurring Transfer Listing
+userAction: |-
+  User opens Scheduled Transfers page from the submenu of the transfer dashboard (Entry Point 1)
+
+  User opens Scheduled Transfers page from the Settings (Entry Point 2)
+request:
+  method: GET
+  url: pt/recurring/v1/external/transfer/listing
+  endpoint: pt/recurring/v1/external/transfer/listing
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: '200'
+    message: Success
+    timestamp: '2026-05-20T09:30:15'
+    correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+    meta: null
+    data:
+      page: 1
+      size: 20
+      total: 3
+      transfers:
+        - transactionRefId: PNT260520A1B2C3D4E5
+          creditAccountName: JOHN DOE
+          debitAccountNoMasked: '******7890'
+          amount: 1000
+          currency: IDR
+          frequencyCode: MONTHLY
+          startDate: '2026-03-01'
+          endDate: '2026-07-01'
+          numberOfTimes: 2
+    error: null
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: |-
+      Validate business outcome: For searching scheduled/recurring transactions:
+      a. Searching will be based on the selected Tab (Individual or Batch).
+      b. Support wildcard search by entering minimum 3 characters.
+      c. Searching criteria:
+      (i) Individual Tab:
+      - Beneficiary Name
+      - Amount
+      (ii) Batch Tab:
+      - Batch Name
+      - Amount
+      c. Display listing:
+      (i) Sort & display nearest scheduled transaction date (Transfer Date or Start Date) first.
+      (ii) In the event transaction date is same, sorting is based on date created (earliest to latest).
+      d. If searching returns empty, display "We could not find a match" screen.
+    type: custom
+references:
+  apiSpecFile: GetScheduledListing
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Scheduling

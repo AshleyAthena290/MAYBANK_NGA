@@ -1,0 +1,55 @@
+id: TC_SECUR2US_001a
+title: 1. Create Secure2u Passcode - Cerebro
+feature: ETB App Permission
+journey: Secure 2U Setup
+stepNo: '1'
+screen: Create Secure2u Passcode
+userAction: User Input New Passcode and Confirm Passcode
+request:
+  method: POST
+  url: /cerebro/v1/passcode/verify
+  endpoint: /cerebro/v1/passcode/verify
+  headers:
+    Accept: application/json
+    X-MB-Authorization: NGAID260703094512_1001
+  body:
+    passcode: KJH8237SDJH23KJHSD823==
+response:
+  successStatusCode: 200
+  sampleResponse: |-
+    {
+     "status": 200,
+     "message": "Request processed successfully",
+     "timestamp": "2026-01-13T12:00:00",
+     "meta": null
+     "data": {
+     "valid": true
+     }
+    }
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: 1. Upon Tab on Confirm Button perform New Passcode validation and Confirm Passcode
+      validation based on validation checklist
+
+      2. Additional backend validation when Confirm - DOB
+
+      3. Upon successful Secure2U activation, the Secure2U cooling off period will be triggered and starts counting
+      down.
+
+      4. Additional backend validation when Confirm - Previous Passcode
+
+      5. Upon Verification - After SMS OTP and After Email OTP send to FMS
+
+      6. Upon successful Secure2U activation, the Secure2U cooling off period will be triggered and starts counting
+      down. 
+
+      7. Secure2U Cooling Off Period - NGA vs. existing M2U/RMBP
+
+      8. if user succesfully creates S2U passcode, PN and Email will be triggered
+    type: custom
+references:
+  apiSpecFile: Cerebro
+  sourceWorksheet: ETB Onboarding Screen API Mapping (All Journeys) / Secure 2U Setup

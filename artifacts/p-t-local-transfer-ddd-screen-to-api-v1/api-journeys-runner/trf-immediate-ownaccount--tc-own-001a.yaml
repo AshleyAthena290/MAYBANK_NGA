@@ -1,0 +1,30 @@
+id: TC_OWN_001a
+title: >-
+  1. Transfer Dashboard (Own Tab) - Please refer to the Manage_Dashboard sheets for the full details of the Transfer
+  Dashboard
+feature: Own Account Transfer (Immediate)
+journey: Trf_Immediate_OwnAccount
+stepNo: '1'
+screen: Transfer Dashboard (Own Tab)
+userAction: User select the benefiacry account from the Own Account Listing
+request:
+  method: PLEASE REFER TO THE MANAGE_DASHBOARD SHEETS FOR THE FULL DETAILS OF THE TRANSFER DASHBOARD
+  url: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+  endpoint: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+  headers:
+    Accept: application/json
+  body: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+response:
+  successStatusCode: 200
+  sampleResponse: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: Please refer to the Manage_Dashboard sheets for the full details of the Transfer
+      Dashboard
+    type: custom
+references:
+  apiSpecFile: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Trf_Immediate_OwnAccount

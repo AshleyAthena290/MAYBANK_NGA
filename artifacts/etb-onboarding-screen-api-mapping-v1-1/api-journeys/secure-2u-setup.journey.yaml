@@ -1,0 +1,367 @@
+schemaVersion: 2.0.0
+generatedAt: '2026-07-27T06:52:54.096Z'
+source: ETB_Onboarding_Screen_API_Mapping_v1.1.xlsx
+feature: ETB Onboarding Screen API Mapping (All Journeys)
+category: API Journey
+journey:
+  title: ETB App Permission
+  code: Secure 2U Setup
+  description: ''
+summary:
+  totalSteps: 3
+  totalApiRows: 10
+  hasS2UAuthentication: true
+  testCaseIdPrefix: TC_SECUR2US
+keyApis:
+  - name: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/passcode/verify
+    microservice: Cerebro
+  - name: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/otp/generate
+    microservice: Cerebro
+  - name: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/otp/verify
+    microservice: Cerebro
+steps:
+  - stepNo: '1'
+    screen: Create Secure2u Passcode
+    userAction: User Input New Passcode and Confirm Passcode
+    systemBehaviour: ''
+    businessRules: >-
+      1. Upon Tab on Confirm Button perform New Passcode validation and Confirm Passcode validation based on validation
+      checklist
+
+      2. Additional backend validation when Confirm - DOB
+
+      3. Upon successful Secure2U activation, the Secure2U cooling off period will be triggered and starts counting
+      down.
+
+      4. Additional backend validation when Confirm - Previous Passcode
+
+      5. Upon Verification - After SMS OTP and After Email OTP send to FMS
+
+      6. Upon successful Secure2U activation, the Secure2U cooling off period will be triggered and starts counting
+      down. 
+
+      7. Secure2U Cooling Off Period - NGA vs. existing M2U/RMBP
+
+      8. if user succesfully creates S2U passcode, PN and Email will be triggered
+    apis:
+      - name: Cerebro
+        method: POST
+        endpoint: /cerebro/v1/passcode/verify
+        testCaseId: TC_SECUR2US_001a
+        requestSample:
+          passcode: KJH8237SDJH23KJHSD823==
+        responseSample: |-
+          {
+           "status": 200,
+           "message": "Request processed successfully",
+           "timestamp": "2026-01-13T12:00:00",
+           "meta": null
+           "data": {
+           "valid": true
+           }
+          }
+        mapping: null
+        microservice: Cerebro
+        businessContext: >-
+          1. Upon Tab on Confirm Button perform New Passcode validation and Confirm Passcode validation based on
+          validation checklist
+
+          2. Additional backend validation when Confirm - DOB
+
+          3. Upon successful Secure2U activation, the Secure2U cooling off period will be triggered and starts counting
+          down.
+
+          4. Additional backend validation when Confirm - Previous Passcode
+
+          5. Upon Verification - After SMS OTP and After Email OTP send to FMS
+
+          6. Upon successful Secure2U activation, the Secure2U cooling off period will be triggered and starts counting
+          down. 
+
+          7. Secure2U Cooling Off Period - NGA vs. existing M2U/RMBP
+
+          8. if user succesfully creates S2U passcode, PN and Email will be triggered
+        downstream: OLM
+  - stepNo: '2'
+    screen: |-
+      Request SMS / Email
+      OTP
+    userAction: User Tab Generate OTP
+    systemBehaviour: ''
+    businessRules: Refer to [7.0 OTP - SMS or Email Request] screen
+    apis:
+      - name: Cerebro
+        method: POST
+        endpoint: /cerebro/v1/otp/generate
+        testCaseId: TC_SECUR2US_002a
+        requestSample:
+          otpChannel: SMS
+          otpPurpose: SECURE2U_SETUP
+        responseSample:
+          status: 200
+          message: Request processed successfully
+          timestamp: '2026-01-13T12:00:00+07:00'
+          correlationId: null
+          data:
+            transactionId: otp_20260113120000_001
+            otpSent: true
+            expiresIn: 300
+            deliveryChannel: PHONE
+          error: null
+          meta: null
+        mapping: null
+        microservice: Cerebro
+        businessContext: Refer to [7.0 OTP - SMS or Email Request] screen
+        downstream: TAC
+  - stepNo: '3'
+    screen: Input OTP SMS / Email
+    userAction: User Input OTP
+    systemBehaviour: ''
+    businessRules: Refer to [8.0 OTP - SMS or Email Input] screen
+    apis:
+      - name: Cerebro
+        method: POST
+        endpoint: /cerebro/v1/otp/verify
+        testCaseId: TC_SECUR2US_003a
+        requestSample:
+          transactionId: TXN_REF_001
+          otpToken: '123456'
+        responseSample: |-
+          {
+           "status": "200",
+           "message": "Operation completed successfully.",
+           "timestamp": "2026-05-22T02:42:09.396073800Z",
+           "correlationId": null,
+           "data": {
+           "verified": true,
+           "transactionId": "TXN_REF_001"
+           "attempt": {
+           "count": 0,
+           "max": 3,
+           "remaining": 3,
+           }
+           "accountStatus": "ACTIVE"
+           },
+           "error": null,
+           "meta": null
+          }
+        mapping: null
+        microservice: Cerebro
+        businessContext: Refer to [8.0 OTP - SMS or Email Input] screen
+        downstream: TAC
+      - name: Cerebro
+        method: POST
+        endpoint: /cerebro/v1/otp/verify
+        testCaseId: TC_SECUR2US_003b
+        requestSample:
+          transactionId: TXN_REF_001
+          otpToken: '123456'
+        responseSample: |-
+          {
+           "status": "200",
+           "message": "Operation completed successfully.",
+           "timestamp": "2026-05-22T02:42:09.396073800Z",
+           "correlationId": null,
+           "data": {
+           "verified": true,
+           "transactionId": "TXN_REF_001"
+           "attempt": {
+           "count": 0,
+           "max": 3,
+           "remaining": 3,
+           }
+           "accountStatus": "ACTIVE"
+           },
+           "error": null,
+           "meta": null
+          }
+        mapping: null
+        microservice: Cerebro
+        businessContext: Refer to [8.0 OTP - SMS or Email Input] screen
+        downstream: OLM
+      - name: Cerebro
+        method: POST
+        endpoint: /cerebro/v1/otp/verify
+        testCaseId: TC_SECUR2US_003c
+        requestSample:
+          transactionId: TXN_REF_001
+          otpToken: '123456'
+        responseSample: |-
+          {
+           "status": "200",
+           "message": "Operation completed successfully.",
+           "timestamp": "2026-05-22T02:42:09.396073800Z",
+           "correlationId": null,
+           "data": {
+           "verified": true,
+           "transactionId": "TXN_REF_001"
+           "attempt": {
+           "count": 0,
+           "max": 3,
+           "remaining": 3,
+           }
+           "accountStatus": "ACTIVE"
+           },
+           "error": null,
+           "meta": null
+          }
+        mapping: null
+        microservice: Cerebro
+        businessContext: Refer to [8.0 OTP - SMS or Email Input] screen
+        downstream: MCM
+      - name: Cerebro
+        method: POST
+        endpoint: /cerebro/v1/otp/verify
+        testCaseId: TC_SECUR2US_003d
+        requestSample:
+          transactionId: TXN_REF_001
+          otpToken: '123456'
+        responseSample: |-
+          {
+           "status": "200",
+           "message": "Operation completed successfully.",
+           "timestamp": "2026-05-22T02:42:09.396073800Z",
+           "correlationId": null,
+           "data": {
+           "verified": true,
+           "transactionId": "TXN_REF_001"
+           "attempt": {
+           "count": 0,
+           "max": 3,
+           "remaining": 3,
+           }
+           "accountStatus": "ACTIVE"
+           },
+           "error": null,
+           "meta": null
+          }
+        mapping: null
+        microservice: Cerebro
+        businessContext: Refer to [8.0 OTP - SMS or Email Input] screen
+        downstream: OLM
+      - name: Cerebro
+        method: POST
+        endpoint: /cerebro/v1/otp/verify
+        testCaseId: TC_SECUR2US_003e
+        requestSample:
+          transactionId: TXN_REF_001
+          otpToken: '123456'
+        responseSample: |-
+          {
+           "status": "200",
+           "message": "Operation completed successfully.",
+           "timestamp": "2026-05-22T02:42:09.396073800Z",
+           "correlationId": null,
+           "data": {
+           "verified": true,
+           "transactionId": "TXN_REF_001"
+           "attempt": {
+           "count": 0,
+           "max": 3,
+           "remaining": 3,
+           }
+           "accountStatus": "ACTIVE"
+           },
+           "error": null,
+           "meta": null
+          }
+        mapping: null
+        microservice: Cerebro
+        businessContext: Refer to [8.0 OTP - SMS or Email Input] screen
+        downstream: S2U
+      - name: Cerebro
+        method: POST
+        endpoint: /cerebro/v1/otp/verify
+        testCaseId: TC_SECUR2US_003f
+        requestSample:
+          transactionId: TXN_REF_001
+          otpToken: '123456'
+        responseSample: |-
+          {
+           "status": "200",
+           "message": "Operation completed successfully.",
+           "timestamp": "2026-05-22T02:42:09.396073800Z",
+           "correlationId": null,
+           "data": {
+           "verified": true,
+           "transactionId": "TXN_REF_001"
+           "attempt": {
+           "count": 0,
+           "max": 3,
+           "remaining": 3,
+           }
+           "accountStatus": "ACTIVE"
+           },
+           "error": null,
+           "meta": null
+          }
+        mapping: null
+        microservice: Cerebro
+        businessContext: Refer to [8.0 OTP - SMS or Email Input] screen
+        downstream: Kafka
+      - name: Cerebro
+        method: POST
+        endpoint: /cerebro/v1/otp/verify
+        testCaseId: TC_SECUR2US_003g
+        requestSample:
+          transactionId: TXN_REF_001
+          otpToken: '123456'
+        responseSample: |-
+          {
+           "status": "200",
+           "message": "Operation completed successfully.",
+           "timestamp": "2026-05-22T02:42:09.396073800Z",
+           "correlationId": null,
+           "data": {
+           "verified": true,
+           "transactionId": "TXN_REF_001"
+           "attempt": {
+           "count": 0,
+           "max": 3,
+           "remaining": 3,
+           }
+           "accountStatus": "ACTIVE"
+           },
+           "error": null,
+           "meta": null
+          }
+        mapping: null
+        microservice: Cerebro
+        businessContext: Refer to [8.0 OTP - SMS or Email Input] screen
+        downstream: COP
+      - name: Cerebro
+        method: POST
+        endpoint: /cerebro/v1/otp/verify
+        testCaseId: TC_SECUR2US_003h
+        requestSample:
+          transactionId: TXN_REF_001
+          otpToken: '123456'
+        responseSample: |-
+          {
+           "status": "200",
+           "message": "Operation completed successfully.",
+           "timestamp": "2026-05-22T02:42:09.396073800Z",
+           "correlationId": null,
+           "data": {
+           "verified": true,
+           "transactionId": "TXN_REF_001"
+           "attempt": {
+           "count": 0,
+           "max": 3,
+           "remaining": 3,
+           }
+           "accountStatus": "ACTIVE"
+           },
+           "error": null,
+           "meta": null
+          }
+        mapping: null
+        microservice: Cerebro
+        businessContext: Refer to [8.0 OTP - SMS or Email Input] screen
+        downstream: OLM

@@ -1,0 +1,67 @@
+id: TC_MFAV_006a
+title: 6. Manage Favorite - Remove favorite - S2UBeneficiaries
+feature: Favourite Management
+journey: Manage_Favourite
+stepNo: '6'
+screen: Manage Favorite - Remove favorite
+userAction: Remove Favourite
+request:
+  method: DELETE
+  url: /v1/external/beneficiaries
+  endpoint: /v1/external/beneficiaries
+  headers:
+    Accept: application/json
+  body:
+    groups:
+      - operation: delete
+        type: FAVOURITES
+        name: Favourites
+    beneficiaries:
+      - accountId: '4700025122'
+        accountHolderName: MUHAMMAD ALI MUTHU
+        nickname: ali nickname
+        bicCode: PBBEMYKL
+        bankName: PUBLIC BANK
+        transactionType: TRANSFER/PAYMENT
+        transactionSubtype: INTERBANK
+        transactionMetadata:
+          serviceFees: 11
+          firstTimeTac: '1'
+          idNumber: null
+          idType: null
+          mobileNumber: ''
+          idFlag: ''
+          swiftCode: PBBEMYKL
+          acquirerId: '564162'
+          accountType: ''
+          accountSubType: ''
+          currency: ''
+          balance: 0
+          paymentCode: '01'
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: success
+    extra: ''
+    note: ''
+    header: recipient_removed_success_header
+    desc: ''
+    details: >-
+      {"reference_id":"268614863M","date_time":"07 May 2026, 04:05 PM","account_holder_name":"Andy
+      Loo","account_number":"5042 3341 3421","recipient_bank":"Maybank", "nickname":"andy loo nickname"}
+    receipt: ''
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: Upon deleting/removing a beneficiary from the list (tapping trash icon), to display a
+      confirmation pop-up:
+
+      a. Tap on [Remove]: navigate to S2U.
+
+      b. Tap on [Keep]: maintain the beneficiary and close the pop up confirmation, no changes will be performed.
+    type: custom
+references:
+  apiSpecFile: S2UBeneficiaries
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Favourite

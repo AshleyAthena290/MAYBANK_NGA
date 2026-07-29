@@ -1,0 +1,223 @@
+schemaVersion: 2.0.0
+generatedAt: '2026-07-27T03:25:39.685Z'
+source: P&T_Local_Transfer_DDD_Screen_to_API_v1.xlsx
+feature: P&T Local Transfer (All Journeys)
+category: API Journey
+journey:
+  title: Transfer from Beneficary List (All, Favourite, Frequent and Custom)
+  code: Trf_Fav_Bene_Freq_Transfer
+  description: User tap one of the beneficary names from the dashboard list and starts the transfer directly
+summary:
+  totalSteps: 3
+  totalApiRows: 4
+  hasS2UAuthentication: false
+  testCaseIdPrefix: TC_FAVTRF
+keyApis:
+  - name: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+    method: PLEASE REFER TO THE MANAGE_DASHBOARD SHEET FOR TRANSFER DASHBOARD BEHAVIORS.
+    endpoint: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+    microservice: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+  - name: IntraPreMonetaryCheck
+    method: POST
+    endpoint: pt/intrabank/v1/external/pre-check
+    microservice: pt-intrabank-transfer
+  - name: InterPreMonetaryCheck
+    method: POST
+    endpoint: pt/interbank/v1/external/pre-check
+    microservice: pt-interbank-transfer
+  - name: >-
+      Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer Sheets:
+      Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    method: >-
+      CONTINUE ON THE TRANSFER DETAILS AND ADDITIONAL DETAILS PROCESS, PLEASE REFER TO THE IMMEDIATE TRANSFER SHEETS:
+      TRF_IMMEDIATE_INTRABANK AND TRF_IMMEDIATE_INTERBANK.
+    endpoint: >-
+      Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer Sheets:
+      Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    microservice: >-
+      Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer Sheets:
+      Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+steps:
+  - stepNo: '1'
+    screen: Input Amount
+    userAction: User taps one of the beneficary name inside the "All","Frequent","Favourites" and the custom group list
+    systemBehaviour: >-
+      On Page Loads
+
+      Load the list of All, Frequent and Favourites List on the dashboard (Please refer to the next column for the
+      criteria)
+
+
+      Action/Button Behavior
+
+      Local/Overseas Tabs - Option to switch between local or overseas transfer (Not covered in this scope)
+
+      Search Bar - Wildcard search on the account list (Not covered in this scope)
+
+      Beneficiary Category Tabs - Switching on the account categories 
+
+      List of Accounts - Tapping on one of the account will start the Intrabank/Interbank Transfer Journey
+
+      [+ Transfer ] Button - Upon tapping yellow [+] button, display banks selection drawer for initiating a new
+      transfer by account number.
+    businessRules: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+    apis:
+      - name: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+        method: PLEASE REFER TO THE MANAGE_DASHBOARD SHEET FOR TRANSFER DASHBOARD BEHAVIORS.
+        endpoint: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+        testCaseId: TC_FAVTRF_001a
+        requestSample: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+        responseSample: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+        mapping: null
+        microservice: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+        businessContext: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+        downstream: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+        remarks: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+  - stepNo: '2'
+    screen: Input Amount
+    userAction: User input amount.
+    systemBehaviour: >-
+      On Page loads
+
+      As system already contain the beneficiary account no, it will directly pass to the pre-check API:
+
+      - Intrabank will call pt/intrabank/v1/ext/pre-check
+
+      - Interbank will call pt/interbank/v1/ext/pre-check
+
+
+      As this current sheet, we will only focus on the executing transfer from the beneficiary list, other screen
+      behaviors and rules can be referred by to the immediate transfer sheets.
+    businessRules: >-
+      There is no account inquiry for any transfer that initiated from selecting the beneficiary recipient from the
+      transfer dashboard, FE will need to pass the related information into backend.
+    apis:
+      - name: IntraPreMonetaryCheck
+        method: POST
+        endpoint: pt/intrabank/v1/external/pre-check
+        testCaseId: TC_FAVTRF_002a
+        requestSample:
+          transferType: THIRD_PARTY_TRANSFER
+          creditAccountSource: EXISTING
+          creditAccountBankCode: MBB
+          creditAccountNo: '1234567890'
+          creditAccountName: ALI BIN ABU
+          creditAccountType: SA
+          creditAccountCurrency: IDR
+        responseSample:
+          status: '200'
+          message: Success
+          timestamp: '2026-05-20T09:35:10'
+          correlationId: f7a1c89e-b456-4321-9988-776655443322
+          meta: null
+          data:
+            preCheckId: 59c47913-6f73-4aea-81f3-0ddbe83ec5f4
+            creditAccount:
+              creditAccountNo: '1234567890'
+              creditAccountType: SA
+              creditAccountName: ALI BIN ABU
+              creditAccountBankCode: MBB
+              creditAccountCurrency: IDR
+              isFavourite: false
+            limits:
+              productCode: INTRABANK_THIRD_PARTY
+              dailyLimit: 30000
+              dailyLimitRemaining: 15000
+              dailylimitCurrency: IDR
+          error: null
+        mapping: null
+        microservice: pt-intrabank-transfer
+        businessContext: >-
+          There is no account inquiry for any transfer that initiated from selecting the beneficiary recipient from the
+          transfer dashboard, FE will need to pass the related information into backend.
+        downstream: Please refer back to Trf_Immediate_Intrabank
+        remarks: Please refer back to Trf_Immediate_Intrabank
+      - name: InterPreMonetaryCheck
+        method: POST
+        endpoint: pt/interbank/v1/external/pre-check
+        testCaseId: TC_FAVTRF_002b
+        requestSample:
+          creditAccountSource: EXISTING
+          creditAccountBankCode: MBB
+          creditAccountNo: '1234567890'
+          creditAccountName: ALI BIN ABU
+          creditAccountType: SA
+          creditAccountCurrency: IDR
+          lastSelectedTransferModeCode: BIFAST
+        responseSample:
+          status: '200'
+          message: Success
+          timestamp: '2026-05-20T09:35:10'
+          correlationId: f7a1c89e-b456-4321-9988-776655443322
+          meta: null
+          data:
+            preCheckId: 59c47913-6f73-4aea-81f3-0ddbe83ec5f4
+            transferModeCode: BIFAST
+            creditAccount:
+              creditAccountNo: '1234567890'
+              creditAccountType: SA
+              creditAccountName: ALI BIN ABU
+              creditAccountBankCode: CIMB
+              creditAccountCurrency: IDR
+              isFavourite: false
+            limits:
+              productCode: INTERBANK_TRANSFER
+              transferModeCode: BIFAST
+              dailyLimit: 30000
+              dailyLimitRemaining: 15000
+              dailylimitCurrency: IDR
+          error: null
+        mapping: null
+        microservice: pt-interbank-transfer
+        businessContext: >-
+          There is no account inquiry for any transfer that initiated from selecting the beneficiary recipient from the
+          transfer dashboard, FE will need to pass the related information into backend.
+        downstream: Please refer back to Trf_Immediate_Interbank
+        remarks: Please refer back to Trf_Immediate_Interbank
+  - stepNo: >-
+      Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer Sheets:
+      Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    screen: >-
+      Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer Sheets:
+      Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    userAction: >-
+      Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer Sheets:
+      Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    systemBehaviour: >-
+      Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer Sheets:
+      Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    businessRules: >-
+      Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer Sheets:
+      Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    apis:
+      - name: >-
+          Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer
+          Sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        method: >-
+          CONTINUE ON THE TRANSFER DETAILS AND ADDITIONAL DETAILS PROCESS, PLEASE REFER TO THE IMMEDIATE TRANSFER
+          SHEETS: TRF_IMMEDIATE_INTRABANK AND TRF_IMMEDIATE_INTERBANK.
+        endpoint: >-
+          Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer
+          Sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        testCaseId: >-
+          TC_FAVTRF_Continue on the Transfer Details and Additional Details process, please refer to the Immediate
+          Transfer Sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.a
+        requestSample: >-
+          Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer
+          Sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        responseSample: >-
+          Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer
+          Sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        mapping: null
+        microservice: >-
+          Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer
+          Sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        businessContext: >-
+          Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer
+          Sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        downstream: >-
+          Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer
+          Sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+        remarks: >-
+          Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer
+          Sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.

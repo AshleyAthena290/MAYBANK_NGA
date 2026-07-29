@@ -1,0 +1,99 @@
+id: TC_MFAV_005a
+title: 5. Manage Favorite - Add from Frequent - S2UBeneficiaries
+feature: Favourite Management
+journey: Manage_Favourite
+stepNo: '5'
+screen: Manage Favorite - Add from Frequent
+userAction: Add Favorite from Frequent
+request:
+  method: POST
+  url: /v1/external/beneficiaries
+  endpoint: /v1/external/beneficiaries
+  headers:
+    Accept: application/json
+  body:
+    groups:
+      - operation: add
+        type: FAVOURITES
+        name: Favourites
+    beneficiaries:
+      - accountId: '4700025122'
+        accountHolderName: MUHAMMAD ALI MUTHU
+        nickname: ali nickname
+        bicCode: PBBEMYKL
+        bankName: PUBLIC BANK
+        transactionType: TRANSFER/PAYMENT
+        transactionSubtype: INTERBANK
+        transactionMetadata:
+          serviceFees: 11
+          firstTimeTac: '1'
+          idNumber: null
+          idType: null
+          mobileNumber: ''
+          idFlag: ''
+          swiftCode: PBBEMYKL
+          acquirerId: '564162'
+          accountType: ''
+          accountSubType: ''
+          currency: ''
+          balance: 0
+          paymentCode: '01'
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: success
+    extra: ''
+    note: ''
+    header: added_as_favourite_success_header
+    desc: ''
+    details: >-
+      {"reference_id":"268614863M","date_time":"07 May 2026, 04:05 PM","account_holder_name":"Andy
+      Loo","account_number":"5042 3341 3421","recipient_bank":"Maybank"}
+    receipt: ''
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: Search Bar:
+
+      1. Wildcard search will be performed once the user has entered 2 characters (key up). Searching of beneficiaries
+      include fields below:
+
+      a. Beneficiaries Account Name
+
+      b. Beneficiaries Nickname
+
+      c. Beneficiaries Account Number
+
+      d. Beneficiaries Bank Name.
+
+      2. Listing of beneficiary will be the same as Transfer Landing Page ALL tab. Refer to Trf - Landing Page.
+
+      3. For search result that returns EMPTY:
+
+      a. System to display "We couldn't find a match for <input data>" 
+
+
+      Upon tapping a beneficiary:
+
+      1. If beneficiary is not a favourite, system displays "Add Recipient" as screen header. User to key in nickname or
+      leave the field empty.
+
+      2. If beneficiary has a nickname, system displays "Edit Nickname". User is able to edit current beneficiary's
+      nickname.
+
+
+      Upon tapping [Next]
+
+      1. for a non-favourite beneficiary, navigate to S2U.
+
+      2. for an existing favourite:
+
+      a. IF no changes on nickname, display toastbar message "This recipient has already been added as favourite."
+
+      b. IF there are changes on nickname, navigate to S2U.
+    type: custom
+references:
+  apiSpecFile: S2UBeneficiaries
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Favourite

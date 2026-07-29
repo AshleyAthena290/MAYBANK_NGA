@@ -1,0 +1,44 @@
+id: TC_EXP_001a
+title: 1. Transfer Result Screen - getSubCategoryClassification
+feature: Expenses Tracker
+journey: Trf_Expenses_Tracker
+stepNo: '1'
+screen: Transfer Result Screen
+userAction: When execute s2u api, require to call eclipse API in order to get the pre-defined subCategory
+request:
+  method: GET
+  url: /v1/external/sub-categories/classification?key=TRANSFER&subKey=INTERBANK&description=makan
+  endpoint: /v1/external/sub-categories/classification?key=TRANSFER&subKey=INTERBANK&description=makan
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: Request processed successfully
+    timestamp: '2026-01-13T12:00:00'
+    correlationId: abc123-correlation-id
+    meta:
+      provider: erp
+    data:
+      subCategory:
+        categoryId: '001'
+        id: '009'
+        name: Abu Cafe
+        colorCode: '#FFAB40'
+        icon: restaurant
+        isSystem: false
+    link: {}
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: API GET
+      /v1/external/sub-categories/classification?key=TRANSFER&subKey=INTERBANK&description=makan is invoked as part of
+      the journey.
+    type: custom
+references:
+  apiSpecFile: getSubCategoryClassification
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Trf_Expenses_Tracker

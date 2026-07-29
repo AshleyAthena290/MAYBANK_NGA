@@ -1,0 +1,91 @@
+id: TC_80ETBPRI_001a
+title: 1. Short list example and Long list example - Cerebro
+feature: ETB Primary Account
+journey: 8.0 ETB - Primary Acc
+stepNo: '1'
+screen: Short list example and Long list example
+userAction: ''
+request:
+  method: PUT
+  url: /cerebro/v1/account/primary
+  endpoint: /cerebro/v1/account/primary
+  headers:
+    Accept: application/json
+    X-MB-Authorization: NGAID260703094512_1001
+  body:
+    journey: ETB_ONBOARDING
+    cifId: ''
+    accountType: CASA_OR_CC
+    pagination:
+      page: 1
+      limit: 20
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: success
+    data:
+      screenRequired: true
+      nextScreen: PRIMARY_ACCOUNT_SELECTION
+      accountCategory: CASA
+      autoSelected: false
+      defaultSelectedAccountId: ''
+      accounts:
+        - accountId: ''
+          accountType: CASA
+          productName: ''
+          accountName: ''
+          accountNumberMasked: ''
+          currency: IDR
+          availableBalance: 0
+          isEligible: true
+          isDefaultSelected: true
+          recentDigitalTransactionCount: 0
+          displaySequence: 1
+      pagination:
+        page: 1
+        limit: 20
+        hasMore: false
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: |-
+      Validate business outcome: Entry point:
+      1. Triggered after Secure2U setup is completed.
+
+      Account listing rule:
+      1. On page load, retrieve eligible account list.
+      2. If user has more than 1 CASA with / without CC, display CASA list.
+      3. If user has more than 1 CC and no CASA, display CC list.
+      4. If user has only 1 CASA or 1 CC, auto-select as primary and bypass selection screen.
+
+      CASA eligibility:
+      1. CASA allowed status: Active or Inactive.
+      2. RDN and Term Savings are not allowed.
+
+      CC eligibility:
+      1. CC allowed status: Active or Inactive.
+      2. Allowed block code only.
+      3. Card type must be Primary.
+
+      Default selection:
+      1. For CASA, pre-select account with highest recent digital transaction count in the past 90 days.
+      2. If equal, default to most recently used account.
+      3. If all zero transaction, default to oldest account.
+      4. For CC, pre-select first account in alphabetical order.
+
+      Pagination:
+      1. Display 20 accounts per page.
+      2. Lazy load is available.
+
+      Store primary account:
+      1. If user selects from CASA list, selected CASA is set as primary account candidate.
+      2. If user selects from CC list, selected CC is set as primary account candidate.
+      3. If user has only 1 eligible account, system auto-selects it as primary account candidate.
+      4. System stores selected primary account.
+      5. If primary account is stored successfully, navigate to Biometric Setup screen.
+      6. If primary account storing fails, still navigate to Biometric Setup screen.
+    type: custom
+references:
+  apiSpecFile: Cerebro
+  sourceWorksheet: ETB Onboarding Screen API Mapping (All Journeys) / 8.0 ETB - Primary Acc

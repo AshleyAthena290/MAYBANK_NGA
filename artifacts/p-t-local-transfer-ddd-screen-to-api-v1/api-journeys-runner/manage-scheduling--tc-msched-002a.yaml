@@ -1,0 +1,46 @@
+id: TC_MSCHED_002a
+title: 2. Filtering tools for Scheduled/Recurring Transfer Listing - GetScheduledDetails
+feature: Manage Scheduled Transfers Settings
+journey: Manage_Scheduling
+stepNo: '2'
+screen: Filtering tools for Scheduled/Recurring Transfer Listing
+userAction: User is able to filter the list of scheduled transfers through the filtering tools.
+request:
+  method: GET
+  url: pt/recurring/v1/external/transfer/sample
+  endpoint: pt/recurring/v1/external/transfer/sample
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: '200'
+    message: Success
+    timestamp: '2026-05-20T09:30:15'
+    correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+    meta: null
+    data:
+      transactionRefId: PNT260520A1B2C3D4E5
+      creditAccountName: JOHN DOE
+      creditAccountNo: '0987654321'
+      creditAccountBankName: Bank CIMB Niaga
+      debitAccountName: SAVINGS ACCOUNT
+      debitAccountNo: '1234567890'
+      amount: 1000
+      currency: IDR
+      frequencyCode: MONTHLY
+      startDate: '2026-01-01'
+      endDate: '2026-12-01'
+      numberOfTimes: 12
+      status: SCHEDULED
+    error: null
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: 'Validate business outcome: There will be no API needed to be called here, the FE will handles the filter.'
+    type: custom
+references:
+  apiSpecFile: GetScheduledDetails
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Scheduling

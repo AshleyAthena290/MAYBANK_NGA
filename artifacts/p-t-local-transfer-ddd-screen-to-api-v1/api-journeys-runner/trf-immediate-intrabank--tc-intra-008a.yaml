@@ -1,0 +1,97 @@
+id: TC_INTRA_008a
+title: 8. Review & Confirm - InitiateIntraTransfer
+feature: 3rd Party Account Transfer (Immediate)
+journey: Trf_Immediate_Intrabank
+stepNo: '8'
+screen: Review & Confirm
+userAction: User reviews details and slide to Confirm
+request:
+  method: POST
+  url: pt/intrabank/v1/external/initiate
+  endpoint: pt/intrabank/v1/external/initiate
+  headers:
+    Accept: application/json
+  body: |-
+    {
+     "preCheckId": "59c47913-6f73-4aea-81f3-0ddbe83ec5f4",
+     "transferType": "THIRD_PARTY_TRANSFER",
+     "debitAccountNo": "1234567890",
+     "debitAccountType": "SA",
+     "debitAccountCurrency": "IDR",
+     "creditAccountNo": "0987654321",
+     "creditAccountType": "SA",
+     "creditAccountBankCode": "MBB",
+     "creditAccountCurrency": "IDR",
+     "debitAmount": 150000.00,
+     "creditAmount": 150000.00,
+     "remark": "Monthly support",
+     "recipientEmail": "recipient@gmail.com",
+     "relationshipCode": "FRIEND",
+     "transactionCategoryCode": "PERSONAL",
+     "transactionDetailCode": "TD001",
+     "additionalDetailRemark" "Salary",
+     "schedule": {
+     "frequencyCode": "ONE_OFF",
+     "startDate": "2025-12-25"
+     }
+    }
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: '200'
+    message: Success
+    timestamp: '2026-05-20T09:30:15'
+    correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+    meta: null
+    data:
+      paymentOrderId: 01ARZ3NDEKTSV4RRFFQ69G5FAV
+      transactionStatus: INITIATED
+      createdAt: '2026-04-22T14:30:00+08:00'
+    error: null
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: 'Upon tapping [Confirm] button, system performs:
+
+      1. SoF Account eligibility (refer to Local Transfer FSD "Input Amt" > Table 1 - SoF Eligibility Check). If SoF
+      account is NOT eligible to perform transfer, system displays toastbar message "This account is unable to make this
+      transfer. Select another account."
+
+      2. Minimum amount per Transaction Limit:
+
+      a. Minimum transaction amount (from NGBO, basically is IDR10,000) for selected transfer mode. If does not meet,
+      display toastbar error message "Minimum amount is IDR <min limit based on transfer mode>"
+
+      (i) Own
+
+      (ii) Intrabank 
+
+      (iii) Interbank
+
+      3. Daily Limit by Transfer Mode (from Settings) - for INTERBANK & INTRABANK only
+
+      a. If exceeds, display toastbar error message "Amount cannot exceed your remaining limit" 
+
+      4. SoF Balance Checking
+
+      a. If amount > SoF available balance, display toastbar error message "Transaction amount cannot exceed you
+      available balance." 
+
+      5. Maximum per Transaction Limit:
+
+      a. Maximum transaction amount for selected transfer mode. If exceed, display toastbar error message "Transaction
+      amount cannot exceed your maximum transaction limit for this transfer mode."
+
+      (i) Own
+
+      (ii) Intrabank 
+
+      (iii) Interbank
+
+      6. If all above validation passed, navigate to Status End Screen.
+    type: custom
+references:
+  apiSpecFile: InitiateIntraTransfer
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Trf_Immediate_Intrabank

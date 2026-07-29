@@ -1,0 +1,115 @@
+id: TC_SCHED_006a
+title: 6. Transfer Result - ExecuteIntraTransfer
+feature: Scheduling/Recurring Transfer (For All Types)
+journey: Trf_Scheduling_All
+stepNo: '6'
+screen: Transfer Result
+userAction: User reviews details of the scheduling result on the transfer result screen.
+request:
+  method: POST
+  url: pt/intrabank/v1/external/execute
+  endpoint: pt/intrabank/v1/external/execute
+  headers:
+    Accept: application/json
+  body:
+    paymentOrderId: 01ARZ3NDEKTSV4RRFFQ69G5FAV
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: '200'
+    message: Success
+    timestamp: '2026-05-20T09:30:15'
+    correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+    meta: null
+    data:
+      transactionRefId: PNT260520A1B2C3D4E5
+      transactionStatus: SUCCESS
+      transactionDateTime: '2026-04-22T14:32:10+08:00'
+      totalAmount: 150000
+      totalAmountCurrency: IDR
+      expenseCategory:
+        categoryId: FB001
+        name: Restaurant
+        colorCode: '#FFAB40'
+        icon: restaurant
+      debitAccount:
+        debitAccountName: U Goal Saver
+        debitAccountNoMasked: '********7890'
+      creditAccount:
+        creditAccountName: U Transaction Account IB
+        creditAccountNo: '0987654321'
+        creditAccountBankName: Maybank
+        isFavourite: false
+      amountDetails:
+        debitAmount: 150000
+        debitCurrency: IDR
+        creditAmount: 150000
+        creditCurrency: IDR
+      schedulingDetails:
+        frequencyName: Weekly
+        startDateLabel: 4 Oct 2025
+        endDateLabel: 4 Nov 2025 (2 Times)
+      otherDetails:
+        transactionType: Transfer
+        remark: Moving Money
+        recipientEmail: abc@gmail.com
+      additionalDetails:
+        relationshipLabel: Non-affiliated
+        transactionCategoryLabel: Personal
+        transactionDetailLabel: Transfer for daily living expenses
+        additionalDetailRemark: For monthly support
+      receipt:
+        receiptTemplateCode: THIRD_PARTY_TRANSFER
+        receiptTemplateVersion: V1
+        header:
+          title: Transfer Berhasil
+          transactionStatus: SUCCESS
+          transactionDateTime: '2026-04-22T15:05:45+08:00'
+          referenceNumber: TXN202604220002
+        body:
+          - sectionTitle: Informasi Transfer
+            fields:
+              - label: Jenis Transfer
+                value: Third Party Transfer
+          - sectionTitle: Rekening Sumber
+            fields:
+              - label: Nama Rekening
+                value: U Goal Saver
+              - label: Nomor Rekening
+                value: '********7890'
+          - sectionTitle: Rekening Penerima
+            fields:
+              - label: Nama Penerima
+                value: Irfan Zulkifli
+              - label: Bank Penerima
+                value: Maybank Indonesia
+              - label: Nomor Rekening
+                value: '0987654321'
+          - sectionTitle: Detail Nominal
+            fields:
+              - label: Jumlah Transfer
+                value: IDR 150,000.00
+              - label: Total
+                value: IDR 150,000.00
+          - sectionTitle: Informasi Tambahan
+            fields:
+              - label: Hubungan
+                value: Non-affiliated
+              - label: Kategori Transaksi
+                value: Personal
+              - label: Detail Transaksi
+                value: Transfer untuk kebutuhan sehari-hari
+              - label: Catatan
+                value: Untuk kebutuhan keluarga
+        footer:
+          message: Resi ini dibuat secara elektronik dan tidak memerlukan tanda tangan.
+    error: null
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: 'Validate business outcome: NA'
+    type: custom
+references:
+  apiSpecFile: ExecuteIntraTransfer
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Trf_Scheduling_All

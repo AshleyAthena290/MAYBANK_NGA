@@ -1,0 +1,170 @@
+schemaVersion: 1.0.0
+generatedAt: '2026-07-27T06:52:54.160Z'
+source: ETB_Onboarding_Screen_API_Mapping_v1.1.xlsx
+feature: ETB Onboarding Screen API Mapping (All Journeys)
+category: API Journey
+summary:
+  executableCases: 23
+  skippedUiOnlyCases: 13
+files:
+  - journeyCode: 2.0 ETB - Consent
+    journeyTitle: ETB Consent
+    testCaseId: TC_20ETBCON_001a
+    file: 2-0-etb-consent--tc-20etbcon-001a.yaml
+    apiName: Cerebro
+    method: GET
+    endpoint: /identity/cerebro/v1/user/consents
+  - journeyCode: 2.0 ETB - Consent
+    journeyTitle: ETB Consent
+    testCaseId: TC_20ETBCON_001b
+    file: 2-0-etb-consent--tc-20etbcon-001b.yaml
+    apiName: Cerebro
+    method: GET
+    endpoint: /identity/cerebro/v1/user/consents
+  - journeyCode: 3.0 ETB - w M2U Login Username
+    journeyTitle: ETB w M2U Login Username
+    testCaseId: TC_30ETBWM2_001a
+    file: 3-0-etb-w-m2u-login-username--tc-30etbwm2-001a.yaml
+    apiName: Cerebro
+    method: POST
+    endpoint: /identity/cerebro/v1/user/verify-username
+  - journeyCode: 4.0 ETB - w M2U Login Pwd
+    journeyTitle: ETB w M2U Login Password
+    testCaseId: TC_40ETBWM2_001a
+    file: 4-0-etb-w-m2u-login-pwd--tc-40etbwm2-001a.yaml
+    apiName: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/login/password
+  - journeyCode: Secure 2U Setup
+    journeyTitle: ETB App Permission
+    testCaseId: TC_SECUR2US_001a
+    file: secure-2u-setup--tc-secur2us-001a.yaml
+    apiName: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/passcode/verify
+  - journeyCode: Secure 2U Setup
+    journeyTitle: ETB App Permission
+    testCaseId: TC_SECUR2US_002a
+    file: secure-2u-setup--tc-secur2us-002a.yaml
+    apiName: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/otp/generate
+  - journeyCode: Secure 2U Setup
+    journeyTitle: ETB App Permission
+    testCaseId: TC_SECUR2US_003a
+    file: secure-2u-setup--tc-secur2us-003a.yaml
+    apiName: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/otp/verify
+  - journeyCode: Secure 2U Setup
+    journeyTitle: ETB App Permission
+    testCaseId: TC_SECUR2US_003b
+    file: secure-2u-setup--tc-secur2us-003b.yaml
+    apiName: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/otp/verify
+  - journeyCode: Secure 2U Setup
+    journeyTitle: ETB App Permission
+    testCaseId: TC_SECUR2US_003c
+    file: secure-2u-setup--tc-secur2us-003c.yaml
+    apiName: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/otp/verify
+  - journeyCode: Secure 2U Setup
+    journeyTitle: ETB App Permission
+    testCaseId: TC_SECUR2US_003d
+    file: secure-2u-setup--tc-secur2us-003d.yaml
+    apiName: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/otp/verify
+  - journeyCode: Secure 2U Setup
+    journeyTitle: ETB App Permission
+    testCaseId: TC_SECUR2US_003e
+    file: secure-2u-setup--tc-secur2us-003e.yaml
+    apiName: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/otp/verify
+  - journeyCode: Secure 2U Setup
+    journeyTitle: ETB App Permission
+    testCaseId: TC_SECUR2US_003f
+    file: secure-2u-setup--tc-secur2us-003f.yaml
+    apiName: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/otp/verify
+  - journeyCode: Secure 2U Setup
+    journeyTitle: ETB App Permission
+    testCaseId: TC_SECUR2US_003g
+    file: secure-2u-setup--tc-secur2us-003g.yaml
+    apiName: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/otp/verify
+  - journeyCode: Secure 2U Setup
+    journeyTitle: ETB App Permission
+    testCaseId: TC_SECUR2US_003h
+    file: secure-2u-setup--tc-secur2us-003h.yaml
+    apiName: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/otp/verify
+  - journeyCode: 8.0 ETB - Primary Acc
+    journeyTitle: ETB Primary Account
+    testCaseId: TC_80ETBPRI_001a
+    file: 8-0-etb-primary-acc--tc-80etbpri-001a.yaml
+    apiName: Cerebro
+    method: PUT
+    endpoint: /cerebro/v1/account/primary
+  - journeyCode: 8.0 ETB - Primary Acc
+    journeyTitle: ETB Primary Account
+    testCaseId: TC_80ETBPRI_002a
+    file: 8-0-etb-primary-acc--tc-80etbpri-002a.yaml
+    apiName: Cerebro
+    method: PUT
+    endpoint: /cerebro/v1/account/primary
+  - journeyCode: Setup Biometric
+    journeyTitle: ETB Setup Biometric Onboarding
+    testCaseId: TC_SETUPBIO_001a
+    file: setup-biometric--tc-setupbio-001a.yaml
+    apiName: Cerebro
+    method: POST
+    endpoint: /identity/cerebro/v1/user/biometric
+  - journeyCode: 9.0 ETB - w M2U Final
+    journeyTitle: ETB w M2U Final
+    testCaseId: TC_90ETBWM2_001a
+    file: 9-0-etb-w-m2u-final--tc-90etbwm2-001a.yaml
+    apiName: Cerebro
+    method: GET
+    endpoint: /identity/cerebro/v1/user/status
+  - journeyCode: 16.0 ETB-wo M2U Access Create
+    journeyTitle: ETB w M2U Final
+    testCaseId: TC_160ETBWO_001a
+    file: 16-0-etb-wo-m2u-access-create--tc-160etbwo-001a.yaml
+    apiName: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/otp/generate
+  - journeyCode: 16.0 ETB-wo M2U Access Create
+    journeyTitle: ETB w M2U Final
+    testCaseId: TC_160ETBWO_001b
+    file: 16-0-etb-wo-m2u-access-create--tc-160etbwo-001b.yaml
+    apiName: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/otp/verify
+  - journeyCode: 16.0 ETB-wo M2U Access Create
+    journeyTitle: ETB w M2U Final
+    testCaseId: TC_160ETBWO_002a
+    file: 16-0-etb-wo-m2u-access-create--tc-160etbwo-002a.yaml
+    apiName: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/otp/generate
+  - journeyCode: 16.0 ETB-wo M2U Access Create
+    journeyTitle: ETB w M2U Final
+    testCaseId: TC_160ETBWO_002b
+    file: 16-0-etb-wo-m2u-access-create--tc-160etbwo-002b.yaml
+    apiName: Cerebro
+    method: POST
+    endpoint: /cerebro/v1/otp/verify
+  - journeyCode: 17.0 ETB - wo M2U Final
+    journeyTitle: ETB wo M2U Final
+    testCaseId: TC_170ETBWO_001a
+    file: 17-0-etb-wo-m2u-final--tc-170etbwo-001a.yaml
+    apiName: Cerebro
+    method: GET
+    endpoint: /identity/cerebro/v1/user/status

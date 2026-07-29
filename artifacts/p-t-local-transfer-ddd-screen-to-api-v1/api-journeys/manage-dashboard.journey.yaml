@@ -1,0 +1,1645 @@
+schemaVersion: 2.0.0
+generatedAt: '2026-07-27T03:25:39.685Z'
+source: P&T_Local_Transfer_DDD_Screen_to_API_v1.xlsx
+feature: P&T Local Transfer (All Journeys)
+category: API Journey
+journey:
+  title: Transfer Dashboard
+  code: Manage_Dashboard
+  description: The dashboard landing screen where user opens the transfer feature.
+summary:
+  totalSteps: 7
+  totalApiRows: 10
+  hasS2UAuthentication: false
+  testCaseIdPrefix: TC_DASH
+keyApis:
+  - name: GetJourneyContent
+    method: GET
+    endpoint: cms/journeys/payment_transfer_local_flow?locale=en_MY&channel=MOBILE
+    microservice: CMS
+  - name: GetPTMaintenanceTransferInit
+    method: GET
+    endpoint: pt/maintenance/v1/external/transfers/init
+    microservice: pt-maintenance
+  - name: GetPTMaintenanceCountries
+    method: GET
+    endpoint: pt/maintenance/v1/external/transfers/countries
+    microservice: pt-maintenance
+  - name: getCustomGroups
+    method: GET
+    endpoint: /v1/external/transfer/groups/custom?scope=LOCAL
+    microservice: erp-beneficiary
+  - name: getTransferBeneficiaries
+    method: GET
+    endpoint: /v1/external/transfer?scope=LOCAL&groupType=FREQUENT&page=0&limit=10
+    microservice: erp-beneficiary
+  - name: getTransferBeneficiaries
+    method: GET
+    endpoint: /v1/external/transfer?scope=LOCAL&groupType=FAVORITES&page=0&limit=10
+    microservice: erp-beneficiary
+  - name: getTransferBeneficiaries
+    method: GET
+    endpoint: /v1/external/transfer?scope=LOCAL&groupType=CUSTOM&groupId=G002&page=0&limit=10
+    microservice: erp-beneficiary
+  - name: getDashboard
+    method: GET
+    endpoint: /v1/external/accounts?accountGroup=CASA
+    microservice: erp-xp-dashboard
+  - name: getTransferBeneficiaries
+    method: GET
+    endpoint: /v1/external/transfer?scope=LOCAL&groupType=ALL&page=0&limit=10
+    microservice: erp-beneficiary
+  - name: getTransferBeneficiariesSearch
+    method: GET
+    endpoint: /v1/external/transfer/search?scope=LOCAL&groupType=ALL&keyword=ABC&page=0&limit=10
+    microservice: erp-beneficiary
+steps:
+  - stepNo: '1'
+    screen: Init Module
+    userAction: User Lands into Transfer Dashboard
+    systemBehaviour: Loads all the required details relavant to the transfer journey, reusable
+    businessRules: NA
+    apis:
+      - name: GetJourneyContent
+        method: GET
+        endpoint: cms/journeys/payment_transfer_local_flow?locale=en_MY&channel=MOBILE
+        testCaseId: TC_DASH_001a
+        requestSample: null
+        responseSample:
+          journeyId: local_transfer_flow
+          version: 1.0.0
+          screens:
+            - screenId: local_transfer_landing_page
+              version: 1.0.0
+              navigation:
+                topNavigation:
+                  - id: title
+                    title: Transfer
+                tab:
+                  - id: local
+                    label: Local
+                  - id: overseas
+                    label: Overseas
+              input:
+                searchInput:
+                  - id: search
+                    placeholder: Search
+              container:
+                banner:
+                  - id: all
+                    description: See recipients you've sent money to here
+                  - id: frequent
+                    description: Recipients you regularly send money to in the last 90 days will appear here.
+                  - id: own
+                    description: Make transfers or payments to your Maybank accounts, cards or financing here.
+                  - id: favourite
+                    description: Your favourites will sync with Maybank2u web when you add or remove recipients.
+                core:
+                  typo:
+                    - id: caughtUp
+                      value: You're all caught up
+                    - id: emptySearch
+                      value: We couldn't find a match for %<keyword>%
+                      description: Check the spelling or try a different code.
+                    - id: all
+                      value: No transfers yet
+                      description: See recipients you've sent money to here
+                    - id: frequent
+                      value: No frequent transfers yet
+                      description: Recipients you regularly send money to in the last 90 days will appear here.
+                    - id: favourite
+                      value: No recipients yet
+                      description: Recipients you favourite will appear here.
+                    - id: other
+                      value: No recipients yet
+                      description: Press and hold on a recipient to add them to favourites.
+                lists:
+                  - id: makeNewTransfer
+                    title: Make a new transfer instead?
+                    items:
+                      - id: accountNumber
+                        label: Account number
+                        icon: Bank
+                asset:
+                  illustration:
+                    - id: searchIllustration
+                      url: https://res.cloudinary.com/deoklsh3h/image/upload/v1776057612/searchIllustration.png
+              action:
+                button:
+                  - id: transfer
+                    label: Transfer
+                chip:
+                  - id: all
+                    label: All
+                  - id: frequent
+                    label: Frequent
+                  - id: favourite
+                    label: Favourites
+                  - id: own
+                    label: Own
+              editMenu:
+                - id: addnickname
+                  label: Add nickname
+                  icon: Pencil
+                - id: editNickname
+                  label: Edit nickname
+                  icon: Pencil
+                - id: editFavourite
+                  label: Edit favourites list
+                  icon: Love
+                - id: remove
+                  label: Remove
+                  icon: Bin
+            - screenId: local_transfer_input_acc_number
+              navigation:
+                topNavigation:
+                  - id: transfer
+                    title: Transfer
+              input:
+                textInput:
+                  - id: transferTo
+                    label: Transfer to
+                    required: true
+                  - id: accountNumber
+                    label: Account number
+                    placeholder: Enter account number
+                    required: true
+                    pattern: ^[0-9]{10,12}$
+                    errorMessage:
+                      - id: invalidAccountNumber
+                        message: Please enter a valid account number
+                      - id: required
+                        title: Required field
+                  - id: transferMode
+                    label: Transfer mode
+                    required: true
+                  - id: accountHolderName
+                    label: Account holder name
+                    required: true
+                    placeholder: Enter name
+              action:
+                button:
+                  - id: next
+                    label: Next
+              statusAndFeedback:
+                alertBanner:
+                  - id: biFastServiceUnavailable
+                    message: BI-FAST service is temporarily offline. Please review the transfer mode before continuing.
+                    icon: Warning
+                  - id: recipientDetails
+                    message: Ensure the recipient details are correct before proceeding.
+                    icon: Lightbulb
+            - screenId: local_transfer_input_amount
+              navigation:
+                topNavigation:
+                  - id: transfer
+                    title: Transfer
+                sectionHeader:
+                  - id: transferTo
+                    title: Transfer to
+                  - id: transferFrom
+                    title: Transfer from
+              core:
+                typo:
+                  - id: remainingLimit
+                    label: Remaining limit
+              input:
+                textInput:
+                  - id: amount
+                    label: Amount
+                    placeholder: '0'
+                    validation:
+                      required: true
+                    errorMessages:
+                      required: Required field
+                      minimumAmount: Minimum amount is %<minLimit>%
+                  - id: frequency
+                    label: Frequency
+                    placeholder: Select frequency
+                    required: true
+                  - id: startDate
+                    label: Start date
+                    required: true
+                    placeholder: Select start date
+                  - id: endDate
+                    label: End date
+                    required: true
+                    placeholder: Select end date
+              container:
+                alertBanner:
+                  - id: remainingLimitExceeded
+                    message: Amount cannot exceed your remaining limit.
+                    icon: Lightbulb
+                  - id: availableBalanceExceeded
+                    message: Amount cannot exceed your available balance.
+                    icon: Lightbulb
+                  - id: manualTry
+                    message: >-
+                      Please check the transaction status on the scheduled date. In the event of a disrupted transfer,
+                      you will need to manually retry.
+                    icon: Lightbulb
+              toggle:
+                - id: scheduleRecurring
+                  label: Schedule or set recurring
+              action:
+                button:
+                  - id: change
+                    label: Change
+                  - id: next
+                    label: Next
+                  - id: changeLimit
+                    label: Change limit
+            - screenId: local_transfer_details
+              navigation:
+                topNavigation:
+                  - id: transfer
+                    title: Transfer
+                sectionHeader:
+                  - id: transferTo
+                    title: Transfer to
+                core:
+                  typo:
+                    - id: transferModedetails
+                      label: BI-SKN transfer is not instant
+                input:
+                  textInput:
+                    - id: transferMode
+                      label: Transfer mode
+                      required: true
+                    - id: purposeOfTransfer
+                      label: Purpose of transfer
+                      required: true
+                      placeholder: Select purpose of transfer
+                      errorMessage:
+                        - id: required
+                          title: Required selection
+                    - id: sourceOfFund
+                      label: Source of fund
+                      pklaceholder: Select source of fund
+                      required: true
+                    - id: recipientType
+                      label: Recipient type
+                      placeholder: Select recipient type
+                      required: true
+                    - id: recipientCitizenship
+                      label: Recipient citizenship
+                      placeholder: Select recipient citizenship status
+                      required: true
+                    - id: remark
+                      label: Remark
+                      placeholder: Optional
+                    - id: recipientEmail
+                      label: Recipient email
+                      placeholder: Optional
+                      errorMessage:
+                        - id: emailValidation
+                          title: Please enter a valid email address
+                action:
+                  button:
+                    - id: next
+                      label: Next
+                    - id: learnMore
+                      label: Learn more
+                      url: https://www.maybank2u.com.my/mbb_info/m2u/public/personal/accounts/accounts_casa/bi_skn.page
+            - screenId: local_transfer_additional_details
+              navigation:
+                topNavigation:
+                  - id: transfer
+                    title: Transfer
+                sectionHeader:
+                  - id: additionalDetails
+                    title: Enter additional details
+              input:
+                textInput:
+                  - id: recipientStatus
+                    label: Recipient status
+                    required: true
+                    placeholder: Select recipient status
+                  - id: recipientNationality
+                    label: Recipient nationality
+                    placeholder: Select recipient nationality
+                    required: true
+                  - id: recipientCategory
+                    label: Recipient category
+                    placeholder: Select recipient category
+                    required: true
+                  - id: relationship
+                    label: Relationship
+                    placeholder: Select relationship
+                    required: true
+                  - id: transactionCategory
+                    label: Transaction category
+                    placeholder: Select transaction category
+                    required: true
+                  - id: transactionDetails
+                    label: Transaction details
+                    placeholder: Select transaction details
+                    required: true
+                  - id: remark
+                    label: Remark
+                    placeholder: Optional
+            - screenId: local_transfer_confirmation
+              navigation:
+                topNavigation:
+                  - id: confirmation
+                    title: Confirmation
+                sectionHeader:
+                  - id: transferTo
+                    title: Transfer to
+                  - id: transferFrom
+                    title: Transfer from
+                core:
+                  typo:
+                    - id: confirmationMessage
+                      value: By proceeding, you agree to the
+                      linkLabel: terms and conditions
+                      url: https://example.com/terms-and-conditions.pdf
+                container:
+                  card:
+                    - id: transferTo
+                      title: Transfer to
+                    - id: transferFrom
+                      title: Transfer from
+                list:
+                  - id: amountDetails
+                    title: Amount details
+                    items:
+                      - id: transferAmount
+                        label: Transfer amount
+                      - id: serviceFee
+                        label: Service fee
+                      - id: totalAmount
+                        label: Total amount
+                  - id: transactionDetails
+                    title: Transaction details
+                    items:
+                      - id: transactionType
+                        label: Transaction type
+                      - id: transferMode
+                        label: Transfer mode
+                      - id: purpose
+                        label: Purpose of transfer
+                      - id: remark
+                        label: Remark
+                  - id: schedulingDetails
+                    title: Scheduling details
+                    items:
+                      - id: frequency
+                        label: Frequency
+                      - id: startDate
+                        label: Start date
+                      - id: endDate
+                        label: End date
+                action:
+                  button:
+                    - id: confirm
+                      label: Confirm
+                    - id: edit
+                      label: Edit
+                    - id: change
+                      label: Change
+                    - id: review
+                      label: Review
+            - screenId: local_transfer_final
+              core:
+                typo:
+                  - id: statusProcessing
+                    value: Transfer processing
+                  - id: statusSuccess
+                    value: Transfer successful
+                  - id: statusFailure
+                    value: Transfer unsuccessful
+                  - id: referenceIdLabel
+                    value: Ref ID
+              asset:
+                image:
+                  - id: maybank
+                    url: https://res.cloudinary.com/deoklsh3h/image/upload/v1776057612/maybank.png
+              container:
+                card:
+                  - id: transferTo
+                    title: Transfer to
+                  - id: transferFrom
+                    title: Transfer from
+                list:
+                  - id: category
+                    items:
+                      - id: foodBeverage
+                        label: Food & beverage
+                        icon: FoodAndBeverage
+                banner:
+                  - id: adsBanner1
+                    imageUrl: https://res.cloudinary.com/deoklsh3h/image/upload/v1776057879/adsBanner.png
+                accordion:
+                  - id: amountDetails
+                    title: Amount details
+                    sections:
+                      - id: transferAmount
+                        label: Transfer amount
+                      - id: serviceFee
+                        label: Service fee
+                  - id: schedulingDetails
+                    title: Scheduling details
+                    sections:
+                      - id: frequency
+                        label: Frequency
+                      - id: transferDate
+                        label: Transfer date
+                      - id: startDate
+                        label: Start date
+                      - id: endDate
+                        label: End date
+                  - id: otherDetails
+                    title: Other details
+                    sections:
+                      - id: transactionType
+                        label: Transaction type
+                      - id: transferMode
+                        label: Transfer mode
+                      - id: purposeOfTransfer
+                        label: Purpose of transfer
+                      - id: remark
+                        label: Remark
+              action:
+                buttonQuickAction:
+                  - id: viewReceipt
+                    label: View receipt
+                    icon: Receipt
+                  - id: viewInteraction
+                    label: View interaction
+                    icon: Interaction
+                  - id: newTransfer
+                    label: New transfer
+                    icon: Transfer
+                button:
+                  - id: shareReceipt
+                    label: Share receipt
+                  - id: done
+                    label: Done
+                    icon: Done
+          modals:
+            - modalId: local_transfer_more_actions_modal
+              navigation:
+                topNavigation:
+                  - id: moreActions
+                    title: More Actions
+              container:
+                lists:
+                  - id: moreActionsList
+                    title: More actions
+                    items:
+                      - id: manageScheduleTransfer
+                        label: Manage scheduled transfers
+                        description: View upcoming and pending transactions.
+                        icon: Calendar
+                      - id: manageLimit
+                        label: Manage limits
+                        description: Adjust the current limit for your transfers.
+                        icon: Limit
+                      - id: manageFavouriteList
+                        label: Manage favourite list
+                        description: Sort recipients info lists to find them easily.
+                        icon: Setting
+            - modalId: local_transfer_introduction
+              asset:
+                image:
+                  - id: transferIntro
+                    url: https://res.cloudinary.com/deoklsh3h/image/upload/v1776057612/transfer.png
+              core:
+                typo:
+                  - id: title
+                    value: Transfer
+                    description: Send money securely. Transfer locally, overseas and manage recipients with ease.
+              action:
+                button:
+                  - id: start
+                    label: Get started
+            - modalId: local_transfer_select_bank_modal
+              navigation:
+                topNavigation:
+                  - id: transferTo
+                    title: Transfer to
+            - modalId: local_transfer_select_account_modal
+              navigation:
+                topNavigation:
+                  - id: transferFrom
+                    title: Transfer from
+            - modalId: local_transfer_select_transfer_mode_modal
+              core:
+                typo:
+                  - id: serviceFee
+                    value: Service fee
+                  - id: transactionLimit
+                    value: Transaction limit
+                  - id: operatingHours
+                    value: Operating hours
+              asset:
+                - id: modeIcon
+                  url: https://res.cloudinary.com/deoklsh3h/image/upload/v1776057612/transferMode.png
+            - modalId: local_transfer_select_date_modal
+              navigation:
+                topNavigation:
+                  - id: selectStartDate
+                    title: Select start date
+                    subTitle: Repeat every day from 4 to 25 Oct 2025 • 21 times
+                  - id: selectEndDate
+                    title: Select end date
+                tab:
+                  - id: endDate
+                    label: No of transactions
+              action:
+                button:
+                  - id: set
+                    label: Set
+        mapping: null
+        microservice: CMS
+      - name: GetPTMaintenanceTransferInit
+        method: GET
+        endpoint: pt/maintenance/v1/external/transfers/init
+        testCaseId: TC_DASH_001b
+        requestSample: null
+        responseSample:
+          transferModes:
+            - code: BIFAST
+              desc: BI-FAST
+              fee: 2500
+              perTransactionMinAmount: 10000
+              perTransactionMaxAmount: 250000000
+              operatingHoursLabel: Setiap hari, 24 jam
+              availabilityType: TWENTY_FOUR_SEVEN
+              isActive: true
+            - code: RTOL
+              desc: Realtime Online
+              fee: 6500
+              perTransactionMinAmount: 10000
+              perTransactionMaxAmount: 50000000
+              operatingHoursLabel: Setiap hari, 24 jam
+              availabilityType: TWENTY_FOUR_SEVEN
+              isActive: true
+            - code: BISKN
+              desc: BI-SKN / Kliring
+              fee: 2900
+              perTransactionMinAmount: 10000
+              perTransactionMaxAmount: 500000000
+              operatingHoursLabel: Senin-Jumat, 08:00 - 15:30
+              availabilityType: WINDOWED
+              isActive: true
+            - code: RTGS
+              desc: RTGS
+              fee: 25000
+              perTransactionMinAmount: 100000000
+              perTransactionMaxAmount: 999999999999.99
+              operatingHoursLabel: Senin-Jumat, 08:00 - 15:00
+              availabilityType: WINDOWED
+              isActive: true
+          recurringOptions:
+            frequencies:
+              - code: ONCE
+                desc: Sekali
+              - code: WEEKLY
+                desc: Mingguan
+              - code: MONTHLY
+                desc: Bulanan
+            minStartDate: '2025-12-19'
+            maxStartDate: '2026-12-18'
+          purposes:
+            - code: PAYMENT
+              desc: Pembayaran
+            - code: INVESTMENT
+              desc: Investasi
+            - code: PERSONAL_SAVINGS
+              desc: Tabungan Pribadi
+          transferDetailOptions:
+            sourceOfFunds:
+              - code: SALARY
+                desc: Gaji
+              - code: SAVINGS
+                desc: Tabungan
+              - code: BUSINESS_INCOME
+                desc: Pendapatan Usaha
+              - code: OTHERS
+                desc: Lainnya
+            recipientTypes:
+              - code: INDIVIDUAL
+                desc: Perorangan
+              - code: CORPORATE
+                desc: Korporasi
+              - code: GOVERNMENT
+                desc: Pemerintah
+            recipientCitizenships:
+              - code: CITIZEN
+                desc: Warga Negara
+              - code: NON_CITIZEN
+                desc: Bukan Warga Negara
+            remarkShortcuts:
+              - Makan Siang
+              - Transfer
+              - Tabungan
+              - Bayar Tagihan
+              - Sewa
+              - Uang Saku
+          additionalDetails:
+            recipientStatuses:
+              - code: SENDER_NOT_RECIPIENT
+                desc: Pengirim bukan penerima
+              - code: SENDER_IS_RECIPIENT
+                desc: Pengirim adalah penerima
+            recipientCategories:
+              - code: INDIVIDUAL
+                desc: Perorangan
+              - code: COMPANY
+                desc: Perusahaan
+            relationships:
+              - code: NON_AFFILIATED
+                desc: Non-afiliasi
+              - code: SHAREHOLDER
+                desc: Pemegang Saham
+              - code: SUBSIDIARY_COMPANY
+                desc: Perusahaan Anak
+              - code: GROUP
+                desc: Grup
+            transactionCategories:
+              - code: PENGHASILAN_PENGELUARAN
+                desc: Penghasilan / Pengeluaran
+                transactionDetails:
+                  - code: TD001
+                    desc: Pembayaran gaji karyawan
+                    isRecommended: true
+                  - code: TD002
+                    desc: Pembayaran biaya operasional
+                    isRecommended: true
+                  - code: TD003
+                    desc: Pembayaran kebutuhan rumah tangga
+                    isRecommended: true
+                  - code: TD004
+                    desc: Pembayaran utilitas dan tagihan bulanan
+                    isRecommended: false
+                  - code: TD005
+                    desc: Pengeluaran untuk kebutuhan pribadi
+                    isRecommended: false
+                  - code: TD006
+                    desc: Pembayaran tunjangan atau manfaat
+                    isRecommended: false
+              - code: TRANSAKSI_BARANG
+                desc: Transaksi Barang
+                transactionDetails:
+                  - code: TD101
+                    desc: Pembelian bahan baku
+                    isRecommended: true
+                  - code: TD102
+                    desc: Pembelian barang dagangan
+                    isRecommended: true
+                  - code: TD103
+                    desc: Pembayaran pengadaan inventaris
+                    isRecommended: true
+                  - code: TD104
+                    desc: Pembelian perlengkapan kantor
+                    isRecommended: false
+                  - code: TD105
+                    desc: Pembayaran atas pengiriman barang
+                    isRecommended: false
+                  - code: TD106
+                    desc: Pembayaran pembelian aset berwujud
+                    isRecommended: false
+              - code: TRANSAKSI_JASA
+                desc: Transaksi Jasa
+                transactionDetails:
+                  - code: TD201
+                    desc: Pembayaran jasa konsultasi
+                    isRecommended: true
+                  - code: TD202
+                    desc: Pembayaran jasa profesional
+                    isRecommended: true
+                  - code: TD203
+                    desc: Pembayaran biaya perawatan dan servis
+                    isRecommended: true
+                  - code: TD204
+                    desc: Pembayaran jasa transportasi
+                    isRecommended: false
+                  - code: TD205
+                    desc: Pembayaran jasa sewa
+                    isRecommended: false
+                  - code: TD206
+                    desc: Pembayaran jasa teknologi informasi
+                    isRecommended: false
+              - code: TRANSAKSI_KEUANGAN_MODAL
+                desc: Transaksi Keuangan / Modal
+                transactionDetails:
+                  - code: TD301
+                    desc: Penempatan dana investasi
+                    isRecommended: true
+                  - code: TD302
+                    desc: Penambahan modal usaha
+                    isRecommended: true
+                  - code: TD303
+                    desc: Pembayaran kewajiban pinjaman
+                    isRecommended: true
+                  - code: TD304
+                    desc: Transfer antar rekening investasi
+                    isRecommended: false
+                  - code: TD305
+                    desc: Pembayaran setoran modal
+                    isRecommended: false
+                  - code: TD306
+                    desc: Pelunasan fasilitas pembiayaan
+                    isRecommended: false
+        mapping: null
+        microservice: pt-maintenance
+        downstream: NGBO (P&T)
+      - name: GetPTMaintenanceCountries
+        method: GET
+        endpoint: pt/maintenance/v1/external/transfers/countries
+        testCaseId: TC_DASH_001c
+        requestSample: null
+        responseSample:
+          countries:
+            - countryCode: ID
+              countryName: Indonesia
+              countryLogoUrl: https://cdn.bank.com/assets/flags/id.png
+              displaySequence: 1
+            - countryCode: MY
+              countryName: Malaysia
+              countryLogoUrl: https://cdn.bank.com/assets/flags/my.png
+              displaySequence: 2
+            - countryCode: SG
+              countryName: Singapore
+              countryLogoUrl: https://cdn.bank.com/assets/flags/sg.png
+              displaySequence: 3
+            - countryCode: TH
+              countryName: Thailand
+              countryLogoUrl: https://cdn.bank.com/assets/flags/th.png
+              displaySequence: 4
+            - countryCode: PH
+              countryName: Philippines
+              countryLogoUrl: https://cdn.bank.com/assets/flags/ph.png
+              displaySequence: 5
+        mapping: null
+        microservice: pt-maintenance
+        downstream: NGBO (P&T)
+      - name: getCustomGroups
+        method: GET
+        endpoint: /v1/external/transfer/groups/custom?scope=LOCAL
+        testCaseId: TC_DASH_001d
+        requestSample: null
+        responseSample:
+          status: 200
+          message: Request processed successfully
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+          data:
+            groups:
+              - id: G002
+                type: CUSTOM
+                name: Family
+              - id: G003
+                type: CUSTOM
+                name: Friends
+          link: {}
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: Get all the tab groups
+        downstream: |-
+          ECLIPSE DB : 
+          1. favourite_group
+  - stepNo: '2'
+    screen: Transfer - Local (Frequent)
+    userAction: Landing Page - Default Local Frequent list
+    systemBehaviour: System display all the user frequent account in the listing
+    businessRules: >-
+      Upon page load, the default beneficiary lists will be set at Frequent Beneficiary Category.
+
+
+      Display criteria for FREQUENT Lists are:
+
+      a. Beneficiaries of which the transactions are successful for at least 2 times in the past 90 days (in Digital
+      Transaction - performed via NGA & RMBP & M2U Web), for all transfer mode EXCEPT "Transfer to Own".
+
+      b. Beneficiaries will be sorted in below order:
+
+      - most to least transaction frequency,
+
+      - if same frequency, it will be display in no particular order.
+
+      c. Maximum number of beneficiaries to display is 10.
+
+      d. User is able to remove a beneficiary from the list. Details of beneficiary removal will be explained in
+      respective section.
+
+      e. IF list is empty, system to display ""No frequent transfers yet"" with information (refer to screen)."
+    apis:
+      - name: getTransferBeneficiaries
+        method: GET
+        endpoint: /v1/external/transfer?scope=LOCAL&groupType=FREQUENT&page=0&limit=10
+        testCaseId: TC_DASH_002a
+        requestSample: null
+        responseSample:
+          status: 200
+          message: Request processed successfully
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+            page: 0
+            limit: 10
+            total: 55
+            nextPage: '1'
+          data:
+            beneficiaries:
+              - accountId: '4700025122'
+                accountHolderName: MUHAMMAD ALI MUTHU
+                nickname: ali account
+                bicCode: PBBEMYKL
+                bankName: PUBLIC BANK
+                profileImage: 3dieieo383992020202
+                transactionType: TRANSFER/PAYMENT
+                transactionSubtype: INTERBANK
+                transactionMetadata:
+                  serviceFees: 11
+                  firstTimeTac: '1'
+                  idNumber: null
+                  idType: null
+                  mobileNumber: ''
+                  idFlag: ''
+                  acquirerId: '564162'
+                  currency: ''
+                  balance: 0
+                  paymentCode: '01'
+              - accountId: '5500025133'
+                accountHolderName: 'MUHAMMAD AHMAD '
+                nickname: ahmad account
+                bicCode: PBBEMYKL
+                bankName: PUBLIC BANK
+                profileImage: 3dieieo383992020202
+                transactionType: TRANSFER/PAYMENT
+                transactionSubtype: INTERBANK
+                transactionMetadata:
+                  serviceFees: 11
+                  firstTimeTac: '1'
+                  idNumber: null
+                  idType: null
+                  mobileNumber: ''
+                  idFlag: ''
+                  acquirerId: '564162'
+                  currency: ''
+                  balance: 0
+                  paymentCode: '01'
+          link: {}
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: >-
+          Upon page load, the default beneficiary lists will be set at Frequent Beneficiary Category.
+
+
+          Display criteria for FREQUENT Lists are:
+
+          a. Beneficiaries of which the transactions are successful for at least 2 times in the past 90 days (in Digital
+          Transaction - performed via NGA & RMBP & M2U Web), for all transfer mode EXCEPT "Transfer to Own".
+
+          b. Beneficiaries will be sorted in below order:
+
+          - most to least transaction frequency,
+
+          - if same frequency, it will be display in no particular order.
+
+          c. Maximum number of beneficiaries to display is 10.
+
+          d. User is able to remove a beneficiary from the list. Details of beneficiary removal will be explained in
+          respective section.
+
+          e. IF list is empty, system to display ""No frequent transfers yet"" with information (refer to screen)."
+        downstream: |-
+          ECLIPSE DB: 
+          1. recent_transfer
+          2. account_nickname
+  - stepNo: '3'
+    screen: Transfer - Local (Favorites)
+    userAction: Favorites tab
+    systemBehaviour: System display all the favorites account in the listing
+    businessRules: >-
+      Display criteria for Favourites are:
+
+      a. Beneficiaries of which are saved by user.
+
+      b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order:
+
+      (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in
+      ascending order)
+
+      (ii) Entity name 
+
+      (iii) Account number
+
+      c. There is no maximum limit in favourite beneficiaries. 
+
+      d. Lazy load is available.
+
+      e. User will be able to remove a beneficiary from Favourite list. Details of beneficiary removal will be explained
+      in respective section. 
+
+      f. IF list is empty, system to display "No recipients yet" with information (refer to screen Dashboard - Empty
+      State).
+
+
+      Info:
+
+      Current M2U/RMBP has no max limit for favourites.
+    apis:
+      - name: getTransferBeneficiaries
+        method: GET
+        endpoint: /v1/external/transfer?scope=LOCAL&groupType=FAVORITES&page=0&limit=10
+        testCaseId: TC_DASH_003a
+        requestSample: null
+        responseSample:
+          status: 200
+          message: Request processed successfully
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+            page: 0
+            limit: 10
+            total: 55
+            nextPage: '1'
+          data:
+            beneficiaries:
+              - accountId: '4700025122'
+                accountHolderName: MUHAMMAD ALI MUTHU
+                nickname: ali account
+                bicCode: PBBEMYKL
+                bankName: PUBLIC BANK
+                profileImage: 3dieieo383992020202
+                transactionType: TRANSFER/PAYMENT
+                transactionSubtype: INTERBANK
+                transactionMetadata:
+                  serviceFees: 11
+                  firstTimeTac: '1'
+                  idNumber: null
+                  idType: null
+                  mobileNumber: ''
+                  idFlag: ''
+                  acquirerId: '564162'
+                  currency: ''
+                  balance: 0
+                  paymentCode: '01'
+              - accountId: '5500025133'
+                accountHolderName: 'MUHAMMAD AHMAD '
+                nickname: ahmad account
+                bicCode: PBBEMYKL
+                bankName: PUBLIC BANK
+                profileImage: 3dieieo383992020202
+                transactionType: TRANSFER/PAYMENT
+                transactionSubtype: INTERBANK
+                transactionMetadata:
+                  serviceFees: 11
+                  firstTimeTac: '1'
+                  idNumber: null
+                  idType: null
+                  mobileNumber: ''
+                  idFlag: ''
+                  acquirerId: '564162'
+                  currency: ''
+                  balance: 0
+                  paymentCode: '01'
+          link: {}
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: >-
+          Display criteria for Favourites are:
+
+          a. Beneficiaries of which are saved by user.
+
+          b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order:
+
+          (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in
+          ascending order)
+
+          (ii) Entity name 
+
+          (iii) Account number
+
+          c. There is no maximum limit in favourite beneficiaries. 
+
+          d. Lazy load is available.
+
+          e. User will be able to remove a beneficiary from Favourite list. Details of beneficiary removal will be
+          explained in respective section. 
+
+          f. IF list is empty, system to display "No recipients yet" with information (refer to screen Dashboard - Empty
+          State).
+
+
+          Info:
+
+          Current M2U/RMBP has no max limit for favourites.
+        downstream: |-
+          ECLIPSE DB: 
+          1. favourite_group
+          2. favourite_account
+          3. favourite_group_account
+          4. account_nickname
+  - stepNo: '4'
+    screen: Transfer - Local (Custom)
+    userAction: Customs tab
+    systemBehaviour: System display all the custom account in the listing
+    businessRules: >-
+      Display criteria for CUSTOM LIST are:
+
+      a. Beneficiaries will be listed based on the added Favourite - Custom List.
+
+      b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order:
+
+      (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in
+      ascending order)
+
+      (ii) Entity name 
+
+      (iii) Account number
+
+      c. There is no maximum limit in custom list. 
+
+      d. Lazy load is available.
+
+      e. User will be able to remove a beneficiary from Custom list. Details of beneficiary removal will be explained in
+      respective section.
+
+      f. IF list is empty, system to display "No recipients yet" with information (refer to screen).
+    apis:
+      - name: getTransferBeneficiaries
+        method: GET
+        endpoint: /v1/external/transfer?scope=LOCAL&groupType=CUSTOM&groupId=G002&page=0&limit=10
+        testCaseId: TC_DASH_004a
+        requestSample: null
+        responseSample:
+          status: 200
+          message: Request processed successfully
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+            page: 0
+            limit: 10
+            total: 55
+            nextPage: '1'
+          data:
+            beneficiaries:
+              - accountId: '4700025122'
+                accountHolderName: MUHAMMAD ALI MUTHU
+                nickname: ali account
+                bicCode: PBBEMYKL
+                bankName: PUBLIC BANK
+                profileImage: 3dieieo383992020202
+                transactionType: TRANSFER/PAYMENT
+                transactionSubtype: INTERBANK
+                transactionMetadata:
+                  serviceFees: 11
+                  firstTimeTac: '1'
+                  idNumber: null
+                  idType: null
+                  mobileNumber: ''
+                  idFlag: ''
+                  acquirerId: '564162'
+                  currency: ''
+                  balance: 0
+                  paymentCode: '01'
+              - accountId: '5500025133'
+                accountHolderName: 'MUHAMMAD AHMAD '
+                nickname: ahmad account
+                bicCode: PBBEMYKL
+                bankName: PUBLIC BANK
+                profileImage: 3dieieo383992020202
+                transactionType: TRANSFER/PAYMENT
+                transactionSubtype: INTERBANK
+                transactionMetadata:
+                  serviceFees: 11
+                  firstTimeTac: '1'
+                  idNumber: null
+                  idType: null
+                  mobileNumber: ''
+                  idFlag: ''
+                  acquirerId: '564162'
+                  currency: ''
+                  balance: 0
+                  paymentCode: '01'
+          link: {}
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: >-
+          Display criteria for CUSTOM LIST are:
+
+          a. Beneficiaries will be listed based on the added Favourite - Custom List.
+
+          b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order:
+
+          (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in
+          ascending order)
+
+          (ii) Entity name 
+
+          (iii) Account number
+
+          c. There is no maximum limit in custom list. 
+
+          d. Lazy load is available.
+
+          e. User will be able to remove a beneficiary from Custom list. Details of beneficiary removal will be
+          explained in respective section.
+
+          f. IF list is empty, system to display "No recipients yet" with information (refer to screen).
+        downstream: |-
+          ECLIPSE DB: 
+          1. favourite_group
+          2. favourite_account
+          3. favourite_group_account
+          4. account_nickname
+  - stepNo: '5'
+    screen: Transfer - Local (Own)
+    userAction: Own tab
+    systemBehaviour: System display all the own account in the listing
+    businessRules: >-
+      Display criteria for OWN are:
+
+      a. Account list includes:
+
+      - user's own list of Active accounts. 
+
+      - all currencies
+
+      - accounts list covers Deposit Accounts (CASA & VA only). Product Category to be displayed will be based on NGBO
+      config by country.
+
+      b. Account list will NOT be sorted in any particular order.
+
+      c. IF user has only one active account and since the primary/SoF will be the same account, user will not be able
+      to perform transfer to own account. When user taps on the only listed account, display an toastbar message "You
+      cannot send money to the same account your're transferring from" (Refer to screen).
+    apis:
+      - name: getDashboard
+        method: GET
+        endpoint: /v1/external/accounts?accountGroup=CASA
+        testCaseId: TC_DASH_005a
+        requestSample: null
+        responseSample:
+          status: 200
+          message: Request processed successfully
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: null
+          data:
+            aggregated:
+              balance: 107856305.1
+              count: 3
+              currency: IDR
+            accounts:
+              - status: ACTIVE
+                accountId: '514013314526'
+                cardNumber: '888812138888'
+                currency: IDR
+                type: CA
+                ownership: INDIVIDUAL
+                nickname: ddev6 income account
+                productType: CONVENTIONAL
+                group: CASA
+                category: ASSET
+                name: Current Account
+                balance: 98592617.15
+                updateDatetime: '2026-05-06 20:25:34'
+                isPrimary: true
+                productCode: '03'
+              - status: ACTIVE
+                accountId: '014012654593'
+                cardNumber: '888812138888'
+                currency: MYR
+                type: CA
+                ownership: INDIVIDUAL
+                productType: CONVENTIONAL
+                group: CASA
+                category: ASSET
+                name: MAE Wallet
+                balance: 868.19
+                updateDatetime: '2026-05-06 20:25:33'
+                isPrimary: false
+                productCode: CC
+              - status: ACTIVE
+                accountId: '900000020478'
+                currency: IDR
+                cardNumber: '888812138888'
+                type: CA
+                ownership: INDIVIDUAL
+                nickname: ''
+                productType: ISLAMIC
+                group: CASA
+                category: ASSET
+                name: Maybank Tabungan Global Access
+                balance: 3381557
+                updateDatetime: '2026-02-06 20:25:29'
+                openingDateTime: ''
+                productCode: CE
+                buckets:
+                  - currency: IDR
+                    balance: 31155532
+                    convertedBalance: 31155532
+                    details:
+                      - key: current_balance
+                        currency: IDR
+                        value: 31155532
+                      - key: available_balance
+                        currency: IDR
+                        value: 31155532
+                      - key: balance_on_hold
+                        currency: IDR
+                        value: 0
+                  - currency: USD
+                    balance: 1008.9
+                    convertedBalance: 16930225
+                    details:
+                      - key: current_balance
+                        currency: USD
+                        value: 1008.9
+                      - key: available_balance
+                        currency: USD
+                        value: 1008.9
+                      - key: balance_on_hold
+                        currency: USD
+                        value: 0
+                  - currency: SGD
+                    balance: 250
+                    convertedBalance: 3381557.5
+                    details:
+                      - key: current_balance
+                        currency: SGD
+                        value: 250
+                      - key: available_balance
+                        currency: SGD
+                        value: 250
+                      - name: balance_on_hold
+                        currency: SGD
+                        value: 0
+              - status: ACTIVE
+                accountId: '164017833708'
+                cardNumber: '888812138888'
+                currency: MYR
+                type: SA
+                ownership: INDIVIDUAL
+                productType: ISLAMIC
+                group: CASA
+                category: ASSET
+                name: Savings Account
+                balance: 9261785
+                updateDatetime: '2026-02-27 14:57:38'
+                isPrimary: false
+                productCode: '13'
+          links: {}
+        mapping: null
+        microservice: erp-xp-dashboard
+        businessContext: >-
+          Display criteria for OWN are:
+
+          a. Account list includes:
+
+          - user's own list of Active accounts. 
+
+          - all currencies
+
+          - accounts list covers Deposit Accounts (CASA & VA only). Product Category to be displayed will be based on
+          NGBO config by country.
+
+          b. Account list will NOT be sorted in any particular order.
+
+          c. IF user has only one active account and since the primary/SoF will be the same account, user will not be
+          able to perform transfer to own account. When user taps on the only listed account, display an toastbar
+          message "You cannot send money to the same account your're transferring from" (Refer to screen).
+        downstream: |-
+          ESB: 
+          Sheet: ESB_API_Spec_AccountInfo_v2.8 ->AccountSummary_CASA_CC
+          Url: /api/rg/rt/customers/accounts/summary 
+          ServiceCode: RGRTIMCSI0002
+
+          ECLIPSE DB: 
+          1. account_nickname 
+          2. primary_account
+          3. feature_code
+          4. product_catalog
+  - stepNo: '6'
+    screen: Transfer - Local (All)
+    userAction: All tab
+    systemBehaviour: System display all account in the listing
+    businessRules: >-
+      Display criteria for ALL list are:
+
+      a. Beneficiaries consist combination of:
+
+      - Successful transactions within the past 90 days via RMBP & M2U Web (applicable for user migrated to NGA). Past
+      90 days is from the day user onboard to NGA.
+
+      - All successful transaction in NGA to date.
+
+      - Virtual Accounts (display for recurring VA only, check isClosedPayment flag to identify if is one off VA or
+      recurring).
+
+      - EXCLUDE "Transfer to Own".
+
+      b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order:
+
+      (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in
+      ascending order)
+
+      (ii) Entity name 
+
+      (iii) Account number
+
+      c. Lazy load is available.
+
+      d. User will be able to remove a beneficiary from ALL list. Details of beneficiary removal will be explained in
+      respective section.
+
+      e. IF list is empty, system to display "No transfers yet" with information (refer to screen Dashboard - Empty
+      State).
+    apis:
+      - name: getTransferBeneficiaries
+        method: GET
+        endpoint: /v1/external/transfer?scope=LOCAL&groupType=ALL&page=0&limit=10
+        testCaseId: TC_DASH_006a
+        requestSample: null
+        responseSample:
+          status: 200
+          message: Request processed successfully
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+            page: 0
+            limit: 10
+            total: 55
+            nextPage: '1'
+          data:
+            beneficiaries:
+              - accountId: '4700025122'
+                accountHolderName: MUHAMMAD ALI MUTHU
+                nickname: ali account
+                bicCode: PBBEMYKL
+                bankName: PUBLIC BANK
+                profileImage: 3dieieo383992020202
+                groups:
+                  - id: G001
+                    type: FAVORITES
+                    name: Favorites
+                  - id: G002
+                    type: CUSTOM
+                    name: Family
+                  - id: G003
+                    type: CUSTOM
+                    name: Friends
+                transactionType: TRANSFER/PAYMENT
+                transactionSubtype: INTERBANK
+                transactionMetadata:
+                  serviceFees: 11
+                  firstTimeTac: '1'
+                  idNumber: null
+                  idType: null
+                  mobileNumber: ''
+                  idFlag: ''
+                  acquirerId: '564162'
+                  currency: ''
+                  balance: 0
+                  paymentCode: '01'
+              - accountId: '5500025133'
+                accountHolderName: 'MUHAMMAD AHMAD '
+                nickname: ahmad account
+                bicCode: PBBEMYKL
+                bankName: PUBLIC BANK
+                profileImage: 3dieieo383992020202
+                groups:
+                  - id: G001
+                    type: FAVORITES
+                    name: Favorites
+                  - id: G003
+                    type: CUSTOM
+                    name: Friends
+                transactionType: TRANSFER/PAYMENT
+                transactionSubtype: INTERBANK
+                transactionMetadata:
+                  serviceFees: 11
+                  firstTimeTac: '1'
+                  idNumber: null
+                  idType: null
+                  mobileNumber: ''
+                  idFlag: ''
+                  acquirerId: '564162'
+                  currency: ''
+                  balance: 0
+                  paymentCode: '01'
+          link: {}
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: >-
+          Display criteria for ALL list are:
+
+          a. Beneficiaries consist combination of:
+
+          - Successful transactions within the past 90 days via RMBP & M2U Web (applicable for user migrated to NGA).
+          Past 90 days is from the day user onboard to NGA.
+
+          - All successful transaction in NGA to date.
+
+          - Virtual Accounts (display for recurring VA only, check isClosedPayment flag to identify if is one off VA or
+          recurring).
+
+          - EXCLUDE "Transfer to Own".
+
+          b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order:
+
+          (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in
+          ascending order)
+
+          (ii) Entity name 
+
+          (iii) Account number
+
+          c. Lazy load is available.
+
+          d. User will be able to remove a beneficiary from ALL list. Details of beneficiary removal will be explained
+          in respective section.
+
+          e. IF list is empty, system to display "No transfers yet" with information (refer to screen Dashboard - Empty
+          State).
+        downstream: |-
+          ECLIPSE DB: 
+          1. recent_transfer
+          2. favourite_group
+          3. favourite_account
+          4. favourite_group_account
+          5. account_nickname
+  - stepNo: '7'
+    screen: ''
+    userAction: Search tab
+    systemBehaviour: x
+    businessRules: >-
+      1. Upon tapping the Search bar textbox, system to display phone's keyboard for user to type in.
+
+      2. Wildcard search will be performed once the user has entered 3 characters. Searching of beneficiaries include
+      fields below:
+
+      a. Beneficiaries Account Name
+
+      b. Beneficiaries Nickname
+
+      c. Beneficiaries Account Number
+
+      d. Beneficiaries Bank Name
+
+      2. Search will be performed on selected Local or Overseas tab. Searching includes all beneficiary categories (ALL,
+      Frequent, Favourite, Own, Custom) regardless which beneficiary category tab the user is at. (search whole DB - not
+      just what is displayed on screen).
+
+      3. For search result that matched, display list of Beneficiaries in ascending order (A-Z, 0-9) in the below order,
+      without max records. Lazy load is available.
+
+      - Beneficiary Name 
+
+      - Beneficiary Bank Name 
+
+      - Account Number
+
+      4. For search result that returns EMPTY:
+
+      a. System to display "We couldn't find a match for <input data>" with information (refer to screen).
+
+      b. IF contacts are synced with NGA, system to perform search on Contact's First Name & Last Name. Display Section
+      "Contacts" and the list of contact name & phone number, with Avatar (Contact Name's Initial). 
+
+      c. IF contacts are not synced with NGA, or no contact is matched, system to NOT display "Contacts" section.
+
+      5. At the bottom of screen, display "Make a new transfer instead?" section, and display icon & Account Number.
+      Tapping on Account Number will navigate to Input Account Number.
+    apis:
+      - name: getTransferBeneficiariesSearch
+        method: GET
+        endpoint: /v1/external/transfer/search?scope=LOCAL&groupType=ALL&keyword=ABC&page=0&limit=10
+        testCaseId: TC_DASH_007a
+        requestSample: null
+        responseSample:
+          status: 200
+          message: Request processed successfully
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+            page: 0
+            limit: 10
+            total: 55
+            nextPage: '1'
+          data:
+            beneficiaries:
+              - accountId: '4700025122'
+                accountHolderName: MUHAMMAD ALI MUTHU
+                nickname: ali account
+                bicCode: PBBEMYKL
+                bankName: PUBLIC BANK
+                profileImage: 3dieieo383992020202
+                groups:
+                  - id: G001
+                    type: FAVORITES
+                    name: Favorites
+                  - id: G002
+                    type: CUSTOM
+                    name: Family
+                  - id: G003
+                    type: CUSTOM
+                    name: Friends
+                transactionType: TRANSFER/PAYMENT
+                transactionSubtype: INTERBANK
+                transactionMetadata:
+                  serviceFees: 11
+                  firstTimeTac: '1'
+                  idNumber: null
+                  idType: null
+                  mobileNumber: ''
+                  idFlag: ''
+                  acquirerId: '564162'
+                  currency: ''
+                  balance: 0
+                  paymentCode: '01'
+              - accountId: '5500025133'
+                accountHolderName: 'MUHAMMAD AHMAD '
+                nickname: ahmad account
+                bicCode: PBBEMYKL
+                bankName: PUBLIC BANK
+                profileImage: 3dieieo383992020202
+                groups:
+                  - id: G001
+                    type: FAVORITES
+                    name: Favorites
+                  - id: G003
+                    type: CUSTOM
+                    name: Friends
+                transactionType: TRANSFER/PAYMENT
+                transactionSubtype: INTERBANK
+                transactionMetadata:
+                  serviceFees: 11
+                  firstTimeTac: '1'
+                  idNumber: null
+                  idType: null
+                  mobileNumber: ''
+                  idFlag: ''
+                  acquirerId: '564162'
+                  currency: ''
+                  balance: 0
+                  paymentCode: '01'
+          link: {}
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: >-
+          1. Upon tapping the Search bar textbox, system to display phone's keyboard for user to type in.
+
+          2. Wildcard search will be performed once the user has entered 3 characters. Searching of beneficiaries
+          include fields below:
+
+          a. Beneficiaries Account Name
+
+          b. Beneficiaries Nickname
+
+          c. Beneficiaries Account Number
+
+          d. Beneficiaries Bank Name
+
+          2. Search will be performed on selected Local or Overseas tab. Searching includes all beneficiary categories
+          (ALL, Frequent, Favourite, Own, Custom) regardless which beneficiary category tab the user is at. (search
+          whole DB - not just what is displayed on screen).
+
+          3. For search result that matched, display list of Beneficiaries in ascending order (A-Z, 0-9) in the below
+          order, without max records. Lazy load is available.
+
+          - Beneficiary Name 
+
+          - Beneficiary Bank Name 
+
+          - Account Number
+
+          4. For search result that returns EMPTY:
+
+          a. System to display "We couldn't find a match for <input data>" with information (refer to screen).
+
+          b. IF contacts are synced with NGA, system to perform search on Contact's First Name & Last Name. Display
+          Section "Contacts" and the list of contact name & phone number, with Avatar (Contact Name's Initial). 
+
+          c. IF contacts are not synced with NGA, or no contact is matched, system to NOT display "Contacts" section.
+
+          5. At the bottom of screen, display "Make a new transfer instead?" section, and display icon & Account Number.
+          Tapping on Account Number will navigate to Input Account Number.
+        downstream: |-
+          ESB: 
+          Sheet: ESB_API_Spec_AccountInfo_v2.8 ->AccountSummary_CASA_CC
+          Url: /api/rg/rt/customers/accounts/summary 
+          ServiceCode: RGRTIMCSI0002
+
+          ECLIPSE DB: 
+          1. favourite_group
+          2. favourite_account
+          3. favorite_group_account
+          4. account_nickname 
+          5. primary_account
+          6. feature_code
+          7. product_catalog

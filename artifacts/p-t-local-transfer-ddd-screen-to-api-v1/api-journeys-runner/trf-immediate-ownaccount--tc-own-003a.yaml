@@ -1,0 +1,150 @@
+id: TC_OWN_003a
+title: 3. Input Amount - GetSourceAccountList
+feature: Own Account Transfer (Immediate)
+journey: Trf_Immediate_OwnAccount
+stepNo: '3'
+screen: Input Amount
+userAction: |-
+  User require to input the amount.
+
+  User is optional to change the source account, schedule transfer and putting remarks.
+request:
+  method: GET
+  url: pt/intrabank/v1/external/source-accounts
+  endpoint: pt/intrabank/v1/external/source-accounts
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse: |-
+    {
+     "status": "200",
+     "message": "Success",
+     "timestamp": "2026-05-20T09:30:15",
+     "correlationId": "d9b2d63d-a233-4123-8478-316827018c1e",
+     "meta": null
+     "data": {
+     "sourceAccounts": [
+     {
+     "accountName": "Global Access Account",
+     "accountNo": "514013314526",
+     "accountType": "SA",
+     "accountProductType": "CONVENTIONAL",
+     "accountOwnership": "INDIVIDUAL",
+     "accountStatus": "ACTIVE",
+     "isPrimary": true,
+     "isMultiCurrency": true,
+     "totalEquivalentBalance": {
+     "amount": 248512617.15,
+     "currency": "IDR"
+     },
+     "accounts": [
+     {
+     "currency": "IDR",
+     "rawAccountNo": "514013314526-001",
+     "availableBalance": 98592617.15,
+     "accountStatus": "ACTIVE"
+     },
+     {
+     "currency": "USD",
+     "rawAccountNo": "514013314526-002",
+     "availableBalance": 8200.5,
+     "localEquivalentBalance": {
+     "amount": 134520000,
+     "currency": "IDR"
+     },
+     "accountStatus": "ACTIVE"
+     },
+     {
+     "currency": "SGD",
+     "rawAccountNo": "514013314526-003",
+     "availableBalance": 1250,
+     "localEquivalentBalance": {
+     "amount": 15400000,
+     "currency": "IDR"
+     },
+     "accountStatus": "INACTIVE"
+     }
+     ]
+     },
+     {
+     "accountName": "Savings Account",
+     "accountNo": "164017833708",
+     "accountType": "SA",
+     "accountProductType": "ISLAMIC",
+     "accountOwnership": "INDIVIDUAL",
+     "accountStatus": "ACTIVE",
+     "isPrimary": false,
+     "isMultiCurrency": false,
+     "totalEquivalentBalance": {
+     "amount": 9261785,
+     "currency": "IDR"
+     },
+     "accounts": [
+     {
+     "currency": "IDR",
+     "rawAccountNo": "164017833708",
+     "availableBalance": 9261785,
+     "accountStatus": "ACTIVE"
+     }
+     ]
+     }
+     ]
+     },
+     "error": null
+    }
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: When tap [Next] to proceed, perform validation:
+
+      1. Fields validation & all validation mentioned above
+
+      2. SoF Account eligibility (refer to Table 1 - SoF Eligibility Check in the Local Transfer FSD). If SoF account is
+      NOT eligible to perform transfer, system displays toastbar message "This account is unable to make this transfer.
+      Select another account."
+
+      3.Minimum per Transaction Limit:
+
+      a. Minimum transaction amount (from NGBO, basically is IDR10,000) for all transfer mode. If does not meet, display
+      inline error message "Minimum amount is IDR <min limit based on transfer mode>"
+
+      (i) Own
+
+      (ii) Intrabank 
+
+      (iii) Interbank
+
+      4. Daily Limit by Transfer Mode (from Settings) 
+
+      a. If exceeds, display warning message "Amount cannot exceed your remaining limit" (but can proceed).
+
+      b. Applies to Intrabank & Interbank (BI-FAST, RTOL, BI-SKN, RTGS) only. 
+
+      5. SoF Balance Checking
+
+      a. If amount > SoF account balance, display warning message "Amount should not exceed your account balance." (but
+      can proceed)
+
+      5. Maximum per Transaction Limit:
+
+      a. Interbank - it is not allowed to transfer more than USD 50k. System displays "Maximum amount is USD 50,000."
+      (To confirm if this is required since it would have exceeded Payment Rail's max limit)
+
+      - use Counter Rate (from Trapi) for conversion to USD.
+
+      5. Special rate validation checking (if applied). IF outside validation period, system to display "Special rate
+      not available" pop up.
+
+      6. If user tap [Next] button while not resolving the error, displays toastbar error message "Please resolve all
+      errors to proceed".
+
+
+      Once successful, system to redirect to Transfer Details screen.
+    type: custom
+references:
+  apiSpecFile: GetSourceAccountList
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Trf_Immediate_OwnAccount

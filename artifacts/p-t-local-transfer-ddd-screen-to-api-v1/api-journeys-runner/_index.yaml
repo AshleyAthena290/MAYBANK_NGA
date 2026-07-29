@@ -1,0 +1,612 @@
+schemaVersion: 1.0.0
+generatedAt: '2026-07-27T04:15:24.280Z'
+source: P&T_Local_Transfer_DDD_Screen_to_API_v1.xlsx
+feature: P&T Local Transfer (All Journeys)
+category: API Journey
+summary:
+  executableCases: 78
+  skippedUiOnlyCases: 13
+files:
+  - journeyCode: Manage_Dashboard
+    journeyTitle: Transfer Dashboard
+    testCaseId: TC_DASH_001a
+    file: manage-dashboard--tc-dash-001a.yaml
+    apiName: GetJourneyContent
+    method: GET
+    endpoint: cms/journeys/payment_transfer_local_flow?locale=en_MY&channel=MOBILE
+  - journeyCode: Manage_Dashboard
+    journeyTitle: Transfer Dashboard
+    testCaseId: TC_DASH_001b
+    file: manage-dashboard--tc-dash-001b.yaml
+    apiName: GetPTMaintenanceTransferInit
+    method: GET
+    endpoint: pt/maintenance/v1/external/transfers/init
+  - journeyCode: Manage_Dashboard
+    journeyTitle: Transfer Dashboard
+    testCaseId: TC_DASH_001c
+    file: manage-dashboard--tc-dash-001c.yaml
+    apiName: GetPTMaintenanceCountries
+    method: GET
+    endpoint: pt/maintenance/v1/external/transfers/countries
+  - journeyCode: Manage_Dashboard
+    journeyTitle: Transfer Dashboard
+    testCaseId: TC_DASH_001d
+    file: manage-dashboard--tc-dash-001d.yaml
+    apiName: getCustomGroups
+    method: GET
+    endpoint: /v1/external/transfer/groups/custom?scope=LOCAL
+  - journeyCode: Manage_Dashboard
+    journeyTitle: Transfer Dashboard
+    testCaseId: TC_DASH_002a
+    file: manage-dashboard--tc-dash-002a.yaml
+    apiName: getTransferBeneficiaries
+    method: GET
+    endpoint: /v1/external/transfer?scope=LOCAL&groupType=FREQUENT&page=0&limit=10
+  - journeyCode: Manage_Dashboard
+    journeyTitle: Transfer Dashboard
+    testCaseId: TC_DASH_003a
+    file: manage-dashboard--tc-dash-003a.yaml
+    apiName: getTransferBeneficiaries
+    method: GET
+    endpoint: /v1/external/transfer?scope=LOCAL&groupType=FAVORITES&page=0&limit=10
+  - journeyCode: Manage_Dashboard
+    journeyTitle: Transfer Dashboard
+    testCaseId: TC_DASH_004a
+    file: manage-dashboard--tc-dash-004a.yaml
+    apiName: getTransferBeneficiaries
+    method: GET
+    endpoint: /v1/external/transfer?scope=LOCAL&groupType=CUSTOM&groupId=G002&page=0&limit=10
+  - journeyCode: Manage_Dashboard
+    journeyTitle: Transfer Dashboard
+    testCaseId: TC_DASH_005a
+    file: manage-dashboard--tc-dash-005a.yaml
+    apiName: getDashboard
+    method: GET
+    endpoint: /v1/external/accounts?accountGroup=CASA
+  - journeyCode: Manage_Dashboard
+    journeyTitle: Transfer Dashboard
+    testCaseId: TC_DASH_006a
+    file: manage-dashboard--tc-dash-006a.yaml
+    apiName: getTransferBeneficiaries
+    method: GET
+    endpoint: /v1/external/transfer?scope=LOCAL&groupType=ALL&page=0&limit=10
+  - journeyCode: Manage_Dashboard
+    journeyTitle: Transfer Dashboard
+    testCaseId: TC_DASH_007a
+    file: manage-dashboard--tc-dash-007a.yaml
+    apiName: getTransferBeneficiariesSearch
+    method: GET
+    endpoint: /v1/external/transfer/search?scope=LOCAL&groupType=ALL&keyword=ABC&page=0&limit=10
+  - journeyCode: Manage_Recipient
+    journeyTitle: Custom Recipient Management
+    testCaseId: TC_RECIP_001a
+    file: manage-recipient--tc-recip-001a.yaml
+    apiName: addBeneficiaries
+    method: POST
+    endpoint: /v1/external/transfer
+  - journeyCode: Manage_Recipient
+    journeyTitle: Custom Recipient Management
+    testCaseId: TC_RECIP_002a
+    file: manage-recipient--tc-recip-002a.yaml
+    apiName: getTransferBeneficiaries
+    method: GET
+    endpoint: /v1/external/transfer?scope=LOCAL&groupType=ALL&page=0&limit=10
+  - journeyCode: Manage_Recipient
+    journeyTitle: Custom Recipient Management
+    testCaseId: TC_RECIP_003a
+    file: manage-recipient--tc-recip-003a.yaml
+    apiName: getTransferBeneficiariesSearch
+    method: GET
+    endpoint: /v1/external/transfer/search?scope=LOCAL&groupType=ALL&keyword=ABC&page=0&limit=10
+  - journeyCode: Manage_Recipient
+    journeyTitle: Custom Recipient Management
+    testCaseId: TC_RECIP_004a
+    file: manage-recipient--tc-recip-004a.yaml
+    apiName: addNickname
+    method: POST
+    endpoint: /v1/external/accounts/nickname
+  - journeyCode: Manage_Recipient
+    journeyTitle: Custom Recipient Management
+    testCaseId: TC_RECIP_005a
+    file: manage-recipient--tc-recip-005a.yaml
+    apiName: updateNickname
+    method: PATCH
+    endpoint: /v1/external/accounts/nickname
+  - journeyCode: Manage_Recipient
+    journeyTitle: Custom Recipient Management
+    testCaseId: TC_RECIP_006a
+    file: manage-recipient--tc-recip-006a.yaml
+    apiName: deleteNickname
+    method: DELETE
+    endpoint: /v1/external/accounts/nickname?accountId=3939393933
+  - journeyCode: Manage_Recipient
+    journeyTitle: Custom Recipient Management
+    testCaseId: TC_RECIP_007a
+    file: manage-recipient--tc-recip-007a.yaml
+    apiName: S2UBeneficiaries
+    method: POST
+    endpoint: /v1/external/beneficiaries
+  - journeyCode: Manage_Recipient
+    journeyTitle: Custom Recipient Management
+    testCaseId: TC_RECIP_008a
+    file: manage-recipient--tc-recip-008a.yaml
+    apiName: deleteBeneficiaries
+    method: DELETE
+    endpoint: /v1/external/transfer?groupType=ALL&accountId=598322219222
+  - journeyCode: Manage_Recipient
+    journeyTitle: Custom Recipient Management
+    testCaseId: TC_RECIP_009a
+    file: manage-recipient--tc-recip-009a.yaml
+    apiName: S2UBeneficiaries
+    method: POST
+    endpoint: /v1/external/beneficiaries
+  - journeyCode: Manage_Recipient
+    journeyTitle: Custom Recipient Management
+    testCaseId: TC_RECIP_009b
+    file: manage-recipient--tc-recip-009b.yaml
+    apiName: updateBeneficiaries
+    method: PATCH
+    endpoint: /v1/external/transfer
+  - journeyCode: Manage_Recipient
+    journeyTitle: Custom Recipient Management
+    testCaseId: TC_RECIP_010a
+    file: manage-recipient--tc-recip-010a.yaml
+    apiName: S2UBeneficiaries
+    method: POST
+    endpoint: /v1/external/beneficiaries
+  - journeyCode: Manage_Recipient
+    journeyTitle: Custom Recipient Management
+    testCaseId: TC_RECIP_011a
+    file: manage-recipient--tc-recip-011a.yaml
+    apiName: deleteBeneficiaries
+    method: DELETE
+    endpoint: /v1/external/transfer?groupType=FREQUENT&accountId=598322219222
+  - journeyCode: Manage_Favourite
+    journeyTitle: Favourite Management
+    testCaseId: TC_MFAV_001a
+    file: manage-favourite--tc-mfav-001a.yaml
+    apiName: getManageGroups
+    method: GET
+    endpoint: /v1/external/transfer/groups/management?scope=LOCAL
+  - journeyCode: Manage_Favourite
+    journeyTitle: Favourite Management
+    testCaseId: TC_MFAV_001b
+    file: manage-favourite--tc-mfav-001b.yaml
+    apiName: GetJourneyContent
+    method: GET
+    endpoint: cms/journeys/payment_transfer_manage_favourite?locale=en_MY&channel=MOBILE
+  - journeyCode: Manage_Favourite
+    journeyTitle: Favourite Management
+    testCaseId: TC_MFAV_002a
+    file: manage-favourite--tc-mfav-002a.yaml
+    apiName: getTransferBeneficiaries
+    method: GET
+    endpoint: /v1/external/transfer?scope=LOCAL&groupType=FAVORITES&page=0&limit=10
+  - journeyCode: Manage_Favourite
+    journeyTitle: Favourite Management
+    testCaseId: TC_MFAV_003a
+    file: manage-favourite--tc-mfav-003a.yaml
+    apiName: getTransferBeneficiaries
+    method: GET
+    endpoint: /v1/external/transfer?scope=LOCAL&groupType=CUSTOM&groupId=G002&page=0&limit=10
+  - journeyCode: Manage_Favourite
+    journeyTitle: Favourite Management
+    testCaseId: TC_MFAV_004a
+    file: manage-favourite--tc-mfav-004a.yaml
+    apiName: S2UBeneficiaries
+    method: POST
+    endpoint: /v1/external/beneficiaries
+  - journeyCode: Manage_Favourite
+    journeyTitle: Favourite Management
+    testCaseId: TC_MFAV_005a
+    file: manage-favourite--tc-mfav-005a.yaml
+    apiName: S2UBeneficiaries
+    method: POST
+    endpoint: /v1/external/beneficiaries
+  - journeyCode: Manage_Favourite
+    journeyTitle: Favourite Management
+    testCaseId: TC_MFAV_006a
+    file: manage-favourite--tc-mfav-006a.yaml
+    apiName: S2UBeneficiaries
+    method: DELETE
+    endpoint: /v1/external/beneficiaries
+  - journeyCode: Manage_Favourite
+    journeyTitle: Favourite Management
+    testCaseId: TC_MFAV_007a
+    file: manage-favourite--tc-mfav-007a.yaml
+    apiName: updateBeneficiaryGroup
+    method: PATCH
+    endpoint: /v1/external/transfer/groups/G001
+  - journeyCode: Manage_Favourite
+    journeyTitle: Favourite Management
+    testCaseId: TC_MFAV_008a
+    file: manage-favourite--tc-mfav-008a.yaml
+    apiName: deleteBeneficiaries
+    method: DELETE
+    endpoint: /v1/external/transfer?groupType=CUSTOM&groupId=G001&accountId=598322219222
+  - journeyCode: Trf_Immediate_OwnAccount
+    journeyTitle: Own Account Transfer (Immediate)
+    testCaseId: TC_OWN_001a
+    file: trf-immediate-ownaccount--tc-own-001a.yaml
+    apiName: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+    method: PLEASE REFER TO THE MANAGE_DASHBOARD SHEETS FOR THE FULL DETAILS OF THE TRANSFER DASHBOARD
+    endpoint: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+  - journeyCode: Trf_Immediate_OwnAccount
+    journeyTitle: Own Account Transfer (Immediate)
+    testCaseId: TC_OWN_002a
+    file: trf-immediate-ownaccount--tc-own-002a.yaml
+    apiName: S2U Init and Verify Journey
+    method: S2U INIT AND VERIFY JOURNEY
+    endpoint: S2U Init and Verify Journey
+  - journeyCode: Trf_Immediate_OwnAccount
+    journeyTitle: Own Account Transfer (Immediate)
+    testCaseId: TC_OWN_003a
+    file: trf-immediate-ownaccount--tc-own-003a.yaml
+    apiName: GetSourceAccountList
+    method: GET
+    endpoint: pt/intrabank/v1/external/source-accounts
+  - journeyCode: Trf_Immediate_OwnAccount
+    journeyTitle: Own Account Transfer (Immediate)
+    testCaseId: TC_OWN_003b
+    file: trf-immediate-ownaccount--tc-own-003b.yaml
+    apiName: IntraPreMonetaryCheck
+    method: GET
+    endpoint: pt/intrabank/v1/external/pre-check
+  - journeyCode: Trf_Immediate_OwnAccount
+    journeyTitle: Own Account Transfer (Immediate)
+    testCaseId: TC_OWN_005a
+    file: trf-immediate-ownaccount--tc-own-005a.yaml
+    apiName: InitiateIntraTransfer
+    method: POST
+    endpoint: pt/intrabank/v1/external/initiate
+  - journeyCode: Trf_Immediate_OwnAccount
+    journeyTitle: Own Account Transfer (Immediate)
+    testCaseId: TC_OWN_006a
+    file: trf-immediate-ownaccount--tc-own-006a.yaml
+    apiName: ExecuteIntraTransfer
+    method: POST
+    endpoint: pt/intrabank/v1/external/execute
+  - journeyCode: Trf_Immediate_Intrabank
+    journeyTitle: 3rd Party Account Transfer (Immediate)
+    testCaseId: TC_INTRA_001a
+    file: trf-immediate-intrabank--tc-intra-001a.yaml
+    apiName: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+    method: PLEASE REFER TO THE MANAGE_DASHBOARD SHEETS FOR THE FULL DETAILS OF THE TRANSFER DASHBOARD
+    endpoint: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+  - journeyCode: Trf_Immediate_Intrabank
+    journeyTitle: 3rd Party Account Transfer (Immediate)
+    testCaseId: TC_INTRA_002a
+    file: trf-immediate-intrabank--tc-intra-002a.yaml
+    apiName: GetPtMaintenanceBankListing
+    method: GET
+    endpoint: pt/maintenance/v1/external/transfers/banks
+  - journeyCode: Trf_Immediate_Intrabank
+    journeyTitle: 3rd Party Account Transfer (Immediate)
+    testCaseId: TC_INTRA_002a
+    file: trf-immediate-intrabank--tc-intra-002a-2.yaml
+    apiName: S2U Init and Verify Journey
+    method: S2U INIT AND VERIFY JOURNEY
+    endpoint: S2U Init and Verify Journey
+  - journeyCode: Trf_Immediate_Intrabank
+    journeyTitle: 3rd Party Account Transfer (Immediate)
+    testCaseId: TC_INTRA_004a
+    file: trf-immediate-intrabank--tc-intra-004a.yaml
+    apiName: GetSourceAccountList
+    method: GET
+    endpoint: pt/intrabank/v1/external/source-accounts
+  - journeyCode: Trf_Immediate_Intrabank
+    journeyTitle: 3rd Party Account Transfer (Immediate)
+    testCaseId: TC_INTRA_004b
+    file: trf-immediate-intrabank--tc-intra-004b.yaml
+    apiName: IntraPreMonetaryCheck
+    method: POST
+    endpoint: pt/intrabank/v1/external/pre-check
+  - journeyCode: Trf_Immediate_Intrabank
+    journeyTitle: 3rd Party Account Transfer (Immediate)
+    testCaseId: TC_INTRA_008a
+    file: trf-immediate-intrabank--tc-intra-008a.yaml
+    apiName: InitiateIntraTransfer
+    method: POST
+    endpoint: pt/intrabank/v1/external/initiate
+  - journeyCode: Trf_Immediate_Intrabank
+    journeyTitle: 3rd Party Account Transfer (Immediate)
+    testCaseId: TC_INTRA_009a
+    file: trf-immediate-intrabank--tc-intra-009a.yaml
+    apiName: ExecuteIntraTransfer
+    method: POST
+    endpoint: pt/intrabank/v1/external/execute
+  - journeyCode: Trf_Immediate_Interbank
+    journeyTitle: Interbank Account Transfer (Immediate)
+    testCaseId: TC_INTER_001a
+    file: trf-immediate-interbank--tc-inter-001a.yaml
+    apiName: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+    method: PLEASE REFER TO THE MANAGE_DASHBOARD SHEETS FOR THE FULL DETAILS OF THE TRANSFER DASHBOARD
+    endpoint: Please refer to the Manage_Dashboard sheets for the full details of the Transfer Dashboard
+  - journeyCode: Trf_Immediate_Interbank
+    journeyTitle: Interbank Account Transfer (Immediate)
+    testCaseId: TC_INTER_002a
+    file: trf-immediate-interbank--tc-inter-002a.yaml
+    apiName: GetPtMaintenanceBankListing
+    method: GET
+    endpoint: pt/maintenance/v1/external/transfers/banks
+  - journeyCode: Trf_Immediate_Interbank
+    journeyTitle: Interbank Account Transfer (Immediate)
+    testCaseId: TC_INTER_002a
+    file: trf-immediate-interbank--tc-inter-002a-2.yaml
+    apiName: S2U Init and Verify Journey
+    method: S2U INIT AND VERIFY JOURNEY
+    endpoint: S2U Init and Verify Journey
+  - journeyCode: Trf_Immediate_Interbank
+    journeyTitle: Interbank Account Transfer (Immediate)
+    testCaseId: TC_INTER_004a
+    file: trf-immediate-interbank--tc-inter-004a.yaml
+    apiName: GetSourceAccountList
+    method: GET
+    endpoint: pt/interbank/v1/external/source-accounts
+  - journeyCode: Trf_Immediate_Interbank
+    journeyTitle: Interbank Account Transfer (Immediate)
+    testCaseId: TC_INTER_007a
+    file: trf-immediate-interbank--tc-inter-007a.yaml
+    apiName: InterPreMonetaryUpdate
+    method: POST
+    endpoint: pt/interbank/v1/external/pre-check-update
+  - journeyCode: Trf_Immediate_Interbank
+    journeyTitle: Interbank Account Transfer (Immediate)
+    testCaseId: TC_INTER_008a
+    file: trf-immediate-interbank--tc-inter-008a.yaml
+    apiName: InitiateInterTransfer
+    method: POST
+    endpoint: pt/interbank/v1/external/initiate
+  - journeyCode: Trf_Immediate_Interbank
+    journeyTitle: Interbank Account Transfer (Immediate)
+    testCaseId: TC_INTER_008b
+    file: trf-immediate-interbank--tc-inter-008b.yaml
+    apiName: ExecuteInterTransfer
+    method: POST
+    endpoint: pt/interbank/v1/external/execute
+  - journeyCode: Trf_Scheduling_All
+    journeyTitle: Scheduling/Recurring Transfer (For All Types)
+    testCaseId: TC_SCHED_001a
+    file: trf-scheduling-all--tc-sched-001a.yaml
+    apiName: >-
+      Please refer to the Relevant Transfer Sheets (Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank or
+      Trf_Immediate_Interbank)
+    method: >-
+      PLEASE REFER TO THE RELEVANT TRANSFER SHEETS (TRF_IMMEDIATE_OWNACCOUNT, TRF_IMMEDIATE_INTRABANK OR
+      TRF_IMMEDIATE_INTERBANK)
+    endpoint: >-
+      Please refer to the Relevant Transfer Sheets (Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank or
+      Trf_Immediate_Interbank)
+  - journeyCode: Trf_Scheduling_All
+    journeyTitle: Scheduling/Recurring Transfer (For All Types)
+    testCaseId: TC_SCHED_002a
+    file: trf-scheduling-all--tc-sched-002a.yaml
+    apiName: S2U Init and Verify Journey
+    method: S2U INIT AND VERIFY JOURNEY
+    endpoint: S2U Init and Verify Journey
+  - journeyCode: Trf_Scheduling_All
+    journeyTitle: Scheduling/Recurring Transfer (For All Types)
+    testCaseId: TC_SCHED_005a
+    file: trf-scheduling-all--tc-sched-005a.yaml
+    apiName: InitiateIntraTransfer
+    method: POST
+    endpoint: pt/intrabank/v1/external/initiate
+  - journeyCode: Trf_Scheduling_All
+    journeyTitle: Scheduling/Recurring Transfer (For All Types)
+    testCaseId: TC_SCHED_005b
+    file: trf-scheduling-all--tc-sched-005b.yaml
+    apiName: InitiateInterTransfer
+    method: POST
+    endpoint: pt/interbank/v1/external/initiate
+  - journeyCode: Trf_Scheduling_All
+    journeyTitle: Scheduling/Recurring Transfer (For All Types)
+    testCaseId: TC_SCHED_006a
+    file: trf-scheduling-all--tc-sched-006a.yaml
+    apiName: ExecuteIntraTransfer
+    method: POST
+    endpoint: pt/intrabank/v1/external/execute
+  - journeyCode: Trf_Scheduling_All
+    journeyTitle: Scheduling/Recurring Transfer (For All Types)
+    testCaseId: TC_SCHED_006b
+    file: trf-scheduling-all--tc-sched-006b.yaml
+    apiName: ExecuteInterTransfer
+    method: POST
+    endpoint: pt/interbank/v1/external/execute
+  - journeyCode: Trf_Scheduling_All
+    journeyTitle: Scheduling/Recurring Transfer (For All Types)
+    testCaseId: TC_SCHED_007a
+    file: trf-scheduling-all--tc-sched-007a.yaml
+    apiName: >-
+      Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+      Trf_Immediate_Interbank.
+    method: >-
+      PLEASE REFER TO THE RELEVANT IMMEDIATE TRANSFER SHEETS: TRF_IMMEDIATE_OWNACCOUNT, TRF_IMMEDIATE_INTRABANK AND
+      TRF_IMMEDIATE_INTERBANK.
+    endpoint: >-
+      Please refer to the relevant immediate transfer sheets: Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and
+      Trf_Immediate_Interbank.
+  - journeyCode: Trf_Scheduling_All
+    journeyTitle: Scheduling/Recurring Transfer (For All Types)
+    testCaseId: >-
+      TC_SCHED_Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.a
+    file: >-
+      trf-scheduling-all--tc-sched-process-of-initiating-a-new-transfer-please-refer-to-the-relevant-immediate-transfer-sheets-trf-immediate-ownaccount-trf-immediate-intrabank-and-trf-immediate-interbank-a.yaml
+    apiName: >-
+      Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    method: >-
+      PROCESS OF INITIATING A NEW TRANSFER, PLEASE REFER TO THE RELEVANT IMMEDIATE TRANSFER SHEETS:
+      TRF_IMMEDIATE_OWNACCOUNT, TRF_IMMEDIATE_INTRABANK AND TRF_IMMEDIATE_INTERBANK.
+    endpoint: >-
+      Process of initiating a new transfer, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+  - journeyCode: Trf_Scheduling_All
+    journeyTitle: Scheduling/Recurring Transfer (For All Types)
+    testCaseId: >-
+      TC_SCHED_Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.a
+    file: >-
+      trf-scheduling-all--tc-sched-transfer-details-and-additional-details-please-refer-to-the-relevant-immediate-transfer-sheets-trf-immediate-ownaccount-trf-immediate-intrabank-and-trf-immediate-interbank-a.yaml
+    apiName: >-
+      Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    method: >-
+      TRANSFER DETAILS AND ADDITIONAL DETAILS, PLEASE REFER TO THE RELEVANT IMMEDIATE TRANSFER SHEETS:
+      TRF_IMMEDIATE_OWNACCOUNT, TRF_IMMEDIATE_INTRABANK AND TRF_IMMEDIATE_INTERBANK.
+    endpoint: >-
+      Transfer Details and Additional Details, please refer to the relevant immediate transfer sheets:
+      Trf_Immediate_OwnAccount, Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+  - journeyCode: Trf_Fav_Bene_Freq_Transfer
+    journeyTitle: Transfer from Beneficary List (All, Favourite, Frequent and Custom)
+    testCaseId: TC_FAVTRF_001a
+    file: trf-fav-bene-freq-transfer--tc-favtrf-001a.yaml
+    apiName: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+    method: PLEASE REFER TO THE MANAGE_DASHBOARD SHEET FOR TRANSFER DASHBOARD BEHAVIORS.
+    endpoint: Please refer to the Manage_Dashboard sheet for transfer dashboard behaviors.
+  - journeyCode: Trf_Fav_Bene_Freq_Transfer
+    journeyTitle: Transfer from Beneficary List (All, Favourite, Frequent and Custom)
+    testCaseId: TC_FAVTRF_002a
+    file: trf-fav-bene-freq-transfer--tc-favtrf-002a.yaml
+    apiName: IntraPreMonetaryCheck
+    method: POST
+    endpoint: pt/intrabank/v1/external/pre-check
+  - journeyCode: Trf_Fav_Bene_Freq_Transfer
+    journeyTitle: Transfer from Beneficary List (All, Favourite, Frequent and Custom)
+    testCaseId: TC_FAVTRF_002b
+    file: trf-fav-bene-freq-transfer--tc-favtrf-002b.yaml
+    apiName: InterPreMonetaryCheck
+    method: POST
+    endpoint: pt/interbank/v1/external/pre-check
+  - journeyCode: Trf_Fav_Bene_Freq_Transfer
+    journeyTitle: Transfer from Beneficary List (All, Favourite, Frequent and Custom)
+    testCaseId: >-
+      TC_FAVTRF_Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer
+      Sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.a
+    file: >-
+      trf-fav-bene-freq-transfer--tc-favtrf-continue-on-the-transfer-details-and-additional-details-process-please-refer-to-the-immediate-transfer-sheets-trf-immediate-intrabank-and-trf-immediate-interbank-a.yaml
+    apiName: >-
+      Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer Sheets:
+      Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    method: >-
+      CONTINUE ON THE TRANSFER DETAILS AND ADDITIONAL DETAILS PROCESS, PLEASE REFER TO THE IMMEDIATE TRANSFER SHEETS:
+      TRF_IMMEDIATE_INTRABANK AND TRF_IMMEDIATE_INTERBANK.
+    endpoint: >-
+      Continue on the Transfer Details and Additional Details process, please refer to the Immediate Transfer Sheets:
+      Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+  - journeyCode: Post_Trf_Add_Fav
+    journeyTitle: Post Transfer Favourite Addition
+    testCaseId: TC_PTAF_001a
+    file: post-trf-add-fav--tc-ptaf-001a.yaml
+    apiName: addBeneficiaries
+    method: POST
+    endpoint: /v1/external/transfer
+  - journeyCode: Post_Trf_Add_Fav
+    journeyTitle: Post Transfer Favourite Addition
+    testCaseId: >-
+      TC_PTAF_The completion of intrabank or any interbank type of transfer, for full details please refer to the
+      relevant immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.a
+    file: >-
+      post-trf-add-fav--tc-ptaf-the-completion-of-intrabank-or-any-interbank-type-of-transfer-for-full-details-please-refer-to-the-relevant-immediate-transfer-sheets-trf-immediate-intrabank-and-trf-immediate-interbank-a.yaml
+    apiName: >-
+      The completion of intrabank or any interbank type of transfer, for full details please refer to the relevant
+      immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+    method: >-
+      THE COMPLETION OF INTRABANK OR ANY INTERBANK TYPE OF TRANSFER, FOR FULL DETAILS PLEASE REFER TO THE RELEVANT
+      IMMEDIATE TRANSFER SHEETS: TRF_IMMEDIATE_INTRABANK AND TRF_IMMEDIATE_INTERBANK.
+    endpoint: >-
+      The completion of intrabank or any interbank type of transfer, for full details please refer to the relevant
+      immediate transfer sheets: Trf_Immediate_Intrabank and Trf_Immediate_Interbank.
+  - journeyCode: Trf_Expenses_Tracker
+    journeyTitle: Expenses Tracker
+    testCaseId: TC_EXP_001a
+    file: trf-expenses-tracker--tc-exp-001a.yaml
+    apiName: getSubCategoryClassification
+    method: GET
+    endpoint: /v1/external/sub-categories/classification?key=TRANSFER&subKey=INTERBANK&description=makan
+  - journeyCode: Trf_Expenses_Tracker
+    journeyTitle: Expenses Tracker
+    testCaseId: TC_EXP_002a
+    file: trf-expenses-tracker--tc-exp-002a.yaml
+    apiName: |-
+      Please refer to Trf_immediate_Intrabank for Intrabank Final Transfer Result Screen
+
+      Please refer to Trf_immediate_Interbank for Interbank Final Transfer Result Screen
+    method: |-
+      PLEASE REFER TO TRF_IMMEDIATE_INTRABANK FOR INTRABANK FINAL TRANSFER RESULT SCREEN
+
+      PLEASE REFER TO TRF_IMMEDIATE_INTERBANK FOR INTERBANK FINAL TRANSFER RESULT SCREEN
+    endpoint: |-
+      Please refer to Trf_immediate_Intrabank for Intrabank Final Transfer Result Screen
+
+      Please refer to Trf_immediate_Interbank for Interbank Final Transfer Result Screen
+  - journeyCode: Trf_Expenses_Tracker
+    journeyTitle: Expenses Tracker
+    testCaseId: TC_EXP_003a
+    file: trf-expenses-tracker--tc-exp-003a.yaml
+    apiName: getCategories
+    method: GET
+    endpoint: /v1/external/categories
+  - journeyCode: Trf_Expenses_Tracker
+    journeyTitle: Expenses Tracker
+    testCaseId: TC_EXP_004a
+    file: trf-expenses-tracker--tc-exp-004a.yaml
+    apiName: addSubCategory
+    method: POST
+    endpoint: /v1/external/sub-categories
+  - journeyCode: Trf_Expenses_Tracker
+    journeyTitle: Expenses Tracker
+    testCaseId: TC_EXP_005a
+    file: trf-expenses-tracker--tc-exp-005a.yaml
+    apiName: updateSubCategory
+    method: PATCH
+    endpoint: /v1/external/sub-categories/sample
+  - journeyCode: Manage_Scheduling
+    journeyTitle: Manage Scheduled Transfers Settings
+    testCaseId: TC_MSCHED_001a
+    file: manage-scheduling--tc-msched-001a.yaml
+    apiName: GetScheduledListing
+    method: GET
+    endpoint: pt/recurring/v1/external/transfer/listing
+  - journeyCode: Manage_Scheduling
+    journeyTitle: Manage Scheduled Transfers Settings
+    testCaseId: TC_MSCHED_001b
+    file: manage-scheduling--tc-msched-001b.yaml
+    apiName: GetJourneyContent
+    method: GET
+    endpoint: cms/journeys/payment_transfer_schedule_recurring?locale=en_MY&channel=MOBILE
+  - journeyCode: Manage_Scheduling
+    journeyTitle: Manage Scheduled Transfers Settings
+    testCaseId: TC_MSCHED_002a
+    file: manage-scheduling--tc-msched-002a.yaml
+    apiName: GetScheduledDetails
+    method: GET
+    endpoint: pt/recurring/v1/external/transfer/sample
+  - journeyCode: Manage_Scheduling
+    journeyTitle: Manage Scheduled Transfers Settings
+    testCaseId: TC_MSCHED_002a
+    file: manage-scheduling--tc-msched-002a-2.yaml
+    apiName: S2U Init and Verify Journey
+    method: S2U INIT AND VERIFY JOURNEY
+    endpoint: S2U Init and Verify Journey
+  - journeyCode: Manage_Limit
+    journeyTitle: Manage Limit Settings
+    testCaseId: TC_LIMIT_001a
+    file: manage-limit--tc-limit-001a.yaml
+    apiName: GetJourneyContent
+    method: GET
+    endpoint: cms/journeys/payment_transfer_set_limit?locale=en_MY&channel=MOBILE
+  - journeyCode: Manage_Limit
+    journeyTitle: Manage Limit Settings
+    testCaseId: TC_LIMIT_001b
+    file: manage-limit--tc-limit-001b.yaml
+    apiName: LimitSettingInquiry
+    method: GET
+    endpoint: pt/limits/v1/external/settings?productIds=productIds
+  - journeyCode: Manage_Limit
+    journeyTitle: Manage Limit Settings
+    testCaseId: TC_LIMIT_002a
+    file: manage-limit--tc-limit-002a.yaml
+    apiName: S2U Init and Verify Journey
+    method: S2U INIT AND VERIFY JOURNEY
+    endpoint: S2U Init and Verify Journey

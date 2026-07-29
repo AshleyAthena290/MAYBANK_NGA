@@ -1,6 +1,6 @@
 # Test Layer Classification - Function: App Permission
 
-- Generated At: 2026-07-05T13:38:25.003Z
+- Generated At: 2026-07-06T01:27:52.694Z
 - Schema Version: 1.0.0
 - Total Requirements Classified: 20
 

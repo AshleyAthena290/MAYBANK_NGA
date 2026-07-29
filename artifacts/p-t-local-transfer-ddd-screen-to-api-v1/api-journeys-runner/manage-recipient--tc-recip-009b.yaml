@@ -1,0 +1,69 @@
+id: TC_RECIP_009b
+title: 9. Transfer - Recipients - Remove Favorite - updateBeneficiaries
+feature: Custom Recipient Management
+journey: Manage_Recipient
+stepNo: '9'
+screen: Transfer - Recipients - Remove Favorite
+userAction: Remove favorites list from ALL - With Favourite group
+request:
+  method: PATCH
+  url: /v1/external/transfer
+  endpoint: /v1/external/transfer
+  headers:
+    Accept: application/json
+  body:
+    groups:
+      - operation: add
+        id: G002
+        type: CUSTOM
+        name: Friends
+    beneficiaries:
+      - accountId: '4700025122'
+        accountHolderName: MUHAMMAD ALI MUTHU
+        nickname: ali nickname
+        bicCode: PBBEMYKL
+        bankName: PUBLIC BANK
+        transactionType: TRANSFER/PAYMENT
+        transactionSubtype: INTERBANK
+        transactionMetadata:
+          serviceFees: 11
+          firstTimeTac: '1'
+          idNumber: null
+          idType: null
+          mobileNumber: ''
+          idFlag: ''
+          acquirerId: '564162'
+          accountType: ''
+          accountSubType: ''
+          currency: ''
+          balance: 0
+          paymentCode: '01'
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: update_beneficiaries_success
+    timestamp: '2026-01-13T12:00:00'
+    correlationId: abc123-correlation-id
+    meta:
+      provider: erp
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: "1. Upon tapping [Save] button, system to check:
+
+      a. If the beneficiary is either added to or removed from ""favourite"" list, S2U is required.
+
+      b. If action does not require S2U and for successful attempt, system displays a toastbar message ""List updated.""
+
+      c. If none of the Fav or Custom list is selected, render the [Save] button to [Remove] button, it will trigger
+      Remove function.
+
+
+      Refer to Recipient - Add to Fav Business Rules for status screen behaviour."
+    type: custom
+references:
+  apiSpecFile: updateBeneficiaries
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Recipient

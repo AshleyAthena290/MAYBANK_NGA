@@ -1,0 +1,40 @@
+id: TC_170ETBWO_001a
+title: 1. Without M2U ID - Final Screen (Successful) and cooling-off required - Cerebro
+feature: ETB wo M2U Final
+journey: 17.0 ETB - wo M2U Final
+stepNo: '1'
+screen: Without M2U ID - Final Screen (Successful) and cooling-off required
+userAction: ''
+request:
+  method: GET
+  url: /identity/cerebro/v1/user/status
+  endpoint: /identity/cerebro/v1/user/status
+  headers:
+    Accept: application/json
+    X-MB-Authorization: NGAID260703094512_1001
+  body: /identity/cerebro/v1/user/status
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: Request processed successfully
+    timestamp: '2026-01-13T12:00:00+07:00'
+    meta: null
+    data:
+      noticeRequired: true
+      noticeType: CHANGE_DEVICE
+      onboardingStatus: M2U_COMPLETED
+      deviceStatus: NEW_DEVICE
+      s2uStatus: null
+      s2uCoolingOffRequired: false
+      s2uCoolingOffActive: false
+      cooldownEndAt: null
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: 'Validate business outcome: API GET /identity/cerebro/v1/user/status is invoked as part of the journey.'
+    type: custom
+references:
+  apiSpecFile: Cerebro
+  sourceWorksheet: ETB Onboarding Screen API Mapping (All Journeys) / 17.0 ETB - wo M2U Final

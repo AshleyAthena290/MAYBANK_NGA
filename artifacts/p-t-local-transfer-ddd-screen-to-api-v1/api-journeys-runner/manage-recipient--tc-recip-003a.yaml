@@ -1,0 +1,97 @@
+id: TC_RECIP_003a
+title: 3. Transfer - All Beneficiary List - getTransferBeneficiariesSearch
+feature: Custom Recipient Management
+journey: Manage_Recipient
+stepNo: '3'
+screen: Transfer - All Beneficiary List
+userAction: Recipient Search
+request:
+  method: GET
+  url: /v1/external/transfer/search?scope=LOCAL&groupType=ALL&keyword=ABC&page=0&limit=10
+  endpoint: /v1/external/transfer/search?scope=LOCAL&groupType=ALL&keyword=ABC&page=0&limit=10
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: Request processed successfully
+    timestamp: '2026-01-13T12:00:00'
+    correlationId: abc123-correlation-id
+    meta:
+      provider: erp
+      page: 0
+      limit: 10
+      total: 55
+      nextPage: '1'
+    data:
+      beneficiaries:
+        - accountId: '4700025122'
+          accountHolderName: MUHAMMAD ALI MUTHU
+          nickname: ali account
+          bicCode: PBBEMYKL
+          bankName: PUBLIC BANK
+          profileImage: 3dieieo383992020202
+          groups:
+            - id: G001
+              type: FAVORITES
+              name: Favorites
+            - id: G002
+              type: CUSTOM
+              name: Family
+            - id: G003
+              type: CUSTOM
+              name: Friends
+          transactionType: TRANSFER/PAYMENT
+          transactionSubtype: INTERBANK
+          transactionMetadata:
+            serviceFees: 11
+            firstTimeTac: '1'
+            idNumber: null
+            idType: null
+            mobileNumber: ''
+            idFlag: ''
+            acquirerId: '564162'
+            currency: ''
+            balance: 0
+            paymentCode: '01'
+        - accountId: '5500025133'
+          accountHolderName: 'MUHAMMAD AHMAD '
+          nickname: ahmad account
+          bicCode: PBBEMYKL
+          bankName: PUBLIC BANK
+          profileImage: 3dieieo383992020202
+          groups:
+            - id: G001
+              type: FAVORITES
+              name: Favorites
+            - id: G003
+              type: CUSTOM
+              name: Friends
+          transactionType: TRANSFER/PAYMENT
+          transactionSubtype: INTERBANK
+          transactionMetadata:
+            serviceFees: 11
+            firstTimeTac: '1'
+            idNumber: null
+            idType: null
+            mobileNumber: ''
+            idFlag: ''
+            acquirerId: '564162'
+            currency: ''
+            balance: 0
+            paymentCode: '01'
+    link: {}
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: API GET
+      /v1/external/transfer/search?scope=LOCAL&groupType=ALL&keyword=ABC&page=0&limit=10 is invoked as part of the
+      journey.
+    type: custom
+references:
+  apiSpecFile: getTransferBeneficiariesSearch
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Recipient

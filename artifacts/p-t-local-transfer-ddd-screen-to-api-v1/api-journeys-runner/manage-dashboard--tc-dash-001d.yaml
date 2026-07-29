@@ -1,0 +1,41 @@
+id: TC_DASH_001d
+title: 1. Init Module - getCustomGroups
+feature: Transfer Dashboard
+journey: Manage_Dashboard
+stepNo: '1'
+screen: Init Module
+userAction: User Lands into Transfer Dashboard
+request:
+  method: GET
+  url: /v1/external/transfer/groups/custom?scope=LOCAL
+  endpoint: /v1/external/transfer/groups/custom?scope=LOCAL
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: Request processed successfully
+    timestamp: '2026-01-13T12:00:00'
+    correlationId: abc123-correlation-id
+    meta:
+      provider: erp
+    data:
+      groups:
+        - id: G002
+          type: CUSTOM
+          name: Family
+        - id: G003
+          type: CUSTOM
+          name: Friends
+    link: {}
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: 'Validate business outcome: NA'
+    type: custom
+references:
+  apiSpecFile: getCustomGroups
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Dashboard

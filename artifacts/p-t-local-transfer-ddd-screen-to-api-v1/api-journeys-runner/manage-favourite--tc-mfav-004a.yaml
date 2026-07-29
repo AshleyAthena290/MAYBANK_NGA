@@ -1,0 +1,68 @@
+id: TC_MFAV_004a
+title: 4. Manage Favorite - Add from Account Number - S2UBeneficiaries
+feature: Favourite Management
+journey: Manage_Favourite
+stepNo: '4'
+screen: Manage Favorite - Add from Account Number
+userAction: Add Favorite from Account Number
+request:
+  method: POST
+  url: /v1/external/beneficiaries
+  endpoint: /v1/external/beneficiaries
+  headers:
+    Accept: application/json
+  body:
+    groups:
+      - operation: add
+        type: FAVOURITES
+        name: Favourites
+    beneficiaries:
+      - accountId: '4700025122'
+        accountHolderName: MUHAMMAD ALI MUTHU
+        nickname: ali nickname
+        bicCode: PBBEMYKL
+        bankName: PUBLIC BANK
+        transactionType: TRANSFER/PAYMENT
+        transactionSubtype: INTERBANK
+        transactionMetadata:
+          serviceFees: 11
+          firstTimeTac: '1'
+          idNumber: null
+          idType: null
+          mobileNumber: ''
+          idFlag: ''
+          swiftCode: PBBEMYKL
+          acquirerId: '564162'
+          accountType: ''
+          accountSubType: ''
+          currency: ''
+          balance: 0
+          paymentCode: '01'
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: success
+    extra: ''
+    note: ''
+    header: added_as_favourite_success_header
+    desc: ''
+    details: >-
+      {"reference_id":"268614863M","date_time":"07 May 2026, 04:05 PM","account_holder_name":"Andy
+      Loo","account_number":"5042 3341 3421","recipient_bank":"Maybank"}
+    receipt: ''
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: |-
+      Validate business outcome: Upon tapping [Next] button, system to perform:
+      1. Mandatory checking. If field is empty, system displays inline error message "Required field."
+      2. If validation passed, trigger S2U authorisation.
+      3. For successful creation, a beneficiary will be created and populated into the Landing Page with below format:
+       [Nickname] - will be displayed in Beneficiary Name field
+       [Nickname]
+       [Account Number] . [Bank Name]
+    type: custom
+references:
+  apiSpecFile: S2UBeneficiaries
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Favourite

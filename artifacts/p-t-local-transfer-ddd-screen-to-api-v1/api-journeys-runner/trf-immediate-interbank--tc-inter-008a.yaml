@@ -1,0 +1,67 @@
+id: TC_INTER_008a
+title: 8. Initiating the transaction (Pre S2U) - InitiateInterTransfer
+feature: Interbank Account Transfer (Immediate)
+journey: Trf_Immediate_Interbank
+stepNo: '8'
+screen: Initiating the transaction (Pre S2U)
+userAction: User reviews details and slide to Confirm
+request:
+  method: POST
+  url: pt/interbank/v1/external/initiate
+  endpoint: pt/interbank/v1/external/initiate
+  headers:
+    Accept: application/json
+  body:
+    preCheckId: 59c47913-6f73-4aea-81f3-0ddbe83ec5f4
+    transferModeCode: BISKN
+    debitAccountNo: '1234567890'
+    debitAccountType: SA
+    debitAccountCurrency: IDR
+    creditAccountBankCode: BCA
+    creditAccountNo: '9876543210'
+    creditAccountType: SA
+    creditAccountCurrency: IDR
+    debitAmount: 150000
+    creditAmount: 150000
+    feeAmount: 2900
+    feeCurrency: IDR
+    feeType: FEE1
+    purposeCode: PAYMENT
+    sourceOfFundCode: SALARY
+    recipientName: Irfan Zulkifli
+    recipientTypeCode: INDIVIDUAL
+    recipientCitizenshipCode: NON_CITIZEN
+    remark: Monthly support
+    recipientEmail: recipient@gmail.com
+    recipientStatusCode: SENDER_NOT_RECIPIENT
+    recipientNationalityCode: MY
+    recipientCategoryCode: INDIVIDUAL
+    relationshipCode: NON_AFFILIATED
+    transactionCategoryCode: PENGHASILAN_PENGELUARAN
+    transactionDetailCode: TD001
+    additionalDetailRemark: Untuk kebutuhan keluarga
+    schedule:
+      frequencyCode: ONE_OFF
+      startDate: '2026-05-01'
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: '200'
+    message: Success
+    timestamp: '2026-05-20T09:30:15'
+    correlationId: d9b2d63d-a233-4123-8478-316827018c1e
+    meta: null
+    data:
+      paymentOrderId: 01ARZ3NDEKTSV4RRFFQ69G5FAV
+      transactionStatus: INITIATED
+      createdAt: '2026-04-22T14:30:00+08:00'
+    error: null
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: 'Validate business outcome: System will generate Idempotency Token for the transfer.'
+    type: custom
+references:
+  apiSpecFile: InitiateInterTransfer
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Trf_Immediate_Interbank

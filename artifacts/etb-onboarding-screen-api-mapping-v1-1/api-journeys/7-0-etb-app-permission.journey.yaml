@@ -1,0 +1,64 @@
+schemaVersion: 2.0.0
+generatedAt: '2026-07-27T06:52:54.096Z'
+source: ETB_Onboarding_Screen_API_Mapping_v1.1.xlsx
+feature: ETB Onboarding Screen API Mapping (All Journeys)
+category: API Journey
+journey:
+  title: ETB App Permission
+  code: 7.0 ETB - App Permission
+  description: ''
+summary:
+  totalSteps: 4
+  totalApiRows: 0
+  hasS2UAuthentication: false
+  testCaseIdPrefix: TC_70ETBAPP
+keyApis: []
+steps:
+  - stepNo: '1'
+    screen: App Permission
+    userAction: ''
+    systemBehaviour: ''
+    businessRules: >-
+      At permission screen, system will check current device permission and display remaining permission needed.
+
+
+      1. In the event customer downloaded the app, go to mobile device settings to perform the Location & Notification
+      setup, system checks that the specific settings are done, then no need to prompt again."
+    apis: []
+  - stepNo: '2'
+    screen: Native Location
+    userAction: ''
+    systemBehaviour: ''
+    businessRules: |-
+      "If user choose ""Don’t allow"" option in device native request
+
+      1. Location Permission
+      - Keep prompting permission screen to request location permission until user allows for location permission
+       >> If user keep choosing ""Don't allow"", user can't continue onboarding process
+    apis: []
+  - stepNo: '3'
+    screen: Native Location
+    userAction: ''
+    systemBehaviour: ''
+    businessRules: |-
+      "If user choose ""Don’t allow"" option in device native request
+
+      1. Location Permission
+      - Keep prompting permission screen to request location permission until user allows for location permission
+       >> If user keep choosing ""Don't allow"", user can't continue onboarding process
+    apis: []
+  - stepNo: '4'
+    screen: Notification Permission
+    userAction: ''
+    systemBehaviour: ''
+    businessRules: >-
+      "If user choose ""Don’t allow"" option in device native request
+
+
+      Notification Permission
+
+      - User can continue to next screen and setup notification permission later
+
+      - If user allows Notifications, the corresponding items that need to be turned on in [Settings] module need to be
+      allowed (e.g. general alerts PN = on)
+    apis: []

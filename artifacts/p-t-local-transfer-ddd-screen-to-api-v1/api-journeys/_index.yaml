@@ -1,0 +1,78 @@
+schemaVersion: 1.0.0
+generatedAt: '2026-07-27T03:25:39.685Z'
+source: P&T_Local_Transfer_DDD_Screen_to_API_v1.xlsx
+feature: P&T Local Transfer (All Journeys)
+category: API Journey
+journeys:
+  - title: Transfer Dashboard
+    code: Manage_Dashboard
+    file: manage-dashboard.journey.yaml
+    totalTestCases: 7
+    apiLinkedCases: 10
+    uiOnlyCases: 0
+  - title: Custom Recipient Management
+    code: Manage_Recipient
+    file: manage-recipient.journey.yaml
+    totalTestCases: 11
+    apiLinkedCases: 12
+    uiOnlyCases: 0
+  - title: Favourite Management
+    code: Manage_Favourite
+    file: manage-favourite.journey.yaml
+    totalTestCases: 8
+    apiLinkedCases: 9
+    uiOnlyCases: 0
+  - title: Own Account Transfer (Immediate)
+    code: Trf_Immediate_OwnAccount
+    file: trf-immediate-ownaccount.journey.yaml
+    totalTestCases: 7
+    apiLinkedCases: 6
+    uiOnlyCases: 2
+  - title: 3rd Party Account Transfer (Immediate)
+    code: Trf_Immediate_Intrabank
+    file: trf-immediate-intrabank.journey.yaml
+    totalTestCases: 10
+    apiLinkedCases: 7
+    uiOnlyCases: 4
+  - title: Interbank Account Transfer (Immediate)
+    code: Trf_Immediate_Interbank
+    file: trf-immediate-interbank.journey.yaml
+    totalTestCases: 9
+    apiLinkedCases: 7
+    uiOnlyCases: 3
+  - title: Scheduling/Recurring Transfer (For All Types)
+    code: Trf_Scheduling_All
+    file: trf-scheduling-all.journey.yaml
+    totalTestCases: 10
+    apiLinkedCases: 9
+    uiOnlyCases: 3
+  - title: Transfer from Beneficary List (All, Favourite, Frequent and Custom)
+    code: Trf_Fav_Bene_Freq_Transfer
+    file: trf-fav-bene-freq-transfer.journey.yaml
+    totalTestCases: 3
+    apiLinkedCases: 4
+    uiOnlyCases: 0
+  - title: Post Transfer Favourite Addition
+    code: Post_Trf_Add_Fav
+    file: post-trf-add-fav.journey.yaml
+    totalTestCases: 2
+    apiLinkedCases: 2
+    uiOnlyCases: 0
+  - title: Expenses Tracker
+    code: Trf_Expenses_Tracker
+    file: trf-expenses-tracker.journey.yaml
+    totalTestCases: 5
+    apiLinkedCases: 5
+    uiOnlyCases: 0
+  - title: Manage Scheduled Transfers Settings
+    code: Manage_Scheduling
+    file: manage-scheduling.journey.yaml
+    totalTestCases: 3
+    apiLinkedCases: 4
+    uiOnlyCases: 0
+  - title: Manage Limit Settings
+    code: Manage_Limit
+    file: manage-limit.journey.yaml
+    totalTestCases: 3
+    apiLinkedCases: 3
+    uiOnlyCases: 1

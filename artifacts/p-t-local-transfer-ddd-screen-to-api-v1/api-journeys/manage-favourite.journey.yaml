@@ -1,0 +1,803 @@
+schemaVersion: 2.0.0
+generatedAt: '2026-07-27T03:25:39.685Z'
+source: P&T_Local_Transfer_DDD_Screen_to_API_v1.xlsx
+feature: P&T Local Transfer (All Journeys)
+category: API Journey
+journey:
+  title: Favourite Management
+  code: Manage_Favourite
+  description: Expenses Tracker
+summary:
+  totalSteps: 8
+  totalApiRows: 9
+  hasS2UAuthentication: true
+  testCaseIdPrefix: TC_MFAV
+keyApis:
+  - name: getManageGroups
+    method: GET
+    endpoint: /v1/external/transfer/groups/management?scope=LOCAL
+    microservice: erp-beneficiary
+  - name: GetJourneyContent
+    method: GET
+    endpoint: cms/journeys/payment_transfer_manage_favourite?locale=en_MY&channel=MOBILE
+    microservice: CMS
+  - name: getTransferBeneficiaries
+    method: GET
+    endpoint: /v1/external/transfer?scope=LOCAL&groupType=FAVORITES&page=0&limit=10
+    microservice: erp-beneficiary
+  - name: getTransferBeneficiaries
+    method: GET
+    endpoint: /v1/external/transfer?scope=LOCAL&groupType=CUSTOM&groupId=G002&page=0&limit=10
+    microservice: erp-beneficiary
+  - name: S2UBeneficiaries
+    method: POST
+    endpoint: /v1/external/beneficiaries
+    microservice: erp-xp-transaction
+  - name: S2UBeneficiaries
+    method: DELETE
+    endpoint: /v1/external/beneficiaries
+    microservice: erp-xp-transaction
+  - name: updateBeneficiaryGroup
+    method: PATCH
+    endpoint: /v1/external/transfer/groups/{groupId}
+    microservice: erp-beneficiary
+  - name: deleteBeneficiaries
+    method: DELETE
+    endpoint: /v1/external/transfer?groupType=CUSTOM&groupId=G001&accountId=598322219222
+    microservice: erp-beneficiary
+steps:
+  - stepNo: '1'
+    screen: Manage Favorite
+    userAction: Favourite Group
+    systemBehaviour: Favourite Group
+    businessRules: |-
+      IF the number of Custom Favourite List is less than 4, (+) Create New List button will be available. 
+      Otherwise, hide the button
+    apis:
+      - name: getManageGroups
+        method: GET
+        endpoint: /v1/external/transfer/groups/management?scope=LOCAL
+        testCaseId: TC_MFAV_001a
+        requestSample: null
+        responseSample:
+          status: 200
+          message: Request processed successfully
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+          data:
+            groups:
+              - id: G001
+                type: FAVORITES
+                name: Favorites
+                count: 3
+              - id: G002
+                type: CUSTOM
+                name: Family
+                count: 4
+              - id: G003
+                type: CUSTOM
+                name: Friends
+                count: 2
+          link: {}
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: |-
+          IF the number of Custom Favourite List is less than 4, (+) Create New List button will be available. 
+          Otherwise, hide the button
+        downstream: |-
+          ECLIPSE DB: 
+          1. favorites_group
+          2. favorites_account
+          3. favorites_group_account
+      - name: GetJourneyContent
+        method: GET
+        endpoint: cms/journeys/payment_transfer_manage_favourite?locale=en_MY&channel=MOBILE
+        testCaseId: TC_MFAV_001b
+        requestSample: null
+        responseSample:
+          journeyId: local_transfer_manage_favourite
+          version: 1.0.0
+          screens:
+            - screenId: local_transfer_create_new_list
+              core:
+                typo:
+                  - id: title
+                    value: Manage favourite list
+                    description: Edit or create a new list and manage who’s in it.
+              navigation:
+                tab:
+                  - id: local
+                    label: Local
+                  - id: overseas
+                    label: Overseas
+              action:
+                button:
+                  - id: create_new_list
+                    label: Create new list
+            - screenId: local_transfer_favourites_list_overview
+              core:
+                typo:
+                  - id: title
+                    value: Favourites
+              container:
+                banner:
+                  - id: favSync
+                    description: Your favourites will sync with Maybank2u web when you add or remove recipients.
+              action:
+                button:
+                  - id: edit
+                    label: Edit
+                  - id: add_recipient
+                    label: Add recipient
+                  - id: done
+                    label: Done
+            - screenId: local_transfer_add_recipient_account
+              core:
+                typo:
+                  - id: addRecipient
+                    value: Add recipient
+                    description: Fill in the details to add them to favourites.
+              input:
+                textInput:
+                  - id: recipientBank
+                    label: Recipient bank/eWallet
+                    required: true
+                  - id: account_number
+                    label: Account number
+                    placeholder: Enter account number
+                    required: true
+                    minLength: 9
+                    maxLength: 20
+                    pattern: ^[0-9]{9,20}$
+                    errorMessage:
+                      - id: invalidAcc
+                        message: Invalid account number
+                  - id: nickname
+                    label: Nickname
+                    placeholder: Optional
+                    required: false
+                    maxLength: 50
+                    minLength: 0
+              statusAndFeedback:
+                alertBanner:
+                  - id: reminder
+                    message: Ensure the details are correct before proceeding.
+                    icon: Shield
+              action:
+                button:
+                  - id: next
+                    label: Next
+            - screenId: local_transfer_manage_favourite_final
+              asset:
+                image:
+                  - id: success
+                    url: https://res.cloudinary.com/deoklsh3h/image/upload/v1776057612/success.png
+                  - id: failure
+                    url: https://res.cloudinary.com/deoklsh3h/image/upload/v1776057612/failure.png
+              core:
+                typo:
+                  - id: success
+                    value: Added as favourite
+                  - id: failure
+                    value: Update unsuccessful
+                  - id: refId
+                    value: 'Ref ID:'
+              container:
+                list:
+                  - id: accountDetails
+                    items:
+                      - id: accountHolderName
+                        label: Account holder name
+                      - id: account_number
+                        label: Account number
+                      - id: recipientBank
+                        label: Recipient bank
+          modals:
+            - modalId: local_transfer_add_favourite_recipient_modal
+              container:
+                list:
+                  - id: add_method_list
+                    title: Add recipient via
+                    items:
+                      - id: recentTransfers
+                        label: Recent transfers
+                        icon: Recent
+                      - id: accountNumber
+                        label: Account Number
+                        icon: Bank
+            - modalId: local_transfer_select_bank_modal
+              navigation:
+                topNavigation:
+                  - id: transferTo
+                    title: Transfer to
+                tab:
+                  - id: all
+                    label: All
+                  - id: banks
+                    label: Banks
+                  - id: ewallets
+                    label: eWallets
+              input:
+                searchInput:
+                  - id: search_recipient
+                    placeholder: Search
+            - modalId: local_transfer_select_recipient_modal
+              navigation:
+                topNavigation:
+                  - id: selectRecipient
+                    title: Select recipient
+              input:
+                searchInput:
+                  - id: searchRecipient
+                    placeholder: Search
+              core:
+                typo:
+                  - id: all
+                    value: All
+              action:
+                button:
+                  - id: add
+                    label: Add
+            - modalId: local_transfer_nickname_tooltip
+              navigation:
+                topNavigation:
+                  - id: nickname
+                    title: Nickname
+              core:
+                typo:
+                  - id: nickname1
+                    description: Quickly recognise who you’re sending money to. You can edit this at any time.
+            - modalId: local_transfer_manage_favourite_edit_remove
+              navigation:
+                topNavigation:
+                  - id: editRemove
+                    title: Remove from this list?
+              core:
+                typo:
+                  - id: removeList
+                    value: This will also remove the recipient from your favourites on Maybank2u web.
+              action:
+                button:
+                  - id: remove
+                    label: Remove
+                  - id: keep
+                    label: Keep
+        mapping: null
+        microservice: CMS
+  - stepNo: '2'
+    screen: Manage Favorite - Details
+    userAction: Favorite Listing
+    systemBehaviour: Favorite Listing
+    businessRules: |-
+      Favourites Listing:
+      1. Display beneficiaries in Favouritess, sorted in ascending order (A-Z, 0-9) in the below order:
+      - Beneficiary Name 
+      - Beneficiary Bank Name 
+      - Account Number
+      2. If the recipient list is not empty, [Edit] option will be displayed. Otherwise hide.
+      3. Lazy load is available
+    apis:
+      - name: getTransferBeneficiaries
+        method: GET
+        endpoint: /v1/external/transfer?scope=LOCAL&groupType=FAVORITES&page=0&limit=10
+        testCaseId: TC_MFAV_002a
+        requestSample: null
+        responseSample:
+          status: 200
+          message: Request processed successfully
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+            page: 0
+            limit: 10
+            total: 55
+            nextPage: '1'
+          data:
+            beneficiaries:
+              - accountId: '4700025122'
+                accountHolderName: MUHAMMAD ALI MUTHU
+                nickname: ali account
+                bicCode: PBBEMYKL
+                bankName: PUBLIC BANK
+                profileImage: 3dieieo383992020202
+                transactionType: TRANSFER/PAYMENT
+                transactionSubtype: INTERBANK
+                transactionMetadata:
+                  serviceFees: 11
+                  firstTimeTac: '1'
+                  idNumber: null
+                  idType: null
+                  mobileNumber: ''
+                  idFlag: ''
+                  acquirerId: '564162'
+                  currency: ''
+                  balance: 0
+                  paymentCode: '01'
+              - accountId: '5500025133'
+                accountHolderName: 'MUHAMMAD AHMAD '
+                nickname: ahmad account
+                bicCode: PBBEMYKL
+                bankName: PUBLIC BANK
+                profileImage: 3dieieo383992020202
+                transactionType: TRANSFER/PAYMENT
+                transactionSubtype: INTERBANK
+                transactionMetadata:
+                  serviceFees: 11
+                  firstTimeTac: '1'
+                  idNumber: null
+                  idType: null
+                  mobileNumber: ''
+                  idFlag: ''
+                  acquirerId: '564162'
+                  currency: ''
+                  balance: 0
+                  paymentCode: '01'
+          link: {}
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: |-
+          Favourites Listing:
+          1. Display beneficiaries in Favouritess, sorted in ascending order (A-Z, 0-9) in the below order:
+          - Beneficiary Name 
+          - Beneficiary Bank Name 
+          - Account Number
+          2. If the recipient list is not empty, [Edit] option will be displayed. Otherwise hide.
+          3. Lazy load is available
+        downstream: |-
+          ECLIPSE DB: 
+          1. favourite_group
+          2. favourite_account
+          3. favourite_group_account
+          4. account_nickname
+        remarks: >-
+          FE -take from FE FAVORITES cache. If cache on value, FE need to call
+          beneficiary/v1/transfer?GroupType=FAVORITES API to get latest beneficiary listing for FAVORITES tab
+  - stepNo: '3'
+    screen: Manage Favorite - Details
+    userAction: Custom Listing
+    systemBehaviour: Custom Listing
+    businessRules: |-
+      Custom Listing:
+      1. Display beneficiaries in selected Custom list, sorted in ascending order (A-Z, 0-9) in the below order:
+      - Beneficiary Name 
+      - Beneficiary Bank Name 
+      - Account Number 
+      2. If the recipient list is not empty, [Edit] option will be displayed. Otherwise hide.
+      3. Lazy load is available
+    apis:
+      - name: getTransferBeneficiaries
+        method: GET
+        endpoint: /v1/external/transfer?scope=LOCAL&groupType=CUSTOM&groupId=G002&page=0&limit=10
+        testCaseId: TC_MFAV_003a
+        requestSample: null
+        responseSample:
+          status: 200
+          message: Request processed successfully
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+            page: 0
+            limit: 10
+            total: 55
+            nextPage: '1'
+          data:
+            beneficiaries:
+              - accountId: '4700025122'
+                accountHolderName: MUHAMMAD ALI MUTHU
+                nickname: ali account
+                bicCode: PBBEMYKL
+                bankName: PUBLIC BANK
+                profileImage: 3dieieo383992020202
+                transactionType: TRANSFER/PAYMENT
+                transactionSubtype: INTERBANK
+                transactionMetadata:
+                  serviceFees: 11
+                  firstTimeTac: '1'
+                  idNumber: null
+                  idType: null
+                  mobileNumber: ''
+                  idFlag: ''
+                  acquirerId: '564162'
+                  currency: ''
+                  balance: 0
+                  paymentCode: '01'
+              - accountId: '5500025133'
+                accountHolderName: 'MUHAMMAD AHMAD '
+                nickname: ahmad account
+                bicCode: PBBEMYKL
+                bankName: PUBLIC BANK
+                profileImage: 3dieieo383992020202
+                transactionType: TRANSFER/PAYMENT
+                transactionSubtype: INTERBANK
+                transactionMetadata:
+                  serviceFees: 11
+                  firstTimeTac: '1'
+                  idNumber: null
+                  idType: null
+                  mobileNumber: ''
+                  idFlag: ''
+                  acquirerId: '564162'
+                  currency: ''
+                  balance: 0
+                  paymentCode: '01'
+          link: {}
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: |-
+          Custom Listing:
+          1. Display beneficiaries in selected Custom list, sorted in ascending order (A-Z, 0-9) in the below order:
+          - Beneficiary Name 
+          - Beneficiary Bank Name 
+          - Account Number 
+          2. If the recipient list is not empty, [Edit] option will be displayed. Otherwise hide.
+          3. Lazy load is available
+        downstream: |-
+          ECLIPSE DB: 
+          1. favourite_group
+          2. favourite_account
+          3. favourite_group_account
+          4. account_nickname
+        remarks: >-
+          FE -take from FE FAVORITES cache. If cache on value, FE need to call
+          beneficiary/v1/transfer?GroupType=FAVORITES API to get latest beneficiary listing for FAVORITES tab
+  - stepNo: '4'
+    screen: Manage Favorite - Add from Account Number
+    userAction: Add Favorite from Account Number
+    systemBehaviour: Add Favorite from Account Number
+    businessRules: |-
+      Upon tapping [Next] button, system to perform:
+      1. Mandatory checking. If field is empty, system displays inline error message "Required field."
+      2. If validation passed, trigger S2U authorisation.
+      3. For successful creation, a beneficiary will be created and populated into the Landing Page with below format:
+       [Nickname] - will be displayed in Beneficiary Name field
+       [Nickname]
+       [Account Number] . [Bank Name]
+    apis:
+      - name: S2UBeneficiaries
+        method: POST
+        endpoint: /v1/external/beneficiaries
+        testCaseId: TC_MFAV_004a
+        requestSample:
+          groups:
+            - operation: add
+              type: FAVOURITES
+              name: Favourites
+          beneficiaries:
+            - accountId: '4700025122'
+              accountHolderName: MUHAMMAD ALI MUTHU
+              nickname: ali nickname
+              bicCode: PBBEMYKL
+              bankName: PUBLIC BANK
+              transactionType: TRANSFER/PAYMENT
+              transactionSubtype: INTERBANK
+              transactionMetadata:
+                serviceFees: 11
+                firstTimeTac: '1'
+                idNumber: null
+                idType: null
+                mobileNumber: ''
+                idFlag: ''
+                swiftCode: PBBEMYKL
+                acquirerId: '564162'
+                accountType: ''
+                accountSubType: ''
+                currency: ''
+                balance: 0
+                paymentCode: '01'
+        responseSample:
+          status: success
+          extra: ''
+          note: ''
+          header: added_as_favourite_success_header
+          desc: ''
+          details: >-
+            {"reference_id":"268614863M","date_time":"07 May 2026, 04:05 PM","account_holder_name":"Andy
+            Loo","account_number":"5042 3341 3421","recipient_bank":"Maybank"}
+          receipt: ''
+        mapping: null
+        microservice: erp-xp-transaction
+        businessContext: >-
+          Upon tapping [Next] button, system to perform:
+
+          1. Mandatory checking. If field is empty, system displays inline error message "Required field."
+
+          2. If validation passed, trigger S2U authorisation.
+
+          3. For successful creation, a beneficiary will be created and populated into the Landing Page with below
+          format:
+           [Nickname] - will be displayed in Beneficiary Name field
+           [Nickname]
+           [Account Number] . [Bank Name]
+        downstream: |-
+          ECLIPSE DB: 
+          1. favourite_group
+          2. favourite_account
+          3. favourite_group_account
+          4. account_nickname
+        remarks: |-
+          1. When Click [Next] button, need to call account verify API to retrieve accountHolderName 
+          2. if add from account number, how to get the currency ?
+  - stepNo: '5'
+    screen: Manage Favorite - Add from Frequent
+    userAction: Add Favorite from Frequent
+    systemBehaviour: Add Favorite from Frequent
+    businessRules: >-
+      Search Bar:
+
+      1. Wildcard search will be performed once the user has entered 2 characters (key up). Searching of beneficiaries
+      include fields below:
+
+      a. Beneficiaries Account Name
+
+      b. Beneficiaries Nickname
+
+      c. Beneficiaries Account Number
+
+      d. Beneficiaries Bank Name.
+
+      2. Listing of beneficiary will be the same as Transfer Landing Page ALL tab. Refer to Trf - Landing Page.
+
+      3. For search result that returns EMPTY:
+
+      a. System to display "We couldn't find a match for <input data>" 
+
+
+      Upon tapping a beneficiary:
+
+      1. If beneficiary is not a favourite, system displays "Add Recipient" as screen header. User to key in nickname or
+      leave the field empty.
+
+      2. If beneficiary has a nickname, system displays "Edit Nickname". User is able to edit current beneficiary's
+      nickname.
+
+
+      Upon tapping [Next]
+
+      1. for a non-favourite beneficiary, navigate to S2U.
+
+      2. for an existing favourite:
+
+      a. IF no changes on nickname, display toastbar message "This recipient has already been added as favourite."
+
+      b. IF there are changes on nickname, navigate to S2U.
+    apis:
+      - name: S2UBeneficiaries
+        method: POST
+        endpoint: /v1/external/beneficiaries
+        testCaseId: TC_MFAV_005a
+        requestSample:
+          groups:
+            - operation: add
+              type: FAVOURITES
+              name: Favourites
+          beneficiaries:
+            - accountId: '4700025122'
+              accountHolderName: MUHAMMAD ALI MUTHU
+              nickname: ali nickname
+              bicCode: PBBEMYKL
+              bankName: PUBLIC BANK
+              transactionType: TRANSFER/PAYMENT
+              transactionSubtype: INTERBANK
+              transactionMetadata:
+                serviceFees: 11
+                firstTimeTac: '1'
+                idNumber: null
+                idType: null
+                mobileNumber: ''
+                idFlag: ''
+                swiftCode: PBBEMYKL
+                acquirerId: '564162'
+                accountType: ''
+                accountSubType: ''
+                currency: ''
+                balance: 0
+                paymentCode: '01'
+        responseSample:
+          status: success
+          extra: ''
+          note: ''
+          header: added_as_favourite_success_header
+          desc: ''
+          details: >-
+            {"reference_id":"268614863M","date_time":"07 May 2026, 04:05 PM","account_holder_name":"Andy
+            Loo","account_number":"5042 3341 3421","recipient_bank":"Maybank"}
+          receipt: ''
+        mapping: null
+        microservice: erp-xp-transaction
+        businessContext: >-
+          Search Bar:
+
+          1. Wildcard search will be performed once the user has entered 2 characters (key up). Searching of
+          beneficiaries include fields below:
+
+          a. Beneficiaries Account Name
+
+          b. Beneficiaries Nickname
+
+          c. Beneficiaries Account Number
+
+          d. Beneficiaries Bank Name.
+
+          2. Listing of beneficiary will be the same as Transfer Landing Page ALL tab. Refer to Trf - Landing Page.
+
+          3. For search result that returns EMPTY:
+
+          a. System to display "We couldn't find a match for <input data>" 
+
+
+          Upon tapping a beneficiary:
+
+          1. If beneficiary is not a favourite, system displays "Add Recipient" as screen header. User to key in
+          nickname or leave the field empty.
+
+          2. If beneficiary has a nickname, system displays "Edit Nickname". User is able to edit current beneficiary's
+          nickname.
+
+
+          Upon tapping [Next]
+
+          1. for a non-favourite beneficiary, navigate to S2U.
+
+          2. for an existing favourite:
+
+          a. IF no changes on nickname, display toastbar message "This recipient has already been added as favourite."
+
+          b. IF there are changes on nickname, navigate to S2U.
+        downstream: |-
+          ECLIPSE DB: 
+          1. favourite_group
+          2. favourite_account
+          3. favourite_group_account
+          4. account_nickname
+  - stepNo: '6'
+    screen: Manage Favorite - Remove favorite
+    userAction: Remove Favourite
+    systemBehaviour: Remove Favourite
+    businessRules: |-
+      Upon deleting/removing a beneficiary from the list (tapping trash icon), to display a confirmation pop-up:
+      a. Tap on [Remove]: navigate to S2U.
+      b. Tap on [Keep]: maintain the beneficiary and close the pop up confirmation, no changes will be performed.
+    apis:
+      - name: S2UBeneficiaries
+        method: DELETE
+        endpoint: /v1/external/beneficiaries
+        testCaseId: TC_MFAV_006a
+        requestSample:
+          groups:
+            - operation: delete
+              type: FAVOURITES
+              name: Favourites
+          beneficiaries:
+            - accountId: '4700025122'
+              accountHolderName: MUHAMMAD ALI MUTHU
+              nickname: ali nickname
+              bicCode: PBBEMYKL
+              bankName: PUBLIC BANK
+              transactionType: TRANSFER/PAYMENT
+              transactionSubtype: INTERBANK
+              transactionMetadata:
+                serviceFees: 11
+                firstTimeTac: '1'
+                idNumber: null
+                idType: null
+                mobileNumber: ''
+                idFlag: ''
+                swiftCode: PBBEMYKL
+                acquirerId: '564162'
+                accountType: ''
+                accountSubType: ''
+                currency: ''
+                balance: 0
+                paymentCode: '01'
+        responseSample:
+          status: success
+          extra: ''
+          note: ''
+          header: recipient_removed_success_header
+          desc: ''
+          details: >-
+            {"reference_id":"268614863M","date_time":"07 May 2026, 04:05 PM","account_holder_name":"Andy
+            Loo","account_number":"5042 3341 3421","recipient_bank":"Maybank", "nickname":"andy loo nickname"}
+          receipt: ''
+        mapping: null
+        microservice: erp-xp-transaction
+        businessContext: |-
+          Upon deleting/removing a beneficiary from the list (tapping trash icon), to display a confirmation pop-up:
+          a. Tap on [Remove]: navigate to S2U.
+          b. Tap on [Keep]: maintain the beneficiary and close the pop up confirmation, no changes will be performed.
+        downstream: |-
+          ECLIPSE DB: 
+          1. favourites_group
+          2. favourites_account
+          3. favourites_group_account
+  - stepNo: '7'
+    screen: Manage Favorite - Custom
+    userAction: Edit Custom Group Name
+    systemBehaviour: Edit Custom Group Name
+    businessRules: |-
+      1. List name is mandatory and is not allowed to have duplicate name with other list (Favourite & Custom): 
+      a. Perform mandatory checking on List name.
+      b. If list name is duplicated, display error message: "Name cannot be the same as existing lists."
+      2. For successful update after tapping Done, display toast message "List name updated."
+    apis:
+      - name: updateBeneficiaryGroup
+        method: PATCH
+        endpoint: /v1/external/transfer/groups/{groupId}
+        testCaseId: TC_MFAV_007a
+        requestSample:
+          groupName: New best friend
+        responseSample:
+          status: 200
+          message: update_beneficiaries_group_success
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: |-
+          1. List name is mandatory and is not allowed to have duplicate name with other list (Favourite & Custom): 
+          a. Perform mandatory checking on List name.
+          b. If list name is duplicated, display error message: "Name cannot be the same as existing lists."
+          2. For successful update after tapping Done, display toast message "List name updated."
+        downstream: |-
+          ECLIPSE DB: 
+          1. favourites_group
+  - stepNo: '8'
+    screen: Manage Favorite - Custom
+    userAction: Delete Custom Recipient
+    systemBehaviour: Delete Custom Recipient
+    businessRules: >-
+      For deletion (tapping trash icon):
+
+      1. User can delete the recipient one-by-one.
+
+      2. For every recipient removed, to display a toast message "Recipient removed." For editing, system allows for a
+      custom list to have 0 recipients.
+
+      3. User is able to delete the whole custom list by tapping on [Remove List]. A pop up confirmation will be
+      displayed:
+
+      a. Tap on [Remove]: Delete the whole custom list and navigate to manage favourite list dashboard with toast
+      message "List removed."
+
+      b. Tap on [Keep]: No changes, whole list is retained.
+    apis:
+      - name: deleteBeneficiaries
+        method: DELETE
+        endpoint: /v1/external/transfer?groupType=CUSTOM&groupId=G001&accountId=598322219222
+        testCaseId: TC_MFAV_008a
+        requestSample: null
+        responseSample:
+          status: 200
+          message: delete_beneficiaries_success
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+        mapping: null
+        microservice: erp-beneficiary
+        businessContext: >-
+          For deletion (tapping trash icon):
+
+          1. User can delete the recipient one-by-one.
+
+          2. For every recipient removed, to display a toast message "Recipient removed." For editing, system allows for
+          a custom list to have 0 recipients.
+
+          3. User is able to delete the whole custom list by tapping on [Remove List]. A pop up confirmation will be
+          displayed:
+
+          a. Tap on [Remove]: Delete the whole custom list and navigate to manage favourite list dashboard with toast
+          message "List removed."
+
+          b. Tap on [Keep]: No changes, whole list is retained.
+        downstream: |-
+          ECLIPSE DB: 
+          1. favourites_group
+          2. favourites_account
+          3. favourites_group_account

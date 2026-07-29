@@ -1,0 +1,73 @@
+id: TC_PTAF_001a
+title: 1. Transfer Result - addBeneficiaries
+feature: Post Transfer Favourite Addition
+journey: Post_Trf_Add_Fav
+stepNo: '1'
+screen: Transfer Result
+userAction: |-
+  User view the transfer result screen. (S2U Acknowledgement Screen)
+
+  User can add the user as favourite here with the love button.
+request:
+  method: POST
+  url: /v1/external/transfer
+  endpoint: /v1/external/transfer
+  headers:
+    Accept: application/json
+  body:
+    groups:
+      - type: FAVOURITES
+        name: Favourites
+    beneficiaries:
+      - accountId: '4700025122'
+        accountHolderName: MUHAMMAD ALI MUTHU
+        nickname: ali nickname
+        bicCode: PBBEMYKL
+        bankName: PUBLIC BANK
+        transactionType: TRANSFER/PAYMENT
+        transactionSubtype: INTERBANK
+        transactionMetadata:
+          serviceFees: 11
+          firstTimeTac: '1'
+          idNumber: null
+          idType: null
+          mobileNumber: ''
+          idFlag: ''
+          swiftCode: PBBEMYKL
+          acquirerId: '564162'
+          accountType: ''
+          accountSubType: ''
+          currency: ''
+          balance: 0
+          paymentCode: '01'
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: add_beneficiaries_success
+    timestamp: '2026-01-13T12:00:00'
+    correlationId: abc123-correlation-id
+    meta:
+      provider: erp
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: Adding to favourite:
+
+      1. Tapping love icon will add beneficiary to favourite. As a result, heart shape will be filled with a full black
+      color. Retapping on black heart will remove the added beneficiary from favourite. No maximum attempts. S2U is not
+      required.
+
+      2. For Transfer to Beneficiary that is already a favourite, love icon is hidden.
+
+      3. For Transfer to Maybnak's one-off VA account (closedPayment flag), heart icon is hidden.
+
+
+      As this current sheet, we will only focus on the adding favourites on post transfer, other screen behaviors and
+      rules can be referred by to the immediate transfer sheets.
+    type: custom
+references:
+  apiSpecFile: addBeneficiaries
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Post_Trf_Add_Fav

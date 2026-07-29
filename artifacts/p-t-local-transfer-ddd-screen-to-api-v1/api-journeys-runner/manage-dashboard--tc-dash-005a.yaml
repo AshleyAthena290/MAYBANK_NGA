@@ -1,0 +1,153 @@
+id: TC_DASH_005a
+title: 5. Transfer - Local (Own) - getDashboard
+feature: Transfer Dashboard
+journey: Manage_Dashboard
+stepNo: '5'
+screen: Transfer - Local (Own)
+userAction: Own tab
+request:
+  method: GET
+  url: /v1/external/accounts?accountGroup=CASA
+  endpoint: /v1/external/accounts?accountGroup=CASA
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: Request processed successfully
+    timestamp: '2026-01-13T12:00:00'
+    correlationId: abc123-correlation-id
+    meta:
+      provider: null
+    data:
+      aggregated:
+        balance: 107856305.1
+        count: 3
+        currency: IDR
+      accounts:
+        - status: ACTIVE
+          accountId: '514013314526'
+          cardNumber: '888812138888'
+          currency: IDR
+          type: CA
+          ownership: INDIVIDUAL
+          nickname: ddev6 income account
+          productType: CONVENTIONAL
+          group: CASA
+          category: ASSET
+          name: Current Account
+          balance: 98592617.15
+          updateDatetime: '2026-05-06 20:25:34'
+          isPrimary: true
+          productCode: '03'
+        - status: ACTIVE
+          accountId: '014012654593'
+          cardNumber: '888812138888'
+          currency: MYR
+          type: CA
+          ownership: INDIVIDUAL
+          productType: CONVENTIONAL
+          group: CASA
+          category: ASSET
+          name: MAE Wallet
+          balance: 868.19
+          updateDatetime: '2026-05-06 20:25:33'
+          isPrimary: false
+          productCode: CC
+        - status: ACTIVE
+          accountId: '900000020478'
+          currency: IDR
+          cardNumber: '888812138888'
+          type: CA
+          ownership: INDIVIDUAL
+          nickname: ''
+          productType: ISLAMIC
+          group: CASA
+          category: ASSET
+          name: Maybank Tabungan Global Access
+          balance: 3381557
+          updateDatetime: '2026-02-06 20:25:29'
+          openingDateTime: ''
+          productCode: CE
+          buckets:
+            - currency: IDR
+              balance: 31155532
+              convertedBalance: 31155532
+              details:
+                - key: current_balance
+                  currency: IDR
+                  value: 31155532
+                - key: available_balance
+                  currency: IDR
+                  value: 31155532
+                - key: balance_on_hold
+                  currency: IDR
+                  value: 0
+            - currency: USD
+              balance: 1008.9
+              convertedBalance: 16930225
+              details:
+                - key: current_balance
+                  currency: USD
+                  value: 1008.9
+                - key: available_balance
+                  currency: USD
+                  value: 1008.9
+                - key: balance_on_hold
+                  currency: USD
+                  value: 0
+            - currency: SGD
+              balance: 250
+              convertedBalance: 3381557.5
+              details:
+                - key: current_balance
+                  currency: SGD
+                  value: 250
+                - key: available_balance
+                  currency: SGD
+                  value: 250
+                - name: balance_on_hold
+                  currency: SGD
+                  value: 0
+        - status: ACTIVE
+          accountId: '164017833708'
+          cardNumber: '888812138888'
+          currency: MYR
+          type: SA
+          ownership: INDIVIDUAL
+          productType: ISLAMIC
+          group: CASA
+          category: ASSET
+          name: Savings Account
+          balance: 9261785
+          updateDatetime: '2026-02-27 14:57:38'
+          isPrimary: false
+          productCode: '13'
+    links: {}
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: Display criteria for OWN are:
+
+      a. Account list includes:
+
+      - user's own list of Active accounts. 
+
+      - all currencies
+
+      - accounts list covers Deposit Accounts (CASA & VA only). Product Category to be displayed will be based on NGBO
+      config by country.
+
+      b. Account list will NOT be sorted in any particular order.
+
+      c. IF user has only one active account and since the primary/SoF will be the same account, user will not be able
+      to perform transfer to own account. When user taps on the only listed account, display an toastbar message "You
+      cannot send money to the same account your're transferring from" (Refer to screen).
+    type: custom
+references:
+  apiSpecFile: getDashboard
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Dashboard

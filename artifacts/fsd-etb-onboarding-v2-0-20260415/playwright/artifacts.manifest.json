@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-07-05T13:38:25.359Z",
+  "generatedAt": "2026-07-06T01:27:52.985Z",
   "artifacts": [
     {
       "testFilePath": "artifacts\\fsd-etb-onboarding-v2-0-20260415\\playwright\\tests\\title.spec.ts",

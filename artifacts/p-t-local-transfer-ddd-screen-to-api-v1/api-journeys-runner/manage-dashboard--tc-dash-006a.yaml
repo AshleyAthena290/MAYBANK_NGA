@@ -1,0 +1,124 @@
+id: TC_DASH_006a
+title: 6. Transfer - Local (All) - getTransferBeneficiaries
+feature: Transfer Dashboard
+journey: Manage_Dashboard
+stepNo: '6'
+screen: Transfer - Local (All)
+userAction: All tab
+request:
+  method: GET
+  url: /v1/external/transfer?scope=LOCAL&groupType=ALL&page=0&limit=10
+  endpoint: /v1/external/transfer?scope=LOCAL&groupType=ALL&page=0&limit=10
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    status: 200
+    message: Request processed successfully
+    timestamp: '2026-01-13T12:00:00'
+    correlationId: abc123-correlation-id
+    meta:
+      provider: erp
+      page: 0
+      limit: 10
+      total: 55
+      nextPage: '1'
+    data:
+      beneficiaries:
+        - accountId: '4700025122'
+          accountHolderName: MUHAMMAD ALI MUTHU
+          nickname: ali account
+          bicCode: PBBEMYKL
+          bankName: PUBLIC BANK
+          profileImage: 3dieieo383992020202
+          groups:
+            - id: G001
+              type: FAVORITES
+              name: Favorites
+            - id: G002
+              type: CUSTOM
+              name: Family
+            - id: G003
+              type: CUSTOM
+              name: Friends
+          transactionType: TRANSFER/PAYMENT
+          transactionSubtype: INTERBANK
+          transactionMetadata:
+            serviceFees: 11
+            firstTimeTac: '1'
+            idNumber: null
+            idType: null
+            mobileNumber: ''
+            idFlag: ''
+            acquirerId: '564162'
+            currency: ''
+            balance: 0
+            paymentCode: '01'
+        - accountId: '5500025133'
+          accountHolderName: 'MUHAMMAD AHMAD '
+          nickname: ahmad account
+          bicCode: PBBEMYKL
+          bankName: PUBLIC BANK
+          profileImage: 3dieieo383992020202
+          groups:
+            - id: G001
+              type: FAVORITES
+              name: Favorites
+            - id: G003
+              type: CUSTOM
+              name: Friends
+          transactionType: TRANSFER/PAYMENT
+          transactionSubtype: INTERBANK
+          transactionMetadata:
+            serviceFees: 11
+            firstTimeTac: '1'
+            idNumber: null
+            idType: null
+            mobileNumber: ''
+            idFlag: ''
+            acquirerId: '564162'
+            currency: ''
+            balance: 0
+            paymentCode: '01'
+    link: {}
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: >-
+      Validate business outcome: Display criteria for ALL list are:
+
+      a. Beneficiaries consist combination of:
+
+      - Successful transactions within the past 90 days via RMBP & M2U Web (applicable for user migrated to NGA). Past
+      90 days is from the day user onboard to NGA.
+
+      - All successful transaction in NGA to date.
+
+      - Virtual Accounts (display for recurring VA only, check isClosedPayment flag to identify if is one off VA or
+      recurring).
+
+      - EXCLUDE "Transfer to Own".
+
+      b. Beneficiaries will be sorted in ascending order (A-Z, 0-9) in the below order:
+
+      (i) Beneficiary name (if has nickname value, then these will be further sorted at the top with nickname in
+      ascending order)
+
+      (ii) Entity name 
+
+      (iii) Account number
+
+      c. Lazy load is available.
+
+      d. User will be able to remove a beneficiary from ALL list. Details of beneficiary removal will be explained in
+      respective section.
+
+      e. IF list is empty, system to display "No transfers yet" with information (refer to screen Dashboard - Empty
+      State).
+    type: custom
+references:
+  apiSpecFile: getTransferBeneficiaries
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Dashboard

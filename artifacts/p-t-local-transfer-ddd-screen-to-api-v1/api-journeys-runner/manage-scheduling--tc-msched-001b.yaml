@@ -1,0 +1,145 @@
+id: TC_MSCHED_001b
+title: 1. Scheduled/Recurring Transfer Listing - GetJourneyContent
+feature: Manage Scheduled Transfers Settings
+journey: Manage_Scheduling
+stepNo: '1'
+screen: Scheduled/Recurring Transfer Listing
+userAction: |-
+  User opens Scheduled Transfers page from the submenu of the transfer dashboard (Entry Point 1)
+
+  User opens Scheduled Transfers page from the Settings (Entry Point 2)
+request:
+  method: GET
+  url: cms/journeys/payment_transfer_schedule_recurring?locale=en_MY&channel=MOBILE
+  endpoint: cms/journeys/payment_transfer_schedule_recurring?locale=en_MY&channel=MOBILE
+  headers:
+    Accept: application/json
+  body: null
+response:
+  successStatusCode: 200
+  sampleResponse:
+    journeyId: local_transfer_manage_scheduled_recurring_transfer
+    version: 1.0.0
+    screens:
+      - screenId: local_transfer_manage_scheduled_recurring_transfer_list
+        navigation:
+          tab:
+            - id: individual
+              label: Individual
+            - id: batch
+              label: Batch
+        core:
+          typo:
+            - id: transfer
+              value: Transfer
+        container:
+          card:
+            - id: scheduledTransferCard
+              items:
+                - id: amount
+                  label: Amount
+                - id: frequency
+                  label: Frequency
+                - id: transferDate
+                  label: Transfer date
+                - id: startDate
+                  label: Start date
+                - id: endDate
+                  label: End date
+      - screenId: local_transfer_manage_scheduled_remove_recurring_transfer
+        core:
+          typo:
+            - id: amount
+              value: Amount
+        container:
+          list:
+            - id: scheduledTransferList
+              items:
+                - id: refID
+                  label: Reference ID
+                - id: dateOfCreation
+                  label: Date of Creation
+                - id: frequency
+                  label: Frequency
+                - id: transferDate
+                  label: Transfer date
+                - id: startDate
+                  label: Start date
+                - id: endDate
+                  label: End date
+                - id: sourceOfFund
+                  label: Source of fund
+        action:
+          button:
+            - id: cancel
+              label: Cancel
+      - screenId: local_transfer_remove_recurring_final
+        asset:
+          image:
+            - id: success
+              url: https://res.cloudinary.com/deoklsh3h/image/upload/v1776057612/success.png
+            - id: failure
+              url: https://res.cloudinary.com/deoklsh3h/image/upload/v1776057612/failure.png
+        core:
+          typo:
+            - id: successRecurring
+              value: Recurring transfer cancelled
+            - id: successScheduled
+              value: Scheduled transfer cancelled
+            - id: refId
+              value: 'Ref ID:'
+            - id: failure
+              value: Update unsuccessful
+        container:
+          list:
+            - id: accountDetails
+              items:
+                - id: accountHolderName
+                  label: Account holder name
+                - id: account_number
+                  label: Account number
+                - id: recipientBank
+                  label: Recipient bank
+                - id: transactionType
+                  label: Transaction type
+    modals:
+      - modalId: local_transfer_remove_recurring_transfer
+        navigation:
+          navigationHeader:
+            - id: removeRecurringTransfer
+              title: Remove recurring transfer?
+        core:
+          typo:
+            - id: message
+              value: >-
+                Any recurring transfers to this recipient will be stopped and no longer processed. You may start a new
+                transfer to set it up again.
+        action:
+          button:
+            - id: remove
+              label: Remove
+            - id: keep
+              label: Keep
+assertions:
+  - description: Status code equals 200
+    type: status
+    expectedValue: 200
+  - description: |-
+      Validate business outcome: For searching scheduled/recurring transactions:
+      a. Searching will be based on the selected Tab (Individual or Batch).
+      b. Support wildcard search by entering minimum 3 characters.
+      c. Searching criteria:
+      (i) Individual Tab:
+      - Beneficiary Name
+      - Amount
+      (ii) Batch Tab:
+      - Batch Name
+      - Amount
+      c. Display listing:
+      (i) Sort & display nearest scheduled transaction date (Transfer Date or Start Date) first.
+      (ii) In the event transaction date is same, sorting is based on date created (earliest to latest).
+      d. If searching returns empty, display "We could not find a match" screen.
+    type: custom
+references:
+  apiSpecFile: GetJourneyContent
+  sourceWorksheet: P&T Local Transfer (All Journeys) / Manage_Scheduling

@@ -1,0 +1,281 @@
+schemaVersion: 2.0.0
+generatedAt: '2026-07-27T03:25:39.685Z'
+source: P&T_Local_Transfer_DDD_Screen_to_API_v1.xlsx
+feature: P&T Local Transfer (All Journeys)
+category: API Journey
+journey:
+  title: Expenses Tracker
+  code: Trf_Expenses_Tracker
+  description: Managing the expenses category for all the user transactions.
+summary:
+  totalSteps: 5
+  totalApiRows: 5
+  hasS2UAuthentication: true
+  testCaseIdPrefix: TC_EXP
+keyApis:
+  - name: getSubCategoryClassification
+    method: GET
+    endpoint: /v1/external/sub-categories/classification?key=TRANSFER&subKey=INTERBANK&description=makan
+    microservice: erp-pfm
+  - name: |-
+      Please refer to Trf_immediate_Intrabank for Intrabank Final Transfer Result Screen
+
+      Please refer to Trf_immediate_Interbank for Interbank Final Transfer Result Screen
+    method: |-
+      PLEASE REFER TO TRF_IMMEDIATE_INTRABANK FOR INTRABANK FINAL TRANSFER RESULT SCREEN
+
+      PLEASE REFER TO TRF_IMMEDIATE_INTERBANK FOR INTERBANK FINAL TRANSFER RESULT SCREEN
+    endpoint: |-
+      Please refer to Trf_immediate_Intrabank for Intrabank Final Transfer Result Screen
+
+      Please refer to Trf_immediate_Interbank for Interbank Final Transfer Result Screen
+    microservice: |-
+      Please refer to Trf_immediate_Intrabank for Intrabank Final Transfer Result Screen
+
+      Please refer to Trf_immediate_Interbank for Interbank Final Transfer Result Screen
+  - name: getCategories
+    method: GET
+    endpoint: /v1/external/categories
+    microservice: erp-pfm
+  - name: addSubCategory
+    method: POST
+    endpoint: /v1/external/sub-categories
+    microservice: erp-pfm
+  - name: updateSubCategory
+    method: PATCH
+    endpoint: /v1/external/sub-categories/{subCategoryId}
+    microservice: erp-pfm
+steps:
+  - stepNo: '1'
+    screen: Transfer Result Screen
+    userAction: When execute s2u api, require to call eclipse API in order to get the pre-defined subCategory
+    systemBehaviour: ''
+    businessRules: ''
+    apis:
+      - name: getSubCategoryClassification
+        method: GET
+        endpoint: /v1/external/sub-categories/classification?key=TRANSFER&subKey=INTERBANK&description=makan
+        testCaseId: TC_EXP_001a
+        requestSample: null
+        responseSample:
+          status: 200
+          message: Request processed successfully
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+          data:
+            subCategory:
+              categoryId: '001'
+              id: '009'
+              name: Abu Cafe
+              colorCode: '#FFAB40'
+              icon: restaurant
+              isSystem: false
+          link: {}
+        mapping: null
+        microservice: erp-pfm
+        downstream: |-
+          ECLIPSE DB: 
+          1. dim_category 
+          2. dim_sub_category
+  - stepNo: '2'
+    screen: Transfer Result Screen
+    userAction: User completed the transfer process.
+    systemBehaviour: Upon completion, system will fire an async kafka events for eclipse to handle all the post transaction events.
+    businessRules: >-
+      The post transaction events that sent to Eclipse domain includes the insertion of Inet records, generation of
+      receipt and the expense category of the transaction. 
+
+
+      Therefore, there is no related API for this step.
+    apis:
+      - name: |-
+          Please refer to Trf_immediate_Intrabank for Intrabank Final Transfer Result Screen
+
+          Please refer to Trf_immediate_Interbank for Interbank Final Transfer Result Screen
+        method: |-
+          PLEASE REFER TO TRF_IMMEDIATE_INTRABANK FOR INTRABANK FINAL TRANSFER RESULT SCREEN
+
+          PLEASE REFER TO TRF_IMMEDIATE_INTERBANK FOR INTERBANK FINAL TRANSFER RESULT SCREEN
+        endpoint: |-
+          Please refer to Trf_immediate_Intrabank for Intrabank Final Transfer Result Screen
+
+          Please refer to Trf_immediate_Interbank for Interbank Final Transfer Result Screen
+        testCaseId: TC_EXP_002a
+        requestSample: |-
+          Please refer to Trf_immediate_Intrabank for Intrabank Final Transfer Result Screen
+
+          Please refer to Trf_immediate_Interbank for Interbank Final Transfer Result Screen
+        responseSample: |-
+          Please refer to Trf_immediate_Intrabank for Intrabank Final Transfer Result Screen
+
+          Please refer to Trf_immediate_Interbank for Interbank Final Transfer Result Screen
+        mapping: null
+        microservice: |-
+          Please refer to Trf_immediate_Intrabank for Intrabank Final Transfer Result Screen
+
+          Please refer to Trf_immediate_Interbank for Interbank Final Transfer Result Screen
+        businessContext: >-
+          The post transaction events that sent to Eclipse domain includes the insertion of Inet records, generation of
+          receipt and the expense category of the transaction. 
+
+
+          Therefore, there is no related API for this step.
+        downstream: |-
+          Please refer to Trf_immediate_Intrabank for Intrabank Final Transfer Result Screen
+
+          Please refer to Trf_immediate_Interbank for Interbank Final Transfer Result Screen
+        remarks: |-
+          Please refer to Trf_immediate_Intrabank for Intrabank Final Transfer Result Screen
+
+          Please refer to Trf_immediate_Interbank for Interbank Final Transfer Result Screen
+  - stepNo: '3'
+    screen: PFM - Category & Sub-category list
+    userAction: Category & Subcategory listing
+    systemBehaviour: Retrieve category list for expenses, this should allocate into cache
+    businessRules: Retrieve category list for expenses, this should allocate into cache
+    apis:
+      - name: getCategories
+        method: GET
+        endpoint: /v1/external/categories
+        testCaseId: TC_EXP_003a
+        requestSample: null
+        responseSample:
+          status: 200
+          message: Request processed successfully
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+          data:
+            categories:
+              - id: 1
+                name: Automotive
+                colorCode: '#BE3BFF'
+                icon: car
+                subCategories:
+                  - id: 1
+                    name: Auto maintenance
+                    colorCode: '#BE3BFF'
+                    icon: car
+                    isSystem: true
+                  - id: 2
+                    name: Car wash
+                    colorCode: '#BE3BFF'
+                    icon: car
+                    isSystem: true
+                  - id: 3
+                    name: Automotive
+                    colorCode: '#BE3BFF'
+                    icon: car
+                    isSystem: true
+              - id: 2
+                name: Education
+                colorCode: '#FFAB40'
+                icon: education
+                subCategories:
+                  - id: 4
+                    name: Education
+                    colorCode: '#FFAB40'
+                    icon: education
+                    isSystem: true
+                  - id: 5
+                    name: Education - others
+                    colorCode: '#FFAB40'
+                    icon: education
+                    isSystem: true
+                  - id: 6
+                    name: Elementary School
+                    colorCode: '#FFAB40'
+                    icon: education
+                    isSystem: false
+                  - id: 7
+                    name: College & University
+                    colorCode: '#FFAB40'
+                    icon: education
+                    isSystem: false
+          Link: {}
+        mapping: null
+        microservice: erp-pfm
+        businessContext: Retrieve category list for expenses, this should allocate into cache
+        downstream: |-
+          ECLIPSE DB: 
+          1. dim_category 
+          2. dim_sub_category 
+          3. dim_custom_sub_category
+  - stepNo: '4'
+    screen: PFM - Subcategory
+    userAction: Add Subcategory
+    systemBehaviour: Add subcategory, revalidate and put into cache after update
+    businessRules: Add subcategory, revalidate and put into cache after update
+    apis:
+      - name: addSubCategory
+        method: POST
+        endpoint: /v1/external/sub-categories
+        testCaseId: TC_EXP_004a
+        requestSample:
+          categoryId: FB001
+          name: Restaurant
+          colorCode: '#FFAB40'
+          icon: restaurant
+        responseSample:
+          status: 200
+          message: add_sub_category_success
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+          data:
+            subCategory:
+              categoryId: '001'
+              id: '009'
+              name: Abu Cafe
+              colorCode: '#FFAB40'
+              icon: restaurant
+              isSystem: false
+          link: {}
+        mapping: null
+        microservice: erp-pfm
+        businessContext: Add subcategory, revalidate and put into cache after update
+        downstream: |-
+          ECLIPSE DB: 
+          1. dim_category 
+          2. dim_custom_sub_category
+  - stepNo: '5'
+    screen: PFM - Subcategory
+    userAction: Edit Subcategory
+    systemBehaviour: Edit subcategory, revalidate and put into cache after update
+    businessRules: Edit subcategory, revalidate and put into cache after update
+    apis:
+      - name: updateSubCategory
+        method: PATCH
+        endpoint: /v1/external/sub-categories/{subCategoryId}
+        testCaseId: TC_EXP_005a
+        requestSample:
+          name: Restaurant
+          colorCode: '#FFAB40'
+          icon: restaurant
+        responseSample:
+          status: 200
+          message: update_sub_category_success
+          timestamp: '2026-01-13T12:00:00'
+          correlationId: abc123-correlation-id
+          meta:
+            provider: erp
+          data:
+            subCategory:
+              categoryId: '001'
+              id: '009'
+              name: Abu Cafe
+              colorCode: '#FFAB40'
+              icon: restaurant
+              isSystem: false
+          link: {}
+        mapping: null
+        microservice: erp-pfm
+        businessContext: Edit subcategory, revalidate and put into cache after update
+        downstream: |-
+          ECLIPSE DB: 
+          1. dim_category 
+          2. dim_custom_sub_category
