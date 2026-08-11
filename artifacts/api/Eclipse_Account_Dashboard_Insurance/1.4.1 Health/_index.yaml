@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipseaccount-dashboardinsurancedddapidesignv1workshop - 
+# Generated: 2026-08-11T01:59:15.300Z
+---
+feature: eclipseaccount-dashboardinsurancedddapidesignv1workshop
+apiName: ''
+description: Test cases for  endpoint
+totalScenarios: 7
+scenarios:
+  - id: 1.4.3 Life Traditional-001-positive
+    title: GET /api/endpoint - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - 1.4.3-life-traditional
+    priority: P1
+  - id: 1.4.3 Life Traditional-002-missing-auth
+    title: GET /api/endpoint - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: 1.4.3 Life Traditional-003-invalid-auth
+    title: GET /api/endpoint - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: 1.4.3 Life Traditional-004-invalid-content-type
+    title: GET /api/endpoint - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: 1.4.3 Life Traditional-005-duplicate-correlation-id
+    title: GET /api/endpoint - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: 1.4.3 Life Traditional-006-request-timeout
+    title: GET /api/endpoint - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: 1.4.3 Life Traditional-007-empty-request-body
+    title: GET /api/endpoint - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-08-11T01:59:15.297Z'
