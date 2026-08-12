@@ -85,7 +85,8 @@ export class BddYamlTestCaseGeneratorService {
     featureName: string,
     apiName: string,
     fullUrl?: string,
-    responseFields?: Array<{ name: string; type: string; description: string; mandatory?: boolean; parentField?: string }>
+    responseFields?: Array<{ name: string; type: string; description: string; mandatory?: boolean; parentField?: string }>,
+    requestFields?: Array<{ name: string; type: string; description: string; mandatory?: boolean; parentField?: string }>
   ): BddTestCase[] {
     const testCases: BddTestCase[] = [];
 
@@ -99,6 +100,16 @@ export class BddYamlTestCaseGeneratorService {
     // 3. Edge cases
     const edgeCases = this.createEdgeCaseScenarios(apiScenario, featureName, apiName, fullUrl);
     testCases.push(...edgeCases);
+
+    // 4. Boundary and format-validation scenarios
+    const boundaryScenarios = this.createBoundaryScenarios(
+      apiScenario,
+      featureName,
+      apiName,
+      fullUrl,
+      requestFields || []
+    );
+    testCases.push(...boundaryScenarios);
 
     return testCases;
   }
@@ -413,6 +424,171 @@ export class BddYamlTestCaseGeneratorService {
     });
 
     return edgeCases;
+  }
+
+  private createBoundaryScenarios(
+    scenario: ApiScenario,
+    featureName: string,
+    apiName: string,
+    fullUrl: string | undefined,
+    requestFields: Array<{ name: string; type: string; description: string; mandatory?: boolean; parentField?: string }>
+  ): BddTestCase[] {
+    const boundaryScenarios: BddTestCase[] = [];
+    const baseScenario = this.createPositiveScenario(scenario, featureName, apiName, fullUrl);
+    const mandatoryField = requestFields.find((field) => field.mandatory);
+    const numericField = requestFields.find((field) => this.isNumericField(field));
+    const stringField = requestFields.find((field) => this.isStringField(field));
+    const formattedField = requestFields.find((field) => this.isFormattedField(field));
+
+    if (mandatoryField) {
+      boundaryScenarios.push(this.createBoundaryScenario(
+        baseScenario,
+        `${apiName}-008-required-field-null`,
+        `${scenario.method} ${scenario.endpoint} - Required Field Null`,
+        'Request with a required field set to null should be rejected',
+        mandatoryField.name,
+        null,
+        'Response status code is 400 and the error identifies the required field'
+      ));
+
+      const missingBody = { ...baseScenario.request.body };
+      delete missingBody[mandatoryField.name];
+      boundaryScenarios.push({
+        ...baseScenario,
+        id: `${apiName}-009-required-field-missing`,
+        title: `${scenario.method} ${scenario.endpoint} - Required Field Missing`,
+        description: 'Request without a required field should be rejected',
+        tags: ['boundary', 'required-field', 'validation'],
+        priority: 'P2',
+        request: {
+          ...baseScenario.request,
+          body: missingBody,
+        },
+        response: {
+          ...baseScenario.response,
+          successStatusCode: 400,
+          successDescription: 'Bad Request - Required field is missing',
+        },
+        assertions: [
+          {
+            description: 'Response status code is 400',
+            type: 'status',
+            expectedValue: 400,
+          },
+          {
+            description: `Error identifies missing required field '${mandatoryField.name}'`,
+            type: 'custom',
+          },
+        ],
+      });
+    }
+
+    if (numericField) {
+      boundaryScenarios.push(this.createBoundaryScenario(
+        baseScenario,
+        `${apiName}-010-numeric-minimum`,
+        `${scenario.method} ${scenario.endpoint} - Minimum Numeric Value`,
+        'Request using the minimum supported numeric value should be accepted',
+        numericField.name,
+        0,
+        'Response status code is 200 and the minimum numeric value is accepted'
+      ));
+      boundaryScenarios.push(this.createBoundaryScenario(
+        baseScenario,
+        `${apiName}-011-numeric-maximum`,
+        `${scenario.method} ${scenario.endpoint} - Maximum Numeric Value`,
+        'Request using the maximum supported numeric value should be accepted or rejected according to the API limit',
+        numericField.name,
+        999999999,
+        'Response status code matches the documented maximum-value behavior'
+      ));
+    }
+
+    if (stringField) {
+      boundaryScenarios.push(this.createBoundaryScenario(
+        baseScenario,
+        `${apiName}-012-string-minimum-length`,
+        `${scenario.method} ${scenario.endpoint} - Minimum String Length`,
+        'Request using the minimum supported string length should be accepted',
+        stringField.name,
+        'A',
+        'Response status code is 200 and the minimum string length is accepted'
+      ));
+      boundaryScenarios.push(this.createBoundaryScenario(
+        baseScenario,
+        `${apiName}-013-string-maximum-length`,
+        `${scenario.method} ${scenario.endpoint} - Maximum String Length`,
+        'Request using the maximum supported string length should be accepted or rejected according to the API limit',
+        stringField.name,
+        'A'.repeat(255),
+        'Response status code matches the documented maximum-length behavior'
+      ));
+    }
+
+    if (formattedField) {
+      boundaryScenarios.push(this.createBoundaryScenario(
+        baseScenario,
+        `${apiName}-014-invalid-enum-or-format`,
+        `${scenario.method} ${scenario.endpoint} - Invalid Enum or Format`,
+        'Request using an invalid enum or format value should be rejected',
+        formattedField.name,
+        '__INVALID_ENUM_OR_FORMAT__',
+        'Response status code is 400 and the error identifies the invalid value'
+      ));
+    }
+
+    return boundaryScenarios;
+  }
+
+  private createBoundaryScenario(
+    baseScenario: BddTestCase,
+    id: string,
+    title: string,
+    description: string,
+    fieldName: string,
+    fieldValue: unknown,
+    assertionDescription: string
+  ): BddTestCase {
+    return {
+      ...baseScenario,
+      id,
+      title,
+      description,
+      tags: ['boundary', 'validation'],
+      priority: 'P2',
+      request: {
+        ...baseScenario.request,
+        body: {
+          ...baseScenario.request.body,
+          [fieldName]: fieldValue,
+        },
+      },
+      response: {
+        ...baseScenario.response,
+        successStatusCode: fieldValue === null || fieldValue === '__INVALID_ENUM_OR_FORMAT__' ? 400 : 200,
+      },
+      assertions: [
+        {
+          description: assertionDescription,
+          type: 'custom',
+        },
+      ],
+    };
+  }
+
+  private isNumericField(field: { name: string; type: string; description: string }): boolean {
+    const text = `${field.name} ${field.type} ${field.description}`.toLowerCase();
+    return /amount|number|numeric|decimal|integer|long|count|quantity/.test(text);
+  }
+
+  private isStringField(field: { name: string; type: string; description: string }): boolean {
+    const type = field.type.toLowerCase();
+    return type.includes('string') || type.includes('varchar') || type.includes('char');
+  }
+
+  private isFormattedField(field: { name: string; type: string; description: string }): boolean {
+    const text = `${field.name} ${field.type} ${field.description}`.toLowerCase();
+    return /enum|format|date|time|email|code|status|type/.test(text);
   }
 
   /**

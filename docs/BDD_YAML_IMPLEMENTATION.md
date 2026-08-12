@@ -13,7 +13,7 @@ Generate comprehensive test cases for one specific API endpoint:
 npm run dev -- bdd-gen --input "input/api/P&T_Local_Transfer_DDD_API_Spec_v1.xlsx" --sheet "GetPTMaintenanceTransferInit" --outDir ./artifacts
 ```
 
-**Output:** 7 test scenarios (1 positive + 3 negative + 3 edge cases) + index file
+**Output:** 7 baseline test scenarios (1 positive + 3 negative + 3 edge cases), plus applicable boundary scenarios, and an index file
 
 ### 2. **Batch Generation (All APIs)**
 Process all API endpoints in a workbook at once:
@@ -67,6 +67,15 @@ artifacts/api/p-tlocaltransferdddapispecv1/
 2. Request timeout (504 Gateway Timeout)
 3. Empty/malformed request body (400 Bad Request)
 
+**Boundary Scenarios (when matching request fields are available):**
+1. Required field set to null
+2. Required field omitted
+3. Minimum and maximum numeric values
+4. Minimum and maximum string lengths
+5. Invalid enum or format value
+
+Boundary values are inferred from field names, types, and descriptions. The current API sheet parser does not extract explicit min/max, enum, or format rules, so values such as `0`, `999999999`, one character, 255 characters, and `__INVALID_ENUM_OR_FORMAT__` are generic defaults for review.
+
 ## Technical Implementation
 
 ### New Services Created
@@ -79,7 +88,7 @@ artifacts/api/p-tlocaltransferdddapispecv1/
    - Handles hierarchical field parsing with parent-child relationships
 
 2. **BddYamlTestCaseGeneratorService** (`src/services/output/`)
-   - Generates 7 test scenarios per endpoint
+  - Generates 7 baseline scenarios per endpoint plus applicable boundary scenarios
    - Creates YAML files with business-friendly language
    - Generates index files for scenario summaries
    - Produces human-readable headers with purpose statements
