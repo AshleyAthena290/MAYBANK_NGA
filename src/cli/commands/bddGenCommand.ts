@@ -65,10 +65,11 @@ async function executeBddGenCommand(options: unknown): Promise<void> {
     extractFeatureName(opts.input),
     effectiveApiName,
     apiSpec.url,
-    apiSpec.responseFields // Pass response fields for field-level validation
+    apiSpec.responseFields, // Pass response fields for field-level validation
+    apiSpec.requestBodyFields // Pass request fields for boundary scenarios
   );
 
-  logger.info(`Generated ${testCases.length} test case scenarios (1 positive + 3 negative + 3 edge cases)`);
+  logger.info(`Generated ${testCases.length} test case scenarios (positive + negative + edge cases + boundaries)`);
 
   // Write to disk
   const outputFiles = generator.writeTestCasesToDisk(

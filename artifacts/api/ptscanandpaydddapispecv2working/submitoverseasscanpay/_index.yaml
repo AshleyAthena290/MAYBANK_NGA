@@ -1,0 +1,114 @@
+# Test Case Index
+# ptscanandpaydddapispecv2working - SubmitOverseasScanPay
+# Generated: 2026-08-12T07:07:30.661Z
+---
+feature: ptscanandpaydddapispecv2working
+apiName: SubmitOverseasScanPay
+description: Test cases for SubmitOverseasScanPay endpoint
+totalScenarios: 14
+scenarios:
+  - id: SubmitOverseasScanPay-001-positive
+    title: POST /submit - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - submitoverseasscanpay
+    priority: P1
+  - id: SubmitOverseasScanPay-002-missing-auth
+    title: POST /submit - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: SubmitOverseasScanPay-003-invalid-auth
+    title: POST /submit - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: SubmitOverseasScanPay-004-invalid-content-type
+    title: POST /submit - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: SubmitOverseasScanPay-005-duplicate-correlation-id
+    title: POST /submit - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: SubmitOverseasScanPay-006-request-timeout
+    title: POST /submit - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: SubmitOverseasScanPay-007-empty-request-body
+    title: POST /submit - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: SubmitOverseasScanPay-008-required-field-null
+    title: POST /submit - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: SubmitOverseasScanPay-009-required-field-missing
+    title: POST /submit - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: SubmitOverseasScanPay-010-numeric-minimum
+    title: POST /submit - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: SubmitOverseasScanPay-011-numeric-maximum
+    title: POST /submit - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: SubmitOverseasScanPay-012-string-minimum-length
+    title: POST /submit - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: SubmitOverseasScanPay-013-string-maximum-length
+    title: POST /submit - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: SubmitOverseasScanPay-014-invalid-enum-or-format
+    title: POST /submit - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-12T07:07:30.659Z'
