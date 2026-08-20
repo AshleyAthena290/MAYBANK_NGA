@@ -1,0 +1,140 @@
+id: FSD_Local_Transfer_Execution
+title: FSD Local Transfer - Test Execution Script
+description: |
+  Execution mapping of FSD Local Transfer journey test cases to their corresponding
+  API test-case artifacts. Intended as an orchestrator/runner manifest for automated
+  execution or manual QA sequencing.
+environment:
+  - SIT
+  - UAT
+suites:
+  - journey: "Transfer Own Account"
+    code: UJ1.1
+    title: "Transfer Between Own CASA Accounts"
+    steps:
+      - seq: 1
+        action: "Get Source Accounts"
+        apiTestId: GetSourceAccountList-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+      - seq: 2
+        action: "Initiate Intra Transfer"
+        apiTestId: InitiateIntraTransfer-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+      - seq: 3
+        action: "Execute Intra Transfer"
+        apiTestId: ExecuteIntraTransfer-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+
+  - journey: "Transfer Own Account (FCY)"
+    code: UJ1.2
+    title: "Transfer Own Account with Foreign Currency"
+    steps:
+      - seq: 1
+        action: "Get Source Accounts (FCY grouped)"
+        apiTestId: GetSourceAccountList-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+      - seq: 2
+        action: "Initiate Intra Transfer (FCY)"
+        apiTestId: InitiateIntraTransfer-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+      - seq: 3
+        action: "Execute Intra Transfer (FCY)"
+        apiTestId: ExecuteIntraTransfer-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+
+  - journey: "Intrabank Transfer to Maybank Beneficiary (BI-FAST)"
+    code: UJ2.1
+    title: "Transfer to Maybank Beneficiary - BI-FAST (IDR-IDR)"
+    steps:
+      - seq: 1
+        action: "Get Source Accounts"
+        apiTestId: GetSourceAccountList-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+      - seq: 2
+        action: "Initiate Intra Transfer (Beneficiary selected)"
+        apiTestId: InitiateIntraTransfer-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+      - seq: 3
+        action: "Execute Intra Transfer (Secure2U enabled)"
+        apiTestId: ExecuteIntraTransfer-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+
+  - journey: "Intrabank Transfer with Special Rate (FCY)"
+    code: UJ2.2
+    title: "Transfer to Maybank with FCY & Special Rate"
+    steps:
+      - seq: 1
+        action: "Get Source Accounts (FCY)"
+        apiTestId: GetSourceAccountList-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+      - seq: 2
+        action: "Initiate Intra Transfer (apply special rate)"
+        apiTestId: InitiateIntraTransfer-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+      - seq: 3
+        action: "Execute Intra Transfer"
+        apiTestId: ExecuteIntraTransfer-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+
+  - journey: "Interbank - New Beneficiary (BI-FAST)"
+    code: UJ3.1
+    title: "Transfer to BI-FAST Member Bank - New Beneficiary"
+    steps:
+      - seq: 1
+        action: "Bank Search / Listing"
+        apiTestId: GetPTMaintemamceBankListing-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/getptmaintemamcebanklisting/GetPTMaintemamceBankListing-001-positive.yaml
+      - seq: 2
+        action: "Get Source Accounts"
+        apiTestId: GetSourceAccountList-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+      - seq: 3
+        action: "Initiate Inter Transfer (BI-FAST inquiry + initiate)"
+        apiTestId: InitiateInterTransfer-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/initiateintertransfer/InitiateInterTransfer-001-positive.yaml
+      - seq: 4
+        action: "Execute Inter Transfer"
+        apiTestId: ExecuteInterTransfer-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/executeintertransfer/ExecuteInterTransfer-001-positive.yaml
+
+  - journey: "Interbank - Saved Beneficiary with Fallback Inquiry"
+    code: UJ3.2
+    title: "Transfer to BI-FAST Saved Beneficiary - Failed Inquiry Fallback"
+    steps:
+      - seq: 1
+        action: "Get Source Accounts"
+        apiTestId: GetSourceAccountList-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+      - seq: 2
+        action: "Perform BI-FAST inquiry (simulate timeout / failure)"
+        apiTestId: GetSourceAccountList-006-request-timeout
+        apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-006-request-timeout.yaml
+      - seq: 3
+        action: "Fallback to RTOL / Initiate Inter Transfer"
+        apiTestId: InitiateInterTransfer-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/initiateintertransfer/InitiateInterTransfer-001-positive.yaml
+      - seq: 4
+        action: "Execute Inter Transfer (RTOL rail)"
+        apiTestId: ExecuteInterTransfer-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/executeintertransfer/ExecuteInterTransfer-001-positive.yaml
+
+  - journey: "Scheduled One-time Transfer"
+    code: UJ9.1
+    title: "Create Scheduled Transfer - One-Time Future Transfer"
+    steps:
+      - seq: 1
+        action: "Get Source Accounts"
+        apiTestId: GetSourceAccountList-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+      - seq: 2
+        action: "Initiate Intra Transfer (with schedule payload)"
+        apiTestId: InitiateIntraTransfer-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+      - seq: 3
+        action: "Execute Intra Transfer (finalize scheduled setup)"
+        apiTestId: ExecuteIntraTransfer-001-positive
+        apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+
+notes:
+  - "This manifest maps FSD journey steps to representative API positive and selected negative tests available under artifacts/api/PT_Local_Transfer."
+  - "Adjust `apiTestId` / `apiFile` entries to point to other variants (negative, timeout, auth-fail) when constructing negative/regression suites."

@@ -1,0 +1,1208 @@
+id: FSD_Local_Transfer_Execution_full
+title: 'FSD Local Transfer - Full Execution Manifest (positive) '
+description: Auto-generated mapping of FSD rows to positive API test artifacts.
+environment:
+- SIT
+- UAT
+suites:
+- journey: 'Journey 1: Transfer Own Account'
+  code: UJ1.1
+  title: 'UJ1.1: Transfer Between Own CASA Accounts'
+  steps:
+  - seq: 1
+    action: User taps [+Transfer] from App Dashboard or Account Dashboard
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+- journey: ''
+  code: UNKN
+  title: ''
+  steps:
+  - seq: 2
+    action: '[First-time users only] User taps [Get Started] button'
+    apiTestId: null
+    apiFile: null
+  - seq: 3
+    action: User navigates to Transfer Landing Page; Own tab is auto-selected
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 4
+    action: User selects source account from Own list (primary account displayed)
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 5
+    action: System displays list of destination accounts (excluding SoF account)
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 6
+    action: User selects destination account from available list
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 7
+    action: User enters transfer amount in local currency (IDR)
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 8
+    action: User reviews Transfer Details screen
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 9
+    action: User taps [Confirm] button
+    apiTestId: ExecuteIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+  - seq: 10
+    action: User confirms transfer
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 11
+    action: System displays Transfer Receipt
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 12
+    action: User taps [Done] or navigates away
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: User selects FCY source account (e.g., USD CASA)
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 3
+    action: User enters transfer amount in source currency (USD)
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 4
+    action: '[If triggered] LLD & FOREX Matrix screen displayed'
+    apiTestId: null
+    apiFile: null
+  - seq: 5
+    action: User accepts rates and proceeds
+    apiTestId: null
+    apiFile: null
+  - seq: 6
+    action: User confirms transfer without Secure2u
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 2
+    action: User selects FCY source account (e.g., USD CASA)
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 3
+    action: User enters transfer amount in source currency (USD)
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 4
+    action: '[If triggered] LLD & FOREX Matrix screen displayed'
+    apiTestId: null
+    apiFile: null
+  - seq: 5
+    action: User accepts rates and proceeds
+    apiTestId: null
+    apiFile: null
+  - seq: 6
+    action: User confirms transfer without Secure2u
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 2
+    action: User taps on Frequent tab
+    apiTestId: null
+    apiFile: null
+  - seq: 3
+    action: User selects a Maybank beneficiary from Frequent list
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 4
+    action: '[If GAA account] System displays "Select Currency" drawer'
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 5
+    action: User enters transfer amount in IDR
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 6
+    action: User reviews Transfer Details
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 7
+    action: User taps [Confirm] button
+    apiTestId: ExecuteIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+  - seq: 8
+    action: User completes Secure2u challenge
+    apiTestId: null
+    apiFile: null
+  - seq: 9
+    action: Transfer processes and completes
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 10
+    action: Receipt displays transaction details
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: User enters amount in source FCY
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 3
+    action: System displays FOREX matrix with available rates
+    apiTestId: null
+    apiFile: null
+  - seq: 4
+    action: User selects special rate (if eligible)
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 5
+    action: User proceeds to Transfer Details
+    apiTestId: null
+    apiFile: null
+  - seq: 6
+    action: User proceeds through Secure2u
+    apiTestId: null
+    apiFile: null
+  - seq: 7
+    action: Transfer completes
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: User enters amount in source FCY
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 3
+    action: System displays FOREX matrix with available rates
+    apiTestId: null
+    apiFile: null
+  - seq: 4
+    action: User selects special rate (if eligible)
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 5
+    action: User proceeds to Transfer Details
+    apiTestId: null
+    apiFile: null
+  - seq: 6
+    action: User proceeds through Secure2u
+    apiTestId: null
+    apiFile: null
+  - seq: 7
+    action: Transfer completes
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: User searches for destination bank (e.g., "BCA" or "Bank Central Asia")
+    apiTestId: null
+    apiFile: null
+  - seq: 3
+    action: User selects BCA bank
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 4
+    action: User enters destination bank account number
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 5
+    action: System performs beneficiary account inquiry via BI-FAST
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 6
+    action: User taps [Next] button
+    apiTestId: null
+    apiFile: null
+  - seq: 7
+    action: User enters transfer amount in IDR
+    apiTestId: null
+    apiFile: null
+  - seq: 8
+    action: User reviews Transfer Details
+    apiTestId: null
+    apiFile: null
+  - seq: 9
+    action: User taps [Confirm]
+    apiTestId: null
+    apiFile: null
+  - seq: 10
+    action: User completes Secure2u challenge
+    apiTestId: null
+    apiFile: null
+  - seq: 11
+    action: Transfer completes
+    apiTestId: null
+    apiFile: null
+  - seq: 12
+    action: Receipt displays transaction details
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: System performs BI-FAST account inquiry
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 3
+    action: System automatically falls back to RTOL inquiry
+    apiTestId: null
+    apiFile: null
+  - seq: 4
+    action: RTOL inquiry returns valid account
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 5
+    action: User completes transfer via RTOL
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: System performs BI-FAST account inquiry
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 3
+    action: System automatically falls back to RTOL inquiry
+    apiTestId: null
+    apiFile: null
+  - seq: 4
+    action: RTOL inquiry returns valid account
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 5
+    action: User completes transfer via RTOL
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: User searches for destination bank (e.g., CIMB Niaga)
+    apiTestId: null
+    apiFile: null
+  - seq: 3
+    action: User selects CIMB Niaga
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 4
+    action: User enters destination account number
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 5
+    action: RTOL inquiry returns valid account and beneficiary name
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 6
+    action: User enters transfer amount in IDR
+    apiTestId: null
+    apiFile: null
+  - seq: 7
+    action: User confirms transfer with Secure2u
+    apiTestId: null
+    apiFile: null
+  - seq: 8
+    action: Transfer processes
+    apiTestId: null
+    apiFile: null
+  - seq: 9
+    action: Receipt shows RTOL transfer details
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: User taps [Next] button
+    apiTestId: null
+    apiFile: null
+  - seq: 3
+    action: RTOL inquiry returns "Invalid Account" error
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 4
+    action: User is retained on Input Account Number page
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 5
+    action: User corrects account number and retaps [Next]
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 6
+    action: '[If valid on retry] Input Amount page displayed'
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 2
+    action: User taps [Next] button
+    apiTestId: null
+    apiFile: null
+  - seq: 3
+    action: RTOL inquiry returns "Invalid Account" error
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 4
+    action: User is retained on Input Account Number page
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 5
+    action: User corrects account number and retaps [Next]
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 6
+    action: '[If valid on retry] Input Amount page displayed'
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 2
+    action: User searches and selects BI-SKN member bank
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 3
+    action: User enters account number
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 4
+    action: Inquiry returns valid account details
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 5
+    action: User enters amount in IDR
+    apiTestId: null
+    apiFile: null
+  - seq: 6
+    action: User reviews Transfer Details
+    apiTestId: null
+    apiFile: null
+  - seq: 7
+    action: User confirms with Secure2u
+    apiTestId: null
+    apiFile: null
+  - seq: 8
+    action: Transfer processes
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: User enters amount in source FCY (USD)
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 3
+    action: System displays FOREX matrix with USD-IDR rates
+    apiTestId: null
+    apiFile: null
+  - seq: 4
+    action: '[If >USD 10K threshold] Additional Details screen displayed'
+    apiTestId: null
+    apiFile: null
+  - seq: 5
+    action: '[If underlying docs required] Underlying Documents screen triggered'
+    apiTestId: null
+    apiFile: null
+  - seq: 6
+    action: User completes all required details and uploads docs
+    apiTestId: null
+    apiFile: null
+  - seq: 7
+    action: User confirms with Secure2u
+    apiTestId: null
+    apiFile: null
+  - seq: 8
+    action: Transfer processes
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: User enters amount in source FCY (USD)
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 3
+    action: System displays FOREX matrix with USD-IDR rates
+    apiTestId: null
+    apiFile: null
+  - seq: 4
+    action: '[If >USD 10K threshold] Additional Details screen displayed'
+    apiTestId: null
+    apiFile: null
+  - seq: 5
+    action: '[If underlying docs required] Underlying Documents screen triggered'
+    apiTestId: null
+    apiFile: null
+  - seq: 6
+    action: User completes all required details and uploads docs
+    apiTestId: null
+    apiFile: null
+  - seq: 7
+    action: User confirms with Secure2u
+    apiTestId: null
+    apiFile: null
+  - seq: 8
+    action: Transfer processes
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: User selects RTGS member bank
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 3
+    action: User enters account number and taps [Next]
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 4
+    action: Inquiry returns valid account
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 5
+    action: User enters large amount (IDR - IDR)
+    apiTestId: null
+    apiFile: null
+  - seq: 6
+    action: '[If amount >USD 10K threshold] Additional Details screen displayed'
+    apiTestId: null
+    apiFile: null
+  - seq: 7
+    action: '[If applicable] Underlying Documents screen shown'
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 8
+    action: User completes Transfer Details review
+    apiTestId: null
+    apiFile: null
+  - seq: 9
+    action: User confirms with Secure2u
+    apiTestId: null
+    apiFile: null
+  - seq: 10
+    action: Transfer processes
+    apiTestId: null
+    apiFile: null
+  - seq: 11
+    action: Receipt displays RTGS transfer details
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: User attempts to proceed without uploading documents
+    apiTestId: null
+    apiFile: null
+  - seq: 3
+    action: User is retained on Underlying Documents screen
+    apiTestId: null
+    apiFile: null
+  - seq: 4
+    action: User uploads required documents
+    apiTestId: null
+    apiFile: null
+  - seq: 5
+    action: Documents accepted; user proceeds to confirmation
+    apiTestId: ExecuteIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+  - seq: 6
+    action: User confirms and completes transfer
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 2
+    action: User attempts to proceed without uploading documents
+    apiTestId: null
+    apiFile: null
+  - seq: 3
+    action: User is retained on Underlying Documents screen
+    apiTestId: null
+    apiFile: null
+  - seq: 4
+    action: User uploads required documents
+    apiTestId: null
+    apiFile: null
+  - seq: 5
+    action: Documents accepted; user proceeds to confirmation
+    apiTestId: ExecuteIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+  - seq: 6
+    action: User confirms and completes transfer
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 2
+    action: User selects Custom tab; taps [+] button
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 3
+    action: User enters custom list name (e.g., "Family Members")
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 4
+    action: User taps [Next] or [Create List] button
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 5
+    action: User taps [+Add Beneficiary] button
+    apiTestId: null
+    apiFile: null
+  - seq: 6
+    action: User selects beneficiary from available list (e.g., existing beneficiary)
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 7
+    action: '[If no nickname] User enters nickname for beneficiary (e.g., "Mom")'
+    apiTestId: null
+    apiFile: null
+  - seq: 8
+    action: User confirms add to custom list
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 9
+    action: User can continue adding more beneficiaries
+    apiTestId: null
+    apiFile: null
+  - seq: 10
+    action: User taps [Save] or [Done] button
+    apiTestId: null
+    apiFile: null
+  - seq: 11
+    action: User returns to Transfer Landing Page
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 2
+    action: 'Menu shows options: Edit nickname, Add/Edit favourite, Remove'
+    apiTestId: null
+    apiFile: null
+  - seq: 3
+    action: User taps "Edit nickname" option
+    apiTestId: null
+    apiFile: null
+  - seq: 4
+    action: User updates nickname text (e.g., "Mom" → "Mother")
+    apiTestId: null
+    apiFile: null
+  - seq: 5
+    action: User taps [Save] button
+    apiTestId: null
+    apiFile: null
+  - seq: 6
+    action: User returns to beneficiary list
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 7
+    action: '[If Secure2u triggered] User completes Secure2u authentication'
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: Menu shows "Remove" option
+    apiTestId: null
+    apiFile: null
+  - seq: 3
+    action: User taps "Remove"
+    apiTestId: null
+    apiFile: null
+  - seq: 4
+    action: User confirms removal
+    apiTestId: ExecuteIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+  - seq: 5
+    action: System displays confirmation toast
+    apiTestId: ExecuteIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+  - seq: 6
+    action: '[If removed from Frequent/Custom] Check other tabs'
+    apiTestId: null
+    apiFile: null
+  - seq: 7
+    action: '[If removed from Favourite] Secure2u may be triggered'
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: Menu shows "Remove" option
+    apiTestId: null
+    apiFile: null
+  - seq: 3
+    action: User taps "Remove"
+    apiTestId: null
+    apiFile: null
+  - seq: 4
+    action: User confirms removal
+    apiTestId: ExecuteIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+  - seq: 5
+    action: System displays confirmation toast
+    apiTestId: ExecuteIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+  - seq: 6
+    action: '[If removed from Frequent/Custom] Check other tabs'
+    apiTestId: null
+    apiFile: null
+  - seq: 7
+    action: '[If removed from Favourite] Secure2u may be triggered'
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: User long-presses beneficiary (not yet in Favourites)
+    apiTestId: null
+    apiFile: null
+  - seq: 3
+    action: Menu shows option "Add to favourite"
+    apiTestId: null
+    apiFile: null
+  - seq: 4
+    action: User taps "Add to favourite"
+    apiTestId: null
+    apiFile: null
+  - seq: 5
+    action: User selects existing favourite list or creates new one
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 6
+    action: User confirms addition to favourite
+    apiTestId: ExecuteIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+  - seq: 7
+    action: User confirms
+    apiTestId: ExecuteIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+  - seq: 8
+    action: User completes Secure2u challenge
+    apiTestId: null
+    apiFile: null
+  - seq: 9
+    action: Beneficiary added to Favourite list
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 10
+    action: Beneficiary now appears in Favourites tab
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: User selects "Settings" or "Manage Favourites"
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 3
+    action: System displays list of existing favourite groups
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 4
+    action: User selects specific favourite group
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 5
+    action: User taps [+Add Recipient] button
+    apiTestId: null
+    apiFile: null
+  - seq: 6
+    action: User selects "Add from Recent Transfer"
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 7
+    action: User selects recently transferred beneficiary
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 8
+    action: User confirms addition
+    apiTestId: ExecuteIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+  - seq: 9
+    action: Beneficiary added to favourite group
+    apiTestId: null
+    apiFile: null
+  - seq: 10
+    action: User returns to favourite group detail
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: User selects favourite group to edit
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 3
+    action: User long-presses or taps 3-dots on beneficiary member
+    apiTestId: null
+    apiFile: null
+  - seq: 4
+    action: User taps "Remove"
+    apiTestId: null
+    apiFile: null
+  - seq: 5
+    action: User confirms removal
+    apiTestId: ExecuteIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+  - seq: 6
+    action: User completes Secure2u
+    apiTestId: null
+    apiFile: null
+  - seq: 7
+    action: Beneficiary removed from favourite group
+    apiTestId: null
+    apiFile: null
+  - seq: 8
+    action: User returns to group detail
+    apiTestId: null
+    apiFile: null
+  - seq: 9
+    action: '[If last member removed] Group display updated'
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: User selects favourite group to edit
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 3
+    action: User long-presses or taps 3-dots on beneficiary member
+    apiTestId: null
+    apiFile: null
+  - seq: 4
+    action: User taps "Remove"
+    apiTestId: null
+    apiFile: null
+  - seq: 5
+    action: User confirms removal
+    apiTestId: ExecuteIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+  - seq: 6
+    action: User completes Secure2u
+    apiTestId: null
+    apiFile: null
+  - seq: 7
+    action: Beneficiary removed from favourite group
+    apiTestId: null
+    apiFile: null
+  - seq: 8
+    action: User returns to group detail
+    apiTestId: null
+    apiFile: null
+  - seq: 9
+    action: '[If last member removed] Group display updated'
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: On Transfer Confirmation screen, user sees scheduling option
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 3
+    action: User taps [Schedule Transfer] toggle/button
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 4
+    action: User selects future transfer date (e.g., 5 days from now)
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 5
+    action: User confirms selected date
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 6
+    action: User taps [Confirm] to complete scheduled transfer setup
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 7
+    action: User completes Secure2u
+    apiTestId: null
+    apiFile: null
+  - seq: 8
+    action: Final Screen displays scheduled transfer receipt
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 9
+    action: User navigates to Transfer Settings > Scheduled Transfers
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 2
+    action: On Transfer Confirmation screen, user selects [Recurring/Repeat] option
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 3
+    action: User selects recurrence frequency (e.g., "Monthly")
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 4
+    action: User sets start date (or today) and end date (or ongoing)
+    apiTestId: null
+    apiFile: null
+  - seq: 5
+    action: System displays recurring schedule preview
+    apiTestId: null
+    apiFile: null
+  - seq: 6
+    action: User confirms recurring setup
+    apiTestId: ExecuteIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+  - seq: 7
+    action: User completes Secure2u
+    apiTestId: null
+    apiFile: null
+  - seq: 8
+    action: Final Screen displays recurring transfer receipt
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 9
+    action: Transfer appears in Scheduled Transfers list marked as "Recurring"
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 2
+    action: User taps on scheduled transfer to view details
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 3
+    action: User taps [Cancel Transfer] button
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 4
+    action: User confirms cancellation
+    apiTestId: ExecuteIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+  - seq: 5
+    action: User completes Secure2u challenge
+    apiTestId: null
+    apiFile: null
+  - seq: 6
+    action: Transfer cancelled
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 7
+    action: User returns to Scheduled Transfers list
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 8
+    action: '[If close-to-date cancellation] Warning message may appear'
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: User taps on scheduled transfer to view details
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 3
+    action: User taps [Cancel Transfer] button
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 4
+    action: User confirms cancellation
+    apiTestId: ExecuteIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+  - seq: 5
+    action: User completes Secure2u challenge
+    apiTestId: null
+    apiFile: null
+  - seq: 6
+    action: Transfer cancelled
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 7
+    action: User returns to Scheduled Transfers list
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 8
+    action: '[If close-to-date cancellation] Warning message may appear'
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: User selects "Settings" > "Transfer Limits"
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 3
+    action: System displays transfer mode limits
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 4
+    action: User selects specific transfer mode (e.g., "BI-FAST")
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 5
+    action: System displays current daily limit for selected mode
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 6
+    action: User taps [Edit Limit] or [Set New Limit] button
+    apiTestId: null
+    apiFile: null
+  - seq: 7
+    action: User enters new limit amount (e.g., "IDR 1,000,000,000")
+    apiTestId: null
+    apiFile: null
+  - seq: 8
+    action: System displays new limit with applicable fees (if any)
+    apiTestId: null
+    apiFile: null
+  - seq: 9
+    action: User taps [Save] or [Confirm] button
+    apiTestId: ExecuteIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/executeintratransfer/ExecuteIntraTransfer-001-positive.yaml
+  - seq: 10
+    action: User completes Secure2u challenge
+    apiTestId: null
+    apiFile: null
+  - seq: 11
+    action: New limit saved
+    apiTestId: null
+    apiFile: null
+  - seq: 12
+    action: User returns to Transfer Limit Detail
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 2
+    action: User checks Intrabank daily limit
+    apiTestId: IntraPreMonetaryCheck-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/intrapremonetarycheck/IntraPreMonetaryCheck-001-positive.yaml
+  - seq: 3
+    action: User checks BI-FAST daily limit
+    apiTestId: null
+    apiFile: null
+  - seq: 4
+    action: User checks RTGS daily limit
+    apiTestId: null
+    apiFile: null
+  - seq: 5
+    action: User observes different limits per rail
+    apiTestId: null
+    apiFile: null
+  - seq: 6
+    action: User updates one limit (e.g., BI-FAST limit to 750M)
+    apiTestId: null
+    apiFile: null
+  - seq: 7
+    action: System confirms only selected limit changed
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 2
+    action: User completes transfer of IDR 300M
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 3
+    action: Time advances to next calendar day (00:00)
+    apiTestId: null
+    apiFile: null
+  - seq: 4
+    action: User checks available daily limit next day
+    apiTestId: null
+    apiFile: null
+  - seq: 5
+    action: '[If monthly limit applicable] System tracks cumulative monthly transfer'
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 6
+    action: User monitors remaining monthly limit
+    apiTestId: null
+    apiFile: null
+  - seq: 2
+    action: User completes transfer of IDR 300M
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 3
+    action: Time advances to next calendar day (00:00)
+    apiTestId: null
+    apiFile: null
+  - seq: 4
+    action: User checks available daily limit next day
+    apiTestId: null
+    apiFile: null
+  - seq: 5
+    action: '[If monthly limit applicable] System tracks cumulative monthly transfer'
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 6
+    action: User monitors remaining monthly limit
+    apiTestId: null
+    apiFile: null
+- journey: 'Journey 1: Transfer Own Account'
+  code: UJ1.2
+  title: 'UJ1.2: Transfer Own Account with FCY (Foreign Currency)'
+  steps:
+  - seq: 1
+    action: User navigates to Transfer Landing Page and selects Own tab
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 1
+    action: User navigates to Transfer Landing Page and selects Own tab
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+- journey: 'Journey 2: Transfer Within Maybank (Intrabank)'
+  code: UJ2.1
+  title: 'UJ2.1: Transfer to Maybank Beneficiary - BI-FAST (IDR-IDR)'
+  steps:
+  - seq: 1
+    action: User navigates to Transfer Landing Page
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+- journey: 'Journey 2: Transfer Within Maybank (Intrabank)'
+  code: UJ2.2
+  title: 'UJ2.2: Transfer to Maybank with FCY & Special Rate'
+  steps:
+  - seq: 1
+    action: User selects a Maybank FCY beneficiary
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 1
+    action: User selects a Maybank FCY beneficiary
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+- journey: 'Journey 3: Transfer Interbank BI-FAST'
+  code: UJ3.1
+  title: 'UJ3.1: Transfer to BI-FAST Member Bank - New Beneficiary'
+  steps:
+  - seq: 1
+    action: User taps [+Transfer] button on Transfer Landing Page
+    apiTestId: null
+    apiFile: null
+- journey: 'Journey 3: Transfer Interbank BI-FAST'
+  code: UJ3.2
+  title: 'UJ3.2: Transfer to BI-FAST Saved Beneficiary - Failed Inquiry Fallback'
+  steps:
+  - seq: 1
+    action: User selects saved beneficiary from BI-FAST bank (both BI-FAST & RTOL
+      member)
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 1
+    action: User selects saved beneficiary from BI-FAST bank (both BI-FAST & RTOL
+      member)
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+- journey: 'Journey 4: Transfer Interbank RTOL'
+  code: UJ4.1
+  title: 'UJ4.1: Transfer to RTOL Member Bank - Account Number Entry'
+  steps:
+  - seq: 1
+    action: User navigates to Transfer Landing Page and taps [+Transfer]
+    apiTestId: null
+    apiFile: null
+- journey: 'Journey 4: Transfer Interbank RTOL'
+  code: UJ4.2
+  title: 'UJ4.2: RTOL Transfer with Invalid Account - Error Handling'
+  steps:
+  - seq: 1
+    action: User enters invalid account number for RTOL bank
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 1
+    action: User enters invalid account number for RTOL bank
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+- journey: 'Journey 5: Transfer Interbank BI-SKN'
+  code: UJ5.1
+  title: 'UJ5.1: Transfer to BI-SKN Bank - IDR-IDR Transfer'
+  steps:
+  - seq: 1
+    action: User initiates transfer via [+Transfer] button
+    apiTestId: null
+    apiFile: null
+- journey: 'Journey 5: Transfer Interbank BI-SKN'
+  code: UJ5.2
+  title: 'UJ5.2: Transfer to BI-SKN with FCY-IDR Conversion'
+  steps:
+  - seq: 1
+    action: User selects BI-SKN beneficiary with FCY source
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+  - seq: 1
+    action: User selects BI-SKN beneficiary with FCY source
+    apiTestId: GetSourceAccountList-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/getsourceaccountlist/GetSourceAccountList-001-positive.yaml
+- journey: 'Journey 6: Transfer Interbank RTGS'
+  code: UJ6.1
+  title: 'UJ6.1: Transfer to RTGS Member Bank - High-Value IDR Transfer'
+  steps:
+  - seq: 1
+    action: User initiates high-value transfer via [+Transfer]
+    apiTestId: null
+    apiFile: null
+- journey: 'Journey 6: Transfer Interbank RTGS'
+  code: UJ6.2
+  title: 'UJ6.2: RTGS Transfer with Missing Underlying Documents - Error Handling'
+  steps:
+  - seq: 1
+    action: User reaches Underlying Documents screen for RTGS high-value transfer
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 1
+    action: User reaches Underlying Documents screen for RTGS high-value transfer
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+- journey: 'Journey 7: Create & Manage Recipient List'
+  code: UJ7.1
+  title: 'UJ7.1: Create Custom Beneficiary List & Add Beneficiary with Nickname'
+  steps:
+  - seq: 1
+    action: User navigates to Transfer Landing Page
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+- journey: 'Journey 7: Create & Manage Recipient List'
+  code: UJ7.2
+  title: 'UJ7.2: Edit Beneficiary Nickname - Existing Beneficiary'
+  steps:
+  - seq: 1
+    action: User long-presses beneficiary in Transfer Landing Page
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+- journey: 'Journey 7: Create & Manage Recipient List'
+  code: UJ7.3
+  title: 'UJ7.3: Remove Beneficiary from Tab'
+  steps:
+  - seq: 1
+    action: User long-presses beneficiary or taps 3-dots menu
+    apiTestId: null
+    apiFile: null
+  - seq: 1
+    action: User long-presses beneficiary or taps 3-dots menu
+    apiTestId: null
+    apiFile: null
+- journey: 'Journey 8: Manage Favourite Lists'
+  code: UJ8.1
+  title: 'UJ8.1: Add Beneficiary to Favourites - From Transfer Landing Page'
+  steps:
+  - seq: 1
+    action: User navigates to Transfer Landing Page
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+- journey: 'Journey 8: Manage Favourite Lists'
+  code: UJ8.2
+  title: 'UJ8.2: Manage Favourite Group - Add Recipient from Recent Transfer'
+  steps:
+  - seq: 1
+    action: User navigates to Transfer Landing Page and taps More Actions menu
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+- journey: 'Journey 8: Manage Favourite Lists'
+  code: UJ8.3
+  title: 'UJ8.3: Remove Beneficiary from Favourite - Delete from Group'
+  steps:
+  - seq: 1
+    action: User navigates to Manage Favourites dashboard
+    apiTestId: null
+    apiFile: null
+  - seq: 1
+    action: User navigates to Manage Favourites dashboard
+    apiTestId: null
+    apiFile: null
+- journey: 'Journey 9: Scheduled & Recurring Transfer'
+  code: UJ9.1
+  title: 'UJ9.1: Create Scheduled Transfer - One-Time Future Transfer'
+  steps:
+  - seq: 1
+    action: User initiates transfer flow (any transfer type)
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+- journey: 'Journey 9: Scheduled & Recurring Transfer'
+  code: UJ9.2
+  title: 'UJ9.2: Create Recurring Transfer - Automatic Repeated Transfers'
+  steps:
+  - seq: 1
+    action: User initiates transfer flow
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+- journey: 'Journey 9: Scheduled & Recurring Transfer'
+  code: UJ9.3
+  title: 'UJ9.3: Cancel Scheduled/Recurring Transfer'
+  steps:
+  - seq: 1
+    action: User navigates to Transfer Settings > Scheduled Transfers
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+  - seq: 1
+    action: User navigates to Transfer Settings > Scheduled Transfers
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+- journey: 'Journey 10: Transfer Limit Settings'
+  code: UJ10.1
+  title: 'UJ10.1: View & Update Transfer Limit'
+  steps:
+  - seq: 1
+    action: User navigates to Transfer Landing Page and taps More Actions
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+- journey: 'Journey 10: Transfer Limit Settings'
+  code: UJ10.2
+  title: 'UJ10.2: Transfer Limit by Rail - Intrabank vs. Interbank'
+  steps:
+  - seq: 1
+    action: User navigates to Transfer Limits Dashboard
+    apiTestId: InitiateIntraTransfer-001-positive
+    apiFile: artifacts/api/PT_Local_Transfer/initiateintratransfer/InitiateIntraTransfer-001-positive.yaml
+- journey: 'Journey 10: Transfer Limit Settings'
+  code: UJ10.3
+  title: 'UJ10.3: Transfer Limit Error - Attempt to Exceed Daily Limit'
+  steps:
+  - seq: 1
+    action: User checks available daily limit
+    apiTestId: null
+    apiFile: null
+  - seq: 1
+    action: User checks available daily limit
+    apiTestId: null
+    apiFile: null
+ambiguous_rows:
+- test_code: UNKN
+  step: '2'
+  api_triggered: GetPtMaintenanceBankListing (GET)
+- test_code: UNKN
+  step: '2'
+  api_triggered: GetPtMaintenanceBankListing (GET)
