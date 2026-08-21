@@ -1,0 +1,365 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: GET /{referenceId} - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: GetOverseasScanPayReceipt-001-positive
+title: GET /{referenceId} - Happy Path
+feature: ptscanandpaydddapispecv2working
+description: Retrieves oversea scan & pay receipt details for Receipt screen display after successful transaction posting. pt-qr-payment retrieves the cached transaction result from Hazelcast txn_flow cache and returns structured receipt data including withdrawal details, source-of-fund account, merchant location, reference ID, and disclaimer information.
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - getoverseasscanpayreceipt
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/oversea-qr/receipt/{referenceId}
+  endpoint: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/oversea-qr/receipt/{referenceId}
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1786582952702
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body: {}
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    data: Object
+    referenceId: String
+    transactionDateTime: String
+    merchant: Object
+    mcc: String
+    name: String
+    postalCode: 'Null'
+    city: String
+    country: String
+    terminalId: 'Null'
+    mpan: String
+    acquirerName: String
+    account: Object
+    debitAccountNo: String
+    debitAccountName: String
+    cpan: String
+    amountDetail: Object
+    transactionAmount: Integer
+    transactionCurrency: String
+    tipAmount: Integer
+    promoCode: String
+    promoAmount: Decimal
+    serviceFee: Integer
+    totalDebitAmount: Decimal
+    exchangeRate: Decimal
+    equivalentTransactionAmount: Decimal
+    equivalentTotalDebitAmount: Decimal
+    error: 'Null'
+    meta: Object
+  expectedFields:
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: correlationId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: correlationId'
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.referenceId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: referenceId'
+      parentField: data
+    - fieldPath: data.status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+      parentField: data
+    - fieldPath: data.transactionDateTime
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: transactionDateTime'
+      parentField: data
+    - fieldPath: data.merchant
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: merchant'
+      parentField: data
+    - fieldPath: data.merchant.mcc
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: mcc'
+      parentField: data.merchant
+    - fieldPath: data.merchant.name
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: name'
+      parentField: data.merchant
+    - fieldPath: data.merchant.postalCode
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: postalCode'
+      parentField: data.merchant
+    - fieldPath: data.merchant.city
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: city'
+      parentField: data.merchant
+    - fieldPath: data.merchant.country
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: country'
+      parentField: data.merchant
+    - fieldPath: data.merchant.terminalId
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: terminalId'
+      parentField: data.merchant
+    - fieldPath: data.merchant.mpan
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: mpan'
+      parentField: data.merchant
+    - fieldPath: data.merchant.acquirerName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: acquirerName'
+      parentField: data.merchant
+    - fieldPath: data.account
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: account'
+      parentField: data
+    - fieldPath: data.account.debitAccountNo
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: debitAccountNo'
+      parentField: data.account
+    - fieldPath: data.account.debitAccountName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: debitAccountName'
+      parentField: data.account
+    - fieldPath: data.account.cpan
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: cpan'
+      parentField: data.account
+    - fieldPath: data.amountDetail
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: amountDetail'
+      parentField: data
+    - fieldPath: data.amountDetail.transactionAmount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: transactionAmount'
+      parentField: data.amountDetail
+    - fieldPath: data.amountDetail.transactionCurrency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: transactionCurrency'
+      parentField: data.amountDetail
+    - fieldPath: data.amountDetail.tipAmount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: tipAmount'
+      parentField: data.amountDetail
+    - fieldPath: data.amountDetail.promoCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: promoCode'
+      parentField: data.amountDetail
+    - fieldPath: data.amountDetail.promoAmount
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: promoAmount'
+      parentField: data.amountDetail
+    - fieldPath: data.amountDetail.serviceFee
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: serviceFee'
+      parentField: data.amountDetail
+    - fieldPath: data.amountDetail.totalDebitAmount
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: totalDebitAmount'
+      parentField: data.amountDetail
+    - fieldPath: data.amountDetail.exchangeRate
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: exchangeRate'
+      parentField: data.amountDetail
+    - fieldPath: data.amountDetail.equivalentTransactionAmount
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: equivalentTransactionAmount'
+      parentField: data.amountDetail
+    - fieldPath: data.amountDetail.equivalentTotalDebitAmount
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: equivalentTotalDebitAmount'
+      parentField: data.amountDetail
+    - fieldPath: error
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: error'
+    - fieldPath: meta
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: meta'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'String'
+    type: field-type
+    target: message
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'correlationId' exists in response
+    type: field-exists
+    target: correlationId
+  - description: Field 'correlationId' is of type 'String'
+    type: field-type
+    target: correlationId
+    expectedValue: String
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+  - description: Field 'error' exists in response
+    type: field-exists
+    target: error
+  - description: Field 'error' is of type 'Null'
+    type: field-type
+    target: error
+    expectedValue: 'Null'
+  - description: Field 'meta' exists in response
+    type: field-exists
+    target: meta
+  - description: Field 'meta' is of type 'Object'
+    type: field-type
+    target: meta
+    expectedValue: Object
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: GetOverseasScanPayReceipt
+  sourceRows: ''
+  apiSpecFile: GetOverseasScanPayReceipt

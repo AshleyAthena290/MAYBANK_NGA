@@ -1,11 +1,11 @@
 # Test Case Index
 # ptscanandpaydddapispecv2working - SubmitOverseasScanPay
-# Generated: 2026-08-12T07:07:30.661Z
+# Generated: 2026-08-13T01:02:29.177Z
 ---
 feature: ptscanandpaydddapispecv2working
 apiName: SubmitOverseasScanPay
 description: Test cases for SubmitOverseasScanPay endpoint
-totalScenarios: 14
+totalScenarios: 11
 scenarios:
   - id: SubmitOverseasScanPay-001-positive
     title: POST /submit - Happy Path
@@ -76,20 +76,6 @@ scenarios:
       - required-field
       - validation
     priority: P2
-  - id: SubmitOverseasScanPay-010-numeric-minimum
-    title: POST /submit - Minimum Numeric Value
-    type: positive
-    tags:
-      - boundary
-      - validation
-    priority: P2
-  - id: SubmitOverseasScanPay-011-numeric-maximum
-    title: POST /submit - Maximum Numeric Value
-    type: positive
-    tags:
-      - boundary
-      - validation
-    priority: P2
   - id: SubmitOverseasScanPay-012-string-minimum-length
     title: POST /submit - Minimum String Length
     type: positive
@@ -104,11 +90,4 @@ scenarios:
       - boundary
       - validation
     priority: P2
-  - id: SubmitOverseasScanPay-014-invalid-enum-or-format
-    title: POST /submit - Invalid Enum or Format
-    type: positive
-    tags:
-      - boundary
-      - validation
-    priority: P2
-generatedAt: '2026-08-12T07:07:30.659Z'
+generatedAt: '2026-08-13T01:02:29.177Z'

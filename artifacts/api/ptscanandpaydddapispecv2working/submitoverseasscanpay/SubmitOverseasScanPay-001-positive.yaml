@@ -25,124 +25,312 @@ preconditions:
 testData: {}
 request:
   method: POST
-  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/submit
-  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/submit
+  url: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/oversea-qr/submit
+  endpoint: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/oversea-qr/submit
   baseUrl: https://{Payment-IP}:{Payment-PORT}
   headers:
     Content-Type: application/json
     Accept: application/json
-    X-Correlation-Id: test-correlation-id-1786518450630
+    X-Correlation-Id: test-correlation-id-1786582949151
     Authorization: Bearer <token>
   pathParams: {}
   queryParams: {}
   body:
     txnRef: <value>
-    journeyType: <value>
-    sourceAccountId: <value>
-    merchantAmount: <value>
-    merchantCurrency: <value>
-    finalIDRAmount: <value>
-    rateRefNo: <value>
-    cpan: <value>
-    authToken: <value>
-    promoCode: <value>
-    ? "{\n  \"txnRef\": \"QR-CB-20260509-001\",\n  \"journeyType\": \"CROSSBORDER\",\n  \"sourceAccountId\": \"514013314526\",\n  \"merchantAmount\": 38.50,\n  \"merchantCurrency\": \"MYR\",\n  \"finalIDRAmount\": 152175.15,\n  \"rateRefNo\": \"ALTO-REF-20260509-001\",\n  \"cpan\": \"60060012345678901\",\n  \"authToken\": \"S2U-AUTH-TOKEN-XYZ\",\n  \"promoCode\": null\n}"
+    s2uToken: <value>
+    ? "{\n    \"referenceId\": \"94995692500\",\n    \"s2uToken\": \"S2U-AUTH-TOKEN-XYZ\"\n}"
     : <value>
 response:
   successStatusCode: 200
   successDescription: Request processed successfully
   schema:
-    txnRef: String
-    transactionStatus: String
-    postingRef: String
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    data: Object
+    referenceId: String
     transactionDateTime: String
-    merchantAmount: Decimal
-    merchantCurrency: String
-    finalRate: Decimal
-    totalDebitIDRAmount: Decimal
-    sofAccount: Object
-    accountName: String
-    accountNumberMasked: String
-    errorCode: 'Null'
-    errorMessage: 'Null'
+    merchant: Object
+    name: String
+    postalCode: 'Null'
+    city: String
+    country: String
+    terminalId: 'Null'
+    mpan: String
+    acquirerName: String
+    debitAccount: Object
+    debitAccountNo: String
+    debitAccountName: String
+    cpan: 'Null'
+    amountDetail: Object
+    transactionAmount: Integer
+    transactionCurrency: String
+    tipAmount: Integer
+    promoCode: String
+    promoAmount: Decimal
+    serviceFee: Integer
+    totalDebitAmount: Decimal
+    exchangeRate: Decimal
+    equivalentTotalDebitAmount: Decimal
+    fmsInfo: Object
+    equivalentTransactionAmount: Decimal
+    equivalentTipAmount: Integer
+    limit: Object
+    dailyLimit: Integer
+    transactionLimit: Integer
+    preLoginLimit: Integer
+    error: 'Null'
+    meta: Object
   expectedFields:
-    - fieldPath: txnRef
+    - fieldPath: status
       type: String
       mandatory: false
       constraints:
         minLength: 1
-      description: 'Field: txnRef'
-    - fieldPath: transactionStatus
+      description: 'Field: status'
+    - fieldPath: message
       type: String
       mandatory: false
       constraints:
         minLength: 1
-      description: 'Field: transactionStatus'
-    - fieldPath: postingRef
+      description: 'Field: message'
+    - fieldPath: timestamp
       type: String
       mandatory: false
       constraints:
         minLength: 1
-      description: 'Field: postingRef'
-    - fieldPath: transactionDateTime
+      description: 'Field: timestamp'
+    - fieldPath: correlationId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: correlationId'
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.referenceId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: referenceId'
+      parentField: data
+    - fieldPath: data.status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+      parentField: data
+    - fieldPath: data.transactionDateTime
       type: String
       mandatory: false
       constraints:
         minLength: 1
       description: 'Field: transactionDateTime'
-    - fieldPath: merchantAmount
-      type: Decimal
-      mandatory: false
-      constraints:
-        minValue: 0
-      description: 'Field: merchantAmount'
-    - fieldPath: merchantCurrency
-      type: String
-      mandatory: false
-      constraints:
-        minLength: 1
-      description: 'Field: merchantCurrency'
-    - fieldPath: finalRate
-      type: Decimal
-      mandatory: false
-      constraints:
-        minValue: 0
-      description: 'Field: finalRate'
-    - fieldPath: totalDebitIDRAmount
-      type: Decimal
-      mandatory: false
-      constraints:
-        minValue: 0
-      description: 'Field: totalDebitIDRAmount'
-    - fieldPath: sofAccount
+      parentField: data
+    - fieldPath: data.merchant
       type: Object
       mandatory: false
       constraints: {}
-      description: 'Field: sofAccount'
-    - fieldPath: sofAccount.accountName
+      description: 'Field: merchant'
+      parentField: data
+    - fieldPath: data.merchant.name
       type: String
       mandatory: false
       constraints:
         minLength: 1
-      description: 'Field: accountName'
-      parentField: sofAccount
-    - fieldPath: sofAccount.accountNumberMasked
+      description: 'Field: name'
+      parentField: data.merchant
+    - fieldPath: data.merchant.postalCode
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: postalCode'
+      parentField: data.merchant
+    - fieldPath: data.merchant.city
       type: String
       mandatory: false
       constraints:
         minLength: 1
-      description: 'Field: accountNumberMasked'
-      parentField: sofAccount
-    - fieldPath: errorCode
+      description: 'Field: city'
+      parentField: data.merchant
+    - fieldPath: data.merchant.country
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: country'
+      parentField: data.merchant
+    - fieldPath: data.merchant.terminalId
       type: 'Null'
       mandatory: false
       constraints: {}
-      description: 'Field: errorCode'
-    - fieldPath: errorMessage
+      description: 'Field: terminalId'
+      parentField: data.merchant
+    - fieldPath: data.merchant.mpan
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: mpan'
+      parentField: data.merchant
+    - fieldPath: data.merchant.acquirerName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: acquirerName'
+      parentField: data.merchant
+    - fieldPath: data.debitAccount
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: debitAccount'
+      parentField: data
+    - fieldPath: data.debitAccount.debitAccountNo
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: debitAccountNo'
+      parentField: data.debitAccount
+    - fieldPath: data.debitAccount.debitAccountName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: debitAccountName'
+      parentField: data.debitAccount
+    - fieldPath: data.debitAccount.cpan
       type: 'Null'
       mandatory: false
       constraints: {}
-      description: 'Field: errorMessage'
+      description: 'Field: cpan'
+      parentField: data.debitAccount
+    - fieldPath: data.amountDetail
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: amountDetail'
+      parentField: data
+    - fieldPath: data.amountDetail.transactionAmount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: transactionAmount'
+      parentField: data.amountDetail
+    - fieldPath: data.amountDetail.transactionCurrency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: transactionCurrency'
+      parentField: data.amountDetail
+    - fieldPath: data.amountDetail.tipAmount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: tipAmount'
+      parentField: data.amountDetail
+    - fieldPath: data.amountDetail.promoCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: promoCode'
+      parentField: data.amountDetail
+    - fieldPath: data.amountDetail.promoAmount
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: promoAmount'
+      parentField: data.amountDetail
+    - fieldPath: data.amountDetail.serviceFee
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: serviceFee'
+      parentField: data.amountDetail
+    - fieldPath: data.amountDetail.totalDebitAmount
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: totalDebitAmount'
+      parentField: data.amountDetail
+    - fieldPath: data.amountDetail.exchangeRate
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: exchangeRate'
+      parentField: data.amountDetail
+    - fieldPath: data.amountDetail.equivalentTotalDebitAmount
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: equivalentTotalDebitAmount'
+      parentField: data.amountDetail
+    - fieldPath: data.fmsInfo
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: fmsInfo'
+      parentField: data
+    - fieldPath: data.fmsInfo.equivalentTransactionAmount
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: equivalentTransactionAmount'
+      parentField: data.fmsInfo
+    - fieldPath: data.fmsInfo.equivalentTipAmount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: equivalentTipAmount'
+      parentField: data.fmsInfo
+    - fieldPath: data.fmsInfo.limit
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: limit'
+      parentField: data.fmsInfo
+    - fieldPath: data.fmsInfo.limit.dailyLimit
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: dailyLimit'
+      parentField: data.fmsInfo.limit
+    - fieldPath: data.fmsInfo.limit.transactionLimit
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: transactionLimit'
+      parentField: data.fmsInfo.limit
+    - fieldPath: data.fmsInfo.limit.preLoginLimit
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: preLoginLimit'
+      parentField: data.fmsInfo.limit
+    - fieldPath: error
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: error'
+    - fieldPath: meta
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: meta'
   errorScenarios:
     - statusCode: 400
       description: Bad Request
@@ -157,83 +345,55 @@ assertions:
   - description: Response status code is 200
     type: status
     expectedValue: 200
-  - description: Field 'txnRef' exists in response
+  - description: Field 'status' exists in response
     type: field-exists
-    target: txnRef
-  - description: Field 'txnRef' is of type 'String'
+    target: status
+  - description: Field 'status' is of type 'String'
     type: field-type
-    target: txnRef
+    target: status
     expectedValue: String
-  - description: Field 'transactionStatus' exists in response
+  - description: Field 'message' exists in response
     type: field-exists
-    target: transactionStatus
-  - description: Field 'transactionStatus' is of type 'String'
+    target: message
+  - description: Field 'message' is of type 'String'
     type: field-type
-    target: transactionStatus
+    target: message
     expectedValue: String
-  - description: Field 'postingRef' exists in response
+  - description: Field 'timestamp' exists in response
     type: field-exists
-    target: postingRef
-  - description: Field 'postingRef' is of type 'String'
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
     type: field-type
-    target: postingRef
+    target: timestamp
     expectedValue: String
-  - description: Field 'transactionDateTime' exists in response
+  - description: Field 'correlationId' exists in response
     type: field-exists
-    target: transactionDateTime
-  - description: Field 'transactionDateTime' is of type 'String'
+    target: correlationId
+  - description: Field 'correlationId' is of type 'String'
     type: field-type
-    target: transactionDateTime
+    target: correlationId
     expectedValue: String
-  - description: Field 'merchantAmount' exists in response
+  - description: Field 'data' exists in response
     type: field-exists
-    target: merchantAmount
-  - description: Field 'merchantAmount' is of type 'Decimal'
+    target: data
+  - description: Field 'data' is of type 'Object'
     type: field-type
-    target: merchantAmount
-    expectedValue: Decimal
-  - description: Field 'merchantCurrency' exists in response
-    type: field-exists
-    target: merchantCurrency
-  - description: Field 'merchantCurrency' is of type 'String'
-    type: field-type
-    target: merchantCurrency
-    expectedValue: String
-  - description: Field 'finalRate' exists in response
-    type: field-exists
-    target: finalRate
-  - description: Field 'finalRate' is of type 'Decimal'
-    type: field-type
-    target: finalRate
-    expectedValue: Decimal
-  - description: Field 'totalDebitIDRAmount' exists in response
-    type: field-exists
-    target: totalDebitIDRAmount
-  - description: Field 'totalDebitIDRAmount' is of type 'Decimal'
-    type: field-type
-    target: totalDebitIDRAmount
-    expectedValue: Decimal
-  - description: Field 'sofAccount' exists in response
-    type: field-exists
-    target: sofAccount
-  - description: Field 'sofAccount' is of type 'Object'
-    type: field-type
-    target: sofAccount
+    target: data
     expectedValue: Object
-  - description: Field 'errorCode' exists in response
+  - description: Field 'error' exists in response
     type: field-exists
-    target: errorCode
-  - description: Field 'errorCode' is of type 'Null'
+    target: error
+  - description: Field 'error' is of type 'Null'
     type: field-type
-    target: errorCode
+    target: error
     expectedValue: 'Null'
-  - description: Field 'errorMessage' exists in response
+  - description: Field 'meta' exists in response
     type: field-exists
-    target: errorMessage
-  - description: Field 'errorMessage' is of type 'Null'
+    target: meta
+  - description: Field 'meta' is of type 'Object'
     type: field-type
-    target: errorMessage
-    expectedValue: 'Null'
+    target: meta
+    expectedValue: Object
 cleanup: []
 references:
   fsdFeature: api-spec

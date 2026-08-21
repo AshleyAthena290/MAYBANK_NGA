@@ -1,0 +1,425 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /submit - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: SubmitCashWithdrawal-001-positive
+title: POST /submit - Happy Path
+feature: ptscanandpaydddapispecv2working
+description: 'Submits the Cardless Withdrawal transaction to downstream after successful S2U authorization. Performs final limit validation, routes transaction to ESB eChannelServices based on withdrawal type (On-Us: DE003 26XX00 > Vynamic Payment > Systematics, Off-Us: DE003 41XX00 > Vynamic Payment > TCICO). Stores transaction result in Hazelcast txn_flow cache, updates limit asynchronously, triggers MBPNS notification, and sends fraud monitoring data to FMS.'
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - submitcashwithdrawal
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/submit
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/submit
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1786582966060
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    referenceId: <value>
+    debitAccountNo: <value>
+    debitAccountCurrency: <value>
+    withdrawalAmount: <value>
+    currency: <value>
+    amount: <value>
+    withdrawalType: <value>
+    atmTerminalId: <value>
+    deviceId: <value>
+    authToken: <value>
+    ? "{\n  \"referenceId\": \"14339732600\",\n  \"debitAccountNo\": \"514013314526\",\n  \"debitAccountCurrency\": \"IDR\",\n  \"withdrawalAmount\": {\n    \"currency\": \"IDR\",\n    \"amount\": 100000\n  },\n  \"withdrawalType\": \"OFF_US\",\n  \"atmTerminalId\": \"BM009456\",\n  \"deviceId\": \"DEVICE-ABC-123\",\n  \"authToken\": \"654321\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    code: String
+    message: String
+    timestamp: String
+    correlationId: String
+    data: Object
+    referenceId: String
+    postingRef: String
+    withdrawalAmount: Object
+    currency: String
+    amount: Integer
+    serviceFee: Object
+    totalAmount: Object
+    atmInfo: Object
+    terminalId: String
+    atmName: String
+    atmAddress: String
+    account: Object
+    debitAccountNo: String
+    debitAccountName: String
+    debitAccountCurrency: String
+    fmsInfo: Object
+    merchantCategoryCode: String
+    merchantLocation: String
+    merchantCountryCode: String
+    merchantCountryName: String
+    withdrawalAmountCurrencyCode: String
+    merchantId: String
+    merchantCurrencyCode: String
+    merchantMpan: String
+    merchantBankCode: String
+    merchantBankName: String
+    error: 'Null'
+    meta: Object
+  expectedFields:
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: code
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: code'
+    - fieldPath: message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: correlationId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: correlationId'
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.referenceId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: referenceId'
+      parentField: data
+    - fieldPath: data.status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+      parentField: data
+    - fieldPath: data.postingRef
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: postingRef'
+      parentField: data
+    - fieldPath: data.timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+      parentField: data
+    - fieldPath: data.withdrawalAmount
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: withdrawalAmount'
+      parentField: data
+    - fieldPath: data.withdrawalAmount.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: data.withdrawalAmount
+    - fieldPath: data.withdrawalAmount.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: data.withdrawalAmount
+    - fieldPath: data.serviceFee
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: serviceFee'
+      parentField: data
+    - fieldPath: data.serviceFee.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: data.serviceFee
+    - fieldPath: data.serviceFee.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: data.serviceFee
+    - fieldPath: data.totalAmount
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: totalAmount'
+      parentField: data
+    - fieldPath: data.totalAmount.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: data.totalAmount
+    - fieldPath: data.totalAmount.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: data.totalAmount
+    - fieldPath: data.atmInfo
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: atmInfo'
+      parentField: data
+    - fieldPath: data.atmInfo.terminalId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: terminalId'
+      parentField: data.atmInfo
+    - fieldPath: data.atmInfo.atmName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: atmName'
+      parentField: data.atmInfo
+    - fieldPath: data.atmInfo.atmAddress
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: atmAddress'
+      parentField: data.atmInfo
+    - fieldPath: data.account
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: account'
+      parentField: data
+    - fieldPath: data.account.debitAccountNo
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: debitAccountNo'
+      parentField: data.account
+    - fieldPath: data.account.debitAccountName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: debitAccountName'
+      parentField: data.account
+    - fieldPath: data.account.debitAccountCurrency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: debitAccountCurrency'
+      parentField: data.account
+    - fieldPath: data.fmsInfo
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: fmsInfo'
+      parentField: data
+    - fieldPath: data.fmsInfo.merchantCategoryCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: merchantCategoryCode'
+      parentField: data.fmsInfo
+    - fieldPath: data.fmsInfo.merchantLocation
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: merchantLocation'
+      parentField: data.fmsInfo
+    - fieldPath: data.fmsInfo.merchantCountryCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: merchantCountryCode'
+      parentField: data.fmsInfo
+    - fieldPath: data.fmsInfo.merchantCountryName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: merchantCountryName'
+      parentField: data.fmsInfo
+    - fieldPath: data.fmsInfo.withdrawalAmountCurrencyCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: withdrawalAmountCurrencyCode'
+      parentField: data.fmsInfo
+    - fieldPath: data.fmsInfo.merchantId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: merchantId'
+      parentField: data.fmsInfo
+    - fieldPath: data.fmsInfo.merchantCurrencyCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: merchantCurrencyCode'
+      parentField: data.fmsInfo
+    - fieldPath: data.fmsInfo.merchantMpan
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: merchantMpan'
+      parentField: data.fmsInfo
+    - fieldPath: data.fmsInfo.merchantBankCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: merchantBankCode'
+      parentField: data.fmsInfo
+    - fieldPath: data.fmsInfo.merchantBankName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: merchantBankName'
+      parentField: data.fmsInfo
+    - fieldPath: error
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: error'
+    - fieldPath: meta
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: meta'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'code' exists in response
+    type: field-exists
+    target: code
+  - description: Field 'code' is of type 'String'
+    type: field-type
+    target: code
+    expectedValue: String
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'String'
+    type: field-type
+    target: message
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'correlationId' exists in response
+    type: field-exists
+    target: correlationId
+  - description: Field 'correlationId' is of type 'String'
+    type: field-type
+    target: correlationId
+    expectedValue: String
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+  - description: Field 'error' exists in response
+    type: field-exists
+    target: error
+  - description: Field 'error' is of type 'Null'
+    type: field-type
+    target: error
+    expectedValue: 'Null'
+  - description: Field 'meta' exists in response
+    type: field-exists
+    target: meta
+  - description: Field 'meta' is of type 'Object'
+    type: field-type
+    target: meta
+    expectedValue: Object
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: SubmitCashWithdrawal
+  sourceRows: ''
+  apiSpecFile: SubmitCashWithdrawal

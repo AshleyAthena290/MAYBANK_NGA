@@ -1,0 +1,64 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /initiate - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: ValidateOverseasScanPay-004-invalid-content-type
+title: POST /initiate - Invalid Content-Type
+feature: ptscanandpaydddapispecv2working
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/oversea-qr/initiate
+  endpoint: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/oversea-qr/initiate
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1786582945689
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    referenceId: <value>
+    debitAccountNo: <value>
+    debitAccountCurrency: <value>
+    actualRate: <value>
+    promo: <value>
+    code: <value>
+    currency: <value>
+    amount: <value>
+    ? "{\n    \"referenceId\": \"94995692500\",\n    \"debitAccountNo\": \"514013314526\",\n    \"debitAccountCurrency\": \"IDR\",\n    \"actualRate\": 4576.50,\n    \"promo\": {\n        \"code\": \"DUMMYPROMO\",\n        \"currency\": \"MYR\",\n        \"amount\": 0.5\n    }\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InitiateOverseasScanPay
+  sourceRows: ''
+  apiSpecFile: ValidateOverseasScanPay

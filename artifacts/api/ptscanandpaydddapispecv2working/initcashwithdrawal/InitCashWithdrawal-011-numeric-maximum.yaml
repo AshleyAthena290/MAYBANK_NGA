@@ -1,0 +1,92 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /init - Maximum Numeric Value
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: InitCashWithdrawal-011-numeric-maximum
+title: POST /init - Maximum Numeric Value
+feature: ptscanandpaydddapispecv2working
+description: Request using the maximum supported numeric value should be accepted or rejected according to the API limit
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: '{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/init'
+  endpoint: '{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/init'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1786582956423
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    qrPayload: <value>
+    deviceId: <value>
+    customerCif: 999999999
+    accessId: <value>
+    ? "{\n  \"qrPayload\": \"00020101021226580014ID.CO.BRI.WWW01189360001500000000002020403UBE03041234520454099000,00530336054061000005802ID5914MAYBANK ATM ID6013JAKARTA PUSAT61051234062070703RX23ADA6304ABCD\",\n  \"deviceId\": \"DEVICE-ABC-123\",\n  \"customerCif\": \"000784756\",\n  \"accessId\": \"5264782000027873\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    data: Object
+    referenceId: String
+    withdrawalType: String
+    atmInfo: Object
+    terminalId: String
+    atmName: String
+    atmLocation: String
+    atmAddress: String
+    withdrawalAmount: Object
+    transactionAmount: Integer
+    transactionCurrency: String
+    serviceFee: Object
+    totalAmount: Object
+    debitAccounts: Array<Object>
+    debitAccountNo: String
+    debitAccountType: String
+    debitAccountName: String
+    availableBalance: Decimal
+    debitAccountCurrency: String
+    isDefault: Boolean
+    defaultDebitAccountNo: String
+    error: 'Null'
+    meta: Object
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code matches the documented maximum-value behavior
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InitCashWithdrawal
+  sourceRows: ''
+  apiSpecFile: InitCashWithdrawal

@@ -1,0 +1,108 @@
+# BDD Test Case - ptscanandpaydddapispecv2working
+# Generated for: POST /submit - Required Field Missing
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: SubmitCashWithdrawal-009-required-field-missing
+title: POST /submit - Required Field Missing
+feature: ptscanandpaydddapispecv2working
+description: Request without a required field should be rejected
+tags:
+  - boundary
+  - required-field
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/submit
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/submit
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1786582966060
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    debitAccountNo: <value>
+    debitAccountCurrency: <value>
+    withdrawalAmount: <value>
+    currency: <value>
+    amount: <value>
+    withdrawalType: <value>
+    atmTerminalId: <value>
+    deviceId: <value>
+    authToken: <value>
+    ? "{\n  \"referenceId\": \"14339732600\",\n  \"debitAccountNo\": \"514013314526\",\n  \"debitAccountCurrency\": \"IDR\",\n  \"withdrawalAmount\": {\n    \"currency\": \"IDR\",\n    \"amount\": 100000\n  },\n  \"withdrawalType\": \"OFF_US\",\n  \"atmTerminalId\": \"BM009456\",\n  \"deviceId\": \"DEVICE-ABC-123\",\n  \"authToken\": \"654321\"\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Required field is missing
+  schema:
+    status: String
+    code: String
+    message: String
+    timestamp: String
+    correlationId: String
+    data: Object
+    referenceId: String
+    postingRef: String
+    withdrawalAmount: Object
+    currency: String
+    amount: Integer
+    serviceFee: Object
+    totalAmount: Object
+    atmInfo: Object
+    terminalId: String
+    atmName: String
+    atmAddress: String
+    account: Object
+    debitAccountNo: String
+    debitAccountName: String
+    debitAccountCurrency: String
+    fmsInfo: Object
+    merchantCategoryCode: String
+    merchantLocation: String
+    merchantCountryCode: String
+    merchantCountryName: String
+    withdrawalAmountCurrencyCode: String
+    merchantId: String
+    merchantCurrencyCode: String
+    merchantMpan: String
+    merchantBankCode: String
+    merchantBankName: String
+    error: 'Null'
+    meta: Object
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error identifies missing required field 'referenceId'
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: SubmitCashWithdrawal
+  sourceRows: ''
+  apiSpecFile: SubmitCashWithdrawal

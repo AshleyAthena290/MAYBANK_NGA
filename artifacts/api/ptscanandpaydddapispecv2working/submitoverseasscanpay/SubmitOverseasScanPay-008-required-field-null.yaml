@@ -22,46 +22,63 @@ preconditions:
 testData: {}
 request:
   method: POST
-  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/submit
-  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/submit
+  url: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/oversea-qr/submit
+  endpoint: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/oversea-qr/submit
   baseUrl: https://{Payment-IP}:{Payment-PORT}
   headers:
     Content-Type: application/json
     Accept: application/json
-    X-Correlation-Id: test-correlation-id-1786518450630
+    X-Correlation-Id: test-correlation-id-1786582949151
     Authorization: Bearer <token>
   pathParams: {}
   queryParams: {}
   body:
     txnRef: null
-    journeyType: <value>
-    sourceAccountId: <value>
-    merchantAmount: <value>
-    merchantCurrency: <value>
-    finalIDRAmount: <value>
-    rateRefNo: <value>
-    cpan: <value>
-    authToken: <value>
-    promoCode: <value>
-    ? "{\n  \"txnRef\": \"QR-CB-20260509-001\",\n  \"journeyType\": \"CROSSBORDER\",\n  \"sourceAccountId\": \"514013314526\",\n  \"merchantAmount\": 38.50,\n  \"merchantCurrency\": \"MYR\",\n  \"finalIDRAmount\": 152175.15,\n  \"rateRefNo\": \"ALTO-REF-20260509-001\",\n  \"cpan\": \"60060012345678901\",\n  \"authToken\": \"S2U-AUTH-TOKEN-XYZ\",\n  \"promoCode\": null\n}"
+    s2uToken: <value>
+    ? "{\n    \"referenceId\": \"94995692500\",\n    \"s2uToken\": \"S2U-AUTH-TOKEN-XYZ\"\n}"
     : <value>
 response:
   successStatusCode: 400
   successDescription: Request processed successfully
   schema:
-    txnRef: String
-    transactionStatus: String
-    postingRef: String
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    data: Object
+    referenceId: String
     transactionDateTime: String
-    merchantAmount: Decimal
-    merchantCurrency: String
-    finalRate: Decimal
-    totalDebitIDRAmount: Decimal
-    sofAccount: Object
-    accountName: String
-    accountNumberMasked: String
-    errorCode: 'Null'
-    errorMessage: 'Null'
+    merchant: Object
+    name: String
+    postalCode: 'Null'
+    city: String
+    country: String
+    terminalId: 'Null'
+    mpan: String
+    acquirerName: String
+    debitAccount: Object
+    debitAccountNo: String
+    debitAccountName: String
+    cpan: 'Null'
+    amountDetail: Object
+    transactionAmount: Integer
+    transactionCurrency: String
+    tipAmount: Integer
+    promoCode: String
+    promoAmount: Decimal
+    serviceFee: Integer
+    totalDebitAmount: Decimal
+    exchangeRate: Decimal
+    equivalentTotalDebitAmount: Decimal
+    fmsInfo: Object
+    equivalentTransactionAmount: Decimal
+    equivalentTipAmount: Integer
+    limit: Object
+    dailyLimit: Integer
+    transactionLimit: Integer
+    preLoginLimit: Integer
+    error: 'Null'
+    meta: Object
   expectedFields: []
   errorScenarios:
     - statusCode: 400

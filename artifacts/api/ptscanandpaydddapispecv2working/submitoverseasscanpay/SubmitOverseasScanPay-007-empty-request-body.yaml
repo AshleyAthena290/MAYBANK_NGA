@@ -22,13 +22,13 @@ preconditions:
 testData: {}
 request:
   method: POST
-  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/submit
-  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/scan-overseas/submit
+  url: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/oversea-qr/submit
+  endpoint: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/oversea-qr/submit
   baseUrl: https://{Payment-IP}:{Payment-PORT}
   headers:
     Content-Type: application/json
     Accept: application/json
-    X-Correlation-Id: test-correlation-id-1786518450630
+    X-Correlation-Id: test-correlation-id-1786582949151
     Authorization: Bearer <token>
   pathParams: {}
   queryParams: {}
