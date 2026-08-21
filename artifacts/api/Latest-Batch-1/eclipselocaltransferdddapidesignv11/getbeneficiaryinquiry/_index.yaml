@@ -1,0 +1,114 @@
+# Test Case Index
+# eclipselocaltransferdddapidesignv11 - getBeneficiaryInquiry
+# Generated: 2026-08-21T07:21:12.781Z
+---
+feature: eclipselocaltransferdddapidesignv11
+apiName: getBeneficiaryInquiry
+description: Test cases for getBeneficiaryInquiry endpoint
+totalScenarios: 14
+scenarios:
+  - id: getBeneficiaryInquiry-001-positive
+    title: GET /inquiry - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getbeneficiaryinquiry
+    priority: P1
+  - id: getBeneficiaryInquiry-002-missing-auth
+    title: GET /inquiry - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getBeneficiaryInquiry-003-invalid-auth
+    title: GET /inquiry - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getBeneficiaryInquiry-004-invalid-content-type
+    title: GET /inquiry - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getBeneficiaryInquiry-005-duplicate-correlation-id
+    title: GET /inquiry - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getBeneficiaryInquiry-006-request-timeout
+    title: GET /inquiry - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getBeneficiaryInquiry-007-empty-request-body
+    title: GET /inquiry - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getBeneficiaryInquiry-008-required-field-null
+    title: GET /inquiry - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getBeneficiaryInquiry-009-required-field-missing
+    title: GET /inquiry - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getBeneficiaryInquiry-010-numeric-minimum
+    title: GET /inquiry - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getBeneficiaryInquiry-011-numeric-maximum
+    title: GET /inquiry - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getBeneficiaryInquiry-012-string-minimum-length
+    title: GET /inquiry - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getBeneficiaryInquiry-013-string-maximum-length
+    title: GET /inquiry - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getBeneficiaryInquiry-014-invalid-enum-or-format
+    title: GET /inquiry - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T07:21:12.781Z'

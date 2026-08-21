@@ -1,0 +1,32 @@
+
+> fsd-parser@1.0.0 dev
+> tsx src/index.ts bdd-gen --input input/api/ECLIPSE_App_Dashboard_DDD_API_Design_v2.xlsx --sheet To removed .\artifacts\api\Latest-Batch-1
+
+
+> fsd-parser@1.0.0 dev
+> tsx src/index.ts bdd-gen --input input/api/ECLIPSE_App_Dashboard_DDD_API_Design_v2.xlsx --sheet To removed .\artifacts\api\Latest-Batch-1
+
+
+> fsd-parser@1.0.0 dev
+> tsx src/index.ts bdd-gen --input input/api/ECLIPSE_Account Dashboard_Casa_DDD_API_Design_v1_Workshop.xlsx --sheet ECLIPSE APIs .\artifacts\api\Latest-Batch-1
+
+
+> fsd-parser@1.0.0 dev
+> tsx src/index.ts bdd-gen --input input/api/ECLIPSE_Account Dashboard_Casa_DDD_API_Design_v1_Workshop.xlsx --sheet S2U APIs .\artifacts\api\Latest-Batch-1
+
+
+> fsd-parser@1.0.0 dev
+> tsx src/index.ts bdd-gen --input input/api/ECLIPSE_Account Dashboard_Casa_DDD_API_Design_v1_Workshop.xlsx --sheet ECLIPSE APIs ./artifacts
+
+
+> fsd-parser@1.0.0 dev
+> tsx src/index.ts bdd-gen --input input/api/ECLIPSE_Account Dashboard_Casa_DDD_API_Design_v1_Workshop.xlsx --sheet S2U APIs ./artifacts
+
+
+> fsd-parser@1.0.0 dev
+> tsx src/index.ts bdd-gen --input input/api/ECLIPSE_Account Dashboard_Casa_DDD_API_Design_v1_Workshop.xlsx --sheet ECLIPSE APIs ./artifacts
+
+
+> fsd-parser@1.0.0 dev
+> tsx src/index.ts bdd-gen --input input/api/ECLIPSE_Account Dashboard_Casa_DDD_API_Design_v1_Workshop.xlsx --sheet S2U APIs ./artifacts
+

@@ -1,0 +1,93 @@
+# Test Case Index
+# eclipselocaltransferdddapidesignv11 - getCustomGroups
+# Generated: 2026-08-21T07:20:58.310Z
+---
+feature: eclipselocaltransferdddapidesignv11
+apiName: getCustomGroups
+description: Test cases for getCustomGroups endpoint
+totalScenarios: 11
+scenarios:
+  - id: getCustomGroups-001-positive
+    title: GET /custom - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getcustomgroups
+    priority: P1
+  - id: getCustomGroups-002-missing-auth
+    title: GET /custom - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getCustomGroups-003-invalid-auth
+    title: GET /custom - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getCustomGroups-004-invalid-content-type
+    title: GET /custom - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getCustomGroups-005-duplicate-correlation-id
+    title: GET /custom - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getCustomGroups-006-request-timeout
+    title: GET /custom - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getCustomGroups-007-empty-request-body
+    title: GET /custom - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getCustomGroups-008-required-field-null
+    title: GET /custom - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getCustomGroups-009-required-field-missing
+    title: GET /custom - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getCustomGroups-012-string-minimum-length
+    title: GET /custom - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getCustomGroups-013-string-maximum-length
+    title: GET /custom - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T07:20:58.310Z'

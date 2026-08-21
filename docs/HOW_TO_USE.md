@@ -55,13 +55,13 @@ npm install
 Single API sheet:
 
 ```bash
-npm run dev -- bdd-gen --input "input/api/PT_Scan_and_Pay_DDD_API_Spec_v2_working.xlsx" --sheet "ValidateDomesticScanPay" --outDir ./artifacts
+npm run dev -- bdd-gen --input "input/api/ECLIPSE_Account Dashboard_Casa_DDD_API_Design_v1_Workshop.xlsx" --sheet "getManageDebitCard " --outDir ./artifacts/api/Latest-Batch-1/
 ```
 
 Batch all API sheets:
 
 ```bash
-node scripts/batch-bdd-gen.mjs --input "input/api/PT_Scan_and_Pay_DDD_API_Spec_v2_working.xlsx" --outDir ./artifacts
+node scripts/batch-bdd-gen.mjs --input "input/api/ECLIPSE_Account Dashboard_Casa_DDD_API_Design_v1_Workshop.xlsx" --outDir ./artifacts
 ```
 
 ### Step 2: Run tests directly from YAML
@@ -83,7 +83,7 @@ npm run dev -- api-test-run --api "getptmaintenancetransferinit" --baseUrl "http
 Run by feature:
 
 ```bash
-npm run dev -- api-test-run --feature "ptscanandpaydddapispecv2working" --baseUrl "http://localhost:3000"
+npm run dev -- api-test-run --feature "eclipselocaltransferdddapidesignv11" --baseUrl "http://localhost:3000"
 ```
 
 Run by test case id:

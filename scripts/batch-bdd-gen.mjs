@@ -51,7 +51,7 @@ function runBddGen(sheet) {
     console.log(`\n📄 Generating test cases for: ${sheet}`);
     const cmd = process.platform === 'win32' ? 'npm.cmd' : 'npm';
     let output = '';
-    const child = spawn(cmd, [
+    const commandArgs = [
       'run',
       'dev',
       '--',
@@ -59,7 +59,15 @@ function runBddGen(sheet) {
       '--input', inputFile,
       '--sheet', sheet,
       '--outDir', outDir
-    ], {
+    ];
+
+    // npm.cmd is launched through cmd.exe on Windows, so preserve spaces in
+    // workbook paths and worksheet names when the shell joins the arguments.
+    const spawnArgs = process.platform === 'win32'
+      ? commandArgs.map((arg) => `"${String(arg).replace(/"/g, '\\"')}"`)
+      : commandArgs;
+
+    const child = spawn(cmd, spawnArgs, {
       shell: true,
       stdio: ['inherit', 'pipe', 'pipe']
     });
@@ -83,7 +91,7 @@ function runBddGen(sheet) {
           scenarioCount: match ? Number.parseInt(match[1], 10) : 0
         });
       } else {
-        reject(new Error(`Failed to generate YAML for sheet: ${sheet}`));
+        reject(new Error(`Failed to generate YAML for sheet: ${sheet} (exit code ${code})`));
       }
     });
 
@@ -106,7 +114,9 @@ async function main() {
     // Filter out the index sheet and any sheets to skip
     const sheetsToProcess = allSheets.filter(
       sheet => 
+        sheet !== 'README' &&
         sheet !== 'API_Specs_Index' && 
+        !sheet.endsWith('>>') &&
         !skipSheets.includes(sheet)
     );
 

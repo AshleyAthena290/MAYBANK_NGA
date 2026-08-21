@@ -1,0 +1,114 @@
+# Test Case Index
+# eclipselocaltransferdddapidesignv11 - getTransferBeneficiaries
+# Generated: 2026-08-21T07:21:05.395Z
+---
+feature: eclipselocaltransferdddapidesignv11
+apiName: getTransferBeneficiaries
+description: Test cases for getTransferBeneficiaries endpoint
+totalScenarios: 14
+scenarios:
+  - id: getTransferBeneficiaries-001-positive
+    title: GET /transfer - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - gettransferbeneficiaries
+    priority: P1
+  - id: getTransferBeneficiaries-002-missing-auth
+    title: GET /transfer - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getTransferBeneficiaries-003-invalid-auth
+    title: GET /transfer - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getTransferBeneficiaries-004-invalid-content-type
+    title: GET /transfer - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getTransferBeneficiaries-005-duplicate-correlation-id
+    title: GET /transfer - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getTransferBeneficiaries-006-request-timeout
+    title: GET /transfer - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getTransferBeneficiaries-007-empty-request-body
+    title: GET /transfer - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getTransferBeneficiaries-008-required-field-null
+    title: GET /transfer - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getTransferBeneficiaries-009-required-field-missing
+    title: GET /transfer - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getTransferBeneficiaries-010-numeric-minimum
+    title: GET /transfer - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getTransferBeneficiaries-011-numeric-maximum
+    title: GET /transfer - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getTransferBeneficiaries-012-string-minimum-length
+    title: GET /transfer - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getTransferBeneficiaries-013-string-maximum-length
+    title: GET /transfer - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getTransferBeneficiaries-014-invalid-enum-or-format
+    title: GET /transfer - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T07:21:05.395Z'

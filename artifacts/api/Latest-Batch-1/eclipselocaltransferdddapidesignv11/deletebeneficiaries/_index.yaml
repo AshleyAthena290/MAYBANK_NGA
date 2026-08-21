@@ -1,0 +1,114 @@
+# Test Case Index
+# eclipselocaltransferdddapidesignv11 - deleteBeneficiaries
+# Generated: 2026-08-21T07:21:53.447Z
+---
+feature: eclipselocaltransferdddapidesignv11
+apiName: deleteBeneficiaries
+description: Test cases for deleteBeneficiaries endpoint
+totalScenarios: 14
+scenarios:
+  - id: deleteBeneficiaries-001-positive
+    title: DELETE /transfer - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - deletebeneficiaries
+    priority: P1
+  - id: deleteBeneficiaries-002-missing-auth
+    title: DELETE /transfer - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: deleteBeneficiaries-003-invalid-auth
+    title: DELETE /transfer - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: deleteBeneficiaries-004-invalid-content-type
+    title: DELETE /transfer - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: deleteBeneficiaries-005-duplicate-correlation-id
+    title: DELETE /transfer - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: deleteBeneficiaries-006-request-timeout
+    title: DELETE /transfer - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: deleteBeneficiaries-007-empty-request-body
+    title: DELETE /transfer - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: deleteBeneficiaries-008-required-field-null
+    title: DELETE /transfer - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deleteBeneficiaries-009-required-field-missing
+    title: DELETE /transfer - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: deleteBeneficiaries-010-numeric-minimum
+    title: DELETE /transfer - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deleteBeneficiaries-011-numeric-maximum
+    title: DELETE /transfer - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deleteBeneficiaries-012-string-minimum-length
+    title: DELETE /transfer - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deleteBeneficiaries-013-string-maximum-length
+    title: DELETE /transfer - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deleteBeneficiaries-014-invalid-enum-or-format
+    title: DELETE /transfer - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T07:21:53.446Z'

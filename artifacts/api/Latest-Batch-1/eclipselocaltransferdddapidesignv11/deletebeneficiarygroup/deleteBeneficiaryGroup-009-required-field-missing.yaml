@@ -1,0 +1,72 @@
+# BDD Test Case - eclipselocaltransferdddapidesignv11
+# Generated for: DELETE /{groupId} - Required Field Missing
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: deleteBeneficiaryGroup-009-required-field-missing
+title: DELETE /{groupId} - Required Field Missing
+feature: eclipselocaltransferdddapidesignv11
+description: Request without a required field should be rejected
+tags:
+  - boundary
+  - required-field
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: DELETE
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer/groups/{groupId}'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer/groups/{groupId}'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787296920795
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    Request Parameter: <value>
+    'DELETE  https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer/groups/G001': <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Required field is missing
+  schema:
+    status: Integer
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error identifies missing required field 'groupId'
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: deleteBeneficiaryGroup
+  sourceRows: ''
+  apiSpecFile: deleteBeneficiaryGroup

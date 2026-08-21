@@ -1,0 +1,75 @@
+# BDD Test Case - eclipseaccount-dashboardcasadddapidesignv1workshop
+# Generated for: GET /manage - Maximum String Length
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getManageDebitCard-013-string-maximum-length
+title: GET /manage - Maximum String Length
+feature: eclipseaccount-dashboardcasadddapidesignv1workshop
+description: Request using the maximum supported string length should be accepted or rejected according to the API limit
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/external/debit-card/manage'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/external/debit-card/manage'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787294286309
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    accountId: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    'https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/external/debit-card/manage?accountId=900000097152': <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+    data: Object
+    accounts: Array<Object>
+    accountId: String
+    cardNumber: String
+    nickname: String
+    name: String
+    links: Object
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code matches the documented maximum-length behavior
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getManageDebitCard
+  sourceRows: ''
+  apiSpecFile: getManageDebitCard

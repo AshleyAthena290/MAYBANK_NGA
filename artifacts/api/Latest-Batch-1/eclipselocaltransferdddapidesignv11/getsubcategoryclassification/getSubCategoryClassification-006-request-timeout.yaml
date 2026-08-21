@@ -1,0 +1,60 @@
+# BDD Test Case - eclipselocaltransferdddapidesignv11
+# Generated for: GET /classification - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getSubCategoryClassification-006-request-timeout
+title: GET /classification - Request Timeout
+feature: eclipselocaltransferdddapidesignv11
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/pfm/v1/external/sub-categories/classification'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/pfm/v1/external/sub-categories/classification'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787296888805
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    Request Body: <value>
+    key: <value>
+    subKey: <value>
+    description: <value>
+    'GET  https: //{Eclipse-IP}:{Eclipse-PORT}/pfm/v1/external/sub-categories/classification?key=TRANSFER&subKey=INTERBANK&description=makan': <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getSubCategoryClassification
+  sourceRows: ''
+  apiSpecFile: getSubCategoryClassification

@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipselocaltransferdddapidesignv11 - getCategories
+# Generated: 2026-08-21T07:21:24.177Z
+---
+feature: eclipselocaltransferdddapidesignv11
+apiName: getCategories
+description: Test cases for getCategories endpoint
+totalScenarios: 7
+scenarios:
+  - id: getCategories-001-positive
+    title: GET /categories - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getcategories
+    priority: P1
+  - id: getCategories-002-missing-auth
+    title: GET /categories - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getCategories-003-invalid-auth
+    title: GET /categories - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getCategories-004-invalid-content-type
+    title: GET /categories - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getCategories-005-duplicate-correlation-id
+    title: GET /categories - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getCategories-006-request-timeout
+    title: GET /categories - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getCategories-007-empty-request-body
+    title: GET /categories - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T07:21:24.177Z'

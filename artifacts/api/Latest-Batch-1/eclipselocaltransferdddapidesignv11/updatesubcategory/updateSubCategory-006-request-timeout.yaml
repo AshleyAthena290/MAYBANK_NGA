@@ -1,0 +1,61 @@
+# BDD Test Case - eclipselocaltransferdddapidesignv11
+# Generated for: PATCH /{subCategoryId} - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: updateSubCategory-006-request-timeout
+title: PATCH /{subCategoryId} - Request Timeout
+feature: eclipselocaltransferdddapidesignv11
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: PATCH
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/pfm/v1/external/sub-categories/{subCategoryId}'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/pfm/v1/external/sub-categories/{subCategoryId}'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787296897510
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    subCategoryId: <value>
+    Request Body: <value>
+    colorCode: <value>
+    icon: <value>
+    ? "PATCH /pfm/v1/external/sub-categories/{subCategoryId}\n\n{\n  \"name\": \"Restaurant\",\n  \"colorCode\": \"#FFAB40\",\n  \"icon\": \"restaurant\"\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: updateSubCategory
+  sourceRows: ''
+  apiSpecFile: updateSubCategory

@@ -1,0 +1,69 @@
+# BDD Test Case - eclipselocaltransferdddapidesignv11
+# Generated for: POST /transactions - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: addExpenses-006-request-timeout
+title: POST /transactions - Request Timeout
+feature: eclipselocaltransferdddapidesignv11
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/pfm/v1/transactions'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/pfm/v1/transactions'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787296876457
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    Request Body: <value>
+    accountId: <value>
+    toAccountId: <value>
+    toAccountName: <value>
+    amount: <value>
+    currency: <value>
+    paymentMethod: <value>
+    transactionIndicator: <value>
+    refId: <value>
+    swiftCode: <value>
+    categoryId: <value>
+    subCategoryId: <value>
+    ? "POST /pfm/v1/transactions\n\n{\n  \"accountId\": \"11111111111\", -- my accountId \n  \"toAccountId\": \"22222222222\", \n  \"toAccountName\": \"ALI MUTHU\",\n  \"transactionDate\": \"2026-02-04T11:40:00Z\",\n  \"amount\": 1800000.00,\n  \"currency\": \"IDR\",\n  \"paymentMethod: \"Transfer\",\n  \"transactionIndicator\": \"DR\" debit/credit\n  \"refId\": \"TXN123456789\", \n  \"swiftCode\": \"MBBEMYKL\",\n  \"categoryId\": \"FB001\",\n  \"subCategoryId\": \"FB001-D001\"\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: addExpenses
+  sourceRows: ''
+  apiSpecFile: addExpenses
