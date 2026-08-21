@@ -1,0 +1,76 @@
+# BDD Test Case - eclipselocaltransferdddapidesignv11
+# Generated for: POST /transactions - Maximum String Length
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: addExpenses-013-string-maximum-length
+title: POST /transactions - Maximum String Length
+feature: eclipselocaltransferdddapidesignv11
+description: Request using the maximum supported string length should be accepted or rejected according to the API limit
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/pfm/v1/transactions'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/pfm/v1/transactions'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787296876457
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    Request Body: <value>
+    accountId: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    toAccountId: <value>
+    toAccountName: <value>
+    amount: <value>
+    currency: <value>
+    paymentMethod: <value>
+    transactionIndicator: <value>
+    refId: <value>
+    swiftCode: <value>
+    categoryId: <value>
+    subCategoryId: <value>
+    ? "POST /pfm/v1/transactions\n\n{\n  \"accountId\": \"11111111111\", -- my accountId \n  \"toAccountId\": \"22222222222\", \n  \"toAccountName\": \"ALI MUTHU\",\n  \"transactionDate\": \"2026-02-04T11:40:00Z\",\n  \"amount\": 1800000.00,\n  \"currency\": \"IDR\",\n  \"paymentMethod: \"Transfer\",\n  \"transactionIndicator\": \"DR\" debit/credit\n  \"refId\": \"TXN123456789\", \n  \"swiftCode\": \"MBBEMYKL\",\n  \"categoryId\": \"FB001\",\n  \"subCategoryId\": \"FB001-D001\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code matches the documented maximum-length behavior
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: addExpenses
+  sourceRows: ''
+  apiSpecFile: addExpenses

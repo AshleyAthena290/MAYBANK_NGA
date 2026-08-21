@@ -1,0 +1,78 @@
+# Test Case Index
+# eclipseappdashboarddddapidesignv2 - getRecentExpenses
+# Generated: 2026-08-21T03:55:43.268Z
+---
+feature: eclipseappdashboarddddapidesignv2
+apiName: getRecentExpenses
+description: Test cases for getRecentExpenses endpoint
+totalScenarios: 9
+scenarios:
+  - id: getRecentExpenses-001-positive
+    title: GET /recent - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getrecentexpenses
+    priority: P1
+  - id: getRecentExpenses-002-missing-auth
+    title: GET /recent - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getRecentExpenses-003-invalid-auth
+    title: GET /recent - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getRecentExpenses-004-invalid-content-type
+    title: GET /recent - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getRecentExpenses-005-duplicate-correlation-id
+    title: GET /recent - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getRecentExpenses-006-request-timeout
+    title: GET /recent - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getRecentExpenses-007-empty-request-body
+    title: GET /recent - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getRecentExpenses-010-numeric-minimum
+    title: GET /recent - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getRecentExpenses-011-numeric-maximum
+    title: GET /recent - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T03:55:43.265Z'

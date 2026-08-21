@@ -1,0 +1,93 @@
+# Test Case Index
+# eclipselocaltransferdddapidesignv11 - deleteBeneficiaryGroup
+# Generated: 2026-08-21T07:22:00.820Z
+---
+feature: eclipselocaltransferdddapidesignv11
+apiName: deleteBeneficiaryGroup
+description: Test cases for deleteBeneficiaryGroup endpoint
+totalScenarios: 11
+scenarios:
+  - id: deleteBeneficiaryGroup-001-positive
+    title: DELETE /{groupId} - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - deletebeneficiarygroup
+    priority: P1
+  - id: deleteBeneficiaryGroup-002-missing-auth
+    title: DELETE /{groupId} - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: deleteBeneficiaryGroup-003-invalid-auth
+    title: DELETE /{groupId} - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: deleteBeneficiaryGroup-004-invalid-content-type
+    title: DELETE /{groupId} - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: deleteBeneficiaryGroup-005-duplicate-correlation-id
+    title: DELETE /{groupId} - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: deleteBeneficiaryGroup-006-request-timeout
+    title: DELETE /{groupId} - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: deleteBeneficiaryGroup-007-empty-request-body
+    title: DELETE /{groupId} - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: deleteBeneficiaryGroup-008-required-field-null
+    title: DELETE /{groupId} - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deleteBeneficiaryGroup-009-required-field-missing
+    title: DELETE /{groupId} - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: deleteBeneficiaryGroup-012-string-minimum-length
+    title: DELETE /{groupId} - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deleteBeneficiaryGroup-013-string-maximum-length
+    title: DELETE /{groupId} - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T07:22:00.820Z'

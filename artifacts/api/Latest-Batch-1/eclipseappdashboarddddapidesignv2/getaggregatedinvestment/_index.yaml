@@ -1,0 +1,86 @@
+# Test Case Index
+# eclipseappdashboarddddapidesignv2 - getAggregatedInvestment
+# Generated: 2026-08-21T03:55:30.903Z
+---
+feature: eclipseappdashboarddddapidesignv2
+apiName: getAggregatedInvestment
+description: Test cases for getAggregatedInvestment endpoint
+totalScenarios: 10
+scenarios:
+  - id: getAggregatedInvestment-001-positive
+    title: GET /funds - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getaggregatedinvestment
+    priority: P1
+  - id: getAggregatedInvestment-002-missing-auth
+    title: GET /funds - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getAggregatedInvestment-003-invalid-auth
+    title: GET /funds - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getAggregatedInvestment-004-invalid-content-type
+    title: GET /funds - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getAggregatedInvestment-005-duplicate-correlation-id
+    title: GET /funds - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getAggregatedInvestment-006-request-timeout
+    title: GET /funds - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getAggregatedInvestment-007-empty-request-body
+    title: GET /funds - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getAggregatedInvestment-008-required-field-null
+    title: GET /funds - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAggregatedInvestment-009-required-field-missing
+    title: GET /funds - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getAggregatedInvestment-014-invalid-enum-or-format
+    title: GET /funds - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T03:55:30.901Z'

@@ -1,0 +1,93 @@
+# Test Case Index
+# eclipselocaltransferdddapidesignv11 - getManageGroups
+# Generated: 2026-08-21T07:21:02.051Z
+---
+feature: eclipselocaltransferdddapidesignv11
+apiName: getManageGroups
+description: Test cases for getManageGroups endpoint
+totalScenarios: 11
+scenarios:
+  - id: getManageGroups-001-positive
+    title: GET /management - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getmanagegroups
+    priority: P1
+  - id: getManageGroups-002-missing-auth
+    title: GET /management - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getManageGroups-003-invalid-auth
+    title: GET /management - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getManageGroups-004-invalid-content-type
+    title: GET /management - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getManageGroups-005-duplicate-correlation-id
+    title: GET /management - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getManageGroups-006-request-timeout
+    title: GET /management - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getManageGroups-007-empty-request-body
+    title: GET /management - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getManageGroups-008-required-field-null
+    title: GET /management - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getManageGroups-009-required-field-missing
+    title: GET /management - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getManageGroups-012-string-minimum-length
+    title: GET /management - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getManageGroups-013-string-maximum-length
+    title: GET /management - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T07:21:02.051Z'

@@ -19,7 +19,7 @@ npm run dev -- bdd-gen --input "input/api/P&T_Local_Transfer_DDD_API_Spec_v1.xls
 Process all API endpoints in a workbook at once:
 
 ```bash
-node scripts/batch-bdd-gen.mjs --input "input/api/P&T_Local_Transfer_DDD_API_Spec_v1.xlsx" --outDir ./artifacts
+node scripts/batch-bdd-gen.mjs --input "input/api/ECLIPSE_Local_Transfer_DDD_API_Design_v1.1.xlsx" --outDir ".\artifacts\api\Latest-Batch-1"
 ```
 
 ### 3. **Business-Readable YAML Structure**

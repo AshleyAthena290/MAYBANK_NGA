@@ -1,0 +1,93 @@
+# Test Case Index
+# eclipselocaltransferdddapidesignv11 - updateExpenses
+# Generated: 2026-08-21T07:21:20.153Z
+---
+feature: eclipselocaltransferdddapidesignv11
+apiName: updateExpenses
+description: Test cases for updateExpenses endpoint
+totalScenarios: 11
+scenarios:
+  - id: updateExpenses-001-positive
+    title: PATCH /{transactionReferenceId} - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - updateexpenses
+    priority: P1
+  - id: updateExpenses-002-missing-auth
+    title: PATCH /{transactionReferenceId} - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: updateExpenses-003-invalid-auth
+    title: PATCH /{transactionReferenceId} - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: updateExpenses-004-invalid-content-type
+    title: PATCH /{transactionReferenceId} - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: updateExpenses-005-duplicate-correlation-id
+    title: PATCH /{transactionReferenceId} - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: updateExpenses-006-request-timeout
+    title: PATCH /{transactionReferenceId} - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: updateExpenses-007-empty-request-body
+    title: PATCH /{transactionReferenceId} - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: updateExpenses-008-required-field-null
+    title: PATCH /{transactionReferenceId} - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: updateExpenses-009-required-field-missing
+    title: PATCH /{transactionReferenceId} - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: updateExpenses-012-string-minimum-length
+    title: PATCH /{transactionReferenceId} - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: updateExpenses-013-string-maximum-length
+    title: PATCH /{transactionReferenceId} - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T07:21:20.153Z'

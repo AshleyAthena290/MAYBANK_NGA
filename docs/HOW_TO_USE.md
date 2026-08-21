@@ -55,13 +55,13 @@ npm install
 Single API sheet:
 
 ```bash
-npm run dev -- bdd-gen --input "input/api/P&T_Local_Transfer_DDD_API_Spec_v1.xlsx" --sheet "GetPTMaintenanceTransferInit" --outDir ./artifacts
+npm run dev -- bdd-gen --input "input/api/ECLIPSE_Account Dashboard_Casa_DDD_API_Design_v1_Workshop.xlsx" --sheet "getManageDebitCard " --outDir ./artifacts/api/Latest-Batch-1/
 ```
 
 Batch all API sheets:
 
 ```bash
-node scripts/batch-bdd-gen.mjs --input "input/api/P&T_Local_Transfer_DDD_API_Spec_v1.xlsx" --outDir ./artifacts
+node scripts/batch-bdd-gen.mjs --input "input/api/ECLIPSE_Account Dashboard_Casa_DDD_API_Design_v1_Workshop.xlsx" --outDir ./artifacts
 ```
 
 ### Step 2: Run tests directly from YAML
@@ -72,6 +72,8 @@ Run one YAML file:
 npm run dev -- api-test-run --file "artifacts/api/p-tlocaltransferdddapispecv1/getptmaintenancetransferinit/GetPTMaintenanceTransferInit-001-positive.yaml" --baseUrl "http://localhost:3000"
 ```
 
+C:\Users\amshahril\Documents\Maybank NGA\MAYBANK_NGA\artifacts\api\ptscanandpaydddapispecv2working\submitoverseasscanpay
+
 Run by API name:
 
 ```bash
@@ -81,7 +83,7 @@ npm run dev -- api-test-run --api "getptmaintenancetransferinit" --baseUrl "http
 Run by feature:
 
 ```bash
-npm run dev -- api-test-run --feature "p-tlocaltransferdddapispecv1" --baseUrl "http://localhost:3000"
+npm run dev -- api-test-run --feature "eclipselocaltransferdddapidesignv11" --baseUrl "http://localhost:3000"
 ```
 
 Run by test case id:

@@ -1,0 +1,93 @@
+# Test Case Index
+# eclipselocaltransferdddapidesignv11 - deleteSubCategory
+# Generated: 2026-08-21T07:21:40.888Z
+---
+feature: eclipselocaltransferdddapidesignv11
+apiName: deleteSubCategory
+description: Test cases for deleteSubCategory endpoint
+totalScenarios: 11
+scenarios:
+  - id: deleteSubCategory-001-positive
+    title: DELETE /{subCategoryId} - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - deletesubcategory
+    priority: P1
+  - id: deleteSubCategory-002-missing-auth
+    title: DELETE /{subCategoryId} - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: deleteSubCategory-003-invalid-auth
+    title: DELETE /{subCategoryId} - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: deleteSubCategory-004-invalid-content-type
+    title: DELETE /{subCategoryId} - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: deleteSubCategory-005-duplicate-correlation-id
+    title: DELETE /{subCategoryId} - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: deleteSubCategory-006-request-timeout
+    title: DELETE /{subCategoryId} - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: deleteSubCategory-007-empty-request-body
+    title: DELETE /{subCategoryId} - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: deleteSubCategory-008-required-field-null
+    title: DELETE /{subCategoryId} - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deleteSubCategory-009-required-field-missing
+    title: DELETE /{subCategoryId} - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: deleteSubCategory-012-string-minimum-length
+    title: DELETE /{subCategoryId} - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deleteSubCategory-013-string-maximum-length
+    title: DELETE /{subCategoryId} - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T07:21:40.888Z'
