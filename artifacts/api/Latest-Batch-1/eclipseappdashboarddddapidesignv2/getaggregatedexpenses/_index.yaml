@@ -1,0 +1,86 @@
+# Test Case Index
+# eclipseappdashboarddddapidesignv2 - getAggregatedExpenses
+# Generated: 2026-08-21T03:55:22.806Z
+---
+feature: eclipseappdashboarddddapidesignv2
+apiName: getAggregatedExpenses
+description: Test cases for getAggregatedExpenses endpoint
+totalScenarios: 10
+scenarios:
+  - id: getAggregatedExpenses-001-positive
+    title: GET /expenses - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getaggregatedexpenses
+    priority: P1
+  - id: getAggregatedExpenses-002-missing-auth
+    title: GET /expenses - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getAggregatedExpenses-003-invalid-auth
+    title: GET /expenses - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getAggregatedExpenses-004-invalid-content-type
+    title: GET /expenses - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getAggregatedExpenses-005-duplicate-correlation-id
+    title: GET /expenses - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getAggregatedExpenses-006-request-timeout
+    title: GET /expenses - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getAggregatedExpenses-007-empty-request-body
+    title: GET /expenses - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getAggregatedExpenses-008-required-field-null
+    title: GET /expenses - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAggregatedExpenses-009-required-field-missing
+    title: GET /expenses - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getAggregatedExpenses-014-invalid-enum-or-format
+    title: GET /expenses - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T03:55:22.806Z'

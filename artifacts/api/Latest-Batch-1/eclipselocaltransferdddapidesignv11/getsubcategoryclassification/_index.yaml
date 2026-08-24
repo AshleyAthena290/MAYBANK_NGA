@@ -1,0 +1,78 @@
+# Test Case Index
+# eclipselocaltransferdddapidesignv11 - getSubCategoryClassification
+# Generated: 2026-08-21T07:21:28.827Z
+---
+feature: eclipselocaltransferdddapidesignv11
+apiName: getSubCategoryClassification
+description: Test cases for getSubCategoryClassification endpoint
+totalScenarios: 9
+scenarios:
+  - id: getSubCategoryClassification-001-positive
+    title: GET /classification - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getsubcategoryclassification
+    priority: P1
+  - id: getSubCategoryClassification-002-missing-auth
+    title: GET /classification - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getSubCategoryClassification-003-invalid-auth
+    title: GET /classification - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getSubCategoryClassification-004-invalid-content-type
+    title: GET /classification - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getSubCategoryClassification-005-duplicate-correlation-id
+    title: GET /classification - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getSubCategoryClassification-006-request-timeout
+    title: GET /classification - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getSubCategoryClassification-007-empty-request-body
+    title: GET /classification - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getSubCategoryClassification-012-string-minimum-length
+    title: GET /classification - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getSubCategoryClassification-013-string-maximum-length
+    title: GET /classification - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T07:21:28.826Z'

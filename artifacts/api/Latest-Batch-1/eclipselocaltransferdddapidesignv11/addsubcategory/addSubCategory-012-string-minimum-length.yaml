@@ -1,0 +1,81 @@
+# BDD Test Case - eclipselocaltransferdddapidesignv11
+# Generated for: POST /sub-categories - Minimum String Length
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: addSubCategory-012-string-minimum-length
+title: POST /sub-categories - Minimum String Length
+feature: eclipselocaltransferdddapidesignv11
+description: Request using the minimum supported string length should be accepted
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/pfm/v1/external/sub-categories'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/pfm/v1/external/sub-categories'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787296892822
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    Request Body: <value>
+    categoryId: A
+    colorCode: <value>
+    icon: <value>
+    ? "POST /pfm/v1/external/sub-categories\n\n{\n  \"categoryId\": \"FB001\",\n  \"name\": \"Restaurant\",\n  \"colorCode\": \"#FFAB40\",\n  \"icon\": \"restaurant\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: Integer
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+    data: Object
+    subCategory: Object
+    categoryId: String
+    id: String
+    name: String
+    colorCode: String
+    icon: String
+    isSystem: Boolean
+    link: Object
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 and the minimum string length is accepted
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: addSubCategory
+  sourceRows: ''
+  apiSpecFile: addSubCategory

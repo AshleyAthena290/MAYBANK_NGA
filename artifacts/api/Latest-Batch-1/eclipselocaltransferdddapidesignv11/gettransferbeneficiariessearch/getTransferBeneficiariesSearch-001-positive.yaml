@@ -1,0 +1,288 @@
+# BDD Test Case - eclipselocaltransferdddapidesignv11
+# Generated for: GET /search - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getTransferBeneficiariesSearch-001-positive
+title: GET /search - Happy Path
+feature: eclipselocaltransferdddapidesignv11
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - gettransferbeneficiariessearch
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer/search'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer/search'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787296869097
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    scope: <value>
+    groupType: <value>
+    page: <value>
+    limit: <value>
+    keyword: <value>
+    'GET  https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer/search?scope=LOCAL&groupType=ALL&keyword=ABC&page=0&limit=10': <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: Integer
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+    page: Integer
+    limit: Integer
+    total: Integer
+    nextPage: String
+    data: Object
+    beneficiaries: Array<Object>
+    accountId: String
+    accountHolderName: String
+    nickname: String
+    bicCode: String
+    bankName: String
+    profileImage: String
+    groups: Array<Object>
+    transactionType: String
+    transactionSubtype: String
+    transactionMetadata: Object
+    link: Object
+  expectedFields:
+    - fieldPath: status
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: status'
+    - fieldPath: message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: correlationId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: correlationId'
+    - fieldPath: meta
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: meta'
+    - fieldPath: meta.provider
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: provider'
+      parentField: meta
+    - fieldPath: meta.page
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: page'
+      parentField: meta
+    - fieldPath: meta.limit
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: limit'
+      parentField: meta
+    - fieldPath: meta.total
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: total'
+      parentField: meta
+    - fieldPath: meta.nextPage
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: nextPage'
+      parentField: meta
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.beneficiaries
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: beneficiaries'
+      parentField: data
+    - fieldPath: data.beneficiaries[].accountId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountId'
+      parentField: data.beneficiaries[]
+    - fieldPath: data.beneficiaries[].accountHolderName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountHolderName'
+      parentField: data.beneficiaries[]
+    - fieldPath: data.beneficiaries[].nickname
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: nickname'
+      parentField: data.beneficiaries[]
+    - fieldPath: data.beneficiaries[].bicCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: bicCode'
+      parentField: data.beneficiaries[]
+    - fieldPath: data.beneficiaries[].bankName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: bankName'
+      parentField: data.beneficiaries[]
+    - fieldPath: data.beneficiaries[].profileImage
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: profileImage'
+      parentField: data.beneficiaries[]
+    - fieldPath: data.beneficiaries[].groups
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: groups'
+      parentField: data.beneficiaries[]
+    - fieldPath: data.beneficiaries[].transactionType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: transactionType'
+      parentField: data.beneficiaries[]
+    - fieldPath: data.beneficiaries[].transactionSubtype
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: transactionSubtype'
+      parentField: data.beneficiaries[]
+    - fieldPath: data.beneficiaries[].transactionMetadata
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: transactionMetadata'
+      parentField: data.beneficiaries[]
+    - fieldPath: link
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: link'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'Integer'
+    type: field-type
+    target: status
+    expectedValue: Integer
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'String'
+    type: field-type
+    target: message
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'correlationId' exists in response
+    type: field-exists
+    target: correlationId
+  - description: Field 'correlationId' is of type 'String'
+    type: field-type
+    target: correlationId
+    expectedValue: String
+  - description: Field 'meta' exists in response
+    type: field-exists
+    target: meta
+  - description: Field 'meta' is of type 'Object'
+    type: field-type
+    target: meta
+    expectedValue: Object
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+  - description: Field 'link' exists in response
+    type: field-exists
+    target: link
+  - description: Field 'link' is of type 'Object'
+    type: field-type
+    target: link
+    expectedValue: Object
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getTransferBeneficiariesSearch
+  sourceRows: ''
+  apiSpecFile: getTransferBeneficiariesSearch

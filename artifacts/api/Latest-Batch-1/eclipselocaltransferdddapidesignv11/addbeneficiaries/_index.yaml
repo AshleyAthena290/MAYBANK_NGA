@@ -1,0 +1,114 @@
+# Test Case Index
+# eclipselocaltransferdddapidesignv11 - addBeneficiaries
+# Generated: 2026-08-21T07:21:45.851Z
+---
+feature: eclipselocaltransferdddapidesignv11
+apiName: addBeneficiaries
+description: Test cases for addBeneficiaries endpoint
+totalScenarios: 14
+scenarios:
+  - id: addBeneficiaries-001-positive
+    title: POST /transfer - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - addbeneficiaries
+    priority: P1
+  - id: addBeneficiaries-002-missing-auth
+    title: POST /transfer - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: addBeneficiaries-003-invalid-auth
+    title: POST /transfer - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: addBeneficiaries-004-invalid-content-type
+    title: POST /transfer - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: addBeneficiaries-005-duplicate-correlation-id
+    title: POST /transfer - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: addBeneficiaries-006-request-timeout
+    title: POST /transfer - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: addBeneficiaries-007-empty-request-body
+    title: POST /transfer - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: addBeneficiaries-008-required-field-null
+    title: POST /transfer - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: addBeneficiaries-009-required-field-missing
+    title: POST /transfer - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: addBeneficiaries-010-numeric-minimum
+    title: POST /transfer - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: addBeneficiaries-011-numeric-maximum
+    title: POST /transfer - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: addBeneficiaries-012-string-minimum-length
+    title: POST /transfer - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: addBeneficiaries-013-string-maximum-length
+    title: POST /transfer - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: addBeneficiaries-014-invalid-enum-or-format
+    title: POST /transfer - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T07:21:45.851Z'

@@ -1,0 +1,180 @@
+# BDD Test Case - eclipselocaltransferdddapidesignv11
+# Generated for: PATCH /{transactionReferenceId} - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: updateExpenses-001-positive
+title: PATCH /{transactionReferenceId} - Happy Path
+feature: eclipselocaltransferdddapidesignv11
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - updateexpenses
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: PATCH
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/pfm/v1/transaction/{transactionReferenceId}'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/pfm/v1/transaction/{transactionReferenceId}'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787296880130
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    transactionId: <value>
+    Request Body: <value>
+    category: <value>
+    subCategory: <value>
+    ? "PATCH /pfm/v1/transaction/123456789\n\n{\n  \"categoryId\": \"FB001\",\n  \"subCategoryId\": \"FB001-D001\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    meta: Object
+    data: Object
+    status: String
+    message: String
+    transaction: Object
+    transactionId: String
+    pfmId: String
+    categoryCode: String
+    categoryDescription: String
+    subCategoryCode: String
+    subCategoryDescription: String
+    link: Object
+  expectedFields:
+    - fieldPath: meta
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: meta'
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+      parentField: data
+    - fieldPath: data.message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+      parentField: data
+    - fieldPath: data.transaction
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: transaction'
+      parentField: data
+    - fieldPath: data.transaction.transactionId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: transactionId'
+      parentField: data.transaction
+    - fieldPath: data.transaction.pfmId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: pfmId'
+      parentField: data.transaction
+    - fieldPath: data.transaction.categoryCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: categoryCode'
+      parentField: data.transaction
+    - fieldPath: data.transaction.categoryDescription
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: categoryDescription'
+      parentField: data.transaction
+    - fieldPath: data.transaction.subCategoryCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: subCategoryCode'
+      parentField: data.transaction
+    - fieldPath: data.transaction.subCategoryDescription
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: subCategoryDescription'
+      parentField: data.transaction
+    - fieldPath: link
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: link'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'meta' exists in response
+    type: field-exists
+    target: meta
+  - description: Field 'meta' is of type 'Object'
+    type: field-type
+    target: meta
+    expectedValue: Object
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+  - description: Field 'link' exists in response
+    type: field-exists
+    target: link
+  - description: Field 'link' is of type 'Object'
+    type: field-type
+    target: link
+    expectedValue: Object
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: updateExpenses
+  sourceRows: ''
+  apiSpecFile: updateExpenses

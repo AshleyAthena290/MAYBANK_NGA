@@ -1,0 +1,66 @@
+# BDD Test Case - eclipselocaltransferdddapidesignv11
+# Generated for: GET /inquiry - Maximum String Length
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getBeneficiaryInquiry-013-string-maximum-length
+title: GET /inquiry - Maximum String Length
+feature: eclipselocaltransferdddapidesignv11
+description: Request using the maximum supported string length should be accepted or rejected according to the API limit
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/internal/inquiry'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/internal/inquiry'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787296872744
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    Request Parameter: <value>
+    accountId: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    bicCode: <value>
+    currency: <value>
+    serviceChannel: <value>
+    'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/internal/inquiry?accountId=529122393933&bicCode=MBBEMYKL&currency=IDR&serviceChannel=BIFAST': <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code matches the documented maximum-length behavior
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getBeneficiaryInquiry
+  sourceRows: ''
+  apiSpecFile: getBeneficiaryInquiry

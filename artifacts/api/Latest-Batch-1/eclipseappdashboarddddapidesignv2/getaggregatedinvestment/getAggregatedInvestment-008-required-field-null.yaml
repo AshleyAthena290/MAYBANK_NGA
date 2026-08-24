@@ -1,0 +1,74 @@
+# BDD Test Case - eclipseappdashboarddddapidesignv2
+# Generated for: GET /funds - Required Field Null
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getAggregatedInvestment-008-required-field-null
+title: GET /funds - Required Field Null
+feature: eclipseappdashboarddddapidesignv2
+description: Request with a required field set to null should be rejected
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/dashboard/v1/external/investment/funds'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/dashboard/v1/external/investment/funds'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787284530869
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    fromDate: null
+    toDate: <value>
+    'GET  https: //{Eclipse-IP}:{Eclipse-PORT}/dep/dashboard/v1/external/investment/funds?fromDate=2026-04-16&toDate=2026-04-20': <value>
+response:
+  successStatusCode: 400
+  successDescription: Request processed successfully
+  schema:
+    status: Integer
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+    data: Object
+    totalAggregatedBalance: Decimal
+    currency: String
+    links: Object
+    url: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400 and the error identifies the required field
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getAggregatedInvestment
+  sourceRows: ''
+  apiSpecFile: getAggregatedInvestment

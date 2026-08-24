@@ -1,0 +1,90 @@
+# BDD Test Case - eclipselocaltransferdddapidesignv11
+# Generated for: GET /transfer - Required Field Null
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getTransferBeneficiaries-008-required-field-null
+title: GET /transfer - Required Field Null
+feature: eclipselocaltransferdddapidesignv11
+description: Request with a required field set to null should be rejected
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787296865364
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    scope: null
+    groupType: <value>
+    groupId: <value>
+    page: <value>
+    limit: <value>
+    ? "GET  https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer?scope=LOCAL&groupType=FREQUENT&page=0&limit=10\nGET  https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer?scope=LOCAL&groupType=ALL&page=0&limit=10\nGET  https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer?scope=LOCAL&groupType=FAVORITES&page=0&limit=10\nGET  https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer?scope=LOCAL&groupType=CUSTOM&groupId=G002&page=0&limit=10"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Request processed successfully
+  schema:
+    status: Integer
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+    page: Integer
+    limit: Integer
+    total: Integer
+    nextPage: String
+    data: Object
+    beneficiaries: Array<Object>
+    accountId: String
+    accountHolderName: String
+    nickname: String
+    bicCode: String
+    bankName: String
+    profileImage: String
+    groups: Array<Object>
+    transactionType: String
+    transactionSubtype: String
+    transactionMetadata: Object
+    link: Object
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400 and the error identifies the required field
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getTransferBeneficiaries
+  sourceRows: ''
+  apiSpecFile: getTransferBeneficiaries

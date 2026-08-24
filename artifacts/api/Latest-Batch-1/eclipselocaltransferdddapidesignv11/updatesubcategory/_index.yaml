@@ -1,0 +1,85 @@
+# Test Case Index
+# eclipselocaltransferdddapidesignv11 - updateSubCategory
+# Generated: 2026-08-21T07:21:37.531Z
+---
+feature: eclipselocaltransferdddapidesignv11
+apiName: updateSubCategory
+description: Test cases for updateSubCategory endpoint
+totalScenarios: 10
+scenarios:
+  - id: updateSubCategory-001-positive
+    title: PATCH /{subCategoryId} - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - updatesubcategory
+    priority: P1
+  - id: updateSubCategory-002-missing-auth
+    title: PATCH /{subCategoryId} - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: updateSubCategory-003-invalid-auth
+    title: PATCH /{subCategoryId} - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: updateSubCategory-004-invalid-content-type
+    title: PATCH /{subCategoryId} - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: updateSubCategory-005-duplicate-correlation-id
+    title: PATCH /{subCategoryId} - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: updateSubCategory-006-request-timeout
+    title: PATCH /{subCategoryId} - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: updateSubCategory-007-empty-request-body
+    title: PATCH /{subCategoryId} - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: updateSubCategory-012-string-minimum-length
+    title: PATCH /{subCategoryId} - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: updateSubCategory-013-string-maximum-length
+    title: PATCH /{subCategoryId} - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: updateSubCategory-014-invalid-enum-or-format
+    title: PATCH /{subCategoryId} - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T07:21:37.530Z'

@@ -1,0 +1,107 @@
+# Test Case Index
+# eclipseaccount-dashboardcasadddapidesignv1workshop - getManageDebitCard
+# Generated: 2026-08-21T06:38:06.349Z
+---
+feature: eclipseaccount-dashboardcasadddapidesignv1workshop
+apiName: getManageDebitCard
+description: Test cases for getManageDebitCard endpoint
+totalScenarios: 13
+scenarios:
+  - id: getManageDebitCard-001-positive
+    title: GET /manage - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getmanagedebitcard
+    priority: P1
+  - id: getManageDebitCard-002-missing-auth
+    title: GET /manage - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getManageDebitCard-003-invalid-auth
+    title: GET /manage - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getManageDebitCard-004-invalid-content-type
+    title: GET /manage - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getManageDebitCard-005-duplicate-correlation-id
+    title: GET /manage - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getManageDebitCard-006-request-timeout
+    title: GET /manage - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getManageDebitCard-007-empty-request-body
+    title: GET /manage - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getManageDebitCard-008-required-field-null
+    title: GET /manage - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getManageDebitCard-009-required-field-missing
+    title: GET /manage - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getManageDebitCard-010-numeric-minimum
+    title: GET /manage - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getManageDebitCard-011-numeric-maximum
+    title: GET /manage - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getManageDebitCard-012-string-minimum-length
+    title: GET /manage - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getManageDebitCard-013-string-maximum-length
+    title: GET /manage - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T06:38:06.349Z'

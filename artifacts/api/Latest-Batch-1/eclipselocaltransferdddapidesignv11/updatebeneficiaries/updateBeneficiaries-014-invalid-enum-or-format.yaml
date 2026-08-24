@@ -1,0 +1,93 @@
+# BDD Test Case - eclipselocaltransferdddapidesignv11
+# Generated for: PATCH /transfer - Invalid Enum or Format
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: updateBeneficiaries-014-invalid-enum-or-format
+title: PATCH /transfer - Invalid Enum or Format
+feature: eclipselocaltransferdddapidesignv11
+description: Request using an invalid enum or format value should be rejected
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: PATCH
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787296909639
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    '> groups[] (list)': <value>
+    operation: <value>
+    id: <value>
+    type: __INVALID_ENUM_OR_FORMAT__
+    '> beneficiaries[] (list)': <value>
+    accountId: <value>
+    accountHolderName: <value>
+    nickname: <value>
+    bicCode: <value>
+    bankName: <value>
+    transactionType: <value>
+    transactionSubType: <value>
+    '>> transactionMetadata[] (list)': <value>
+    serviceFees: <value>
+    firstTimeTAC: <value>
+    idNumber: <value>
+    idType: <value>
+    mobileNumber: <value>
+    idFlag: <value>
+    acquirerId: <value>
+    accountType: <value>
+    accountSubType: <value>
+    currency: <value>
+    balance: <value>
+    paymentCode: <value>
+    Request Parameter: <value>
+    ? "{\n  \"groups\": [\n    {\n      \"operation\": \"add\",\n      \"id\": \"G001\",\n      \"type\": \"FAVORITES\",\n      \"name\": \"Favorites\"\n    }\n  ],\n  \"beneficiaries\": [\n    {\n      \"accountId\": \"4700025122\",\n      \"accountHolderName\": \"MUHAMMAD ALI MUTHU\",\n      \"bicCode\": \"PBBEMYKL\",\n      \"bankName\": \"PUBLIC BANK\",\n      \"transactionType\": \"TRANSFER/PAYMENT\",\n      \"transactionSubtype\": \"INTERBANK\",\n      \"transactionMetadata\": {\n        \"serviceFees\": 11,\n        \"firstTimeTac\": \"1\",\n        \"idNumber\": null,\n        \"idType\": null,\n        \"mobileNumber\": \"\",\n        \"idFlag\": \"\",\n        \"acquirerId\": \"564162\",\n        \"accountType\": \"\",\n        \"accountSubType\": \"\",\n        \"currency\": \"\",\n        \"balance\": 0,\n        \"paymentCode\": \"01\"\n      }\n    }\n  ]\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Request processed successfully
+  schema:
+    status: Integer
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400 and the error identifies the invalid value
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: updateBeneficiaries
+  sourceRows: ''
+  apiSpecFile: updateBeneficiaries

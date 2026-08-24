@@ -1,0 +1,69 @@
+# BDD Test Case - eclipselocaltransferdddapidesignv11
+# Generated for: PATCH /{groupId} - Missing Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: updateBeneficiaryGroup-002-missing-auth
+title: PATCH /{groupId} - Missing Authentication
+feature: eclipselocaltransferdddapidesignv11
+description: Request without authentication credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: PATCH
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer/groups/{groupId}'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer/groups/{groupId}'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers: {}
+  pathParams: {}
+  queryParams: {}
+  body:
+    groupName: <value>
+    Path Variable: <value>
+    groupId: <value>
+    Request Parameter: <value>
+    ? "PATCH  https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer/groups/G001\n\n{\n  \"groupName\": \"New best friend\"\n}"
+    : <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized - Authentication required
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+      description: Error code
+    - fieldPath: message
+      type: String
+      mandatory: true
+      description: Error message
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Field 'error' exists and is of type String
+    type: field-type
+    target: error
+    expectedValue: String
+  - description: Error message indicates missing authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: updateBeneficiaryGroup
+  sourceRows: ''
+  apiSpecFile: updateBeneficiaryGroup

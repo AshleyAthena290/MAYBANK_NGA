@@ -1,0 +1,114 @@
+# Test Case Index
+# eclipseappdashboarddddapidesignv2 - getTopCategoriesExpenses
+# Generated: 2026-08-21T03:55:34.945Z
+---
+feature: eclipseappdashboarddddapidesignv2
+apiName: getTopCategoriesExpenses
+description: Test cases for getTopCategoriesExpenses endpoint
+totalScenarios: 14
+scenarios:
+  - id: getTopCategoriesExpenses-001-positive
+    title: GET /top-categories - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - gettopcategoriesexpenses
+    priority: P1
+  - id: getTopCategoriesExpenses-002-missing-auth
+    title: GET /top-categories - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getTopCategoriesExpenses-003-invalid-auth
+    title: GET /top-categories - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getTopCategoriesExpenses-004-invalid-content-type
+    title: GET /top-categories - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getTopCategoriesExpenses-005-duplicate-correlation-id
+    title: GET /top-categories - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getTopCategoriesExpenses-006-request-timeout
+    title: GET /top-categories - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getTopCategoriesExpenses-007-empty-request-body
+    title: GET /top-categories - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getTopCategoriesExpenses-008-required-field-null
+    title: GET /top-categories - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getTopCategoriesExpenses-009-required-field-missing
+    title: GET /top-categories - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getTopCategoriesExpenses-010-numeric-minimum
+    title: GET /top-categories - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getTopCategoriesExpenses-011-numeric-maximum
+    title: GET /top-categories - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getTopCategoriesExpenses-012-string-minimum-length
+    title: GET /top-categories - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getTopCategoriesExpenses-013-string-maximum-length
+    title: GET /top-categories - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getTopCategoriesExpenses-014-invalid-enum-or-format
+    title: GET /top-categories - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T03:55:34.943Z'

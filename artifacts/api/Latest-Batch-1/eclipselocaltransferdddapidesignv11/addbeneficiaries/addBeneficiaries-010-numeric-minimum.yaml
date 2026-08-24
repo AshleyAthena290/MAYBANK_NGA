@@ -1,0 +1,95 @@
+# BDD Test Case - eclipselocaltransferdddapidesignv11
+# Generated for: POST /transfer - Minimum Numeric Value
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: addBeneficiaries-010-numeric-minimum
+title: POST /transfer - Minimum Numeric Value
+feature: eclipselocaltransferdddapidesignv11
+description: Request using the minimum supported numeric value should be accepted
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787296905815
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    '> groups[] (list)': <value>
+    id: <value>
+    type: <value>
+    '> beneficiaries[] (list)': <value>
+    accountId: 0
+    accountHolderName: <value>
+    nickname: <value>
+    bicCode: <value>
+    bankName: <value>
+    transactionType: <value>
+    transactionSubType: <value>
+    '>> transactionMetadata[] (list)': <value>
+    serviceFees: <value>
+    firstTimeTAC: <value>
+    idNumber: <value>
+    idType: <value>
+    mobileNumber: <value>
+    idFlag: <value>
+    acquirerId: <value>
+    accountType: <value>
+    accountSubType: <value>
+    currency: <value>
+    balance: <value>
+    paymentCode: <value>
+    Request Parameter: <value>
+    ? "{\n  \"groups\": [\n    {\n      \"type\": \"FAVOURITES\",\n      \"name\": \"Favourites\"\n    }\n  ],\n  \"beneficiaries\": [\n    {\n      \"accountId\": \"4700025122\",\n      \"accountHolderName\": \"MUHAMMAD ALI MUTHU\",\n      \"nickname\": \"ali nickname\",\n      \"bicCode\": \"PBBEMYKL\",\n      \"bankName\": \"PUBLIC BANK\",\n      \"transactionType\": \"TRANSFER/PAYMENT\",\n      \"transactionSubtype\": \"INTERBANK\",\n      \"transactionMetadata\": {\n        \"serviceFees\": 11,\n        \"firstTimeTac\": \"1\",\n        \"idNumber\": null,\n        \"idType\": null,\n        \"mobileNumber\": \"\",\n        \"idFlag\": \"\",\n        \"swiftCode\": \"PBBEMYKL\",\n        \"acquirerId\": \"564162\",\n        \"accountType\": \"\",\n        \"accountSubType\": \"\",\n        \"currency\": \"\",\n        \"balance\": 0,\n        \"paymentCode\": \"01\"\n      }\n    }\n  ]\n}"
+    : <value>
+    ? "{\n  \"groups\": [\n    {\n      \"type\": \"CUSTOM\",\n      \"name\": \"Friends\"\n    }\n  ],\n  \"beneficiaries\": [\n    {\n      \"accountId\": \"4700025122\",\n      \"accountHolderName\": \"MUHAMMAD ALI MUTHU\",\n      \"nickname\": \"ali nickname\",\n      \"bicCode\": \"PBBEMYKL\",\n      \"bankName\": \"PUBLIC BANK\",\n      \"transactionType\": \"TRANSFER/PAYMENT\",\n      \"transactionSubtype\": \"INTERBANK\",\n      \"transactionMetadata\": {\n        \"serviceFees\": 11,\n        \"firstTimeTac\": \"1\",\n        \"idNumber\": null,\n        \"idType\": null,\n        \"mobileNumber\": \"\",\n        \"idFlag\": \"\",\n        \"swiftCode\": \"PBBEMYKL\",\n        \"acquirerId\": \"564162\",\n        \"accountType\": \"\",\n        \"accountSubType\": \"\",\n        \"currency\": \"\",\n        \"balance\": 0,\n        \"paymentCode\": \"01\"\n      }\n    }\n  ]\n}"
+    : <value>
+    Name: <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: Integer
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 and the minimum numeric value is accepted
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: addBeneficiaries
+  sourceRows: ''
+  apiSpecFile: addBeneficiaries

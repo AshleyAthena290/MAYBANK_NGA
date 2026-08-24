@@ -1,0 +1,64 @@
+# BDD Test Case - eclipselocaltransferdddapidesignv11
+# Generated for: DELETE /transfer - Invalid Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: deleteBeneficiaries-003-invalid-auth
+title: DELETE /transfer - Invalid Authentication
+feature: eclipselocaltransferdddapidesignv11
+description: Request with invalid credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: DELETE
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787296913420
+    Authorization: Bearer invalid_token_12345
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    groupType: <value>
+    groupId: <value>
+    accountId: <value>
+    ? "DELETE  https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer?groupType=ALL&accountId=598322219222\nDELETE  https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer?groupType=FREQUENT&accountId=598322219222\nDELETE  https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer?groupType=FAVORITES&accountId=598322219222\nDELETE  https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer?groupType=CUSTOM&groupId=G001&accountId=598322219222"
+    : <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized - Invalid credentials
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Error message indicates invalid authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: deleteBeneficiaries
+  sourceRows: ''
+  apiSpecFile: deleteBeneficiaries

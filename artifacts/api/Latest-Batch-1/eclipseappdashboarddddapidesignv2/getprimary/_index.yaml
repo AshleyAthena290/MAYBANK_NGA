@@ -1,0 +1,78 @@
+# Test Case Index
+# eclipseappdashboarddddapidesignv2 - getPrimary
+# Generated: 2026-08-21T03:55:18.923Z
+---
+feature: eclipseappdashboarddddapidesignv2
+apiName: getPrimary
+description: Test cases for getPrimary endpoint
+totalScenarios: 9
+scenarios:
+  - id: getPrimary-001-positive
+    title: GET /primary - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getprimary
+    priority: P1
+  - id: getPrimary-002-missing-auth
+    title: GET /primary - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getPrimary-003-invalid-auth
+    title: GET /primary - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getPrimary-004-invalid-content-type
+    title: GET /primary - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getPrimary-005-duplicate-correlation-id
+    title: GET /primary - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getPrimary-006-request-timeout
+    title: GET /primary - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getPrimary-007-empty-request-body
+    title: GET /primary - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getPrimary-010-numeric-minimum
+    title: GET /primary - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getPrimary-011-numeric-maximum
+    title: GET /primary - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T03:55:18.923Z'

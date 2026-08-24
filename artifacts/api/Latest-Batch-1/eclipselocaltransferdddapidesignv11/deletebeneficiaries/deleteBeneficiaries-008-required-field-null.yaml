@@ -1,0 +1,71 @@
+# BDD Test Case - eclipselocaltransferdddapidesignv11
+# Generated for: DELETE /transfer - Required Field Null
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: deleteBeneficiaries-008-required-field-null
+title: DELETE /transfer - Required Field Null
+feature: eclipselocaltransferdddapidesignv11
+description: Request with a required field set to null should be rejected
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: DELETE
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787296913420
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    groupType: null
+    groupId: <value>
+    accountId: <value>
+    ? "DELETE  https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer?groupType=ALL&accountId=598322219222\nDELETE  https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer?groupType=FREQUENT&accountId=598322219222\nDELETE  https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer?groupType=FAVORITES&accountId=598322219222\nDELETE  https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer?groupType=CUSTOM&groupId=G001&accountId=598322219222"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Request processed successfully
+  schema:
+    status: Integer
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400 and the error identifies the required field
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: deleteBeneficiaries
+  sourceRows: ''
+  apiSpecFile: deleteBeneficiaries

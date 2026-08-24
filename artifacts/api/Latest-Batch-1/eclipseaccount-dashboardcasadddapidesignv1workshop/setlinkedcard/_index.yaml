@@ -1,0 +1,107 @@
+# Test Case Index
+# eclipseaccount-dashboardcasadddapidesignv1workshop - setLinkedCard
+# Generated: 2026-08-21T06:38:18.470Z
+---
+feature: eclipseaccount-dashboardcasadddapidesignv1workshop
+apiName: setLinkedCard
+description: Test cases for setLinkedCard endpoint
+totalScenarios: 13
+scenarios:
+  - id: setLinkedCard-001-positive
+    title: POST /linked-card - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - setlinkedcard
+    priority: P1
+  - id: setLinkedCard-002-missing-auth
+    title: POST /linked-card - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: setLinkedCard-003-invalid-auth
+    title: POST /linked-card - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: setLinkedCard-004-invalid-content-type
+    title: POST /linked-card - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: setLinkedCard-005-duplicate-correlation-id
+    title: POST /linked-card - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: setLinkedCard-006-request-timeout
+    title: POST /linked-card - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: setLinkedCard-007-empty-request-body
+    title: POST /linked-card - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: setLinkedCard-008-required-field-null
+    title: POST /linked-card - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: setLinkedCard-009-required-field-missing
+    title: POST /linked-card - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: setLinkedCard-010-numeric-minimum
+    title: POST /linked-card - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: setLinkedCard-011-numeric-maximum
+    title: POST /linked-card - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: setLinkedCard-012-string-minimum-length
+    title: POST /linked-card - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: setLinkedCard-013-string-maximum-length
+    title: POST /linked-card - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T06:38:18.470Z'

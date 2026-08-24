@@ -1,0 +1,82 @@
+# BDD Test Case - eclipselocaltransferdddapidesignv11
+# Generated for: PATCH /transfer - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: updateBeneficiaries-006-request-timeout
+title: PATCH /transfer - Request Timeout
+feature: eclipselocaltransferdddapidesignv11
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: PATCH
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/beneficiary/v1/external/transfer'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787296909639
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    '> groups[] (list)': <value>
+    operation: <value>
+    id: <value>
+    type: <value>
+    '> beneficiaries[] (list)': <value>
+    accountId: <value>
+    accountHolderName: <value>
+    nickname: <value>
+    bicCode: <value>
+    bankName: <value>
+    transactionType: <value>
+    transactionSubType: <value>
+    '>> transactionMetadata[] (list)': <value>
+    serviceFees: <value>
+    firstTimeTAC: <value>
+    idNumber: <value>
+    idType: <value>
+    mobileNumber: <value>
+    idFlag: <value>
+    acquirerId: <value>
+    accountType: <value>
+    accountSubType: <value>
+    currency: <value>
+    balance: <value>
+    paymentCode: <value>
+    Request Parameter: <value>
+    ? "{\n  \"groups\": [\n    {\n      \"operation\": \"add\",\n      \"id\": \"G001\",\n      \"type\": \"FAVORITES\",\n      \"name\": \"Favorites\"\n    }\n  ],\n  \"beneficiaries\": [\n    {\n      \"accountId\": \"4700025122\",\n      \"accountHolderName\": \"MUHAMMAD ALI MUTHU\",\n      \"bicCode\": \"PBBEMYKL\",\n      \"bankName\": \"PUBLIC BANK\",\n      \"transactionType\": \"TRANSFER/PAYMENT\",\n      \"transactionSubtype\": \"INTERBANK\",\n      \"transactionMetadata\": {\n        \"serviceFees\": 11,\n        \"firstTimeTac\": \"1\",\n        \"idNumber\": null,\n        \"idType\": null,\n        \"mobileNumber\": \"\",\n        \"idFlag\": \"\",\n        \"acquirerId\": \"564162\",\n        \"accountType\": \"\",\n        \"accountSubType\": \"\",\n        \"currency\": \"\",\n        \"balance\": 0,\n        \"paymentCode\": \"01\"\n      }\n    }\n  ]\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: updateBeneficiaries
+  sourceRows: ''
+  apiSpecFile: updateBeneficiaries

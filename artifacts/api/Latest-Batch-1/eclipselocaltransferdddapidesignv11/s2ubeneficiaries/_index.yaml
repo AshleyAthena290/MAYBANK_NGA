@@ -1,0 +1,99 @@
+# Test Case Index
+# eclipselocaltransferdddapidesignv11 - S2UBeneficiaries
+# Generated: 2026-08-21T07:22:04.558Z
+---
+feature: eclipselocaltransferdddapidesignv11
+apiName: S2UBeneficiaries
+description: Test cases for S2UBeneficiaries endpoint
+totalScenarios: 12
+scenarios:
+  - id: S2UBeneficiaries-001-positive
+    title: POST /beneficiaries - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - s2ubeneficiaries
+    priority: P1
+  - id: S2UBeneficiaries-002-missing-auth
+    title: POST /beneficiaries - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: S2UBeneficiaries-003-invalid-auth
+    title: POST /beneficiaries - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: S2UBeneficiaries-004-invalid-content-type
+    title: POST /beneficiaries - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: S2UBeneficiaries-005-duplicate-correlation-id
+    title: POST /beneficiaries - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: S2UBeneficiaries-006-request-timeout
+    title: POST /beneficiaries - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: S2UBeneficiaries-007-empty-request-body
+    title: POST /beneficiaries - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: S2UBeneficiaries-010-numeric-minimum
+    title: POST /beneficiaries - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: S2UBeneficiaries-011-numeric-maximum
+    title: POST /beneficiaries - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: S2UBeneficiaries-012-string-minimum-length
+    title: POST /beneficiaries - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: S2UBeneficiaries-013-string-maximum-length
+    title: POST /beneficiaries - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: S2UBeneficiaries-014-invalid-enum-or-format
+    title: POST /beneficiaries - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-21T07:22:04.558Z'
