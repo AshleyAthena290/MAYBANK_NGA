@@ -1,0 +1,76 @@
+# BDD Test Case - eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+# Generated for: POST /block - Maximum String Length
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: creditCardBlock-013-string-maximum-length
+title: POST /block - Maximum String Length
+feature: eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+description: Request using the maximum supported string length should be accepted or rejected according to the API limit
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/block'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/block'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787572006325
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    cardNumber: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    Request Parameter: <value>
+    ? "POST  https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/block\n\n{\n    \"cardNumber\": \"4966092287163342\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+    data: Object
+    extra: String
+    note: String
+    header: String
+    desc: String
+    details: String
+    receipt: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code matches the documented maximum-length behavior
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: creditCardBlock
+  sourceRows: ''
+  apiSpecFile: creditCardBlock

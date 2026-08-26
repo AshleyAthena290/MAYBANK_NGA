@@ -1,0 +1,80 @@
+# BDD Test Case - eclipseaccount-dashboarddebitcarddddapidesignv1workshop
+# Generated for: POST /linked-account - Minimum String Length
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: linkAccountToCard-012-string-minimum-length
+title: POST /linked-account - Minimum String Length
+feature: eclipseaccount-dashboarddebitcarddddapidesignv1workshop
+description: Request using the minimum supported string length should be accepted
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/external/debit-card/linked-account'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/external/debit-card/linked-account'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787711649102
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    cardNumber: A
+    '>linkAccounts[] (list)': <value>
+    accountId: <value>
+    primaryFlag: <value>
+    '>unlinkAccounts[] (list)': <value>
+    Request Parameter: <value>
+    ? "POST  https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/external/debit-card/linked-account\n\n{\n  \"cardNumber\": \"3243937423432434\",\n  \"linkAccounts\": [\n    {\n      \"accountId\": \"123456789012\",\n      \"primaryFlag\": true\n    },\n    {\n      \"accountId\": \"123456711432\",\n      \"primaryFlag\": false\n    },\n    {\n      \"accountId\": \"123452212111\",\n      \"primaryFlag\": false\n    }\n  ],\n  \"unlinkAccounts\": [\n    {\n      \"accountId\": \"455456786711\"\n    },\n    {\n      \"accountId\": \"455464445555\"\n    }\n  ]\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+    data: Object
+    extra: String
+    note: String
+    header: String
+    desc: String
+    details: String
+    receipt: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 and the minimum string length is accepted
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: linkAccountToCard
+  sourceRows: ''
+  apiSpecFile: linkAccountToCard

@@ -1,0 +1,114 @@
+# Test Case Index
+# eclipseaccount-dashboardcreditcarddddapidesignv1workshop - creditCardPinValidation
+# Generated: 2026-08-24T11:46:31.607Z
+---
+feature: eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+apiName: creditCardPinValidation
+description: Test cases for creditCardPinValidation endpoint
+totalScenarios: 14
+scenarios:
+  - id: creditCardPinValidation-001-positive
+    title: POST /validate-pin - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - creditcardpinvalidation
+    priority: P1
+  - id: creditCardPinValidation-002-missing-auth
+    title: POST /validate-pin - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: creditCardPinValidation-003-invalid-auth
+    title: POST /validate-pin - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: creditCardPinValidation-004-invalid-content-type
+    title: POST /validate-pin - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: creditCardPinValidation-005-duplicate-correlation-id
+    title: POST /validate-pin - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: creditCardPinValidation-006-request-timeout
+    title: POST /validate-pin - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: creditCardPinValidation-007-empty-request-body
+    title: POST /validate-pin - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: creditCardPinValidation-008-required-field-null
+    title: POST /validate-pin - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: creditCardPinValidation-009-required-field-missing
+    title: POST /validate-pin - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: creditCardPinValidation-010-numeric-minimum
+    title: POST /validate-pin - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: creditCardPinValidation-011-numeric-maximum
+    title: POST /validate-pin - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: creditCardPinValidation-012-string-minimum-length
+    title: POST /validate-pin - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: creditCardPinValidation-013-string-maximum-length
+    title: POST /validate-pin - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: creditCardPinValidation-014-invalid-enum-or-format
+    title: POST /validate-pin - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-24T11:46:31.605Z'

@@ -1,0 +1,97 @@
+# BDD Test Case - p-tlocaltransferdddapispecv12
+# Generated for: POST /pre-check-update - Maximum String Length
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: InterPreMonetaryUpdate-013-string-maximum-length
+title: POST /pre-check-update - Maximum String Length
+feature: p-tlocaltransferdddapispecv12
+description: Request using the maximum supported string length should be accepted or rejected according to the API limit
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/external/pre-check-update
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/external/pre-check-update
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787718807244
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    preCheckId: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    transferModeCode: <value>
+    transferDetails: <value>
+    purposeCode: <value>
+    sourceOfFundCode: <value>
+    recipientName: <value>
+    recipientTypeCode: <value>
+    recipientCitizenshipCode: <value>
+    remark: <value>
+    recipientEmail: <value>
+    ? "{\n  \"preCheckId\": \"59c47913-6f73-4aea-81f3-0ddbe83ec5f4\",\n  \"transferModeCode\": \"SKN\",\n  \"transferDetails\": {\n    \"purposeCode\": \"PAYMENT\",\n    \"sourceOfFundCode\": \"SALARY\",\n    \"recipientName\": \"Irfan Zulkifli\",\n    \"recipientTypeCode\": \"INDIVIDUAL\",\n    \"recipientCitizenshipCode\": \"NON_CITIZEN\",\n    \"remark\": \"Monthly support\",\n    \"recipientEmail\": \"recipient@gmail.com\"\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: 'Null'
+    data: Object
+    preCheckId: String
+    transferModeCode: String
+    lldChecking: Object
+    isAdditionalDetailsRequired: Boolean
+    creditAccount: Object
+    creditAccountNo: String
+    creditAccountType: String
+    creditAccountName: String
+    creditAccountBankCode: String
+    creditAccountCurrency: String
+    isFavourite: Boolean
+    limits: Object
+    productCode: String
+    dailyLimit: Integer
+    dailyLimitRemaining: Integer
+    dailylimitCurrency: String
+    fees: Object
+    feeAmount: Integer
+    feeCurrency: String
+    error: 'Null'
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code matches the documented maximum-length behavior
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InterPreMonetaryUpdate
+  sourceRows: ''
+  apiSpecFile: InterPreMonetaryUpdate
