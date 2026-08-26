@@ -1,0 +1,61 @@
+# BDD Test Case - etbonboardingidentitydddapidesignv13updated
+# Generated for: POST /verify - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: S2U Verify - Unlink-006-request-timeout
+title: POST /verify - Request Timeout
+feature: etbonboardingidentitydddapidesignv13updated
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/secure/verify'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/secure/verify'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787563674028
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    trn: <value>
+    action: <value>
+    challenge: <value>
+    code: <value>
+    Request Parameter: <value>
+    ? "{\n  \"trn\": \"8617f65c-0000-0000-0000-000000000004\",\n  \"action\": {},\n  \"challenge\": {}\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: S2U Verify - Unlink
+  sourceRows: ''
+  apiSpecFile: S2U Verify - Unlink

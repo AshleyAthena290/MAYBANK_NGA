@@ -1,0 +1,93 @@
+# Test Case Index
+# identitydddapidesignv13updated - verifyUsername
+# Generated: 2026-08-24T08:30:19.864Z
+---
+feature: identitydddapidesignv13updated
+apiName: verifyUsername
+description: Test cases for verifyUsername endpoint
+totalScenarios: 11
+scenarios:
+  - id: verifyUsername-001-positive
+    title: POST /verify-username - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - verifyusername
+    priority: P1
+  - id: verifyUsername-002-missing-auth
+    title: POST /verify-username - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: verifyUsername-003-invalid-auth
+    title: POST /verify-username - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: verifyUsername-004-invalid-content-type
+    title: POST /verify-username - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: verifyUsername-005-duplicate-correlation-id
+    title: POST /verify-username - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: verifyUsername-006-request-timeout
+    title: POST /verify-username - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: verifyUsername-007-empty-request-body
+    title: POST /verify-username - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: verifyUsername-008-required-field-null
+    title: POST /verify-username - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: verifyUsername-009-required-field-missing
+    title: POST /verify-username - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: verifyUsername-012-string-minimum-length
+    title: POST /verify-username - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: verifyUsername-013-string-maximum-length
+    title: POST /verify-username - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-24T08:30:19.864Z'

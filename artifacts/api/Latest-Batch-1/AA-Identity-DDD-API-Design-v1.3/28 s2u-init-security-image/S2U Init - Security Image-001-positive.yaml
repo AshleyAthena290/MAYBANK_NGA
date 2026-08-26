@@ -1,0 +1,69 @@
+# BDD Test Case - identitydddapidesignv13updated
+# Generated for: POST /init - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: S2U Init - Security Image-001-positive
+title: POST /init - Happy Path
+feature: identitydddapidesignv13updated
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - s2u-init---security-image
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/secure/init'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/secure/init'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787560338987
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    functionCode: <value>
+    payload: <value>
+    securityImage: <value>
+    Request Parameter: <value>
+    ? "{\n  \"functionCode\": \"change-security-image\",\n  \"payload\": {\n    \"securityImage\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=\"\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: S2U Init - SecurityImage
+  sourceRows: ''
+  apiSpecFile: S2U Init - Security Image

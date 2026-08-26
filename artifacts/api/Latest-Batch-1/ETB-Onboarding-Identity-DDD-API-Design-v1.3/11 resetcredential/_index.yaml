@@ -1,0 +1,114 @@
+# Test Case Index
+# etbonboardingidentitydddapidesignv13updated - resetCredential
+# Generated: 2026-08-24T09:25:58.543Z
+---
+feature: etbonboardingidentitydddapidesignv13updated
+apiName: resetCredential
+description: Test cases for resetCredential endpoint
+totalScenarios: 14
+scenarios:
+  - id: resetCredential-001-positive
+    title: POST /reset-credential - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - resetcredential
+    priority: P1
+  - id: resetCredential-002-missing-auth
+    title: POST /reset-credential - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: resetCredential-003-invalid-auth
+    title: POST /reset-credential - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: resetCredential-004-invalid-content-type
+    title: POST /reset-credential - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: resetCredential-005-duplicate-correlation-id
+    title: POST /reset-credential - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: resetCredential-006-request-timeout
+    title: POST /reset-credential - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: resetCredential-007-empty-request-body
+    title: POST /reset-credential - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: resetCredential-008-required-field-null
+    title: POST /reset-credential - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: resetCredential-009-required-field-missing
+    title: POST /reset-credential - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: resetCredential-010-numeric-minimum
+    title: POST /reset-credential - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: resetCredential-011-numeric-maximum
+    title: POST /reset-credential - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: resetCredential-012-string-minimum-length
+    title: POST /reset-credential - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: resetCredential-013-string-maximum-length
+    title: POST /reset-credential - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: resetCredential-014-invalid-enum-or-format
+    title: POST /reset-credential - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-24T09:25:58.543Z'

@@ -1,0 +1,57 @@
+# BDD Test Case - depappdashboarddddapidesignv12
+# Generated for: POST /insert - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: insertExternalAction-006-request-timeout
+title: POST /insert - Request Timeout
+feature: depappdashboarddddapidesignv12
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{IP}:{PORT}/dep/dashboard/v1/action-list/external/insert
+  endpoint: https://{IP}:{PORT}/dep/dashboard/v1/action-list/external/insert
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787566380979
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    gcif: <value>
+    taskCode: <value>
+    POST  https://{IP}:{PORT}/dep/dashboard/v1/action-list/external/insert: <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: insertExternalAction
+  sourceRows: ''
+  apiSpecFile: insertExternalAction

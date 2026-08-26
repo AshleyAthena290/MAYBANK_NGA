@@ -1,0 +1,66 @@
+# BDD Test Case - identitydddapidesignv13updated
+# Generated for: POST /verify - Minimum String Length
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: S2U Verify - Biometric Setup-012-string-minimum-length
+title: POST /verify - Minimum String Length
+feature: identitydddapidesignv13updated
+description: Request using the minimum supported string length should be accepted
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/secure/verify'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/secure/verify'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787560322733
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    trn: A
+    action: <value>
+    challenge: <value>
+    code: <value>
+    Request Parameter: <value>
+    ? "{\n  \"trn\": \"7e58c92c-80bf-4304-a295-f9e2237a3171\",\n  \"action\": \"passcode\",\n  \"challenge\": {\n    \"code\": \"123456\"\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 and the minimum string length is accepted
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: S2U Verify -Biometric Setup
+  sourceRows: ''
+  apiSpecFile: S2U Verify - Biometric Setup

@@ -1,0 +1,66 @@
+# BDD Test Case - identitydddapidesignv13updated
+# Generated for: POST /verify - Required Field Null
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: S2U Verify - Unlink-008-required-field-null
+title: POST /verify - Required Field Null
+feature: identitydddapidesignv13updated
+description: Request with a required field set to null should be rejected
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/secure/verify'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/secure/verify'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787560367032
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    trn: null
+    action: <value>
+    challenge: <value>
+    code: <value>
+    Request Parameter: <value>
+    ? "{\n  \"trn\": \"8617f65c-0000-0000-0000-000000000004\",\n  \"action\": {},\n  \"challenge\": {}\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400 and the error identifies the required field
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: S2U Verify - Unlink
+  sourceRows: ''
+  apiSpecFile: S2U Verify - Unlink
