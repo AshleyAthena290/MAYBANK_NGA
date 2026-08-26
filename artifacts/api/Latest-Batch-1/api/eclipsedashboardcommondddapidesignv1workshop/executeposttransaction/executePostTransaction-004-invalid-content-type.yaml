@@ -1,0 +1,92 @@
+# BDD Test Case - eclipsedashboardcommondddapidesignv1workshop
+# Generated for: POST /post-transaction - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: executePostTransaction-004-invalid-content-type
+title: POST /post-transaction - Invalid Content-Type
+feature: eclipsedashboardcommondddapidesignv1workshop
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/internal/post-transaction'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/internal/post-transaction'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715150097
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    transactionReferenceId: <value>
+    hostReferenceId: <value>
+    transactionDateTime: <value>
+    transactionType: <value>
+    transactionStatusCode: <value>
+    status: <value>
+    fromAccountId: <value>
+    fromAccountName: <value>
+    toAccountGcif: <value>
+    toAccountId: <value>
+    toAccountName: <value>
+    toBankCode: <value>
+    toBankName: <value>
+    fromCurrency: <value>
+    fromAmount: <value>
+    fromCurrencyRate: <value>
+    fromLocalCurrency: <value>
+    fromLocalAmount: <value>
+    toCurrency: <value>
+    toAmount: <value>
+    toCurrencyRate: <value>
+    transactionMetadata: <value>
+    effectiveDate: <value>
+    hostStatusCode: <value>
+    hostActionCode: <value>
+    serviceCode: <value>
+    reason: <value>
+    transferMode: <value>
+    '> receipt (object)': <value>
+    templateId: <value>
+    templateVersion: <value>
+    metadata: <value>
+    '> pfm (object)': <value>
+    subCategoryId: <value>
+    defaultSubCategoryId: <value>
+    Request Parameter: <value>
+    ? "POST https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/internal/post-transaction\n\n{\n    \"transactionReferenceId\": \"NGA12345678901234567\",\n    \"hostReferenceId\": \"4567890678\",\n    \"transactionDateTime\": \"2026-02-06 20:25:29\",\n    \"transactionType\": \"TOPUP\",\n    \"transactionStatusCode\": \"0000\",\n    \"status\": \"SUCCESS\",\n    \"fromAccountId\": \"166010172646\",\n    \"fromAccountName\": \"Savings Account\",\n    \"fromCurrency\": \"IDR\",\n    \"fromAmount\": 1000000,\n    \"fromCurrencyRate\": 1,\n    \"toAccountGcif\": \"G02887262\",\n    \"toAccountId\": \"504267228111\",\n    \"toAccountName\": \"Maybank Tabungan Global Access\",\n    \"toBankCode\": \"IBBKIDJAXXX\",\n    \"toBankName\": \"Maybank Indonesia (PT Bank Maybank Indonesia Tbk)\",\n    \"toCurrency\": \"IDR\",\n    \"toAmount\": 1000000,\n    \"fromLocalCurrency\": null,\n    \"fromLocalAmount\": null,\n    \"transactionMetadata\": \"{\\\"remark\\\":\\\"Salary\\\",\\\"nationality\\\":\\\"Indonesian\\\"}\",\n    \"effectiveDate\": null,\n    \"hostStatusCode\": \"A091\",\n    \"serviceCode\": \"MBBABCZZZZ\",\n    \"hostActionCode\": null,\n    \"reason\": null,\n    \"receipt\": {\n        \"templateId\": \"1234567890\",\n        \"templateVersion\": \"v1\",\n        \"metadata\": \"{\\\"referenceId\\\":\\\"NGA12345678901234567\\\",\\\"dateTime\\\":\\\"07 May 2026, 04:05 PM\\\",\\\"transactionType\\\":\\\"Local Transfer\\\",\\\"amount\\\":\\\"IDR 100,000.00\\\",\\\"accountName\\\":\\\"Maybank Tabungan Global Access\\\"}\"\n    },\n    \"pfm\": {\n        \"subCategoryId\": \"6F9619FF-8B86-D011-B42D-00C04FC964FF\"\n    }\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: executePostTransaction
+  sourceRows: ''
+  apiSpecFile: executePostTransaction

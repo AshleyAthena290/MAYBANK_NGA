@@ -1,0 +1,91 @@
+# BDD Test Case - eclipsemaintenancedddapidesignv1
+# Generated for: PATCH /{flagId} - Duplicate Correlation ID
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: updateInitData-005-duplicate-correlation-id
+title: PATCH /{flagId} - Duplicate Correlation ID
+feature: eclipsemaintenancedddapidesignv1
+description: Same request with duplicate correlation ID should be idempotent
+tags:
+  - edge-case
+  - idempotency
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+  - First request with correlation ID has been processed
+testData: {}
+request:
+  method: PATCH
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/feature-flags/{flagId}'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/feature-flags/{flagId}'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: duplicate-correlation-123
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    domain: <value>
+    region: <value>
+    platform: <value>
+    module: <value>
+    subModule: <value>
+    code: <value>
+    description: <value>
+    valueType: <value>
+    variableName: <value>
+    parentId: <value>
+    '> values[] (list)': <value>
+    environment: <value>
+    variableValue: <value>
+    isDisabled: <value>
+    disabledRemarks: <value>
+    '>> listValues[] (list)': <value>
+    value: <value>
+    Path Variable: <value>
+    flagId: <value>
+    ? "PATCH  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/feature-flags/78e113a4-fef8-4a4a-b320-32282f0a84ed\n\n{\n    \"id\": \"b3492a4e-38d6-4af9-9ce9-c60bb820784d\",\n    \"domain\": \"ECLIPSE\",\n    \"region\": \"ID\",\n    \"platform\": \"NGA\",\n    \"module\": \"CASA\",\n    \"subModule\": \"DASHBOARD\",\n    \"code\": \"CASA_DASHBOARD_ENABLE\",\n    \"description\": \"Enable CASA dashboard\",\n    \"valueType\": \"B\",\n    \"variableName\": \"enable\",\n    \"parentId\": \"123e4567-e89b-12d3-a456-426614174000\",\n    \"values\": [\n        {\n            \"isDisabled\": true,\n            \"environment\": \"SIT\",\n            \"variableValue\": \"Y\"\n        },\n        {\n            \"environment\": \"UAT\",\n            \"variableValue\": \"N\"\n        }\n    ]\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: Integer
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 (or 202 for idempotent)
+    type: custom
+  - description: Same response as first request
+    type: custom
+  - description: No duplicate processing occurred
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: updateInitData
+  sourceRows: ''
+  apiSpecFile: updateInitData

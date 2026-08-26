@@ -1,0 +1,93 @@
+# Test Case Index
+# eclipsemaintenancedddapidesignv1 - deleteInitData
+# Generated: 2026-08-26T03:35:50.559Z
+---
+feature: eclipsemaintenancedddapidesignv1
+apiName: deleteInitData
+description: Test cases for deleteInitData endpoint
+totalScenarios: 11
+scenarios:
+  - id: deleteInitData-001-positive
+    title: DELETE /{flagId} - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - deleteinitdata
+    priority: P1
+  - id: deleteInitData-002-missing-auth
+    title: DELETE /{flagId} - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: deleteInitData-003-invalid-auth
+    title: DELETE /{flagId} - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: deleteInitData-004-invalid-content-type
+    title: DELETE /{flagId} - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: deleteInitData-005-duplicate-correlation-id
+    title: DELETE /{flagId} - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: deleteInitData-006-request-timeout
+    title: DELETE /{flagId} - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: deleteInitData-007-empty-request-body
+    title: DELETE /{flagId} - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: deleteInitData-008-required-field-null
+    title: DELETE /{flagId} - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deleteInitData-009-required-field-missing
+    title: DELETE /{flagId} - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: deleteInitData-012-string-minimum-length
+    title: DELETE /{flagId} - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deleteInitData-013-string-maximum-length
+    title: DELETE /{flagId} - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:35:50.556Z'

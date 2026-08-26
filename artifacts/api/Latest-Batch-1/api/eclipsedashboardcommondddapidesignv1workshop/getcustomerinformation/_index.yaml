@@ -1,0 +1,85 @@
+# Test Case Index
+# eclipsedashboardcommondddapidesignv1workshop - getCustomerInformation
+# Generated: 2026-08-26T03:30:38.085Z
+---
+feature: eclipsedashboardcommondddapidesignv1workshop
+apiName: getCustomerInformation
+description: Test cases for getCustomerInformation endpoint
+totalScenarios: 10
+scenarios:
+  - id: getCustomerInformation-001-positive
+    title: GET /information - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getcustomerinformation
+    priority: P1
+  - id: getCustomerInformation-002-missing-auth
+    title: GET /information - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getCustomerInformation-003-invalid-auth
+    title: GET /information - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getCustomerInformation-004-invalid-content-type
+    title: GET /information - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getCustomerInformation-005-duplicate-correlation-id
+    title: GET /information - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getCustomerInformation-006-request-timeout
+    title: GET /information - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getCustomerInformation-007-empty-request-body
+    title: GET /information - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getCustomerInformation-012-string-minimum-length
+    title: GET /information - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getCustomerInformation-013-string-maximum-length
+    title: GET /information - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getCustomerInformation-014-invalid-enum-or-format
+    title: GET /information - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:30:38.081Z'

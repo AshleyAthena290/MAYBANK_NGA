@@ -1,0 +1,114 @@
+# Test Case Index
+# eclipsemaintenancedddapidesignv1 - insertInitData
+# Generated: 2026-08-26T03:35:32.808Z
+---
+feature: eclipsemaintenancedddapidesignv1
+apiName: insertInitData
+description: Test cases for insertInitData endpoint
+totalScenarios: 14
+scenarios:
+  - id: insertInitData-001-positive
+    title: POST /feature-flags - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - insertinitdata
+    priority: P1
+  - id: insertInitData-002-missing-auth
+    title: POST /feature-flags - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: insertInitData-003-invalid-auth
+    title: POST /feature-flags - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: insertInitData-004-invalid-content-type
+    title: POST /feature-flags - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: insertInitData-005-duplicate-correlation-id
+    title: POST /feature-flags - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: insertInitData-006-request-timeout
+    title: POST /feature-flags - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: insertInitData-007-empty-request-body
+    title: POST /feature-flags - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: insertInitData-008-required-field-null
+    title: POST /feature-flags - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertInitData-009-required-field-missing
+    title: POST /feature-flags - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: insertInitData-010-numeric-minimum
+    title: POST /feature-flags - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertInitData-011-numeric-maximum
+    title: POST /feature-flags - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertInitData-012-string-minimum-length
+    title: POST /feature-flags - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertInitData-013-string-maximum-length
+    title: POST /feature-flags - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertInitData-014-invalid-enum-or-format
+    title: POST /feature-flags - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:35:32.804Z'

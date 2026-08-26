@@ -1,0 +1,73 @@
+# BDD Test Case - eclipsemaintenancedddapidesignv1
+# Generated for: POST /primary-route - Minimum String Length
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: insertPrimaryRouteConfig-012-string-minimum-length
+title: POST /primary-route - Minimum String Length
+feature: eclipsemaintenancedddapidesignv1
+description: Request using the minimum supported string length should be accepted
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/primary-route'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/primary-route'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715388687
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    configKey: A
+    configValue: <value>
+    Path Variable: <value>
+    'POST https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/primary-route': <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: Integer
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+    data: Object
+    id: String
+    configKey: String
+    configValue: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 and the minimum string length is accepted
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: insertPrimaryRouteConfig
+  sourceRows: ''
+  apiSpecFile: insertPrimaryRouteConfig

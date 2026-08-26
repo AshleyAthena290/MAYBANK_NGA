@@ -1,0 +1,64 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv12 - nga-dep-maintenance
+# Generated: 2026-08-26T04:06:03.897Z
+---
+feature: depmaintenancengaapiappdashboarddesignv12
+apiName: nga-dep-maintenance
+description: Test cases for nga-dep-maintenance endpoint
+totalScenarios: 7
+scenarios:
+  - id: nga-dep-maintenance-001-positive
+    title: GET /record - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - nga-dep-maintenance
+    priority: P1
+  - id: nga-dep-maintenance-002-missing-auth
+    title: GET /record - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: nga-dep-maintenance-003-invalid-auth
+    title: GET /record - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: nga-dep-maintenance-004-invalid-content-type
+    title: GET /record - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: nga-dep-maintenance-005-duplicate-correlation-id
+    title: GET /record - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: nga-dep-maintenance-006-request-timeout
+    title: GET /record - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: nga-dep-maintenance-007-empty-request-body
+    title: GET /record - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T04:06:03.893Z'

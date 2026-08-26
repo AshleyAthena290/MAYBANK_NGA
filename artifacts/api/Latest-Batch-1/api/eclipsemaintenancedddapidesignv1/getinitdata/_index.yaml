@@ -1,0 +1,78 @@
+# Test Case Index
+# eclipsemaintenancedddapidesignv1 - getInitData
+# Generated: 2026-08-26T03:35:26.217Z
+---
+feature: eclipsemaintenancedddapidesignv1
+apiName: getInitData
+description: Test cases for getInitData endpoint
+totalScenarios: 9
+scenarios:
+  - id: getInitData-001-positive
+    title: GET /feature-flags - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getinitdata
+    priority: P1
+  - id: getInitData-002-missing-auth
+    title: GET /feature-flags - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getInitData-003-invalid-auth
+    title: GET /feature-flags - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getInitData-004-invalid-content-type
+    title: GET /feature-flags - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getInitData-005-duplicate-correlation-id
+    title: GET /feature-flags - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getInitData-006-request-timeout
+    title: GET /feature-flags - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getInitData-007-empty-request-body
+    title: GET /feature-flags - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getInitData-012-string-minimum-length
+    title: GET /feature-flags - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getInitData-013-string-maximum-length
+    title: GET /feature-flags - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:35:26.215Z'

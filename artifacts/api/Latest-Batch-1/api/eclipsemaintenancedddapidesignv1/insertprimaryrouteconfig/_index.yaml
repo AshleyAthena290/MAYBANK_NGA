@@ -1,0 +1,93 @@
+# Test Case Index
+# eclipsemaintenancedddapidesignv1 - insertPrimaryRouteConfig
+# Generated: 2026-08-26T03:36:28.738Z
+---
+feature: eclipsemaintenancedddapidesignv1
+apiName: insertPrimaryRouteConfig
+description: Test cases for insertPrimaryRouteConfig endpoint
+totalScenarios: 11
+scenarios:
+  - id: insertPrimaryRouteConfig-001-positive
+    title: POST /primary-route - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - insertprimaryrouteconfig
+    priority: P1
+  - id: insertPrimaryRouteConfig-002-missing-auth
+    title: POST /primary-route - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: insertPrimaryRouteConfig-003-invalid-auth
+    title: POST /primary-route - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: insertPrimaryRouteConfig-004-invalid-content-type
+    title: POST /primary-route - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: insertPrimaryRouteConfig-005-duplicate-correlation-id
+    title: POST /primary-route - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: insertPrimaryRouteConfig-006-request-timeout
+    title: POST /primary-route - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: insertPrimaryRouteConfig-007-empty-request-body
+    title: POST /primary-route - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: insertPrimaryRouteConfig-008-required-field-null
+    title: POST /primary-route - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertPrimaryRouteConfig-009-required-field-missing
+    title: POST /primary-route - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: insertPrimaryRouteConfig-012-string-minimum-length
+    title: POST /primary-route - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertPrimaryRouteConfig-013-string-maximum-length
+    title: POST /primary-route - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:36:28.734Z'

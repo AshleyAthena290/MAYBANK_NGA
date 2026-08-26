@@ -1,0 +1,114 @@
+# Test Case Index
+# p-tscanandpayapispecv13 - InitDomesticScanPay
+# Generated: 2026-08-26T02:48:39.583Z
+---
+feature: p-tscanandpayapispecv13
+apiName: InitDomesticScanPay
+description: Test cases for InitDomesticScanPay endpoint
+totalScenarios: 14
+scenarios:
+  - id: InitDomesticScanPay-001-positive
+    title: POST /init - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - initdomesticscanpay
+    priority: P1
+  - id: InitDomesticScanPay-002-missing-auth
+    title: POST /init - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: InitDomesticScanPay-003-invalid-auth
+    title: POST /init - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: InitDomesticScanPay-004-invalid-content-type
+    title: POST /init - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: InitDomesticScanPay-005-duplicate-correlation-id
+    title: POST /init - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: InitDomesticScanPay-006-request-timeout
+    title: POST /init - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: InitDomesticScanPay-007-empty-request-body
+    title: POST /init - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: InitDomesticScanPay-008-required-field-null
+    title: POST /init - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: InitDomesticScanPay-009-required-field-missing
+    title: POST /init - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: InitDomesticScanPay-010-numeric-minimum
+    title: POST /init - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: InitDomesticScanPay-011-numeric-maximum
+    title: POST /init - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: InitDomesticScanPay-012-string-minimum-length
+    title: POST /init - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: InitDomesticScanPay-013-string-maximum-length
+    title: POST /init - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: InitDomesticScanPay-014-invalid-enum-or-format
+    title: POST /init - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T02:48:39.579Z'

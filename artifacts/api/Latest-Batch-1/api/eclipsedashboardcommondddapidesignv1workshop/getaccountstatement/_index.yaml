@@ -1,0 +1,240 @@
+# Test Case Index
+# eclipsedashboardcommondddapidesignv1workshop - getAccountStatement
+# Generated: 2026-08-26T03:30:01.503Z
+---
+feature: eclipsedashboardcommondddapidesignv1workshop
+apiName: getAccountStatement
+description: Test cases for getAccountStatement endpoint
+totalScenarios: 14
+scenarios:
+  - id: getAccountStatement-001-positive
+    title: |-
+      GET /export
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getaccountstatement
+    priority: P1
+  - id: getAccountStatement-002-missing-auth
+    title: |-
+      GET /export
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getAccountStatement-003-invalid-auth
+    title: |-
+      GET /export
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getAccountStatement-004-invalid-content-type
+    title: |-
+      GET /export
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getAccountStatement-005-duplicate-correlation-id
+    title: |-
+      GET /export
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getAccountStatement-006-request-timeout
+    title: |-
+      GET /export
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getAccountStatement-007-empty-request-body
+    title: |-
+      GET /export
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getAccountStatement-008-required-field-null
+    title: |-
+      GET /export
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountStatement-009-required-field-missing
+    title: |-
+      GET /export
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getAccountStatement-010-numeric-minimum
+    title: |-
+      GET /export
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountStatement-011-numeric-maximum
+    title: |-
+      GET /export
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountStatement-012-string-minimum-length
+    title: |-
+      GET /export
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountStatement-013-string-maximum-length
+    title: |-
+      GET /export
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountStatement-014-invalid-enum-or-format
+    title: |-
+      GET /export
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:30:01.503Z'

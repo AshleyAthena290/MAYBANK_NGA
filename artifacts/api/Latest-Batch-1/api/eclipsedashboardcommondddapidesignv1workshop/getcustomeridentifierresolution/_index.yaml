@@ -1,0 +1,114 @@
+# Test Case Index
+# eclipsedashboardcommondddapidesignv1workshop - getCustomerIdentifierResolution
+# Generated: 2026-08-26T03:31:07.580Z
+---
+feature: eclipsedashboardcommondddapidesignv1workshop
+apiName: getCustomerIdentifierResolution
+description: Test cases for getCustomerIdentifierResolution endpoint
+totalScenarios: 14
+scenarios:
+  - id: getCustomerIdentifierResolution-001-positive
+    title: GET /identifier-resolution - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getcustomeridentifierresolution
+    priority: P1
+  - id: getCustomerIdentifierResolution-002-missing-auth
+    title: GET /identifier-resolution - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getCustomerIdentifierResolution-003-invalid-auth
+    title: GET /identifier-resolution - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getCustomerIdentifierResolution-004-invalid-content-type
+    title: GET /identifier-resolution - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getCustomerIdentifierResolution-005-duplicate-correlation-id
+    title: GET /identifier-resolution - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getCustomerIdentifierResolution-006-request-timeout
+    title: GET /identifier-resolution - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getCustomerIdentifierResolution-007-empty-request-body
+    title: GET /identifier-resolution - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getCustomerIdentifierResolution-008-required-field-null
+    title: GET /identifier-resolution - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getCustomerIdentifierResolution-009-required-field-missing
+    title: GET /identifier-resolution - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getCustomerIdentifierResolution-010-numeric-minimum
+    title: GET /identifier-resolution - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getCustomerIdentifierResolution-011-numeric-maximum
+    title: GET /identifier-resolution - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getCustomerIdentifierResolution-012-string-minimum-length
+    title: GET /identifier-resolution - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getCustomerIdentifierResolution-013-string-maximum-length
+    title: GET /identifier-resolution - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getCustomerIdentifierResolution-014-invalid-enum-or-format
+    title: GET /identifier-resolution - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:31:07.580Z'

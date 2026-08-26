@@ -1,0 +1,107 @@
+# Test Case Index
+# eclipsedashboardcommondddapidesignv1workshop - getAccountTransactionDetail
+# Generated: 2026-08-26T03:32:08.239Z
+---
+feature: eclipsedashboardcommondddapidesignv1workshop
+apiName: getAccountTransactionDetail
+description: Test cases for getAccountTransactionDetail endpoint
+totalScenarios: 13
+scenarios:
+  - id: getAccountTransactionDetail-001-positive
+    title: GET /{transactionReferenceId} - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getaccounttransactiondetail
+    priority: P1
+  - id: getAccountTransactionDetail-002-missing-auth
+    title: GET /{transactionReferenceId} - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getAccountTransactionDetail-003-invalid-auth
+    title: GET /{transactionReferenceId} - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getAccountTransactionDetail-004-invalid-content-type
+    title: GET /{transactionReferenceId} - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getAccountTransactionDetail-005-duplicate-correlation-id
+    title: GET /{transactionReferenceId} - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getAccountTransactionDetail-006-request-timeout
+    title: GET /{transactionReferenceId} - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getAccountTransactionDetail-007-empty-request-body
+    title: GET /{transactionReferenceId} - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getAccountTransactionDetail-008-required-field-null
+    title: GET /{transactionReferenceId} - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountTransactionDetail-009-required-field-missing
+    title: GET /{transactionReferenceId} - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getAccountTransactionDetail-010-numeric-minimum
+    title: GET /{transactionReferenceId} - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountTransactionDetail-011-numeric-maximum
+    title: GET /{transactionReferenceId} - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountTransactionDetail-012-string-minimum-length
+    title: GET /{transactionReferenceId} - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountTransactionDetail-013-string-maximum-length
+    title: GET /{transactionReferenceId} - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:32:08.238Z'

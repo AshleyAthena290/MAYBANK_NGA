@@ -1,0 +1,79 @@
+# BDD Test Case - eclipsemaintenancedddapidesignv1
+# Generated for: PATCH /{id} - Invalid Enum or Format
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getProductConfig-014-invalid-enum-or-format
+title: PATCH /{id} - Invalid Enum or Format
+feature: eclipsemaintenancedddapidesignv1
+description: Request using an invalid enum or format value should be rejected
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: PATCH
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/product-config/{accountGroup}/{id}'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/product-config/{accountGroup}/{id}'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715371732
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    accountType: __INVALID_ENUM_OR_FORMAT__
+    accountSubType: <value>
+    productName: <value>
+    productCode: <value>
+    productType: <value>
+    applicationCode: <value>
+    isDisplayDashboard: <value>
+    isAllowSetPrimary: <value>
+    isAllowBlock: <value>
+    isAllowReactivation: <value>
+    isPayroll: <value>
+    binNumber: <value>
+    cardType: <value>
+    isRewardCard: <value>
+    insuranceCompanyName: <value>
+    Path Variable: <value>
+    accountGroup: <value>
+    id: <value>
+    ? "PATCH  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/product-config/CASA/e76470a8-43d5-4dab-82a0-8fb448e9b852\nPATCH  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/product-config/CARD/5365d601-1675-4613-af2e-cfc4efac9424\nPATCH  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/product-config/LOAN/42944255-0c7f-4d06-9b0e-1578d2262f4e"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400 and the error identifies the invalid value
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: updateProductConfig
+  sourceRows: ''
+  apiSpecFile: getProductConfig

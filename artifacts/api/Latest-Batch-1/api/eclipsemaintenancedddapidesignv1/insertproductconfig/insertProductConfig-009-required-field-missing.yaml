@@ -1,0 +1,80 @@
+# BDD Test Case - eclipsemaintenancedddapidesignv1
+# Generated for: POST /product-config - Required Field Missing
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: insertProductConfig-009-required-field-missing
+title: POST /product-config - Required Field Missing
+feature: eclipsemaintenancedddapidesignv1
+description: Request without a required field should be rejected
+tags:
+  - boundary
+  - required-field
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/product-config'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/product-config'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715366459
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    accountType: <value>
+    accountSubType: <value>
+    productName: <value>
+    productCode: <value>
+    productType: <value>
+    applicationCode: <value>
+    isDisplayDashboard: <value>
+    isAllowSetPrimary: <value>
+    isAllowBlock: <value>
+    isAllowReactivation: <value>
+    isPayroll: <value>
+    binNumber: <value>
+    cardType: <value>
+    isRewardCard: <value>
+    insuranceCompanyName: <value>
+    Path Variable: <value>
+    'POST  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/product-config': <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Required field is missing
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error identifies missing required field 'accountGroup'
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: insertProductConfig
+  sourceRows: ''
+  apiSpecFile: insertProductConfig

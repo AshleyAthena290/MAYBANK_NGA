@@ -1,0 +1,64 @@
+# Test Case Index
+# eclipsedashboardcommondddapidesignv1workshop - getReceipt
+# Generated: 2026-08-26T03:29:24.471Z
+---
+feature: eclipsedashboardcommondddapidesignv1workshop
+apiName: getReceipt
+description: Test cases for getReceipt endpoint
+totalScenarios: 7
+scenarios:
+  - id: getReceipt-001-positive
+    title: GET /{transactionReferenceId} - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getreceipt
+    priority: P1
+  - id: getReceipt-002-missing-auth
+    title: GET /{transactionReferenceId} - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getReceipt-003-invalid-auth
+    title: GET /{transactionReferenceId} - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getReceipt-004-invalid-content-type
+    title: GET /{transactionReferenceId} - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getReceipt-005-duplicate-correlation-id
+    title: GET /{transactionReferenceId} - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getReceipt-006-request-timeout
+    title: GET /{transactionReferenceId} - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getReceipt-007-empty-request-body
+    title: GET /{transactionReferenceId} - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:29:24.467Z'

@@ -1,0 +1,99 @@
+# Test Case Index
+# eclipsemaintenancedddapidesignv1 - getBackOfficeMasterData
+# Generated: 2026-08-26T03:36:58.181Z
+---
+feature: eclipsemaintenancedddapidesignv1
+apiName: getBackOfficeMasterData
+description: Test cases for getBackOfficeMasterData endpoint
+totalScenarios: 12
+scenarios:
+  - id: getBackOfficeMasterData-001-positive
+    title: GET /master-data - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getbackofficemasterdata
+    priority: P1
+  - id: getBackOfficeMasterData-002-missing-auth
+    title: GET /master-data - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getBackOfficeMasterData-003-invalid-auth
+    title: GET /master-data - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getBackOfficeMasterData-004-invalid-content-type
+    title: GET /master-data - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getBackOfficeMasterData-005-duplicate-correlation-id
+    title: GET /master-data - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getBackOfficeMasterData-006-request-timeout
+    title: GET /master-data - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getBackOfficeMasterData-007-empty-request-body
+    title: GET /master-data - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getBackOfficeMasterData-010-numeric-minimum
+    title: GET /master-data - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getBackOfficeMasterData-011-numeric-maximum
+    title: GET /master-data - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getBackOfficeMasterData-012-string-minimum-length
+    title: GET /master-data - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getBackOfficeMasterData-013-string-maximum-length
+    title: GET /master-data - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getBackOfficeMasterData-014-invalid-enum-or-format
+    title: GET /master-data - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:36:58.175Z'

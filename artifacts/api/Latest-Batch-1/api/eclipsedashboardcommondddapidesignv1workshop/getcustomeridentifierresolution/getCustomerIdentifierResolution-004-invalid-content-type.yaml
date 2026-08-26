@@ -1,0 +1,59 @@
+# BDD Test Case - eclipsedashboardcommondddapidesignv1workshop
+# Generated for: GET /identifier-resolution - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getCustomerIdentifierResolution-004-invalid-content-type
+title: GET /identifier-resolution - Invalid Content-Type
+feature: eclipsedashboardcommondddapidesignv1workshop
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/identifier-resolution'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/identifier-resolution'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715067519
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    idType: <value>
+    idValue: <value>
+    ? "GET https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/identifier-resolution?idType=CASA_CIF&idValue=018266221\nGET https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/identifier-resolution?idType=CASA_ACCOUNT&idValue=514072625486"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getCustomerIdentifierResolution
+  sourceRows: ''
+  apiSpecFile: getCustomerIdentifierResolution

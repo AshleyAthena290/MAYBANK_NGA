@@ -1,0 +1,60 @@
+# BDD Test Case - eclipsedashboardcommondddapidesignv1workshop
+# Generated for: POST /primary - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: setPrimary-006-request-timeout
+title: POST /primary - Request Timeout
+feature: eclipsedashboardcommondddapidesignv1workshop
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/accounts/primary'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/accounts/primary'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787714969661
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    accountId: <value>
+    accountType: <value>
+    featureCode: <value>
+    Request Parameter: <value>
+    ? "POST  https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/accounts/primary\n\n{\n    \"featureCode\": \"PRIMARY\",\n    \"accountId\": \"504233415671\",\n    \"accountType\": \"CA\"\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: setPrimary
+  sourceRows: ''
+  apiSpecFile: setPrimary

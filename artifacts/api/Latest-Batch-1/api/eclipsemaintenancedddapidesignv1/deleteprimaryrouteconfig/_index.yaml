@@ -1,0 +1,93 @@
+# Test Case Index
+# eclipsemaintenancedddapidesignv1 - deletePrimaryRouteConfig
+# Generated: 2026-08-26T03:36:44.162Z
+---
+feature: eclipsemaintenancedddapidesignv1
+apiName: deletePrimaryRouteConfig
+description: Test cases for deletePrimaryRouteConfig endpoint
+totalScenarios: 11
+scenarios:
+  - id: deletePrimaryRouteConfig-001-positive
+    title: DELETE /{id} - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - deleteprimaryrouteconfig
+    priority: P1
+  - id: deletePrimaryRouteConfig-002-missing-auth
+    title: DELETE /{id} - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: deletePrimaryRouteConfig-003-invalid-auth
+    title: DELETE /{id} - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: deletePrimaryRouteConfig-004-invalid-content-type
+    title: DELETE /{id} - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: deletePrimaryRouteConfig-005-duplicate-correlation-id
+    title: DELETE /{id} - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: deletePrimaryRouteConfig-006-request-timeout
+    title: DELETE /{id} - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: deletePrimaryRouteConfig-007-empty-request-body
+    title: DELETE /{id} - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: deletePrimaryRouteConfig-008-required-field-null
+    title: DELETE /{id} - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deletePrimaryRouteConfig-009-required-field-missing
+    title: DELETE /{id} - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: deletePrimaryRouteConfig-012-string-minimum-length
+    title: DELETE /{id} - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deletePrimaryRouteConfig-013-string-maximum-length
+    title: DELETE /{id} - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:36:44.157Z'

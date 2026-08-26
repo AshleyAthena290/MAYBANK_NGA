@@ -1,0 +1,68 @@
+# BDD Test Case - p-tscanandpayapispecv13
+# Generated for: POST /execute - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: ExecuteActivation-006-request-timeout
+title: POST /execute - Request Timeout
+feature: p-tscanandpayapispecv13
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/activation/execute
+  endpoint: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/activation/execute
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787712507492
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    idType: <value>
+    idValue: <value>
+    accessId: <value>
+    activationType: <value>
+    authToken: <value>
+    primaryAccount: <value>
+    accountId: <value>
+    accountType: <value>
+    limitSetting: <value>
+    dailyLimit: <value>
+    transactionLimit: <value>
+    preLoginLimit: <value>
+    ? "{\n  \"idType\": \"CIF\",\n  \"idValue\": \"1234567890\",\n  \"accessId\": \"ACC-SESSION-0001\",\n  \"activationType\": \"SCAN_PAY_DOMESTIC\",\n  \"authToken\": \"eyJhbGciOiJIUzI1NiIs...\",\n  \"primaryAccount\": {\n    \"accountId\": \"1000123456\",\n    \"accountType\": \"CASA\"\n  },\n  \"limitSetting\": {\n    \"dailyLimit\": 10000000.0,\n    \"transactionLimit\": 5000000.0,\n    \"preLoginLimit\": 500000.0\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: ExecuteActivation
+  sourceRows: ''
+  apiSpecFile: ExecuteActivation
