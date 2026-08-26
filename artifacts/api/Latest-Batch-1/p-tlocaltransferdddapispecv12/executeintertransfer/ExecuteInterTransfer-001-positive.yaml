@@ -1,0 +1,552 @@
+# BDD Test Case - p-tlocaltransferdddapispecv12
+# Generated for: POST /execute - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: ExecuteInterTransfer-001-positive
+title: POST /execute - Happy Path
+feature: p-tlocaltransferdddapispecv12
+description: Executes the interbank payment order and returns final transaction status, receipt payload, and formatted amount details.
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - executeintertransfer
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/external/execute
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/external/execute
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787718821841
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    paymentOrderId: <value>
+    ? "{\n  \"paymentOrderId\": \"01ARZ3NDEKTSV4RRFFQ69G5FAV\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    extra: Object
+    isFavourite: Boolean
+    expenseCategory: Object
+    categoryId: String
+    name: String
+    colorCode: String
+    icon: String
+    note: String
+    header: String
+    desc: String
+    ack: Array<Object>
+    '[]': Array<Object>
+    type: String
+    dateTime: String
+    refId: String
+    receipt: Object
+    statusHeader: Object
+    transactionDetails: Object
+    transactionRefId: String
+    transactionSummary: Object
+    totalAmount: Object
+    label: String
+    currency: String
+    value: String
+    creditAccount: Object
+    description: String
+    debitAccount: Object
+    detailSectionsOrder: Array<String>
+    transferInformation: Object
+    title: String
+    items: Object
+    transferType: Object
+    transferMode: Object
+    purposeOfTransfer: Object
+    amountDetails: Object
+    transferAmount: Object
+    serviceFee: Object
+    otherDetails: Object
+    sourceOfFund: Object
+    remark: Object
+    additionalDetails: Object
+    recipientStatus: Object
+    recipientNationality: Object
+    recipientCategory: Object
+    relationship: Object
+    transactionCategory: Object
+    transactionDetail: Object
+  expectedFields:
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: extra
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: extra'
+    - fieldPath: extra.isFavourite
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: isFavourite'
+      parentField: extra
+    - fieldPath: extra.expenseCategory
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: expenseCategory'
+      parentField: extra
+    - fieldPath: extra.expenseCategory.categoryId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: categoryId'
+      parentField: extra.expenseCategory
+    - fieldPath: extra.expenseCategory.name
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: name'
+      parentField: extra.expenseCategory
+    - fieldPath: extra.expenseCategory.colorCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: colorCode'
+      parentField: extra.expenseCategory
+    - fieldPath: extra.expenseCategory.icon
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: icon'
+      parentField: extra.expenseCategory
+    - fieldPath: note
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: note'
+    - fieldPath: header
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: header'
+    - fieldPath: desc
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: desc'
+    - fieldPath: ack
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: ack'
+    - fieldPath: ack.[]
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: Array of items
+      parentField: ack
+    - fieldPath: ack[].type
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: type'
+      parentField: ack[]
+    - fieldPath: ack[].dateTime
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: dateTime'
+      parentField: ack[]
+    - fieldPath: ack[].refId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: refId'
+      parentField: ack[]
+    - fieldPath: receipt
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: receipt'
+    - fieldPath: receipt.statusHeader
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: statusHeader'
+      parentField: receipt
+    - fieldPath: receipt.statusHeader.transactionDetails
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: transactionDetails'
+      parentField: receipt.statusHeader
+    - fieldPath: receipt.statusHeader.transactionDetails.transactionRefId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: transactionRefId'
+      parentField: receipt.statusHeader.transactionDetails
+    - fieldPath: receipt.statusHeader.transactionDetails.status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+      parentField: receipt.statusHeader.transactionDetails
+    - fieldPath: receipt.statusHeader.transactionDetails.dateTime
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: dateTime'
+      parentField: receipt.statusHeader.transactionDetails
+    - fieldPath: receipt.transactionSummary
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: transactionSummary'
+      parentField: receipt
+    - fieldPath: receipt.transactionSummary.totalAmount
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: totalAmount'
+      parentField: receipt.transactionSummary
+    - fieldPath: receipt.transactionSummary.totalAmount.label
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: label'
+      parentField: receipt.transactionSummary.totalAmount
+    - fieldPath: receipt.transactionSummary.totalAmount.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: receipt.transactionSummary.totalAmount
+    - fieldPath: receipt.transactionSummary.totalAmount.value
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: value'
+      parentField: receipt.transactionSummary.totalAmount
+    - fieldPath: receipt.transactionSummary.creditAccount
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: creditAccount'
+      parentField: receipt.transactionSummary
+    - fieldPath: receipt.transactionSummary.creditAccount.label
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: label'
+      parentField: receipt.transactionSummary.creditAccount
+    - fieldPath: receipt.transactionSummary.creditAccount.value
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: value'
+      parentField: receipt.transactionSummary.creditAccount
+    - fieldPath: receipt.transactionSummary.creditAccount.description
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: description'
+      parentField: receipt.transactionSummary.creditAccount
+    - fieldPath: receipt.transactionSummary.debitAccount
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: debitAccount'
+      parentField: receipt.transactionSummary
+    - fieldPath: receipt.transactionSummary.debitAccount.label
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: label'
+      parentField: receipt.transactionSummary.debitAccount
+    - fieldPath: receipt.transactionSummary.debitAccount.value
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: value'
+      parentField: receipt.transactionSummary.debitAccount
+    - fieldPath: receipt.transactionSummary.debitAccount.description
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: description'
+      parentField: receipt.transactionSummary.debitAccount
+    - fieldPath: receipt.detailSectionsOrder
+      type: Array<String>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: detailSectionsOrder'
+      parentField: receipt
+    - fieldPath: receipt.transferInformation
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: transferInformation'
+      parentField: receipt
+    - fieldPath: receipt.transferInformation.title
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: title'
+      parentField: receipt.transferInformation
+    - fieldPath: receipt.transferInformation.items
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: items'
+      parentField: receipt.transferInformation
+    - fieldPath: receipt.transferInformation.items.transferType
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: transferType'
+      parentField: receipt.transferInformation.items
+    - fieldPath: receipt.transferInformation.items.transferMode
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: transferMode'
+      parentField: receipt.transferInformation.items
+    - fieldPath: receipt.transferInformation.items.purposeOfTransfer
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: purposeOfTransfer'
+      parentField: receipt.transferInformation.items
+    - fieldPath: receipt.amountDetails
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: amountDetails'
+      parentField: receipt
+    - fieldPath: receipt.amountDetails.title
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: title'
+      parentField: receipt.amountDetails
+    - fieldPath: receipt.amountDetails.items
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: items'
+      parentField: receipt.amountDetails
+    - fieldPath: receipt.amountDetails.items.transferAmount
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: transferAmount'
+      parentField: receipt.amountDetails.items
+    - fieldPath: receipt.amountDetails.items.serviceFee
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: serviceFee'
+      parentField: receipt.amountDetails.items
+    - fieldPath: receipt.otherDetails
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: otherDetails'
+      parentField: receipt
+    - fieldPath: receipt.otherDetails.title
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: title'
+      parentField: receipt.otherDetails
+    - fieldPath: receipt.otherDetails.items
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: items'
+      parentField: receipt.otherDetails
+    - fieldPath: receipt.otherDetails.items.sourceOfFund
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: sourceOfFund'
+      parentField: receipt.otherDetails.items
+    - fieldPath: receipt.otherDetails.items.remark
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: remark'
+      parentField: receipt.otherDetails.items
+    - fieldPath: receipt.additionalDetails
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: additionalDetails'
+      parentField: receipt
+    - fieldPath: receipt.additionalDetails.title
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: title'
+      parentField: receipt.additionalDetails
+    - fieldPath: receipt.additionalDetails.items
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: items'
+      parentField: receipt.additionalDetails
+    - fieldPath: receipt.additionalDetails.items.recipientStatus
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: recipientStatus'
+      parentField: receipt.additionalDetails.items
+    - fieldPath: receipt.additionalDetails.items.recipientNationality
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: recipientNationality'
+      parentField: receipt.additionalDetails.items
+    - fieldPath: receipt.additionalDetails.items.recipientCategory
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: recipientCategory'
+      parentField: receipt.additionalDetails.items
+    - fieldPath: receipt.additionalDetails.items.relationship
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: relationship'
+      parentField: receipt.additionalDetails.items
+    - fieldPath: receipt.additionalDetails.items.transactionCategory
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: transactionCategory'
+      parentField: receipt.additionalDetails.items
+    - fieldPath: receipt.additionalDetails.items.transactionDetail
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: transactionDetail'
+      parentField: receipt.additionalDetails.items
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'extra' exists in response
+    type: field-exists
+    target: extra
+  - description: Field 'extra' is of type 'Object'
+    type: field-type
+    target: extra
+    expectedValue: Object
+  - description: Field 'note' exists in response
+    type: field-exists
+    target: note
+  - description: Field 'note' is of type 'String'
+    type: field-type
+    target: note
+    expectedValue: String
+  - description: Field 'header' exists in response
+    type: field-exists
+    target: header
+  - description: Field 'header' is of type 'String'
+    type: field-type
+    target: header
+    expectedValue: String
+  - description: Field 'desc' exists in response
+    type: field-exists
+    target: desc
+  - description: Field 'desc' is of type 'String'
+    type: field-type
+    target: desc
+    expectedValue: String
+  - description: Field 'ack' exists in response
+    type: field-exists
+    target: ack
+  - description: Field 'ack' is of type 'Array<Object>'
+    type: field-type
+    target: ack
+    expectedValue: Array<Object>
+  - description: Field 'receipt' exists in response
+    type: field-exists
+    target: receipt
+  - description: Field 'receipt' is of type 'Object'
+    type: field-type
+    target: receipt
+    expectedValue: Object
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: ExecuteInterTransfer
+  sourceRows: ''
+  apiSpecFile: ExecuteInterTransfer

@@ -1,0 +1,98 @@
+# BDD Test Case - p-tlocaltransferdddapispecv12
+# Generated for: POST /pre-check - Required Field Missing
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: InterPreMonetaryCheck-009-required-field-missing
+title: POST /pre-check - Required Field Missing
+feature: p-tlocaltransferdddapispecv12
+description: Request without a required field should be rejected
+tags:
+  - boundary
+  - required-field
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/external/pre-check
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/external/pre-check
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787718793224
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    creditAccountBankCode: <value>
+    creditAccountNo: <value>
+    ? "{\n  \"creditAccountSource\": \"NEW\", \n  \"creditAccountBankCode\": \"CIMB\",\n  \"creditAccountNo\": \"1234567890\"\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Required field is missing
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: 'Null'
+    data: Object
+    preCheckId: String
+    transferModeCode: String
+    creditAccount: Object
+    creditAccountNo: String
+    creditAccountType: String
+    creditAccountName: String
+    creditAccountBankCode: String
+    creditAccountCurrency: String
+    isFavourite: Boolean
+    limits: Object
+    productCode: String
+    dailyLimit: Integer
+    dailyLimitRemaining: Integer
+    dailylimitCurrency: String
+    sourceAccounts: Array<Object>
+    accountNo: String
+    accountName: String
+    accountNickName: String
+    accountType: String
+    accountStatus: String
+    isPrimary: Boolean
+    isMultiCurrency: Boolean
+    totalEquivalentBalance: Object
+    balances: Array<Object>
+    error: 'Null'
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error identifies missing required field 'creditAccountSource'
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InterPreMonetaryCheck
+  sourceRows: ''
+  apiSpecFile: InterPreMonetaryCheck

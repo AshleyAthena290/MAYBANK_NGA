@@ -1,0 +1,100 @@
+# Test Case Index
+# p-tlocaltransferdddapispecv12 - InterPreMonetaryUpdate
+# Generated: 2026-08-26T04:33:27.395Z
+---
+feature: p-tlocaltransferdddapispecv12
+apiName: InterPreMonetaryUpdate
+description: Test cases for InterPreMonetaryUpdate endpoint
+totalScenarios: 12
+scenarios:
+  - id: InterPreMonetaryUpdate-001-positive
+    title: POST /pre-check-update - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - interpremonetaryupdate
+    priority: P1
+  - id: InterPreMonetaryUpdate-002-missing-auth
+    title: POST /pre-check-update - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: InterPreMonetaryUpdate-003-invalid-auth
+    title: POST /pre-check-update - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: InterPreMonetaryUpdate-004-invalid-content-type
+    title: POST /pre-check-update - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: InterPreMonetaryUpdate-005-duplicate-correlation-id
+    title: POST /pre-check-update - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: InterPreMonetaryUpdate-006-request-timeout
+    title: POST /pre-check-update - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: InterPreMonetaryUpdate-007-empty-request-body
+    title: POST /pre-check-update - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: InterPreMonetaryUpdate-008-required-field-null
+    title: POST /pre-check-update - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: InterPreMonetaryUpdate-009-required-field-missing
+    title: POST /pre-check-update - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: InterPreMonetaryUpdate-012-string-minimum-length
+    title: POST /pre-check-update - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: InterPreMonetaryUpdate-013-string-maximum-length
+    title: POST /pre-check-update - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: InterPreMonetaryUpdate-014-invalid-enum-or-format
+    title: POST /pre-check-update - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T04:33:27.387Z'

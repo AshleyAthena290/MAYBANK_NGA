@@ -1,0 +1,110 @@
+# BDD Test Case - p-tlocaltransferdddapispecv12
+# Generated for: POST /execute - Minimum String Length
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: ExecuteInterTransfer-012-string-minimum-length
+title: POST /execute - Minimum String Length
+feature: p-tlocaltransferdddapispecv12
+description: Request using the minimum supported string length should be accepted
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/external/execute
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/interbank/v1/external/execute
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787718821841
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    paymentOrderId: A
+    ? "{\n  \"paymentOrderId\": \"01ARZ3NDEKTSV4RRFFQ69G5FAV\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    extra: Object
+    isFavourite: Boolean
+    expenseCategory: Object
+    categoryId: String
+    name: String
+    colorCode: String
+    icon: String
+    note: String
+    header: String
+    desc: String
+    ack: Array<Object>
+    '[]': Array<Object>
+    type: String
+    dateTime: String
+    refId: String
+    receipt: Object
+    statusHeader: Object
+    transactionDetails: Object
+    transactionRefId: String
+    transactionSummary: Object
+    totalAmount: Object
+    label: String
+    currency: String
+    value: String
+    creditAccount: Object
+    description: String
+    debitAccount: Object
+    detailSectionsOrder: Array<String>
+    transferInformation: Object
+    title: String
+    items: Object
+    transferType: Object
+    transferMode: Object
+    purposeOfTransfer: Object
+    amountDetails: Object
+    transferAmount: Object
+    serviceFee: Object
+    otherDetails: Object
+    sourceOfFund: Object
+    remark: Object
+    additionalDetails: Object
+    recipientStatus: Object
+    recipientNationality: Object
+    recipientCategory: Object
+    relationship: Object
+    transactionCategory: Object
+    transactionDetail: Object
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 and the minimum string length is accepted
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: ExecuteInterTransfer
+  sourceRows: ''
+  apiSpecFile: ExecuteInterTransfer

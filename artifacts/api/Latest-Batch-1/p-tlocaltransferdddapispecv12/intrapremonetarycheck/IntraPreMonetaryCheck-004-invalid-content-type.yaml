@@ -1,0 +1,68 @@
+# BDD Test Case - p-tlocaltransferdddapispecv12
+# Generated for: POST /pre-check - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: IntraPreMonetaryCheck-004-invalid-content-type
+title: POST /pre-check - Invalid Content-Type
+feature: p-tlocaltransferdddapispecv12
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/intrabank/v1/external/pre-check
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/intrabank/v1/external/pre-check
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787718755685
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    transferType: <value>
+    creditAccountSource: <value>
+    creditAccountBankCode: <value>
+    creditAccountNo: <value>
+    creditAccountName: <value>
+    creditAccountType: <value>
+    creditAccountCurrency: <value>
+    ? "{\n  \"transferType\": \"THIRD_PARTY_TRANSFER\",\n  \"creditAccountSource\": \"NEW\",\n  \"creditAccountBankCode\": \"MBB\",\n  \"creditAccountNo\": \"1234567890\"\n}"
+    : <value>
+    ? "{\n  \"transferType\": \"THIRD_PARTY_TRANSFER\",\n  \"creditAccountSource\": \"EXISTING\", \n  \"creditAccountBankCode\": \"MBB\",\n  \"creditAccountNo\": \"1234567890\",\n  \"creditAccountName\": \"ALI BIN ABU\",\n  \"creditAccountType\": \"SA\",\n  \"creditAccountCurrency\": \"IDR\"\n}"
+    : <value>
+    ? "{\n  \"transferType\": \"OWN_ACCOUNT_TRANSFER\"\n}"
+    : <value>
+    Name: <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: IntraPreMonetaryCheck
+  sourceRows: ''
+  apiSpecFile: IntraPreMonetaryCheck

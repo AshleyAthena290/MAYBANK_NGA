@@ -1,0 +1,107 @@
+# Test Case Index
+# eclipseaccount-dashboarddebitcarddddapidesignv1workshop - debitCardReplacementChargeRule
+# Generated: 2026-08-26T02:33:46.986Z
+---
+feature: eclipseaccount-dashboarddebitcarddddapidesignv1workshop
+apiName: debitCardReplacementChargeRule
+description: Test cases for debitCardReplacementChargeRule endpoint
+totalScenarios: 13
+scenarios:
+  - id: debitCardReplacementChargeRule-001-positive
+    title: GET /replacement-charge-rules - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - debitcardreplacementchargerule
+    priority: P1
+  - id: debitCardReplacementChargeRule-002-missing-auth
+    title: GET /replacement-charge-rules - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: debitCardReplacementChargeRule-003-invalid-auth
+    title: GET /replacement-charge-rules - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: debitCardReplacementChargeRule-004-invalid-content-type
+    title: GET /replacement-charge-rules - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: debitCardReplacementChargeRule-005-duplicate-correlation-id
+    title: GET /replacement-charge-rules - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: debitCardReplacementChargeRule-006-request-timeout
+    title: GET /replacement-charge-rules - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: debitCardReplacementChargeRule-007-empty-request-body
+    title: GET /replacement-charge-rules - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: debitCardReplacementChargeRule-008-required-field-null
+    title: GET /replacement-charge-rules - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: debitCardReplacementChargeRule-009-required-field-missing
+    title: GET /replacement-charge-rules - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: debitCardReplacementChargeRule-010-numeric-minimum
+    title: GET /replacement-charge-rules - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: debitCardReplacementChargeRule-011-numeric-maximum
+    title: GET /replacement-charge-rules - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: debitCardReplacementChargeRule-012-string-minimum-length
+    title: GET /replacement-charge-rules - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: debitCardReplacementChargeRule-013-string-maximum-length
+    title: GET /replacement-charge-rules - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T02:33:46.983Z'
