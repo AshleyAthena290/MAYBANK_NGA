@@ -35,6 +35,11 @@ function block(value) {
   if (value === null || value === undefined || value === '' || (typeof value === 'object' && Object.keys(value).length === 0)) return '{}';
   return yaml.dump(value, { noRefs: true, sortKeys: false, lineWidth: -1 }).trim();
 }
+function loadYamlFile(file) {
+  const source = fs.readFileSync(file, 'utf8');
+  const document = source.includes('\n---') ? source.slice(source.indexOf('\n---') + 1) : source;
+  return yaml.load(document) || {};
+}
 function priority(value) { return ({ P1: 'High', P2: 'Medium', P3: 'Low' })[text(value).toUpperCase()] || 'Medium'; }
 function type(tags, title) {
   const set = new Set((tags || []).map((tag) => text(tag).toLowerCase()));
@@ -96,7 +101,7 @@ function loadInputs() {
     if (!entry.isDirectory() || entry.name.toLowerCase() === 'test cases') continue;
     const cases = [];
     for (const yamlFile of allYamlFiles(path.join(inputRoot, entry.name))) {
-      const data = yaml.load(fs.readFileSync(yamlFile, 'utf8')) || {};
+      const data = loadYamlFile(yamlFile);
       if (!data || typeof data !== 'object' || !data.id) continue;
       cases.push({ values: row(data), file: yamlFile, data });
     }

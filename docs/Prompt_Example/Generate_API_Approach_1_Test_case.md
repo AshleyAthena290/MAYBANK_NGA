@@ -5,9 +5,9 @@ CONTEXT:
 - Scope: Validate all APIs defined in this DDD, including endpoints, request/response schemas, 
    field-level validations, business rules, error handling, and status codes described in the document.
 - Primary generated-test-case input folder:
-   `MAYBANK_NGA\\artifacts\\api\\Latest-Batch-1\\p-tlocaltransferdddapispecv12\\`
+   `MAYBANK_NGA\\artifacts\\api\\Latest-Batch-1\\depmaintenancengaapiappdashboarddesignv12\\`
 - Excel test-case output folder:
-   `MAYBANK_NGA\\artifacts\\api\\Latest-Batch-1\\p-tlocaltransferdddapispecv12\\test cases\\`
+   `MAYBANK_NGA\\artifacts\\api\\Latest-Batch-1\\depmaintenancengaapiappdashboarddesignv12\\test cases\\`
 - Read the YAML files recursively from this folder. Each immediate subfolder represents one API,
    and each API folder contains the YAML scenarios generated for that API.
 - Read only the existing YAML folders and files inside the generated API folders as input. Do not read
@@ -27,7 +27,7 @@ CONTEXT:
 EXPECTED YAML INPUT STRUCTURE:
 
 ```text
-MAYBANK_NGA\\artifacts\\api\\Latest-Batch-1\\p-tlocaltransferdddapispecv12\\
+MAYBANK_NGA\\artifacts\\api\\Latest-Batch-1\\depmaintenancengaapiappdashboarddesignv12\\
 ├── <api-folder-1>\\
 │   ├── _index.yaml
 │   ├── <api-name>-001-positive.yaml
@@ -43,9 +43,9 @@ MAYBANK_NGA\\artifacts\\api\\Latest-Batch-1\\p-tlocaltransferdddapispecv12\\
 EXPECTED OUTPUT LOCATION:
 
 ```text
-MAYBANK_NGA\\artifacts\\api\\Latest-Batch-1\\p-tlocaltransferdddapispecv12\\
+MAYBANK_NGA\\artifacts\\api\\Latest-Batch-1\\depmaintenancengaapiappdashboarddesignv12\\
 └── test cases\\
-   └── PT_Local_Transfer_API_Test_Cases.xlsx
+   └── DEP_Maintenance_NGA_API_App_Dashboard_Design_v1.2.xlsx
 ```
 
 Save the completed Excel workbook inside the `test cases` folder. Create the folder if it does not
@@ -161,7 +161,7 @@ FORMAT:
 - Present the Test Summary first in the `Summary` worksheet, then detailed test cases grouped by API/endpoint
    in the API worksheets and repeated in `All Test Cases`.
 - Generate only the final `.xlsx` Excel workbook and save it under:
-   `MAYBANK_NGA\\artifacts\\api\\Latest-Batch-1\\p-tlocaltransferdddapispecv12\\test cases\\`.
+   `MAYBANK_NGA\\artifacts\\api\\Latest-Batch-1\\depmaintenancengaapiappdashboarddesignv12\\test cases\\`.
 - Do not output YAML, Markdown, JSON, CSV, scripts, or any other generated file.
 - Keep language clear and testable; avoid vague expected results.
 - Include the expected HTTP status code and response body or error fields for every scenario.
