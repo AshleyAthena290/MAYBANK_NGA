@@ -1,0 +1,100 @@
+# Test Case Index
+# eclipsemaintenancedddapidesignv1 - getBackOfficeProductConfig
+# Generated: 2026-08-26T03:36:01.659Z
+---
+feature: eclipsemaintenancedddapidesignv1
+apiName: getBackOfficeProductConfig
+description: Test cases for getBackOfficeProductConfig endpoint
+totalScenarios: 12
+scenarios:
+  - id: getBackOfficeProductConfig-001-positive
+    title: GET /product-config - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getbackofficeproductconfig
+    priority: P1
+  - id: getBackOfficeProductConfig-002-missing-auth
+    title: GET /product-config - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getBackOfficeProductConfig-003-invalid-auth
+    title: GET /product-config - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getBackOfficeProductConfig-004-invalid-content-type
+    title: GET /product-config - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getBackOfficeProductConfig-005-duplicate-correlation-id
+    title: GET /product-config - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getBackOfficeProductConfig-006-request-timeout
+    title: GET /product-config - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getBackOfficeProductConfig-007-empty-request-body
+    title: GET /product-config - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getBackOfficeProductConfig-008-required-field-null
+    title: GET /product-config - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getBackOfficeProductConfig-009-required-field-missing
+    title: GET /product-config - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getBackOfficeProductConfig-012-string-minimum-length
+    title: GET /product-config - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getBackOfficeProductConfig-013-string-maximum-length
+    title: GET /product-config - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getBackOfficeProductConfig-014-invalid-enum-or-format
+    title: GET /product-config - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:36:01.655Z'

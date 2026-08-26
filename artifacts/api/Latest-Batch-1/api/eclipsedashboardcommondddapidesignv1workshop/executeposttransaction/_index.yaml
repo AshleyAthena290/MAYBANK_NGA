@@ -1,0 +1,114 @@
+# Test Case Index
+# eclipsedashboardcommondddapidesignv1workshop - executePostTransaction
+# Generated: 2026-08-26T03:32:30.128Z
+---
+feature: eclipsedashboardcommondddapidesignv1workshop
+apiName: executePostTransaction
+description: Test cases for executePostTransaction endpoint
+totalScenarios: 14
+scenarios:
+  - id: executePostTransaction-001-positive
+    title: POST /post-transaction - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - executeposttransaction
+    priority: P1
+  - id: executePostTransaction-002-missing-auth
+    title: POST /post-transaction - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: executePostTransaction-003-invalid-auth
+    title: POST /post-transaction - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: executePostTransaction-004-invalid-content-type
+    title: POST /post-transaction - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: executePostTransaction-005-duplicate-correlation-id
+    title: POST /post-transaction - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: executePostTransaction-006-request-timeout
+    title: POST /post-transaction - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: executePostTransaction-007-empty-request-body
+    title: POST /post-transaction - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: executePostTransaction-008-required-field-null
+    title: POST /post-transaction - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: executePostTransaction-009-required-field-missing
+    title: POST /post-transaction - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: executePostTransaction-010-numeric-minimum
+    title: POST /post-transaction - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: executePostTransaction-011-numeric-maximum
+    title: POST /post-transaction - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: executePostTransaction-012-string-minimum-length
+    title: POST /post-transaction - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: executePostTransaction-013-string-maximum-length
+    title: POST /post-transaction - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: executePostTransaction-014-invalid-enum-or-format
+    title: POST /post-transaction - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:32:30.128Z'

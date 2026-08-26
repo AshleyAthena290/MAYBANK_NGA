@@ -1,0 +1,100 @@
+# Test Case Index
+# eclipsemaintenancedddapidesignv1 - getDashboardRuleConfig
+# Generated: 2026-08-26T03:37:21.836Z
+---
+feature: eclipsemaintenancedddapidesignv1
+apiName: getDashboardRuleConfig
+description: Test cases for getDashboardRuleConfig endpoint
+totalScenarios: 12
+scenarios:
+  - id: getDashboardRuleConfig-001-positive
+    title: GET /dashboard-rules - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getdashboardruleconfig
+    priority: P1
+  - id: getDashboardRuleConfig-002-missing-auth
+    title: GET /dashboard-rules - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getDashboardRuleConfig-003-invalid-auth
+    title: GET /dashboard-rules - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getDashboardRuleConfig-004-invalid-content-type
+    title: GET /dashboard-rules - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getDashboardRuleConfig-005-duplicate-correlation-id
+    title: GET /dashboard-rules - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getDashboardRuleConfig-006-request-timeout
+    title: GET /dashboard-rules - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getDashboardRuleConfig-007-empty-request-body
+    title: GET /dashboard-rules - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getDashboardRuleConfig-008-required-field-null
+    title: GET /dashboard-rules - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getDashboardRuleConfig-009-required-field-missing
+    title: GET /dashboard-rules - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getDashboardRuleConfig-012-string-minimum-length
+    title: GET /dashboard-rules - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getDashboardRuleConfig-013-string-maximum-length
+    title: GET /dashboard-rules - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getDashboardRuleConfig-014-invalid-enum-or-format
+    title: GET /dashboard-rules - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:37:21.831Z'

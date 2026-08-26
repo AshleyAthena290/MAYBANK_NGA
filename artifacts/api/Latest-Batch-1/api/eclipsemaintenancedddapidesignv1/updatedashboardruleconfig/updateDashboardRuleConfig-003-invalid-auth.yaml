@@ -1,0 +1,73 @@
+# BDD Test Case - eclipsemaintenancedddapidesignv1
+# Generated for: PATCH /{id} - Invalid Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: updateDashboardRuleConfig-003-invalid-auth
+title: PATCH /{id} - Invalid Authentication
+feature: eclipsemaintenancedddapidesignv1
+description: Request with invalid credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: PATCH
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/internal/dashboard-rules/{id}'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/internal/dashboard-rules/{id}'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715452450
+    Authorization: Bearer invalid_token_12345
+  pathParams: {}
+  queryParams: {}
+  body:
+    code: <value>
+    description: <value>
+    domain: <value>
+    primaryFeatureCode: <value>
+    isCacheable: <value>
+    '>> settings[] (list)': <value>
+    accountType: <value>
+    '>>> subSettings[] (list)': <value>
+    path: <value>
+    operator: <value>
+    value: <value>
+    unmatchedAction: <value>
+    Request Parameter: <value>
+    ? "PATCH  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/internal/dashboard-rules/7a8f43c2-7661-4312-9389-ec3523422780\n\n{\n    \"code\": \"CASA_DASHBOARD\",\n    \"description\": \"CASA dashboard rules\",\n    \"domain\": \"ECLIPSE\",\n    \"isCacheable\": true,\n    \"settings\": [\n        {\n            \"accountType\": \"CA\",\n            \"subSettings\": [\n                {\n                    \"path\": \"$.isDisplayDashboard\",\n                    \"operator\": \"EQ\",\n                    \"value\": \"true\",\n                    \"unmatchedAction\": \"EXCLUDE\"\n                },\n                {\n                    \"path\": \"$.group\",\n                    \"operator\": \"EQ\",\n                    \"value\": \"CASA\",\n                    \"unmatchedAction\": \"EXCLUDE\"\n                }\n            ]\n        },\n        {\n            \"accountType\": \"SA\",\n            \"subSettings\": [\n                {\n                    \"path\": \"$.isDisplayDashboard\",\n                    \"operator\": \"EQ\",\n                    \"value\": \"true\",\n                    \"unmatchedAction\": \"EXCLUDE\"\n                }\n            ]\n        }\n    ]\n}"
+    : <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized - Invalid credentials
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Error message indicates invalid authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: updateDashboardRuleConfig
+  sourceRows: ''
+  apiSpecFile: updateDashboardRuleConfig

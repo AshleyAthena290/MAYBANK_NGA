@@ -1,0 +1,81 @@
+# BDD Test Case - eclipsedashboardcommondddapidesignv1workshop
+# Generated for: POST /information - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: updateCustomerInformation-004-invalid-content-type
+title: POST /information - Invalid Content-Type
+feature: eclipsedashboardcommondddapidesignv1workshop
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/information'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/information'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715043135
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    identifierType: <value>
+    email: <value>
+    '>> contact[] (list)': <value>
+    type: <value>
+    number: <value>
+    oldNumber: <value>
+    '>> employment (object)': <value>
+    occupationCode: <value>
+    industryCode: <value>
+    companyName: <value>
+    positionCode: <value>
+    categoryCode: <value>
+    startDate: <value>
+    sourceOfIncomeCode: <value>
+    annualIncome: <value>
+    '>> address[] (list)': <value>
+    address1: <value>
+    province: <value>
+    city: <value>
+    district: <value>
+    subDistrict: <value>
+    neighborhoodUnit: <value>
+    communityUnit: <value>
+    postcode: <value>
+    Request Parameter: <value>
+    ? "POST  https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/information\n\nExamples of request to update email\n{\n    \"identifierType\": \"EMAIL\",\n    \"email\": \"susi.doyo@gmail.com\"\n}\n\nExamples of request to update mobile number\n{\n    \"identifierType\": \"MOBILE\",\n    \"contact\": [\n        {\n            \"type\": \"MB\",\n            \"number\": \"6783945567652\",\n            \"oldNumber\": \"6783945111111\"\n        }\n    ]\n}\n\nExamples of request to update employment details\n{\n    \"identifierType\": \"EMPLOYMENT\",\n    \"employment\": {\n        \"occupationCode\": \"ACCOUNTING\",\n        \"industryCode\": \"FINANCE\",\n        \"companyName\": \"Maybank Indonesia\",\n        \"positionCode\": \"MANAGER\",\n        \"categoryCode\": \"TECHNOLOGY\",\n        \"startDate\": \"2000-05-30\",\n        \"sourceOfIncomeCode\": \"SALARY\",\n        \"annualIncome\": 10000000000\n    }\n}\n\nExamples of request to update mailing address\n{\n    \"identifierType\": \"MAILING\",\n    \"address\": [\n        {\n            \"type\": \"MAILING\",\n            \"address1\": \"Jl. Asia Afrika Sentral Senayan 3\",\n            \"province\": \"Jakarta Selatan\",\n            \"city\": \"Kebayoran Baru\",\n            \"district\": \"Bendungan Hilir\",\n            \"subDistrict\": \"Gelora\",\n            \"neighborhoodUnit\": \"001\",\n            \"communityUnit\": \"004\",\n            \"postcode\": \"10270\"\n        }\n    ]\n}\n\nExamples of request to update residential address\n{\n    \"identifierType\": \"RESIDENTIAL\",\n    \"address\": [\n        {\n            \"type\": \"HOME\",\n            \"address1\": \"Jl. Asia Afrika Sentral Senayan 3\",\n            \"province\": \"Jakarta Selatan\",\n            \"city\": \"Kebayoran Baru\",\n            \"district\": \"Bendungan Hilir\",\n            \"subDistrict\": \"Gelora\",\n            \"neighborhoodUnit\": \"001\",\n            \"communityUnit\": \"004\",\n            \"postcode\": \"10270\"\n        }\n    ]\n}\n\nExamples of request to update office address\n{\n    \"identifierType\": \"OFFICE\",\n    \"address\": [\n        {\n            \"type\": \"OFFICE\",\n            \"address1\": \"Jl. Asia Afrika Sentral Senayan 3\",\n            \"province\": \"Jakarta Selatan\",\n            \"city\": \"Kebayoran Baru\",\n            \"district\": \"Bendungan Hilir\",\n            \"subDistrict\": \"Gelora\",\n            \"postcode\": \"10270\"\n        }\n    ]\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: updateCustomerInformation
+  sourceRows: ''
+  apiSpecFile: updateCustomerInformation

@@ -1,0 +1,62 @@
+# BDD Test Case - p-tscanandpayapispecv13
+# Generated for: POST /initiate - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: ValidateDomesticScanPay-006-request-timeout
+title: POST /initiate - Request Timeout
+feature: p-tscanandpayapispecv13
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/local-qr/initiate
+  endpoint: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/local-qr/initiate
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787712530865
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    referenceId: <value>
+    debitAccountNo: <value>
+    debitAccountCurrency: <value>
+    promo: <value>
+    code: <value>
+    amount: <value>
+    ? "{\n    \"referenceId\": \"93915178100\",\n    \"debitAccountNo\": \"514013314526\",\n    \"debitAccountCurrency\": \"IDR\",\n    \"promo\": {\n        \"code\": \"DUMMYPROMO\",\n        \"amount\": 2000\n    }\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InitiateDomesticScanPay
+  sourceRows: ''
+  apiSpecFile: ValidateDomesticScanPay

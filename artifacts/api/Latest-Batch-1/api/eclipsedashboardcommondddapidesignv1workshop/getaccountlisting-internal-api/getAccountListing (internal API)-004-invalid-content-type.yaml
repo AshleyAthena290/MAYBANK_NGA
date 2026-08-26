@@ -1,0 +1,96 @@
+# BDD Test Case - eclipsedashboardcommondddapidesignv1workshop
+# Generated for: GET /summary - only for CARD product (CC and DC) 
+
+context-path value:
+1. casa
+2. card
+3. loan
+4. insurance
+5. investment
+6. time-deposit - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getAccountListing (internal API)-004-invalid-content-type
+title: |-
+  GET /summary - only for CARD product (CC and DC) 
+
+  context-path value:
+  1. casa
+  2. card
+  3. loan
+  4. insurance
+  5. investment
+  6. time-deposit - Invalid Content-Type
+feature: eclipsedashboardcommondddapidesignv1workshop
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: |-
+    https: //{Eclipse-IP}:{Eclipse-PORT}/info/{context-path}/v1/internal/accounts/summary
+    https: //{Eclipse-IP}:{Eclipse-PORT}/info/{context-path}/v1/internal/accounts/account-type/{accountType}/summary - only for CARD product (CC and DC) 
+
+    context-path value:
+    1. casa
+    2. card
+    3. loan
+    4. insurance
+    5. investment
+    6. time-deposit
+  endpoint: |-
+    https: //{Eclipse-IP}:{Eclipse-PORT}/info/{context-path}/v1/internal/accounts/summary
+    https: //{Eclipse-IP}:{Eclipse-PORT}/info/{context-path}/v1/internal/accounts/account-type/{accountType}/summary - only for CARD product (CC and DC) 
+
+    context-path value:
+    1. casa
+    2. card
+    3. loan
+    4. insurance
+    5. investment
+    6. time-deposit
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787714974794
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    Request Parameter: <value>
+    '*MultiValueMap': <value>
+    ? "GET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/casa/v1/internal/accounts/summary?CASA_CIF=000784756&CASA_CIF=000123122\nGET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/internal/accounts/summary?CARD_CIF=000784756&CARD_CIF=000123122&CARD_CIF=000987867\nGET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/loan/v1/internal/accounts/summary?CASA_CIF=000784756&CARD_CIF=000123122"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getAccountListing
+  sourceRows: ''
+  apiSpecFile: getAccountListing (internal API)

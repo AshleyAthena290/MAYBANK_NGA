@@ -1,0 +1,68 @@
+# BDD Test Case - p-tscanandpayapispecv13
+# Generated for: POST /execute - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: ExecuteActivation-004-invalid-content-type
+title: POST /execute - Invalid Content-Type
+feature: p-tscanandpayapispecv13
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/activation/execute
+  endpoint: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/activation/execute
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787712507492
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    idType: <value>
+    idValue: <value>
+    accessId: <value>
+    activationType: <value>
+    authToken: <value>
+    primaryAccount: <value>
+    accountId: <value>
+    accountType: <value>
+    limitSetting: <value>
+    dailyLimit: <value>
+    transactionLimit: <value>
+    preLoginLimit: <value>
+    ? "{\n  \"idType\": \"CIF\",\n  \"idValue\": \"1234567890\",\n  \"accessId\": \"ACC-SESSION-0001\",\n  \"activationType\": \"SCAN_PAY_DOMESTIC\",\n  \"authToken\": \"eyJhbGciOiJIUzI1NiIs...\",\n  \"primaryAccount\": {\n    \"accountId\": \"1000123456\",\n    \"accountType\": \"CASA\"\n  },\n  \"limitSetting\": {\n    \"dailyLimit\": 10000000.0,\n    \"transactionLimit\": 5000000.0,\n    \"preLoginLimit\": 500000.0\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: ExecuteActivation
+  sourceRows: ''
+  apiSpecFile: ExecuteActivation

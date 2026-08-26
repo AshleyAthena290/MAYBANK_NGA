@@ -1,0 +1,82 @@
+# BDD Test Case - eclipsemaintenancedddapidesignv1
+# Generated for: POST /feature-flags - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: insertInitData-001-positive
+title: POST /feature-flags - Happy Path
+feature: eclipsemaintenancedddapidesignv1
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - insertinitdata
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/feature-flags'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/feature-flags'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715332745
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    domain: <value>
+    region: <value>
+    platform: <value>
+    module: <value>
+    subModule: <value>
+    code: <value>
+    description: <value>
+    valueType: <value>
+    variableName: <value>
+    parentId: <value>
+    '> values[] (list)': <value>
+    environment: <value>
+    variableValue: <value>
+    isDisabled: <value>
+    disabledRemarks: <value>
+    '>> listValues[] (list)': <value>
+    value: <value>
+    Request Parameter: <value>
+    'POST  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/feature-flags': <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: insertInitData
+  sourceRows: ''
+  apiSpecFile: insertInitData

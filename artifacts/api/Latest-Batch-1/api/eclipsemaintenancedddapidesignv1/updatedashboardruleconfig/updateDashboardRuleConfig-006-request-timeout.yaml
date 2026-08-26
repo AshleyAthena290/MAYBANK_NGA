@@ -1,0 +1,69 @@
+# BDD Test Case - eclipsemaintenancedddapidesignv1
+# Generated for: PATCH /{id} - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: updateDashboardRuleConfig-006-request-timeout
+title: PATCH /{id} - Request Timeout
+feature: eclipsemaintenancedddapidesignv1
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: PATCH
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/internal/dashboard-rules/{id}'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/internal/dashboard-rules/{id}'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715452450
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    code: <value>
+    description: <value>
+    domain: <value>
+    primaryFeatureCode: <value>
+    isCacheable: <value>
+    '>> settings[] (list)': <value>
+    accountType: <value>
+    '>>> subSettings[] (list)': <value>
+    path: <value>
+    operator: <value>
+    value: <value>
+    unmatchedAction: <value>
+    Request Parameter: <value>
+    ? "PATCH  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/internal/dashboard-rules/7a8f43c2-7661-4312-9389-ec3523422780\n\n{\n    \"code\": \"CASA_DASHBOARD\",\n    \"description\": \"CASA dashboard rules\",\n    \"domain\": \"ECLIPSE\",\n    \"isCacheable\": true,\n    \"settings\": [\n        {\n            \"accountType\": \"CA\",\n            \"subSettings\": [\n                {\n                    \"path\": \"$.isDisplayDashboard\",\n                    \"operator\": \"EQ\",\n                    \"value\": \"true\",\n                    \"unmatchedAction\": \"EXCLUDE\"\n                },\n                {\n                    \"path\": \"$.group\",\n                    \"operator\": \"EQ\",\n                    \"value\": \"CASA\",\n                    \"unmatchedAction\": \"EXCLUDE\"\n                }\n            ]\n        },\n        {\n            \"accountType\": \"SA\",\n            \"subSettings\": [\n                {\n                    \"path\": \"$.isDisplayDashboard\",\n                    \"operator\": \"EQ\",\n                    \"value\": \"true\",\n                    \"unmatchedAction\": \"EXCLUDE\"\n                }\n            ]\n        }\n    ]\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: updateDashboardRuleConfig
+  sourceRows: ''
+  apiSpecFile: updateDashboardRuleConfig

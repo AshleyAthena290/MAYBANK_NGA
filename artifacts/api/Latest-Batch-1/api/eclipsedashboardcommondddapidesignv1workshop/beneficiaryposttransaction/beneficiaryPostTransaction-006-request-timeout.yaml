@@ -1,0 +1,66 @@
+# BDD Test Case - eclipsedashboardcommondddapidesignv1workshop
+# Generated for: POST /post-transaction - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: beneficiaryPostTransaction-006-request-timeout
+title: POST /post-transaction - Request Timeout
+feature: eclipsedashboardcommondddapidesignv1workshop
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/pfm/v1/internal/post-transaction'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/pfm/v1/internal/post-transaction'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715159218
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    transactionDateTime: <value>
+    transactionType: <value>
+    fromCurrency: <value>
+    transactionMetadata: <value>
+    '> beneficiary (object)': <value>
+    gcif: <value>
+    accountId: <value>
+    bankCode: <value>
+    bankName: <value>
+    Request Parameter: <value>
+    ? "POST https: //{Eclipse-IP}:{Eclipse-PORT}/info/pfm/v1/internal/post-transaction\n\n{\n    \"transactionDateTime\": \"2026-02-06 20:25:29\",\n    \"transactionType\": \"TOPUP\",\n    \"fromCurrency\": \"IDR\",\n    \"transactionMetadata\": \"{\\\"remark\\\":\\\"Salary\\\",\\\"nationality\\\":\\\"Indonesian\\\"}\",\n    \"beneficiary\": {\n        \"gcif\": \"1234567890\",\n        \"name\": \"v1\",\n        \"accountId\": \"G02887262\",\n        \"bankCode\": \"IBBKIDJAXXX\",\n        \"bankName\": \"Maybank Indonesia (PT Bank Maybank Indonesia Tbk)\"\n    }\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: pfmPostTransaction
+  sourceRows: ''
+  apiSpecFile: beneficiaryPostTransaction

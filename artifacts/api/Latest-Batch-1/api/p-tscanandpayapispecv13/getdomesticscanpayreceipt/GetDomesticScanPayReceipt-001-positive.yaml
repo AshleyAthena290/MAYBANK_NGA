@@ -1,0 +1,63 @@
+# BDD Test Case - p-tscanandpayapispecv13
+# Generated for: GET /{referenceId} - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: GetDomesticScanPayReceipt-001-positive
+title: GET /{referenceId} - Happy Path
+feature: p-tscanandpayapispecv13
+description: Retrieves full receipt data for a completed domestic QR Pay transaction. Data is served from Hazelcast txn_flow cache populated during SubmitDomesticScanPay. No new downstream ESB call is made at this step. Supports share receipt as native PDF/image per country config.
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - getdomesticscanpayreceipt
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/local-qr/receipt/{referenceId}
+  endpoint: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/local-qr/receipt/{referenceId}
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787712542011
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body: {}
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: GetDomesticScanPayReceipt
+  sourceRows: ''
+  apiSpecFile: GetDomesticScanPayReceipt

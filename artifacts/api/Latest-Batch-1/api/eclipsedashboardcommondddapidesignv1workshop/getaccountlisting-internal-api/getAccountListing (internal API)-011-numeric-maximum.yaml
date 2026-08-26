@@ -1,0 +1,128 @@
+# BDD Test Case - eclipsedashboardcommondddapidesignv1workshop
+# Generated for: GET /summary - only for CARD product (CC and DC) 
+
+context-path value:
+1. casa
+2. card
+3. loan
+4. insurance
+5. investment
+6. time-deposit - Maximum Numeric Value
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getAccountListing (internal API)-011-numeric-maximum
+title: |-
+  GET /summary - only for CARD product (CC and DC) 
+
+  context-path value:
+  1. casa
+  2. card
+  3. loan
+  4. insurance
+  5. investment
+  6. time-deposit - Maximum Numeric Value
+feature: eclipsedashboardcommondddapidesignv1workshop
+description: Request using the maximum supported numeric value should be accepted or rejected according to the API limit
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: |-
+    https: //{Eclipse-IP}:{Eclipse-PORT}/info/{context-path}/v1/internal/accounts/summary
+    https: //{Eclipse-IP}:{Eclipse-PORT}/info/{context-path}/v1/internal/accounts/account-type/{accountType}/summary - only for CARD product (CC and DC) 
+
+    context-path value:
+    1. casa
+    2. card
+    3. loan
+    4. insurance
+    5. investment
+    6. time-deposit
+  endpoint: |-
+    https: //{Eclipse-IP}:{Eclipse-PORT}/info/{context-path}/v1/internal/accounts/summary
+    https: //{Eclipse-IP}:{Eclipse-PORT}/info/{context-path}/v1/internal/accounts/account-type/{accountType}/summary - only for CARD product (CC and DC) 
+
+    context-path value:
+    1. casa
+    2. card
+    3. loan
+    4. insurance
+    5. investment
+    6. time-deposit
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787714974794
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    Request Parameter: <value>
+    '*MultiValueMap': <value>
+    ? "GET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/casa/v1/internal/accounts/summary?CASA_CIF=000784756&CASA_CIF=000123122\nGET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/internal/accounts/summary?CARD_CIF=000784756&CARD_CIF=000123122&CARD_CIF=000987867\nGET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/loan/v1/internal/accounts/summary?CASA_CIF=000784756&CARD_CIF=000123122"
+    : 999999999
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+    data: Object
+    accounts: Array<Object>
+    accountId: String
+    cardNumber: String
+    currency: String
+    type: String
+    subType: String
+    ownership: String
+    nicknameId: String
+    nickname: String
+    productType: String
+    group: String
+    category: String
+    name: String
+    balance: Decimal
+    isPrimary: Boolean
+    productCode: String
+    isDisplayDashboard: Boolean
+    isAllowSetPrimary: Boolean
+    isAllowBlock: Boolean
+    links: Object
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code matches the documented maximum-value behavior
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getAccountListing
+  sourceRows: ''
+  apiSpecFile: getAccountListing (internal API)

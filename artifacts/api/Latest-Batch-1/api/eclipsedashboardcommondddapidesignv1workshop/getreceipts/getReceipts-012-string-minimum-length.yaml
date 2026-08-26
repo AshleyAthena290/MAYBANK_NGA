@@ -1,0 +1,74 @@
+# BDD Test Case - eclipsedashboardcommondddapidesignv1workshop
+# Generated for: GET /{transactionReferenceId} - Minimum String Length
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getReceipts-012-string-minimum-length
+title: GET /{transactionReferenceId} - Minimum String Length
+feature: eclipsedashboardcommondddapidesignv1workshop
+description: Request using the minimum supported string length should be accepted
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/receipts/{transactionReferenceId}'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/receipts/{transactionReferenceId}'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715008747
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    Request Parameter: <value>
+    transactionReferenceId: A
+    'GET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/receipts/3332233222222': <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: Integer
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+    data: Object
+    templateId: String
+    templateVersion: String
+    metadata: String
+    link: Object
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 and the minimum string length is accepted
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getReceipts
+  sourceRows: ''
+  apiSpecFile: getReceipts

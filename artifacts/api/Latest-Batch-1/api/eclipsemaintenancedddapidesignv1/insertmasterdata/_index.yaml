@@ -1,0 +1,114 @@
+# Test Case Index
+# eclipsemaintenancedddapidesignv1 - insertMasterData
+# Generated: 2026-08-26T03:37:04.665Z
+---
+feature: eclipsemaintenancedddapidesignv1
+apiName: insertMasterData
+description: Test cases for insertMasterData endpoint
+totalScenarios: 14
+scenarios:
+  - id: insertMasterData-001-positive
+    title: POST /master-data - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - insertmasterdata
+    priority: P1
+  - id: insertMasterData-002-missing-auth
+    title: POST /master-data - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: insertMasterData-003-invalid-auth
+    title: POST /master-data - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: insertMasterData-004-invalid-content-type
+    title: POST /master-data - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: insertMasterData-005-duplicate-correlation-id
+    title: POST /master-data - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: insertMasterData-006-request-timeout
+    title: POST /master-data - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: insertMasterData-007-empty-request-body
+    title: POST /master-data - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: insertMasterData-008-required-field-null
+    title: POST /master-data - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertMasterData-009-required-field-missing
+    title: POST /master-data - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: insertMasterData-010-numeric-minimum
+    title: POST /master-data - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertMasterData-011-numeric-maximum
+    title: POST /master-data - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertMasterData-012-string-minimum-length
+    title: POST /master-data - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertMasterData-013-string-maximum-length
+    title: POST /master-data - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertMasterData-014-invalid-enum-or-format
+    title: POST /master-data - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:37:04.659Z'

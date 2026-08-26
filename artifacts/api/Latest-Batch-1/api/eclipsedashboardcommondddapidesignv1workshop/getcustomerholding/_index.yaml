@@ -1,0 +1,114 @@
+# Test Case Index
+# eclipsedashboardcommondddapidesignv1workshop - getCustomerHolding
+# Generated: 2026-08-26T03:31:01.568Z
+---
+feature: eclipsedashboardcommondddapidesignv1workshop
+apiName: getCustomerHolding
+description: Test cases for getCustomerHolding endpoint
+totalScenarios: 14
+scenarios:
+  - id: getCustomerHolding-001-positive
+    title: GET /holdings - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getcustomerholding
+    priority: P1
+  - id: getCustomerHolding-002-missing-auth
+    title: GET /holdings - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getCustomerHolding-003-invalid-auth
+    title: GET /holdings - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getCustomerHolding-004-invalid-content-type
+    title: GET /holdings - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getCustomerHolding-005-duplicate-correlation-id
+    title: GET /holdings - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getCustomerHolding-006-request-timeout
+    title: GET /holdings - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getCustomerHolding-007-empty-request-body
+    title: GET /holdings - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getCustomerHolding-008-required-field-null
+    title: GET /holdings - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getCustomerHolding-009-required-field-missing
+    title: GET /holdings - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getCustomerHolding-010-numeric-minimum
+    title: GET /holdings - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getCustomerHolding-011-numeric-maximum
+    title: GET /holdings - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getCustomerHolding-012-string-minimum-length
+    title: GET /holdings - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getCustomerHolding-013-string-maximum-length
+    title: GET /holdings - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getCustomerHolding-014-invalid-enum-or-format
+    title: GET /holdings - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:31:01.568Z'

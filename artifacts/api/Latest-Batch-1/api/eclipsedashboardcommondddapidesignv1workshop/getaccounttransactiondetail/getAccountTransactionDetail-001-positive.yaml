@@ -1,0 +1,275 @@
+# BDD Test Case - eclipsedashboardcommondddapidesignv1workshop
+# Generated for: GET /{transactionReferenceId} - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getAccountTransactionDetail-001-positive
+title: GET /{transactionReferenceId} - Happy Path
+feature: eclipsedashboardcommondddapidesignv1workshop
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - getaccounttransactiondetail
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/account-id/{accountId}/transaction/detail/{transactionReferenceId}'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/account-id/{accountId}/transaction/detail/{transactionReferenceId}'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715128217
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    accountId: <value>
+    transactionReferenceId: <value>
+    Request Parameter: <value>
+    'GET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/customer/v1/external/account-id/166010185626/transaction/detail/39323939393993': <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+    data: Object
+    transactionDate: String
+    referenceId: String
+    indicator: String
+    currency: String
+    amount: Integer
+    fromAccountName: String
+    fromAccountId: String
+    toAccountName: String
+    toAccountId: String
+    exchangeRate: String
+    localCurrency: String
+    localAmount: Decimal
+    type: String
+    remark: String
+  expectedFields:
+    - fieldPath: status
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: status'
+    - fieldPath: message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: correlationId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: correlationId'
+    - fieldPath: meta
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: meta'
+    - fieldPath: meta.provider
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: provider'
+      parentField: meta
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.transactionDate
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: transactionDate'
+      parentField: data
+    - fieldPath: data.referenceId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: referenceId'
+      parentField: data
+    - fieldPath: data.status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+      parentField: data
+    - fieldPath: data.indicator
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: indicator'
+      parentField: data
+    - fieldPath: data.currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: data
+    - fieldPath: data.amount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: amount'
+      parentField: data
+    - fieldPath: data.fromAccountName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: fromAccountName'
+      parentField: data
+    - fieldPath: data.fromAccountId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: fromAccountId'
+      parentField: data
+    - fieldPath: data.toAccountName
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: toAccountName'
+      parentField: data
+    - fieldPath: data.toAccountId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: toAccountId'
+      parentField: data
+    - fieldPath: data.exchangeRate
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: exchangeRate'
+      parentField: data
+    - fieldPath: data.localCurrency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: localCurrency'
+      parentField: data
+    - fieldPath: data.localAmount
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: localAmount'
+      parentField: data
+    - fieldPath: data.type
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: type'
+      parentField: data
+    - fieldPath: data.remark
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: remark'
+      parentField: data
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'Integer'
+    type: field-type
+    target: status
+    expectedValue: Integer
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'String'
+    type: field-type
+    target: message
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'correlationId' exists in response
+    type: field-exists
+    target: correlationId
+  - description: Field 'correlationId' is of type 'String'
+    type: field-type
+    target: correlationId
+    expectedValue: String
+  - description: Field 'meta' exists in response
+    type: field-exists
+    target: meta
+  - description: Field 'meta' is of type 'Object'
+    type: field-type
+    target: meta
+    expectedValue: Object
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getAccountTransactionDetail
+  sourceRows: ''
+  apiSpecFile: getAccountTransactionDetail

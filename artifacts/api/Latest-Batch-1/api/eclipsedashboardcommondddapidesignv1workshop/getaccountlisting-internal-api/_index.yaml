@@ -1,0 +1,224 @@
+# Test Case Index
+# eclipsedashboardcommondddapidesignv1workshop - getAccountListing (internal API)
+# Generated: 2026-08-26T03:29:34.841Z
+---
+feature: eclipsedashboardcommondddapidesignv1workshop
+apiName: getAccountListing (internal API)
+description: Test cases for getAccountListing (internal API) endpoint
+totalScenarios: 13
+scenarios:
+  - id: getAccountListing (internal API)-001-positive
+    title: |-
+      GET /summary - only for CARD product (CC and DC) 
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getaccountlisting-(internal-api)
+    priority: P1
+  - id: getAccountListing (internal API)-002-missing-auth
+    title: |-
+      GET /summary - only for CARD product (CC and DC) 
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getAccountListing (internal API)-003-invalid-auth
+    title: |-
+      GET /summary - only for CARD product (CC and DC) 
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getAccountListing (internal API)-004-invalid-content-type
+    title: |-
+      GET /summary - only for CARD product (CC and DC) 
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getAccountListing (internal API)-005-duplicate-correlation-id
+    title: |-
+      GET /summary - only for CARD product (CC and DC) 
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getAccountListing (internal API)-006-request-timeout
+    title: |-
+      GET /summary - only for CARD product (CC and DC) 
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getAccountListing (internal API)-007-empty-request-body
+    title: |-
+      GET /summary - only for CARD product (CC and DC) 
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getAccountListing (internal API)-008-required-field-null
+    title: |-
+      GET /summary - only for CARD product (CC and DC) 
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountListing (internal API)-009-required-field-missing
+    title: |-
+      GET /summary - only for CARD product (CC and DC) 
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getAccountListing (internal API)-010-numeric-minimum
+    title: |-
+      GET /summary - only for CARD product (CC and DC) 
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountListing (internal API)-011-numeric-maximum
+    title: |-
+      GET /summary - only for CARD product (CC and DC) 
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountListing (internal API)-012-string-minimum-length
+    title: |-
+      GET /summary - only for CARD product (CC and DC) 
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountListing (internal API)-013-string-maximum-length
+    title: |-
+      GET /summary - only for CARD product (CC and DC) 
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:29:34.837Z'

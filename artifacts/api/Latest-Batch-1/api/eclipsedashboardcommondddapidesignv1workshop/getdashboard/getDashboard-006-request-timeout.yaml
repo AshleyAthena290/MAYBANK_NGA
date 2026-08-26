@@ -1,0 +1,62 @@
+# BDD Test Case - eclipsedashboardcommondddapidesignv1workshop
+# Generated for: GET /accounts - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getDashboard-006-request-timeout
+title: GET /accounts - Request Timeout
+feature: eclipsedashboardcommondddapidesignv1workshop
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts'
+  endpoint: 'https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787714955100
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    accountGroup: <value>
+    accountType: <value>
+    accountStatus: <value>
+    primaryType: <value>
+    featureCode: <value>
+    ? "GET  https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts?featureCode=CASA_DASHBOARD\nGET  https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts?featureCode=CARD_DASHBOARD \nGET  https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts?featureCode=LOAN_DASHBOARD \nGET  https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts?featureCode=SOF_LOCAL_TRANSFER \nGET  https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts?featureCode=OVERSEA_SCAN_PAY\nGET  https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts?featureCode=SCAN_PAY"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getDashboard
+  sourceRows: ''
+  apiSpecFile: getDashboard
