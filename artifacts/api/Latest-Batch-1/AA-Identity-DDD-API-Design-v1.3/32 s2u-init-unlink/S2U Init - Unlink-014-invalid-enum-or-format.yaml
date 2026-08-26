@@ -1,0 +1,65 @@
+# BDD Test Case - identitydddapidesignv13updated
+# Generated for: POST /init - Invalid Enum or Format
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: S2U Init - Unlink-014-invalid-enum-or-format
+title: POST /init - Invalid Enum or Format
+feature: identitydddapidesignv13updated
+description: Request using an invalid enum or format value should be rejected
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/secure/init'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/secure/init'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787560361322
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    functionCode: __INVALID_ENUM_OR_FORMAT__
+    payload: <value>
+    token: <value>
+    Request Parameter: <value>
+    ? "{\n  \"functionCode\": \"unlink-account\",\n  \"payload\": {\n    \"token\": \"{{refreshToken}}\"\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400 and the error identifies the invalid value
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: S2U Init - Unlink
+  sourceRows: ''
+  apiSpecFile: S2U Init - Unlink

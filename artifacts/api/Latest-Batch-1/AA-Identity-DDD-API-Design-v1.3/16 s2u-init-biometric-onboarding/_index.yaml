@@ -1,0 +1,114 @@
+# Test Case Index
+# identitydddapidesignv13updated - S2U Init - Biometric Setup Onboarding
+# Generated: 2026-08-24T09:04:42.335Z
+---
+feature: identitydddapidesignv13updated
+apiName: S2U Init - Biometric Setup Onboarding
+description: Test cases for S2U Init - Biometric Setup Onboarding endpoint
+totalScenarios: 14
+scenarios:
+  - id: S2U Init - Biometric Setup Onboarding-001-positive
+    title: POST /init - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - s2u-init---biometric-setup-onboarding
+    priority: P1
+  - id: S2U Init - Biometric Setup Onboarding-002-missing-auth
+    title: POST /init - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: S2U Init - Biometric Setup Onboarding-003-invalid-auth
+    title: POST /init - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: S2U Init - Biometric Setup Onboarding-004-invalid-content-type
+    title: POST /init - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: S2U Init - Biometric Setup Onboarding-005-duplicate-correlation-id
+    title: POST /init - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: S2U Init - Biometric Setup Onboarding-006-request-timeout
+    title: POST /init - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: S2U Init - Biometric Setup Onboarding-007-empty-request-body
+    title: POST /init - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: S2U Init - Biometric Setup Onboarding-008-required-field-null
+    title: POST /init - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: S2U Init - Biometric Setup Onboarding-009-required-field-missing
+    title: POST /init - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: S2U Init - Biometric Setup Onboarding-010-numeric-minimum
+    title: POST /init - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: S2U Init - Biometric Setup Onboarding-011-numeric-maximum
+    title: POST /init - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: S2U Init - Biometric Setup Onboarding-012-string-minimum-length
+    title: POST /init - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: S2U Init - Biometric Setup Onboarding-013-string-maximum-length
+    title: POST /init - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: S2U Init - Biometric Setup Onboarding-014-invalid-enum-or-format
+    title: POST /init - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-24T09:04:42.334Z'

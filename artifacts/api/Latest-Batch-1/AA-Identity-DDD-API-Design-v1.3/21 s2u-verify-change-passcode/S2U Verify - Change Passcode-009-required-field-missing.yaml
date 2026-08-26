@@ -1,0 +1,69 @@
+# BDD Test Case - identitydddapidesignv13updated
+# Generated for: POST /verify - Required Field Missing
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: S2U Verify - Change Passcode-009-required-field-missing
+title: POST /verify - Required Field Missing
+feature: identitydddapidesignv13updated
+description: Request without a required field should be rejected
+tags:
+  - boundary
+  - required-field
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/secure/verify'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/secure/verify'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787560301786
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    action: <value>
+    challenge: <value>
+    code: <value>
+    Request Parameter: <value>
+    ? "{\n  \"trn\": \"0448eb93-e5f7-4174-bad4-6f1fa3fe6e51\",\n  \"action\": \"passcode\",\n  \"challenge\": {\n    \"code\": \"135797\"\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Required field is missing
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error identifies missing required field 'trn'
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: S2U Verify - Change Passcode
+  sourceRows: ''
+  apiSpecFile: S2U Verify - Change Passcode

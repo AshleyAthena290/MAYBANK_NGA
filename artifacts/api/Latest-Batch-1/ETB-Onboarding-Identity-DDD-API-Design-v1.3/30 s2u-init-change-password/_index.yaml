@@ -1,0 +1,100 @@
+# Test Case Index
+# etbonboardingidentitydddapidesignv13updated - S2U Init - Change Password
+# Generated: 2026-08-24T09:27:40.756Z
+---
+feature: etbonboardingidentitydddapidesignv13updated
+apiName: S2U Init - Change Password
+description: Test cases for S2U Init - Change Password endpoint
+totalScenarios: 12
+scenarios:
+  - id: S2U Init - Change Password-001-positive
+    title: POST /init - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - s2u-init---change-password
+    priority: P1
+  - id: S2U Init - Change Password-002-missing-auth
+    title: POST /init - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: S2U Init - Change Password-003-invalid-auth
+    title: POST /init - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: S2U Init - Change Password-004-invalid-content-type
+    title: POST /init - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: S2U Init - Change Password-005-duplicate-correlation-id
+    title: POST /init - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: S2U Init - Change Password-006-request-timeout
+    title: POST /init - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: S2U Init - Change Password-007-empty-request-body
+    title: POST /init - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: S2U Init - Change Password-008-required-field-null
+    title: POST /init - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: S2U Init - Change Password-009-required-field-missing
+    title: POST /init - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: S2U Init - Change Password-012-string-minimum-length
+    title: POST /init - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: S2U Init - Change Password-013-string-maximum-length
+    title: POST /init - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: S2U Init - Change Password-014-invalid-enum-or-format
+    title: POST /init - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-24T09:27:40.756Z'

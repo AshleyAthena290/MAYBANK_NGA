@@ -1,0 +1,61 @@
+# BDD Test Case - etbonboardingidentitydddapidesignv13updated
+# Generated for: POST /verify - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: S2U Verify - Delete-004-invalid-content-type
+title: POST /verify - Invalid Content-Type
+feature: etbonboardingidentitydddapidesignv13updated
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/secure/verify'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/secure/verify'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787563682978
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    trn: <value>
+    action: <value>
+    challenge: <value>
+    code: <value>
+    Request Parameter: <value>
+    ? "{\n  \"trn\": \"a7237b84-0ed7-4312-9ada-25e9801f489c\",\n  \"action\": \"passcode\",\n  \"challenge\": {\n    \"code\": \"625719\"\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: S2U Verify - Delete
+  sourceRows: ''
+  apiSpecFile: S2U Verify - Delete

@@ -1,0 +1,93 @@
+# Test Case Index
+# depappdashboarddddapidesignv12 - getLargeWidget
+# Generated: 2026-08-24T10:12:39.897Z
+---
+feature: depappdashboarddddapidesignv12
+apiName: getLargeWidget
+description: Test cases for getLargeWidget endpoint
+totalScenarios: 11
+scenarios:
+  - id: getLargeWidget-001-positive
+    title: GET /large-widget - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getlargewidget
+    priority: P1
+  - id: getLargeWidget-002-missing-auth
+    title: GET /large-widget - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getLargeWidget-003-invalid-auth
+    title: GET /large-widget - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getLargeWidget-004-invalid-content-type
+    title: GET /large-widget - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getLargeWidget-005-duplicate-correlation-id
+    title: GET /large-widget - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getLargeWidget-006-request-timeout
+    title: GET /large-widget - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getLargeWidget-007-empty-request-body
+    title: GET /large-widget - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getLargeWidget-008-required-field-null
+    title: GET /large-widget - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getLargeWidget-009-required-field-missing
+    title: GET /large-widget - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getLargeWidget-012-string-minimum-length
+    title: GET /large-widget - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getLargeWidget-013-string-maximum-length
+    title: GET /large-widget - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-24T10:12:39.897Z'

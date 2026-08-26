@@ -1,0 +1,100 @@
+# Test Case Index
+# identitydddapidesignv13updated - S2U Verify - Reset Password
+# Generated: 2026-08-24T08:32:13.076Z
+---
+feature: identitydddapidesignv13updated
+apiName: S2U Verify - Reset Password
+description: Test cases for S2U Verify - Reset Password endpoint
+totalScenarios: 12
+scenarios:
+  - id: S2U Verify - Reset Password-001-positive
+    title: POST /verify - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - s2u-verify---reset-password
+    priority: P1
+  - id: S2U Verify - Reset Password-002-missing-auth
+    title: POST /verify - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: S2U Verify - Reset Password-003-invalid-auth
+    title: POST /verify - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: S2U Verify - Reset Password-004-invalid-content-type
+    title: POST /verify - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: S2U Verify - Reset Password-005-duplicate-correlation-id
+    title: POST /verify - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: S2U Verify - Reset Password-006-request-timeout
+    title: POST /verify - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: S2U Verify - Reset Password-007-empty-request-body
+    title: POST /verify - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: S2U Verify - Reset Password-008-required-field-null
+    title: POST /verify - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: S2U Verify - Reset Password-009-required-field-missing
+    title: POST /verify - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: S2U Verify - Reset Password-012-string-minimum-length
+    title: POST /verify - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: S2U Verify - Reset Password-013-string-maximum-length
+    title: POST /verify - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: S2U Verify - Reset Password-014-invalid-enum-or-format
+    title: POST /verify - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-24T08:32:13.076Z'
