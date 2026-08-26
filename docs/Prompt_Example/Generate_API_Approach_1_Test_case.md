@@ -19,8 +19,7 @@ CONTEXT:
    available YAML files and record the missing item as an `Assumption` or reconciliation note in the workbook.
 - Treat the scenario YAML files as the primary source for the Excel test-case rows. Use the DDD as
    the supporting source for validation rules, endpoint details, business context, and assumptions.
-- Ignore `_index.yaml` when creating test-case rows because it is an API scenario index, not an executable
-   test case. Include its scenario count or metadata only when useful for reconciliation.
+- Ignore `_index.yaml` when creating test-case rows because it is an API scenario index, not an executable test case. Include its scenario count or metadata only when useful for reconciliation.
 - Generate a business-readable Excel workbook containing the test cases. Do not generate only a narrative,
   markdown table, or YAML files.
 - Preserve traceability from every test case to its API endpoint, source worksheet, and source DDD file.

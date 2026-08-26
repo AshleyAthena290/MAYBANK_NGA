@@ -1,0 +1,114 @@
+# Test Case Index
+# p-tlocaltransferdddapispecv12 - LimitSettingUpdate
+# Generated: 2026-08-26T04:34:17.805Z
+---
+feature: p-tlocaltransferdddapispecv12
+apiName: LimitSettingUpdate
+description: Test cases for LimitSettingUpdate endpoint
+totalScenarios: 14
+scenarios:
+  - id: LimitSettingUpdate-001-positive
+    title: POST /settings - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - limitsettingupdate
+    priority: P1
+  - id: LimitSettingUpdate-002-missing-auth
+    title: POST /settings - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: LimitSettingUpdate-003-invalid-auth
+    title: POST /settings - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: LimitSettingUpdate-004-invalid-content-type
+    title: POST /settings - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: LimitSettingUpdate-005-duplicate-correlation-id
+    title: POST /settings - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: LimitSettingUpdate-006-request-timeout
+    title: POST /settings - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: LimitSettingUpdate-007-empty-request-body
+    title: POST /settings - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: LimitSettingUpdate-008-required-field-null
+    title: POST /settings - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: LimitSettingUpdate-009-required-field-missing
+    title: POST /settings - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: LimitSettingUpdate-010-numeric-minimum
+    title: POST /settings - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: LimitSettingUpdate-011-numeric-maximum
+    title: POST /settings - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: LimitSettingUpdate-012-string-minimum-length
+    title: POST /settings - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: LimitSettingUpdate-013-string-maximum-length
+    title: POST /settings - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: LimitSettingUpdate-014-invalid-enum-or-format
+    title: POST /settings - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T04:34:17.803Z'

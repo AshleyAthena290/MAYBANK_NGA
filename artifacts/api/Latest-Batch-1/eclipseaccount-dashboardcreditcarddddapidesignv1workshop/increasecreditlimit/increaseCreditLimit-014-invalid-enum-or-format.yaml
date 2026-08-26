@@ -1,0 +1,85 @@
+# BDD Test Case - eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+# Generated for: POST /increase-credit-limit - Invalid Enum or Format
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: increaseCreditLimit-014-invalid-enum-or-format
+title: POST /increase-credit-limit - Invalid Enum or Format
+feature: eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+description: Request using an invalid enum or format value should be rejected
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/increase-credit-limit'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/increase-credit-limit'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787572021132
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    cardNumber: <value>
+    newCreditLimit: <value>
+    increaseLimitType: __INVALID_ENUM_OR_FORMAT__
+    startDate: <value>
+    endDate: <value>
+    '> identification (object)': <value>
+    type: <value>
+    id: <value>
+    '> document (Object)': <value>
+    data: <value>
+    Request Parameter: <value>
+    ? "POST  https: //{Eclipse-IP}:{Eclipse-PORT}/dep/card/v1/external/credit-card/increase-credit-limit\n\nExamples of permanent increase limit with NPWP uploaded\n{\n    \"cardNumber\": \"4047760034916300\",\n    \"newCreditLimit\": 110000000.0,\n    \"increaseLimitType\": \"PERMANENT\",\n    \"identification\": {\n        \"type\": \"NPWP\",\n        \"id\": \"3676011607931145\"\n    },\n    \"document\": {\n        \"type\": \"image/png\",\n        \"data\": \"iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==\"\n    }\n}\n\nExamples of temporary increase limit if NPWP same with e-KTP\n{\n    \"cardNumber\": \"4047760034916300\",\n    \"newCreditLimit\": 110000000.0,\n    \"increaseLimitType\": \"TEMPORARY\",\n    \"startDate\": \"2026-05-06 20:25:33\",\n    \"endDate\": \"2027-05-06 20:25:33\",\n    \"identification\": {\n        \"type\": \"EKTP\",\n        \"id\": \"3676011607931145\"\n    }\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+    data: Object
+    extra: String
+    note: String
+    header: String
+    desc: String
+    details: String
+    link: Object
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400 and the error identifies the invalid value
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: increaseCreditLimit
+  sourceRows: ''
+  apiSpecFile: increaseCreditLimit
