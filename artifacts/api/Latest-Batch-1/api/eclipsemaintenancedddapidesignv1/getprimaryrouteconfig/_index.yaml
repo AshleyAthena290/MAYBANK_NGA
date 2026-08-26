@@ -1,0 +1,78 @@
+# Test Case Index
+# eclipsemaintenancedddapidesignv1 - getPrimaryRouteConfig
+# Generated: 2026-08-26T03:36:22.608Z
+---
+feature: eclipsemaintenancedddapidesignv1
+apiName: getPrimaryRouteConfig
+description: Test cases for getPrimaryRouteConfig endpoint
+totalScenarios: 9
+scenarios:
+  - id: getPrimaryRouteConfig-001-positive
+    title: GET /primary-route - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getprimaryrouteconfig
+    priority: P1
+  - id: getPrimaryRouteConfig-002-missing-auth
+    title: GET /primary-route - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getPrimaryRouteConfig-003-invalid-auth
+    title: GET /primary-route - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getPrimaryRouteConfig-004-invalid-content-type
+    title: GET /primary-route - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getPrimaryRouteConfig-005-duplicate-correlation-id
+    title: GET /primary-route - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getPrimaryRouteConfig-006-request-timeout
+    title: GET /primary-route - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getPrimaryRouteConfig-007-empty-request-body
+    title: GET /primary-route - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getPrimaryRouteConfig-012-string-minimum-length
+    title: GET /primary-route - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getPrimaryRouteConfig-013-string-maximum-length
+    title: GET /primary-route - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:36:22.602Z'

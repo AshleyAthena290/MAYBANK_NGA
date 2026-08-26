@@ -1,0 +1,66 @@
+# BDD Test Case - eclipsedashboardcommondddapidesignv1workshop
+# Generated for: POST /post-transaction - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: beneficiaryPostTransaction-004-invalid-content-type
+title: POST /post-transaction - Invalid Content-Type
+feature: eclipsedashboardcommondddapidesignv1workshop
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/pfm/v1/internal/post-transaction'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/pfm/v1/internal/post-transaction'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715159218
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    transactionDateTime: <value>
+    transactionType: <value>
+    fromCurrency: <value>
+    transactionMetadata: <value>
+    '> beneficiary (object)': <value>
+    gcif: <value>
+    accountId: <value>
+    bankCode: <value>
+    bankName: <value>
+    Request Parameter: <value>
+    ? "POST https: //{Eclipse-IP}:{Eclipse-PORT}/info/pfm/v1/internal/post-transaction\n\n{\n    \"transactionDateTime\": \"2026-02-06 20:25:29\",\n    \"transactionType\": \"TOPUP\",\n    \"fromCurrency\": \"IDR\",\n    \"transactionMetadata\": \"{\\\"remark\\\":\\\"Salary\\\",\\\"nationality\\\":\\\"Indonesian\\\"}\",\n    \"beneficiary\": {\n        \"gcif\": \"1234567890\",\n        \"name\": \"v1\",\n        \"accountId\": \"G02887262\",\n        \"bankCode\": \"IBBKIDJAXXX\",\n        \"bankName\": \"Maybank Indonesia (PT Bank Maybank Indonesia Tbk)\"\n    }\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: pfmPostTransaction
+  sourceRows: ''
+  apiSpecFile: beneficiaryPostTransaction

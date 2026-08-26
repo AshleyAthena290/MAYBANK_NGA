@@ -1,0 +1,78 @@
+# Test Case Index
+# eclipsedashboardcommondddapidesignv1workshop - getBankingDashboard
+# Generated: 2026-08-26T03:29:19.755Z
+---
+feature: eclipsedashboardcommondddapidesignv1workshop
+apiName: getBankingDashboard
+description: Test cases for getBankingDashboard endpoint
+totalScenarios: 9
+scenarios:
+  - id: getBankingDashboard-001-positive
+    title: GET /accounts - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getbankingdashboard
+    priority: P1
+  - id: getBankingDashboard-002-missing-auth
+    title: GET /accounts - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getBankingDashboard-003-invalid-auth
+    title: GET /accounts - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getBankingDashboard-004-invalid-content-type
+    title: GET /accounts - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getBankingDashboard-005-duplicate-correlation-id
+    title: GET /accounts - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getBankingDashboard-006-request-timeout
+    title: GET /accounts - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getBankingDashboard-007-empty-request-body
+    title: GET /accounts - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getBankingDashboard-010-numeric-minimum
+    title: GET /accounts - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getBankingDashboard-011-numeric-maximum
+    title: GET /accounts - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:29:19.751Z'

@@ -1,0 +1,114 @@
+# Test Case Index
+# eclipsemaintenancedddapidesignv1 - insertDashboardRuleConfig
+# Generated: 2026-08-26T03:37:27.104Z
+---
+feature: eclipsemaintenancedddapidesignv1
+apiName: insertDashboardRuleConfig
+description: Test cases for insertDashboardRuleConfig endpoint
+totalScenarios: 14
+scenarios:
+  - id: insertDashboardRuleConfig-001-positive
+    title: POST /dashboard-rules - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - insertdashboardruleconfig
+    priority: P1
+  - id: insertDashboardRuleConfig-002-missing-auth
+    title: POST /dashboard-rules - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: insertDashboardRuleConfig-003-invalid-auth
+    title: POST /dashboard-rules - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: insertDashboardRuleConfig-004-invalid-content-type
+    title: POST /dashboard-rules - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: insertDashboardRuleConfig-005-duplicate-correlation-id
+    title: POST /dashboard-rules - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: insertDashboardRuleConfig-006-request-timeout
+    title: POST /dashboard-rules - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: insertDashboardRuleConfig-007-empty-request-body
+    title: POST /dashboard-rules - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: insertDashboardRuleConfig-008-required-field-null
+    title: POST /dashboard-rules - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertDashboardRuleConfig-009-required-field-missing
+    title: POST /dashboard-rules - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: insertDashboardRuleConfig-010-numeric-minimum
+    title: POST /dashboard-rules - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertDashboardRuleConfig-011-numeric-maximum
+    title: POST /dashboard-rules - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertDashboardRuleConfig-012-string-minimum-length
+    title: POST /dashboard-rules - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertDashboardRuleConfig-013-string-maximum-length
+    title: POST /dashboard-rules - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertDashboardRuleConfig-014-invalid-enum-or-format
+    title: POST /dashboard-rules - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:37:27.100Z'

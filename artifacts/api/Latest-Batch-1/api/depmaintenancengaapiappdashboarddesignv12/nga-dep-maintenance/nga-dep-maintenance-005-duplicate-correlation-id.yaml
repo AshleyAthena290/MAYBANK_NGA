@@ -1,0 +1,85 @@
+# BDD Test Case - depmaintenancengaapiappdashboarddesignv12
+# Generated for: GET /record - Duplicate Correlation ID
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: nga-dep-maintenance-005-duplicate-correlation-id
+title: GET /record - Duplicate Correlation ID
+feature: depmaintenancengaapiappdashboarddesignv12
+description: Same request with duplicate correlation ID should be idempotent
+tags:
+  - edge-case
+  - idempotency
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+  - First request with correlation ID has been processed
+testData: {}
+request:
+  method: GET
+  url: https://{EXP-IP}:{EXP-PORT}/dep/maintenance/v1/internal/init/record
+  endpoint: https://{EXP-IP}:{EXP-PORT}/dep/maintenance/v1/internal/init/record
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: duplicate-correlation-123
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    https://{EXP-IP}:{EXP-PORT}/dep/maintenance/v1/internal/init/record: <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    error: 'Null'
+    meta: Object
+    data: Array<Object>
+    '[]': Array<Object>
+    masterId: String
+    domain: String
+    region: String
+    platform: String
+    module: String
+    subModule: 'Null'
+    initCode: String
+    initDesc: String
+    initValueType: String
+    initVarName: String
+    countryCode: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 (or 202 for idempotent)
+    type: custom
+  - description: Same response as first request
+    type: custom
+  - description: No duplicate processing occurred
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getInitRecord
+  sourceRows: ''
+  apiSpecFile: nga-dep-maintenance

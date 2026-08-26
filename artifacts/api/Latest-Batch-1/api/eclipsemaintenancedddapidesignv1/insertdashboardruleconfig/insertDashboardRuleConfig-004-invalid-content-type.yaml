@@ -1,0 +1,69 @@
+# BDD Test Case - eclipsemaintenancedddapidesignv1
+# Generated for: POST /dashboard-rules - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: insertDashboardRuleConfig-004-invalid-content-type
+title: POST /dashboard-rules - Invalid Content-Type
+feature: eclipsemaintenancedddapidesignv1
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/internal/dashboard-rules'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/internal/dashboard-rules'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715447053
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    code: <value>
+    description: <value>
+    domain: <value>
+    primaryFeatureCode: <value>
+    isCacheable: <value>
+    '>> settings[] (list)': <value>
+    accountType: <value>
+    '>>> subSettings[] (list)': <value>
+    path: <value>
+    operator: <value>
+    value: <value>
+    unmatchedAction: <value>
+    Request Parameter: <value>
+    ? "POST  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/internal/dashboard-rules\n\n{\n    \"code\": \"CASA_DASHBOARD\",\n    \"description\": \"CASA dashboard rules\",\n    \"domain\": \"ECLIPSE\",\n    \"isCacheable\": true,\n    \"settings\": [\n        {\n            \"accountType\": \"CA\",\n            \"subSettings\": [\n                {\n                    \"path\": \"$.isDisplayDashboard\",\n                    \"operator\": \"EQ\",\n                    \"value\": \"true\",\n                    \"unmatchedAction\": \"EXCLUDE\"\n                },\n                {\n                    \"path\": \"$.group\",\n                    \"operator\": \"EQ\",\n                    \"value\": \"CASA\",\n                    \"unmatchedAction\": \"EXCLUDE\"\n                }\n            ]\n        },\n        {\n            \"accountType\": \"SA\",\n            \"subSettings\": [\n                {\n                    \"path\": \"$.isDisplayDashboard\",\n                    \"operator\": \"EQ\",\n                    \"value\": \"true\",\n                    \"unmatchedAction\": \"EXCLUDE\"\n                }\n            ]\n        }\n    ]\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: insertDashboardRuleConfig
+  sourceRows: ''
+  apiSpecFile: insertDashboardRuleConfig

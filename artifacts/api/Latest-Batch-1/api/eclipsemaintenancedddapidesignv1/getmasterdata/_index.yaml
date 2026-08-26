@@ -1,0 +1,100 @@
+# Test Case Index
+# eclipsemaintenancedddapidesignv1 - getMasterData
+# Generated: 2026-08-26T03:36:51.542Z
+---
+feature: eclipsemaintenancedddapidesignv1
+apiName: getMasterData
+description: Test cases for getMasterData endpoint
+totalScenarios: 12
+scenarios:
+  - id: getMasterData-001-positive
+    title: GET /master-data - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getmasterdata
+    priority: P1
+  - id: getMasterData-002-missing-auth
+    title: GET /master-data - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getMasterData-003-invalid-auth
+    title: GET /master-data - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getMasterData-004-invalid-content-type
+    title: GET /master-data - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getMasterData-005-duplicate-correlation-id
+    title: GET /master-data - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getMasterData-006-request-timeout
+    title: GET /master-data - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getMasterData-007-empty-request-body
+    title: GET /master-data - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getMasterData-008-required-field-null
+    title: GET /master-data - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getMasterData-009-required-field-missing
+    title: GET /master-data - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getMasterData-012-string-minimum-length
+    title: GET /master-data - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getMasterData-013-string-maximum-length
+    title: GET /master-data - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getMasterData-014-invalid-enum-or-format
+    title: GET /master-data - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:36:51.538Z'

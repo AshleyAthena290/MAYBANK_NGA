@@ -1,0 +1,67 @@
+# BDD Test Case - eclipsedashboardcommondddapidesignv1workshop
+# Generated for: GET /accounts - Invalid Enum or Format
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getDashboard-014-invalid-enum-or-format
+title: GET /accounts - Invalid Enum or Format
+feature: eclipsedashboardcommondddapidesignv1workshop
+description: Request using an invalid enum or format value should be rejected
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts'
+  endpoint: 'https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787714955100
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    accountGroup: __INVALID_ENUM_OR_FORMAT__
+    accountType: <value>
+    accountStatus: <value>
+    primaryType: <value>
+    featureCode: <value>
+    ? "GET  https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts?featureCode=CASA_DASHBOARD\nGET  https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts?featureCode=CARD_DASHBOARD \nGET  https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts?featureCode=LOAN_DASHBOARD \nGET  https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts?featureCode=SOF_LOCAL_TRANSFER \nGET  https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts?featureCode=OVERSEA_SCAN_PAY\nGET  https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts?featureCode=SCAN_PAY"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400 and the error identifies the invalid value
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getDashboard
+  sourceRows: ''
+  apiSpecFile: getDashboard

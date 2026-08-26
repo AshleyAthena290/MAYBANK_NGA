@@ -1,0 +1,74 @@
+# BDD Test Case - depmaintenancengaapiappdashboarddesignv12
+# Generated for: GET /rule-operators - Minimum String Length
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: nga-dep-maintenance-012-string-minimum-length
+title: GET /rule-operators - Minimum String Length
+feature: depmaintenancengaapiappdashboarddesignv12
+description: Request using the minimum supported string length should be accepted
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{EXP-IP}:{EXP-PORT}/dep/maintenance/v1/internal/rule-operators
+  endpoint: https://{EXP-IP}:{EXP-PORT}/dep/maintenance/v1/internal/rule-operators
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787717125357
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    id: A
+    https://{EXP-IP}:{EXP-PORT}/dep/maintenance/v1/internal/rule-operators/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d: <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    error: 'Null'
+    meta: Object
+    data: Object
+    operatorCode: String
+    displayName: String
+    applicableTypes: String
+    isActive: Boolean
+    countryCode: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 and the minimum string length is accepted
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getRuleOperator
+  sourceRows: ''
+  apiSpecFile: nga-dep-maintenance

@@ -1,0 +1,67 @@
+# BDD Test Case - eclipsemaintenancedddapidesignv1
+# Generated for: POST /master-data - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: insertMasterData-006-request-timeout
+title: POST /master-data - Request Timeout
+feature: eclipsemaintenancedddapidesignv1
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/master-data'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/master-data'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715424592
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    type: <value>
+    code: <value>
+    value: <value>
+    sequence: <value>
+    parentId: <value>
+    '> translation (object)': <value>
+    language: <value>
+    text: <value>
+    '> feature (object)': <value>
+    overwriteSequence: <value>
+    Request Parameter: <value>
+    ? "POST  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/master-data\n\nSample 1 request\n{\n    \"type\": \"CATEGORY\",\n    \"code\": \"RELIGION\",\n    \"value\": \"Religion master data list\"\n}\n\nSample 2 request\n{\n    \"code\": \"RELIGION\",\n    \"code\": \"ISLAM\",\n    \"value\": \"Islam\",\n    \"sequence\": 1,\n    \"parentId\": \"3b16def9-0e1b-43cf-a035-f07c3b79576f\",\n    \"translation\": [\n        {\n            \"language\": \"id-ID\",\n            \"text\": \"Moslem\"\n        }\n    ],\n    \"feature\": [\n        {\n            \"code\": \"TEST\",\n            \"overwriteSequence\": 2\n        }\n    ]\n}"
+    : <value>
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: insertMasterData
+  sourceRows: ''
+  apiSpecFile: insertMasterData

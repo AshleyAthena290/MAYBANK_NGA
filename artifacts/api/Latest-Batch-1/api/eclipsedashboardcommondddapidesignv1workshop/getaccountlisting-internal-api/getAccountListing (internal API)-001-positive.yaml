@@ -1,0 +1,362 @@
+# BDD Test Case - eclipsedashboardcommondddapidesignv1workshop
+# Generated for: GET /summary - only for CARD product (CC and DC) 
+
+context-path value:
+1. casa
+2. card
+3. loan
+4. insurance
+5. investment
+6. time-deposit - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getAccountListing (internal API)-001-positive
+title: |-
+  GET /summary - only for CARD product (CC and DC) 
+
+  context-path value:
+  1. casa
+  2. card
+  3. loan
+  4. insurance
+  5. investment
+  6. time-deposit - Happy Path
+feature: eclipsedashboardcommondddapidesignv1workshop
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - getaccountlisting-(internal-api)
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: |-
+    https: //{Eclipse-IP}:{Eclipse-PORT}/info/{context-path}/v1/internal/accounts/summary
+    https: //{Eclipse-IP}:{Eclipse-PORT}/info/{context-path}/v1/internal/accounts/account-type/{accountType}/summary - only for CARD product (CC and DC) 
+
+    context-path value:
+    1. casa
+    2. card
+    3. loan
+    4. insurance
+    5. investment
+    6. time-deposit
+  endpoint: |-
+    https: //{Eclipse-IP}:{Eclipse-PORT}/info/{context-path}/v1/internal/accounts/summary
+    https: //{Eclipse-IP}:{Eclipse-PORT}/info/{context-path}/v1/internal/accounts/account-type/{accountType}/summary - only for CARD product (CC and DC) 
+
+    context-path value:
+    1. casa
+    2. card
+    3. loan
+    4. insurance
+    5. investment
+    6. time-deposit
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787714974793
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    Request Parameter: <value>
+    '*MultiValueMap': <value>
+    ? "GET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/casa/v1/internal/accounts/summary?CASA_CIF=000784756&CASA_CIF=000123122\nGET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/internal/accounts/summary?CARD_CIF=000784756&CARD_CIF=000123122&CARD_CIF=000987867\nGET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/loan/v1/internal/accounts/summary?CASA_CIF=000784756&CARD_CIF=000123122"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+    data: Object
+    accounts: Array<Object>
+    accountId: String
+    cardNumber: String
+    currency: String
+    type: String
+    subType: String
+    ownership: String
+    nicknameId: String
+    nickname: String
+    productType: String
+    group: String
+    category: String
+    name: String
+    balance: Decimal
+    isPrimary: Boolean
+    productCode: String
+    isDisplayDashboard: Boolean
+    isAllowSetPrimary: Boolean
+    isAllowBlock: Boolean
+    links: Object
+  expectedFields:
+    - fieldPath: status
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: status'
+    - fieldPath: message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: correlationId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: correlationId'
+    - fieldPath: meta
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: meta'
+    - fieldPath: meta.provider
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: provider'
+      parentField: meta
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.accounts
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: accounts'
+      parentField: data
+    - fieldPath: data.accounts[].status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].accountId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountId'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].cardNumber
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: cardNumber'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].currency
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: currency'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].type
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: type'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].subType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: subType'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].ownership
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: ownership'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].nicknameId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: nicknameId'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].nickname
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: nickname'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].productType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: productType'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].group
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: group'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].category
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: category'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].name
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: name'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].balance
+      type: Decimal
+      mandatory: false
+      constraints:
+        minValue: 0
+      description: 'Field: balance'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].isPrimary
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: isPrimary'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].productCode
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: productCode'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].isDisplayDashboard
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: isDisplayDashboard'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].isAllowSetPrimary
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: isAllowSetPrimary'
+      parentField: data.accounts[]
+    - fieldPath: data.accounts[].isAllowBlock
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: isAllowBlock'
+      parentField: data.accounts[]
+    - fieldPath: links
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: links'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'Integer'
+    type: field-type
+    target: status
+    expectedValue: Integer
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'String'
+    type: field-type
+    target: message
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'correlationId' exists in response
+    type: field-exists
+    target: correlationId
+  - description: Field 'correlationId' is of type 'String'
+    type: field-type
+    target: correlationId
+    expectedValue: String
+  - description: Field 'meta' exists in response
+    type: field-exists
+    target: meta
+  - description: Field 'meta' is of type 'Object'
+    type: field-type
+    target: meta
+    expectedValue: Object
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+  - description: Field 'links' exists in response
+    type: field-exists
+    target: links
+  - description: Field 'links' is of type 'Object'
+    type: field-type
+    target: links
+    expectedValue: Object
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getAccountListing
+  sourceRows: ''
+  apiSpecFile: getAccountListing (internal API)

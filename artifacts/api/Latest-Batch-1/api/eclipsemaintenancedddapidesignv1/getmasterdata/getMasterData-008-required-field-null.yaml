@@ -1,0 +1,65 @@
+# BDD Test Case - eclipsemaintenancedddapidesignv1
+# Generated for: GET /master-data - Required Field Null
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getMasterData-008-required-field-null
+title: GET /master-data - Required Field Null
+feature: eclipsemaintenancedddapidesignv1
+description: Request with a required field set to null should be rejected
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/master-data'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/master-data'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715411486
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    type: null
+    parentId: <value>
+    featureCode: <value>
+    ? "GET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/master-data?type=PROVINCE\nGET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/master-data?type=CITY&parentId=ef7e00da-a9a2-48d0-bd11-0659c9c62f42\nGET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/master-data?type=FREQUENCY&featureCode=APPLY_TD"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400 and the error identifies the required field
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getMasterData
+  sourceRows: ''
+  apiSpecFile: getMasterData

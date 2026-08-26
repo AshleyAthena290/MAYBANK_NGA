@@ -1,0 +1,114 @@
+# Test Case Index
+# p-tscanandpayapispecv13 - ValidateOverseasScanPay
+# Generated: 2026-08-26T02:49:19.523Z
+---
+feature: p-tscanandpayapispecv13
+apiName: ValidateOverseasScanPay
+description: Test cases for ValidateOverseasScanPay endpoint
+totalScenarios: 14
+scenarios:
+  - id: ValidateOverseasScanPay-001-positive
+    title: POST /initiate - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - validateoverseasscanpay
+    priority: P1
+  - id: ValidateOverseasScanPay-002-missing-auth
+    title: POST /initiate - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: ValidateOverseasScanPay-003-invalid-auth
+    title: POST /initiate - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: ValidateOverseasScanPay-004-invalid-content-type
+    title: POST /initiate - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: ValidateOverseasScanPay-005-duplicate-correlation-id
+    title: POST /initiate - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: ValidateOverseasScanPay-006-request-timeout
+    title: POST /initiate - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: ValidateOverseasScanPay-007-empty-request-body
+    title: POST /initiate - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: ValidateOverseasScanPay-008-required-field-null
+    title: POST /initiate - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: ValidateOverseasScanPay-009-required-field-missing
+    title: POST /initiate - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: ValidateOverseasScanPay-010-numeric-minimum
+    title: POST /initiate - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: ValidateOverseasScanPay-011-numeric-maximum
+    title: POST /initiate - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: ValidateOverseasScanPay-012-string-minimum-length
+    title: POST /initiate - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: ValidateOverseasScanPay-013-string-maximum-length
+    title: POST /initiate - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: ValidateOverseasScanPay-014-invalid-enum-or-format
+    title: POST /initiate - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T02:49:19.519Z'

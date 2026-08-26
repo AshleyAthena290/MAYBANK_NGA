@@ -1,0 +1,71 @@
+# BDD Test Case - eclipsedashboardcommondddapidesignv1workshop
+# Generated for: GET /accounts - Missing Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getDashboard-002-missing-auth
+title: GET /accounts - Missing Authentication
+feature: eclipsedashboardcommondddapidesignv1workshop
+description: Request without authentication credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts'
+  endpoint: 'https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers: {}
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    accountGroup: <value>
+    accountType: <value>
+    accountStatus: <value>
+    primaryType: <value>
+    featureCode: <value>
+    ? "GET  https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts?featureCode=CASA_DASHBOARD\nGET  https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts?featureCode=CARD_DASHBOARD \nGET  https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts?featureCode=LOAN_DASHBOARD \nGET  https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts?featureCode=SOF_LOCAL_TRANSFER \nGET  https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts?featureCode=OVERSEA_SCAN_PAY\nGET  https: //{DEP-IP}:{DEP-PORT}/dep/dashboard/v1/external/accounts?featureCode=SCAN_PAY"
+    : <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized - Authentication required
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+      description: Error code
+    - fieldPath: message
+      type: String
+      mandatory: true
+      description: Error message
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Field 'error' exists and is of type String
+    type: field-type
+    target: error
+    expectedValue: String
+  - description: Error message indicates missing authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getDashboard
+  sourceRows: ''
+  apiSpecFile: getDashboard
