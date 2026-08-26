@@ -1,0 +1,99 @@
+# BDD Test Case - eclipsedashboardcommondddapidesignv1workshop
+# Generated for: DELETE /{nicknameId}
+
+context-path value:
+1. casa
+2. card
+3. loan
+4. beneficiary - Required Field Missing
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: deleteNickname-009-required-field-missing
+title: |-
+  DELETE /{nicknameId}
+
+  context-path value:
+  1. casa
+  2. card
+  3. loan
+  4. beneficiary - Required Field Missing
+feature: eclipsedashboardcommondddapidesignv1workshop
+description: Request without a required field should be rejected
+tags:
+  - boundary
+  - required-field
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: DELETE
+  url: |-
+    https: //{Eclipse-IP}:{Eclipse-PORT}/info/{context-path}/v1/external/accounts/nickname/{nicknameId}
+
+    context-path value:
+    1. casa
+    2. card
+    3. loan
+    4. beneficiary
+  endpoint: |-
+    https: //{Eclipse-IP}:{Eclipse-PORT}/info/{context-path}/v1/external/accounts/nickname/{nicknameId}
+
+    context-path value:
+    1. casa
+    2. card
+    3. loan
+    4. beneficiary
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715032185
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    ? "DELETE  https: //{Eclipse-IP}:{Eclipse-PORT}/info/casa/v1/external/accounts/nickname/3798929489288924\nDELETE  https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/external/accounts/nickname/3798929489288924\nDELETE  https: //{Eclipse-IP}:{Eclipse-PORT}/info/loan/v1/external/accounts/nickname/3798929489288924\nDELETE  https: //{Eclipse-IP}:{Eclipse-PORT}/info/beneficiary/v1/external/accounts/nickname/3798929489288924"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Required field is missing
+  schema:
+    status: Integer
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error identifies missing required field 'nicknameId'
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: deleteNickname
+  sourceRows: ''
+  apiSpecFile: deleteNickname

@@ -69,7 +69,7 @@ node scripts/batch-bdd-gen.mjs --input "input/api/ECLIPSE_Account Dashboard_Casa
 Run one YAML file:
 
 ```bash
-npm run dev -- api-test-run --file "artifacts/api/p-tlocaltransferdddapispecv1/getptmaintenancetransferinit/GetPTMaintenanceTransferInit-001-positive.yaml" --baseUrl "http://localhost:3000"
+npm run dev -- api-test-run --file "artifacts/api/DEP_APP_Dashboard/getactionlist/getActionList-001-positive.yaml" --baseUrl "https://48.193.17.110/dashboard"
 ```
 
 C:\Users\amshahril\Documents\Maybank NGA\MAYBANK_NGA\artifacts\api\ptscanandpaydddapispecv2working\submitoverseasscanpay
@@ -77,7 +77,7 @@ C:\Users\amshahril\Documents\Maybank NGA\MAYBANK_NGA\artifacts\api\ptscanandpayd
 Run by API name:
 
 ```bash
-npm run dev -- api-test-run --api "getptmaintenancetransferinit" --baseUrl "http://localhost:3000"
+npm run dev -- api-test-run --api "getactionlist" --baseUrl "https://48.193.17.110/dashboard"
 ```
 
 Run by feature:

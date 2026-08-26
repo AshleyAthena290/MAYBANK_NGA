@@ -1,0 +1,198 @@
+# Test Case Index
+# eclipsedashboardcommondddapidesignv1workshop - deleteNickname
+# Generated: 2026-08-26T03:30:32.253Z
+---
+feature: eclipsedashboardcommondddapidesignv1workshop
+apiName: deleteNickname
+description: Test cases for deleteNickname endpoint
+totalScenarios: 13
+scenarios:
+  - id: deleteNickname-001-positive
+    title: |-
+      DELETE /{nicknameId}
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. beneficiary - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - deletenickname
+    priority: P1
+  - id: deleteNickname-002-missing-auth
+    title: |-
+      DELETE /{nicknameId}
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. beneficiary - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: deleteNickname-003-invalid-auth
+    title: |-
+      DELETE /{nicknameId}
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. beneficiary - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: deleteNickname-004-invalid-content-type
+    title: |-
+      DELETE /{nicknameId}
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. beneficiary - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: deleteNickname-005-duplicate-correlation-id
+    title: |-
+      DELETE /{nicknameId}
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. beneficiary - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: deleteNickname-006-request-timeout
+    title: |-
+      DELETE /{nicknameId}
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. beneficiary - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: deleteNickname-007-empty-request-body
+    title: |-
+      DELETE /{nicknameId}
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. beneficiary - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: deleteNickname-008-required-field-null
+    title: |-
+      DELETE /{nicknameId}
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. beneficiary - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deleteNickname-009-required-field-missing
+    title: |-
+      DELETE /{nicknameId}
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. beneficiary - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: deleteNickname-010-numeric-minimum
+    title: |-
+      DELETE /{nicknameId}
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. beneficiary - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deleteNickname-011-numeric-maximum
+    title: |-
+      DELETE /{nicknameId}
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. beneficiary - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deleteNickname-012-string-minimum-length
+    title: |-
+      DELETE /{nicknameId}
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. beneficiary - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deleteNickname-013-string-maximum-length
+    title: |-
+      DELETE /{nicknameId}
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. beneficiary - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:30:32.253Z'

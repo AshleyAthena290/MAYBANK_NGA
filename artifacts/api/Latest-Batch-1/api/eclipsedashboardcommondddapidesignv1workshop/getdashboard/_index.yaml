@@ -1,0 +1,99 @@
+# Test Case Index
+# eclipsedashboardcommondddapidesignv1workshop - getDashboard
+# Generated: 2026-08-26T03:29:15.156Z
+---
+feature: eclipsedashboardcommondddapidesignv1workshop
+apiName: getDashboard
+description: Test cases for getDashboard endpoint
+totalScenarios: 12
+scenarios:
+  - id: getDashboard-001-positive
+    title: GET /accounts - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getdashboard
+    priority: P1
+  - id: getDashboard-002-missing-auth
+    title: GET /accounts - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getDashboard-003-invalid-auth
+    title: GET /accounts - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getDashboard-004-invalid-content-type
+    title: GET /accounts - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getDashboard-005-duplicate-correlation-id
+    title: GET /accounts - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getDashboard-006-request-timeout
+    title: GET /accounts - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getDashboard-007-empty-request-body
+    title: GET /accounts - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getDashboard-010-numeric-minimum
+    title: GET /accounts - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getDashboard-011-numeric-maximum
+    title: GET /accounts - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getDashboard-012-string-minimum-length
+    title: GET /accounts - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getDashboard-013-string-maximum-length
+    title: GET /accounts - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getDashboard-014-invalid-enum-or-format
+    title: GET /accounts - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:29:15.150Z'

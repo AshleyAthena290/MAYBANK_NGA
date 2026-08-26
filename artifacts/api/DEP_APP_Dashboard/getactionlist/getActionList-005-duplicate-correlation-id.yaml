@@ -23,8 +23,8 @@ preconditions:
 testData: {}
 request:
   method: GET
-  url: 'https: //{IP}:{PORT}/dep/dashboard/v1/action-list'
-  endpoint: 'https: //{IP}:{PORT}/dep/dashboard/v1/action-list'
+  url: '/dep/dashboard/v1/action-list'
+  endpoint: '/dep/dashboard/v1/action-list'
   baseUrl: https://{Payment-IP}:{Payment-PORT}
   headers:
     Content-Type: application/json
@@ -36,7 +36,7 @@ request:
   body:
     Request Parameter: <value>
     ecosystem: <value>
-    'GET  https: //{IP}:{PORT}/dep/dashboard/v1/action-list?ecosystem=banking': <value>
+    'GET  /dep/dashboard/v1/action-list?ecosystem=banking': <value>
 response:
   successStatusCode: 200
   successDescription: Request processed successfully
