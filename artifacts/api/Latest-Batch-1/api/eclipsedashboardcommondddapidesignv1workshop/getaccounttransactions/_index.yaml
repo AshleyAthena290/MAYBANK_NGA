@@ -1,0 +1,240 @@
+# Test Case Index
+# eclipsedashboardcommondddapidesignv1workshop - getAccountTransactions
+# Generated: 2026-08-26T03:29:50.710Z
+---
+feature: eclipsedashboardcommondddapidesignv1workshop
+apiName: getAccountTransactions
+description: Test cases for getAccountTransactions endpoint
+totalScenarios: 14
+scenarios:
+  - id: getAccountTransactions-001-positive
+    title: |-
+      GET /transactions
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getaccounttransactions
+    priority: P1
+  - id: getAccountTransactions-002-missing-auth
+    title: |-
+      GET /transactions
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getAccountTransactions-003-invalid-auth
+    title: |-
+      GET /transactions
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getAccountTransactions-004-invalid-content-type
+    title: |-
+      GET /transactions
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getAccountTransactions-005-duplicate-correlation-id
+    title: |-
+      GET /transactions
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getAccountTransactions-006-request-timeout
+    title: |-
+      GET /transactions
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getAccountTransactions-007-empty-request-body
+    title: |-
+      GET /transactions
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getAccountTransactions-008-required-field-null
+    title: |-
+      GET /transactions
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountTransactions-009-required-field-missing
+    title: |-
+      GET /transactions
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getAccountTransactions-010-numeric-minimum
+    title: |-
+      GET /transactions
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountTransactions-011-numeric-maximum
+    title: |-
+      GET /transactions
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountTransactions-012-string-minimum-length
+    title: |-
+      GET /transactions
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountTransactions-013-string-maximum-length
+    title: |-
+      GET /transactions
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountTransactions-014-invalid-enum-or-format
+    title: |-
+      GET /transactions
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:29:50.705Z'

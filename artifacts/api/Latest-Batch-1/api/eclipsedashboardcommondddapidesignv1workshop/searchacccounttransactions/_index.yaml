@@ -1,0 +1,240 @@
+# Test Case Index
+# eclipsedashboardcommondddapidesignv1workshop - searchAcccountTransactions
+# Generated: 2026-08-26T03:29:56.177Z
+---
+feature: eclipsedashboardcommondddapidesignv1workshop
+apiName: searchAcccountTransactions
+description: Test cases for searchAcccountTransactions endpoint
+totalScenarios: 14
+scenarios:
+  - id: searchAcccountTransactions-001-positive
+    title: |-
+      GET /search
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - searchacccounttransactions
+    priority: P1
+  - id: searchAcccountTransactions-002-missing-auth
+    title: |-
+      GET /search
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: searchAcccountTransactions-003-invalid-auth
+    title: |-
+      GET /search
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: searchAcccountTransactions-004-invalid-content-type
+    title: |-
+      GET /search
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: searchAcccountTransactions-005-duplicate-correlation-id
+    title: |-
+      GET /search
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: searchAcccountTransactions-006-request-timeout
+    title: |-
+      GET /search
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: searchAcccountTransactions-007-empty-request-body
+    title: |-
+      GET /search
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: searchAcccountTransactions-008-required-field-null
+    title: |-
+      GET /search
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: searchAcccountTransactions-009-required-field-missing
+    title: |-
+      GET /search
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: searchAcccountTransactions-010-numeric-minimum
+    title: |-
+      GET /search
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: searchAcccountTransactions-011-numeric-maximum
+    title: |-
+      GET /search
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: searchAcccountTransactions-012-string-minimum-length
+    title: |-
+      GET /search
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: searchAcccountTransactions-013-string-maximum-length
+    title: |-
+      GET /search
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: searchAcccountTransactions-014-invalid-enum-or-format
+    title: |-
+      GET /search
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:29:56.173Z'

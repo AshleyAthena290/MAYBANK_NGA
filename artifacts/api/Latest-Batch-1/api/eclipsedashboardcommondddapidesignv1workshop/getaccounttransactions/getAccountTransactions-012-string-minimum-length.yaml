@@ -1,0 +1,106 @@
+# BDD Test Case - eclipsedashboardcommondddapidesignv1workshop
+# Generated for: GET /transactions
+
+context-path value:
+1. casa
+2. card
+3. loan
+4. insurance
+5. investment
+6. time-deposit - Minimum String Length
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getAccountTransactions-012-string-minimum-length
+title: |-
+  GET /transactions
+
+  context-path value:
+  1. casa
+  2. card
+  3. loan
+  4. insurance
+  5. investment
+  6. time-deposit - Minimum String Length
+feature: eclipsedashboardcommondddapidesignv1workshop
+description: Request using the minimum supported string length should be accepted
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: |-
+    https: //{Eclipse-IP}:{Eclipse-PORT}/info/{context-path}/v1/external/accounts/account-type/{accountType}/account-id/{accountId}/transactions
+
+    context-path value:
+    1. casa
+    2. card
+    3. loan
+    4. insurance
+    5. investment
+    6. time-deposit
+  endpoint: |-
+    https: //{Eclipse-IP}:{Eclipse-PORT}/info/{context-path}/v1/external/accounts/account-type/{accountType}/account-id/{accountId}/transactions
+
+    context-path value:
+    1. casa
+    2. card
+    3. loan
+    4. insurance
+    5. investment
+    6. time-deposit
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787714990656
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    accountType: A
+    accountId: <value>
+    Request Parameter: <value>
+    startDate: <value>
+    endDate: <value>
+    page: <value>
+    limit: <value>
+    duration: <value>
+    currency: <value>
+    ? "GET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/casa/v1/external/accounts/account-type/CA/account-id/514013314526/transactions\nGET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/external/accounts/account-type/CC/account-id/2499514013314526/transactions"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 and the minimum string length is accepted
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getAccountTransactions
+  sourceRows: ''
+  apiSpecFile: getAccountTransactions

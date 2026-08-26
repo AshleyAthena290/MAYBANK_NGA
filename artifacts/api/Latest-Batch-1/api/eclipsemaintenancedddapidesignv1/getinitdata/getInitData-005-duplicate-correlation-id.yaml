@@ -1,0 +1,86 @@
+# BDD Test Case - eclipsemaintenancedddapidesignv1
+# Generated for: GET /feature-flags - Duplicate Correlation ID
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getInitData-005-duplicate-correlation-id
+title: GET /feature-flags - Duplicate Correlation ID
+feature: eclipsemaintenancedddapidesignv1
+description: Same request with duplicate correlation ID should be idempotent
+tags:
+  - edge-case
+  - idempotency
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+  - First request with correlation ID has been processed
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/feature-flags'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/feature-flags'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: duplicate-correlation-123
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    domain: <value>
+    module: <value>
+    subModule: <value>
+    ? "GET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/feature-flags?domain=ECLIPSE&module=DASHBOARD&subModule=CASA_DASHBOARD\nGET  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/feature-flags?domain=ECLIPSE&module=DASHBOARD&subModule=CARD_DASHBOARD"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: Integer
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+    data: Object
+    enableCreateTabung: Boolean
+    availabilityCreateTabung: Boolean
+    enableCasaTransactions: Boolean
+    'enableCasaSummary ': Boolean
+    enableCasaManage: Boolean
+    enableTransfer: Boolean
+    enablePay: Boolean
+    enableEWallet: Boolean
+    enableViewLinkedCard: Boolean
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 (or 202 for idempotent)
+    type: custom
+  - description: Same response as first request
+    type: custom
+  - description: No duplicate processing occurred
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getInitData
+  sourceRows: ''
+  apiSpecFile: getInitData

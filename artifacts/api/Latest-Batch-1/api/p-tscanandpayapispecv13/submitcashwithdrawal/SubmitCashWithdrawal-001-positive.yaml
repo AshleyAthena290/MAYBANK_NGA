@@ -1,0 +1,75 @@
+# BDD Test Case - p-tscanandpayapispecv13
+# Generated for: POST /submit - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: SubmitCashWithdrawal-001-positive
+title: POST /submit - Happy Path
+feature: p-tscanandpayapispecv13
+description: 'Submits the Cardless Withdrawal transaction to downstream after successful S2U authorization. Performs final limit validation, routes transaction to ESB eChannelServices based on withdrawal type (On-Us: DE003 26XX00 > Vynamic Payment > Systematics, Off-Us: DE003 41XX00 > Vynamic Payment > TCICO). Stores transaction result in Hazelcast txn_flow cache, updates limit asynchronously, triggers MBPNS notification, and sends fraud monitoring data to FMS.'
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - submitcashwithdrawal
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/submit
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/qr/v1/cash-withdrawal/submit
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787712592160
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    referenceId: <value>
+    debitAccountNo: <value>
+    debitAccountCurrency: <value>
+    withdrawalAmount: <value>
+    currency: <value>
+    amount: <value>
+    withdrawalType: <value>
+    atmTerminalId: <value>
+    deviceId: <value>
+    authToken: <value>
+    ? "{\n  \"referenceId\": \"14339732600\",\n  \"debitAccountNo\": \"514013314526\",\n  \"debitAccountCurrency\": \"IDR\",\n  \"withdrawalAmount\": {\n    \"currency\": \"IDR\",\n    \"amount\": 100000\n  },\n  \"withdrawalType\": \"OFF_US\",\n  \"atmTerminalId\": \"BM009456\",\n  \"deviceId\": \"DEVICE-ABC-123\",\n  \"authToken\": \"654321\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: SubmitCashWithdrawal
+  sourceRows: ''
+  apiSpecFile: SubmitCashWithdrawal

@@ -1,0 +1,100 @@
+# Test Case Index
+# eclipsedashboardcommondddapidesignv1workshop - updateCustomerProfile
+# Generated: 2026-08-26T03:30:48.434Z
+---
+feature: eclipsedashboardcommondddapidesignv1workshop
+apiName: updateCustomerProfile
+description: Test cases for updateCustomerProfile endpoint
+totalScenarios: 12
+scenarios:
+  - id: updateCustomerProfile-001-positive
+    title: POST /profile - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - updatecustomerprofile
+    priority: P1
+  - id: updateCustomerProfile-002-missing-auth
+    title: POST /profile - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: updateCustomerProfile-003-invalid-auth
+    title: POST /profile - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: updateCustomerProfile-004-invalid-content-type
+    title: POST /profile - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: updateCustomerProfile-005-duplicate-correlation-id
+    title: POST /profile - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: updateCustomerProfile-006-request-timeout
+    title: POST /profile - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: updateCustomerProfile-007-empty-request-body
+    title: POST /profile - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: updateCustomerProfile-008-required-field-null
+    title: POST /profile - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: updateCustomerProfile-009-required-field-missing
+    title: POST /profile - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: updateCustomerProfile-012-string-minimum-length
+    title: POST /profile - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: updateCustomerProfile-013-string-maximum-length
+    title: POST /profile - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: updateCustomerProfile-014-invalid-enum-or-format
+    title: POST /profile - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:30:48.433Z'

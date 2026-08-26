@@ -1,0 +1,114 @@
+# Test Case Index
+# eclipsedashboardcommondddapidesignv1workshop - setPrimary
+# Generated: 2026-08-26T03:29:29.709Z
+---
+feature: eclipsedashboardcommondddapidesignv1workshop
+apiName: setPrimary
+description: Test cases for setPrimary endpoint
+totalScenarios: 14
+scenarios:
+  - id: setPrimary-001-positive
+    title: POST /primary - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - setprimary
+    priority: P1
+  - id: setPrimary-002-missing-auth
+    title: POST /primary - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: setPrimary-003-invalid-auth
+    title: POST /primary - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: setPrimary-004-invalid-content-type
+    title: POST /primary - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: setPrimary-005-duplicate-correlation-id
+    title: POST /primary - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: setPrimary-006-request-timeout
+    title: POST /primary - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: setPrimary-007-empty-request-body
+    title: POST /primary - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: setPrimary-008-required-field-null
+    title: POST /primary - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: setPrimary-009-required-field-missing
+    title: POST /primary - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: setPrimary-010-numeric-minimum
+    title: POST /primary - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: setPrimary-011-numeric-maximum
+    title: POST /primary - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: setPrimary-012-string-minimum-length
+    title: POST /primary - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: setPrimary-013-string-maximum-length
+    title: POST /primary - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: setPrimary-014-invalid-enum-or-format
+    title: POST /primary - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:29:29.706Z'

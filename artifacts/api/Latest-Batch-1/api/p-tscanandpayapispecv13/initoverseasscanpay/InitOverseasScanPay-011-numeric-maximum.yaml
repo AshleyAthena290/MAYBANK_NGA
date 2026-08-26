@@ -1,0 +1,65 @@
+# BDD Test Case - p-tscanandpayapispecv13
+# Generated for: POST /init - Maximum Numeric Value
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: InitOverseasScanPay-011-numeric-maximum
+title: POST /init - Maximum Numeric Value
+feature: p-tscanandpayapispecv13
+description: Request using the maximum supported numeric value should be accepted or rejected according to the API limit
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/scan/init
+  endpoint: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/scan/init
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787712547880
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    qrPayload: <value>
+    deviceId: <value>
+    customerCif: 999999999
+    accessId: <value>
+    ? "{\n    \"qrPayload\": \"0002010102111531370107020052044610000000001024626810011SG.COM.NETS01231198500065G9912312359000211111512007000308512007019908E4859B5827650017COM.QQ.WEIXIN.PAY0110100000182402040000030400010404000099020128370009SG.PAYNOW010120210201001911N0301151810007SG.SGQR01121810162E2440020701.000703066001350402030503329060400000708201912055204000053037025802SG5919SPRING COLLEGE INTL6009Singapore63040331\",\n    \"customerCif\": \"900000020478\",\n    \"accessId\": \"52647823\",\n    \"deviceId\": \"DEVICE-ABC-123\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code matches the documented maximum-value behavior
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InitOverseasScanPay
+  sourceRows: ''
+  apiSpecFile: InitOverseasScanPay

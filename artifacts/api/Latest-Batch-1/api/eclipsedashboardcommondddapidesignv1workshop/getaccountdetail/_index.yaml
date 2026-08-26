@@ -1,0 +1,240 @@
+# Test Case Index
+# eclipsedashboardcommondddapidesignv1workshop - getAccountDetail
+# Generated: 2026-08-26T03:29:45.630Z
+---
+feature: eclipsedashboardcommondddapidesignv1workshop
+apiName: getAccountDetail
+description: Test cases for getAccountDetail endpoint
+totalScenarios: 14
+scenarios:
+  - id: getAccountDetail-001-positive
+    title: |-
+      GET /detail
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getaccountdetail
+    priority: P1
+  - id: getAccountDetail-002-missing-auth
+    title: |-
+      GET /detail
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getAccountDetail-003-invalid-auth
+    title: |-
+      GET /detail
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getAccountDetail-004-invalid-content-type
+    title: |-
+      GET /detail
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getAccountDetail-005-duplicate-correlation-id
+    title: |-
+      GET /detail
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getAccountDetail-006-request-timeout
+    title: |-
+      GET /detail
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getAccountDetail-007-empty-request-body
+    title: |-
+      GET /detail
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getAccountDetail-008-required-field-null
+    title: |-
+      GET /detail
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountDetail-009-required-field-missing
+    title: |-
+      GET /detail
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getAccountDetail-010-numeric-minimum
+    title: |-
+      GET /detail
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountDetail-011-numeric-maximum
+    title: |-
+      GET /detail
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountDetail-012-string-minimum-length
+    title: |-
+      GET /detail
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountDetail-013-string-maximum-length
+    title: |-
+      GET /detail
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getAccountDetail-014-invalid-enum-or-format
+    title: |-
+      GET /detail
+
+      context-path value:
+      1. casa
+      2. card
+      3. loan
+      4. insurance
+      5. investment
+      6. time-deposit - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:29:45.625Z'
