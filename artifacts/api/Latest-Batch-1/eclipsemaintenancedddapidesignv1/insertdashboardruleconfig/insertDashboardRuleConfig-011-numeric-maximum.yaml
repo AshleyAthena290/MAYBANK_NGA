@@ -1,0 +1,90 @@
+# BDD Test Case - eclipsemaintenancedddapidesignv1
+# Generated for: POST /dashboard-rules - Maximum Numeric Value
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: insertDashboardRuleConfig-011-numeric-maximum
+title: POST /dashboard-rules - Maximum Numeric Value
+feature: eclipsemaintenancedddapidesignv1
+description: Request using the maximum supported numeric value should be accepted or rejected according to the API limit
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/internal/dashboard-rules'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/internal/dashboard-rules'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715447053
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    code: <value>
+    description: <value>
+    domain: <value>
+    primaryFeatureCode: <value>
+    isCacheable: <value>
+    '>> settings[] (list)': <value>
+    accountType: 999999999
+    '>>> subSettings[] (list)': <value>
+    path: <value>
+    operator: <value>
+    value: <value>
+    unmatchedAction: <value>
+    Request Parameter: <value>
+    ? "POST  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/internal/dashboard-rules\n\n{\n    \"code\": \"CASA_DASHBOARD\",\n    \"description\": \"CASA dashboard rules\",\n    \"domain\": \"ECLIPSE\",\n    \"isCacheable\": true,\n    \"settings\": [\n        {\n            \"accountType\": \"CA\",\n            \"subSettings\": [\n                {\n                    \"path\": \"$.isDisplayDashboard\",\n                    \"operator\": \"EQ\",\n                    \"value\": \"true\",\n                    \"unmatchedAction\": \"EXCLUDE\"\n                },\n                {\n                    \"path\": \"$.group\",\n                    \"operator\": \"EQ\",\n                    \"value\": \"CASA\",\n                    \"unmatchedAction\": \"EXCLUDE\"\n                }\n            ]\n        },\n        {\n            \"accountType\": \"SA\",\n            \"subSettings\": [\n                {\n                    \"path\": \"$.isDisplayDashboard\",\n                    \"operator\": \"EQ\",\n                    \"value\": \"true\",\n                    \"unmatchedAction\": \"EXCLUDE\"\n                }\n            ]\n        }\n    ]\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: Integer
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+    data: Object
+    id: String
+    code: String
+    description: String
+    domain: String
+    primaryFeatureCode: String
+    isCacheable: Boolean
+    settings: Array<Object>
+    accountType: String
+    subSettings: Array<Object>
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code matches the documented maximum-value behavior
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: insertDashboardRuleConfig
+  sourceRows: ''
+  apiSpecFile: insertDashboardRuleConfig

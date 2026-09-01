@@ -1,0 +1,99 @@
+# Test Case Index
+# eclipsemaintenancedddapidesignv1 - updateInitData
+# Generated: 2026-08-26T03:35:44.047Z
+---
+feature: eclipsemaintenancedddapidesignv1
+apiName: updateInitData
+description: Test cases for updateInitData endpoint
+totalScenarios: 12
+scenarios:
+  - id: updateInitData-001-positive
+    title: PATCH /{flagId} - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - updateinitdata
+    priority: P1
+  - id: updateInitData-002-missing-auth
+    title: PATCH /{flagId} - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: updateInitData-003-invalid-auth
+    title: PATCH /{flagId} - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: updateInitData-004-invalid-content-type
+    title: PATCH /{flagId} - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: updateInitData-005-duplicate-correlation-id
+    title: PATCH /{flagId} - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: updateInitData-006-request-timeout
+    title: PATCH /{flagId} - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: updateInitData-007-empty-request-body
+    title: PATCH /{flagId} - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: updateInitData-010-numeric-minimum
+    title: PATCH /{flagId} - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: updateInitData-011-numeric-maximum
+    title: PATCH /{flagId} - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: updateInitData-012-string-minimum-length
+    title: PATCH /{flagId} - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: updateInitData-013-string-maximum-length
+    title: PATCH /{flagId} - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: updateInitData-014-invalid-enum-or-format
+    title: PATCH /{flagId} - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:35:44.045Z'

@@ -1,0 +1,114 @@
+# Test Case Index
+# eclipsemaintenancedddapidesignv1 - insertProductConfig
+# Generated: 2026-08-26T03:36:06.510Z
+---
+feature: eclipsemaintenancedddapidesignv1
+apiName: insertProductConfig
+description: Test cases for insertProductConfig endpoint
+totalScenarios: 14
+scenarios:
+  - id: insertProductConfig-001-positive
+    title: POST /product-config - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - insertproductconfig
+    priority: P1
+  - id: insertProductConfig-002-missing-auth
+    title: POST /product-config - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: insertProductConfig-003-invalid-auth
+    title: POST /product-config - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: insertProductConfig-004-invalid-content-type
+    title: POST /product-config - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: insertProductConfig-005-duplicate-correlation-id
+    title: POST /product-config - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: insertProductConfig-006-request-timeout
+    title: POST /product-config - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: insertProductConfig-007-empty-request-body
+    title: POST /product-config - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: insertProductConfig-008-required-field-null
+    title: POST /product-config - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertProductConfig-009-required-field-missing
+    title: POST /product-config - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: insertProductConfig-010-numeric-minimum
+    title: POST /product-config - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertProductConfig-011-numeric-maximum
+    title: POST /product-config - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertProductConfig-012-string-minimum-length
+    title: POST /product-config - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertProductConfig-013-string-maximum-length
+    title: POST /product-config - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: insertProductConfig-014-invalid-enum-or-format
+    title: POST /product-config - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:36:06.506Z'

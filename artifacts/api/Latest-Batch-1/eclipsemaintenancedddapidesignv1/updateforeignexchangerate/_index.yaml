@@ -1,0 +1,93 @@
+# Test Case Index
+# eclipsemaintenancedddapidesignv1 - updateForeignExchangeRate
+# Generated: 2026-08-26T03:35:20.725Z
+---
+feature: eclipsemaintenancedddapidesignv1
+apiName: updateForeignExchangeRate
+description: Test cases for updateForeignExchangeRate endpoint
+totalScenarios: 11
+scenarios:
+  - id: updateForeignExchangeRate-001-positive
+    title: PATCH /{id} - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - updateforeignexchangerate
+    priority: P1
+  - id: updateForeignExchangeRate-002-missing-auth
+    title: PATCH /{id} - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: updateForeignExchangeRate-003-invalid-auth
+    title: PATCH /{id} - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: updateForeignExchangeRate-004-invalid-content-type
+    title: PATCH /{id} - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: updateForeignExchangeRate-005-duplicate-correlation-id
+    title: PATCH /{id} - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: updateForeignExchangeRate-006-request-timeout
+    title: PATCH /{id} - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: updateForeignExchangeRate-007-empty-request-body
+    title: PATCH /{id} - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: updateForeignExchangeRate-008-required-field-null
+    title: PATCH /{id} - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: updateForeignExchangeRate-009-required-field-missing
+    title: PATCH /{id} - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: updateForeignExchangeRate-012-string-minimum-length
+    title: PATCH /{id} - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: updateForeignExchangeRate-013-string-maximum-length
+    title: PATCH /{id} - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:35:20.723Z'

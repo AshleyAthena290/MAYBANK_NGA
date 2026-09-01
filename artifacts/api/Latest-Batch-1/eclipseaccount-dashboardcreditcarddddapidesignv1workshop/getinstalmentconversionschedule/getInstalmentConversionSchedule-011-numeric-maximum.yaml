@@ -1,0 +1,77 @@
+# BDD Test Case - eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+# Generated for: GET /instalment-conversion - Maximum Numeric Value
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getInstalmentConversionSchedule-011-numeric-maximum
+title: GET /instalment-conversion - Maximum Numeric Value
+feature: eclipseaccount-dashboardcreditcarddddapidesignv1workshop
+description: Request using the maximum supported numeric value should be accepted or rejected according to the API limit
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/external/credit-card/instalment-conversion'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/external/credit-card/instalment-conversion'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787572002749
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    cardNumber: 999999999
+    Request Parameter: <value>
+    ? "GET https: //{Eclipse-IP}:{Eclipse-PORT}/info/card/v1/external/credit-card/instalment-conversion\n\n{\n    \"cardNumber\": \"4047760034916300\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+    data: Object
+    transactions: Array<Object>
+    referenceId: String
+    dateTime: String
+    description: String
+    amounts: Array<Object>
+    tenures: Array<Object>
+    link: Object
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code matches the documented maximum-value behavior
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getInstalmentConversionSchedule
+  sourceRows: ''
+  apiSpecFile: getInstalmentConversionSchedule

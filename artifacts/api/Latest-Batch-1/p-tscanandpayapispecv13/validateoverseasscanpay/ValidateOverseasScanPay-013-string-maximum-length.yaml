@@ -1,0 +1,68 @@
+# BDD Test Case - p-tscanandpayapispecv13
+# Generated for: POST /initiate - Maximum String Length
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: ValidateOverseasScanPay-013-string-maximum-length
+title: POST /initiate - Maximum String Length
+feature: p-tscanandpayapispecv13
+description: Request using the maximum supported string length should be accepted or rejected according to the API limit
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/oversea-qr/initiate
+  endpoint: https://Payment-IP:Payment-PORT/pt-qr-payment/v1/oversea-qr/initiate
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787712559474
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    referenceId: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    debitAccountNo: <value>
+    debitAccountCurrency: <value>
+    actualRate: <value>
+    promo: <value>
+    code: <value>
+    amount: <value>
+    ? "{\n  \"referenceId\": \"TXN-OVS-20260821-0001\",\n  \"debitAccountNo\": \"1000123456\",\n  \"debitAccountCurrency\": \"IDR\",\n  \"actualRate\": 11750.25,\n  \"promo\": {\n    \"code\": \"PROMOSG\",\n    \"amount\": 5000.0\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code matches the documented maximum-length behavior
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: InitiateOverseasScanPay
+  sourceRows: ''
+  apiSpecFile: ValidateOverseasScanPay

@@ -1,0 +1,64 @@
+# BDD Test Case - depappdashboarddddapidesignv12
+# Generated for: GET /large-widget - Required Field Null
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getLargeWidget-008-required-field-null
+title: GET /large-widget - Required Field Null
+feature: depappdashboarddddapidesignv12
+description: Request with a required field set to null should be rejected
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{IP}:{PORT}/dep/dashboard/v1/large-widget
+  endpoint: https://{IP}:{PORT}/dep/dashboard/v1/large-widget
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787566359860
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    Request Parameter: <value>
+    ecosystem: null
+    customerClass: <value>
+    GET  https://{IP}:{PORT}/dep/dashboard/v1/large-widget?ecosystem=banking&customerClass=MASS_BANKING: <value>
+response:
+  successStatusCode: 400
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400 and the error identifies the required field
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getLargeWidget
+  sourceRows: ''
+  apiSpecFile: getLargeWidget

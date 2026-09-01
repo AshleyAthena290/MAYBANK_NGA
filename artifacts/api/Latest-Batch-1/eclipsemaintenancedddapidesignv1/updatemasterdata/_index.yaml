@@ -1,0 +1,114 @@
+# Test Case Index
+# eclipsemaintenancedddapidesignv1 - updateMasterData
+# Generated: 2026-08-26T03:37:10.126Z
+---
+feature: eclipsemaintenancedddapidesignv1
+apiName: updateMasterData
+description: Test cases for updateMasterData endpoint
+totalScenarios: 14
+scenarios:
+  - id: updateMasterData-001-positive
+    title: PATCH /{id} - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - updatemasterdata
+    priority: P1
+  - id: updateMasterData-002-missing-auth
+    title: PATCH /{id} - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: updateMasterData-003-invalid-auth
+    title: PATCH /{id} - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: updateMasterData-004-invalid-content-type
+    title: PATCH /{id} - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: updateMasterData-005-duplicate-correlation-id
+    title: PATCH /{id} - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: updateMasterData-006-request-timeout
+    title: PATCH /{id} - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: updateMasterData-007-empty-request-body
+    title: PATCH /{id} - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: updateMasterData-008-required-field-null
+    title: PATCH /{id} - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: updateMasterData-009-required-field-missing
+    title: PATCH /{id} - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: updateMasterData-010-numeric-minimum
+    title: PATCH /{id} - Minimum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: updateMasterData-011-numeric-maximum
+    title: PATCH /{id} - Maximum Numeric Value
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: updateMasterData-012-string-minimum-length
+    title: PATCH /{id} - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: updateMasterData-013-string-maximum-length
+    title: PATCH /{id} - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: updateMasterData-014-invalid-enum-or-format
+    title: PATCH /{id} - Invalid Enum or Format
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:37:10.122Z'

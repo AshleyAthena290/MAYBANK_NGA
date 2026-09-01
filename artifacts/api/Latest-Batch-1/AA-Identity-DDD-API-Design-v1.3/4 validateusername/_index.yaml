@@ -1,0 +1,93 @@
+# Test Case Index
+# identitydddapidesignv13updated - validateUsername
+# Generated: 2026-08-24T08:29:25.917Z
+---
+feature: identitydddapidesignv13updated
+apiName: validateUsername
+description: Test cases for validateUsername endpoint
+totalScenarios: 11
+scenarios:
+  - id: validateUsername-001-positive
+    title: POST /validate-username - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - validateusername
+    priority: P1
+  - id: validateUsername-002-missing-auth
+    title: POST /validate-username - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: validateUsername-003-invalid-auth
+    title: POST /validate-username - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: validateUsername-004-invalid-content-type
+    title: POST /validate-username - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: validateUsername-005-duplicate-correlation-id
+    title: POST /validate-username - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: validateUsername-006-request-timeout
+    title: POST /validate-username - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: validateUsername-007-empty-request-body
+    title: POST /validate-username - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: validateUsername-008-required-field-null
+    title: POST /validate-username - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: validateUsername-009-required-field-missing
+    title: POST /validate-username - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: validateUsername-012-string-minimum-length
+    title: POST /validate-username - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: validateUsername-013-string-maximum-length
+    title: POST /validate-username - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-24T08:29:25.917Z'

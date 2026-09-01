@@ -1,0 +1,93 @@
+# Test Case Index
+# identitydddapidesignv13updated - deviceStatus
+# Generated: 2026-08-24T08:29:41.478Z
+---
+feature: identitydddapidesignv13updated
+apiName: deviceStatus
+description: Test cases for deviceStatus endpoint
+totalScenarios: 11
+scenarios:
+  - id: deviceStatus-001-positive
+    title: POST /status - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - devicestatus
+    priority: P1
+  - id: deviceStatus-002-missing-auth
+    title: POST /status - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: deviceStatus-003-invalid-auth
+    title: POST /status - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: deviceStatus-004-invalid-content-type
+    title: POST /status - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: deviceStatus-005-duplicate-correlation-id
+    title: POST /status - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: deviceStatus-006-request-timeout
+    title: POST /status - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: deviceStatus-007-empty-request-body
+    title: POST /status - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: deviceStatus-008-required-field-null
+    title: POST /status - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deviceStatus-009-required-field-missing
+    title: POST /status - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: deviceStatus-012-string-minimum-length
+    title: POST /status - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deviceStatus-013-string-maximum-length
+    title: POST /status - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-24T08:29:41.476Z'

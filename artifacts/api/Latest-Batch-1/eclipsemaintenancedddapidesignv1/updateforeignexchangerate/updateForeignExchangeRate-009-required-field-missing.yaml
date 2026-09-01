@@ -1,0 +1,76 @@
+# BDD Test Case - eclipsemaintenancedddapidesignv1
+# Generated for: PATCH /{id} - Required Field Missing
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: updateForeignExchangeRate-009-required-field-missing
+title: PATCH /{id} - Required Field Missing
+feature: eclipsemaintenancedddapidesignv1
+description: Request without a required field should be rejected
+tags:
+  - boundary
+  - required-field
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: PATCH
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/exchange-rate/{id}'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/exchange-rate/{id}'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715320696
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    'PATCH  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/exchange-rate/ac0ec6ce-a0f0-4575-97b9-20aa9fff2cac': <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Required field is missing
+  schema:
+    status: Integer
+    message: String
+    timestamp: String
+    correlationId: String
+    meta: Object
+    provider: String
+    data: Object
+    id: String
+    targetCurrency: String
+    unit: Integer
+    exchangeRate: Decimal
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error identifies missing required field 'id'
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: updateForeignExchangeRate
+  sourceRows: ''
+  apiSpecFile: updateForeignExchangeRate

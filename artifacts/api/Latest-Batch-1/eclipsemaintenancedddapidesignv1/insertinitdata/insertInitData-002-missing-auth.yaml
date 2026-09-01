@@ -1,0 +1,82 @@
+# BDD Test Case - eclipsemaintenancedddapidesignv1
+# Generated for: POST /feature-flags - Missing Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: insertInitData-002-missing-auth
+title: POST /feature-flags - Missing Authentication
+feature: eclipsemaintenancedddapidesignv1
+description: Request without authentication credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/feature-flags'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/feature-flags'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers: {}
+  pathParams: {}
+  queryParams: {}
+  body:
+    domain: <value>
+    region: <value>
+    platform: <value>
+    module: <value>
+    subModule: <value>
+    code: <value>
+    description: <value>
+    valueType: <value>
+    variableName: <value>
+    parentId: <value>
+    '> values[] (list)': <value>
+    environment: <value>
+    variableValue: <value>
+    isDisabled: <value>
+    disabledRemarks: <value>
+    '>> listValues[] (list)': <value>
+    value: <value>
+    Request Parameter: <value>
+    'POST  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/feature-flags': <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized - Authentication required
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+      description: Error code
+    - fieldPath: message
+      type: String
+      mandatory: true
+      description: Error message
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Field 'error' exists and is of type String
+    type: field-type
+    target: error
+    expectedValue: String
+  - description: Error message indicates missing authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: insertInitData
+  sourceRows: ''
+  apiSpecFile: insertInitData

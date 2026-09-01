@@ -1,0 +1,77 @@
+# BDD Test Case - p-tlocaltransferdddapispecv12
+# Generated for: POST /pre-check - Missing Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: IntraPreMonetaryCheck-002-missing-auth
+title: POST /pre-check - Missing Authentication
+feature: p-tlocaltransferdddapispecv12
+description: Request without authentication credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{Payment-IP}:{Payment-PORT}/pt/intrabank/v1/external/pre-check
+  endpoint: https://{Payment-IP}:{Payment-PORT}/pt/intrabank/v1/external/pre-check
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers: {}
+  pathParams: {}
+  queryParams: {}
+  body:
+    transferType: <value>
+    creditAccountSource: <value>
+    creditAccountBankCode: <value>
+    creditAccountNo: <value>
+    creditAccountName: <value>
+    creditAccountType: <value>
+    creditAccountCurrency: <value>
+    ? "{\n  \"transferType\": \"THIRD_PARTY_TRANSFER\",\n  \"creditAccountSource\": \"NEW\",\n  \"creditAccountBankCode\": \"MBB\",\n  \"creditAccountNo\": \"1234567890\"\n}"
+    : <value>
+    ? "{\n  \"transferType\": \"THIRD_PARTY_TRANSFER\",\n  \"creditAccountSource\": \"EXISTING\", \n  \"creditAccountBankCode\": \"MBB\",\n  \"creditAccountNo\": \"1234567890\",\n  \"creditAccountName\": \"ALI BIN ABU\",\n  \"creditAccountType\": \"SA\",\n  \"creditAccountCurrency\": \"IDR\"\n}"
+    : <value>
+    ? "{\n  \"transferType\": \"OWN_ACCOUNT_TRANSFER\"\n}"
+    : <value>
+    Name: <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized - Authentication required
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+      description: Error code
+    - fieldPath: message
+      type: String
+      mandatory: true
+      description: Error message
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Field 'error' exists and is of type String
+    type: field-type
+    target: error
+    expectedValue: String
+  - description: Error message indicates missing authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: IntraPreMonetaryCheck
+  sourceRows: ''
+  apiSpecFile: IntraPreMonetaryCheck

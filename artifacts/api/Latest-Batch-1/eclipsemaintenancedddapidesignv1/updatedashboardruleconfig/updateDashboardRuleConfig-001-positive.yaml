@@ -1,0 +1,179 @@
+# BDD Test Case - eclipsemaintenancedddapidesignv1
+# Generated for: PATCH /{id} - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: updateDashboardRuleConfig-001-positive
+title: PATCH /{id} - Happy Path
+feature: eclipsemaintenancedddapidesignv1
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - updatedashboardruleconfig
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: PATCH
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/internal/dashboard-rules/{id}'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/internal/dashboard-rules/{id}'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715452450
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    code: <value>
+    description: <value>
+    domain: <value>
+    primaryFeatureCode: <value>
+    isCacheable: <value>
+    '>> settings[] (list)': <value>
+    accountType: <value>
+    '>>> subSettings[] (list)': <value>
+    path: <value>
+    operator: <value>
+    value: <value>
+    unmatchedAction: <value>
+    Request Parameter: <value>
+    ? "PATCH  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/internal/dashboard-rules/7a8f43c2-7661-4312-9389-ec3523422780\n\n{\n    \"code\": \"CASA_DASHBOARD\",\n    \"description\": \"CASA dashboard rules\",\n    \"domain\": \"ECLIPSE\",\n    \"isCacheable\": true,\n    \"settings\": [\n        {\n            \"accountType\": \"CA\",\n            \"subSettings\": [\n                {\n                    \"path\": \"$.isDisplayDashboard\",\n                    \"operator\": \"EQ\",\n                    \"value\": \"true\",\n                    \"unmatchedAction\": \"EXCLUDE\"\n                },\n                {\n                    \"path\": \"$.group\",\n                    \"operator\": \"EQ\",\n                    \"value\": \"CASA\",\n                    \"unmatchedAction\": \"EXCLUDE\"\n                }\n            ]\n        },\n        {\n            \"accountType\": \"SA\",\n            \"subSettings\": [\n                {\n                    \"path\": \"$.isDisplayDashboard\",\n                    \"operator\": \"EQ\",\n                    \"value\": \"true\",\n                    \"unmatchedAction\": \"EXCLUDE\"\n                }\n            ]\n        }\n    ]\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    code: String
+    description: String
+    domain: String
+    isCacheable: Boolean
+    settings: Array<Object>
+    '[]': Array<Object>
+    id: String
+    accountType: String
+    subSettings: Array<Object>
+  expectedFields:
+    - fieldPath: code
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: code'
+    - fieldPath: description
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: description'
+    - fieldPath: domain
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: domain'
+    - fieldPath: isCacheable
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: isCacheable'
+    - fieldPath: settings
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: settings'
+    - fieldPath: settings.[]
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: Array of items
+      parentField: settings
+    - fieldPath: settings[].id
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: id'
+      parentField: settings[]
+    - fieldPath: settings[].accountType
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: accountType'
+      parentField: settings[]
+    - fieldPath: settings[].subSettings
+      type: Array<Object>
+      mandatory: false
+      constraints:
+        minItems: 0
+      description: 'Field: subSettings'
+      parentField: settings[]
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'code' exists in response
+    type: field-exists
+    target: code
+  - description: Field 'code' is of type 'String'
+    type: field-type
+    target: code
+    expectedValue: String
+  - description: Field 'description' exists in response
+    type: field-exists
+    target: description
+  - description: Field 'description' is of type 'String'
+    type: field-type
+    target: description
+    expectedValue: String
+  - description: Field 'domain' exists in response
+    type: field-exists
+    target: domain
+  - description: Field 'domain' is of type 'String'
+    type: field-type
+    target: domain
+    expectedValue: String
+  - description: Field 'isCacheable' exists in response
+    type: field-exists
+    target: isCacheable
+  - description: Field 'isCacheable' is of type 'Boolean'
+    type: field-type
+    target: isCacheable
+    expectedValue: Boolean
+  - description: Field 'settings' exists in response
+    type: field-exists
+    target: settings
+  - description: Field 'settings' is of type 'Array<Object>'
+    type: field-type
+    target: settings
+    expectedValue: Array<Object>
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: updateDashboardRuleConfig
+  sourceRows: ''
+  apiSpecFile: updateDashboardRuleConfig

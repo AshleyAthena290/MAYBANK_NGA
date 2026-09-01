@@ -1,0 +1,127 @@
+# BDD Test Case - etbonboardingidentitydddapidesignv13updated
+# Generated for: POST /status - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: deviceStatus-001-positive
+title: POST /status - Happy Path
+feature: etbonboardingidentitydddapidesignv13updated
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - devicestatus
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/devices/status'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/devices/status'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787563521756
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    username: <value>
+    deviceId: <value>
+    Request Parameter: <value>
+    ? "{\n  \"username\" : \"xavier\",\n  \"deviceId\": \"ANDROID-123456\"\n}"
+    : <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    FE already knows: deviceStatus
+    NGA user: CURRENT_DEVICE
+    RMBP user: NEW_DEVICE
+    New user: —
+  expectedFields:
+    - fieldPath: FE already knows
+      type: deviceStatus
+      mandatory: false
+      constraints: {}
+    - fieldPath: NGA user
+      type: NEW_DEVICE
+      mandatory: false
+      constraints: {}
+    - fieldPath: NGA user
+      type: CURRENT_DEVICE
+      mandatory: false
+      constraints: {}
+    - fieldPath: RMBP user
+      type: NEW_DEVICE
+      mandatory: false
+      constraints: {}
+    - fieldPath: New user
+      type: —
+      mandatory: false
+      constraints: {}
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'FE already knows' exists in response
+    type: field-exists
+    target: FE already knows
+  - description: Field 'FE already knows' is of type 'deviceStatus'
+    type: field-type
+    target: FE already knows
+    expectedValue: deviceStatus
+  - description: Field 'NGA user' exists in response
+    type: field-exists
+    target: NGA user
+  - description: Field 'NGA user' is of type 'NEW_DEVICE'
+    type: field-type
+    target: NGA user
+    expectedValue: NEW_DEVICE
+  - description: Field 'NGA user' exists in response
+    type: field-exists
+    target: NGA user
+  - description: Field 'NGA user' is of type 'CURRENT_DEVICE'
+    type: field-type
+    target: NGA user
+    expectedValue: CURRENT_DEVICE
+  - description: Field 'RMBP user' exists in response
+    type: field-exists
+    target: RMBP user
+  - description: Field 'RMBP user' is of type 'NEW_DEVICE'
+    type: field-type
+    target: RMBP user
+    expectedValue: NEW_DEVICE
+  - description: Field 'New user' exists in response
+    type: field-exists
+    target: New user
+  - description: Field 'New user' is of type '—'
+    type: field-type
+    target: New user
+    expectedValue: —
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: deviceStatus
+  sourceRows: ''
+  apiSpecFile: deviceStatus

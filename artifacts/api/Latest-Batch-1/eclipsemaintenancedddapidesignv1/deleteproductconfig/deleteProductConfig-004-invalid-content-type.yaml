@@ -1,0 +1,59 @@
+# BDD Test Case - eclipsemaintenancedddapidesignv1
+# Generated for: DELETE /{id} - Invalid Content-Type
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: deleteProductConfig-004-invalid-content-type
+title: DELETE /{id} - Invalid Content-Type
+feature: eclipsemaintenancedddapidesignv1
+description: Request with invalid Content-Type should fail
+tags:
+  - negative
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: DELETE
+  url: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/product-config/{accountGroup}/{id}'
+  endpoint: 'https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/product-config/{accountGroup}/{id}'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/xml
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787715377490
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Path Variable: <value>
+    accountGroup: <value>
+    id: <value>
+    ? "DELETE  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/product-config/CASA/e76470a8-43d5-4dab-82a0-8fb448e9b852\nDELETE  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/product-config/CARD/5365d601-1675-4613-af2e-cfc4efac9424\nDELETE  https: //{Eclipse-IP}:{Eclipse-PORT}/info/maintenance/v1/external/product-config/LOAN/42944255-0c7f-4d06-9b0e-1578d2262f4e"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Bad Request - Invalid Content-Type
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates invalid content type
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: deleteProductConfig
+  sourceRows: ''
+  apiSpecFile: deleteProductConfig

@@ -1,0 +1,66 @@
+# BDD Test Case - etbonboardingidentitydddapidesignv13updated
+# Generated for: POST /verify - Invalid Enum or Format
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: S2U Verify - SecurityImage-014-invalid-enum-or-format
+title: POST /verify - Invalid Enum or Format
+feature: etbonboardingidentitydddapidesignv13updated
+description: Request using an invalid enum or format value should be rejected
+tags:
+  - boundary
+  - validation
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/secure/verify'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/secure/verify'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787563656221
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    trn: <value>
+    action: <value>
+    challenge: <value>
+    code: __INVALID_ENUM_OR_FORMAT__
+    Request Parameter: <value>
+    ? "{\n  \"trn\": \"a7237b84-0ed7-4312-9ada-25e9801f489c\",\n  \"action\": \"passcode\",\n  \"challenge\": {\n    \"code\": \"625719\"\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 400
+  successDescription: Request processed successfully
+  schema: {}
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 400 and the error identifies the invalid value
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: S2U Verify - SecurityImage
+  sourceRows: ''
+  apiSpecFile: S2U Verify - SecurityImage

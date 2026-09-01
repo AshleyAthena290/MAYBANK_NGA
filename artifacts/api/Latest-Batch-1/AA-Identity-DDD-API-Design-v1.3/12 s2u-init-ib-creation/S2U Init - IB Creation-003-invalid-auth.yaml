@@ -1,0 +1,87 @@
+# BDD Test Case - identitydddapidesignv13updated
+# Generated for: POST /init - Invalid Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: S2U Init - IB Creation-003-invalid-auth
+title: POST /init - Invalid Authentication
+feature: identitydddapidesignv13updated
+description: Request with invalid credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/secure/init'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/secure/init'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1787560252681
+    Authorization: Bearer invalid_token_12345
+  pathParams: {}
+  queryParams: {}
+  body:
+    functionCode: <value>
+    payload: <value>
+    username: <value>
+    password: <value>
+    securityImage: <value>
+    consent: <value>
+    items: <value>
+    module: <value>
+    version: <value>
+    locale: <value>
+    consentCreatedAt: <value>
+    signedAt: <value>
+    channel: <value>
+    country: <value>
+    device: <value>
+    deviceId: <value>
+    hardwareId: <value>
+    platform: <value>
+    appVersion: <value>
+    deviceName: <value>
+    deviceModel: <value>
+    deviceType: <value>
+    osVersion: <value>
+    location: <value>
+    ipAddress: <value>
+    userAgent: <value>
+    Request Parameter: <value>
+    ? "{\n  \"functionCode\": \"create-ib-access\",\n  \"payload\": {\n   \"username\": \"string\",\n    \"password\": \"string\",\n    \"securityImage\": \"base64EncodedString\",\n    \"consents\": {\n      \"items\": [\n        {\n          \"module\": \"onboarding\",\n          \"version\": \"v1\",\n          \"locale\": \"en_US\",\n          \"consentCreatedAt\": \"2026-07-29T12:33:00+08:00\"\n        }\n      ],\n      \"signedAt\": \"2026-07-30T12:33:00+08:00\",\n      \"channel\": \"mobile\",\n      \"country\": \"MY\"\n    },\n    \"device\": {\n      \"deviceId\": \"084196e8-65fb-4bf4-b98f-2db1d5a355ba\",\n      \"hardwareId\": \"HW-ABC-123\",\n      \"platform\": \"ANDROID\",\n      \"appVersion\": \"1.0.0\",\n      \"deviceName\": \"Xiaomi 2201117TY\",\n      \"deviceModel\": \"SM-S921B\",\n      \"deviceType\": \"Galaxy S24\",\n      \"osVersion\": \"Android 15\",\n      \"location\": \"lon:106.7994811 lat:-6.2277626\",\n      \"ipAddress\": \"172.20.10.7\",\n      \"userAgent\": \"Chrome/143.0.12.45\"\n    }\n  }\n}"
+    : <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized - Invalid credentials
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Error message indicates invalid authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: S2U Init - IB Creation
+  sourceRows: ''
+  apiSpecFile: S2U Init - IB Creation

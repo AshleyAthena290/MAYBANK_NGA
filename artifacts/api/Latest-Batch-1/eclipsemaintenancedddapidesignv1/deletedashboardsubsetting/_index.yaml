@@ -1,0 +1,93 @@
+# Test Case Index
+# eclipsemaintenancedddapidesignv1 - deleteDashboardSubSetting
+# Generated: 2026-08-26T03:37:48.815Z
+---
+feature: eclipsemaintenancedddapidesignv1
+apiName: deleteDashboardSubSetting
+description: Test cases for deleteDashboardSubSetting endpoint
+totalScenarios: 11
+scenarios:
+  - id: deleteDashboardSubSetting-001-positive
+    title: DELETE /{id} - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - deletedashboardsubsetting
+    priority: P1
+  - id: deleteDashboardSubSetting-002-missing-auth
+    title: DELETE /{id} - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: deleteDashboardSubSetting-003-invalid-auth
+    title: DELETE /{id} - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: deleteDashboardSubSetting-004-invalid-content-type
+    title: DELETE /{id} - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: deleteDashboardSubSetting-005-duplicate-correlation-id
+    title: DELETE /{id} - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: deleteDashboardSubSetting-006-request-timeout
+    title: DELETE /{id} - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: deleteDashboardSubSetting-007-empty-request-body
+    title: DELETE /{id} - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: deleteDashboardSubSetting-008-required-field-null
+    title: DELETE /{id} - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deleteDashboardSubSetting-009-required-field-missing
+    title: DELETE /{id} - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: deleteDashboardSubSetting-012-string-minimum-length
+    title: DELETE /{id} - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: deleteDashboardSubSetting-013-string-maximum-length
+    title: DELETE /{id} - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-08-26T03:37:48.810Z'
