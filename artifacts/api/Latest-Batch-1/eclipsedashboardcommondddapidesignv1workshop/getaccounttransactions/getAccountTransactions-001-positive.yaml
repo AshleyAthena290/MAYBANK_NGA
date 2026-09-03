@@ -1,13 +1,13 @@
 # BDD Test Case - eclipsedashboardcommondddapidesignv1workshop
 # Generated for: GET /transactions
 
-context-path value:
-1. casa
-2. card
-3. loan
-4. insurance
-5. investment
-6. time-deposit - Happy Path
+# context-path value:
+# 1. casa
+# 2. card
+# 3. loan
+# 4. insurance
+# 5. investment
+# 6. time-deposit - Happy Path
 # Purpose: API endpoint test case for QA, BA, and business user review
 # Note: This is a business-readable specification, not a technical implementation
 ---

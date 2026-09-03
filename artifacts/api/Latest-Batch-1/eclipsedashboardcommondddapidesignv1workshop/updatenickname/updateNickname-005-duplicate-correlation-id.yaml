@@ -1,11 +1,11 @@
 # BDD Test Case - eclipsedashboardcommondddapidesignv1workshop
 # Generated for: PATCH /{nicknameId}
 
-context-path value:
-1. casa
-2. card
-3. loan
-4. beneficiary - Duplicate Correlation ID
+# context-path value:
+# 1. casa
+# 2. card
+# 3. loan
+# 4. beneficiary - Duplicate Correlation ID
 # Purpose: API endpoint test case for QA, BA, and business user review
 # Note: This is a business-readable specification, not a technical implementation
 ---

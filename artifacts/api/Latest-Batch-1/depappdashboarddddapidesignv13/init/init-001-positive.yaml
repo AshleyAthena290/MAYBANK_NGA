@@ -1,0 +1,457 @@
+# BDD Test Case - depappdashboarddddapidesignv13
+# Generated for: GET /flags - Happy Path
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: init-001-positive
+title: GET /flags - Happy Path
+feature: depappdashboarddddapidesignv13
+description: API endpoint test scenario
+tags:
+  - positive
+  - smoke
+  - regression
+  - api
+  - init
+priority: P1
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{IP}:{PORT}/v1/init/flags
+  endpoint: https://{IP}:{PORT}/v1/init/flags
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: test-correlation-id-1788479388460
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    domain: <value>
+    module: <value>
+    subModule: <value>
+    GET  https://{IP}:{PORT}/v1/init/flags?domain=dep&module=dashboard&subModule=banking: <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    data: Object
+    userHeader: Object
+    nudgeDuration: Integer
+    endpoint: String
+    enable: Boolean
+    maxNudgeCount: Integer
+    appVersion: Object
+    minAppVersion: String
+    latestAppVersion: String
+    largeWidget: Object
+    forYouTiles: Object
+    mainPreview: Object
+    platform: Object
+    ios: Object
+    minVersion: String
+    android: Object
+    mediumWidget: Object
+    searchEngine: Object
+    tempBanner: Object
+    dashboardVersion: Object
+    entryPoint: String
+    name: String
+    version: String
+    checksum: String
+    quickActions: Object
+    smallWidget: Object
+    error: 'Null'
+    meta: Object
+  expectedFields:
+    - fieldPath: status
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: status'
+    - fieldPath: message
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: message'
+    - fieldPath: timestamp
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: timestamp'
+    - fieldPath: correlationId
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: correlationId'
+    - fieldPath: data
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: data'
+    - fieldPath: data.userHeader
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: userHeader'
+      parentField: data
+    - fieldPath: data.userHeader.nudgeDuration
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: nudgeDuration'
+      parentField: data.userHeader
+    - fieldPath: data.userHeader.endpoint
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: endpoint'
+      parentField: data.userHeader
+    - fieldPath: data.userHeader.enable
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: enable'
+      parentField: data.userHeader
+    - fieldPath: data.userHeader.maxNudgeCount
+      type: Integer
+      mandatory: false
+      constraints: {}
+      description: 'Field: maxNudgeCount'
+      parentField: data.userHeader
+    - fieldPath: data.appVersion
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: appVersion'
+      parentField: data
+    - fieldPath: data.appVersion.minAppVersion
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: minAppVersion'
+      parentField: data.appVersion
+    - fieldPath: data.appVersion.latestAppVersion
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: latestAppVersion'
+      parentField: data.appVersion
+    - fieldPath: data.largeWidget
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: largeWidget'
+      parentField: data
+    - fieldPath: data.largeWidget.enable
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: enable'
+      parentField: data.largeWidget
+    - fieldPath: data.largeWidget.endpoint
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: endpoint'
+      parentField: data.largeWidget
+    - fieldPath: data.forYouTiles
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: forYouTiles'
+      parentField: data
+    - fieldPath: data.forYouTiles.endpoint
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: endpoint'
+      parentField: data.forYouTiles
+    - fieldPath: data.forYouTiles.enable
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: enable'
+      parentField: data.forYouTiles
+    - fieldPath: data.mainPreview
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: mainPreview'
+      parentField: data
+    - fieldPath: data.mainPreview.enable
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: enable'
+      parentField: data.mainPreview
+    - fieldPath: data.mainPreview.endpoint
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: endpoint'
+      parentField: data.mainPreview
+    - fieldPath: data.platform
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: platform'
+      parentField: data
+    - fieldPath: data.platform.ios
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: ios'
+      parentField: data.platform
+    - fieldPath: data.platform.ios.minVersion
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: minVersion'
+      parentField: data.platform.ios
+    - fieldPath: data.platform.android
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: android'
+      parentField: data.platform
+    - fieldPath: data.platform.android.minVersion
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: minVersion'
+      parentField: data.platform.android
+    - fieldPath: data.mediumWidget
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: mediumWidget'
+      parentField: data
+    - fieldPath: data.mediumWidget.endpoint
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: endpoint'
+      parentField: data.mediumWidget
+    - fieldPath: data.mediumWidget.enable
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: enable'
+      parentField: data.mediumWidget
+    - fieldPath: data.searchEngine
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: searchEngine'
+      parentField: data
+    - fieldPath: data.searchEngine.enable
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: enable'
+      parentField: data.searchEngine
+    - fieldPath: data.tempBanner
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: tempBanner'
+      parentField: data
+    - fieldPath: data.tempBanner.endpoint
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: endpoint'
+      parentField: data.tempBanner
+    - fieldPath: data.tempBanner.enable
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: enable'
+      parentField: data.tempBanner
+    - fieldPath: data.dashboardVersion
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: dashboardVersion'
+      parentField: data
+    - fieldPath: data.dashboardVersion.entryPoint
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: entryPoint'
+      parentField: data.dashboardVersion
+    - fieldPath: data.dashboardVersion.name
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: name'
+      parentField: data.dashboardVersion
+    - fieldPath: data.dashboardVersion.minVersion
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: minVersion'
+      parentField: data.dashboardVersion
+    - fieldPath: data.dashboardVersion.version
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: version'
+      parentField: data.dashboardVersion
+    - fieldPath: data.dashboardVersion.checksum
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: checksum'
+      parentField: data.dashboardVersion
+    - fieldPath: data.quickActions
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: quickActions'
+      parentField: data
+    - fieldPath: data.quickActions.enable
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: enable'
+      parentField: data.quickActions
+    - fieldPath: data.quickActions.endpoint
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: endpoint'
+      parentField: data.quickActions
+    - fieldPath: data.smallWidget
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: smallWidget'
+      parentField: data
+    - fieldPath: data.smallWidget.endpoint
+      type: String
+      mandatory: false
+      constraints:
+        minLength: 1
+      description: 'Field: endpoint'
+      parentField: data.smallWidget
+    - fieldPath: data.smallWidget.enable
+      type: Boolean
+      mandatory: false
+      constraints: {}
+      description: 'Field: enable'
+      parentField: data.smallWidget
+    - fieldPath: error
+      type: 'Null'
+      mandatory: false
+      constraints: {}
+      description: 'Field: error'
+    - fieldPath: meta
+      type: Object
+      mandatory: false
+      constraints: {}
+      description: 'Field: meta'
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Field 'status' exists in response
+    type: field-exists
+    target: status
+  - description: Field 'status' is of type 'String'
+    type: field-type
+    target: status
+    expectedValue: String
+  - description: Field 'message' exists in response
+    type: field-exists
+    target: message
+  - description: Field 'message' is of type 'String'
+    type: field-type
+    target: message
+    expectedValue: String
+  - description: Field 'timestamp' exists in response
+    type: field-exists
+    target: timestamp
+  - description: Field 'timestamp' is of type 'String'
+    type: field-type
+    target: timestamp
+    expectedValue: String
+  - description: Field 'correlationId' exists in response
+    type: field-exists
+    target: correlationId
+  - description: Field 'correlationId' is of type 'String'
+    type: field-type
+    target: correlationId
+    expectedValue: String
+  - description: Field 'data' exists in response
+    type: field-exists
+    target: data
+  - description: Field 'data' is of type 'Object'
+    type: field-type
+    target: data
+    expectedValue: Object
+  - description: Field 'error' exists in response
+    type: field-exists
+    target: error
+  - description: Field 'error' is of type 'Null'
+    type: field-type
+    target: error
+    expectedValue: 'Null'
+  - description: Field 'meta' exists in response
+    type: field-exists
+    target: meta
+  - description: Field 'meta' is of type 'Object'
+    type: field-type
+    target: meta
+    expectedValue: Object
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: init
+  sourceRows: ''
+  apiSpecFile: init

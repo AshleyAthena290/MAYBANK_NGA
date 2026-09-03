@@ -1,0 +1,64 @@
+# Test Case Index
+# depappdashboarddddapidesignv13 - getActionListUnread
+# Generated: 2026-09-03T23:50:32.642Z
+---
+feature: depappdashboarddddapidesignv13
+apiName: getActionListUnread
+description: Test cases for getActionListUnread endpoint
+totalScenarios: 7
+scenarios:
+  - id: getActionListUnread-001-positive
+    title: GET /unread - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getactionlistunread
+    priority: P1
+  - id: getActionListUnread-002-missing-auth
+    title: GET /unread - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getActionListUnread-003-invalid-auth
+    title: GET /unread - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getActionListUnread-004-invalid-content-type
+    title: GET /unread - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getActionListUnread-005-duplicate-correlation-id
+    title: GET /unread - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getActionListUnread-006-request-timeout
+    title: GET /unread - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getActionListUnread-007-empty-request-body
+    title: GET /unread - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-09-03T23:50:32.640Z'

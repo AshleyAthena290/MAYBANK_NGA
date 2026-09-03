@@ -52,7 +52,7 @@ async function executeBddGenCommand(options: unknown): Promise<void> {
   const parser = new ApiSpecSheetParserService();
   const apiSpec = await parser.parseSheet(opts.input, opts.sheet);
 
-  const effectiveApiName = apiSpec.apiName || opts.sheet || 'API';
+  const effectiveApiName = opts.sheet || apiSpec.apiName || 'API';
   logger.info(`API spec parsed: ${effectiveApiName} (${apiSpec.method}) with ${apiSpec.requestHeaders.length} request headers and ${apiSpec.responseFields.length} response fields`);
 
   // Convert ApiSpecMetadata to ApiScenario
@@ -76,7 +76,7 @@ async function executeBddGenCommand(options: unknown): Promise<void> {
     testCases,
     opts.outDir,
     extractFeatureName(opts.input),
-    apiSpec.apiName
+    effectiveApiName
   );
 
   logger.info(`Test case files written: ${outputFiles.length} files to ${opts.outDir}`);

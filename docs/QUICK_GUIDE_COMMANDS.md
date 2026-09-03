@@ -33,11 +33,11 @@ Use this flow for API spec workbooks under input/api.
 
 ### 3.1 Parse full API workbook into business YAML scenarios
 
-    npm run dev -- api-spec --input "input/api/P&T_Local_Transfer_DDD_API_Spec_v1.xlsx" --outDir ./artifacts
+    npm run dev -- api-spec --input "input/api/DEP_App_Dashboard_DDD_API_Design_v1.3.xlsx" --outDir ./artifacts/api
 
 ### 3.2 Parse one API sheet into comprehensive YAML
 
-    npm run dev -- api-spec-sheet --input "input/api/P&T_Local_Transfer_DDD_API_Spec_v1.xlsx" --sheet "GetPTMaintenanceTransferInit" --outDir ./artifacts
+    npm run dev -- api-spec-sheet --input "npm run dev -- api-spec --input "input/api/DEP_App_Dashboard_DDD_API_Design_v1.3.xlsx" --outDir ./artifacts" --sheet "GetPTMaintenanceTransferInit" --outDir ./artifacts
 
 ### 3.3 Generate BDD YAML test cases for one API sheet
 
@@ -45,7 +45,7 @@ Use this flow for API spec workbooks under input/api.
 
 ### 3.4 Batch BDD YAML generation for all API sheets
 
-    node scripts/batch-bdd-gen.mjs --input "input/api/P&T_Local_Transfer_DDD_API_Spec_v1.xlsx" --outDir ./artifacts
+    node scripts/batch-bdd-gen.mjs --input "input/api/DEP_App_Dashboard_DDD_API_Design_v1.3.xlsx" --outDir ./artifacts
 
 ## 4) API Test Runner - Execute generated YAML directly
 

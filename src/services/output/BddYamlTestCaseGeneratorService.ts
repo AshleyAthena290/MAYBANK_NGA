@@ -630,8 +630,14 @@ export class BddYamlTestCaseGeneratorService {
   }
 
   private renderYamlWithHeader(testCase: BddTestCase): string {
+    // Sanitize title to remove newlines and escape special characters
+    const rawTitle = testCase.title ?? '';
+    const lines = rawTitle.split('\n');
+    const firstLine = lines[0] || '';
+    const titleForHeader = firstLine.replace(/[#\r\n]/g, '').trim();
+    
     const header = `# BDD Test Case - ${testCase.feature}
-# Generated for: ${testCase.title}
+# Generated for: ${titleForHeader}
 # Purpose: API endpoint test case for QA, BA, and business user review
 # Note: This is a business-readable specification, not a technical implementation
 ---

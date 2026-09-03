@@ -61,7 +61,7 @@ npm run dev -- bdd-gen --input "input/api/ECLIPSE_Account Dashboard_Casa_DDD_API
 Batch all API sheets:
 
 ```bash
-node scripts/batch-bdd-gen.mjs --input "input/api/ECLIPSE_Account Dashboard_Casa_DDD_API_Design_v1_Workshop.xlsx" --outDir ./artifacts
+node scripts/batch-bdd-gen.mjs --input "input/api/DEP_App_Dashboard_DDD_API_Design_v1.3.xlsx" --outDir ./artifacts
 ```
 
 ### Step 2: Run tests directly from YAML
@@ -72,24 +72,24 @@ Run one YAML file:
 npm run dev -- api-test-run --file "artifacts/api/DEP_APP_Dashboard/getactionlist/getActionList-001-positive.yaml" --baseUrl "https://48.193.17.110/dashboard"
 ```
 
-C:\Users\amshahril\Documents\Maybank NGA\MAYBANK_NGA\artifacts\api\ptscanandpaydddapispecv2working\submitoverseasscanpay
+C:\Users\aahmadkamar\Downloads\Maybank\MAYBANK_NGA\artifacts\api\Latest-Batch-1\DEP_App_Dashboard_DDD_API_Design_v1.2
 
 Run by API name:
 
 ```bash
-npm run dev -- api-test-run --api "getactionlist" --baseUrl "https://48.193.17.110/dashboard"
+npm run dev -- api-test-run --api "getsmallwidget" --baseUrl "https://48.193.17.110/dashboard"
 ```
 
 Run by feature:
 
 ```bash
-npm run dev -- api-test-run --feature "eclipselocaltransferdddapidesignv11" --baseUrl "http://localhost:3000"
+npm run dev -- api-test-run --feature "depappdashboarddddapidesignv12" --baseUrl "https://48.193.17.110/dashboard"
 ```
 
 Run by test case id:
 
 ```bash
-npm run dev -- api-test-run --id "GetPTMaintenanceTransferInit-001-positive" --baseUrl "http://localhost:3000"
+npm run dev -- api-test-run --id "getSmallWidget-001-positive" --baseUrl "https://48.193.17.110/dashboard"
 ```
 
 ### Step 3: View test reports

@@ -1,0 +1,93 @@
+# Test Case Index
+# depappdashboarddddapidesignv13 - init
+# Generated: 2026-09-03T23:40:53.382Z
+---
+feature: depappdashboarddddapidesignv13
+apiName: init
+description: Test cases for init endpoint
+totalScenarios: 11
+scenarios:
+  - id: init-001-positive
+    title: GET /flags - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - init
+    priority: P1
+  - id: init-002-missing-auth
+    title: GET /flags - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: init-003-invalid-auth
+    title: GET /flags - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: init-004-invalid-content-type
+    title: GET /flags - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: init-005-duplicate-correlation-id
+    title: GET /flags - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: init-006-request-timeout
+    title: GET /flags - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: init-007-empty-request-body
+    title: GET /flags - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: init-008-required-field-null
+    title: GET /flags - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: init-009-required-field-missing
+    title: GET /flags - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: init-012-string-minimum-length
+    title: GET /flags - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: init-013-string-maximum-length
+    title: GET /flags - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-09-03T23:40:53.381Z'

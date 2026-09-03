@@ -115,6 +115,7 @@ async function main() {
     const sheetsToProcess = allSheets.filter(
       sheet => 
         sheet !== 'README' &&
+        sheet !== 'INDEX' &&
         sheet !== 'API_Specs_Index' && 
         !sheet.endsWith('>>') &&
         !skipSheets.includes(sheet)

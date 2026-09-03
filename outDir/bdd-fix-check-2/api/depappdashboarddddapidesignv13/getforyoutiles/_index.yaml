@@ -1,0 +1,93 @@
+# Test Case Index
+# depappdashboarddddapidesignv13 - getForYouTiles
+# Generated: 2026-09-03T23:41:13.680Z
+---
+feature: depappdashboarddddapidesignv13
+apiName: getForYouTiles
+description: Test cases for getForYouTiles endpoint
+totalScenarios: 11
+scenarios:
+  - id: getForYouTiles-001-positive
+    title: GET /for-you-tiles - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getforyoutiles
+    priority: P1
+  - id: getForYouTiles-002-missing-auth
+    title: GET /for-you-tiles - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getForYouTiles-003-invalid-auth
+    title: GET /for-you-tiles - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getForYouTiles-004-invalid-content-type
+    title: GET /for-you-tiles - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: getForYouTiles-005-duplicate-correlation-id
+    title: GET /for-you-tiles - Duplicate Correlation ID
+    type: positive
+    tags:
+      - edge-case
+      - idempotency
+    priority: P2
+  - id: getForYouTiles-006-request-timeout
+    title: GET /for-you-tiles - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getForYouTiles-007-empty-request-body
+    title: GET /for-you-tiles - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+  - id: getForYouTiles-008-required-field-null
+    title: GET /for-you-tiles - Required Field Null
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getForYouTiles-009-required-field-missing
+    title: GET /for-you-tiles - Required Field Missing
+    type: positive
+    tags:
+      - boundary
+      - required-field
+      - validation
+    priority: P2
+  - id: getForYouTiles-012-string-minimum-length
+    title: GET /for-you-tiles - Minimum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+  - id: getForYouTiles-013-string-maximum-length
+    title: GET /for-you-tiles - Maximum String Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+    priority: P2
+generatedAt: '2026-09-03T23:41:13.680Z'

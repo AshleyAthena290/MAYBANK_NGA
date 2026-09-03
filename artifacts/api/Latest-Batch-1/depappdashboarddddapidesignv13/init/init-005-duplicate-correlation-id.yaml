@@ -1,0 +1,101 @@
+# BDD Test Case - depappdashboarddddapidesignv13
+# Generated for: GET /flags - Duplicate Correlation ID
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: init-005-duplicate-correlation-id
+title: GET /flags - Duplicate Correlation ID
+feature: depappdashboarddddapidesignv13
+description: Same request with duplicate correlation ID should be idempotent
+tags:
+  - edge-case
+  - idempotency
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+  - First request with correlation ID has been processed
+testData: {}
+request:
+  method: GET
+  url: https://{IP}:{PORT}/v1/init/flags
+  endpoint: https://{IP}:{PORT}/v1/init/flags
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    X-Correlation-Id: duplicate-correlation-123
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    Request Parameter: <value>
+    domain: <value>
+    module: <value>
+    subModule: <value>
+    GET  https://{IP}:{PORT}/v1/init/flags?domain=dep&module=dashboard&subModule=banking: <value>
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    data: Object
+    userHeader: Object
+    nudgeDuration: Integer
+    endpoint: String
+    enable: Boolean
+    maxNudgeCount: Integer
+    appVersion: Object
+    minAppVersion: String
+    latestAppVersion: String
+    largeWidget: Object
+    forYouTiles: Object
+    mainPreview: Object
+    platform: Object
+    ios: Object
+    minVersion: String
+    android: Object
+    mediumWidget: Object
+    searchEngine: Object
+    tempBanner: Object
+    dashboardVersion: Object
+    entryPoint: String
+    name: String
+    version: String
+    checksum: String
+    quickActions: Object
+    smallWidget: Object
+    error: 'Null'
+    meta: Object
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200 (or 202 for idempotent)
+    type: custom
+  - description: Same response as first request
+    type: custom
+  - description: No duplicate processing occurred
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: init
+  sourceRows: ''
+  apiSpecFile: init
