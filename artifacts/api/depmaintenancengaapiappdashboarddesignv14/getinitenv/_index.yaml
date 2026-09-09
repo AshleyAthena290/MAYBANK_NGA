@@ -1,0 +1,115 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv14 - getInitEnv
+# Generated: 2026-09-09T02:26:19.119Z
+---
+feature: depmaintenancengaapiappdashboarddesignv14
+apiName: getInitEnv
+description: Test cases for getInitEnv endpoint
+totalScenarios: 12
+scenarios:
+  - id: getInitEnv-001-positive
+    title: GET /env - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getinitenv
+    priority: P1
+  - id: getInitEnv-002-missing-auth
+    title: GET /env - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getInitEnv-003-invalid-auth
+    title: GET /env - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getInitEnv-004-missing-x-app-version-header
+    title: GET /env - Missing 'X-APP-VERSION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getinitenv
+    priority: P2
+  - id: getInitEnv-005-invalid-x-app-version-header
+    title: GET /env - Invalid value for 'X-APP-VERSION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getinitenv
+    priority: P2
+  - id: getInitEnv-006-missing-x-mb-app-header
+    title: GET /env - Missing 'X-MB-APP' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getinitenv
+    priority: P2
+  - id: getInitEnv-007-invalid-x-mb-app-header
+    title: GET /env - Invalid value for 'X-MB-APP' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getinitenv
+    priority: P2
+  - id: getInitEnv-008-missing-x-mb-region-header
+    title: GET /env - Missing 'X-MB-REGION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getinitenv
+    priority: P2
+  - id: getInitEnv-009-invalid-x-mb-region-header
+    title: GET /env - Invalid value for 'X-MB-REGION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getinitenv
+    priority: P2
+  - id: getInitEnv-010-missing-x-mb-locale-header
+    title: GET /env - Missing 'X-MB-LOCALE' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getinitenv
+    priority: P2
+  - id: getInitEnv-011-invalid-x-mb-locale-header
+    title: GET /env - Invalid value for 'X-MB-LOCALE' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getinitenv
+    priority: P2
+  - id: getInitEnv-012-request-timeout
+    title: GET /env - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-09T02:26:19.117Z'

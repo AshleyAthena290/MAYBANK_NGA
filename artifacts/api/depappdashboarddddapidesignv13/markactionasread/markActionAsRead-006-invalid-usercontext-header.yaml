@@ -32,12 +32,10 @@ request:
     UserContext: '{"gcif":"1000000012","region":"ID","app":"NGA"'
     Content-Type: application/json
     Accept: application/json
-  pathParams: {}
-  queryParams: {}
-  body:
-    None: <value>
-    Request Parameter: Request Parameter
+  pathParams:
     id: 1f0a9c2e-1d4b-4f7a-9c11-7b6d2a5e8f30
+  queryParams: {}
+  body: {}
 response:
   successStatusCode: 400
   successDescription: Bad Request

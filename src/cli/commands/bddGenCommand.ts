@@ -86,19 +86,24 @@ async function executeBddGenCommand(options: unknown): Promise<void> {
   console.log(`📄 Files created: ${outputFiles.length}`);
 }
 
-/** Rebuilds a nested body object from a flat list of fields carrying immediate-parent names
- *  (e.g. "deviceId" with parentField "device"), instead of flattening everything to the top level.
- *  Pre-creates a container object for every distinct parent name referenced (pass 1) so children
- *  attach correctly regardless of what order the sheet rows appear in, then attaches each field
- *  either into its parent's container or at the root, reusing the pre-created container by
- *  reference if the field is itself a parent of other fields (pass 2). This supports arbitrary
- *  nesting depth as long as the sheet consistently uses the same name for a given parent.
- *
- *  When `sampleJson` is provided and parses successfully, each leaf field's value is looked up in
- *  the real sample at its full dot path (e.g. "device.deviceId") instead of using the "<value>"
- *  placeholder — so generated YAML comes pre-filled with realistic data straight from the "Request
- *  Sample" cell. Fields the sample doesn't cover (or when no sample exists at all) still fall back
- *  to "<value>" individually, so a partially-covering sample doesn't block the rest. */
+function tryParseLenientJson(raw: string): unknown {
+  try {
+    return JSON.parse(raw);
+  } catch {
+    // fall through to a repair attempt below
+  }
+
+  const repaired = raw
+    .replace(/([}\]"\d]|true|false|null)(\s*\n\s*)("(?:\\.|[^"\\])*"\s*:)/g, '$1,$2$3')
+    .replace(/,(\s*[}\]])/g, '$1');
+
+  try {
+    return JSON.parse(repaired);
+  } catch {
+    return undefined;
+  }
+}
+
 function buildNestedRequestBody(
   fields: Array<{ name: string; parentField?: string; sampleValue?: string }>,
   sampleJson?: string
@@ -114,14 +119,7 @@ function buildNestedRequestBody(
     }
   }
 
-  let parsedSample: unknown;
-  if (sampleJson) {
-    try {
-      parsedSample = JSON.parse(sampleJson);
-    } catch {
-      parsedSample = undefined;
-    }
-  }
+  const parsedSample = sampleJson ? tryParseLenientJson(sampleJson) : undefined;
 
   for (const field of fields) {
     const isContainer = containers.has(field.name);
@@ -129,16 +127,14 @@ function buildNestedRequestBody(
 
     if (isContainer) {
       value = containers.get(field.name);
-    } else if (field.sampleValue) {
-      // An explicit per-field sample (from the field's own "Sample Value" column) takes priority
-      // over a whole-JSON-sample lookup, since it's a direct, intentional value for this field.
-      value = field.sampleValue;
-    } else if (parsedSample !== undefined) {
-      const path = buildFieldPath(field, fieldByName);
-      const sampleValue = getValueAtPath(parsedSample, path);
-      value = sampleValue !== undefined ? sampleValue : '<value>';
     } else {
-      value = '<value>';
+      // The "Request Sample" JSON is the actual request body that gets sent, so it takes priority
+      // over the HTTP Body table's own per-field "Sample Value" column — that column is just
+      // documentation of an example value for the field in isolation, and can disagree with (or
+      // be a stale duplicate of) what the Request Sample actually shows for that same field.
+      const path = buildFieldPath(field, fieldByName);
+      const sampleValue = parsedSample !== undefined ? getValueAtPath(parsedSample, path) : undefined;
+      value = sampleValue !== undefined ? sampleValue : field.sampleValue ?? '<value>';
     }
 
     if (field.parentField) {
@@ -158,15 +154,6 @@ function buildNestedRequestBody(
   return pruneDuplicateFlatFields(root);
 }
 
-/** Drops top-level fields that are (a) still unfilled "<value>" placeholders, and (b) whose name
- *  already appears as a key somewhere inside another already-built nested object at the root.
- *  This handles sheets that list a nested object's children as their own separate rows without a
- *  "Parent" column value linking them back — e.g. "device" resolves correctly as a full nested
- *  object via a sample-JSON match, but the sheet also separately lists "deviceId", "hardwareId",
- *  etc. as independent top-level rows with no parent info. Those end up unmatched at the (wrong)
- *  root level and fall back to "<value>", duplicating data already present inside "device". Only
- *  placeholder duplicates are removed — a field with a real, distinct value is always kept, so this
- *  never silently discards genuine data even if a name happens to collide. */
 function pruneDuplicateFlatFields(root: Record<string, unknown>): Record<string, unknown> {
   const nestedKeys = new Set<string>();
   const collectKeys = (value: unknown): void => {

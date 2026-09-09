@@ -1,0 +1,59 @@
+# BDD Test Case - depmaintenancengaapiappdashboarddesignv14
+# Generated for: GET /banners - Invalid value for 'X-MB-REGION' header
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getBanner-009-invalid-x-mb-region-header
+title: GET /banners - Invalid value for 'X-MB-REGION' header
+feature: depmaintenancengaapiappdashboarddesignv14
+description: Invalid value for 'X-MB-REGION' header
+tags:
+  - negative
+  - header
+  - api
+  - getbanner
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{EXP-IP}:{EXP-PORT}/dep/maintenance/v1/internal/banners
+  endpoint: https://{EXP-IP}:{EXP-PORT}/dep/maintenance/v1/internal/banners
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    X-APP-VERSION: 0.0.1
+    X-MB-APP: NGA
+    X-MB-REGION: INVALID_VALUE
+    X-MB-LOCALE: id_ID
+    Accept: application/json
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams:
+    screen_name: PAY_BILLS
+    app_version: 1.5.0
+response:
+  successStatusCode: 400
+  successDescription: Bad Request
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Invalid value for 'X-MB-REGION' header
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getBanner
+  sourceRows: ''
+  apiSpecFile: getBanner

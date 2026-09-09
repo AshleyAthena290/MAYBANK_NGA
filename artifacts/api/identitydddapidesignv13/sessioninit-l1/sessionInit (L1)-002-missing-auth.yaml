@@ -27,34 +27,31 @@ request:
   endpoint: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/session/init'
   baseUrl: https://{Payment-IP}:{Payment-PORT}
   headers:
-    client-id: <value>
-    api-key: <value>
-    env: <value>
-    accept: <value>
+    client-id: pnt-17ht3
+    api-key: a7dfa879sd8a7sd8
+    env: UAT
+    accept: application/json
     Content-Type: application/json
   pathParams: {}
   queryParams: {}
   body:
-    type: <value>
-    customerKey: <value>
-    device: <value>
-    deviceId: <value>
-    hardwareId: <value>
-    platform: <value>
-    appVersion: <value>
-    deviceName: <value>
-    deviceModel: <value>
-    deviceType: <value>
-    osVersion: <value>
-    location: <value>
-    ipAddress: <value>
-    userAgent: <value>
-    publicKey: <value>
-    key: <value>
-    alg: <value>
-    Request Parameter: <value>
-    ? "{\n  \"type\": \"customer-key\",\n  \"customerKey\": \"a0f4a20e9-fa9e-4459-9b94-faf0adfd293dsad3334\",\n  \"device\": {\n    \"deviceId\": \"084196e8-65fb-4bf4-b98f-2db1d5a355ba\",\n    \"hardwareId\": \"HW-ABC-123\",\n    \"platform\": \"ANDROID\",\n    \"appVersion\": \"1.0.0\",\n    \"deviceName\": \"Xiaomi+2201117TY\",\n    \"deviceModel\": \"SM-S921B\",\n    \"deviceType\": \"Galaxy S24\",\n    \"osVersion\": \"Android 15\",\n    \"location\": \"lon:106.7994811 lat:-6.2277626\",\n    \"ipAddress\":\"172.20.10.7\",\n    \"userAgent\": \"Chrome/143.0.12.45\"\n  }\n  \"publicKey\": {\n    \"key\": \"ECDH_PUBLIC_KEY_BASE64\",\n    \"alg\": \"ECDH-256\"\n  },\n}"
-    : <value>
+    type: customer-key
+    customerKey: a0f4a20e9-fa9e-4459-9b94-faf0adfd293dsad3334
+    device:
+      deviceId: 084196e8-65fb-4bf4-b98f-2db1d5a355ba
+      hardwareId: HW-ABC-123
+      platform: ANDROID
+      appVersion: 1.0.0
+      deviceName: Xiaomi+2201117TY
+      deviceModel: SM-S921B
+      deviceType: Galaxy S24
+      osVersion: Android 15
+      location: lon:106.7994811 lat:-6.2277626
+      ipAddress: 172.20.10.7
+      userAgent: Chrome/143.0.12.45
+    publicKey:
+      key: ECDH_PUBLIC_KEY_BASE64
+      alg: ECDH-256
 response:
   successStatusCode: 401
   successDescription: Unauthorized

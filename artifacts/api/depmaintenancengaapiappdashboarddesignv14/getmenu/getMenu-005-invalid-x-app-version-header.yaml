@@ -1,0 +1,57 @@
+# BDD Test Case - depmaintenancengaapiappdashboarddesignv14
+# Generated for: GET /menu - Invalid value for 'X-APP-VERSION' header
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getMenu-005-invalid-x-app-version-header
+title: GET /menu - Invalid value for 'X-APP-VERSION' header
+feature: depmaintenancengaapiappdashboarddesignv14
+description: Invalid value for 'X-APP-VERSION' header
+tags:
+  - negative
+  - header
+  - api
+  - getmenu
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{EXP-IP}:{EXP-PORT}/v1/internal/menu
+  endpoint: https://{EXP-IP}:{EXP-PORT}/v1/internal/menu
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    X-APP-VERSION: INVALID_VALUE
+    X-MB-APP: NGA
+    X-MB-REGION: ID
+    X-MB-LOCALE: id_ID
+    Accept: application/json
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+response:
+  successStatusCode: 400
+  successDescription: Bad Request
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Invalid value for 'X-APP-VERSION' header
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getMenu
+  sourceRows: ''
+  apiSpecFile: getMenu

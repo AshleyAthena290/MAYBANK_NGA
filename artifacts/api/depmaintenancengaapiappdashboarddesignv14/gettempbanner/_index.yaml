@@ -1,0 +1,115 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv14 - getTempBanner
+# Generated: 2026-09-09T02:25:47.864Z
+---
+feature: depmaintenancengaapiappdashboarddesignv14
+apiName: getTempBanner
+description: Test cases for getTempBanner endpoint
+totalScenarios: 12
+scenarios:
+  - id: getTempBanner-001-positive
+    title: GET /temp-banner - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - gettempbanner
+    priority: P1
+  - id: getTempBanner-002-missing-auth
+    title: GET /temp-banner - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getTempBanner-003-invalid-auth
+    title: GET /temp-banner - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getTempBanner-004-missing-x-app-version-header
+    title: GET /temp-banner - Missing 'X-APP-VERSION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - gettempbanner
+    priority: P2
+  - id: getTempBanner-005-invalid-x-app-version-header
+    title: GET /temp-banner - Invalid value for 'X-APP-VERSION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - gettempbanner
+    priority: P2
+  - id: getTempBanner-006-missing-x-mb-app-header
+    title: GET /temp-banner - Missing 'X-MB-APP' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - gettempbanner
+    priority: P2
+  - id: getTempBanner-007-invalid-x-mb-app-header
+    title: GET /temp-banner - Invalid value for 'X-MB-APP' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - gettempbanner
+    priority: P2
+  - id: getTempBanner-008-missing-x-mb-region-header
+    title: GET /temp-banner - Missing 'X-MB-REGION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - gettempbanner
+    priority: P2
+  - id: getTempBanner-009-invalid-x-mb-region-header
+    title: GET /temp-banner - Invalid value for 'X-MB-REGION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - gettempbanner
+    priority: P2
+  - id: getTempBanner-010-missing-x-mb-locale-header
+    title: GET /temp-banner - Missing 'X-MB-LOCALE' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - gettempbanner
+    priority: P2
+  - id: getTempBanner-011-invalid-x-mb-locale-header
+    title: GET /temp-banner - Invalid value for 'X-MB-LOCALE' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - gettempbanner
+    priority: P2
+  - id: getTempBanner-012-request-timeout
+    title: GET /temp-banner - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-09T02:25:47.861Z'

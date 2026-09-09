@@ -486,11 +486,23 @@ export class BddYamlTestCaseGeneratorService {
     return updated as T;
   }
 
+  /** Caps slug length at 60 chars (cutting cleanly at a hyphen boundary where possible) as a
+   *  defense-in-depth safeguard: even if some future data anomaly ever produces an oversized field
+   *  name again, generated filenames can never blow past Windows' path length limit and crash
+   *  file writing — the parser-level fixes address the actual root causes, this just guarantees
+   *  the failure mode can't recur silently through some other data path. */
   private slugify(value: string): string {
-    return value
+    const slug = value
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/^-+|-+$/g, '');
+
+    if (slug.length <= 60) {
+      return slug;
+    }
+    const truncated = slug.slice(0, 60);
+    const lastHyphen = truncated.lastIndexOf('-');
+    return lastHyphen > 20 ? truncated.slice(0, lastHyphen) : truncated;
   }
 
   /** First value of each enumerated placeholder axis, used as the default substitution for non-positive scenarios. */

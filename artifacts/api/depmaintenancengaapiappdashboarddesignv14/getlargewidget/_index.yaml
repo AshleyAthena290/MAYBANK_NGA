@@ -1,0 +1,115 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv14 - getLargeWidget
+# Generated: 2026-09-09T02:25:22.587Z
+---
+feature: depmaintenancengaapiappdashboarddesignv14
+apiName: getLargeWidget
+description: Test cases for getLargeWidget endpoint
+totalScenarios: 12
+scenarios:
+  - id: getLargeWidget-001-positive
+    title: GET /large-widget - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getlargewidget
+    priority: P1
+  - id: getLargeWidget-002-missing-auth
+    title: GET /large-widget - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getLargeWidget-003-invalid-auth
+    title: GET /large-widget - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getLargeWidget-004-missing-x-app-version-header
+    title: GET /large-widget - Missing 'X-APP-VERSION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getlargewidget
+    priority: P2
+  - id: getLargeWidget-005-invalid-x-app-version-header
+    title: GET /large-widget - Invalid value for 'X-APP-VERSION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getlargewidget
+    priority: P2
+  - id: getLargeWidget-006-missing-x-mb-app-header
+    title: GET /large-widget - Missing 'X-MB-APP' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getlargewidget
+    priority: P2
+  - id: getLargeWidget-007-invalid-x-mb-app-header
+    title: GET /large-widget - Invalid value for 'X-MB-APP' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getlargewidget
+    priority: P2
+  - id: getLargeWidget-008-missing-x-mb-region-header
+    title: GET /large-widget - Missing 'X-MB-REGION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getlargewidget
+    priority: P2
+  - id: getLargeWidget-009-invalid-x-mb-region-header
+    title: GET /large-widget - Invalid value for 'X-MB-REGION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getlargewidget
+    priority: P2
+  - id: getLargeWidget-010-missing-x-mb-locale-header
+    title: GET /large-widget - Missing 'X-MB-LOCALE' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getlargewidget
+    priority: P2
+  - id: getLargeWidget-011-invalid-x-mb-locale-header
+    title: GET /large-widget - Invalid value for 'X-MB-LOCALE' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getlargewidget
+    priority: P2
+  - id: getLargeWidget-012-request-timeout
+    title: GET /large-widget - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-09T02:25:22.584Z'

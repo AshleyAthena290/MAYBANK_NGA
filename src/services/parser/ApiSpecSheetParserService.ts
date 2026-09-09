@@ -23,10 +23,6 @@ export interface ApiSpecMetadata {
     sampleValue?: string;
     constraints?: { minLength?: number; maxLength?: number; minValue?: number; maxValue?: number };
   }>;
-  /** Path/query parameters from the sheet's "Request Parameter" section (e.g. "id" for a
-   *  {id} path placeholder, or "domain"/"module"/"subModule" for query string params). Whether
-   *  each one is a path or query param is decided later by checking the URL for a matching
-   *  "{name}" token, rather than needing a separate column in the sheet for that distinction. */
   requestParameters: Array<{
     name: string;
     type: string;
@@ -55,6 +51,74 @@ export class ApiSpecSheetParserService {
     return this.parseWorksheet(worksheet);
   }
 
+  /** Matches a section-marker row against a label regardless of whether the sheet uses a single
+   *  merged cell for it (col A = the label itself) or the two-column pattern used elsewhere in
+   *  these sheets (col A = generic "Request"/"Response", col B = the actual label). Sheets aren't
+   *  consistent about which pattern they use for a given section — even the same conceptual
+   *  section (e.g. "Request Sample") uses different layouts across different sheets — so checking
+   *  only one pattern risks the exact bug seen with "Request Parameter": the section never
+   *  switches, and that row's real content (e.g. a full JSON sample) gets misread as if it were a
+   *  field belonging to whatever section was previously active. */
+  private matchesSectionLabel(values: string[], label: string): boolean {
+    const col0 = values[0]?.toLowerCase().trim() || '';
+    const col1 = values[1]?.toLowerCase().trim() || '';
+    return col0 === label || col1 === label;
+  }
+
+  /** Extracts the cell value that follows a matched section label, correctly handling both
+   *  layouts: single-cell ("Request Sample" in col A, content in col B) and two-column ("Request"
+   *  in col A, "Request Sample" in col B, content in col C). Without this, a two-column sheet's
+   *  actual sample content would be read one column too early (picking up the label text itself
+   *  or an empty cell) rather than the real JSON. */
+  private getSectionValue(values: string[], label: string): string {
+    const col0 = values[0]?.toLowerCase().trim() || '';
+    const col1 = values[1]?.toLowerCase().trim() || '';
+    if (col0 === label) return values[1] || '';
+    if (col1 === label) return values[2] || '';
+    return '';
+  }
+
+  /** Reads a cell's text preserving leading whitespace (only trailing whitespace is trimmed) —
+   *  used solely to detect indentation depth in the Name column for sheets that signal nesting
+   *  via indentation rather than an explicit Parent column. The regular cellToString() trims
+   *  leading whitespace too, which is correct for every other use but would destroy the only
+   *  signal indentation-based sheets provide for which fields are nested under which parent. */
+  private cellToStringKeepLeadingWhitespace(value: unknown): string {
+    if (value === undefined || value === null) return '';
+    if (typeof value === 'string') return value.replace(/\s+$/, '');
+    if (typeof value === 'number' || typeof value === 'boolean') return String(value);
+    if (value instanceof Date) return value.toISOString();
+    if (typeof value === 'object' && 'richText' in (value as any)) {
+      return (value as any).richText.map((r: any) => r.text).join('').replace(/\s+$/, '');
+    }
+    if (typeof value === 'object' && 'text' in (value as any)) {
+      return (value as any).text || '';
+    }
+    return '';
+  }
+
+  /** Given a field's raw (untrimmed) name and the running indent stack for its table, resolves
+   *  which preceding field it's nested under (if any) and updates the stack. Standard
+   *  indentation-parser approach: pop any stack entries at the same or deeper indent than the
+   *  current row (they're siblings or done), whatever remains on top (if anything) is the parent.
+   *  Mutates the passed-in stack array in place. */
+  private resolveIndentParent(
+    rawName: string,
+    fieldName: string,
+    stack: Array<{ depth: number; name: string }>
+  ): string | undefined {
+    const leadingWhitespace = rawName.match(/^[ \t]*/)?.[0] ?? '';
+    const depth = leadingWhitespace.length;
+
+    while (stack.length > 0 && stack[stack.length - 1]!.depth >= depth) {
+      stack.pop();
+    }
+
+    const parent = stack.length > 0 ? stack[stack.length - 1]!.name : undefined;
+    stack.push({ depth, name: fieldName });
+    return parent;
+  }
+
   private parseWorksheet(worksheet: ExcelJS.Worksheet): ApiSpecMetadata {
     const spec: ApiSpecMetadata = {
       apiName: '',
@@ -71,6 +135,7 @@ export class ApiSpecSheetParserService {
     let currentSection: 'metadata' | 'request-headers' | 'request-body' | 'request-parameter' | 'response' | 'sample' = 'metadata';
     let isReadingFields = false;
     let fieldHeaderColumns: Record<string, number> = {};
+    let requestIndentStack: Array<{ depth: number; name: string }> = [];
 
     worksheet.eachRow({ includeEmpty: false }, (row: ExcelJS.Row, rowNumber: number) => {
       const values = this.rowToStringArray(row);
@@ -105,23 +170,21 @@ export class ApiSpecSheetParserService {
       }
 
       // ──── Request section ────
-      if (firstCol === 'request' && values[1]?.toLowerCase().trim() === 'http header') {
+      // Each marker below tolerates both a single merged cell and the two-column pattern, since
+      // sheets aren't consistent about which they use — even for the same conceptual section.
+      if (this.matchesSectionLabel(values, 'http header')) {
         currentSection = 'request-headers';
         isReadingFields = false;
         return;
       }
 
-      if (firstCol === 'request' && values[1]?.toLowerCase().trim() === 'http body') {
+      if (this.matchesSectionLabel(values, 'http body')) {
         currentSection = 'request-body';
         isReadingFields = false;
         return;
       }
 
-      // "Request Parameter" is its own section (single-cell label, unlike "Request"/"HTTP Header"
-      // which spans two cells) — previously unrecognized entirely, so this section's rows fell
-      // through and got misread as body fields, corrupting the generated request body with things
-      // like a stray "id" or "Request Parameter" junk entry.
-      if (firstCol === 'request parameter') {
+      if (this.matchesSectionLabel(values, 'request parameter')) {
         currentSection = 'request-parameter';
         isReadingFields = false;
         return;
@@ -132,7 +195,7 @@ export class ApiSpecSheetParserService {
       // section would greedily swallow the "Request Sample" row (and its full JSON blob) as if it
       // were a field's name/value, corrupting the generated body with the entire sample dumped in
       // as a single mangled field.
-      const startsNewSection = firstCol === 'request sample' || firstCol.startsWith('response');
+      const startsNewSection = this.matchesSectionLabel(values, 'request sample') || firstCol.startsWith('response');
       if (
         (currentSection === 'request-headers' || currentSection === 'request-body' || currentSection === 'request-parameter') &&
         !startsNewSection
@@ -141,13 +204,27 @@ export class ApiSpecSheetParserService {
         if (values[0]?.toLowerCase() === 'name' || (values[0]?.toLowerCase() === 'request' && values[1]?.toLowerCase() === 'name')) {
           fieldHeaderColumns = this.buildColumnMap(values);
           isReadingFields = true;
+          requestIndentStack = [];
           return;
         }
 
         // Field data row
         if (isReadingFields && fieldHeaderColumns['name'] !== undefined) {
           const field = this.parseFieldRow(values, fieldHeaderColumns);
-          if (field && field.name && field.name.toLowerCase() !== 'no request body') {
+
+          if (field && field.name && this.looksLikeMalformedFieldName(field.name)) {
+            if (!spec.requestSampleJson) {
+              spec.requestSampleJson = field.name;
+            }
+          } else if (field && field.name && field.name.toLowerCase() !== 'no request body' && !this.isSentinelFieldName(field.name)) {
+            if (fieldHeaderColumns['parent'] === undefined && !field.parentField) {
+              const rawName = this.cellToStringKeepLeadingWhitespace(row.getCell(fieldHeaderColumns['name'] + 1).value);
+              const parent = this.resolveIndentParent(rawName, field.name, requestIndentStack);
+              if (parent) {
+                field.parentField = parent;
+              }
+            }
+
             if (currentSection === 'request-headers') {
               spec.requestHeaders.push(field);
             } else if (currentSection === 'request-parameter') {
@@ -160,10 +237,10 @@ export class ApiSpecSheetParserService {
       }
 
       // ──── Request Sample section ────
-      if (firstCol === 'request sample') {
+      if (this.matchesSectionLabel(values, 'request sample')) {
         currentSection = 'sample';
         isReadingFields = false;
-        spec.requestSampleJson = values[1] || '';
+        spec.requestSampleJson = this.getSectionValue(values, 'request sample');
         return;
       }
 
@@ -186,17 +263,17 @@ export class ApiSpecSheetParserService {
         // Field data row - read any non-empty row that has a name
         if (isReadingFields && fieldHeaderColumns['name'] !== undefined && firstCol.trim().length > 0) {
           const field = this.parseFieldRow(values, fieldHeaderColumns);
-          if (field && field.name && field.name.toLowerCase() !== 'no response body' && !field.name.toLowerCase().includes('response')) {
+          if (field && field.name && field.name.toLowerCase() !== 'no response body' && !field.name.toLowerCase().includes('response') && !this.isSentinelFieldName(field.name) && !this.looksLikeMalformedFieldName(field.name)) {
             spec.responseFields.push(field);
           }
         }
       }
 
       // ──── Response Sample section ────
-      if (firstCol === 'response sample') {
+      if (this.matchesSectionLabel(values, 'response sample')) {
         currentSection = 'sample';
         isReadingFields = false;
-        spec.responseSampleJson = values[1] || '';
+        spec.responseSampleJson = this.getSectionValue(values, 'response sample');
         
         // Try to extract fields from response sample JSON
         if (spec.responseSampleJson) {
@@ -217,6 +294,29 @@ export class ApiSpecSheetParserService {
     });
 
     return spec;
+  }
+
+  /** True if a field's name is a common "no data" sentinel used in these sheets (e.g. a lone
+   *  "None" row meaning "this API has no parameters/body/headers") rather than a real field —
+   *  these should never be treated as an actual header/body/query field, since sending a literal
+   *  "None=..." query string or header would be sent to the real API otherwise. */
+  /** True if a candidate field's name looks like it's actually a JSON blob (or other malformed
+   *  data) that leaked into the "Name" column, rather than a real field name — e.g. an unlabeled
+   *  sample-JSON row (no section marker on that row at all, often from a merged-cell artifact)
+   *  that section-boundary detection alone can't catch, since there's no label to detect in the
+   *  first place. A real field name is always a short, single-line plain identifier; nothing
+   *  legitimate starts with "{"/"[", spans multiple lines, or runs to hundreds of characters. */
+  private looksLikeMalformedFieldName(name: string): boolean {
+    const trimmed = name.trim();
+    if (trimmed.length > 100) return true;
+    if (/[\r\n]/.test(trimmed)) return true;
+    if (trimmed.startsWith('{') || trimmed.startsWith('[')) return true;
+    return false;
+  }
+
+  private isSentinelFieldName(name: string): boolean {
+    const normalized = name.toLowerCase().trim();
+    return ['none', 'nil', 'n/a', 'na', '-', 'no parameters', 'no request parameter', 'no request parameters'].includes(normalized);
   }
 
   private rowToStringArray(row: ExcelJS.Row): string[] {

@@ -1,0 +1,115 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv14 - getRuleField
+# Generated: 2026-09-09T02:25:54.816Z
+---
+feature: depmaintenancengaapiappdashboarddesignv14
+apiName: getRuleField
+description: Test cases for getRuleField endpoint
+totalScenarios: 12
+scenarios:
+  - id: getRuleField-001-positive
+    title: GET /rule-fields - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getrulefield
+    priority: P1
+  - id: getRuleField-002-missing-auth
+    title: GET /rule-fields - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getRuleField-003-invalid-auth
+    title: GET /rule-fields - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getRuleField-004-missing-x-app-version-header
+    title: GET /rule-fields - Missing 'X-APP-VERSION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getrulefield
+    priority: P2
+  - id: getRuleField-005-invalid-x-app-version-header
+    title: GET /rule-fields - Invalid value for 'X-APP-VERSION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getrulefield
+    priority: P2
+  - id: getRuleField-006-missing-x-mb-app-header
+    title: GET /rule-fields - Missing 'X-MB-APP' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getrulefield
+    priority: P2
+  - id: getRuleField-007-invalid-x-mb-app-header
+    title: GET /rule-fields - Invalid value for 'X-MB-APP' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getrulefield
+    priority: P2
+  - id: getRuleField-008-missing-x-mb-region-header
+    title: GET /rule-fields - Missing 'X-MB-REGION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getrulefield
+    priority: P2
+  - id: getRuleField-009-invalid-x-mb-region-header
+    title: GET /rule-fields - Invalid value for 'X-MB-REGION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getrulefield
+    priority: P2
+  - id: getRuleField-010-missing-x-mb-locale-header
+    title: GET /rule-fields - Missing 'X-MB-LOCALE' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getrulefield
+    priority: P2
+  - id: getRuleField-011-invalid-x-mb-locale-header
+    title: GET /rule-fields - Invalid value for 'X-MB-LOCALE' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getrulefield
+    priority: P2
+  - id: getRuleField-012-request-timeout
+    title: GET /rule-fields - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-09T02:25:54.814Z'

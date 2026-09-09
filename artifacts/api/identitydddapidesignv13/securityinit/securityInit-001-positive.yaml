@@ -25,8 +25,8 @@ preconditions:
 testData: {}
 request:
   method: GET
-  url: 'https://{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/security/init'
-  endpoint: 'https://{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/security/init'
+  url: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/security/init'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/security/init'
   baseUrl: https://{Payment-IP}:{Payment-PORT}
   headers:
     Accept: application/json

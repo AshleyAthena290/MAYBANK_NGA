@@ -1,0 +1,115 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv14 - getSmallWidgetDefault
+# Generated: 2026-09-09T02:25:33.497Z
+---
+feature: depmaintenancengaapiappdashboarddesignv14
+apiName: getSmallWidgetDefault
+description: Test cases for getSmallWidgetDefault endpoint
+totalScenarios: 12
+scenarios:
+  - id: getSmallWidgetDefault-001-positive
+    title: GET /default - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getsmallwidgetdefault
+    priority: P1
+  - id: getSmallWidgetDefault-002-missing-auth
+    title: GET /default - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getSmallWidgetDefault-003-invalid-auth
+    title: GET /default - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getSmallWidgetDefault-004-missing-x-app-version-header
+    title: GET /default - Missing 'X-APP-VERSION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getsmallwidgetdefault
+    priority: P2
+  - id: getSmallWidgetDefault-005-invalid-x-app-version-header
+    title: GET /default - Invalid value for 'X-APP-VERSION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getsmallwidgetdefault
+    priority: P2
+  - id: getSmallWidgetDefault-006-missing-x-mb-app-header
+    title: GET /default - Missing 'X-MB-APP' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getsmallwidgetdefault
+    priority: P2
+  - id: getSmallWidgetDefault-007-invalid-x-mb-app-header
+    title: GET /default - Invalid value for 'X-MB-APP' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getsmallwidgetdefault
+    priority: P2
+  - id: getSmallWidgetDefault-008-missing-x-mb-region-header
+    title: GET /default - Missing 'X-MB-REGION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getsmallwidgetdefault
+    priority: P2
+  - id: getSmallWidgetDefault-009-invalid-x-mb-region-header
+    title: GET /default - Invalid value for 'X-MB-REGION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getsmallwidgetdefault
+    priority: P2
+  - id: getSmallWidgetDefault-010-missing-x-mb-locale-header
+    title: GET /default - Missing 'X-MB-LOCALE' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getsmallwidgetdefault
+    priority: P2
+  - id: getSmallWidgetDefault-011-invalid-x-mb-locale-header
+    title: GET /default - Invalid value for 'X-MB-LOCALE' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getsmallwidgetdefault
+    priority: P2
+  - id: getSmallWidgetDefault-012-request-timeout
+    title: GET /default - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-09T02:25:33.495Z'

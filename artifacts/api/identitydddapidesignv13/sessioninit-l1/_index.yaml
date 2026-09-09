@@ -1,11 +1,11 @@
 # Test Case Index
 # identitydddapidesignv13 - sessionInit (L1)
-# Generated: 2026-09-08T03:53:57.840Z
+# Generated: 2026-09-09T03:34:38.544Z
 ---
 feature: identitydddapidesignv13
 apiName: sessionInit (L1)
 description: Test cases for sessionInit (L1) endpoint
-totalScenarios: 6
+totalScenarios: 12
 scenarios:
   - id: sessionInit (L1)-001-positive
     title: POST /init - Happy Path
@@ -40,18 +40,72 @@ scenarios:
       - negative
       - validation
     priority: P2
-  - id: sessionInit (L1)-005-request-timeout
+  - id: sessionInit (L1)-005-missing-client-id-header
+    title: POST /init - Missing 'client-id' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - sessioninit-(l1)
+    priority: P2
+  - id: sessionInit (L1)-006-invalid-client-id-header
+    title: POST /init - Invalid value for 'client-id' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - sessioninit-(l1)
+    priority: P2
+  - id: sessionInit (L1)-007-missing-api-key-header
+    title: POST /init - Missing 'api-key' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - sessioninit-(l1)
+    priority: P2
+  - id: sessionInit (L1)-008-invalid-api-key-header
+    title: POST /init - Invalid value for 'api-key' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - sessioninit-(l1)
+    priority: P2
+  - id: sessionInit (L1)-009-missing-env-header
+    title: POST /init - Missing 'env' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - sessioninit-(l1)
+    priority: P2
+  - id: sessionInit (L1)-010-invalid-env-header
+    title: POST /init - Invalid value for 'env' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - sessioninit-(l1)
+    priority: P2
+  - id: sessionInit (L1)-011-request-timeout
     title: POST /init - Request Timeout
     type: positive
     tags:
       - edge-case
       - performance
     priority: P3
-  - id: sessionInit (L1)-006-empty-request-body
+  - id: sessionInit (L1)-012-empty-request-body
     title: POST /init - Empty Request Body
     type: positive
     tags:
       - edge-case
       - validation
     priority: P2
-generatedAt: '2026-09-08T03:53:57.840Z'
+generatedAt: '2026-09-09T03:34:38.543Z'

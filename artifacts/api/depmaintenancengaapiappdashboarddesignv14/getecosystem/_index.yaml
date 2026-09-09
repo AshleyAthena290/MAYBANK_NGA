@@ -1,0 +1,115 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv14 - getEcosystem
+# Generated: 2026-09-09T02:25:00.703Z
+---
+feature: depmaintenancengaapiappdashboarddesignv14
+apiName: getEcosystem
+description: Test cases for getEcosystem endpoint
+totalScenarios: 12
+scenarios:
+  - id: getEcosystem-001-positive
+    title: GET /ecosystems - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getecosystem
+    priority: P1
+  - id: getEcosystem-002-missing-auth
+    title: GET /ecosystems - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getEcosystem-003-invalid-auth
+    title: GET /ecosystems - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getEcosystem-004-missing-x-app-version-header
+    title: GET /ecosystems - Missing 'X-APP-VERSION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getecosystem
+    priority: P2
+  - id: getEcosystem-005-invalid-x-app-version-header
+    title: GET /ecosystems - Invalid value for 'X-APP-VERSION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getecosystem
+    priority: P2
+  - id: getEcosystem-006-missing-x-mb-app-header
+    title: GET /ecosystems - Missing 'X-MB-APP' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getecosystem
+    priority: P2
+  - id: getEcosystem-007-invalid-x-mb-app-header
+    title: GET /ecosystems - Invalid value for 'X-MB-APP' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getecosystem
+    priority: P2
+  - id: getEcosystem-008-missing-x-mb-region-header
+    title: GET /ecosystems - Missing 'X-MB-REGION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getecosystem
+    priority: P2
+  - id: getEcosystem-009-invalid-x-mb-region-header
+    title: GET /ecosystems - Invalid value for 'X-MB-REGION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getecosystem
+    priority: P2
+  - id: getEcosystem-010-missing-x-mb-locale-header
+    title: GET /ecosystems - Missing 'X-MB-LOCALE' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getecosystem
+    priority: P2
+  - id: getEcosystem-011-invalid-x-mb-locale-header
+    title: GET /ecosystems - Invalid value for 'X-MB-LOCALE' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getecosystem
+    priority: P2
+  - id: getEcosystem-012-request-timeout
+    title: GET /ecosystems - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-09T02:25:00.701Z'

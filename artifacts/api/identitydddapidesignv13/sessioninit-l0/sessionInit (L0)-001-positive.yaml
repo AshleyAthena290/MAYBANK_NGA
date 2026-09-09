@@ -25,15 +25,16 @@ preconditions:
 testData: {}
 request:
   method: POST
-  url: 'https://{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/session/init'
-  endpoint: 'https://{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/session/init'
+  url: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/session/init'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/session/init'
   baseUrl: https://{Payment-IP}:{Payment-PORT}
   headers:
-    authorization: <value>
-    client-id: <value>
-    api-key: <value>
-    env: <value>
+    authorization: Bearer <ACCESS_TOKEN>
+    client-id: pnt-17ht3
+    api-key: a7dfa879sd8a7sd8
+    env: UAT
     accept: application/json
+    Content-Type: application/json
   pathParams: {}
   queryParams: {}
   body:
