@@ -32,6 +32,12 @@ export interface ApiSpecMetadata {
   responseFields: Array<{ name: string; type: string; description: string; parentField?: string }>;
   requestSampleJson?: string;
   responseSampleJson?: string;
+  /** Enumerated values a `{token}` URL placeholder actually takes on (e.g. "context-path" -> [casa,
+   *  card, loan]), derived from concrete Request Sample examples (preferred) or a documented
+   *  "{token} value:" list in the URL cell (fallback). Undefined when the URL has no placeholders
+   *  or fewer than 2 real values were found for any of them — sheets with a single plain URL are
+   *  completely unaffected. */
+  placeholderEnums?: Record<string, string[]>;
 }
 
 /**
@@ -119,6 +125,104 @@ export class ApiSpecSheetParserService {
     return parent;
   }
 
+  /** Extracts the canonical single-line URL from a URL cell that may also contain extra
+   *  documentation lines below it (an alternate endpoint variant, a "{token} value:" enumeration
+   *  list, etc.) — sheets with a plain single-line URL cell are returned unchanged. */
+  private extractCanonicalUrl(rawUrlText: string): string {
+    const firstLine = rawUrlText.split(/\r?\n/).find((line) => line.trim().length > 0);
+    return (firstLine ?? rawUrlText).trim();
+  }
+
+  /** Parses a "{token} value:" style enumeration block that may appear below the canonical URL in
+   *  the same cell (e.g. "context-path value:\n1. casa\n2. card\n3. loan"). Returns undefined when
+   *  no such block is present, so sheets without this pattern are unaffected. */
+  private extractDocumentedPlaceholderValues(rawUrlText: string): { token: string; values: string[] } | undefined {
+    const lines = rawUrlText.split(/\r?\n/);
+    const headerIndex = lines.findIndex((line) => /^[\w-]+\s+value\s*:\s*$/i.test(line.trim()));
+    if (headerIndex === -1) return undefined;
+
+    const headerMatch = lines[headerIndex]!.trim().match(/^([\w-]+)\s+value\s*:\s*$/i);
+    if (!headerMatch) return undefined;
+    const token = headerMatch[1]!.toLowerCase();
+
+    const values: string[] = [];
+    for (let i = headerIndex + 1; i < lines.length; i++) {
+      const match = lines[i]!.trim().match(/^\d+\.\s*(.+)$/);
+      if (!match) break;
+      const value = match[1]!.trim();
+      if (value) values.push(value);
+    }
+
+    return values.length > 0 ? { token, values } : undefined;
+  }
+
+  /** Extracts each concrete example request line from a "Request Sample" block (e.g. "GET
+   *  https://host/info/casa/v1/...?CASA_CIF=..."), tolerating the "https: //" spacing artifact
+   *  these sheets sometimes have. Returns an empty array for the common case where Request Sample
+   *  is a single JSON request body rather than one-line-per-example URLs. */
+  private extractRequestSampleUrls(rawSampleText: string): string[] {
+    const normalized = rawSampleText.replace(/https?\s*:\s*\/\//gi, (match) => match.replace(/\s+/g, ''));
+    const urls: string[] = [];
+    for (const line of normalized.split(/\r?\n/)) {
+      const match = line.trim().match(/^(GET|POST|PUT|PATCH|DELETE)\s+(https?:\/\/\S+)/i);
+      if (match?.[2]) urls.push(match[2]);
+    }
+    return urls;
+  }
+
+  /** Resolves the real enumerated values each `{token}` placeholder in the URL takes on, preferring
+   *  values actually demonstrated by concrete Request Sample examples and falling back to the URL
+   *  cell's own documented "{token} value:" list only when no examples are available. Returns
+   *  undefined when the URL has no placeholders, or fewer than 2 real values were found for any of
+   *  them — a single value means nothing to expand into extra positive scenarios. */
+  private derivePlaceholderEnums(
+    canonicalUrl: string,
+    requestSampleUrls: string[],
+    documented?: { token: string; values: string[] }
+  ): Record<string, string[]> | undefined {
+    const tokens = Array.from(canonicalUrl.matchAll(/\{([^}]+)\}/g)).map((m) => m[1]!);
+    if (tokens.length === 0) return undefined;
+
+    const result: Record<string, string[]> = {};
+    for (const token of tokens) {
+      const fromSamples = this.resolvePlaceholderValuesFromSamples(canonicalUrl, token, requestSampleUrls);
+      if (fromSamples.length >= 2) {
+        result[token] = fromSamples;
+      } else if (documented && documented.token === token.toLowerCase() && documented.values.length >= 2) {
+        result[token] = documented.values;
+      }
+    }
+
+    return Object.keys(result).length > 0 ? result : undefined;
+  }
+
+  /** Builds a regex from the URL template with the given `{token}` replaced by a capture group
+   *  (every other placeholder becomes a wildcard), then matches it against each sample URL's path
+   *  to pull out the real value that token took on in that example. Query strings are stripped
+   *  before matching since they legitimately vary per example and aren't part of the path template.
+   *  Both sides are normalized to strip the "https: //" spacing artifact these sheets sometimes have
+   *  around the scheme, purely for matching purposes — the stored spec.url itself is left untouched. */
+  private resolvePlaceholderValuesFromSamples(canonicalUrl: string, token: string, sampleUrls: string[]): string[] {
+    const normalizeScheme = (text: string): string => text.replace(/https?\s*:\s*\/\//gi, (match) => match.replace(/\s+/g, ''));
+    const escapeRegex = (text: string): string => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const templatePath = normalizeScheme(canonicalUrl).split('?')[0] || canonicalUrl;
+    const pattern = escapeRegex(templatePath).replace(
+      /\\\{([^}]+)\\\}/g,
+      (_match, capturedToken) => (capturedToken === token ? '([^/?]+)' : '[^/?]+')
+    );
+    const regex = new RegExp(`^${pattern}`, 'i');
+
+    const values: string[] = [];
+    for (const sampleUrl of sampleUrls) {
+      const path = normalizeScheme(sampleUrl).split('?')[0] || sampleUrl;
+      const match = path.match(regex);
+      if (match?.[1] && !values.includes(match[1])) {
+        values.push(match[1]);
+      }
+    }
+    return values;
+  }
+
   private parseWorksheet(worksheet: ExcelJS.Worksheet): ApiSpecMetadata {
     const spec: ApiSpecMetadata = {
       apiName: '',
@@ -136,6 +240,8 @@ export class ApiSpecSheetParserService {
     let isReadingFields = false;
     let fieldHeaderColumns: Record<string, number> = {};
     let requestIndentStack: Array<{ depth: number; name: string }> = [];
+    let documentedPlaceholderValues: { token: string; values: string[] } | undefined;
+    let requestSampleUrls: string[] = [];
 
     worksheet.eachRow({ includeEmpty: false }, (row: ExcelJS.Row, rowNumber: number) => {
       const values = this.rowToStringArray(row);
@@ -161,7 +267,9 @@ export class ApiSpecSheetParserService {
         return;
       }
       if (firstCol === 'url') {
-        spec.url = values[1] || '';
+        const rawUrlText = values[1] || '';
+        spec.url = this.extractCanonicalUrl(rawUrlText);
+        documentedPlaceholderValues = this.extractDocumentedPlaceholderValues(rawUrlText);
         return;
       }
       if (firstCol === 'message type') {
@@ -241,6 +349,7 @@ export class ApiSpecSheetParserService {
         currentSection = 'sample';
         isReadingFields = false;
         spec.requestSampleJson = this.getSectionValue(values, 'request sample');
+        requestSampleUrls = this.extractRequestSampleUrls(spec.requestSampleJson);
         return;
       }
 
@@ -292,6 +401,11 @@ export class ApiSpecSheetParserService {
         return;
       }
     });
+
+    if (spec.url) {
+      const enums = this.derivePlaceholderEnums(spec.url, requestSampleUrls, documentedPlaceholderValues);
+      if (enums) spec.placeholderEnums = enums;
+    }
 
     return spec;
   }

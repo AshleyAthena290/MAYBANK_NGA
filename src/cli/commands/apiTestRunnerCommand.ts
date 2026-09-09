@@ -37,6 +37,8 @@ interface YamlApiTestCase {
     url?: string;
     endpoint?: string;
     headers?: Record<string, string>;
+    pathParams?: Record<string, string>;
+    queryParams?: Record<string, string>;
     body?: unknown;
   };
   response?: {
@@ -514,22 +516,69 @@ function shouldSendBody(method: string): boolean {
 }
 
 function resolveTargetUrl(testCase: YamlApiTestCase, baseUrl?: string): string {
-  const url = testCase.request?.url ?? testCase.request?.endpoint;
-  if (!url) {
+  const rawUrl = testCase.request?.url ?? testCase.request?.endpoint;
+  if (!rawUrl) {
     throw new Error(`Missing request URL for ${testCase.id}`);
   }
 
+  const normalizedUrl = normalizeUrlSpacing(rawUrl);
+  const withPathParams = applyPathParams(normalizedUrl, testCase.request?.pathParams);
+
+  let resolved: string;
   if (!baseUrl) {
-    if (url.includes("{")) {
+    if (withPathParams.includes("{")) {
       throw new Error(
-        `URL contains placeholders. Provide --baseUrl to execute this case: ${url}`
+        `URL contains placeholders. Provide --baseUrl to execute this case: ${withPathParams}`
       );
     }
-    return url;
+    resolved = withPathParams;
+  } else {
+    const path = extractPathFromUrl(withPathParams);
+    resolved = `${baseUrl.replace(/\/$/, "")}${path}`;
   }
 
-  const path = extractPathFromUrl(url);
-  return `${baseUrl.replace(/\/$/, "")}${path}`;
+  return appendQueryString(resolved, testCase.request?.queryParams);
+}
+
+/** Strips the "https: //" / "http: //" spacing artifact these generated YAMLs sometimes carry (a
+ *  formatting quirk from the source Excel sheets), so the URL can be parsed and requested
+ *  correctly regardless of transport or whether --baseUrl is used. */
+function normalizeUrlSpacing(url: string): string {
+  return url.replace(/https?\s*:\s*\/\//i, (match) => match.replace(/\s+/g, ""));
+}
+
+/** Replaces `{name}` path-parameter tokens in the URL with their resolved values from the YAML's
+ *  own request.pathParams (e.g. ".../dismiss/{id}" -> ".../dismiss/12345"). Tokens with no
+ *  matching pathParams entry are left as-is. */
+function applyPathParams(url: string, pathParams: Record<string, string> | undefined): string {
+  if (!pathParams) return url;
+  let result = url;
+  for (const [key, value] of Object.entries(pathParams)) {
+    result = result.split(`{${key}}`).join(value);
+  }
+  return result;
+}
+
+/** Appends a query string built from the YAML's request.queryParams to the resolved URL, merging
+ *  with any query string the URL already has. Each value is split on comma into repeated
+ *  `key=value` pairs — this mirrors how the generator's MultiValueMap parsing joins a param's real
+ *  repeated values with a comma into one flat-map entry (see parseMultiValueMapSample in
+ *  bddGenCommand.ts), reconstructing the correct wire format instead of sending the comma literally
+ *  inside a single value. A param without a comma round-trips unchanged. */
+function appendQueryString(url: string, queryParams: Record<string, string> | undefined): string {
+  if (!queryParams || Object.keys(queryParams).length === 0) return url;
+
+  const pairs: string[] = [];
+  for (const [key, value] of Object.entries(queryParams)) {
+    if (value === undefined || value === null) continue;
+    for (const segment of String(value).split(",")) {
+      pairs.push(`${encodeURIComponent(key)}=${encodeURIComponent(segment)}`);
+    }
+  }
+  if (pairs.length === 0) return url;
+
+  const queryString = pairs.join("&");
+  return url.includes("?") ? `${url}&${queryString}` : `${url}?${queryString}`;
 }
 
 function extractPathFromUrl(url: string): string {

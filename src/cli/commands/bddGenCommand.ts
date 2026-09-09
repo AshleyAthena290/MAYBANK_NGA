@@ -247,13 +247,44 @@ function buildRequestBodyFieldSpecs(
   }));
 }
 
+/** True when a Request Parameter row's declared type is a Java-style MultiValueMap (e.g.
+ *  "MultiValueMap<String, String>") \u2014 these document one illustrative pre-built query string as
+ *  their "Sample Value" (with possibly-repeated real keys) rather than a name/value pair for the
+ *  row's own literal name. */
+function isMultiValueMapType(type: string | undefined): boolean {
+  return /multivaluemap/i.test(type || '');
+}
+
+/** Parses a MultiValueMap parameter's sample value (e.g.
+ *  "CASA_CIF=000784756&CASA_CIF=000123122&CARD_CIF=000987867") into its real query keys. A
+ *  repeated key's values are joined with a comma, since the target queryParams shape here is a
+ *  flat map, not a true multi-map \u2014 this preserves every example value from the sheet instead of
+ *  the last one silently overwriting the rest. Returns an empty map if the sample doesn't look
+ *  like a query string at all. */
+function parseMultiValueMapSample(sampleValue: string): Record<string, string> {
+  const result: Record<string, string> = {};
+  if (!sampleValue.includes('=')) return result;
+
+  for (const pair of sampleValue.split('&')) {
+    const separatorIndex = pair.indexOf('=');
+    if (separatorIndex <= 0) continue;
+    const key = pair.slice(0, separatorIndex).trim();
+    const value = pair.slice(separatorIndex + 1).trim();
+    if (!key) continue;
+    result[key] = result[key] !== undefined ? `${result[key]},${value}` : value;
+  }
+  return result;
+}
+
 /** Splits the sheet's "Request Parameter" section into pathParams vs queryParams, without needing
  *  a separate column to say which is which: if the parameter's name appears as a literal "{name}"
  *  token in the URL (e.g. "id" for ".../dismiss/{id}"), it's a path param; otherwise it's treated
  *  as a query param. Uses the parameter's own Sample Value when the sheet provides one, falling
- *  back to "<value>" per-parameter when it doesn't. */
+ *  back to "<value>" per-parameter when it doesn't. A MultiValueMap-typed parameter is expanded
+ *  into its real keys (see parseMultiValueMapSample) instead of being emitted as a single query
+ *  key literally named e.g. "*MultiValueMap". */
 function splitRequestParameters(
-  parameters: Array<{ name: string; sampleValue?: string }>,
+  parameters: Array<{ name: string; type?: string; sampleValue?: string }>,
   url: string
 ): { pathParams: Record<string, string>; queryParams: Record<string, string> } {
   const pathParams: Record<string, string> = {};
@@ -261,14 +292,22 @@ function splitRequestParameters(
   const urlLower = url.toLowerCase();
 
   for (const param of parameters) {
-    const value = param.sampleValue && param.sampleValue.trim().length > 0 ? param.sampleValue.trim() : '<value>';
     const isPathParam = urlLower.includes(`{${param.name.toLowerCase()}}`);
 
     if (isPathParam) {
-      pathParams[param.name] = value;
-    } else {
-      queryParams[param.name] = value;
+      pathParams[param.name] = param.sampleValue && param.sampleValue.trim().length > 0 ? param.sampleValue.trim() : '<value>';
+      continue;
     }
+
+    if (isMultiValueMapType(param.type) && param.sampleValue) {
+      const expanded = parseMultiValueMapSample(param.sampleValue.trim());
+      if (Object.keys(expanded).length > 0) {
+        Object.assign(queryParams, expanded);
+        continue;
+      }
+    }
+
+    queryParams[param.name] = param.sampleValue && param.sampleValue.trim().length > 0 ? param.sampleValue.trim() : '<value>';
   }
 
   return { pathParams, queryParams };
@@ -343,6 +382,7 @@ function convertToApiScenario(apiSpec: any, sheetName: string, apiName: string):
     // same 3 generic labels to every API regardless of what it actually needs.
     negativeScenarios: [],
     requestBodyFieldSpecs,
+    ...(apiSpec.placeholderEnums ? { placeholderEnums: apiSpec.placeholderEnums } : {}),
   };
 }
 
