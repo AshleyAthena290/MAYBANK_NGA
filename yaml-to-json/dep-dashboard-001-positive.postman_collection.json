@@ -1,0 +1,154 @@
+{
+  "info": {
+    "_postman_id": "dep-dashboard-001-positive",
+    "name": "dep-dashboard-001-positive - GET /menu - Happy Path",
+    "description": "Purpose: API endpoint test case for QA, BA, and business user review. Source YAML ID: dep-dashboard-001-positive. Excel source worksheet: getMenu.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://{{ip}}:{{port}}",
+      "type": "string"
+    },
+    {
+      "key": "ip",
+      "value": "EXP-IP",
+      "type": "string"
+    },
+    {
+      "key": "port",
+      "value": "EXP-PORT",
+      "type": "string"
+    },
+    {
+      "key": "accessToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "correlationId",
+      "value": "test-correlation-id-1787565886469",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "GET /menu - Happy Path",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "X-Correlation-Id",
+            "value": "{{correlationId}}",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/dep/dashboard/v1/menu",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "dep",
+            "dashboard",
+            "v1",
+            "menu"
+          ]
+        },
+        "description": "GET /dep/dashboard/v1/menu. Excel worksheet getMenu confirms method GET and no path parameters, query parameters, or request body."
+      },
+      "response": [],
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Response status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "let responseJson;",
+              "pm.test('Response body is valid JSON', function () {",
+              "    responseJson = pm.response.json();",
+              "    pm.expect(responseJson).to.be.an('object');",
+              "});",
+              "",
+              "function assertField(path, expectedType) {",
+              "    const parts = path.split('.');",
+              "    let value = responseJson;",
+              "    for (const part of parts) {",
+              "        pm.expect(value, path + ' exists').to.have.property(part);",
+              "        value = value[part];",
+              "    }",
+              "    if (expectedType === 'null') {",
+              "        pm.expect(value, path + ' is null').to.eql(null);",
+              "    } else {",
+              "        pm.expect(value, path + ' type').to.be.a(expectedType);",
+              "    }",
+              "    return value;",
+              "}",
+              "",
+              "pm.test(\"Field 'status' exists and is a non-empty string\", function () {",
+              "    const value = assertField('status', 'string');",
+              "    pm.expect(value.length).to.be.greaterThan(0);",
+              "});",
+              "",
+              "pm.test(\"Field 'message' exists and is a non-empty string\", function () {",
+              "    const value = assertField('message', 'string');",
+              "    pm.expect(value.length).to.be.greaterThan(0);",
+              "});",
+              "",
+              "pm.test(\"Field 'timestamp' exists and is a non-empty string\", function () {",
+              "    const value = assertField('timestamp', 'string');",
+              "    pm.expect(value.length).to.be.greaterThan(0);",
+              "});",
+              "",
+              "pm.test(\"Field 'correlationId' exists and is null\", function () {",
+              "    assertField('correlationId', 'null');",
+              "});",
+              "",
+              "pm.test(\"Field 'data' exists and is an array\", function () {",
+              "    assertField('data', 'array');",
+              "});",
+              "",
+              "pm.test(\"Each data item has the expected menu structure\", function () {",
+              "    pm.expect(responseJson.data).to.be.an('array');",
+              "    responseJson.data.forEach(function (item, index) {",
+              "        pm.expect(item, 'data[' + index + ']').to.be.an('object');",
+              "        pm.expect(item, 'data[' + index + '].children').to.have.property('children');",
+              "        pm.expect(item.children, 'data[' + index + '].children type').to.be.an('array');",
+              "        pm.expect(item, 'data[' + index + '].cmsReferenceKey').to.have.property('cmsReferenceKey');",
+              "        pm.expect(item.cmsReferenceKey, 'data[' + index + '].cmsReferenceKey type').to.be.a('string');",
+              "        pm.expect(item.cmsReferenceKey.length, 'data[' + index + '].cmsReferenceKey length').to.be.greaterThan(0);",
+              "        pm.expect(item, 'data[' + index + '].id').to.have.property('id');",
+              "        pm.expect(item.id, 'data[' + index + '].id type').to.be.a('string');",
+              "        pm.expect(item.id.length, 'data[' + index + '].id length').to.be.greaterThan(0);",
+              "    });",
+              "});",
+              "",
+              "pm.test(\"Field 'error' exists and is null\", function () {",
+              "    assertField('error', 'null');",
+              "});",
+              "",
+              "pm.test(\"Field 'meta' exists and is an object\", function () {",
+              "    assertField('meta', 'object');",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

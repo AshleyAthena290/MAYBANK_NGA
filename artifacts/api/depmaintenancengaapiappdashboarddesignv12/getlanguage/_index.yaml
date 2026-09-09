@@ -1,0 +1,43 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv12 - getLanguage
+# Generated: 2026-09-08T08:20:36.731Z
+---
+feature: depmaintenancengaapiappdashboarddesignv12
+apiName: getLanguage
+description: Test cases for getLanguage endpoint
+totalScenarios: 4
+scenarios:
+  - id: getLanguage-001-positive
+    title: GET /language - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getlanguage
+    priority: P1
+  - id: getLanguage-002-missing-auth
+    title: GET /language - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getLanguage-003-invalid-auth
+    title: GET /language - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getLanguage-004-request-timeout
+    title: GET /language - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-08T08:20:36.728Z'

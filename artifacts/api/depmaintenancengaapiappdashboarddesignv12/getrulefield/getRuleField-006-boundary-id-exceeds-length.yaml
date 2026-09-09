@@ -1,0 +1,58 @@
+# BDD Test Case - depmaintenancengaapiappdashboarddesignv12
+# Generated for: GET /rule-fields - id Exceeds Maximum Length
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getRuleField-006-boundary-id-exceeds-length
+title: GET /rule-fields - id Exceeds Maximum Length
+feature: depmaintenancengaapiappdashboarddesignv12
+description: Request with 'id' exceeding its maximum length (37 characters) should be rejected
+tags:
+  - boundary
+  - validation
+  - negative
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{EXP-IP}:{EXP-PORT}/dep/maintenance/v1/internal/rule-fields
+  endpoint: https://{EXP-IP}:{EXP-PORT}/dep/maintenance/v1/internal/rule-fields
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    X-APP-VERSION: <value>
+    X-MB-APP: <value>
+    X-MB-REGION: <value>
+    X-MB-LOCALE: <value>
+    Accept: application/json
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    id: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+response:
+  successStatusCode: 400
+  successDescription: Bad Request
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Error message indicates 'id' exceeds maximum length
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getRuleField
+  sourceRows: ''
+  apiSpecFile: getRuleField

@@ -1,0 +1,59 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv12 - getRuleOperator
+# Generated: 2026-09-08T08:20:24.473Z
+---
+feature: depmaintenancengaapiappdashboarddesignv12
+apiName: getRuleOperator
+description: Test cases for getRuleOperator endpoint
+totalScenarios: 6
+scenarios:
+  - id: getRuleOperator-001-positive
+    title: GET /rule-operators - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getruleoperator
+    priority: P1
+  - id: getRuleOperator-002-missing-auth
+    title: GET /rule-operators - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getRuleOperator-003-invalid-auth
+    title: GET /rule-operators - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getRuleOperator-004-request-timeout
+    title: GET /rule-operators - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getRuleOperator-005-boundary-id-max-length
+    title: GET /rule-operators - id Maximum Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+      - positive
+    priority: P2
+  - id: getRuleOperator-006-boundary-id-exceeds-length
+    title: GET /rule-operators - id Exceeds Maximum Length
+    type: negative
+    tags:
+      - boundary
+      - validation
+      - negative
+    priority: P2
+generatedAt: '2026-09-08T08:20:24.471Z'

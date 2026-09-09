@@ -1,0 +1,43 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv12 - getMenuRecommend
+# Generated: 2026-09-08T08:19:34.640Z
+---
+feature: depmaintenancengaapiappdashboarddesignv12
+apiName: getMenuRecommend
+description: Test cases for getMenuRecommend endpoint
+totalScenarios: 4
+scenarios:
+  - id: getMenuRecommend-001-positive
+    title: GET /recommend - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getmenurecommend
+    priority: P1
+  - id: getMenuRecommend-002-missing-auth
+    title: GET /recommend - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getMenuRecommend-003-invalid-auth
+    title: GET /recommend - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getMenuRecommend-004-request-timeout
+    title: GET /recommend - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-08T08:19:34.637Z'

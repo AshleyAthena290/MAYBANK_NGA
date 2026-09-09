@@ -1,0 +1,43 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv12 - getCrossSellTaskDefinition
+# Generated: 2026-09-08T08:19:14.003Z
+---
+feature: depmaintenancengaapiappdashboarddesignv12
+apiName: getCrossSellTaskDefinition
+description: Test cases for getCrossSellTaskDefinition endpoint
+totalScenarios: 4
+scenarios:
+  - id: getCrossSellTaskDefinition-001-positive
+    title: GET /cross-sell-task-definitions - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getcrossselltaskdefinition
+    priority: P1
+  - id: getCrossSellTaskDefinition-002-missing-auth
+    title: GET /cross-sell-task-definitions - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getCrossSellTaskDefinition-003-invalid-auth
+    title: GET /cross-sell-task-definitions - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getCrossSellTaskDefinition-004-request-timeout
+    title: GET /cross-sell-task-definitions - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-08T08:19:14.000Z'

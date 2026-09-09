@@ -1,0 +1,57 @@
+# Test Case Index
+# identitydddapidesignv13 - S2U Init - SecurityImage
+# Generated: 2026-09-08T03:20:00.269Z
+---
+feature: identitydddapidesignv13
+apiName: S2U Init - SecurityImage
+description: Test cases for S2U Init - SecurityImage endpoint
+totalScenarios: 6
+scenarios:
+  - id: S2U Init - SecurityImage-001-positive
+    title: POST /init - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - s2u-init---securityimage
+    priority: P1
+  - id: S2U Init - SecurityImage-002-missing-auth
+    title: POST /init - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: S2U Init - SecurityImage-003-invalid-auth
+    title: POST /init - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: S2U Init - SecurityImage-004-invalid-content-type
+    title: POST /init - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: S2U Init - SecurityImage-005-request-timeout
+    title: POST /init - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: S2U Init - SecurityImage-006-empty-request-body
+    title: POST /init - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-09-08T03:20:00.269Z'

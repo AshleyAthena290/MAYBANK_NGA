@@ -1,0 +1,96 @@
+# BDD Test Case - depmaintenancengaapiappdashboarddesignv12
+# Generated for: GET /contents - id Maximum Length
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getContent-005-boundary-id-max-length
+title: GET /contents - id Maximum Length
+feature: depmaintenancengaapiappdashboarddesignv12
+description: Request with 'id' at its maximum length (36 characters) should succeed
+tags:
+  - boundary
+  - validation
+  - positive
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{EXP-IP}:{EXP-PORT}/dep/maintenance/v1/internal/contents
+  endpoint: https://{EXP-IP}:{EXP-PORT}/dep/maintenance/v1/internal/contents
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    X-APP-VERSION: <value>
+    X-MB-APP: <value>
+    X-MB-REGION: <value>
+    X-MB-LOCALE: <value>
+    Accept: application/json
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    id: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    error: 'Null'
+    meta: Object
+    data: Object
+    contentCode: String
+    name: String
+    cmsReferenceKey: String
+    placement: String
+    bannerType: String
+    prioritySequence: String
+    ruleName: String
+    isDefault: Boolean
+    ecosystem: String
+    validityStart: String
+    validityEnd: String
+    timeStart: String
+    timeEnd: String
+    dayStart: String
+    dayEnd: String
+    dateOfMonthStart: String
+    dateOfMonthEnd: String
+    frequencyControl: String
+    rotationCount: String
+    countryCode: String
+    pillCmsReferenceKey: String
+    pillValidityStart: String
+    pillValidityEnd: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Request with 'id' at maximum length boundary is accepted
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getContent
+  sourceRows: ''
+  apiSpecFile: getContent

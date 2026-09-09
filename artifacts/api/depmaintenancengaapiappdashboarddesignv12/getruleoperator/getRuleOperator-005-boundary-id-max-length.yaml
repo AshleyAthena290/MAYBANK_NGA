@@ -1,0 +1,78 @@
+# BDD Test Case - depmaintenancengaapiappdashboarddesignv12
+# Generated for: GET /rule-operators - id Maximum Length
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getRuleOperator-005-boundary-id-max-length
+title: GET /rule-operators - id Maximum Length
+feature: depmaintenancengaapiappdashboarddesignv12
+description: Request with 'id' at its maximum length (36 characters) should succeed
+tags:
+  - boundary
+  - validation
+  - positive
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{EXP-IP}:{EXP-PORT}/dep/maintenance/v1/internal/rule-operators
+  endpoint: https://{EXP-IP}:{EXP-PORT}/dep/maintenance/v1/internal/rule-operators
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    X-APP-VERSION: <value>
+    X-MB-APP: <value>
+    X-MB-REGION: <value>
+    X-MB-LOCALE: <value>
+    Accept: application/json
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+  body:
+    id: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+response:
+  successStatusCode: 200
+  successDescription: Request processed successfully
+  schema:
+    status: String
+    message: String
+    timestamp: String
+    correlationId: String
+    error: 'Null'
+    meta: Object
+    data: Object
+    operatorCode: String
+    displayName: String
+    applicableTypes: String
+    isActive: Boolean
+    countryCode: String
+  expectedFields: []
+  errorScenarios:
+    - statusCode: 400
+      description: Bad Request
+      errorMessage: 400 Bad Request
+    - statusCode: 401
+      description: Unauthorized
+      errorMessage: 401 Unauthorized
+    - statusCode: 500
+      description: Internal Server Error
+      errorMessage: 500 Internal Server Error
+assertions:
+  - description: Response status code is 200
+    type: status
+    expectedValue: 200
+  - description: Request with 'id' at maximum length boundary is accepted
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getRuleOperator
+  sourceRows: ''
+  apiSpecFile: getRuleOperator

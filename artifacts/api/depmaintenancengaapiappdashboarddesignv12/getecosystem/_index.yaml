@@ -1,0 +1,43 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv12 - getEcosystem
+# Generated: 2026-09-08T08:19:09.844Z
+---
+feature: depmaintenancengaapiappdashboarddesignv12
+apiName: getEcosystem
+description: Test cases for getEcosystem endpoint
+totalScenarios: 4
+scenarios:
+  - id: getEcosystem-001-positive
+    title: GET /ecosystems - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getecosystem
+    priority: P1
+  - id: getEcosystem-002-missing-auth
+    title: GET /ecosystems - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getEcosystem-003-invalid-auth
+    title: GET /ecosystems - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getEcosystem-004-request-timeout
+    title: GET /ecosystems - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-08T08:19:09.841Z'

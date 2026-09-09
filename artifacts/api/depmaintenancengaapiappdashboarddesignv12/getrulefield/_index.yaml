@@ -1,0 +1,59 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv12 - getRuleField
+# Generated: 2026-09-08T08:20:20.334Z
+---
+feature: depmaintenancengaapiappdashboarddesignv12
+apiName: getRuleField
+description: Test cases for getRuleField endpoint
+totalScenarios: 6
+scenarios:
+  - id: getRuleField-001-positive
+    title: GET /rule-fields - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getrulefield
+    priority: P1
+  - id: getRuleField-002-missing-auth
+    title: GET /rule-fields - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getRuleField-003-invalid-auth
+    title: GET /rule-fields - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getRuleField-004-request-timeout
+    title: GET /rule-fields - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getRuleField-005-boundary-id-max-length
+    title: GET /rule-fields - id Maximum Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+      - positive
+    priority: P2
+  - id: getRuleField-006-boundary-id-exceeds-length
+    title: GET /rule-fields - id Exceeds Maximum Length
+    type: negative
+    tags:
+      - boundary
+      - validation
+      - negative
+    priority: P2
+generatedAt: '2026-09-08T08:20:20.332Z'

@@ -1,0 +1,43 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv12 - getMenu
+# Generated: 2026-09-08T08:19:22.254Z
+---
+feature: depmaintenancengaapiappdashboarddesignv12
+apiName: getMenu
+description: Test cases for getMenu endpoint
+totalScenarios: 4
+scenarios:
+  - id: getMenu-001-positive
+    title: GET /menu - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getmenu
+    priority: P1
+  - id: getMenu-002-missing-auth
+    title: GET /menu - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getMenu-003-invalid-auth
+    title: GET /menu - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getMenu-004-request-timeout
+    title: GET /menu - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-08T08:19:22.252Z'

@@ -1,0 +1,43 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv12 - getSettingHeader
+# Generated: 2026-09-08T08:20:45.066Z
+---
+feature: depmaintenancengaapiappdashboarddesignv12
+apiName: getSettingHeader
+description: Test cases for getSettingHeader endpoint
+totalScenarios: 4
+scenarios:
+  - id: getSettingHeader-001-positive
+    title: GET /header - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getsettingheader
+    priority: P1
+  - id: getSettingHeader-002-missing-auth
+    title: GET /header - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getSettingHeader-003-invalid-auth
+    title: GET /header - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getSettingHeader-004-request-timeout
+    title: GET /header - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-08T08:20:45.064Z'

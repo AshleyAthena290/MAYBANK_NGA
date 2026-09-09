@@ -1,0 +1,59 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv12 - getContent
+# Generated: 2026-09-08T08:20:03.990Z
+---
+feature: depmaintenancengaapiappdashboarddesignv12
+apiName: getContent
+description: Test cases for getContent endpoint
+totalScenarios: 6
+scenarios:
+  - id: getContent-001-positive
+    title: GET /contents - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getcontent
+    priority: P1
+  - id: getContent-002-missing-auth
+    title: GET /contents - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getContent-003-invalid-auth
+    title: GET /contents - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getContent-004-request-timeout
+    title: GET /contents - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: getContent-005-boundary-id-max-length
+    title: GET /contents - id Maximum Length
+    type: positive
+    tags:
+      - boundary
+      - validation
+      - positive
+    priority: P2
+  - id: getContent-006-boundary-id-exceeds-length
+    title: GET /contents - id Exceeds Maximum Length
+    type: negative
+    tags:
+      - boundary
+      - validation
+      - negative
+    priority: P2
+generatedAt: '2026-09-08T08:20:03.988Z'

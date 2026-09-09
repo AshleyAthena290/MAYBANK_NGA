@@ -1,0 +1,43 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv12 - getLargeWidgetDefault
+# Generated: 2026-09-08T08:19:43.139Z
+---
+feature: depmaintenancengaapiappdashboarddesignv12
+apiName: getLargeWidgetDefault
+description: Test cases for getLargeWidgetDefault endpoint
+totalScenarios: 4
+scenarios:
+  - id: getLargeWidgetDefault-001-positive
+    title: GET /default - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getlargewidgetdefault
+    priority: P1
+  - id: getLargeWidgetDefault-002-missing-auth
+    title: GET /default - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getLargeWidgetDefault-003-invalid-auth
+    title: GET /default - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getLargeWidgetDefault-004-request-timeout
+    title: GET /default - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-08T08:19:43.137Z'

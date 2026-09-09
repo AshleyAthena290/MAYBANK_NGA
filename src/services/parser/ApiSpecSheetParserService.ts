@@ -9,8 +9,30 @@ export interface ApiSpecMetadata {
   method: string;
   url: string;
   messageType: string;
-  requestHeaders: Array<{ name: string; description: string; mandatory: boolean }>;
-  requestBodyFields: Array<{ name: string; type: string; description: string }>;
+  requestHeaders: Array<{
+    name: string;
+    description: string;
+    mandatory: boolean;
+    sampleValue?: string;
+  }>;
+  requestBodyFields: Array<{
+    name: string;
+    type: string;
+    description: string;
+    parentField?: string;
+    sampleValue?: string;
+    constraints?: { minLength?: number; maxLength?: number; minValue?: number; maxValue?: number };
+  }>;
+  /** Path/query parameters from the sheet's "Request Parameter" section (e.g. "id" for a
+   *  {id} path placeholder, or "domain"/"module"/"subModule" for query string params). Whether
+   *  each one is a path or query param is decided later by checking the URL for a matching
+   *  "{name}" token, rather than needing a separate column in the sheet for that distinction. */
+  requestParameters: Array<{
+    name: string;
+    type: string;
+    description: string;
+    sampleValue?: string;
+  }>;
   responseFields: Array<{ name: string; type: string; description: string; parentField?: string }>;
   requestSampleJson?: string;
   responseSampleJson?: string;
@@ -42,10 +64,11 @@ export class ApiSpecSheetParserService {
       messageType: 'JSON',
       requestHeaders: [],
       requestBodyFields: [],
+      requestParameters: [],
       responseFields: [],
     };
 
-    let currentSection: 'metadata' | 'request-headers' | 'request-body' | 'response' | 'sample' = 'metadata';
+    let currentSection: 'metadata' | 'request-headers' | 'request-body' | 'request-parameter' | 'response' | 'sample' = 'metadata';
     let isReadingFields = false;
     let fieldHeaderColumns: Record<string, number> = {};
 
@@ -94,7 +117,26 @@ export class ApiSpecSheetParserService {
         return;
       }
 
-      if (currentSection === 'request-headers' || currentSection === 'request-body') {
+      // "Request Parameter" is its own section (single-cell label, unlike "Request"/"HTTP Header"
+      // which spans two cells) — previously unrecognized entirely, so this section's rows fell
+      // through and got misread as body fields, corrupting the generated request body with things
+      // like a stray "id" or "Request Parameter" junk entry.
+      if (firstCol === 'request parameter') {
+        currentSection = 'request-parameter';
+        isReadingFields = false;
+        return;
+      }
+
+      // Excludes rows that start a new section (Request Sample, Response, Response Sample) from
+      // being misread as body/header field data — without this guard, a request-body/request-headers
+      // section would greedily swallow the "Request Sample" row (and its full JSON blob) as if it
+      // were a field's name/value, corrupting the generated body with the entire sample dumped in
+      // as a single mangled field.
+      const startsNewSection = firstCol === 'request sample' || firstCol.startsWith('response');
+      if (
+        (currentSection === 'request-headers' || currentSection === 'request-body' || currentSection === 'request-parameter') &&
+        !startsNewSection
+      ) {
         // Field header row
         if (values[0]?.toLowerCase() === 'name' || (values[0]?.toLowerCase() === 'request' && values[1]?.toLowerCase() === 'name')) {
           fieldHeaderColumns = this.buildColumnMap(values);
@@ -108,6 +150,8 @@ export class ApiSpecSheetParserService {
           if (field && field.name && field.name.toLowerCase() !== 'no request body') {
             if (currentSection === 'request-headers') {
               spec.requestHeaders.push(field);
+            } else if (currentSection === 'request-parameter') {
+              spec.requestParameters.push(field);
             } else {
               spec.requestBodyFields.push(field);
             }
@@ -205,6 +249,15 @@ export class ApiSpecSheetParserService {
       else if (normalized === 'type' || normalized === 'field type') map['type'] = idx;
       else if (normalized === 'mandatory' || normalized === 'required') map['mandatory'] = idx;
       else if (normalized.includes('description') || normalized.includes('remarks')) map['description'] = idx;
+      // Constraint columns are optional — most sheets don't have these yet. If/when a sheet adds
+      // a length or min/max column, this picks it up automatically with no further code changes.
+      else if (normalized === 'min length' || normalized === 'minlength') map['minLength'] = idx;
+      else if (normalized === 'max length' || normalized === 'maxlength' || normalized === 'length') map['maxLength'] = idx;
+      else if (normalized === 'min value' || normalized === 'minvalue' || normalized === 'min') map['minValue'] = idx;
+      else if (normalized === 'max value' || normalized === 'maxvalue' || normalized === 'max') map['maxValue'] = idx;
+      // Sample/example value column is optional — used to populate real values in generated YAML
+      // (headers, body fields, and path/query params) instead of leaving everything as "<value>".
+      else if (normalized === 'sample value' || normalized === 'sample' || normalized === 'example' || normalized === 'example value') map['sampleValue'] = idx;
     });
     return map;
   }
@@ -212,14 +265,30 @@ export class ApiSpecSheetParserService {
   private parseFieldRow(
     values: string[],
     columnMap: Record<string, number>
-  ): { name: string; description: string; mandatory: boolean; type: string; parentField?: string } | null {
+  ): {
+    name: string;
+    description: string;
+    mandatory: boolean;
+    type: string;
+    parentField?: string;
+    sampleValue?: string;
+    constraints?: { minLength?: number; maxLength?: number; minValue?: number; maxValue?: number };
+  } | null {
     const nameIdx = columnMap['name'];
     if (nameIdx === undefined) return null;
 
     const name = values[nameIdx]?.trim() || '';
     if (!name) return null;
 
-    const result: { name: string; description: string; mandatory: boolean; type: string; parentField?: string } = {
+    const result: {
+      name: string;
+      description: string;
+      mandatory: boolean;
+      type: string;
+      parentField?: string;
+      sampleValue?: string;
+      constraints?: { minLength?: number; maxLength?: number; minValue?: number; maxValue?: number };
+    } = {
       name,
       type: columnMap['type'] !== undefined ? (values[columnMap['type']]?.trim() || 'String') : 'String',
       mandatory: columnMap['mandatory'] !== undefined 
@@ -228,6 +297,14 @@ export class ApiSpecSheetParserService {
       description: columnMap['description'] !== undefined ? values[columnMap['description']]?.trim() || '' : '',
     };
 
+    if (columnMap['sampleValue'] !== undefined) {
+      const sample = values[columnMap['sampleValue']]?.trim();
+      // Treat empty, "-", "N/A" etc. as "no real sample provided" rather than a literal value.
+      if (sample && !/^(-|n\/a|na|none)$/i.test(sample)) {
+        result.sampleValue = sample;
+      }
+    }
+
     if (columnMap['parent'] !== undefined) {
       const parentValue = values[columnMap['parent']]?.trim();
       if (parentValue) {
@@ -235,7 +312,40 @@ export class ApiSpecSheetParserService {
       }
     }
 
+    const constraints: { minLength?: number; maxLength?: number; minValue?: number; maxValue?: number } = {};
+    if (columnMap['minLength'] !== undefined) {
+      const value = this.parseNumericConstraint(values[columnMap['minLength']]);
+      if (value !== undefined) constraints.minLength = value;
+    }
+    if (columnMap['maxLength'] !== undefined) {
+      const value = this.parseNumericConstraint(values[columnMap['maxLength']]);
+      if (value !== undefined) constraints.maxLength = value;
+    }
+    if (columnMap['minValue'] !== undefined) {
+      const value = this.parseNumericConstraint(values[columnMap['minValue']]);
+      if (value !== undefined) constraints.minValue = value;
+    }
+    if (columnMap['maxValue'] !== undefined) {
+      const value = this.parseNumericConstraint(values[columnMap['maxValue']]);
+      if (value !== undefined) constraints.maxValue = value;
+    }
+    if (Object.keys(constraints).length > 0) {
+      result.constraints = constraints;
+    }
+
     return result;
+  }
+
+  /** Parses a numeric constraint cell (e.g. "20", "20 chars", "max 20") into a plain number,
+   *  stripping any non-numeric characters. Returns undefined for empty or unparseable cells. */
+  private parseNumericConstraint(raw: string | undefined): number | undefined {
+    if (!raw) return undefined;
+    const trimmed = raw.trim();
+    if (!trimmed) return undefined;
+    const cleaned = trimmed.replace(/[^0-9.\-]/g, '');
+    if (!cleaned) return undefined;
+    const num = Number(cleaned);
+    return Number.isFinite(num) ? num : undefined;
   }
 
   /**

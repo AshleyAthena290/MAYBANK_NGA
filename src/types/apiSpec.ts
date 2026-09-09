@@ -71,4 +71,26 @@ export interface ApiScenario {
 
   /** Negative and edge-case scenarios */
   negativeScenarios: string[];
+
+  /** Enumerated values for `{placeholder}` tokens in the URL, used to generate one positive scenario per value */
+  placeholderEnums?: Record<string, string[]>;
+
+  /** Raw sample response JSON keyed by context label (e.g. "casa", "loan", "card"), used to validate matching context-path scenarios */
+  contextResponseSamples?: Record<string, string>;
+
+  /** Per-field metadata for request body fields (dot path, type, and any captured min/max/length
+   *  constraints), used to drive accurate, field-specific boundary test generation. Only fields
+   *  with actual captured constraints result in boundary tests being generated for them — this is
+   *  empty/undefined for sheets that don't document constraints yet. */
+  requestBodyFieldSpecs?: Array<{
+    fieldPath: string;
+    type: string;
+    mandatory: boolean;
+    constraints?: {
+      minLength?: number;
+      maxLength?: number;
+      minValue?: number;
+      maxValue?: number;
+    } | undefined;
+  }>;
 }

@@ -1,0 +1,43 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv12 - getInitRecord
+# Generated: 2026-09-08T08:20:53.191Z
+---
+feature: depmaintenancengaapiappdashboarddesignv12
+apiName: getInitRecord
+description: Test cases for getInitRecord endpoint
+totalScenarios: 4
+scenarios:
+  - id: getInitRecord-001-positive
+    title: GET /record - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getinitrecord
+    priority: P1
+  - id: getInitRecord-002-missing-auth
+    title: GET /record - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getInitRecord-003-invalid-auth
+    title: GET /record - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getInitRecord-004-request-timeout
+    title: GET /record - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-08T08:20:53.189Z'
