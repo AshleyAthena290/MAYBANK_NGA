@@ -1,0 +1,43 @@
+# Test Case Index
+# identitydddapidesignv13 - securityInit
+# Generated: 2026-09-09T03:33:52.647Z
+---
+feature: identitydddapidesignv13
+apiName: securityInit
+description: Test cases for securityInit endpoint
+totalScenarios: 4
+scenarios:
+  - id: securityInit-001-positive
+    title: GET /init - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - securityinit
+    priority: P1
+  - id: securityInit-002-missing-auth
+    title: GET /init - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: securityInit-003-invalid-auth
+    title: GET /init - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: securityInit-004-request-timeout
+    title: GET /init - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-09T03:33:52.646Z'

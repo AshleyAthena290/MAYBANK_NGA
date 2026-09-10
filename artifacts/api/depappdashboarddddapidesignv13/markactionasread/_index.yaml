@@ -1,0 +1,68 @@
+# Test Case Index
+# depappdashboarddddapidesignv13 - markActionAsRead
+# Generated: 2026-09-09T03:33:02.297Z
+---
+feature: depappdashboarddddapidesignv13
+apiName: markActionAsRead
+description: Test cases for markActionAsRead endpoint
+totalScenarios: 7
+scenarios:
+  - id: markActionAsRead-001-positive
+    title: POST /{id} - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - markactionasread
+    priority: P1
+  - id: markActionAsRead-002-missing-auth
+    title: POST /{id} - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: markActionAsRead-003-invalid-auth
+    title: POST /{id} - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: markActionAsRead-004-invalid-content-type
+    title: POST /{id} - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: markActionAsRead-005-missing-usercontext-header
+    title: POST /{id} - Missing 'UserContext' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - markactionasread
+    priority: P2
+  - id: markActionAsRead-006-invalid-usercontext-header
+    title: POST /{id} - Invalid value for 'UserContext' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - markactionasread
+    priority: P2
+  - id: markActionAsRead-007-request-timeout
+    title: POST /{id} - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-09T03:33:02.295Z'

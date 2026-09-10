@@ -148,6 +148,13 @@ Options:
 7. --timeoutMs <ms> (default 15000)
 8. --reportDir <path> (default ./artifacts/reports)
 9. --failFast
+10. --header <name=value> (repeatable) — overrides a header's value, but only for test cases whose YAML already has that header. APIs that don't declare the header are left untouched.
+
+Example: run against SIT instead of the hardcoded `env: UAT` baked into the generated YAML, without regenerating any files:
+
+```bash
+npm run dev -- api-test-run --feature "depappdashboarddddapidesignv13" --baseUrl "https://numayakh.maybank2u.com/nga/dev/dep/dashboard" --header "env=SIT"
+```
 
 ## How YAML execution works
 

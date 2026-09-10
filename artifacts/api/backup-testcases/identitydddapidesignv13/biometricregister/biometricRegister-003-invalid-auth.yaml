@@ -1,0 +1,66 @@
+# BDD Test Case - identitydddapidesignv13
+# Generated for: POST /register - Invalid Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: biometricRegister-003-invalid-auth
+title: POST /register - Invalid Authentication
+feature: identitydddapidesignv13
+description: Request with invalid credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/biometric/register'
+  endpoint: 'https: //{Identity-IP}:{Identity-PORT}/api/identity/cerebro/v1/biometric/register'
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    authorization: invalid_token_12345
+    client-id: <value>
+    api-key: <value>
+    env: <value>
+    accept: <value>
+    Content-Type: application/json
+  pathParams: {}
+  queryParams: {}
+  body:
+    otp: '704756'
+    otpRef: 2a027c85-5bef-41e9-8061-8c3680ff45b5
+    challenge: NzA0NzU2
+    signedChallenge: MEUCIHc_KSEb_s7GfAAsZovCL144qcdHd7uC62LFhHBI47MVAiEAztglFZNzjR37eNVl5xRbdfjLmWV7Kb8aRTDi8WUkTpI
+    publicKey: -----BEGIN PUBLIC KEY-----MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEBrozRgcfvz+9BEeEDcc+C4bAXfjICExd9o1Z6e0aPuXQjZjWPWsTLfAiX1olYax9Z314th0PC5DDehKgh14+gQ==-----END PUBLIC KEY-----
+    Request Parameter: <value>
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Error message indicates invalid authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: biometricRegister
+  sourceRows: ''
+  apiSpecFile: biometricRegister

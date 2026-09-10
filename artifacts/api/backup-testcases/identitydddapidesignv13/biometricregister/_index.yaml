@@ -1,0 +1,57 @@
+# Test Case Index
+# identitydddapidesignv13 - biometricRegister
+# Generated: 2026-09-08T03:18:30.707Z
+---
+feature: identitydddapidesignv13
+apiName: biometricRegister
+description: Test cases for biometricRegister endpoint
+totalScenarios: 6
+scenarios:
+  - id: biometricRegister-001-positive
+    title: POST /register - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - biometricregister
+    priority: P1
+  - id: biometricRegister-002-missing-auth
+    title: POST /register - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: biometricRegister-003-invalid-auth
+    title: POST /register - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: biometricRegister-004-invalid-content-type
+    title: POST /register - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: biometricRegister-005-request-timeout
+    title: POST /register - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: biometricRegister-006-empty-request-body
+    title: POST /register - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-09-08T03:18:30.707Z'

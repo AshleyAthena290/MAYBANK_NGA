@@ -1,0 +1,56 @@
+# BDD Test Case - depappdashboarddddapidesignv13
+# Generated for: GET /flags - Missing 'module' query parameter
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: init-008-missing-module-param
+title: GET /flags - Missing 'module' query parameter
+feature: depappdashboarddddapidesignv13
+description: Missing 'module' query parameter
+tags:
+  - negative
+  - query-param
+  - api
+  - init
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{IP}:{PORT}/v1/init/flags
+  endpoint: https://{IP}:{PORT}/v1/init/flags
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Authorization: Bearer <ACCESS_TOKEN>
+    UserContext: '{"gcif":"1000000012","region":"ID","app":"NGA"}'
+    Accept: application/json
+  pathParams: {}
+  queryParams:
+    domain: dep
+    subModule: banking
+response:
+  successStatusCode: 400
+  successDescription: Bad Request
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Missing 'module' query parameter
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: init
+  sourceRows: ''
+  apiSpecFile: init

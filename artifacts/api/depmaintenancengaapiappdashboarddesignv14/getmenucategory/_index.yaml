@@ -1,0 +1,115 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv14 - getMenuCategory
+# Generated: 2026-09-09T02:25:11.823Z
+---
+feature: depmaintenancengaapiappdashboarddesignv14
+apiName: getMenuCategory
+description: Test cases for getMenuCategory endpoint
+totalScenarios: 12
+scenarios:
+  - id: getMenuCategory-001-positive
+    title: GET /category - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getmenucategory
+    priority: P1
+  - id: getMenuCategory-002-missing-auth
+    title: GET /category - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getMenuCategory-003-invalid-auth
+    title: GET /category - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getMenuCategory-004-missing-x-app-version-header
+    title: GET /category - Missing 'X-APP-VERSION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getmenucategory
+    priority: P2
+  - id: getMenuCategory-005-invalid-x-app-version-header
+    title: GET /category - Invalid value for 'X-APP-VERSION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getmenucategory
+    priority: P2
+  - id: getMenuCategory-006-missing-x-mb-app-header
+    title: GET /category - Missing 'X-MB-APP' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getmenucategory
+    priority: P2
+  - id: getMenuCategory-007-invalid-x-mb-app-header
+    title: GET /category - Invalid value for 'X-MB-APP' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getmenucategory
+    priority: P2
+  - id: getMenuCategory-008-missing-x-mb-region-header
+    title: GET /category - Missing 'X-MB-REGION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getmenucategory
+    priority: P2
+  - id: getMenuCategory-009-invalid-x-mb-region-header
+    title: GET /category - Invalid value for 'X-MB-REGION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getmenucategory
+    priority: P2
+  - id: getMenuCategory-010-missing-x-mb-locale-header
+    title: GET /category - Missing 'X-MB-LOCALE' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getmenucategory
+    priority: P2
+  - id: getMenuCategory-011-invalid-x-mb-locale-header
+    title: GET /category - Invalid value for 'X-MB-LOCALE' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getmenucategory
+    priority: P2
+  - id: getMenuCategory-012-request-timeout
+    title: GET /category - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-09T02:25:11.821Z'

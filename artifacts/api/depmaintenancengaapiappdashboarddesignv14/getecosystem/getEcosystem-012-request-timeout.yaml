@@ -1,0 +1,55 @@
+# BDD Test Case - depmaintenancengaapiappdashboarddesignv14
+# Generated for: GET /ecosystems - Request Timeout
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getEcosystem-012-request-timeout
+title: GET /ecosystems - Request Timeout
+feature: depmaintenancengaapiappdashboarddesignv14
+description: Request exceeding timeout threshold should fail gracefully
+tags:
+  - edge-case
+  - performance
+priority: P3
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{EXP-IP}:{EXP-PORT}/v1/internal/ecosystems
+  endpoint: https://{EXP-IP}:{EXP-PORT}/v1/internal/ecosystems
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    X-APP-VERSION: 0.0.1
+    X-MB-APP: NGA
+    X-MB-REGION: ID
+    X-MB-LOCALE: id_ID
+    Accept: application/json
+    Authorization: Bearer <token>
+  pathParams: {}
+  queryParams: {}
+response:
+  successStatusCode: 504
+  successDescription: Gateway Timeout
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 504
+    type: status
+    expectedValue: 504
+  - description: Error message indicates timeout
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getEcosystem
+  sourceRows: ''
+  apiSpecFile: getEcosystem

@@ -1,10 +1,14 @@
 import { readdir, readFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
 import { load as yamlLoad } from "js-yaml";
 import { Command } from "commander";
 import { z } from "zod";
 import type { AppLogger } from "../../services/logger.js";
 import { ReportGenerator } from "../../services/reportGenerator.js";
+
+const execFileAsync = promisify(execFile);
 
 type AssertionType =
   | "status"
@@ -27,11 +31,14 @@ interface YamlApiTestCase {
   id: string;
   title?: string;
   feature?: string;
+  tags?: string[];
   request?: {
     method?: string;
     url?: string;
     endpoint?: string;
     headers?: Record<string, string>;
+    pathParams?: Record<string, string>;
+    queryParams?: Record<string, string>;
     body?: unknown;
   };
   response?: {
@@ -57,9 +64,13 @@ interface AssertionResult {
 
 interface TestExecutionResult {
   id: string;
+  title?: string;
+  feature?: string;
+  tags?: string[];
   filePath: string;
   method: string;
   url: string;
+  expectedStatusCode?: number;
   statusCode: number;
   passed: boolean;
   assertionResults: AssertionResult[];
@@ -75,10 +86,70 @@ const ApiTestRunOptionsSchema = z.object({
   baseUrl: z.string().optional(),
   timeoutMs: z.coerce.number().int().positive().default(15000),
   failFast: z.coerce.boolean().default(false),
-  reportDir: z.string().optional()
+  reportDir: z.string().optional(),
+  header: z.array(z.string()).default([]),
+  transport: z.enum(["fetch", "curl"]).default("fetch"),
+  insecure: z.coerce.boolean().default(false),
+  verbose: z.coerce.boolean().default(false)
 });
 
 type ApiTestRunOptions = z.infer<typeof ApiTestRunOptionsSchema>;
+
+/** Bundles the per-run execution settings that every test case needs, instead of a long positional
+ *  parameter list that grows every time a new runner flag is added. */
+interface RunnerRuntimeOptions {
+  timeoutMs: number;
+  baseUrl?: string;
+  headerOverrides: Record<string, string>;
+  transport: "fetch" | "curl";
+  insecure: boolean;
+  verbose: boolean;
+}
+
+/** Accumulates repeated `--header name=value` flags into an array (commander's default behavior
+ *  for a repeatable option is to keep only the last value, so this collector is required). */
+function collectHeader(value: string, previous: string[]): string[] {
+  previous.push(value);
+  return previous;
+}
+
+/** Parses `--header` values ("name=value") into a lookup map keyed by lowercased header name, so
+ *  overrides can be matched against a YAML's headers case-insensitively regardless of how the
+ *  header is cased there (e.g. "env" vs "Env"). Silently skips malformed entries missing "=". */
+function parseHeaderOverrides(values: string[]): Record<string, string> {
+  const overrides: Record<string, string> = {};
+  for (const entry of values) {
+    const separatorIndex = entry.indexOf("=");
+    if (separatorIndex <= 0) continue;
+    const name = entry.slice(0, separatorIndex).trim();
+    const value = entry.slice(separatorIndex + 1).trim();
+    if (name) {
+      overrides[name.toLowerCase()] = value;
+    }
+  }
+  return overrides;
+}
+
+/** Overrides a header's value only if that exact header already exists in the YAML's own
+ *  request.headers — e.g. an API whose spec never included an "env" header is left untouched,
+ *  since there's nothing to override and adding one would send a header the real API never expects. */
+function applyHeaderOverrides(
+  headers: Record<string, string> | undefined,
+  overrides: Record<string, string>
+): Record<string, string> | undefined {
+  if (!headers || Object.keys(overrides).length === 0) {
+    return headers;
+  }
+
+  const result = { ...headers };
+  for (const key of Object.keys(result)) {
+    const overrideValue = overrides[key.toLowerCase()];
+    if (overrideValue !== undefined) {
+      result[key] = overrideValue;
+    }
+  }
+  return result;
+}
 
 export function registerApiTestRunnerCommand(program: Command, logger: AppLogger): void {
   program
@@ -93,6 +164,15 @@ export function registerApiTestRunnerCommand(program: Command, logger: AppLogger
     .option("--timeoutMs <ms>", "HTTP timeout in milliseconds", "15000")
     .option("--failFast", "Stop on first failure", false)
     .option("--reportDir <path>", "Output directory for HTML/Excel reports", "./artifacts/reports")
+    .option(
+      "--header <name=value>",
+      "Override a header's value if that header already exists in the YAML (repeatable), e.g. --header env=SIT",
+      collectHeader,
+      [] as string[]
+    )
+    .option("--transport <type>", "HTTP transport to use: fetch (default) or curl", "fetch")
+    .option("--insecure", "Skip TLS certificate verification (both transports)", false)
+    .option("--verbose", "Print request and response details for each test case", false)
     .action(async (rawOptions: unknown) => {
       try {
         const options = ApiTestRunOptionsSchema.parse(rawOptions);
@@ -124,6 +204,24 @@ async function executeApiTestRunnerCommand(options: ApiTestRunOptions, logger: A
     throw new Error("No YAML test cases matched the provided filters");
   }
 
+  const headerOverrides = parseHeaderOverrides(options.header);
+
+  if (options.insecure) {
+    // Node's fetch (undici) and curl both honor this for every request in the current process,
+    // so setting it once here covers whichever transport is selected for this run.
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+    logger.warn("TLS certificate verification disabled (--insecure) for this run");
+  }
+
+  const runtime: RunnerRuntimeOptions = {
+    timeoutMs: options.timeoutMs,
+    ...(options.baseUrl !== undefined ? { baseUrl: options.baseUrl } : {}),
+    headerOverrides,
+    transport: options.transport,
+    insecure: options.insecure,
+    verbose: options.verbose
+  };
+
   logger.info(
     {
       selected: selectedCases.length,
@@ -131,14 +229,17 @@ async function executeApiTestRunnerCommand(options: ApiTestRunOptions, logger: A
       feature: options.feature,
       api: options.api,
       id: options.id,
-      baseUrl: options.baseUrl
+      baseUrl: options.baseUrl,
+      headerOverrides: Object.keys(headerOverrides),
+      transport: options.transport,
+      insecure: options.insecure
     },
     "Starting API YAML test execution"
   );
 
   const results: TestExecutionResult[] = [];
   for (const entry of selectedCases) {
-    const result = await runSingleYamlTest(entry, options.timeoutMs, options.baseUrl);
+    const result = await runSingleYamlTest(entry, runtime);
     results.push(result);
 
     const status = result.passed ? "PASS" : "FAIL";
@@ -248,66 +349,166 @@ function filterTestCases(entries: LoadedYamlTestCase[], options: ApiTestRunOptio
 
 async function runSingleYamlTest(
   entry: LoadedYamlTestCase,
-  timeoutMs: number,
-  baseUrl?: string
+  runtime: RunnerRuntimeOptions
 ): Promise<TestExecutionResult> {
   const { testCase, filePath } = entry;
   const method = (testCase.request?.method ?? "GET").toUpperCase();
-  const resolvedUrl = resolveTargetUrl(testCase, baseUrl);
+  const resolvedUrl = resolveTargetUrl(testCase, runtime.baseUrl);
   const requestBody = sanitizeRequestBody(testCase.request?.body);
+  const headers = testCase.request?.headers
+    ? applyHeaderOverrides(testCase.request.headers, runtime.headerOverrides)
+    : undefined;
 
-  const controller = new AbortController();
-  const timeoutHandle = setTimeout(() => controller.abort(), timeoutMs);
+  if (runtime.verbose) {
+    console.log(`  [request] ${method} ${resolvedUrl}`);
+    if (headers) console.log(`  [request] headers: ${JSON.stringify(headers)}`);
+    if (shouldSendBody(method)) console.log(`  [request] body: ${JSON.stringify(requestBody ?? {})}`);
+  }
 
   try {
-    const fetchInit: RequestInit = {
-      method,
-      signal: controller.signal
-    };
+    const { statusCode, bodyText } =
+      runtime.transport === "curl"
+        ? await runCurlRequest(method, resolvedUrl, headers, requestBody, runtime.timeoutMs, runtime.insecure)
+        : await runFetchRequest(method, resolvedUrl, headers, requestBody, runtime.timeoutMs);
 
-    if (testCase.request?.headers) {
-      fetchInit.headers = testCase.request.headers;
+    if (runtime.verbose) {
+      console.log(`  [response] status: ${statusCode}`);
+      console.log(`  [response] body: ${bodyText.slice(0, 2000)}`);
     }
 
-    if (shouldSendBody(method)) {
-      fetchInit.body = JSON.stringify(requestBody ?? {});
-    }
-
-    const response = await fetch(resolvedUrl, fetchInit);
-
-    const bodyText = await response.text();
     const parsedBody = safeJsonParse(bodyText);
     const assertionResults = evaluateAssertions(
       testCase.assertions ?? [],
-      response.status,
+      statusCode,
       parsedBody,
       testCase.response?.successStatusCode
     );
 
     return {
       id: testCase.id,
+      ...(testCase.title !== undefined ? { title: testCase.title } : {}),
+      ...(testCase.feature !== undefined ? { feature: testCase.feature } : {}),
+      ...(testCase.tags !== undefined ? { tags: testCase.tags } : {}),
       filePath,
       method,
       url: resolvedUrl,
-      statusCode: response.status,
+      ...(testCase.response?.successStatusCode !== undefined
+        ? { expectedStatusCode: testCase.response.successStatusCode }
+        : {}),
+      statusCode,
       passed: assertionResults.every((result) => result.passed),
       assertionResults
     };
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
+    if (runtime.verbose) {
+      console.log(`  [response] error: ${message}`);
+    }
     return {
       id: testCase.id,
+      ...(testCase.title !== undefined ? { title: testCase.title } : {}),
+      ...(testCase.feature !== undefined ? { feature: testCase.feature } : {}),
+      ...(testCase.tags !== undefined ? { tags: testCase.tags } : {}),
       filePath,
       method,
       url: resolvedUrl,
+      ...(testCase.response?.successStatusCode !== undefined
+        ? { expectedStatusCode: testCase.response.successStatusCode }
+        : {}),
       statusCode: 0,
       passed: false,
       assertionResults: [],
       error: message
     };
+  }
+}
+
+/** Sends the request using Node's built-in fetch. TLS verification is toggled process-wide via
+ *  NODE_TLS_REJECT_UNAUTHORIZED before any requests run (see executeApiTestRunnerCommand), since
+ *  undici's fetch doesn't take a per-request "insecure" option. */
+async function runFetchRequest(
+  method: string,
+  url: string,
+  headers: Record<string, string> | undefined,
+  body: unknown,
+  timeoutMs: number
+): Promise<{ statusCode: number; bodyText: string }> {
+  const controller = new AbortController();
+  const timeoutHandle = setTimeout(() => controller.abort(), timeoutMs);
+
+  try {
+    const fetchInit: RequestInit = { method, signal: controller.signal };
+    if (headers) {
+      fetchInit.headers = headers;
+    }
+    if (shouldSendBody(method)) {
+      fetchInit.body = JSON.stringify(body ?? {});
+    }
+
+    const response = await fetch(url, fetchInit);
+    const bodyText = await response.text();
+    return { statusCode: response.status, bodyText };
   } finally {
     clearTimeout(timeoutHandle);
   }
+}
+
+/** Sends the request by shelling out to the system `curl` binary instead of Node's fetch — useful
+ *  in environments where corporate proxies/root CAs or NTLM auth are already configured for curl
+ *  but not for Node. Uses `-i` so curl prints the status line and headers before the body, letting
+ *  us recover the status code without needing curl's separate `-w`/`-D` plumbing. */
+async function runCurlRequest(
+  method: string,
+  url: string,
+  headers: Record<string, string> | undefined,
+  body: unknown,
+  timeoutMs: number,
+  insecure: boolean
+): Promise<{ statusCode: number; bodyText: string }> {
+  const args = ["-i", "-s", "-S", "-X", method.toUpperCase(), url, "--max-time", String(Math.max(1, Math.ceil(timeoutMs / 1000)))];
+
+  if (insecure) {
+    args.push("--insecure");
+  }
+
+  if (headers) {
+    for (const [name, value] of Object.entries(headers)) {
+      args.push("-H", `${name}: ${value}`);
+    }
+  }
+
+  if (shouldSendBody(method)) {
+    args.push("--data-raw", JSON.stringify(body ?? {}));
+  }
+
+  try {
+    const { stdout } = await execFileAsync("curl", args, { timeout: timeoutMs, maxBuffer: 1024 * 1024 * 20 });
+    return parseCurlOutput(stdout);
+  } catch (error) {
+    const execError = error as { stdout?: string; stderr?: string; message?: string };
+    // curl exits non-zero for HTTP error statuses too when certain flags are set, but even without
+    // those flags a failed *connection* still lands here — only fall back to parsing stdout if it
+    // actually looks like a captured HTTP response, otherwise surface curl's own error message.
+    if (execError.stdout && /^HTTP\/\d/.test(execError.stdout)) {
+      return parseCurlOutput(execError.stdout);
+    }
+    throw new Error(execError.stderr?.trim() || execError.message || "curl request failed");
+  }
+}
+
+/** Splits curl's `-i` output (status line + headers, blank line, body) and extracts the status
+ *  code from the last status line — "last" because curl also prints one status line per redirect
+ *  hop if `-L` were used; here it just future-proofs against that without needing extra flags. */
+function parseCurlOutput(rawOutput: string): { statusCode: number; bodyText: string } {
+  const headerEnd = rawOutput.search(/\r?\n\r?\n/);
+  const separatorMatch = headerEnd === -1 ? null : rawOutput.slice(headerEnd).match(/^\r?\n\r?\n/);
+  const headerBlock = headerEnd === -1 ? rawOutput : rawOutput.slice(0, headerEnd);
+  const bodyText = headerEnd === -1 ? "" : rawOutput.slice(headerEnd + (separatorMatch?.[0].length ?? 2));
+
+  const statusLines = headerBlock.split(/\r?\n/).filter((line) => /^HTTP\/\d(\.\d)?\s+\d{3}/.test(line));
+  const statusMatch = statusLines[statusLines.length - 1]?.match(/(\d{3})/);
+
+  return { statusCode: statusMatch ? Number(statusMatch[1]) : 0, bodyText };
 }
 
 function shouldSendBody(method: string): boolean {
@@ -315,22 +516,69 @@ function shouldSendBody(method: string): boolean {
 }
 
 function resolveTargetUrl(testCase: YamlApiTestCase, baseUrl?: string): string {
-  const url = testCase.request?.url ?? testCase.request?.endpoint;
-  if (!url) {
+  const rawUrl = testCase.request?.url ?? testCase.request?.endpoint;
+  if (!rawUrl) {
     throw new Error(`Missing request URL for ${testCase.id}`);
   }
 
+  const normalizedUrl = normalizeUrlSpacing(rawUrl);
+  const withPathParams = applyPathParams(normalizedUrl, testCase.request?.pathParams);
+
+  let resolved: string;
   if (!baseUrl) {
-    if (url.includes("{")) {
+    if (withPathParams.includes("{")) {
       throw new Error(
-        `URL contains placeholders. Provide --baseUrl to execute this case: ${url}`
+        `URL contains placeholders. Provide --baseUrl to execute this case: ${withPathParams}`
       );
     }
-    return url;
+    resolved = withPathParams;
+  } else {
+    const path = extractPathFromUrl(withPathParams);
+    resolved = `${baseUrl.replace(/\/$/, "")}${path}`;
   }
 
-  const path = extractPathFromUrl(url);
-  return `${baseUrl.replace(/\/$/, "")}${path}`;
+  return appendQueryString(resolved, testCase.request?.queryParams);
+}
+
+/** Strips the "https: //" / "http: //" spacing artifact these generated YAMLs sometimes carry (a
+ *  formatting quirk from the source Excel sheets), so the URL can be parsed and requested
+ *  correctly regardless of transport or whether --baseUrl is used. */
+function normalizeUrlSpacing(url: string): string {
+  return url.replace(/https?\s*:\s*\/\//i, (match) => match.replace(/\s+/g, ""));
+}
+
+/** Replaces `{name}` path-parameter tokens in the URL with their resolved values from the YAML's
+ *  own request.pathParams (e.g. ".../dismiss/{id}" -> ".../dismiss/12345"). Tokens with no
+ *  matching pathParams entry are left as-is. */
+function applyPathParams(url: string, pathParams: Record<string, string> | undefined): string {
+  if (!pathParams) return url;
+  let result = url;
+  for (const [key, value] of Object.entries(pathParams)) {
+    result = result.split(`{${key}}`).join(value);
+  }
+  return result;
+}
+
+/** Appends a query string built from the YAML's request.queryParams to the resolved URL, merging
+ *  with any query string the URL already has. Each value is split on comma into repeated
+ *  `key=value` pairs — this mirrors how the generator's MultiValueMap parsing joins a param's real
+ *  repeated values with a comma into one flat-map entry (see parseMultiValueMapSample in
+ *  bddGenCommand.ts), reconstructing the correct wire format instead of sending the comma literally
+ *  inside a single value. A param without a comma round-trips unchanged. */
+function appendQueryString(url: string, queryParams: Record<string, string> | undefined): string {
+  if (!queryParams || Object.keys(queryParams).length === 0) return url;
+
+  const pairs: string[] = [];
+  for (const [key, value] of Object.entries(queryParams)) {
+    if (value === undefined || value === null) continue;
+    for (const segment of String(value).split(",")) {
+      pairs.push(`${encodeURIComponent(key)}=${encodeURIComponent(segment)}`);
+    }
+  }
+  if (pairs.length === 0) return url;
+
+  const queryString = pairs.join("&");
+  return url.includes("?") ? `${url}&${queryString}` : `${url}?${queryString}`;
 }
 
 function extractPathFromUrl(url: string): string {

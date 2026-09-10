@@ -1,0 +1,115 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv14 - getContent
+# Generated: 2026-09-09T02:25:44.205Z
+---
+feature: depmaintenancengaapiappdashboarddesignv14
+apiName: getContent
+description: Test cases for getContent endpoint
+totalScenarios: 12
+scenarios:
+  - id: getContent-001-positive
+    title: GET /contents - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getcontent
+    priority: P1
+  - id: getContent-002-missing-auth
+    title: GET /contents - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getContent-003-invalid-auth
+    title: GET /contents - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getContent-004-missing-x-app-version-header
+    title: GET /contents - Missing 'X-APP-VERSION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getcontent
+    priority: P2
+  - id: getContent-005-invalid-x-app-version-header
+    title: GET /contents - Invalid value for 'X-APP-VERSION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getcontent
+    priority: P2
+  - id: getContent-006-missing-x-mb-app-header
+    title: GET /contents - Missing 'X-MB-APP' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getcontent
+    priority: P2
+  - id: getContent-007-invalid-x-mb-app-header
+    title: GET /contents - Invalid value for 'X-MB-APP' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getcontent
+    priority: P2
+  - id: getContent-008-missing-x-mb-region-header
+    title: GET /contents - Missing 'X-MB-REGION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getcontent
+    priority: P2
+  - id: getContent-009-invalid-x-mb-region-header
+    title: GET /contents - Invalid value for 'X-MB-REGION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getcontent
+    priority: P2
+  - id: getContent-010-missing-x-mb-locale-header
+    title: GET /contents - Missing 'X-MB-LOCALE' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getcontent
+    priority: P2
+  - id: getContent-011-invalid-x-mb-locale-header
+    title: GET /contents - Invalid value for 'X-MB-LOCALE' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getcontent
+    priority: P2
+  - id: getContent-012-request-timeout
+    title: GET /contents - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-09T02:25:44.202Z'

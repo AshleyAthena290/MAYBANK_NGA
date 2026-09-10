@@ -1,0 +1,67 @@
+# BDD Test Case - depmaintenancengaapiappdashboarddesignv14
+# Generated for: GET /navbar-menu - Missing Authentication
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: getNavbarMenu-002-missing-auth
+title: GET /navbar-menu - Missing Authentication
+feature: depmaintenancengaapiappdashboarddesignv14
+description: Request without authentication credentials should fail
+tags:
+  - negative
+  - authentication
+  - security
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: GET
+  url: https://{EXP-IP}:{EXP-PORT}/v1/internal/navbar-menu
+  endpoint: https://{EXP-IP}:{EXP-PORT}/v1/internal/navbar-menu
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    X-APP-VERSION: 0.0.1
+    X-MB-APP: NGA
+    X-MB-REGION: ID
+    X-MB-LOCALE: id_ID
+    Accept: application/json
+  pathParams: {}
+  queryParams: {}
+response:
+  successStatusCode: 401
+  successDescription: Unauthorized
+  schema:
+    error: string
+    message: string
+  expectedFields:
+    - fieldPath: error
+      type: String
+      mandatory: true
+      description: Error code
+    - fieldPath: message
+      type: String
+      mandatory: true
+      description: Error message
+assertions:
+  - description: Response status code is 401
+    type: status
+    expectedValue: 401
+  - description: Field 'error' exists and is of type String
+    type: field-type
+    target: error
+    expectedValue: String
+  - description: Error message indicates missing authentication
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: getNavbarMenu
+  sourceRows: ''
+  apiSpecFile: getNavbarMenu

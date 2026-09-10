@@ -1,0 +1,57 @@
+# Test Case Index
+# identitydddapidesignv13 - validatePasscode
+# Generated: 2026-09-08T03:18:16.323Z
+---
+feature: identitydddapidesignv13
+apiName: validatePasscode
+description: Test cases for validatePasscode endpoint
+totalScenarios: 6
+scenarios:
+  - id: validatePasscode-001-positive
+    title: POST /validate - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - validatepasscode
+    priority: P1
+  - id: validatePasscode-002-missing-auth
+    title: POST /validate - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: validatePasscode-003-invalid-auth
+    title: POST /validate - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: validatePasscode-004-invalid-content-type
+    title: POST /validate - Invalid Content-Type
+    type: negative
+    tags:
+      - negative
+      - validation
+    priority: P2
+  - id: validatePasscode-005-request-timeout
+    title: POST /validate - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+  - id: validatePasscode-006-empty-request-body
+    title: POST /validate - Empty Request Body
+    type: positive
+    tags:
+      - edge-case
+      - validation
+    priority: P2
+generatedAt: '2026-09-08T03:18:16.323Z'

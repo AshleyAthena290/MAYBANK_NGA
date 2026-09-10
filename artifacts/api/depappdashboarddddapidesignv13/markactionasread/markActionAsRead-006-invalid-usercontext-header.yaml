@@ -1,0 +1,57 @@
+# BDD Test Case - depappdashboarddddapidesignv13
+# Generated for: POST /{id} - Invalid value for 'UserContext' header
+# Purpose: API endpoint test case for QA, BA, and business user review
+# Note: This is a business-readable specification, not a technical implementation
+---
+id: markActionAsRead-006-invalid-usercontext-header
+title: POST /{id} - Invalid value for 'UserContext' header
+feature: depappdashboarddddapidesignv13
+description: Invalid value for 'UserContext' header
+tags:
+  - negative
+  - header
+  - api
+  - markactionasread
+priority: P2
+environment:
+  - SIT
+  - UAT
+  - PROD
+authentication: OAuth2
+preconditions:
+  - Service is operational
+  - Valid authentication credentials available
+testData: {}
+request:
+  method: POST
+  url: https://{IP}:{PORT}/v1/action-list/mark-as-read/{id}
+  endpoint: https://{IP}:{PORT}/v1/action-list/mark-as-read/{id}
+  baseUrl: https://{Payment-IP}:{Payment-PORT}
+  headers:
+    Authorization: Bearer <ACCESS_TOKEN>
+    UserContext: '{"gcif":"1000000012","region":"ID","app":"NGA"'
+    Content-Type: application/json
+    Accept: application/json
+  pathParams:
+    id: 1f0a9c2e-1d4b-4f7a-9c11-7b6d2a5e8f30
+  queryParams: {}
+  body: {}
+response:
+  successStatusCode: 400
+  successDescription: Bad Request
+  schema:
+    error: string
+    message: string
+  expectedFields: []
+assertions:
+  - description: Response status code is 400
+    type: status
+    expectedValue: 400
+  - description: Invalid value for 'UserContext' header
+    type: custom
+cleanup: []
+references:
+  fsdFeature: api-spec
+  sourceWorksheet: markActionAsRead
+  sourceRows: ''
+  apiSpecFile: markActionAsRead

@@ -1,0 +1,115 @@
+# Test Case Index
+# depmaintenancengaapiappdashboarddesignv14 - getLanguage
+# Generated: 2026-09-09T02:26:08.733Z
+---
+feature: depmaintenancengaapiappdashboarddesignv14
+apiName: getLanguage
+description: Test cases for getLanguage endpoint
+totalScenarios: 12
+scenarios:
+  - id: getLanguage-001-positive
+    title: GET /language - Happy Path
+    type: critical
+    tags:
+      - positive
+      - smoke
+      - regression
+      - api
+      - getlanguage
+    priority: P1
+  - id: getLanguage-002-missing-auth
+    title: GET /language - Missing Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getLanguage-003-invalid-auth
+    title: GET /language - Invalid Authentication
+    type: negative
+    tags:
+      - negative
+      - authentication
+      - security
+    priority: P2
+  - id: getLanguage-004-missing-x-app-version-header
+    title: GET /language - Missing 'X-APP-VERSION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getlanguage
+    priority: P2
+  - id: getLanguage-005-invalid-x-app-version-header
+    title: GET /language - Invalid value for 'X-APP-VERSION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getlanguage
+    priority: P2
+  - id: getLanguage-006-missing-x-mb-app-header
+    title: GET /language - Missing 'X-MB-APP' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getlanguage
+    priority: P2
+  - id: getLanguage-007-invalid-x-mb-app-header
+    title: GET /language - Invalid value for 'X-MB-APP' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getlanguage
+    priority: P2
+  - id: getLanguage-008-missing-x-mb-region-header
+    title: GET /language - Missing 'X-MB-REGION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getlanguage
+    priority: P2
+  - id: getLanguage-009-invalid-x-mb-region-header
+    title: GET /language - Invalid value for 'X-MB-REGION' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getlanguage
+    priority: P2
+  - id: getLanguage-010-missing-x-mb-locale-header
+    title: GET /language - Missing 'X-MB-LOCALE' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getlanguage
+    priority: P2
+  - id: getLanguage-011-invalid-x-mb-locale-header
+    title: GET /language - Invalid value for 'X-MB-LOCALE' header
+    type: negative
+    tags:
+      - negative
+      - header
+      - api
+      - getlanguage
+    priority: P2
+  - id: getLanguage-012-request-timeout
+    title: GET /language - Request Timeout
+    type: positive
+    tags:
+      - edge-case
+      - performance
+    priority: P3
+generatedAt: '2026-09-09T02:26:08.729Z'

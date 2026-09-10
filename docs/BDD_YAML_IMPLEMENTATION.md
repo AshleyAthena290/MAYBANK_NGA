@@ -10,7 +10,7 @@ You now have a complete **BDD-style YAML test case generator** for API specifica
 Generate comprehensive test cases for one specific API endpoint:
 
 ```bash
-npm run dev -- bdd-gen --input "input/api/P&T_Local_Transfer_DDD_API_Spec_v1.xlsx" --sheet "GetPTMaintenanceTransferInit" --outDir ./artifacts
+npm run dev -- bdd-gen --input "input/api/ECLIPSE_Local_Transfer_DDD_API_Design_v1.1.xlsx" --sheet "getTransferGroups" --outDir ./artifacts
 ```
 
 **Output:** 7 baseline test scenarios (1 positive + 3 negative + 3 edge cases), plus applicable boundary scenarios, and an index file
@@ -19,7 +19,7 @@ npm run dev -- bdd-gen --input "input/api/P&T_Local_Transfer_DDD_API_Spec_v1.xls
 Process all API endpoints in a workbook at once:
 
 ```bash
-node scripts/batch-bdd-gen.mjs --input "input/api/P&T_Local_Transfer_DDD_API_Spec_v1.2.xlsx" --outDir ".\artifacts\api\Latest-Batch-1"
+node scripts/batch-bdd-gen.mjs --input "input/api/DEP_Maintenance_NGA_API_App_Dashboard_Design_v1.3.xlsx" --outDir ".\artifacts\api\Latest-Batch-1"
 ```
 
 ### 3. **Business-Readable YAML Structure**
